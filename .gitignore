@@ -5,3 +5,5 @@
 /html/.DS_Store
 /craft/.DS_Store
 /craft/plugins/.DS_Store
+/craft/storage
+/box

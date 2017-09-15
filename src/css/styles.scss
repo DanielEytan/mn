@@ -1,7 +1,40 @@
 @import 'reset';
 @import 'variables';
 @import 'typo';
+@import 'header';
+@import 'program';
+@import 'institution';
 
 body {
-	background: red;
+	margin: 20px 10vw;
+}
+time {
+	padding-left: 2em;
+	color: gray;
+}
+h1 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin-bottom: .5em;
+}
+
+#menu {
+	ul {
+		height: 0;
+		overflow: hidden;
+	}
+	&.open {
+		ul {
+			height: 3em;
+		}
+	}
+	.burger {
+		span {
+			display: block;
+			background: black;
+			height: 4px;
+			width: 30px;
+			margin-bottom: 5px;
+		}
+	}
 }

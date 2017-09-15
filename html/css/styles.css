@@ -42,4 +42,50 @@ table {
   border-spacing: 0; }
 
 body {
-  background: red; }
+  font-family: helvetica;
+  line-height: 1.2em; }
+
+header#header {
+  margin-bottom: 2em; }
+
+.program--overview .program-list li {
+  position: relative; }
+
+.program--overview .program-list .save-element {
+  position: absolute;
+  right: 0;
+  background: grey;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%; }
+  .program--overview .program-list .save-element.saved {
+    background: red; }
+
+.institutions--overview_child {
+  margin-bottom: 50px; }
+
+body {
+  margin: 20px 10vw; }
+
+time {
+  padding-left: 2em;
+  color: gray; }
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  margin-bottom: .5em; }
+
+#menu ul {
+  height: 0;
+  overflow: hidden; }
+
+#menu.open ul {
+  height: 3em; }
+
+#menu .burger span {
+  display: block;
+  background: black;
+  height: 4px;
+  width: 30px;
+  margin-bottom: 5px; }

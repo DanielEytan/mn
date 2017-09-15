@@ -5,6 +5,9 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var fs = require('fs');
 var webpack = require('webpack-stream');
+// var browserify = require('browserify');
+// var browserify = require('gulp-browserify');
+// var vueify = require('gulp-vueify');
 
 gulp.task('css', function () {
   return gulp.src('./src/css/**/*.scss')
@@ -23,40 +26,15 @@ gulp.task('css:watch', function () {
   return gulp.watch('./src/css/**/*.scss', gulp.series('css'));
 });
 
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: "./html/"
-//         }
-//     });
-// });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: 'dyf.dev',
+        proxy: 'mn.dev',
         /*server: {
             baseDir: "./html/",
         }*/
     });
 });
-
-// // browser-sync task for starting the server.
-// gulp.task('browser-sync', function() {
-//     //watch files
-//     var files = [
-//     './html/css/styles.css'
-//     // './craft/templates/*.twig'
-//     ];
- 
-//     //initialize browsersync
-//     browserSync.init(files, {
-//     //browsersync with a php server
-//     proxy: "http://localhost:3000/",
-
-//     notify: false
-//     });
-// });
-
 
 
 gulp.task('js', function() {
@@ -74,11 +52,14 @@ gulp.task('js', function() {
     .pipe(browserSync.stream({stream: true}));
 });
 
+gulp.task('vueify', function () {
+  return gulp.src('src/js/**/*.vue')
+    .pipe(vueify())
+    .pipe(gulp.dest('html/js/'));
+});
+
 gulp.task('js:watch', function () {
   return gulp.watch('./src/js/*.js', gulp.series('js'));
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'css', 'css:watch', 'js', 'js:watch'));
-
-
-

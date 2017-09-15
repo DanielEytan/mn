@@ -1,0 +1,21 @@
+.program {
+	&--overview {
+		.program-list {
+			li {
+				position: relative;
+
+			}
+			.save-element {
+				position: absolute;
+				right: 0;
+				background: grey;
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+				&.saved {
+					background: red;
+				}
+			}
+		}
+	}
+}

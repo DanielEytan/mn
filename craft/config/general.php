@@ -14,21 +14,21 @@ return array(
 		'enableCsrfProtection' => true,
 		'defaultWeekStartDay' => 1,
     ),
-    'craft-gulp-setup.dev' => array(
+    'mn.dev' => array(
         'devMode' => true,
         'environmentVariables' => array(
-            'basePath' => '/www/sites/craft-gulp-setup/html/',
-            'baseUrl'  => 'http://craft-gulp-setup.dev/',
-			'siteUrl' => 'http://craft-gulp-setup.dev/',
+            'basePath' => '/www/sites/mn/html/',
+            'baseUrl'  => 'http://mn.dev/',
+			'siteUrl' => 'http://mn.dev/',
 
         )
     ),
-    'example.uberspace.com' => array(
+    'mnacht.centaurus.uberspace.de' => array(
         'devMode' => false,
         'environmentVariables' => array(
-            'basePath' => '/var/www/virtual/example/html/',
-            'baseUrl'  => 'http://example.uberspace.com/',
-			'siteUrl' => 'http://craft-gulp-setup.dev/',
+            'basePath' => '/var/www/virtual/mnacht/html/',
+            'baseUrl'  => 'http://mnacht.centaurus.uberspace.de/',
+			'siteUrl' => 'http://mnacht.centaurus.uberspace.de/',
         )
     )
 );

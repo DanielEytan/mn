@@ -15,12 +15,12 @@ return array(
         'server' => '127.0.0.1',
         'user' => 'root',
         'password' => '',
-        'database' => 'craft-setup',
+        'database' => 'mn',
     ),
     '.com' => array(
         'server' => 'localhost',
-        'user' => '',
-        'password' => '',
-        'database' => '',
+        'user' => 'mnacht',
+        'password' => 'Pou7aeNg9xue7eu3ooz',
+        'database' => 'mnacht',
     ),
 );
