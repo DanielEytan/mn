@@ -9,7 +9,7 @@
 	<meta name="description" content="Museumsnacht Basel">
 	<title>{{ siteName }}{% if title is defined %} - {{ title }}{% endif %}</title>
 	<link rel="home" href="{{ siteUrl }}" />
- 	<link rel="stylesheet" href="/css/styles.css"/>
+ 	<link rel="stylesheet" href="./css/styles.css"/>
 </head>
 
 <body {% if title is defined %}class="{{ title }}"{% endif %}>
@@ -22,11 +22,14 @@
 					<span></span>
 					<span></span>
 				</div><br>
-				<ul>
-					<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
-					<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-					{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
-				</ul>
+				<transition name="fade">
+					<ul v-if="menuOpen">
+						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+						<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+						{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
+					</ul>
+			  </transition>
+
 			</nav>
 		</header>
 
@@ -41,9 +44,9 @@
 			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
 		</footer>
 	</div>
-	<script type="text/javascript" src="/js/vue.js"></script>
+	<script type="text/javascript" src="./js/vue.js"></script>
 
-	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
 	<script>
 		function menu() {
 			document.getElementById("header").classList.toggle("active");

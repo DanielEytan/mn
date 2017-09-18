@@ -18,8 +18,8 @@ return array(
         'devMode' => true,
         'environmentVariables' => array(
             'basePath' => '/www/sites/mn/html/',
-            'baseUrl'  => 'http://mn.dev/',
-			'siteUrl' => 'http://mn.dev/',
+            'baseUrl'  => 'http://mn.dev/html/',
+			'siteUrl' => 'http://mn.dev/html/',
 
         )
     ),
@@ -29,6 +29,15 @@ return array(
             'basePath' => '/var/www/virtual/mnacht/html/',
             'baseUrl'  => 'http://mnacht.centaurus.uberspace.de/',
 			'siteUrl' => 'http://mnacht.centaurus.uberspace.de/',
+        )
+    ),
+    'localhost:8888/mnb/' => array(
+        'devMode' => true,
+        'environmentVariables' => array(
+            'basePath' => '/Applications/MAMP/htdocs/mnb',
+            'baseUrl'  => 'http://localhost:8888/mnb/html/',
+            'siteUrl' => 'http://localhost:8888/mnb/html/',
+
         )
     )
 );

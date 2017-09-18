@@ -77,11 +77,11 @@ h1 {
   margin-bottom: .5em; }
 
 #menu ul {
-  height: 0;
+  height: 3em;
   overflow: hidden; }
 
 #menu.open ul {
-  height: 3em; }
+  height: auto; }
 
 #menu .burger span {
   display: block;
@@ -89,3 +89,9 @@ h1 {
   height: 4px;
   width: 30px;
   margin-bottom: 5px; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; }

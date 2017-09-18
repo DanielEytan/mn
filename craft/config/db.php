@@ -7,20 +7,39 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/db.php
  */
 
+// return array(
+//     '*' => array(
+//         'tablePrefix' => 'craft',
+//     ),
+//     '.dev' => array(
+//         'server' => 'localhost',
+//         'user' => 'root',
+//         'password' => 'root',
+//         'database' => 'mnb',
+//     ),
+//     '.com' => array(
+//         'server' => 'localhost',
+//         'user' => 'mnacht',
+//         'password' => 'Pou7aeNg9xue7eu3ooz',
+//         'database' => 'mnacht',
+//     ),
+// );
+
 return array(
-    '*' => array(
-        'tablePrefix' => 'craft',
-    ),
-    '.dev' => array(
-        'server' => '127.0.0.1',
-        'user' => 'root',
-        'password' => '',
-        'database' => 'mn',
-    ),
-    '.com' => array(
-        'server' => 'localhost',
-        'user' => 'mnacht',
-        'password' => 'Pou7aeNg9xue7eu3ooz',
-        'database' => 'mnacht',
-    ),
+
+    // The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
+    'server' => 'localhost',
+
+    // The name of the database to select.
+    'database' => 'mnb',
+
+    // The database username to connect with.
+    'user' => 'root',
+
+    // The database password to connect with.
+    'password' => 'root',
+
+    // The prefix to use when naming tables. This can be no more than 5 characters.
+    'tablePrefix' => 'craft',
+
 );

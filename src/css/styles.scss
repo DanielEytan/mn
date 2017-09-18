@@ -20,12 +20,12 @@ h1 {
 
 #menu {
 	ul {
-		height: 0;
+		height: 3em;
 		overflow: hidden;
 	}
 	&.open {
 		ul {
-			height: 3em;
+			height: auto;
 		}
 	}
 	.burger {
@@ -37,4 +37,11 @@ h1 {
 			margin-bottom: 5px;
 		}
 	}
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }
