@@ -1,9 +1,18 @@
 .program {
 	&--overview {
 		.program-list {
-			li {
+			li#program {
 				position: relative;
-
+				ul li {
+					font-size: .8em;
+					background: rgb(230,230,230);
+					padding: .2em .3em;
+					display: inline;
+					margin-right: .25em;
+				}
+			}
+			.themes, .kind-of-event {
+				margin: 1em 0;
 			}
 			.save-element {
 				position: absolute;
@@ -19,6 +28,6 @@
 		}
 	}
 	&--single {
-		
+
 	}
 }

@@ -4,10 +4,13 @@
 @import 'header';
 @import 'program';
 @import 'institution';
+@import 'can';
+@import 'daniel';
+
 
 body {
 	margin: 20px 10vw;
-	background: red;
+	// background: green;
 }
 time {
 	padding-left: 2em;
@@ -21,12 +24,12 @@ h1 {
 
 #menu {
 	ul {
-		height: 0;
+		height: 3em;
 		overflow: hidden;
 	}
 	&.open {
 		ul {
-			height: 3em;
+			height: auto;
 		}
 	}
 	.burger {
@@ -38,4 +41,11 @@ h1 {
 			margin-bottom: 5px;
 		}
 	}
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }

@@ -7,3 +7,5 @@
 /craft/plugins/.DS_Store
 /craft/storage
 /box
+/craft/config/db.php
+general.php
