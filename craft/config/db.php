@@ -17,7 +17,7 @@ return array(
         'password' => '',
         'database' => 'mn',
     ),
-    '.com' => array(
+    '.de' => array(
         'server' => 'localhost',
         'user' => 'mnacht',
         'password' => 'Pou7aeNg9xue7eu3ooz',
