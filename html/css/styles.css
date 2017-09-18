@@ -48,8 +48,17 @@ body {
 header#header {
   margin-bottom: 2em; }
 
-.program--overview .program-list li {
+.program--overview .program-list li#program {
   position: relative; }
+  .program--overview .program-list li#program ul li {
+    font-size: .8em;
+    background: #e6e6e6;
+    padding: .2em .3em;
+    display: inline;
+    margin-right: .25em; }
+
+.program--overview .program-list .themes, .program--overview .program-list .kind-of-event {
+  margin: 1em 0; }
 
 .program--overview .program-list .save-element {
   position: absolute;
@@ -65,8 +74,7 @@ header#header {
   margin-bottom: 50px; }
 
 body {
-  margin: 20px 10vw;
-  background: green; }
+  margin: 20px 10vw; }
 
 time {
   padding-left: 2em;

@@ -32,6 +32,40 @@
 			        {% endif %}
 			   		</time>
 			    {% endfor %}
+			    {% if entry.themes | length %}
+
+			    <div class="themes">
+			    	<h3>Themen:</h3>
+				    <ul>
+				    	{% for theme in entry.themes %}
+				    	    <li>{{ theme.title }}</li>
+				    	{% endfor %}
+			    	</ul>
+			    </div>
+				{% endif %}
+			    {% if entry.kindOfEvent | length %}
+			    
+			    <div class="kind-of-event">
+			    	<h3>Art der Veranstaltung:</h3>
+				    <ul>
+				    	{% for kindOfEvent in entry.kindOfEvent %}
+				    	    <li>{{ kindOfEvent.title }}</li>
+				    	{% endfor %}
+			    	</ul>
+			    </div>
+			    {% endif %}
+			    {% if entry.languages | length %}
+
+			    <div class="languages">
+			    	<h3>Sprachen:</h3>
+				    <ul>
+				    	{% for lang in entry.languages %}
+				    	    <li>{{ lang.title }}</li>
+				    	{% endfor %}
+			    	</ul>
+			    </div>
+			    {% endif %}
+
 			    <div class="save-element">
 			    	
 			    </div>
