@@ -2,8 +2,8 @@
 {% set title = entry.title %}
 
 
-{% block content %}
-	<article class="institutions institutions--single">
+	{% block content %}
+		<article class="institutions institutions--single">
 			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
 			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
 
@@ -13,13 +13,13 @@
 				<script>
 				var map;
 				function initMap() {
-				  map = new google.maps.Map(document.getElementById("map"), {
-				    center: {
-				      lat: {{ entry.myMapField.lat }},
-				      lng: {{ entry.myMapField.lng }}
-				    },
-				    zoom: {{ entry.myMapField.zoom }}
-				  });
+					map = new google.maps.Map(document.getElementById("map"), {
+						center: {
+							lat: {{ entry.myMapField.lat }},
+							lng: {{ entry.myMapField.lng }}
+						},
+						zoom: {{ entry.myMapField.zoom }}
+					});
 				}
 				</script>
 				<script src="https://maps.googleapis.com/maps/api/js?key={{ craft.simpleMap.apiKey }}&callback=initMap" async defer></script>
@@ -30,25 +30,25 @@
 			<h2>{{ entry.programmTitle }}</h2>
 			{{ entry.programmText }}
 			<ul class="institutions institutions--single institutions--single__program-list">
-			
-			{% for entry in craft.entries.section('program').getDescendants(2) %}
-			<li>
-			    <h2>{{ entry.title }}</h2>
-			    {% for time in entry.time %}
-			    	 <time>
-			        {% if time.type == "setTimes" %}
-						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-					{% elseif time.type == "continuous" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-					{% elseif time.type == "iterating" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-			        {% endif %}
-			   		</time>
-			    {% endfor %}
-				</li><br>
+				
+				{% for entry in craft.entries.section('program').getDescendants(2) %}
+					<li>
+						<h2>{{ entry.title }}</h2>
+						{% for time in entry.time %}
+							<time>
+								{% if time.type == "setTimes" %}
+									{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+								{% elseif time.type == "continuous" %}
+									{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
+								{% elseif time.type == "iterating" %}
+									{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+								{% endif %}
+							</time>
+						{% endfor %}
+					</li><br>
 
-			{% endfor %}
+				{% endfor %}
 
-			
-		</article>
-{% endblock %}
+				
+			</article>
+		{% endblock %}
