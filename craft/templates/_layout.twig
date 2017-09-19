@@ -13,37 +13,41 @@
 </head>
 
 <body {% if title is defined %}class="{{ title }}"{% endif %}>
-	<div id="container">
-		<header id="header">
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
-			<nav id="menu" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
-				<div class="burger" >
-					<span></span>
-					<span></span>
-					<span></span>
-				</div><br>
-				<transition name="fade">
-					<ul v-if="menuOpen">
-						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
-						<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-						{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
-					</ul>
-			  </transition>
+	<div id="vue-app">
+		<div id="container">
+			<header id="header">
+				<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+				<nav id="menu" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
+					<div class="burger" >
+						<span></span>
+						<span></span>
+						<span></span>
+					</div><br>
+					<transition name="fade">
+						<ul v-if="menuOpen">
+							<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+							<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+							{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
+						</ul>
+				  </transition>
 
-			</nav>
-		</header>
+				</nav>
+			</header>
 
-		<main id="content" role="main">
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
-		</main>
+			<main id="content" role="main">
+				<Hello></Hello>
+				{% block content %}
+					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+				{% endblock %}
+			</main>
 
-		<footer id="footer">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
-		</footer>
+			<footer id="footer">
+				Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
+			</footer>
+		</div>
 	</div>
+	
 	<script type="text/javascript" src="./js/vue.js"></script>
 
 	<script type="text/javascript" src="./js/main.js"></script>
