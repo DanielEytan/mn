@@ -20,7 +20,7 @@
 			<ul class="program-list" >
 			{% for entry in entry.getDescendants(2) %}
 				<li id="program">
-			    <h2>{{ entry.title }}</h2>
+			    <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
 			    {% for time in entry.time %}
 			    	 <time>
 			        {% if time.type == "setTimes" %}
