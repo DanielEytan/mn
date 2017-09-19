@@ -73,6 +73,10 @@ header#header {
 .institutions--overview_child {
   margin-bottom: 50px; }
 
+#map {
+  height: 400px;
+  margin-bottom: 50px; }
+
 body {
   margin: 20px 10vw; }
 
