@@ -1,12 +1,15 @@
 
 var test = require('module');
+import Vue from 'vue'
+import Hello from './components/Hello.vue'
 
 test();
 console.log('Hallo Internet!');
 
-new Vue({
+var vueApp = new Vue({
     delimiters: ['${', '}'],
-    el: '#menu',
+    el: '#vue-app',
+    components: {Hello},
     data: {
         menuOpen: false,
     },
