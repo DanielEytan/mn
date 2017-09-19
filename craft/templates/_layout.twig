@@ -9,7 +9,7 @@
 	<meta name="description" content="Museumsnacht Basel">
 	<title>{{ siteName }}{% if title is defined %} - {{ title }}{% endif %}</title>
 	<link rel="home" href="{{ siteUrl }}" />
- 	<link rel="stylesheet" href="./css/styles.css"/>
+ 	<link rel="stylesheet" href="{{ siteUrl }}/css/styles.css"/>
 </head>
 
 <body {% if title is defined %}class="{{ title }}"{% endif %}>
@@ -36,6 +36,7 @@
 
 			<main id="content" role="main">
 				<Hello></Hello>
+				<categorylist></categorylist>
 				{% block content %}
 					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
@@ -48,9 +49,9 @@
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="./js/vue.js"></script>
+	<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
 
-	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
 	<script>
 		function menu() {
 			document.getElementById("header").classList.toggle("active");
