@@ -6,8 +6,45 @@
 
 	<h1>Programm</h1>
 
+	<div class="filter--wrapper">
+<!-- 		<div class="time--filter--wrapper">
+			<a href="#">
+				Zeit
+			</a>
+		</div> -->
+		<div class="museums--filter--wrapper">
+			<div class="filter--headline--wrapper">
+				<a href="#">
+					Museen
+				</a>
+			</div>
+			<div class="filter--list--wrapper">
+			  <p>Parent value: ${checkedInstitutions}</p>
+				<institutionfilter v-model="checkedInstitutions"></institutionfilter>
+			</div>
+		</div>
+		<div class="themes--filter--wrapper">
+			<div class="filter--headline--wrapper">
+				<a href="#">
+					Themen
+				</a>
+			</div>
+		</div>
+		<div class="kind-of-event--filter--wrapper">
+			<div class="filter--headline--wrapper">
+				<a href="#">
+					Art der Veranstaltung
+				</a>
+			</div>
+		</div>
+<!-- 		<div class="languages--filter--wrapper">
+			<a href="#">
+				Sprachen
+			</a>
+		</div> -->
+	</div>
 	{% for entry in craft.entries.section('program').type('institution').find() %}
-		<article>
+		<article v-if="menuOpen">
 			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
 			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %} {{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
 

@@ -1,20 +1,24 @@
-
-var test = require('module');
+//require
 window.axios = require('axios');
 
+
+//import
 import Vue from 'vue'
-import Hello from './components/Hello.vue'
-import CategoryList from './components/CategoryList.vue'
+import ThemeList from './components/ThemeList.vue'
+import InstitutionFilter from './components/InstitutionFilter.vue'
 
-// test();
-console.log('Hallo Internet!');
 
+//vue main app instance
 var vueApp = new Vue({
     delimiters: ['${', '}'],
     el: '#vue-app',
-    components: {Hello:Hello, categorylist:CategoryList},
+    components: {
+        themelist:ThemeList,
+        institutionfilter:InstitutionFilter
+    },
     data: {
         menuOpen: false,
+        checkedInstitutions: []
     },
     methods: {
         toggle: function() {

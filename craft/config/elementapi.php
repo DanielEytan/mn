@@ -27,6 +27,19 @@ return [
                 },
             ];
         },
+
+        'institution.json' => [
+            'elementType' => ElementType::Entry,
+            'criteria' => ['section' => 'program', 'type' =>'institution'],
+            'transformer' => function(EntryModel $entry) {
+                return [
+                    'title' => $entry->title,
+                    'id' => $entry->id,
+                    'url' => $entry->url,
+                    'jsonUrl' => UrlHelper::getUrl("institution/{$entry->id}.json")
+                ];
+            },
+        ],
         'themes.json' => [
             'elementType' => ElementType::Category,
             'criteria' => ['group' => 'themes'],

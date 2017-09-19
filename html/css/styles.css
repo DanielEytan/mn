@@ -73,6 +73,40 @@ header#header {
 .institutions--overview_child {
   margin-bottom: 50px; }
 
+.filter--wrapper {
+  height: auto;
+  width: 100%;
+  background: blue;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 30px;
+  margin-bottom: 20px; }
+  .filter--wrapper > div {
+    width: 33.1%;
+    background: yellow;
+    min-height: 50px;
+    display: inline-block;
+    float: left;
+    border: 1px solid;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .filter--wrapper div.filter--headline--wrapper {
+    min-height: 50px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
 body {
   margin: 20px 10vw; }
 
