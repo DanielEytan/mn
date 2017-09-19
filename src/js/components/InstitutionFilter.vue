@@ -5,7 +5,6 @@
         <li class="list-group-item" v-for="entry in institutions">
           <input type="checkbox" v-bind:id="'program-input-'+entry.id" v-bind:value="entry.title" v-model="internalCheckedInstitutions">
           <label v-bind:for="entry.title">{{ entry.title }}</label>
-
         </li >
       </ul>
       <span>Checked Museums: {{ internalCheckedInstitutions }}</span>
@@ -43,7 +42,7 @@ module.exports = {
       let vm = this;
       axios.get('institution.json')
         .then(response => {
-          this.institutions = response.data.data
+          this.institutions = response.data.data;
         })
     }
   }

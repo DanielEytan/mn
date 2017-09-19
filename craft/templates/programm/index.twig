@@ -44,7 +44,7 @@
 		</div> -->
 	</div>
 	{% for entry in craft.entries.section('program').type('institution').find() %}
-		<article v-if="menuOpen">
+		<article v-if="checkedInstitutions.includes('{{ entry.title }}')">
 			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
 			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %} {{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
 

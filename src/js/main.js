@@ -25,4 +25,5 @@ var vueApp = new Vue({
             this.menuOpen = !this.menuOpen;
         }
     },
+    
 });
