@@ -11500,7 +11500,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11509,7 +11509,7 @@
 /* 26 */
 /***/ (function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	//
 	//
@@ -11518,8 +11518,25 @@
 
 
 	module.exports = {
+	  name: 'programlist',
 	  data: function data() {
-	    return {};
+	    return {
+	      program: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+	  },
+
+	  methods: {
+	    getEntries: function getEntries() {
+	      var _this2 = this;
+
+	      var _this = this;
+	      axios.get('program.json').then(function (response) {
+	        _this2.program = response.data.data;
+	      });
+	    }
 	  }
 	};
 
@@ -11528,7 +11545,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('p')
+	  return _c('p', [_vm._v("Hola")])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
