@@ -29,14 +29,15 @@
 							<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
 							{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
 						</ul>
-				  </transition>
+				  	</transition>
 
 				</nav>
 			</header>
 
 			<main id="content" role="main">
-				<Hello></Hello>
-				<categorylist></categorylist>
+{# 				<Hello></Hello>
+				<categorylist></categorylist> #}
+				{# <map></map> #}
 				{% block content %}
 					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
@@ -48,6 +49,7 @@
 			</footer>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U&callback=initMap"></script>
 	
 	<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
 
@@ -57,5 +59,7 @@
 			document.getElementById("header").classList.toggle("active");
 		}
 	</script>
+
+
 </body>
 </html>
