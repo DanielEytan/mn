@@ -96,9 +96,11 @@
 	        checkedInstitutions: [],
 	        checkedThemes: [],
 	        checkedEvents: [],
+	        checkedLanguages: [],
 	        institutionsAPITitle: "institution",
 	        themesAPITitle: "themes",
-	        eventsAPITitle: "events"
+	        eventsAPITitle: "events",
+	        languagesAPITitle: "languages"
 	    },
 	    methods: {
 	        toggle: function toggle() {

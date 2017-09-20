@@ -46,15 +46,22 @@
 				<checkboxfilter v-bind:value-name="eventsAPITitle" v-model="checkedEvents" v-on:init-possible-values="checkedEvents = $event"></checkboxfilter>
 			</div>
 		</div>
-<!-- 		<div class="languages--filter--wrapper">
-			<a href="#">
-				Sprachen
-			</a>
-		</div> -->
+		<div class="languages--filter--wrapper">
+			<div class="filter--headline--wrapper">
+				<a href="#">
+					Sprachen
+				</a>
+			</div>
+			<div class="filter--list--wrapper">
+			  <p>Parent value: ${checkedLanguages}</p>
+				<checkboxfilter v-bind:value-name="languagesAPITitle" v-model="checkedLanguages" v-on:init-possible-values="checkedLanguages = $event"></checkboxfilter>
+			</div>
+		</div>
 	</div>
 
 	{% for entry in craft.entries.section('program').type('institution').find() %}
 
+	<!-- themes -->
 		{% set allThemesForEntry = '' %}
 		{% for entry in entry.getDescendants(2) %}
 	    	{% for theme in entry.themes %}
@@ -66,6 +73,7 @@
   	<p>{{allThemesForEntry}}</p>
   	<br>
 
+  	<!-- kind of events -->
 		{% set allKindsOfEventsForEntry = '' %}
 		{% for entry in entry.getDescendants(2) %}
 	    	{% for kindOfEvent in entry.kindOfEvent %}
@@ -77,10 +85,26 @@
   	<p>{{allKindsOfEventsForEntry}}</p>
   	<br>
 
-		<article v-if="(  
-		( checkedInstitutions.includes('{{ entry.title }}') )
-		&& ( _.intersectionWith(checkedThemes,[{{ allThemesForEntry }}] , _.isEqual).length )
-		&& ( _.intersectionWith(checkedEvents,[{{ allKindsOfEventsForEntry }}] , _.isEqual).length ) )">
+  	<!-- languages -->
+		{% set allLanguagesForEntry = '' %}
+		{% for entry in entry.getDescendants(2) %}
+	    	{% for language in entry.languages %}
+	    	    {% set allLanguagesForEntry = allLanguagesForEntry ~ '"' ~ language.title ~ '",' %}
+	    	{% endfor %}
+  	{% endfor %}
+
+  	{% set allLanguagesForEntry = allLanguagesForEntry | trim(',','right')  %}
+  	<p>{{allLanguagesForEntry}}</p>
+  	<br>
+
+
+
+		<article v-if="(
+		( checkedInstitutions.includes('{{ entry.title }}') || (checkedInstitutions.length == 0) )
+		&& ( _.intersectionWith(checkedThemes,[{{ allThemesForEntry }}] , _.isEqual).length || (checkedThemes.length == 0) )
+		&& ( _.intersectionWith(checkedEvents,[{{ allKindsOfEventsForEntry }}] , _.isEqual).length || (checkedEvents.length == 0) )
+		&& ( _.intersectionWith(checkedLanguages,[{{ allLanguagesForEntry }}] , _.isEqual).length || (checkedLanguages.length == 0) )
+		)">
 			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
 			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %} {{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
 
@@ -93,20 +117,28 @@
 			<ul class="program-list" >
 			{% for entry in entry.getDescendants(2) %}
 
+				<!-- themes -->
 				{% set themesOfEvent = '' %}
 	    	{% for theme in entry.themes %}
 	    	    {% set themesOfEvent = themesOfEvent ~ '"' ~ theme.title ~ '",' %}
 	    	{% endfor %}
 
+	    	<!-- kind of events -->
 				{% set kindOfEventOfEvent = '' %}
 	    	{% for kindOfEvent in entry.kindOfEvent %}
 	    	    {% set kindOfEventOfEvent = kindOfEventsOfEvent ~ '"' ~ kindOfEvent.title ~ '",' %}
 	    	{% endfor %}
 
+	    	<!-- languages -->
+				{% set languageOfEvent = '' %}
+	    	{% for language in entry.languages %}
+	    	    {% set languageOfEvent = languagesOfEvent ~ '"' ~ language.title ~ '",' %}
+	    	{% endfor %}
 
 				<li v-if="(
-				( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length )
-				&& ( _.intersectionWith(checkedEvents,[{{ kindOfEventOfEvent }}] , _.isEqual).length )
+				( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length || (checkedThemes.length == 0) )
+				&& ( _.intersectionWith(checkedEvents,[{{ kindOfEventOfEvent }}] , _.isEqual).length || (checkedEvents.length == 0) )
+				&& ( _.intersectionWith(checkedLanguages,[{{ languageOfEvent }}] , _.isEqual).length || (checkedLanguages.length == 0) )
 				)" id="program">
 			    <h2>{{ entry.title }}</h2>
 			    {% for time in entry.time %}
