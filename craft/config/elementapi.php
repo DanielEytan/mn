@@ -60,5 +60,15 @@ return [
                 ];
             },
         ],
+        'languages.json' => [
+            'elementType' => ElementType::Tag,
+            'criteria' => ['group' => 'languages'],
+            'transformer' => function(TagModel $entry) {
+                return [
+                    'title' => $entry->title,
+                    'id' => $entry->id
+                ];
+            },
+        ],
     ]
 ];

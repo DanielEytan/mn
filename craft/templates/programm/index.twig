@@ -20,7 +20,7 @@
 			</div>
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedInstitutions}</p>
-			  <checkboxfilter v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions" v-on:init-possible-values="checkedInstitutions = $event"></checkboxfilter>
+			  <checkboxfilter v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions"></checkboxfilter>
 				<!-- <institutionfilter v-model="checkedInstitutions" v-on:init-institutions="checkedInstitutions = $event"></institutionfilter> -->
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 			</div>
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedThemes}</p>
-				<checkboxfilter v-bind:value-name="themesAPITitle" v-model="checkedThemes" v-on:init-possible-values="checkedThemes = $event"></checkboxfilter>
+				<checkboxfilter v-bind:value-name="themesAPITitle" v-model="checkedThemes"></checkboxfilter>
 			</div>
 		</div>
 		<div class="kind-of-event--filter--wrapper">
@@ -43,7 +43,7 @@
 			</div>
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedEvents}</p>
-				<checkboxfilter v-bind:value-name="eventsAPITitle" v-model="checkedEvents" v-on:init-possible-values="checkedEvents = $event"></checkboxfilter>
+				<checkboxfilter v-bind:value-name="eventsAPITitle" v-model="checkedEvents"></checkboxfilter>
 			</div>
 		</div>
 		<div class="languages--filter--wrapper">
@@ -54,7 +54,7 @@
 			</div>
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedLanguages}</p>
-				<checkboxfilter v-bind:value-name="languagesAPITitle" v-model="checkedLanguages" v-on:init-possible-values="checkedLanguages = $event"></checkboxfilter>
+				<checkboxfilter v-bind:value-name="languagesAPITitle" v-model="checkedLanguages"></checkboxfilter>
 			</div>
 		</div>
 	</div>
@@ -70,8 +70,7 @@
   	{% endfor %}
 
   	{% set allThemesForEntry = allThemesForEntry | trim(',','right')  %}
-  	<p>{{allThemesForEntry}}</p>
-  	<br>
+
 
   	<!-- kind of events -->
 		{% set allKindsOfEventsForEntry = '' %}
@@ -82,8 +81,6 @@
   	{% endfor %}
 
   	{% set allKindsOfEventsForEntry = allKindsOfEventsForEntry | trim(',','right')  %}
-  	<p>{{allKindsOfEventsForEntry}}</p>
-  	<br>
 
   	<!-- languages -->
 		{% set allLanguagesForEntry = '' %}
@@ -94,8 +91,7 @@
   	{% endfor %}
 
   	{% set allLanguagesForEntry = allLanguagesForEntry | trim(',','right')  %}
-  	<p>{{allLanguagesForEntry}}</p>
-  	<br>
+
 
 
 
@@ -136,9 +132,9 @@
 	    	{% endfor %}
 
 				<li v-if="(
-				( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length || (checkedThemes.length == 0) )
-				&& ( _.intersectionWith(checkedEvents,[{{ kindOfEventOfEvent }}] , _.isEqual).length || (checkedEvents.length == 0) )
-				&& ( _.intersectionWith(checkedLanguages,[{{ languageOfEvent }}] , _.isEqual).length || (checkedLanguages.length == 0) )
+				( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length || (checkedThemes.length === 0) )
+				&& ( _.intersectionWith(checkedEvents,[{{ kindOfEventOfEvent }}] , _.isEqual).length || (checkedEvents.length === 0) )
+				&& ( _.intersectionWith(checkedLanguages,[{{ languageOfEvent }}] , _.isEqual).length || (checkedLanguages.length === 0) )
 				)" id="program">
 			    <h2>{{ entry.title }}</h2>
 			    {% for time in entry.time %}
