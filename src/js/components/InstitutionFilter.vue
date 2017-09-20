@@ -43,10 +43,10 @@ module.exports = {
       axios.get('institution.json')
         .then(response => {
           this.institutions = response.data.data;
-          this.changeParentCheckedInstitutions();
+          this.initInstitutions();
         })
     },
-    changeParentCheckedInstitutions () {
+    initInstitutions () {
       this.$emit('init-institutions', _.map(this.institutions,'title'));
     }
   }

@@ -50,5 +50,15 @@ return [
                 ];
             },
         ],
+        'events.json' => [
+            'elementType' => ElementType::Category,
+            'criteria' => ['group' => 'kindOfEvent'],
+            'transformer' => function(CategoryModel $entry) {
+                return [
+                    'title' => $entry->title,
+                    'id' => $entry->id
+                ];
+            },
+        ],
     ]
 ];

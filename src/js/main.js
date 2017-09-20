@@ -5,6 +5,8 @@ window.axios = require('axios');
 import Vue from 'vue'
 import ThemeList from './components/ThemeList.vue'
 import InstitutionFilter from './components/InstitutionFilter.vue'
+import CheckboxFilter from './components/CheckboxFilter.vue'
+import ProgramList from './components/ProgramList.vue'
 
 
 //vue main app instance
@@ -13,11 +15,18 @@ var vueApp = new Vue({
     el: '#vue-app',
     components: {
         themelist:ThemeList,
-        institutionfilter:InstitutionFilter
+        institutionfilter:InstitutionFilter,
+        checkboxfilter:CheckboxFilter,
+        programlist: ProgramList
     },
     data: {
         menuOpen: false,
-        checkedInstitutions: []
+        checkedInstitutions: [],
+        checkedThemes: [],
+        checkedEvents: [],
+        institutionsAPITitle: "institution",
+        themesAPITitle: "themes",
+        eventsAPITitle: "events"
     },
     methods: {
         toggle: function() {
