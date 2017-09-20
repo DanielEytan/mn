@@ -11089,7 +11089,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11142,12 +11142,16 @@
 
 	  methods: {
 	    getEntries: function getEntries() {
-	      var _this = this;
+	      var _this2 = this;
 
-	      var vm = this;
+	      var _this = this;
 	      axios.get('institution.json').then(function (response) {
-	        _this.institutions = response.data.data;
+	        _this2.institutions = response.data.data;
+	        _this2.changeParentCheckedInstitutions();
 	      });
+	    },
+	    changeParentCheckedInstitutions: function changeParentCheckedInstitutions() {
+	      this.$emit('init-institutions', _.map(this.institutions, 'title'));
 	    }
 	  }
 	};

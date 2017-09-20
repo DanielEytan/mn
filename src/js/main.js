@@ -1,7 +1,6 @@
 //require
 window.axios = require('axios');
 
-
 //import
 import Vue from 'vue'
 import ThemeList from './components/ThemeList.vue'

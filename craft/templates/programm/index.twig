@@ -20,7 +20,7 @@
 			</div>
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedInstitutions}</p>
-				<institutionfilter v-model="checkedInstitutions"></institutionfilter>
+				<institutionfilter v-model="checkedInstitutions" v-on:init-institutions="checkedInstitutions = $event"></institutionfilter>
 			</div>
 		</div>
 		<div class="themes--filter--wrapper">

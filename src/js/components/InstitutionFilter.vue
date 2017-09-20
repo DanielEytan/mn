@@ -39,11 +39,15 @@ module.exports = {
   },
   methods: {
     getEntries () {
-      let vm = this;
+      let _this = this;
       axios.get('institution.json')
         .then(response => {
           this.institutions = response.data.data;
+          this.changeParentCheckedInstitutions();
         })
+    },
+    changeParentCheckedInstitutions () {
+      this.$emit('init-institutions', _.map(this.institutions,'title'));
     }
   }
 }
