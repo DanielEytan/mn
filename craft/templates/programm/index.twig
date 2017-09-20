@@ -66,7 +66,21 @@
   	<p>{{allThemesForEntry}}</p>
   	<br>
 
-		<article v-if="(  checkedInstitutions.includes('{{ entry.title }}') && ( _.intersectionWith(checkedThemes,[{{ allThemesForEntry }}] , _.isEqual).length ) )">
+		{% set allKindsOfEventsForEntry = '' %}
+		{% for entry in entry.getDescendants(2) %}
+	    	{% for kindOfEvent in entry.kindOfEvent %}
+	    	    {% set allKindsOfEventsForEntry = allKindsOfEventsForEntry ~ '"' ~ kindOfEvent.title ~ '",' %}
+	    	{% endfor %}
+  	{% endfor %}
+
+  	{% set allKindsOfEventsForEntry = allKindsOfEventsForEntry | trim(',','right')  %}
+  	<p>{{allKindsOfEventsForEntry}}</p>
+  	<br>
+
+		<article v-if="(  
+		( checkedInstitutions.includes('{{ entry.title }}') )
+		&& ( _.intersectionWith(checkedThemes,[{{ allThemesForEntry }}] , _.isEqual).length )
+		&& ( _.intersectionWith(checkedEvents,[{{ allKindsOfEventsForEntry }}] , _.isEqual).length ) )">
 			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
 			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %} {{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
 
@@ -84,8 +98,16 @@
 	    	    {% set themesOfEvent = themesOfEvent ~ '"' ~ theme.title ~ '",' %}
 	    	{% endfor %}
 
+				{% set kindOfEventOfEvent = '' %}
+	    	{% for kindOfEvent in entry.kindOfEvent %}
+	    	    {% set kindOfEventOfEvent = kindOfEventsOfEvent ~ '"' ~ kindOfEvent.title ~ '",' %}
+	    	{% endfor %}
 
-				<li v-if="( ( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length ) )" id="program">
+
+				<li v-if="(
+				( _.intersectionWith(checkedThemes,[{{ themesOfEvent }}] , _.isEqual).length )
+				&& ( _.intersectionWith(checkedEvents,[{{ kindOfEventOfEvent }}] , _.isEqual).length )
+				)" id="program">
 			    <h2>{{ entry.title }}</h2>
 			    {% for time in entry.time %}
 			    	 <time>

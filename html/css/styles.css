@@ -50,6 +50,8 @@ header#header {
 
 .program--overview .program-list li#program {
   position: relative; }
+  .program--overview .program-list li#program h2 {
+    font-weight: bold; }
   .program--overview .program-list li#program ul li {
     font-size: .8em;
     background: #e6e6e6;
