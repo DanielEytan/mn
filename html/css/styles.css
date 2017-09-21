@@ -53,10 +53,15 @@ footer#footer {
   padding-top: 1em; }
 
 .program--overview .program-list li#program {
-  position: relative; }
+  position: relative;
+  background: #e6e6e6;
+  padding: 1em; }
+  .program--overview .program-list li#program h2 {
+    margin-bottom: .5em; }
   .program--overview .program-list li#program ul li {
     font-size: .8em;
-    background: #e6e6e6;
+    background: #1e1eff;
+    color: white;
     padding: .2em .3em;
     display: inline;
     margin-right: .25em; }
@@ -66,7 +71,8 @@ footer#footer {
 
 .program--overview .program-list .save-element {
   position: absolute;
-  right: 0;
+  right: 1em;
+  top: 1em;
   background: grey;
   width: 30px;
   height: 30px;
