@@ -8,8 +8,6 @@ return [
             'criteria' => ['section' => 'program','type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
 
- 
-
                 //get descendants
                 $events = $entry->getDescendants(2);
                 $eventsInfo = [];
@@ -52,6 +50,24 @@ return [
                         'title' => $event->title,
                         'id' => $event->id,
                         'time' => $timeBlocks,
+                        'themes' => array_map( function (CategoryModel $category) {
+                        return [
+                                'id' => $category->id,
+                                'title' => $category->title
+                            ];
+                        }, $event->themes->find()),
+                        'kindOfEvent' => array_map( function (CategoryModel $category) {
+                        return [
+                                'id' => $category->id,
+                                'title' => $category->title
+                            ];
+                        }, $event->kindOfEvent->find()),
+                        'languages' => array_map( function (TagModel $tag) {
+                            return [
+                                'id' => $tag->id,
+                                'title' => $tag->title
+                            ];
+                        }, $event->languages->find()),
                     ];
                 }
 
@@ -75,24 +91,6 @@ return [
                             'title' => $category->title
                         ];
                     }, $entry->shuttleLine->find()),
-                    'kindOfEvent' => array_map( function (CategoryModel $category) {
-                        return [
-                            'id' => $category->id,
-                            'title' => $category->title
-                        ];
-                    }, $entry->kindOfEvent->find()),
-                    'themes' => array_map( function (CategoryModel $category) {
-                        return [
-                            'id' => $category->id,
-                            'title' => $category->title
-                        ];
-                    }, $entry->themes->find()),
-                    'languages' => array_map( function (TagModel $tag) {
-                        return [
-                            'id' => $tag->id,
-                            'title' => $tag->title
-                        ];
-                    }, $entry->languages->find()),
                 ];
             },
         ],

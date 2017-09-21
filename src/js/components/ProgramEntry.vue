@@ -15,6 +15,7 @@
         <ul class="program-list" >
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent"></programevent>
         </ul>
+        
 
       </article>
     </div>
