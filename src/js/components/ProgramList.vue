@@ -1,6 +1,6 @@
 <template>
   <div class="program--list">
-    <programentry v-for="entry in program" :key="entry.id" :entry="entry"></programentry>
+    <programentry v-for="entry in program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programentry>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import ProgramEntry from './ProgramEntry.vue'
 
 module.exports = {
   name: 'programlist',
+  props: ['checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
   components: {
     programentry: ProgramEntry
   },

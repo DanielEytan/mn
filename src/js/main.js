@@ -1,5 +1,6 @@
 //require
 window.axios = require('axios');
+window._ = require('lodash');
 
 //import
 import Vue from 'vue'
@@ -46,3 +47,5 @@ Vue.filter('formatDate', function(value) {
     return moment(String(value)).format("HH:mm")
   }
 });
+
+Vue.prototype._ = _;
