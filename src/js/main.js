@@ -8,6 +8,8 @@ import InstitutionFilter from './components/InstitutionFilter.vue'
 import CheckboxFilter from './components/CheckboxFilter.vue'
 import ProgramList from './components/ProgramList.vue'
 import saveProgram from './components/SaveProgram.vue'
+import savedLink from './components/SavedLink.vue'
+
 
 
 
@@ -20,7 +22,9 @@ var vueApp = new Vue({
         institutionfilter:InstitutionFilter,
         checkboxfilter:CheckboxFilter,
         programlist: ProgramList,
-        saveprogram: saveProgram
+        saveprogram: saveProgram,
+        savedlink: savedLink
+
     },
     data: {
         menuOpen: false,

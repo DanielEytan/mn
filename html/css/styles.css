@@ -46,24 +46,20 @@ body {
   line-height: 1.2em; }
 
 header#header {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  position: relative; }
 
 footer#footer {
   border-top: 1px solid;
   padding-top: 1em; }
 
 .program--overview .program-list li#program {
-<<<<<<< HEAD
   position: relative;
   background: #e6e6e6;
   padding: 1em; }
   .program--overview .program-list li#program h2 {
-    margin-bottom: .5em; }
-=======
-  position: relative; }
-  .program--overview .program-list li#program h2 {
+    margin-bottom: .5em;
     font-weight: bold; }
->>>>>>> 54568fdf6fd0f90c870dbc125f303b2b720b328b
   .program--overview .program-list li#program ul li {
     font-size: .8em;
     background: #1e1eff;
@@ -147,6 +143,11 @@ footer#footer {
 #map {
   height: 400px;
   margin-bottom: 50px; }
+
+.saved-links {
+  position: absolute;
+  right: 0;
+  top: 0; }
 
 body {
   margin: 20px 10vw; }
