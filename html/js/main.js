@@ -73,6 +73,10 @@
 
 	var _ProgramList2 = _interopRequireDefault(_ProgramList);
 
+	var _SaveProgram = __webpack_require__(28);
+
+	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
@@ -89,7 +93,8 @@
 	        themelist: _ThemeList2.default,
 	        institutionfilter: _InstitutionFilter2.default,
 	        checkboxfilter: _CheckboxFilter2.default,
-	        programlist: _ProgramList2.default
+	        programlist: _ProgramList2.default,
+	        saveprogram: _SaveProgram2.default
 	    },
 	    data: {
 	        menuOpen: false,
@@ -11558,11 +11563,131 @@
 	}
 
 /***/ }),
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(29)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(31),
+	  /* template */
+	  __webpack_require__(32),
+	  /* scopeId */
+	  "data-v-fb074006",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/SaveProgram.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] SaveProgram.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-fb074006", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-fb074006", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(30);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("6c36ccd7", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb074006\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb074006\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	   name: 'saveProgram',
+	   data: function data() {
+	      return {
+	         text: 'Save'
+	      };
+	   },
+	   methods: {
+	      save: function save(event) {
+	         // alert('saved')
+	         localStorage.setItem('event:', 'text');
+	      }
+	   }
+	};
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "save-element",
+	    on: {
+	      "click": _vm.save
+	    }
+	  }, [_vm._v(_vm._s(_vm.text))])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-fb074006", module.exports)
+	  }
+	}
+
+/***/ }),
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 

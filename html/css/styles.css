@@ -48,6 +48,10 @@ body {
 header#header {
   margin-bottom: 2em; }
 
+footer#footer {
+  border-top: 1px solid;
+  padding-top: 1em; }
+
 .program--overview .program-list li#program {
   position: relative; }
   .program--overview .program-list li#program h2 {
@@ -72,8 +76,29 @@ header#header {
   .program--overview .program-list .save-element.saved {
     background: red; }
 
-.institutions--overview_child {
+.institutions .google-map[data-v-87e9ef04] {
+  width: 100%;
+  height: 800px;
   margin-bottom: 50px; }
+
+@media screen and (min-width: 768px) {
+  .institutions--overview .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .institutions--overview .flex-container article {
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%;
+      margin-bottom: 30px; } }
+
+@media screen and (min-width: 768px) {
+  .institutions--overview .flex-container article {
+    -ms-flex: 0 1 32%;
+    flex: 0 1 32%;
+    margin-bottom: 60px; } }
 
 .filter--wrapper {
   height: auto;
@@ -108,6 +133,10 @@ header#header {
     justify-content: center;
     -ms-flex-align: center;
     align-items: center; }
+
+#map {
+  height: 400px;
+  margin-bottom: 50px; }
 
 body {
   margin: 20px 10vw; }

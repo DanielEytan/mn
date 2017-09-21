@@ -3,34 +3,13 @@
 
 
 {% block content %}
-	<article>
-			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
-			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %} {{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
+	{% if entry.type == 'institution' %}
+	
+		{% include '_includes/institution-single' %}
 
-			<p>Essen: {{ entry.food }}</p><br>
+	{% elseif entry.type == 'Event' %}
 
-			<h2>{{ entry.programmTitle }}</h2>
-			{{ entry.programmText }}
-			<br>
-			<h3>Programm</h3><br>
-			<ul>
-			{% for entry in entry.getDescendants(2) %}
-				<li>
-			    <h2>{{ entry.title }}</h2>
-			    {% for time in entry.time %}
-			    	 <time>
-			        {% if time.type == "setTimes" %}
-						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-					{% elseif time.type == "continuous" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-					{% elseif time.type == "iterating" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-			        {% endif %}
-			   		</time>
-			    {% endfor %}
-				</li><br>
-
-			{% endfor %}
-		</ul>
-		</article>
+		{% include '_includes/program-single' %}
+		
+	{% endif %}
 {% endblock %}

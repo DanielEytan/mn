@@ -29,14 +29,15 @@
 							<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
 							{# <li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Informationen</a></li> #}
 						</ul>
-				  </transition>
+				  	</transition>
 
 				</nav>
 			</header>
 
 			<main id="content" role="main">
-				${menuOpen}
-
+				{# <Hello></Hello>
+				<categorylist></categorylist> #}
+				{# <map></map> #}
 				{% block content %}
 					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
@@ -44,21 +45,43 @@
 			</main>
 
 			<footer id="footer">
-				Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
+				<div class="sponsors">
+					{{ sponsores.textForSponsors }}
+					<div class="flex-container">
+						{% for sponsor in sponsores.sponsorBlocks %}
+						    <div>
+						    	<a href="{{ sponsor.sponsorLink }}">
+						    		<h1>{{ sponsor.sponsorName }}</h1>
+						    		{# {% if sponsor.logo | length %}
+							    		{% for img in logo.sponsor %}
+							    	    <figure>
+							    	    	<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+							    	    </figure>
+							    		{% endfor %}
+						    		{% endif %} #}
+						    	</a>
+						    	
+						    </div>
+						{% endfor %}
+					</div>
+				</div>
+				Copyright {{ now.year }}
 			</footer>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U&callback=initMap"></script>
 	
-	<!-- lodash -->
 	<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
-	<!-- vue -->
+
 	<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
-	<!-- main -->
+
 	<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
 	<script>
 		function menu() {
 			document.getElementById("header").classList.toggle("active");
 		}
 	</script>
+
+
 </body>
 </html>

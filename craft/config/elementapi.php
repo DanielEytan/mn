@@ -134,5 +134,20 @@ return [
                 ];
             },
         ],
+        'locations.json' => [
+			'elementType' => ElementType::Entry,
+			// 'paginate' => false,
+			'criteria' => [
+				'section' => 'program',
+				'type' => 'institution'
+			],
+			'transformer' => function(EntryModel $entry) {
+				return [
+					'title' => $entry->title,
+					'lat' => $entry->map->lat,
+					'lng' => $entry->map->lng,
+				];
+			},
+		]
     ]
 ];
