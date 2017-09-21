@@ -3,6 +3,9 @@
 		.program-list {
 			li#program {
 				position: relative;
+				h2 {
+					font-weight: bold;
+				}
 				ul li {
 					font-size: .8em;
 					background: rgb(230,230,230);
