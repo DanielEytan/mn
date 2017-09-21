@@ -10,6 +10,7 @@ return [
                 return [
                     'title' => $entry->title,
                     'url' => $entry->url,
+                    'kindOfEvent' => $entry->kindOfEvent->title,
                     'jsonUrl' => UrlHelper::getUrl("program/{$entry->id}.json")
                 ];
             },
@@ -39,19 +40,16 @@ return [
         ],
         'locations.json' => [
 			'elementType' => ElementType::Entry,
-			'paginate' => false,
+			// 'paginate' => false,
 			'criteria' => [
-				'group' => 'themes',
+				'section' => 'program',
 				'type' => 'institution'
 			],
 			'transformer' => function(EntryModel $entry) {
 				return [
-				'title' => $entry->title,
-				'lat' => $entry->map->lat,
-				'lng' => $entry->map->lng,
-				
-				// 'lat' => $entry->lat,
-				// 'lng' => $entry->lng
+					'title' => $entry->title,
+					'lat' => $entry->map->lat,
+					'lng' => $entry->map->lng,
 				];
 			},
 		]
