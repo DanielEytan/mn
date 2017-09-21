@@ -31,6 +31,13 @@ module.exports = {
     presets: ['es2015'],
     plugins: ['transform-runtime']
   },
+  // /app/js/webpack.config.js
+  plugins: [
+      
+      // Fixes warning in moment-with-locales.min.js 
+      //   Module not found: Error: Can't resolve './locale' in ...
+      new webpack.IgnorePlugin(/\.\/locale$/)
+  ],
   resolve: {
     modulesDirectories: ['./src/js', 'node_modules'],
     alias: {

@@ -8,7 +8,7 @@ import InstitutionFilter from './components/InstitutionFilter.vue'
 import CheckboxFilter from './components/CheckboxFilter.vue'
 import ProgramList from './components/ProgramList.vue'
 import saveProgram from './components/SaveProgram.vue'
-
+import moment from 'moment.min.js'
 
 
 //vue main app instance
@@ -39,4 +39,10 @@ var vueApp = new Vue({
         }
     },
     
+});
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format("HH:mm")
+  }
 });
