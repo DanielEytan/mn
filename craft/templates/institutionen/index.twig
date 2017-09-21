@@ -1,15 +1,23 @@
 {% extends "_layout" %}
 {% set title = "News" %}
-
-{% block content %}
-	<section class="institutions institutions--overview">
-	<h1>Programm</h1>
-
-	{% for entry in craft.entries.section('program').type('institution').find() %}
-		<article class="institutions--overview_child">
-			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
-			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }}{% endfor %} – {{ entry.journey }}</p>
-		</article>
-	{% endfor %}
-	</section>
-{% endblock %}
+	{% block content %}
+		<section class="institutions institutions--overview">
+			<h1>Institutionen</h1>
+			<div class="map-container">
+				<googlemap name="googleMap"></googlemap>
+			</div>
+			<div class="flex-container">
+			{% for entry in craft.entries.section('program').type('institution').find() %}
+				<article class="institutions--overview_child">
+					{% for img in entry.imgInstitution %}
+						<figure>
+							<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+						</figure>
+					{% endfor %}
+					<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
+					<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }}{% endfor %} – {{ entry.journey }}</p>
+				</article>
+			{% endfor %}
+			</div>
+		</section>
+	{% endblock %}
