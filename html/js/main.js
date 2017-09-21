@@ -11642,7 +11642,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11652,6 +11652,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	var _getIterator2 = __webpack_require__(146);
+
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
 	var _ProgramEvent = __webpack_require__(31);
 
@@ -11668,14 +11672,72 @@
 	  data: function data() {
 	    return {
 	      programEntryIsVisible: true
+	      // programEntryIsVisible: this.entry.events.length,
+	      // counter: 0,
+	      // children: this.entry.events.length,
+	      // shouted:0
 	    };
 	  },
 	  methods: {
-	    showProgramEntry: function showProgramEntry() {
-	      this.programEntryIsVisible = true;
+	    // incrementTotal: function () {
+	    //   this.counter++
+	    //   this.hasChildrenCheck();
+	    // },
+	    // show: function () {
+	    //   this.programEntryIsVisible = true;
+	    //   this.counter = 0;
+	    // },
+	    // hasChildrenCheck: function () {
+	    //   if( (this.counter % this.entry.events.length) === 0) {
+	    //     this.counter = 0;
+	    //     this.programEntryIsVisible = false
+	    //   }
+	    // }
+	  },
+	  computed: {
+	    showProgramEvents: function showProgramEvents() {
+	      var _iteratorNormalCompletion = true;
+	      var _didIteratorError = false;
+	      var _iteratorError = undefined;
+
+	      try {
+	        for (var _iterator = (0, _getIterator3.default)(this.entry.events), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	          event = _step.value;
+	        }
+	        //logical condition for every event...
+
+
+	        // var programEventIsVisible = false
+
+	        // var inCheckedInstitutions =  this.checkedInstitutions.includes(this.entry.title) || (this.checkedInstitutions.length == 0)
+
+	        // var inCheckedThemes = this.checkIntersectionForFilters(this.checkedThemes, this.programevent.themes);
+
+	        // var inCheckedKindOfEvents = this.checkIntersectionForFilters(this.checkedEvents, this.programevent.kindOfEvent);
+
+	        // var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, this.programevent.languages);
+
+	        // programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+
+	        // return programEventIsVisible;
+	      } catch (err) {
+	        _didIteratorError = true;
+	        _iteratorError = err;
+	      } finally {
+	        try {
+	          if (!_iteratorNormalCompletion && _iterator.return) {
+	            _iterator.return();
+	          }
+	        } finally {
+	          if (_didIteratorError) {
+	            throw _iteratorError;
+	          }
+	        }
+	      }
 	    }
 	  }
 	}; //
+	//
 	//
 	//
 	//
@@ -11772,7 +11834,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11796,7 +11858,9 @@
 	    saveprogram: _SaveProgram2.default
 	  },
 	  data: function data() {
-	    return {};
+	    return {
+	      programEventIsVisible: false
+	    };
 	  },
 	  methods: {
 	    checkIntersectionForFilters: function checkIntersectionForFilters(checkedSelection, eventSpecificEntries) {
@@ -11818,8 +11882,20 @@
 	      var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, this.programevent.languages);
 
 	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+
+	      this.programEventIsVisible = programEventIsVisible;
+
 	      return programEventIsVisible;
 	    }
+	  },
+	  watch: {
+	    // programEventIsVisible: function () {
+	    //   if(!this.programEventIsVisible) {
+	    //     this.$emit('increment');
+	    //   } else {
+	    //     this.$emit('show');
+	    //   }
+	    // }
 	  }
 	}; //
 	//
@@ -11995,7 +12071,13 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return (_vm.showProgramEvent) ? _c('li', {
+	  return _c('li', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.showProgramEvent),
+	      expression: "showProgramEvent"
+	    }],
 	    attrs: {
 	      "id": "program"
 	    }
@@ -12013,7 +12095,7 @@
 	    staticClass: "languages"
 	  }, [_c('h3', [_vm._v("Sprachen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('li', [_vm._v(_vm._s(language.title))])
-	  }))])]) : _vm._e(), _c('br'), _vm._v(" "), _c('saveprogram')], 2) : _vm._e()
+	  }))])]) : _vm._e(), _c('br'), _vm._v(" "), _c('saveprogram')], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -12030,7 +12112,14 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--entry"
-	  }, [(_vm.programEntryIsVisible) ? _c('article', [_c('h1', [_c('a', {
+	  }, [_c('article', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.programEntryIsVisible),
+	      expression: "programEntryIsVisible"
+	    }]
+	  }, [_c('h1', [_c('a', {
 	    attrs: {
 	      "href": _vm.entry.url
 	    }
@@ -12054,7 +12143,7 @@
 	        "checked-languages": _vm.checkedLanguages
 	      }
 	    })
-	  }))]) : _vm._e()])
+	  }))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -33197,6 +33286,77 @@
 	}.call(this));
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(44)(module)))
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(147), __esModule: true };
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(99);
+	__webpack_require__(86);
+	module.exports = __webpack_require__(148);
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var anObject = __webpack_require__(72);
+	var get = __webpack_require__(149);
+	module.exports = __webpack_require__(67).getIterator = function (it) {
+	  var iterFn = get(it);
+	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
+	  return anObject(iterFn.call(it));
+	};
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var classof = __webpack_require__(150);
+	var ITERATOR = __webpack_require__(97)('iterator');
+	var Iterators = __webpack_require__(91);
+	module.exports = __webpack_require__(67).getIteratorMethod = function (it) {
+	  if (it != undefined) return it[ITERATOR]
+	    || it['@@iterator']
+	    || Iterators[classof(it)];
+	};
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// getting tag from 19.1.3.6 Object.prototype.toString()
+	var cof = __webpack_require__(55);
+	var TAG = __webpack_require__(97)('toStringTag');
+	// ES3 wrong here
+	var ARG = cof(function () { return arguments; }()) == 'Arguments';
+
+	// fallback for IE11 Script Access Denied error
+	var tryGet = function (it, key) {
+	  try {
+	    return it[key];
+	  } catch (e) { /* empty */ }
+	};
+
+	module.exports = function (it) {
+	  var O, T, B;
+	  return it === undefined ? 'Undefined' : it === null ? 'Null'
+	    // @@toStringTag case
+	    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+	    // builtinTag case
+	    : ARG ? cof(O)
+	    // ES3 arguments fallback
+	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+	};
+
 
 /***/ })
 /******/ ]);

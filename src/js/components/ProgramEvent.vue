@@ -1,6 +1,6 @@
 <template>
 
-    <li v-if="showProgramEvent" id="program">
+    <li v-show="showProgramEvent" id="program">
       <h2>{{ programevent.title }}</h2>
 
       <time v-for="time in programevent.time">
@@ -52,6 +52,7 @@ module.exports = {
   },
   data: function () {
     return {
+      programEventIsVisible: false
     }
   },
   methods: {
@@ -73,10 +74,21 @@ module.exports = {
 
       var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, this.programevent.languages);
 
-
       programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+
+      this.programEventIsVisible = programEventIsVisible;
+
       return programEventIsVisible;
     }
+  },
+  watch: {
+    // programEventIsVisible: function () {
+    //   if(!this.programEventIsVisible) {
+    //     this.$emit('increment');
+    //   } else {
+    //     this.$emit('show');
+    //   }
+    // }
   }
 }
 
