@@ -78,7 +78,8 @@ footer#footer {
   background: grey;
   width: 30px;
   height: 30px;
-  border-radius: 100%; }
+  border-radius: 100%;
+  z-index: 1; }
   .program--overview .program-list .save-element.saved {
     background: red; }
 
