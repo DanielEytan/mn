@@ -3,10 +3,15 @@
 		.program-list {
 			li#program {
 				position: relative;
+<<<<<<< HEAD
 				background: rgb(230,230,230);
 				padding: 1em;
 				h2 {
 					margin-bottom: .5em;
+=======
+				h2 {
+					font-weight: bold;
+>>>>>>> 54568fdf6fd0f90c870dbc125f303b2b720b328b
 				}
 				ul li {
 					font-size: .8em;

@@ -1,8 +1,8 @@
 <template>
-    <div class="CategoryList">
+    <div class="ThemeList">
       <h1>My Entries</h1>
       <ul class="list-group">
-        <li class="list-group-item" v-for="entry in categories">{{ entry.title }}</li >
+        <li class="list-group-item" v-for="entry in themes">{{ entry.title }}</li >
       </ul>
     </div>
 </template>
@@ -10,10 +10,10 @@
 <script>
 
 module.exports = {
-  name: 'categorylist',
+  name: 'themelist',
   data: function () {
     return {
-      categories: []
+      themes: []
     }
   },
   mounted () {
@@ -24,7 +24,7 @@ module.exports = {
       let vm = this;
       axios.get('themes.json')
         .then(response => {
-          this.categories = response.data.data
+          this.themes = response.data.data
         })
     }
   }

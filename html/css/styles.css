@@ -53,11 +53,17 @@ footer#footer {
   padding-top: 1em; }
 
 .program--overview .program-list li#program {
+<<<<<<< HEAD
   position: relative;
   background: #e6e6e6;
   padding: 1em; }
   .program--overview .program-list li#program h2 {
     margin-bottom: .5em; }
+=======
+  position: relative; }
+  .program--overview .program-list li#program h2 {
+    font-weight: bold; }
+>>>>>>> 54568fdf6fd0f90c870dbc125f303b2b720b328b
   .program--overview .program-list li#program ul li {
     font-size: .8em;
     background: #1e1eff;
@@ -103,6 +109,40 @@ footer#footer {
     -ms-flex: 0 1 32%;
     flex: 0 1 32%;
     margin-bottom: 60px; } }
+
+.filter--wrapper {
+  height: auto;
+  width: 100%;
+  background: blue;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 30px;
+  margin-bottom: 20px; }
+  .filter--wrapper > div {
+    width: 33.1%;
+    background: yellow;
+    min-height: 50px;
+    display: inline-block;
+    float: left;
+    border: 1px solid;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .filter--wrapper div.filter--headline--wrapper {
+    min-height: 50px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
 
 #map {
   height: 400px;
