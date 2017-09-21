@@ -10989,4 +10989,20 @@
 	};
 
 /***/ })
+/******/ ]);27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	module.exports = function bla() {
+	    return 'hallo';
+	};
+
+/***/ })
 /******/ ]);
