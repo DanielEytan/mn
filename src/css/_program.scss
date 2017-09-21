@@ -3,9 +3,16 @@
 		.program-list {
 			li#program {
 				position: relative;
+				background: rgb(230,230,230);
+				padding: 1em;
+				h2 {
+					margin-bottom: .5em;
+					font-weight: bold;
+				}
 				ul li {
 					font-size: .8em;
-					background: rgb(230,230,230);
+					background: rgb(30,30,330);
+					color: white;
 					padding: .2em .3em;
 					display: inline;
 					margin-right: .25em;
@@ -16,7 +23,8 @@
 			}
 			.save-element {
 				position: absolute;
-				right: 0;
+				right: 1em;
+				top: 1em;
 				background: grey;
 				width: 30px;
 				height: 30px;

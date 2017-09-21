@@ -29,10 +29,8 @@ gulp.task('css:watch', function () {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: 'mn.dev',
-        /*server: {
-            baseDir: "./html/",
-        }*/
+      proxy: "localhost:8888/mnb/html",
+      notify: true
     });
 });
 
