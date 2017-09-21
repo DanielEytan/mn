@@ -61,25 +61,25 @@
 
 	var _Hello2 = _interopRequireDefault(_Hello);
 
-	var _CategoryList = __webpack_require__(13);
+	var _CategoryList = __webpack_require__(14);
 
 	var _CategoryList2 = _interopRequireDefault(_CategoryList);
 
-	var _Map = __webpack_require__(18);
+	var _Map = __webpack_require__(19);
 
 	var _Map2 = _interopRequireDefault(_Map);
 
-	var _Locations = __webpack_require__(23);
+	var _Locations = __webpack_require__(24);
 
 	var _Locations2 = _interopRequireDefault(_Locations);
 
-	var _SaveProgram = __webpack_require__(28);
+	var _SaveProgram = __webpack_require__(29);
 
 	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var test = __webpack_require__(33);
+	var test = __webpack_require__(13);
 	window.axios = __webpack_require__(34);
 
 	// import Map from './components/Map.vue'
@@ -10999,17 +10999,27 @@
 
 /***/ }),
 /* 13 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	module.exports = function bla() {
+	    return 'hallo';
+	};
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(14)
+	__webpack_require__(15)
 
 	var Component = __webpack_require__(10)(
 	  /* script */
-	  __webpack_require__(16),
-	  /* template */
 	  __webpack_require__(17),
+	  /* template */
+	  __webpack_require__(18),
 	  /* scopeId */
 	  "data-v-0589b7ec",
 	  /* cssModules */
@@ -11036,13 +11046,13 @@
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(16);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -11062,7 +11072,7 @@
 	}
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(7)(undefined);
@@ -11076,7 +11086,7 @@
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11116,7 +11126,7 @@
 	};
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11139,18 +11149,18 @@
 	}
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(19)
+	__webpack_require__(20)
 
 	var Component = __webpack_require__(10)(
 	  /* script */
-	  __webpack_require__(21),
-	  /* template */
 	  __webpack_require__(22),
+	  /* template */
+	  __webpack_require__(23),
 	  /* scopeId */
 	  "data-v-87e9ef04",
 	  /* cssModules */
@@ -11177,13 +11187,13 @@
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(20);
+	var content = __webpack_require__(21);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -11203,7 +11213,7 @@
 	}
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(7)(undefined);
@@ -11217,7 +11227,7 @@
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11281,7 +11291,7 @@
 	};
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11301,18 +11311,18 @@
 	}
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(24)
+	__webpack_require__(25)
 
 	var Component = __webpack_require__(10)(
 	  /* script */
-	  __webpack_require__(26),
-	  /* template */
 	  __webpack_require__(27),
+	  /* template */
+	  __webpack_require__(28),
 	  /* scopeId */
 	  "data-v-31934c00",
 	  /* cssModules */
@@ -11339,13 +11349,13 @@
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(25);
+	var content = __webpack_require__(26);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -11365,7 +11375,7 @@
 	}
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(7)(undefined);
@@ -11379,7 +11389,7 @@
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11418,7 +11428,7 @@
 	};
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11441,18 +11451,18 @@
 	}
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(29)
+	__webpack_require__(30)
 
 	var Component = __webpack_require__(10)(
 	  /* script */
-	  __webpack_require__(31),
-	  /* template */
 	  __webpack_require__(32),
+	  /* template */
+	  __webpack_require__(33),
 	  /* scopeId */
 	  "data-v-5da6ec2e",
 	  /* cssModules */
@@ -11479,13 +11489,13 @@
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(30);
+	var content = __webpack_require__(31);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -11505,7 +11515,7 @@
 	}
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(7)(undefined);
@@ -11519,7 +11529,7 @@
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11546,7 +11556,7 @@
 	};
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11564,16 +11574,6 @@
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5da6ec2e", module.exports)
 	  }
 	}
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	module.exports = function bla() {
-	    return 'hallo';
-	};
 
 /***/ }),
 /* 34 */
