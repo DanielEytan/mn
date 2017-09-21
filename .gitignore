@@ -10,3 +10,4 @@
 /craft/config/db.php
 general.php
 /craft/config/.DS_Store
+/src/js/components/.DS_Store

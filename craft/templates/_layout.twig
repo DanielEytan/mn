@@ -35,7 +35,7 @@
 			</header>
 
 			<main id="content" role="main">
-{# 				<Hello></Hello>
+				{# <Hello></Hello>
 				<categorylist></categorylist> #}
 				{# <map></map> #}
 				{% block content %}
@@ -45,7 +45,27 @@
 			</main>
 
 			<footer id="footer">
-				Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
+				<div class="sponsors">
+					{{ sponsores.textForSponsors }}
+					<div class="flex-container">
+						{% for sponsor in sponsores.sponsorBlocks %}
+						    <div>
+						    	<a href="{{ sponsor.sponsorLink }}">
+						    		<h1>{{ sponsor.sponsorName }}</h1>
+						    		{# {% if sponsor.logo | length %}
+							    		{% for img in logo.sponsor %}
+							    	    <figure>
+							    	    	<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+							    	    </figure>
+							    		{% endfor %}
+						    		{% endif %} #}
+						    	</a>
+						    	
+						    </div>
+						{% endfor %}
+					</div>
+				</div>
+				Copyright {{ now.year }}
 			</footer>
 		</div>
 	</div>

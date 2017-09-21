@@ -10,6 +10,7 @@ return [
                 return [
                     'title' => $entry->title,
                     'url' => $entry->url,
+                    'kindOfEvent' => $entry->kindOfEvent->title,
                     'jsonUrl' => UrlHelper::getUrl("program/{$entry->id}.json")
                 ];
             },
