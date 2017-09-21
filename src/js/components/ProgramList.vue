@@ -1,11 +1,17 @@
 <template>
-  <p>Hola</p>
+  <div class="program--list">
+    <programentry v-for="entry in program" :key="entry.id" :entry="entry"></programentry>
+  </div>
 </template>
 
 <script>
+import ProgramEntry from './ProgramEntry.vue'
 
 module.exports = {
   name: 'programlist',
+  components: {
+    programentry: ProgramEntry
+  },
   data: function () {
     return {
       program: []
