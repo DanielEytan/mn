@@ -43,7 +43,6 @@ var vueApp = new Vue({
 
 Vue.filter('formatDate', function(value) {
   if (value) {
-    console.log(value);
     return moment(String(value)).format("HH:mm")
   }
 });

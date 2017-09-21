@@ -121,7 +121,6 @@
 
 	_vue2.default.filter('formatDate', function (value) {
 	    if (value) {
-	        console.log(value);
 	        return (0, _momentMin2.default)(String(value)).format("HH:mm");
 	    }
 	});
