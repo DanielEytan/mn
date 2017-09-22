@@ -7,11 +7,16 @@
 	<h1>Programm</h1>
 
 	<div class="filter--wrapper">
-<!-- 		<div class="time--filter--wrapper">
-			<a href="#">
-				Zeit
-			</a>
-		</div> -->
+		<div class="time--filter--wrapper">
+			<div class="filter--headline--wrapper">
+				<a href="#">
+					Zeit
+				</a>
+			</div>
+			<div class="filter--slider--wrapper">
+				<timefilter></timefilter>
+			</div>
+		</div>
 		<div class="museums--filter--wrapper">
 			<div class="filter--headline--wrapper">
 				<a href="#">
@@ -21,7 +26,6 @@
 			<div class="filter--list--wrapper">
 			  <p>Parent value: ${checkedInstitutions}</p>
 			  <checkboxfilter v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions"></checkboxfilter>
-				<!-- <institutionfilter v-model="checkedInstitutions" v-on:init-institutions="checkedInstitutions = $event"></institutionfilter> -->
 			</div>
 		</div>
 		<div class="themes--filter--wrapper">

@@ -134,6 +134,10 @@ footer#footer {
     justify-content: center;
     -ms-flex-align: center;
     align-items: center; }
+  .filter--wrapper div.time--filter--wrapper {
+    width: 99.7%; }
+    .filter--wrapper div.time--filter--wrapper div.filter--slider--wrapper {
+      width: 100%; }
 
 #map {
   height: 400px;
