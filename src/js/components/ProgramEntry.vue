@@ -15,8 +15,6 @@
         <ul class="program-list" >
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programevent>
         </ul>
-
-
       </article>
     </div>
 </template>
@@ -27,7 +25,7 @@ import ProgramEvent from './ProgramEvent.vue'
 
 module.exports = {
   name: 'programentry',
-  props: ['entry','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
+  props: ['entry','childCount','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
   components: {
     programevent: ProgramEvent
   },
@@ -54,8 +52,7 @@ module.exports = {
       programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
 
       return programEventIsVisible;
-    }
-
+    },
   },
   computed: {
     showProgramEvents: function () {
@@ -71,6 +68,21 @@ module.exports = {
       } else {
         programEntryIsVisible = false;
       }
+
+      // var shownInThisEntry = childStatusList.reduce(function(n, val) {
+      //     return n + (val === true);
+      // }, 0);
+
+      // var hiddenInThisEntry = childStatusList.reduce(function(n, val) {
+      //     return n + (val === false);
+      // }, 0);
+
+      // console.log(this.entry.title);
+      // console.log(shownInThisEntry);
+      // this.entry.childCount = shownInThisEntry;
+      // this.$emit('update:child-count', shownInThisEntry);
+      // console.log("updated:");
+      // console.log(this);
 
       return programEntryIsVisible;
     }
