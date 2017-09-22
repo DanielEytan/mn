@@ -39,14 +39,18 @@ module.exports = {
       return inCheckedSelection;
     },
     checkIntersectionForTimeFilter: function (selectedTimes, eventTime){
-      var selectedStart = selectedTimes[0];
-      var selectedEnd = selectedTimes[1];
-      var eventStart = this.$options.filters.formatDate(eventTime)
+      var isOneInRange = false
+      var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
+      var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
 
-
-      var translatedSelectedStart = this.$options.filters.timeTable(selectedStart);
-      var translatedEventStart = this.$options.filters.timeTable(eventStart);
-      return translatedSelectedStart <= translatedEventStart;
+      for(let time of eventTime) {
+        var eventStart = this.$options.filters.timeTable(this.$options.filters.formatDate(time.start.date));
+        if ( ( eventStart >= selectedStart ) && (eventStart <= selectedEnd) ) {
+          isOneInRange = true;
+          break;
+        }
+      }
+      return isOneInRange;
     },
     programEventIsVisible: function (programevent) {
       var programEventIsVisible = false
@@ -59,7 +63,7 @@ module.exports = {
 
       var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
 
-      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time[programevent.time.length - 1].start.date);
+      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time);
 
 
       programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;

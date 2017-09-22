@@ -11872,7 +11872,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11908,47 +11908,23 @@
 	      return inCheckedSelection;
 	    },
 	    checkIntersectionForTimeFilter: function checkIntersectionForTimeFilter(selectedTimes, eventTime) {
-	      var selectedStart = selectedTimes[0];
-	      var selectedEnd = selectedTimes[1];
-	      var eventStart = this.$options.filters.formatDate(eventTime);
-
-	      var translatedSelectedStart = this.$options.filters.timeTable(selectedStart);
-	      var translatedEventStart = this.$options.filters.timeTable(eventStart);
-	      return translatedSelectedStart <= translatedEventStart;
-	    },
-	    programEventIsVisible: function programEventIsVisible(programevent) {
-	      var programEventIsVisible = false;
-
-	      var inCheckedInstitutions = this.checkedInstitutions.includes(this.entry.title) || this.checkedInstitutions.length == 0;
-
-	      var inCheckedThemes = this.checkIntersectionForFilters(this.checkedThemes, programevent.themes);
-
-	      var inCheckedKindOfEvents = this.checkIntersectionForFilters(this.checkedEvents, programevent.kindOfEvent);
-
-	      var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
-
-	      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time[programevent.time.length - 1].start.date);
-
-	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
-
-	      return programEventIsVisible;
-	    }
-	  },
-	  computed: {
-	    showProgramEvents: function showProgramEvents() {
-	      var programEntryIsVisible = true;
-	      var childStatusList = [];
+	      var isOneInRange = false;
+	      var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
+	      var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
 
 	      var _iteratorNormalCompletion = true;
 	      var _didIteratorError = false;
 	      var _iteratorError = undefined;
 
 	      try {
-	        for (var _iterator = (0, _getIterator3.default)(this.entry.events), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	          var programevent = _step.value;
+	        for (var _iterator = (0, _getIterator3.default)(eventTime), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	          var time = _step.value;
 
-	          programevent.isVisible = this.programEventIsVisible(programevent);
-	          childStatusList.push(programevent.isVisible);
+	          var eventStart = this.$options.filters.timeTable(this.$options.filters.formatDate(time.start.date));
+	          if (eventStart >= selectedStart && eventStart <= selectedEnd) {
+	            isOneInRange = true;
+	            break;
+	          }
 	        }
 	      } catch (err) {
 	        _didIteratorError = true;
@@ -11961,6 +11937,57 @@
 	        } finally {
 	          if (_didIteratorError) {
 	            throw _iteratorError;
+	          }
+	        }
+	      }
+
+	      return isOneInRange;
+	    },
+	    programEventIsVisible: function programEventIsVisible(programevent) {
+	      var programEventIsVisible = false;
+
+	      var inCheckedInstitutions = this.checkedInstitutions.includes(this.entry.title) || this.checkedInstitutions.length == 0;
+
+	      var inCheckedThemes = this.checkIntersectionForFilters(this.checkedThemes, programevent.themes);
+
+	      var inCheckedKindOfEvents = this.checkIntersectionForFilters(this.checkedEvents, programevent.kindOfEvent);
+
+	      var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
+
+	      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time);
+
+	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
+
+	      return programEventIsVisible;
+	    }
+	  },
+	  computed: {
+	    showProgramEvents: function showProgramEvents() {
+	      var programEntryIsVisible = true;
+	      var childStatusList = [];
+
+	      var _iteratorNormalCompletion2 = true;
+	      var _didIteratorError2 = false;
+	      var _iteratorError2 = undefined;
+
+	      try {
+	        for (var _iterator2 = (0, _getIterator3.default)(this.entry.events), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	          var programevent = _step2.value;
+
+	          programevent.isVisible = this.programEventIsVisible(programevent);
+	          childStatusList.push(programevent.isVisible);
+	        }
+	      } catch (err) {
+	        _didIteratorError2 = true;
+	        _iteratorError2 = err;
+	      } finally {
+	        try {
+	          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	            _iterator2.return();
+	          }
+	        } finally {
+	          if (_didIteratorError2) {
+	            throw _iteratorError2;
 	          }
 	        }
 	      }
