@@ -112,6 +112,7 @@
 	        checkedThemes: [],
 	        checkedEvents: [],
 	        checkedLanguages: [],
+	        checkedTimes: [],
 	        institutionsAPITitle: "institution",
 	        themesAPITitle: "themes",
 	        eventsAPITitle: "events",
@@ -128,6 +129,48 @@
 	_vue2.default.filter('formatDate', function (value) {
 	    if (value) {
 	        return (0, _momentMin2.default)(String(value)).format("HH:mm");
+	    }
+	});
+
+	_vue2.default.filter('timeTable', function (value) {
+	    var translate = {
+	        "18:00": 0,
+	        "18:15": 1,
+	        "18:30": 2,
+	        "18:45": 3,
+	        "19:00": 4,
+	        "19:15": 5,
+	        "19:30": 6,
+	        "19:45": 7,
+	        "20:00": 8,
+	        "20:15": 9,
+	        "20:30": 10,
+	        "20:45": 11,
+	        "21:00": 12,
+	        "21:15": 13,
+	        "21:30": 14,
+	        "21:45": 15,
+	        "22:00": 16,
+	        "22:15": 17,
+	        "22:30": 18,
+	        "22:45": 19,
+	        "23:00": 20,
+	        "23:15": 21,
+	        "23:30": 22,
+	        "23:45": 23,
+	        "00:00": 24,
+	        "00:15": 25,
+	        "00:30": 26,
+	        "00:45": 27,
+	        "01:00": 28,
+	        "01:15": 29,
+	        "01:30": 30,
+	        "01:45": 31,
+	        "02:00": 32
+	    };
+
+	    if (value) {
+	        return translate[value];
 	    }
 	});
 
@@ -11544,7 +11587,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11581,8 +11624,15 @@
 	        tooltip: "always",
 	        data: ["18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45", "20:00", "20:15", "20:30", "20:45", "21:00", "21:15", "21:30", "21:45", "22:00", "22:15", "22:30", "22:45", "23:00", "23:15", "23:30", "23:45", "00:00", "00:15", "00:30", "00:45", "01:00", "01:15", "01:30", "01:45", "02:00"]
 	      }
-
 	    };
+	  },
+
+	  watch: {
+	    'value': function value() {
+	      // When the internal value changes, we $emit an event. Because this event is 
+	      // named 'input', v-model will automatically update the parent checkedValues data attribute
+	      this.$emit('input', this.value);
+	    }
 	  }
 	}; //
 	//
@@ -11715,7 +11765,7 @@
 
 	module.exports = {
 	  name: 'programlist',
-	  props: ['checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages'],
+	  props: ['checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages', 'checkedTimes'],
 	  components: {
 	    programentry: _ProgramEntry2.default
 	  },
@@ -11822,7 +11872,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11845,7 +11895,7 @@
 
 	module.exports = {
 	  name: 'programentry',
-	  props: ['entry', 'childCount', 'checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages'],
+	  props: ['entry', 'childCount', 'checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages', 'checkedTimes'],
 	  components: {
 	    programevent: _ProgramEvent2.default
 	  },
@@ -11856,6 +11906,15 @@
 	    checkIntersectionForFilters: function checkIntersectionForFilters(checkedSelection, eventSpecificEntries) {
 	      var inCheckedSelection = _.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title'), _.isEqual).length > 0 || checkedSelection.length === 0;
 	      return inCheckedSelection;
+	    },
+	    checkIntersectionForTimeFilter: function checkIntersectionForTimeFilter(selectedTimes, eventTime) {
+	      var selectedStart = selectedTimes[0];
+	      var selectedEnd = selectedTimes[1];
+	      var eventStart = this.$options.filters.formatDate(eventTime);
+
+	      var translatedSelectedStart = this.$options.filters.timeTable(selectedStart);
+	      var translatedEventStart = this.$options.filters.timeTable(eventStart);
+	      return translatedSelectedStart <= translatedEventStart;
 	    },
 	    programEventIsVisible: function programEventIsVisible(programevent) {
 	      var programEventIsVisible = false;
@@ -11868,7 +11927,9 @@
 
 	      var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
 
-	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+	      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time[programevent.time.length - 1].start.date);
+
+	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
 	      return programEventIsVisible;
 	    }
@@ -12948,7 +13009,7 @@
 
 	module.exports = {
 	  name: 'programevent',
-	  props: ['programevent', 'programeventIsVisible', 'institution', 'checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages'],
+	  props: ['programevent', 'programeventIsVisible', 'institution', 'checkedInstitutions', 'checkedThemes', 'checkedEvents', 'checkedLanguages', 'checkedTimes'],
 	  components: {
 	    saveprogram: _SaveProgram2.default
 	  },
@@ -13187,7 +13248,8 @@
 	        "checked-institutions": _vm.checkedInstitutions,
 	        "checked-themes": _vm.checkedThemes,
 	        "checked-events": _vm.checkedEvents,
-	        "checked-languages": _vm.checkedLanguages
+	        "checked-languages": _vm.checkedLanguages,
+	        "checked-times": _vm.checkedTimes
 	      }
 	    })
 	  }))]) : _vm._e()])
@@ -13215,7 +13277,8 @@
 	        "checked-institutions": _vm.checkedInstitutions,
 	        "checked-themes": _vm.checkedThemes,
 	        "checked-events": _vm.checkedEvents,
-	        "checked-languages": _vm.checkedLanguages
+	        "checked-languages": _vm.checkedLanguages,
+	        "checked-times": _vm.checkedTimes
 	      }
 	    })
 	  })], 2)

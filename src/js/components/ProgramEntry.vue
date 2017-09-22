@@ -13,7 +13,7 @@
 
         <h3>Programm</h3><br>
         <ul class="program-list" >
-          <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programevent>
+          <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>
       </article>
     </div>
@@ -25,7 +25,7 @@ import ProgramEvent from './ProgramEvent.vue'
 
 module.exports = {
   name: 'programentry',
-  props: ['entry','childCount','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
+  props: ['entry','childCount','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],
   components: {
     programevent: ProgramEvent
   },
@@ -38,6 +38,16 @@ module.exports = {
       var inCheckedSelection = (_.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title') , _.isEqual).length > 0) || (checkedSelection.length === 0);
       return inCheckedSelection;
     },
+    checkIntersectionForTimeFilter: function (selectedTimes, eventTime){
+      var selectedStart = selectedTimes[0];
+      var selectedEnd = selectedTimes[1];
+      var eventStart = this.$options.filters.formatDate(eventTime)
+
+
+      var translatedSelectedStart = this.$options.filters.timeTable(selectedStart);
+      var translatedEventStart = this.$options.filters.timeTable(eventStart);
+      return translatedSelectedStart <= translatedEventStart;
+    },
     programEventIsVisible: function (programevent) {
       var programEventIsVisible = false
 
@@ -49,7 +59,10 @@ module.exports = {
 
       var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
 
-      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time[programevent.time.length - 1].start.date);
+
+
+      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
       return programEventIsVisible;
     },

@@ -14,7 +14,7 @@
 				</a>
 			</div>
 			<div class="filter--slider--wrapper">
-				<timefilter></timefilter>
+				<timefilter v-model="checkedTimes"></timefilter>
 			</div>
 		</div>
 		<div class="museums--filter--wrapper">
@@ -62,6 +62,6 @@
 			</div>
 		</div>
 	</div>
-	<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programlist>
+	<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programlist>
 </section>
 {% endblock %}

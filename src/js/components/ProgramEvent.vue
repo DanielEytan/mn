@@ -46,7 +46,7 @@ import SaveProgram from './SaveProgram.vue'
 
 module.exports = {
   name: 'programevent',
-  props: ['programevent','programeventIsVisible', 'institution', 'checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
+  props: ['programevent','programeventIsVisible', 'institution', 'checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],
   components: {
     saveprogram: SaveProgram
   },
