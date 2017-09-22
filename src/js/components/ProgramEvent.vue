@@ -1,6 +1,6 @@
 <template>
 
-    <li v-show="showProgramEvent" id="program">
+    <li v-if="programeventIsVisible" class="program--event">
       <h2>{{ programevent.title }}</h2>
 
       <time v-for="time in programevent.time">
@@ -46,49 +46,19 @@ import SaveProgram from './SaveProgram.vue'
 
 module.exports = {
   name: 'programevent',
-  props: ['programevent','institution', 'checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
+  props: ['programevent','programeventIsVisible', 'institution', 'checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
   components: {
     saveprogram: SaveProgram
   },
   data: function () {
     return {
-      programEventIsVisible: false
     }
   },
   methods: {
-    checkIntersectionForFilters: function (checkedSelection, eventSpecificEntries){
-      var inCheckedSelection = _.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title') , _.isEqual).length || (checkedSelection.length === 0);
-      return inCheckedSelection;
-    }
   },
   computed: {
-    showProgramEvent: function () {
-
-      var programEventIsVisible = false
-
-      var inCheckedInstitutions =  this.checkedInstitutions.includes(this.institution) || (this.checkedInstitutions.length == 0)
-
-      var inCheckedThemes = this.checkIntersectionForFilters(this.checkedThemes, this.programevent.themes);
-
-      var inCheckedKindOfEvents = this.checkIntersectionForFilters(this.checkedEvents, this.programevent.kindOfEvent);
-
-      var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, this.programevent.languages);
-
-      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
-
-      this.programEventIsVisible = programEventIsVisible;
-
-      return programEventIsVisible;
-    }
   },
   watch: {
-    // programEventIsVisible: function () {
-    //   if(!this.programEventIsVisible) {
-    //     this.$emit('increment');
-    //   } else {
-    //     this.$emit('show');
-    //   }
-    // }
   }
 }
 

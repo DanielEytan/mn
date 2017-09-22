@@ -1,7 +1,7 @@
 .program {
 	&--overview {
 		.program-list {
-			li#program {
+			li.program--event {
 				position: relative;
 				h2 {
 					font-weight: bold;

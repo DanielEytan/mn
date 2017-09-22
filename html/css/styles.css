@@ -52,11 +52,11 @@ footer#footer {
   border-top: 1px solid;
   padding-top: 1em; }
 
-.program--overview .program-list li#program {
+.program--overview .program-list li.program--event {
   position: relative; }
-  .program--overview .program-list li#program h2 {
+  .program--overview .program-list li.program--event h2 {
     font-weight: bold; }
-  .program--overview .program-list li#program ul li {
+  .program--overview .program-list li.program--event ul li {
     font-size: .8em;
     background: #e6e6e6;
     padding: .2em .3em;
