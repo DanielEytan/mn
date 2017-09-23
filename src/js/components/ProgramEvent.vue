@@ -1,6 +1,6 @@
 <template>
 
-    <li id="program">
+    <li v-if="programeventIsVisible" class="program--event">
       <h2>{{ programevent.title }}</h2>
 
       <time v-for="time in programevent.time">
@@ -46,13 +46,19 @@ import SaveProgram from './SaveProgram.vue'
 
 module.exports = {
   name: 'programevent',
-  props: ['programevent'],
+  props: ['programevent','programeventIsVisible', 'institution', 'checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
   components: {
     saveprogram: SaveProgram
   },
   data: function () {
     return {
     }
+  },
+  methods: {
+  },
+  computed: {
+  },
+  watch: {
   }
 }
 

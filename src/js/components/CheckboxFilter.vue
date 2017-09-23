@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js';
+
 
 module.exports = {
   name: 'checkboxfilter',
@@ -27,6 +29,7 @@ module.exports = {
     'internalCheckedValues': function() {
       // When the internal value changes, we $emit an event. Because this event is 
       // named 'input', v-model will automatically update the parent checkedValues data attribute
+      EventBus.$emit('checkbox-clicked');
       this.$emit('input', this.internalCheckedValues);
     }
   },
