@@ -1,0 +1,56 @@
+//require
+window.axios = require('axios');
+
+//import
+import Vue from 'vue'
+import ThemeList from './components/ThemeList.vue'
+import InstitutionFilter from './components/InstitutionFilter.vue'
+import CheckboxFilter from './components/CheckboxFilter.vue'
+import ProgramList from './components/ProgramList.vue'
+import saveProgram from './components/SaveProgram.vue'
+<<<<<<< HEAD
+import savedLink from './components/SavedLink.vue'
+
+
+=======
+import moment from 'moment.min.js'
+>>>>>>> eb72390b653de75a398d0ffb0a39cebcfca916c7
+
+
+//vue main app instance
+var vueApp = new Vue({
+    delimiters: ['${', '}'],
+    el: '#vue-app',
+    components: {
+        themelist:ThemeList,
+        institutionfilter:InstitutionFilter,
+        checkboxfilter:CheckboxFilter,
+        programlist: ProgramList,
+        saveprogram: saveProgram,
+        savedlink: savedLink
+
+    },
+    data: {
+        menuOpen: false,
+        checkedInstitutions: [],
+        checkedThemes: [],
+        checkedEvents: [],
+        checkedLanguages: [],
+        institutionsAPITitle: "institution",
+        themesAPITitle: "themes",
+        eventsAPITitle: "events",
+        languagesAPITitle: "languages"
+    },
+    methods: {
+        toggle: function() {
+            this.menuOpen = !this.menuOpen;
+        }
+    },
+    
+});
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format("HH:mm")
+  }
+});

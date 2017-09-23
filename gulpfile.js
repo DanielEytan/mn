@@ -29,25 +29,15 @@ gulp.task('css:watch', function () {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: 'mn.dev',
-        /*server: {
-            baseDir: "./html/",
-        }*/
+      proxy: "localhost:8888/mnb/html",
+      notify: true
     });
 });
 
 
 gulp.task('js', function() {
   return gulp.src('src/js/**/*.js')
-    .pipe(webpack({
-      output: {
-        filename: 'main.js'
-      },
-      resolve: {
-          // Makes sure the compiler looks for modules in /src and node_modules
-          modulesDirectories: ['./src/js', 'node_modules']
-        }
-    }))
+    .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('html/js/'))
     .pipe(browserSync.stream({stream: true}));
 });

@@ -46,13 +46,28 @@ body {
   line-height: 1.2em; }
 
 header#header {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  position: relative; }
+  header#header .saved-link {
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+footer#footer {
+  border-top: 1px solid;
+  padding-top: 1em; }
 
 .program--overview .program-list li#program {
-  position: relative; }
+  position: relative;
+  background: #e6e6e6;
+  padding: 1em; }
+  .program--overview .program-list li#program h2 {
+    margin-bottom: .5em;
+    font-weight: bold; }
   .program--overview .program-list li#program ul li {
     font-size: .8em;
-    background: #e6e6e6;
+    background: #1e1eff;
+    color: white;
     padding: .2em .3em;
     display: inline;
     margin-right: .25em; }
@@ -62,20 +77,85 @@ header#header {
 
 .program--overview .program-list .save-element {
   position: absolute;
-  right: 0;
+  right: 1em;
+  top: 1em;
   background: grey;
   width: 30px;
   height: 30px;
-  border-radius: 100%; }
+  border-radius: 100%;
+  z-index: 1; }
   .program--overview .program-list .save-element.saved {
     background: red; }
 
-.institutions--overview_child {
+.institutions .google-map[data-v-87e9ef04] {
+  width: 100%;
+  height: 800px;
   margin-bottom: 50px; }
+
+@media screen and (min-width: 768px) {
+  .institutions--overview .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .institutions--overview .flex-container article {
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%;
+      margin-bottom: 30px; } }
+
+@media screen and (min-width: 768px) {
+  .institutions--overview .flex-container article {
+    -ms-flex: 0 1 32%;
+    flex: 0 1 32%;
+    margin-bottom: 60px; } }
+
+.filter--wrapper {
+  height: auto;
+  width: 100%;
+  background: blue;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 30px;
+  margin-bottom: 20px; }
+  .filter--wrapper > div {
+    width: 33.1%;
+    background: yellow;
+    min-height: 50px;
+    display: inline-block;
+    float: left;
+    border: 1px solid;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .filter--wrapper div.filter--headline--wrapper {
+    min-height: 50px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
 
 #map {
   height: 400px;
   margin-bottom: 50px; }
+
+.saved-links {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.programevent {
+  padding-left: 1em; }
 
 body {
   margin: 20px 10vw; }
