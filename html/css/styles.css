@@ -48,6 +48,10 @@ body {
 header#header {
   margin-bottom: 2em;
   position: relative; }
+  header#header .saved-link {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 footer#footer {
   border-top: 1px solid;
@@ -149,6 +153,9 @@ footer#footer {
   position: absolute;
   right: 0;
   top: 0; }
+
+.programevent {
+  padding-left: 1em; }
 
 body {
   margin: 20px 10vw; }

@@ -1,6 +1,5 @@
 <template>
-  <!-- <div class="save-element" v-on:click="save('1'); toggle"  v-bind:class="active: isActive"></div> -->
-
+  <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">{{ programevent.id }}</div>
 
 </template>
 
@@ -8,26 +7,64 @@
 
 module.exports = {
    name: 'saveProgram',
-   
-      data: function () {
-         return {
-            show: true,
-            isActive: false
-      }      
-
+   props: ['programevent'],
+   data: function () {
+      return {
+      }
    },
    methods: {
       save: function (save) {
-         // alert(save)
-         localStorage.setItem('programId:', save)
-         // if (localStorage.getItem('event:', 'text')) {
-         //    // alert('saved');
-         //    localStorage.removeItem('event:', 'text')
+         // var existingEntries = JSON.parse(localStorage.getItem("programId"));
+         // if(existingEntries == null) existingEntries = [];
+         //    if (existingEntries.includes(save) == false) {
+         //    localStorage.setItem("programId", JSON.stringify(save));
+         //    // Save allEntries back to local storage
+         //    existingEntries.push(save);
+         //    localStorage.setItem("programId", JSON.stringify(existingEntries));
+         //    };
+         
+         // var idList = localStorage.getItem("programId", '');
+         // // if (idList.includes(save)) {};
+         // console.log(idList)
+        
+
+         var id = save;
+
+         var idList = localStorage.getItem("programId", '');
+         // if (idList.includes(id) == false) {
+         var newIdList = idList + "," + id;
+         // var newIdList = newIdList.substring(4).split(',');
+
+
+         localStorage.setItem("programId", newIdList);
          // }
-      },
-      toggle: function() {
-            this.isActive = !this.isActive;
-        }
+
+
+         var newIdList = localStorage.getItem("programId", '');
+         var newIdList = newIdList.split(',');
+         newIdList = newIdList.filter(function( element ) {
+            return element !== null;
+         });
+
+         // var newIdList = newIdList.shift();
+
+
+         console.log(newIdList);
+
+
+
+
+         // idList.push(id);
+
+         // localStorage.setItem("programId", '').push(save);
+         // this.idList.push(save);
+
+      }
+
+
+      // toggle: function() {
+      //       this.isActive = !this.isActive;
+      //   }
    }
 }
 

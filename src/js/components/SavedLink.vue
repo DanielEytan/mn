@@ -1,30 +1,41 @@
 <template>
-  <div class="saved-links">{{ text }}</div>
+  <!-- <div class="saved-links" v-for="item in items">{{ item.message }}</div> -->
+  <div class="saved-link"><a :href="url">Saved Elements</a></div>
 </template>
 
 <script>
 
 module.exports = {
    name: 'savedLink',
+  //  data: function() {
+  //     return {
+  //        items: [
+  //           { message: 'Foo' },
+  //           { message: 'Bar' }
+  //        ]
+  //     } 
+  // }
    data: function () {
       return {
-         text: 'Saved Links'
-         // save: true
+        // items: '',
+        url: './programm/mein-programm'
+    }
+  },
+
+   computed: {
+      items: function () {
+         // this.items = "message:" + localStorage.getItem('programId');
+         // this.items = localStorage.getItem('programId');
+         // this.items = "36";
+
+         // var ids = ids.length;
+
+         // console.log(ids);
+         // this.items = ids;
+         // return
       }
+  }
 
-   },
-   methods: {
-      save: function (event) {
-         // alert('saved')
-         localStorage.getItem('event:')
-         alert('test')
-         // if (localStorage.getItem('event:', 'text')) {
-         //    // alert('saved');
-         //    localStorage.removeItem('event:', 'text')
-         // }
-      },
-
-   }
 }
 
 </script>

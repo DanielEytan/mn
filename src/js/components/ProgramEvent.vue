@@ -36,7 +36,7 @@
           </ul>
         </div>
       </div></br>
-      <saveprogram></saveprogram>
+      <saveprogram :programevent="programevent"></saveprogram>
     </li>
 
 </template>

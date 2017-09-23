@@ -9,6 +9,7 @@ import CheckboxFilter from './components/CheckboxFilter.vue'
 import ProgramList from './components/ProgramList.vue'
 import saveProgram from './components/SaveProgram.vue'
 import savedLink from './components/SavedLink.vue'
+import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
 
 
@@ -22,7 +23,9 @@ var vueApp = new Vue({
         checkboxfilter:CheckboxFilter,
         programlist: ProgramList,
         saveprogram: saveProgram,
-        savedlink: savedLink
+        savedlink: savedLink,
+        myprogram: MyProgram
+
 
     },
     data: {
