@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js';
 
 module.exports = {
    name: 'saveProgram',
@@ -26,12 +27,9 @@ module.exports = {
          newIdList = newIdList.filter(function( element ) {
             return element !== null;
          });
-         this.$emit('program-saved');
+         EventBus.$emit('program-saved');
          console.log(newIdList);
       }
-
-
-
    }
 }
 

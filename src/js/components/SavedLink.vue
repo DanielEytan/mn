@@ -7,8 +7,8 @@
 <script>
 
 module.exports = {
-   name: 'savedlink',
-   data: function () {
+  name: 'savedlink',
+    data: function () {
       return {
         url: './programm/mein-programm',
         items: ''
@@ -17,7 +17,7 @@ module.exports = {
   mounted () {
     this.savedLinks();
   },
-   methods: {
+  methods: {
 
     savedLinks: function () {
 
@@ -33,7 +33,10 @@ module.exports = {
      this.items = allIds;
      // return
    }
- }
+  },
+  shout: function () {
+     console.log("program is saved");
+  }
 }
 
 </script>

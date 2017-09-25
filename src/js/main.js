@@ -13,8 +13,7 @@ import saveProgram from './components/SaveProgram.vue'
 import savedLink from './components/SavedLink.vue'
 import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
-
-
+import { EventBus } from '../event-bus.js';
 
 //vue main app instance
 var vueApp = new Vue({

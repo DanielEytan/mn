@@ -13289,23 +13289,18 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
 
 /***/ }),
 /* 102 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
-	//
-	//
-	//
-	//
-
+	var _eventBus = __webpack_require__(22);
 
 	module.exports = {
 	   name: 'saveProgram',
@@ -13327,12 +13322,15 @@
 	         newIdList = newIdList.filter(function (element) {
 	            return element !== null;
 	         });
-	         this.$emit('program-saved');
+	         _eventBus.EventBus.$emit('program-saved');
 	         console.log(newIdList);
 	      }
-
 	   }
-	};
+	}; //
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 103 */
@@ -13544,7 +13542,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13591,6 +13589,9 @@
 	      this.items = allIds;
 	      // return
 	    }
+	  },
+	  shout: function shout() {
+	    console.log("program is saved");
 	  }
 	};
 
