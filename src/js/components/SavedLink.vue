@@ -7,15 +7,7 @@
 <script>
 
 module.exports = {
-   name: 'savedLink',
-  //  data: function() {
-  //     return {
-  //        items: [
-  //           { message: 'Foo' },
-  //           { message: 'Bar' }
-  //        ]
-  //     } 
-  // }
+   name: 'savedlink',
    data: function () {
       return {
         url: './programm/mein-programm',
@@ -23,31 +15,25 @@ module.exports = {
     }
   },
   mounted () {
-    this.savedLink();
+    this.savedLinks();
   },
-   computed: {
+   methods: {
 
-    savedLink: function () {
+    savedLinks: function () {
 
      var allIds = localStorage.getItem('programId');
 
      var allIds = JSON.parse("[" + allIds + "]");
-     // var allIds = allIds.splice(deleteIndex, 1);
      allIds.shift();
      console.log(allIds);
 
      var allIds = allIds.length;
+
+     // this.$set(this.items, allIds)
      this.items = allIds;
      // return
    }
  }
-  //  created () {
-  //   var items = localStorage.getItem('programId');
-  //   var number = items.string.split(',');
-  //   console.log(number);
-  //   this.item = number;
-  // }
-
 }
 
 </script>

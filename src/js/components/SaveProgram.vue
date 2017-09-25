@@ -14,57 +14,24 @@ module.exports = {
    },
    methods: {
       save: function (save) {
-         // var existingEntries = JSON.parse(localStorage.getItem("programId"));
-         // if(existingEntries == null) existingEntries = [];
-         //    if (existingEntries.includes(save) == false) {
-         //    localStorage.setItem("programId", JSON.stringify(save));
-         //    // Save allEntries back to local storage
-         //    existingEntries.push(save);
-         //    localStorage.setItem("programId", JSON.stringify(existingEntries));
-         //    };
-         
-         // var idList = localStorage.getItem("programId", '');
-         // // if (idList.includes(save)) {};
-         // console.log(idList)
-        
-
          var id = save;
 
          var idList = localStorage.getItem("programId", '');
          // if (idList.includes(id) == false) {
-         var newIdList = idList + "," + id;
-         // var newIdList = newIdList.substring(4).split(',');
-
-
-         localStorage.setItem("programId", newIdList);
          // }
-
-
+         var newIdList = idList + "," + id;
+         localStorage.setItem("programId", newIdList);
          var newIdList = localStorage.getItem("programId", '');
          var newIdList = newIdList.split(',');
          newIdList = newIdList.filter(function( element ) {
             return element !== null;
          });
-
-         // var newIdList = newIdList.shift();
-
-
+         this.$emit('program-saved');
          console.log(newIdList);
-
-
-
-
-         // idList.push(id);
-
-         // localStorage.setItem("programId", '').push(save);
-         // this.idList.push(save);
-
       }
 
 
-      // toggle: function() {
-      //       this.isActive = !this.isActive;
-      //   }
+
    }
 }
 

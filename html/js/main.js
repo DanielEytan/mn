@@ -11915,7 +11915,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11941,52 +11941,22 @@
 	   },
 	   methods: {
 	      save: function save(_save) {
-	         // var existingEntries = JSON.parse(localStorage.getItem("programId"));
-	         // if(existingEntries == null) existingEntries = [];
-	         //    if (existingEntries.includes(save) == false) {
-	         //    localStorage.setItem("programId", JSON.stringify(save));
-	         //    // Save allEntries back to local storage
-	         //    existingEntries.push(save);
-	         //    localStorage.setItem("programId", JSON.stringify(existingEntries));
-	         //    };
-
-	         // var idList = localStorage.getItem("programId", '');
-	         // // if (idList.includes(save)) {};
-	         // console.log(idList)
-
-
 	         var id = _save;
 
 	         var idList = localStorage.getItem("programId", '');
 	         // if (idList.includes(id) == false) {
-	         var newIdList = idList + "," + id;
-	         // var newIdList = newIdList.substring(4).split(',');
-
-
-	         localStorage.setItem("programId", newIdList);
 	         // }
-
-
+	         var newIdList = idList + "," + id;
+	         localStorage.setItem("programId", newIdList);
 	         var newIdList = localStorage.getItem("programId", '');
 	         var newIdList = newIdList.split(',');
 	         newIdList = newIdList.filter(function (element) {
 	            return element !== null;
 	         });
-
-	         // var newIdList = newIdList.shift();
-
-
+	         this.$emit('program-saved');
 	         console.log(newIdList);
-
-	         // idList.push(id);
-
-	         // localStorage.setItem("programId", '').push(save);
-	         // this.idList.push(save);
 	      }
 
-	      // toggle: function() {
-	      //       this.isActive = !this.isActive;
-	      //   }
 	   }
 	};
 
@@ -12185,7 +12155,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -12205,15 +12175,7 @@
 
 
 	module.exports = {
-	  name: 'savedLink',
-	  //  data: function() {
-	  //     return {
-	  //        items: [
-	  //           { message: 'Foo' },
-	  //           { message: 'Bar' }
-	  //        ]
-	  //     } 
-	  // }
+	  name: 'savedlink',
 	  data: function data() {
 	    return {
 	      url: './programm/mein-programm',
@@ -12221,32 +12183,27 @@
 	    };
 	  },
 	  mounted: function mounted() {
-	    this.savedLink();
+	    this.savedLinks();
 	  },
 
-	  computed: {
+	  methods: {
 
-	    savedLink: function savedLink() {
+	    savedLinks: function savedLinks() {
 
 	      var allIds = localStorage.getItem('programId');
 
 	      var allIds = JSON.parse("[" + allIds + "]");
-	      // var allIds = allIds.splice(deleteIndex, 1);
 	      allIds.shift();
 	      console.log(allIds);
 
 	      var allIds = allIds.length;
+
+	      // this.$set(this.items, allIds)
 	      this.items = allIds;
 	      // return
 	    }
-	    //  created () {
-	    //   var items = localStorage.getItem('programId');
-	    //   var number = items.string.split(',');
-	    //   console.log(number);
-	    //   this.item = number;
-	    // }
-
-	  } };
+	  }
+	};
 
 /***/ }),
 /* 47 */
