@@ -36,24 +36,20 @@ module.exports = {
     this.getItems();
 
   },
-  computed: {
+
+  methods: {
+    getEntries () {
+      let _this = this;
+      axios.get('../programevent.json')
+      .then(response => {
+        this.programevent = response.data.data;
+      })
+    },
     getItems () {
-     var allIds = localStorage.getItem('programId');
-     var allIds = JSON.parse("[" + allIds + "]");
-     console.log(allIds);
-     this.items = allIds;
-     // return
+     var idList = JSON.parse(localStorage.getItem('programId'));
+     this.items = idList;
    }
- },
- methods: {
-  getEntries () {
-    let _this = this;
-    axios.get('http://mn.dev/programevent.json')
-    .then(response => {
-      this.programevent = response.data.data;
-    })
   }
-}
 }
 
 </script>

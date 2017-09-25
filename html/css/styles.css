@@ -173,6 +173,9 @@ h1 {
   line-height: 1.2em;
   margin-bottom: .5em; }
 
+.active {
+  color: red; }
+
 #menu ul {
   height: 3em;
   overflow: hidden; }
