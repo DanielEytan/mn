@@ -1,14 +1,11 @@
 <template>
     <div class="checkBoxFilter">
-      <h1>My Values</h1>
       <ul class="list-group">
         <li class="list-group-item" v-for="entry in possibleValues">
           <input type="checkbox" v-bind:id="'program-input-'+entry.id" v-bind:value="entry.title" v-model="internalCheckedValues">
           <label v-bind:for="entry.title">{{ entry.title }}</label>
         </li >
       </ul>
-      <span>Checked Values: {{ internalCheckedValues }}</span>
-
     </div>
 </template>
 

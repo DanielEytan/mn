@@ -13,7 +13,7 @@
 
         <h3>Programm</h3><br>
         <ul class="program-list" >
-          <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programevent>
+          <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>
       </article>
     </div>
@@ -25,18 +25,40 @@ import ProgramEvent from './ProgramEvent.vue'
 
 module.exports = {
   name: 'programentry',
-  props: ['entry','childCount','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages'],
+  props: ['entry','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],
   components: {
     programevent: ProgramEvent
   },
   data: function () {
     return {
+      internalNumberOfEvents: 0
+    }
+  },
+  watch: {
+    internalNumberOfEvents: function () {
+      var changes = {};
+      changes[this.entry.id] = this.internalNumberOfEvents;
+      this.$emit('update-event-number-of-entry', changes);
     }
   },
   methods: {
     checkIntersectionForFilters: function (checkedSelection, eventSpecificEntries){
       var inCheckedSelection = (_.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title') , _.isEqual).length > 0) || (checkedSelection.length === 0);
       return inCheckedSelection;
+    },
+    checkIntersectionForTimeFilter: function (selectedTimes, eventTime){
+      var isOneInRange = false
+      var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
+      var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
+
+      for(let time of eventTime) {
+        var eventStart = this.$options.filters.timeTable(this.$options.filters.formatDate(time.start.date));
+        if ( ( eventStart >= selectedStart ) && (eventStart <= selectedEnd) ) {
+          isOneInRange = true;
+          break;
+        }
+      }
+      return isOneInRange;
     },
     programEventIsVisible: function (programevent) {
       var programEventIsVisible = false
@@ -49,10 +71,25 @@ module.exports = {
 
       var inCheckedLanguages = this.checkIntersectionForFilters(this.checkedLanguages, programevent.languages);
 
-      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages;
+      var inSelectedTime = this.checkIntersectionForTimeFilter(this.checkedTimes, programevent.time);
+
+
+      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
       return programEventIsVisible;
     },
+    numberOfEventsOfEntry: function () {
+      var counter = 0;
+      var childStatusList = {};
+
+      for (let programevent of this.entry.events) {
+        if(this.programEventIsVisible(programevent)) {
+          counter++;
+        }
+      }
+      this.internalNumberOfEvents = counter;
+      return counter;
+    }
   },
   computed: {
     showProgramEvents: function () {
@@ -68,22 +105,7 @@ module.exports = {
       } else {
         programEntryIsVisible = false;
       }
-
-      // var shownInThisEntry = childStatusList.reduce(function(n, val) {
-      //     return n + (val === true);
-      // }, 0);
-
-      // var hiddenInThisEntry = childStatusList.reduce(function(n, val) {
-      //     return n + (val === false);
-      // }, 0);
-
-      // console.log(this.entry.title);
-      // console.log(shownInThisEntry);
-      // this.entry.childCount = shownInThisEntry;
-      // this.$emit('update:child-count', shownInThisEntry);
-      // console.log("updated:");
-      // console.log(this);
-
+      this.numberOfEventsOfEntry();
       return programEntryIsVisible;
     }
   }

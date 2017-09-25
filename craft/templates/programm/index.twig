@@ -14,7 +14,7 @@
 				</a>
 			</div>
 			<div class="filter--slider--wrapper">
-				<timefilter></timefilter>
+				<timefilter v-model="checkedTimes"></timefilter>
 			</div>
 		</div>
 		<div class="museums--filter--wrapper">
@@ -24,7 +24,7 @@
 				</a>
 			</div>
 			<div class="filter--list--wrapper">
-			  <p>Parent value: ${checkedInstitutions}</p>
+			  <p><span v-if="checkedInstitutions.length > 0">(${checkedInstitutions.length})</span> Institutionen</p>
 			  <checkboxfilter v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions"></checkboxfilter>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 				</a>
 			</div>
 			<div class="filter--list--wrapper">
-			  <p>Parent value: ${checkedThemes}</p>
+			  <p><span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span>Themen</p>
 				<checkboxfilter v-bind:value-name="themesAPITitle" v-model="checkedThemes"></checkboxfilter>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 				</a>
 			</div>
 			<div class="filter--list--wrapper">
-			  <p>Parent value: ${checkedEvents}</p>
+			  <p><span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungen</p>
 				<checkboxfilter v-bind:value-name="eventsAPITitle" v-model="checkedEvents"></checkboxfilter>
 			</div>
 		</div>
@@ -57,11 +57,11 @@
 				</a>
 			</div>
 			<div class="filter--list--wrapper">
-			  <p>Parent value: ${checkedLanguages}</p>
+			  <p><span v-if="checkedLanguages.length > 0">(${checkedLanguages.length})</span> Sprachen</p>
 				<checkboxfilter v-bind:value-name="languagesAPITitle" v-model="checkedLanguages"></checkboxfilter>
 			</div>
 		</div>
 	</div>
-	<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages"></programlist>
+	<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programlist>
 </section>
 {% endblock %}
