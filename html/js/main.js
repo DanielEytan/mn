@@ -11372,7 +11372,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11431,9 +11431,6 @@
 	//
 	//
 	//
-	//
-	//
-	//
 
 /***/ }),
 /* 22 */
@@ -11461,7 +11458,7 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "checkBoxFilter"
-	  }, [_c('h1', [_vm._v("My Values")]), _vm._v(" "), _c('ul', {
+	  }, [_c('ul', {
 	    staticClass: "list-group"
 	  }, _vm._l((_vm.possibleValues), function(entry) {
 	    return _c('li', {
@@ -11504,7 +11501,7 @@
 	        "for": entry.title
 	      }
 	    }, [_vm._v(_vm._s(entry.title))])])
-	  })), _vm._v(" "), _c('span', [_vm._v("Checked Values: " + _vm._s(_vm.internalCheckedValues))])])
+	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
