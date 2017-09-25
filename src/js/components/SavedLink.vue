@@ -1,41 +1,39 @@
 <template>
-  <!-- <div class="saved-links" v-for="item in items">{{ item.message }}</div> -->
-  <div class="saved-link"><a :href="url">Saved Elements</a></div>
+  <div class="saved-link" v-if="items"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div>
+  <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
+
 </template>
 
 <script>
 
 module.exports = {
-   name: 'savedLink',
-  //  data: function() {
-  //     return {
-  //        items: [
-  //           { message: 'Foo' },
-  //           { message: 'Bar' }
-  //        ]
-  //     } 
-  // }
+   name: 'savedlink',
    data: function () {
       return {
-        // items: '',
-        url: './programm/mein-programm'
+        url: './programm/mein-programm',
+        items: ''
     }
   },
+  mounted () {
+    this.savedLinks();
+  },
+   methods: {
 
-   computed: {
-      items: function () {
-         // this.items = "message:" + localStorage.getItem('programId');
-         // this.items = localStorage.getItem('programId');
-         // this.items = "36";
+    savedLinks: function () {
 
-         // var ids = ids.length;
+     var allIds = localStorage.getItem('programId');
 
-         // console.log(ids);
-         // this.items = ids;
-         // return
-      }
-  }
+     var allIds = JSON.parse("[" + allIds + "]");
+     allIds.shift();
+     console.log(allIds);
 
+     var allIds = allIds.length;
+
+     // this.$set(this.items, allIds)
+     this.items = allIds;
+     // return
+   }
+ }
 }
 
 </script>

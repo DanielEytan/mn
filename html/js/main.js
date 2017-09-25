@@ -12025,8 +12025,13 @@
 	  return step(0, [index, O[index]]);
 	}, 'values');
 
+<<<<<<< HEAD
 	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
 	Iterators.Arguments = Iterators.Array;
+=======
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+>>>>>>> develop
 
 	addToUnscopables('keys');
 	addToUnscopables('values');
@@ -12040,6 +12045,7 @@
 	module.exports = function () { /* empty */ };
 
 
+<<<<<<< HEAD
 /***/ }),
 /* 42 */
 /***/ (function(module, exports) {
@@ -12088,6 +12094,33 @@
 
 	module.exports = function (it) {
 	  return toString.call(it).slice(8, -1);
+=======
+	module.exports = {
+	   name: 'saveProgram',
+	   props: ['programevent'],
+	   data: function data() {
+	      return {};
+	   },
+	   methods: {
+	      save: function save(_save) {
+	         var id = _save;
+
+	         var idList = localStorage.getItem("programId", '');
+	         // if (idList.includes(id) == false) {
+	         // }
+	         var newIdList = idList + "," + id;
+	         localStorage.setItem("programId", newIdList);
+	         var newIdList = localStorage.getItem("programId", '');
+	         var newIdList = newIdList.split(',');
+	         newIdList = newIdList.filter(function (element) {
+	            return element !== null;
+	         });
+	         this.$emit('program-saved');
+	         console.log(newIdList);
+	      }
+
+	   }
+>>>>>>> develop
 	};
 
 
@@ -12272,9 +12305,14 @@
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
+<<<<<<< HEAD
 /***/ }),
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
+=======
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+>>>>>>> develop
 
 	// optional / simple context binding
 	var aFunction = __webpack_require__(54);
@@ -12302,6 +12340,7 @@
 /* 54 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = function (it) {
 	  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
 	  return it;
@@ -12341,6 +12380,47 @@
 	  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
 	  if ('value' in Attributes) O[P] = Attributes.value;
 	  return O;
+=======
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	  name: 'savedlink',
+	  data: function data() {
+	    return {
+	      url: './programm/mein-programm',
+	      items: ''
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.savedLinks();
+	  },
+
+	  methods: {
+
+	    savedLinks: function savedLinks() {
+
+	      var allIds = localStorage.getItem('programId');
+
+	      var allIds = JSON.parse("[" + allIds + "]");
+	      allIds.shift();
+	      console.log(allIds);
+
+	      var allIds = allIds.length;
+
+	      // this.$set(this.items, allIds)
+	      this.items = allIds;
+	      // return
+	    }
+	  }
+>>>>>>> develop
 	};
 
 
@@ -12348,12 +12428,31 @@
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	var isObject = __webpack_require__(58);
 	module.exports = function (it) {
 	  if (!isObject(it)) throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
+=======
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return (_vm.items) ? _c('div', {
+	    staticClass: "saved-link"
+	  }, [_c('a', {
+	    attrs: {
+	      "href": _vm.url
+	    }
+	  }, [_vm._v("Saved Elements: "), _c('span', [_vm._v(_vm._s(_vm.items))])])]) : _vm._e()
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-ced73f7a", module.exports)
+	  }
+	}
+>>>>>>> develop
 
 /***/ }),
 /* 58 */
@@ -12477,6 +12576,7 @@
 	};
 
 
+<<<<<<< HEAD
 /***/ }),
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12523,11 +12623,67 @@
 	  return Properties === undefined ? result : dPs(result, Properties);
 	};
 
+=======
+	module.exports = {
+	  name: 'myprogram',
+	  props: ['entry'],
+	  components: {
+	    programevent: _ProgramEvent2.default
+	  },
+	  data: function data() {
+	    return {
+	      programevent: [],
+	      items: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+	    this.getItems();
+	  },
+
+	  computed: {
+	    getItems: function getItems() {
+	      var allIds = localStorage.getItem('programId');
+	      var allIds = JSON.parse("[" + allIds + "]");
+	      console.log(allIds);
+	      this.items = allIds;
+	      // return
+	    }
+	  },
+	  methods: {
+	    getEntries: function getEntries() {
+	      var _this2 = this;
+
+	      var _this = this;
+	      axios.get('http://mn.dev/programevent.json').then(function (response) {
+	        _this2.programevent = response.data.data;
+	      });
+	    }
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+>>>>>>> develop
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	var dP = __webpack_require__(56);
 	var anObject = __webpack_require__(57);
 	var getKeys = __webpack_require__(70);
@@ -12574,6 +12730,24 @@
 	  // Don't enum bug & hidden keys
 	  while (names.length > i) if (has(O, key = names[i++])) {
 	    ~arrayIndexOf(result, key) || result.push(key);
+=======
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "program--entry"
+	  }, [_c('article', [_c('ul', {
+	    staticClass: "program-list"
+	  }, _vm._l((_vm.items), function(item) {
+	    return _c('div', _vm._l((_vm.programevent), function(entry) {
+	      return (entry.id == item) ? _c('li', [_c('h2', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', [_vm._v("\n             Im " + _vm._s(entry.parent.title)), _c('br')]), _c('br')]) : _vm._e()
+	    }))
+	  }))])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-21a7b4da", module.exports)
+>>>>>>> develop
 	  }
 	  return result;
 	};
