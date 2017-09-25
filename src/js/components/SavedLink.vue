@@ -1,6 +1,7 @@
 <template>
-  <!-- <div class="saved-links" v-for="item in items">{{ item.message }}</div> -->
-  <div class="saved-link"><a :href="url">Saved Elements</a></div>
+  <div class="saved-link" v-if="items"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div>
+  <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
+
 </template>
 
 <script>
@@ -17,24 +18,35 @@ module.exports = {
   // }
    data: function () {
       return {
-        // items: '',
-        url: './programm/mein-programm'
+        url: './programm/mein-programm',
+        items: ''
     }
   },
-
+  mounted () {
+    this.savedLink();
+  },
    computed: {
-      items: function () {
-         // this.items = "message:" + localStorage.getItem('programId');
-         // this.items = localStorage.getItem('programId');
-         // this.items = "36";
 
-         // var ids = ids.length;
+    savedLink: function () {
 
-         // console.log(ids);
-         // this.items = ids;
-         // return
-      }
-  }
+     var allIds = localStorage.getItem('programId');
+
+     var allIds = JSON.parse("[" + allIds + "]");
+     // var allIds = allIds.splice(deleteIndex, 1);
+     allIds.shift();
+     console.log(allIds);
+
+     var allIds = allIds.length;
+     this.items = allIds;
+     // return
+   }
+ }
+  //  created () {
+  //   var items = localStorage.getItem('programId');
+  //   var number = items.string.split(',');
+  //   console.log(number);
+  //   this.item = number;
+  // }
 
 }
 

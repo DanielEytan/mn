@@ -12185,7 +12185,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -12201,53 +12201,65 @@
 	//
 	//
 	//
+	//
 
 
 	module.exports = {
-	   name: 'savedLink',
-	   //  data: function() {
-	   //     return {
-	   //        items: [
-	   //           { message: 'Foo' },
-	   //           { message: 'Bar' }
-	   //        ]
-	   //     } 
-	   // }
-	   data: function data() {
-	      return {
-	         // items: '',
-	         url: './programm/mein-programm'
-	      };
-	   },
+	  name: 'savedLink',
+	  //  data: function() {
+	  //     return {
+	  //        items: [
+	  //           { message: 'Foo' },
+	  //           { message: 'Bar' }
+	  //        ]
+	  //     } 
+	  // }
+	  data: function data() {
+	    return {
+	      url: './programm/mein-programm',
+	      items: ''
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.savedLink();
+	  },
 
-	   computed: {
-	      items: function items() {
-	         // this.items = "message:" + localStorage.getItem('programId');
-	         // this.items = localStorage.getItem('programId');
-	         // this.items = "36";
+	  computed: {
 
-	         // var ids = ids.length;
+	    savedLink: function savedLink() {
 
-	         // console.log(ids);
-	         // this.items = ids;
-	         // return
-	      }
-	   }
+	      var allIds = localStorage.getItem('programId');
 
-	};
+	      var allIds = JSON.parse("[" + allIds + "]");
+	      // var allIds = allIds.splice(deleteIndex, 1);
+	      allIds.shift();
+	      console.log(allIds);
+
+	      var allIds = allIds.length;
+	      this.items = allIds;
+	      // return
+	    }
+	    //  created () {
+	    //   var items = localStorage.getItem('programId');
+	    //   var number = items.string.split(',');
+	    //   console.log(number);
+	    //   this.item = number;
+	    // }
+
+	  } };
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	  return (_vm.items) ? _c('div', {
 	    staticClass: "saved-link"
 	  }, [_c('a', {
 	    attrs: {
 	      "href": _vm.url
 	    }
-	  }, [_vm._v("Saved Elements")])])
+	  }, [_vm._v("Saved Elements: "), _c('span', [_vm._v(_vm._s(_vm.items))])])]) : _vm._e()
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -12355,12 +12367,13 @@
 	  },
 	  data: function data() {
 	    return {
-	      program: [],
+	      programevent: [],
 	      items: []
 	    };
 	  },
 	  mounted: function mounted() {
 	    this.getEntries();
+	    this.getItems();
 	  },
 
 	  computed: {
@@ -12369,7 +12382,7 @@
 	      var allIds = JSON.parse("[" + allIds + "]");
 	      console.log(allIds);
 	      this.items = allIds;
-	      return;
+	      // return
 	    }
 	  },
 	  methods: {
@@ -12377,21 +12390,12 @@
 	      var _this2 = this;
 
 	      var _this = this;
-	      axios.get('http://mn.dev/program.json').then(function (response) {
-	        _this2.program = response.data.data;
+	      axios.get('http://mn.dev/programevent.json').then(function (response) {
+	        _this2.programevent = response.data.data;
 	      });
 	    }
 	  }
 	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -12418,19 +12422,10 @@
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program-list"
-	  }, _vm._l((_vm.program), function(entry) {
-	    return _c('li', [_vm._v("\n        " + _vm._s(entry.title) + "\n        "), _c('ul', {
-	      staticClass: "programevent"
-	    }, _vm._l((_vm.items), function(item) {
-	      return _c('div', _vm._l((entry.events), function(programevent) {
-	        return (programevent.id == item) ? _c('li', {
-	          key: programevent.id,
-	          attrs: {
-	            "programevent": programevent
-	          }
-	        }, [_c('span', [_vm._v(_vm._s(programevent.id))]), _vm._v(" " + _vm._s(programevent.title) + "\n              \n            ")]) : _vm._e()
-	      }))
-	    }))])
+	  }, _vm._l((_vm.items), function(item) {
+	    return _c('div', _vm._l((_vm.programevent), function(entry) {
+	      return (entry.id == item) ? _c('li', [_c('h2', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', [_vm._v("\n             Im " + _vm._s(entry.parent.title)), _c('br')]), _c('br')]) : _vm._e()
+	    }))
 	  }))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true

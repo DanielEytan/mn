@@ -2,25 +2,16 @@
   <div class="program--entry">
     <article>
       <ul class="program-list" >
-        <!-- <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent"></programevent> -->
-
-        <li v-for="entry in program" >
-          {{ entry.title }}
-          <ul class="programevent">
-            <div v-for="item in items">
-
-              <li v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" v-if="programevent.id == item">
-                <span>{{ programevent.id }}</span> {{ programevent.title }}
-                
-              </li>
-            </div>
-
-          </ul>
-        </li>
+         <div v-for="item in items">
+            <li v-for="entry in programevent" v-if="entry.id == item">
+               <h2>{{ entry.title }}</h2>
+               <div>
+               Im {{ entry.parent.title }}<br>
+               </div><br>
+            </li>
+         </div>
       </ul>
     </article>
-    
-    
   </div>
 </template>
 
@@ -36,28 +27,30 @@ module.exports = {
   },
   data: function () {
     return {
-      program: [],
+      programevent: [],
       items: []
     }
   },
   mounted () {
     this.getEntries();
+    this.getItems();
+
   },
   computed: {
-    getItems: function () {
+    getItems () {
      var allIds = localStorage.getItem('programId');
      var allIds = JSON.parse("[" + allIds + "]");
      console.log(allIds);
      this.items = allIds;
-     return
+     // return
    }
  },
  methods: {
   getEntries () {
     let _this = this;
-    axios.get('http://mn.dev/program.json')
+    axios.get('http://mn.dev/programevent.json')
     .then(response => {
-      this.program = response.data.data;
+      this.programevent = response.data.data;
     })
   }
 }
