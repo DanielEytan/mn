@@ -3,11 +3,12 @@
     <article>
       <ul class="program-list" >
          <div v-for="item in items">
-            <li v-for="entry in programevent" v-if="entry.id == item">
+            <li v-for="entry in programevents" v-if="entry.id == item">
                <h2>{{ entry.title }}</h2>
                <div>
                Im {{ entry.parent.title }}<br>
                </div><br>
+               <saveprogram :programevent="entry"></saveprogram>
             </li>
          </div>
       </ul>
@@ -17,38 +18,51 @@
 
 <script>
 import ProgramEvent from './ProgramEvent.vue'
+import SaveProgram from './SaveProgram.vue'
 
 
 module.exports = {
   name: 'myprogram',
-  props: ['entry'],
+  props: [],
   components: {
-    programevent: ProgramEvent
+    programevent: ProgramEvent,
+    saveprogram: SaveProgram
   },
   data: function () {
     return {
-      programevent: [],
-      items: []
+      programevents: [],
+      items: [],
     }
   },
   mounted () {
     this.getEntries();
     this.getItems();
-
   },
 
   methods: {
-    getEntries () {
+    getEntries: function () {
       let _this = this;
       axios.get('../programevent.json')
       .then(response => {
-        this.programevent = response.data.data;
+        this.programevents = response.data.data;
       })
     },
-    getItems () {
-     var idList = JSON.parse(localStorage.getItem('programId'));
-     this.items = idList;
-   }
+    getItems: function () {
+      var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
+      var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
+      var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
+      window.history.pushState("add ids", "ids", "?ids="+idList.join('+'));
+      this.items = idList;
+    },
+    getParameterByName: function (name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
   }
 }
 

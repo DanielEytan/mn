@@ -84,8 +84,9 @@ footer#footer {
   height: 30px;
   border-radius: 100%;
   z-index: 1; }
-  .program--overview .program-list .save-element.saved {
-    background: red; }
+
+.program--overview.program--overview-saved .program-list .save-element {
+  position: relative; }
 
 .institutions .google-map[data-v-87e9ef04] {
   width: 100%;

@@ -13588,7 +13588,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13743,17 +13743,41 @@
 
 	var _ProgramEvent2 = _interopRequireDefault(_ProgramEvent);
 
+	var _SaveProgram = __webpack_require__(99);
+
+	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'myprogram',
-	  props: ['entry'],
+	  props: [],
 	  components: {
-	    programevent: _ProgramEvent2.default
+	    programevent: _ProgramEvent2.default,
+	    saveprogram: _SaveProgram2.default
 	  },
 	  data: function data() {
 	    return {
-	      programevent: [],
+	      programevents: [],
 	      items: []
 	    };
 	  },
@@ -13769,31 +13793,27 @@
 
 	      var _this = this;
 	      axios.get('../programevent.json').then(function (response) {
-	        _this2.programevent = response.data.data;
+	        _this2.programevents = response.data.data;
 	      });
 	    },
 	    getItems: function getItems() {
-	      var idList = JSON.parse(localStorage.getItem('programId'));
+	      var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
+	      var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
+	      var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
+	      window.history.pushState("add ids", "ids", "?ids=" + idList.join('+'));
 	      this.items = idList;
+	    },
+	    getParameterByName: function getParameterByName(name, url) {
+	      if (!url) url = window.location.href;
+	      name = name.replace(/[\[\]]/g, "\\$&");
+	      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	          results = regex.exec(url);
+	      if (!results) return null;
+	      if (!results[2]) return '';
+	      return decodeURIComponent(results[2].replace(/\+/g, " "));
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 118 */
@@ -13805,8 +13825,12 @@
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program-list"
 	  }, _vm._l((_vm.items), function(item) {
-	    return _c('div', _vm._l((_vm.programevent), function(entry) {
-	      return (entry.id == item) ? _c('li', [_c('h2', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', [_vm._v("\n             Im " + _vm._s(entry.parent.title)), _c('br')]), _c('br')]) : _vm._e()
+	    return _c('div', _vm._l((_vm.programevents), function(entry) {
+	      return (entry.id == item) ? _c('li', [_c('h2', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', [_vm._v("\n             Im " + _vm._s(entry.parent.title)), _c('br')]), _c('br'), _vm._v(" "), _c('saveprogram', {
+	        attrs: {
+	          "programevent": entry
+	        }
+	      })], 1) : _vm._e()
 	    }))
 	  }))])])
 	},staticRenderFns: []}

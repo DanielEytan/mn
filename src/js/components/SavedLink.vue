@@ -7,7 +7,6 @@
 <script>
 import { EventBus } from '../event-bus.js';
 
-
 module.exports = {
   name: 'savedlink',
     data: function () {

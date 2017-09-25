@@ -30,8 +30,12 @@
 				height: 30px;
 				border-radius: 100%;
 				z-index: 1;
-				&.saved {
-					background: red;
+			}
+		}
+		&.program--overview-saved {
+			.program-list {
+				.save-element {
+					position: relative;
 				}
 			}
 		}
