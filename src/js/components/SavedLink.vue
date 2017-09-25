@@ -11,7 +11,7 @@ module.exports = {
   name: 'savedlink',
     data: function () {
       return {
-        url: './programm/mein-programm',
+        url: '/programm/mein-programm',
         items: []
     }
   },

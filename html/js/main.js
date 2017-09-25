@@ -13605,7 +13605,7 @@
 	  name: 'savedlink',
 	  data: function data() {
 	    return {
-	      url: './programm/mein-programm',
+	      url: '/programm/mein-programm',
 	      items: []
 	    };
 	  },
