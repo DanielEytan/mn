@@ -13,6 +13,7 @@ import saveProgram from './components/SaveProgram.vue'
 import savedLink from './components/SavedLink.vue'
 import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
+import GoogleMap from './components/GoogleMap.vue'
 
 
 //vue main app instance
@@ -27,7 +28,8 @@ var vueApp = new Vue({
         programlist: ProgramList,
         saveprogram: saveProgram,
         savedlink: savedLink,
-        myprogram: MyProgram
+        myprogram: MyProgram,
+        googlemap: GoogleMap
 
 
     },

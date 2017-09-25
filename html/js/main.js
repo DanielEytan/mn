@@ -93,6 +93,10 @@
 
 	var _momentMin2 = _interopRequireDefault(_momentMin);
 
+	var _GoogleMap = __webpack_require__(170);
+
+	var _GoogleMap2 = _interopRequireDefault(_GoogleMap);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
@@ -114,7 +118,8 @@
 	        programlist: _ProgramList2.default,
 	        saveprogram: _SaveProgram2.default,
 	        savedlink: _SavedLink2.default,
-	        myprogram: _MyProgram2.default
+	        myprogram: _MyProgram2.default,
+	        googlemap: _GoogleMap2.default
 
 	    },
 	    data: {
@@ -34067,6 +34072,168 @@
 	}.call(this));
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(120)(module)))
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(171)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(173),
+	  /* template */
+	  __webpack_require__(174),
+	  /* scopeId */
+	  "data-v-4b8d88ce",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/GoogleMap.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] GoogleMap.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-4b8d88ce", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-4b8d88ce", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(172);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("7f0f20e4", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.google-map[data-v-4b8d88ce] {\n width: 800px;\n height: 600px;\n margin: 0 auto;\n background: gray;\n}\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	  name: 'googlemap',
+	  props: ['name'],
+	  data: function data() {
+	    return {
+	      mapName: "multiMap",
+	      markerCoordinates: [],
+	      map: null,
+	      bounds: null,
+	      markers: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+
+	    var element = document.getElementById(this.mapName);
+	    var options = {
+	      zoom: 14,
+	      center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
+	      // center: new google.maps.LatLng(51.501527,-0.1921837)
+	    };
+
+	    this.map = new google.maps.Map(element, options);
+	  },
+	  methods: {
+	    getEntries: function getEntries() {
+	      var _this2 = this;
+
+	      axios.get('./locations.json').then(function (response) {
+	        var _this = _this2;
+	        //init marker positions
+	        response.data.data.forEach(function (item) {
+	          if (item.lat !== null && item.lng !== null) {
+	            _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng) });
+	          }
+	        });
+	        //init markers
+	        _this.markerCoordinates.forEach(function (coord) {
+	          var position = new google.maps.LatLng(coord.latitude, coord.longitude);
+	          var marker = new google.maps.Marker({
+	            position: position,
+	            map: _this.map
+	          });
+	          _this.markers.push(marker);
+	        });
+	      });
+	    }
+	  }
+	};
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "google-map",
+	    attrs: {
+	      "id": "multiMap"
+	    }
+	  })
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4b8d88ce", module.exports)
+	  }
+	}
 
 /***/ })
 /******/ ]);
