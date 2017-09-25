@@ -1,21 +1,51 @@
 <template>
-  <div class="save-element" v-on:click="save">{{ text }}</div>
+   <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">
+      <span v-bind:class="{active: toggled}">{{ programevent.id }}</span>
+      <p  v-if="toggled">TOGGLED!</p>
+   </div>
+
+
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js';
 
 module.exports = {
    name: 'saveProgram',
+   props: ['programevent'],
    data: function () {
       return {
-         text: 'Save'
+         toggled: false
       }
-
+   },
+   mounted () {
+      this.init();
    },
    methods: {
-      save: function (event) {
-         // alert('saved')
-         localStorage.setItem('event:', 'text')
+      init: function () {
+         var id = this.programevent.id;
+         var idListString = localStorage.getItem("programId");
+         var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
+         if( idListArray.indexOf(id) >= 0 ) {
+            this.toggled = true;
+         }
+      },
+      save: function (id) {
+         var idListString = localStorage.getItem("programId");
+         var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
+         // var idListArray = JSON.parse(localStorage.getItem("programId"));
+
+         if( idListArray.indexOf(id) >= 0 ) {
+            // id is already in array -> remove and toggle off
+            idListArray.splice(idListArray.indexOf(id),1);
+            this.toggled = false;
+         } else {
+            // id is not in array -> add and toggle on
+            idListArray.push(id);
+            this.toggled = true;
+         }
+         localStorage.setItem("programId", JSON.stringify(idListArray));
+         EventBus.$emit('program-saved');
       }
    }
 }

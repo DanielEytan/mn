@@ -46,19 +46,28 @@ body {
   line-height: 1.2em; }
 
 header#header {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  position: relative; }
+  header#header .saved-link {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 footer#footer {
   border-top: 1px solid;
   padding-top: 1em; }
 
 .program--overview .program-list li.program--event {
-  position: relative; }
+  position: relative;
+  background: #e6e6e6;
+  padding: 1em; }
   .program--overview .program-list li.program--event h2 {
+    margin-bottom: .5em;
     font-weight: bold; }
   .program--overview .program-list li.program--event ul li {
     font-size: .8em;
-    background: #e6e6e6;
+    background: #1e1eff;
+    color: white;
     padding: .2em .3em;
     display: inline;
     margin-right: .25em; }
@@ -68,14 +77,16 @@ footer#footer {
 
 .program--overview .program-list .save-element {
   position: absolute;
-  right: 0;
+  right: 1em;
+  top: 1em;
   background: grey;
   width: 30px;
   height: 30px;
   border-radius: 100%;
   z-index: 1; }
-  .program--overview .program-list .save-element.saved {
-    background: red; }
+
+.program--overview.program--overview-saved .program-list .save-element {
+  position: relative; }
 
 .institutions .google-map[data-v-87e9ef04] {
   width: 100%;
@@ -143,6 +154,14 @@ footer#footer {
   height: 400px;
   margin-bottom: 50px; }
 
+.saved-links {
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.programevent {
+  padding-left: 1em; }
+
 body {
   margin: 20px 10vw; }
 
@@ -154,6 +173,9 @@ h1 {
   font-size: 1.5em;
   line-height: 1.2em;
   margin-bottom: .5em; }
+
+.active {
+  color: red; }
 
 #menu ul {
   height: 3em;
