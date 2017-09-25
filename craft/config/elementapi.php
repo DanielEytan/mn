@@ -164,6 +164,24 @@ return [
                     'lng' => $entry->map->lng,
                 ];
             },
-        ]
+        ],
+        'programevent.json' => [
+            'elementType' => ElementType::Entry,
+            'criteria' => ['section' => 'program','type' =>'Event'],
+            'transformer' => function(EntryModel $entry) {
+                $parent = $entry->getParent();
+                return [
+                    'title' => $entry->title,
+                    'url' => $entry->url,
+                    'id' => $entry->id,
+                    'description' => $entry->description,
+                    'level' => $entry->level,
+                    'parent' => $parent ? [
+                        'title' => $parent->title,
+                        'url' => $parent->url,
+                    ] : null,
+                ];
+            },
+        ],
     ]
 ];
