@@ -25,12 +25,20 @@ import ProgramEvent from './ProgramEvent.vue'
 
 module.exports = {
   name: 'programentry',
-  props: ['entry','childCount','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],
+  props: ['entry','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],
   components: {
     programevent: ProgramEvent
   },
   data: function () {
     return {
+      internalNumberOfEvents: 0
+    }
+  },
+  watch: {
+    internalNumberOfEvents: function () {
+      var changes = {};
+      changes[this.entry.id] = this.internalNumberOfEvents;
+      this.$emit('update-event-number-of-entry', changes);
     }
   },
   methods: {
@@ -70,6 +78,18 @@ module.exports = {
 
       return programEventIsVisible;
     },
+    numberOfEventsOfEntry: function () {
+      var counter = 0;
+      var childStatusList = {};
+
+      for (let programevent of this.entry.events) {
+        if(this.programEventIsVisible(programevent)) {
+          counter++;
+        }
+      }
+      this.internalNumberOfEvents = counter;
+      return counter;
+    }
   },
   computed: {
     showProgramEvents: function () {
@@ -85,22 +105,7 @@ module.exports = {
       } else {
         programEntryIsVisible = false;
       }
-
-      // var shownInThisEntry = childStatusList.reduce(function(n, val) {
-      //     return n + (val === true);
-      // }, 0);
-
-      // var hiddenInThisEntry = childStatusList.reduce(function(n, val) {
-      //     return n + (val === false);
-      // }, 0);
-
-      // console.log(this.entry.title);
-      // console.log(shownInThisEntry);
-      // this.entry.childCount = shownInThisEntry;
-      // this.$emit('update:child-count', shownInThisEntry);
-      // console.log("updated:");
-      // console.log(this);
-
+      this.numberOfEventsOfEntry();
       return programEntryIsVisible;
     }
   }

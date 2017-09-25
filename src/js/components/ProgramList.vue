@@ -1,10 +1,9 @@
 <template>
   <div class="program--list">
     <div>
-      <!-- <p>Anzahl der ausgewählten Institute:</p> -->
-      <!-- <p>Anzahl der ausgewählten Events:{{numberOfEvents}}</p> -->
+      <p>Anzahl der ausgewählten Events:{{calcNumberOfEvents()}}</p>
     </div>
-    <programentry v-for="entry in program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programentry>
+    <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry"></programentry>
   </div>
 </template>
 
@@ -19,19 +18,37 @@ module.exports = {
   },
   data: function () {
     return {
-      program: []
+      program: [],
+      eventHash: {0:0}
     }
+  },
+  computed: {
   },
   mounted () {
     this.getEntries();
   },
   methods: {
-    getEntries () {
+    getEntries: function () {
       let _this = this;
       axios.get('program.json')
         .then(response => {
           this.program = response.data.data;
         })
+    },
+    initEventHash: function () {
+      for (let entry of this.program ) {
+        this.eventHash[entry.id] = 0;
+      }
+    },
+    calcNumberOfEvents: function () {
+      var sum = 0;
+      for(var key in this.eventHash){
+        sum += parseInt(this.eventHash[key]);
+      }
+      return sum;
+    },
+    updateEventNumberOfEntry: function (data) {
+      this.$set(this.eventHash, Object.keys(data)[0], data[Object.keys(data)[0]]);
     }
   }
 }
