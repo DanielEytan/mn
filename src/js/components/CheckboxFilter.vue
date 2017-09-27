@@ -32,9 +32,16 @@ module.exports = {
   },
   mounted () {
     this.getEntries();
+    this.initEventBus();
   },
   methods: {
-    getEntries () {
+    initEventBus: function () {
+      var _this = this;
+      EventBus.$on('remove-all-filter', function () {
+        _this.internalCheckedValues = [];
+      });
+    },
+    getEntries: function () {
       let _this = this;
       axios.get(this.valueName + '.json')
         .then(response => {

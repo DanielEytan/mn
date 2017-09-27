@@ -93,101 +93,115 @@
 
 	var _momentMin2 = _interopRequireDefault(_momentMin);
 
-	var _GoogleMap = __webpack_require__(170);
+	var _GoogleMap = __webpack_require__(143);
 
 	var _GoogleMap2 = _interopRequireDefault(_GoogleMap);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
-	window.axios = __webpack_require__(143);
-	window._ = __webpack_require__(169);
+	window.axios = __webpack_require__(148);
+	window._ = __webpack_require__(174);
 
 	//import
 
 
 	//vue main app instance
 	var vueApp = new _vue2.default({
-	    delimiters: ['${', '}'],
-	    el: '#vue-app',
-	    components: {
-	        themelist: _ThemeList2.default,
-	        institutionfilter: _InstitutionFilter2.default,
-	        checkboxfilter: _CheckboxFilter2.default,
-	        timefilter: _TimeFilter2.default,
-	        programlist: _ProgramList2.default,
-	        saveprogram: _SaveProgram2.default,
-	        savedlink: _SavedLink2.default,
-	        myprogram: _MyProgram2.default,
-	        googlemap: _GoogleMap2.default
-
+	  delimiters: ['${', '}'],
+	  el: '#vue-app',
+	  components: {
+	    themelist: _ThemeList2.default,
+	    institutionfilter: _InstitutionFilter2.default,
+	    checkboxfilter: _CheckboxFilter2.default,
+	    timefilter: _TimeFilter2.default,
+	    programlist: _ProgramList2.default,
+	    saveprogram: _SaveProgram2.default,
+	    savedlink: _SavedLink2.default,
+	    myprogram: _MyProgram2.default,
+	    googlemap: _GoogleMap2.default
+	  },
+	  data: {
+	    menuOpen: false,
+	    checkedInstitutions: [],
+	    checkedThemes: [],
+	    checkedEvents: [],
+	    checkedLanguages: [],
+	    checkedTimes: [],
+	    institutionsAPITitle: "institution",
+	    themesAPITitle: "themes",
+	    eventsAPITitle: "events",
+	    languagesAPITitle: "languages"
+	  },
+	  methods: {
+	    toggle: function toggle() {
+	      this.menuOpen = !this.menuOpen;
 	    },
-	    data: {
-	        menuOpen: false,
-	        checkedInstitutions: [],
-	        checkedThemes: [],
-	        checkedEvents: [],
-	        checkedLanguages: [],
-	        checkedTimes: [],
-	        institutionsAPITitle: "institution",
-	        themesAPITitle: "themes",
-	        eventsAPITitle: "events",
-	        languagesAPITitle: "languages"
-	    },
-	    methods: {
-	        toggle: function toggle() {
-	            this.menuOpen = !this.menuOpen;
-	        }
+	    removeFilter: function removeFilter(filter) {
+	      // console.log(filter);
+	      if (this.checkedInstitutions.indexOf(filter) > -1) {
+	        this.checkedInstitutions.splice(this.checkedInstitutions.indexOf(filter), 1);
+	      }
+	      if (this.checkedThemes.indexOf(filter) > -1) {
+	        this.checkedThemes.splice(this.checkedThemes.indexOf(filter), 1);
+	      }
+	      if (this.checkedEvents.indexOf(filter) > -1) {
+	        this.checkedEvents.splice(this.checkedEvents.indexOf(filter), 1);
+	      }
+	      if (this.checkedLanguages.indexOf(filter) > -1) {
+	        this.checkedLanguages.splice(this.checkedLanguages.indexOf(filter), 1);
+	      }
 	    }
+	  }
 
 	});
 
 	_vue2.default.filter('formatDate', function (value) {
-	    if (value) {
-	        return (0, _momentMin2.default)(String(value)).format("HH:mm");
-	    }
+	  if (value) {
+	    return (0, _momentMin2.default)(String(value)).format("HH:mm");
+	  }
 	});
 
 	_vue2.default.filter('timeTable', function (value) {
-	    var translate = {
-	        "18:00": 0,
-	        "18:15": 1,
-	        "18:30": 2,
-	        "18:45": 3,
-	        "19:00": 4,
-	        "19:15": 5,
-	        "19:30": 6,
-	        "19:45": 7,
-	        "20:00": 8,
-	        "20:15": 9,
-	        "20:30": 10,
-	        "20:45": 11,
-	        "21:00": 12,
-	        "21:15": 13,
-	        "21:30": 14,
-	        "21:45": 15,
-	        "22:00": 16,
-	        "22:15": 17,
-	        "22:30": 18,
-	        "22:45": 19,
-	        "23:00": 20,
-	        "23:15": 21,
-	        "23:30": 22,
-	        "23:45": 23,
-	        "00:00": 24,
-	        "00:15": 25,
-	        "00:30": 26,
-	        "00:45": 27,
-	        "01:00": 28,
-	        "01:15": 29,
-	        "01:30": 30,
-	        "01:45": 31,
-	        "02:00": 32
-	    };
+	  var translate = {
+	    "18:00": 0,
+	    "18:15": 1,
+	    "18:30": 2,
+	    "18:45": 3,
+	    "19:00": 4,
+	    "19:15": 5,
+	    "19:30": 6,
+	    "19:45": 7,
+	    "20:00": 8,
+	    "20:15": 9,
+	    "20:30": 10,
+	    "20:45": 11,
+	    "21:00": 12,
+	    "21:15": 13,
+	    "21:30": 14,
+	    "21:45": 15,
+	    "22:00": 16,
+	    "22:15": 17,
+	    "22:30": 18,
+	    "22:45": 19,
+	    "23:00": 20,
+	    "23:15": 21,
+	    "23:30": 22,
+	    "23:45": 23,
+	    "00:00": 24,
+	    "00:15": 25,
+	    "00:30": 26,
+	    "00:45": 27,
+	    "01:00": 28,
+	    "01:15": 29,
+	    "01:30": 30,
+	    "01:45": 31,
+	    "02:00": 32
+	  };
 
-	    if (value) {
-	        return translate[value];
-	    }
+	  if (value) {
+	    return translate[value];
+	  }
 	});
 
 	_vue2.default.prototype._ = _;
@@ -11388,7 +11402,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11420,9 +11434,16 @@
 	  },
 	  mounted: function mounted() {
 	    this.getEntries();
+	    this.initEventBus();
 	  },
 
 	  methods: {
+	    initEventBus: function initEventBus() {
+	      var _this = this;
+	      _eventBus.EventBus.$on('remove-all-filter', function () {
+	        _this.internalCheckedValues = [];
+	      });
+	    },
 	    getEntries: function getEntries() {
 	      var _this2 = this;
 
@@ -11759,7 +11780,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11782,7 +11803,26 @@
 
 	var _ProgramEntry2 = _interopRequireDefault(_ProgramEntry);
 
+	var _eventBus = __webpack_require__(22);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'programlist',
@@ -11796,12 +11836,23 @@
 	      eventHash: { 0: 0 }
 	    };
 	  },
-	  computed: {},
+	  computed: {
+	    checkedFilters: function checkedFilters() {
+	      return this.checkedInstitutions.concat(this.checkedThemes).concat(this.checkedEvents).concat(this.checkedLanguages);
+	    }
+	  },
 	  mounted: function mounted() {
 	    this.getEntries();
 	  },
 
 	  methods: {
+	    removeFromFilters: function removeFromFilters(filter, removeAll) {
+	      if (!removeAll) {
+	        this.$emit('remove-filter', filter);
+	      } else if (removeAll) {
+	        _eventBus.EventBus.$emit('remove-all-filter');
+	      }
+	    },
 	    getEntries: function getEntries() {
 	      var _this2 = this;
 
@@ -11847,15 +11898,7 @@
 	      this.$set(this.eventHash, (0, _keys2.default)(data)[0], data[(0, _keys2.default)(data)[0]]);
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 34 */
@@ -13493,7 +13536,25 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--list"
-	  }, [_c('div', [_c('p', [_vm._v("Anzahl der ausgewählten Events:" + _vm._s(_vm.calcNumberOfEvents()))])]), _vm._v(" "), _vm._l((_vm.program), function(entry) {
+	  }, [_c('div', [_c('p', [_vm._v("Anzahl der ausgewählten Events:" + _vm._s(_vm.calcNumberOfEvents()))])]), _vm._v(" "), _vm._l((_vm.checkedFilters), function(filter) {
+	    return _c('div', {
+	      staticClass: "filter--tag"
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	      on: {
+	        "click": function($event) {
+	          _vm.removeFromFilters(filter)
+	        }
+	      }
+	    }, [_vm._v("(x)")])])
+	  }), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
+	    staticClass: "removeAll--tag"
+	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
+	    on: {
+	      "click": function($event) {
+	        _vm.removeFromFilters('', true)
+	      }
+	    }
+	  }, [_vm._v("(x)")])]) : _vm._e(), _vm._v(" "), _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
 	      key: entry.id,
 	      ref: "program",
@@ -15457,18 +15518,180 @@
 /* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(144);
+	
+	/* styles */
+	__webpack_require__(144)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(146),
+	  /* template */
+	  __webpack_require__(147),
+	  /* scopeId */
+	  "data-v-4b8d88ce",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/GoogleMap.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] GoogleMap.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-4b8d88ce", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-4b8d88ce", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
 
 /***/ }),
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(145);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("7f0f20e4", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.google-map[data-v-4b8d88ce] {\n width: 800px;\n height: 600px;\n margin: 0 auto;\n background: gray;\n}\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports) {
+
 	'use strict';
 
-	var utils = __webpack_require__(145);
-	var bind = __webpack_require__(146);
-	var Axios = __webpack_require__(148);
-	var defaults = __webpack_require__(149);
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+
+	exports.default = {
+	  name: 'googlemap',
+	  props: ['name'],
+	  data: function data() {
+	    return {
+	      mapName: "multiMap",
+	      markerCoordinates: [],
+	      map: null,
+	      bounds: null,
+	      markers: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+
+	    var element = document.getElementById(this.mapName);
+	    var options = {
+	      zoom: 14,
+	      center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
+	      // center: new google.maps.LatLng(51.501527,-0.1921837)
+	    };
+
+	    this.map = new google.maps.Map(element, options);
+	  },
+	  methods: {
+	    getEntries: function getEntries() {
+	      var _this2 = this;
+
+	      axios.get('./locations.json').then(function (response) {
+	        var _this = _this2;
+	        //init marker positions
+	        response.data.data.forEach(function (item) {
+	          if (item.lat !== null && item.lng !== null) {
+	            _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng) });
+	          }
+	        });
+	        //init markers
+	        _this.markerCoordinates.forEach(function (coord) {
+	          var position = new google.maps.LatLng(coord.latitude, coord.longitude);
+	          var marker = new google.maps.Marker({
+	            position: position,
+	            map: _this.map
+	          });
+	          _this.markers.push(marker);
+	        });
+	      });
+	    }
+	  }
+	};
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "google-map",
+	    attrs: {
+	      "id": "multiMap"
+	    }
+	  })
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4b8d88ce", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(149);
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var utils = __webpack_require__(150);
+	var bind = __webpack_require__(151);
+	var Axios = __webpack_require__(153);
+	var defaults = __webpack_require__(154);
 
 	/**
 	 * Create an instance of Axios
@@ -15501,15 +15724,15 @@
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(166);
-	axios.CancelToken = __webpack_require__(167);
-	axios.isCancel = __webpack_require__(163);
+	axios.Cancel = __webpack_require__(171);
+	axios.CancelToken = __webpack_require__(172);
+	axios.isCancel = __webpack_require__(168);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(168);
+	axios.spread = __webpack_require__(173);
 
 	module.exports = axios;
 
@@ -15518,13 +15741,13 @@
 
 
 /***/ }),
-/* 145 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var bind = __webpack_require__(146);
-	var isBuffer = __webpack_require__(147);
+	var bind = __webpack_require__(151);
+	var isBuffer = __webpack_require__(152);
 
 	/*global toString:true*/
 
@@ -15827,7 +16050,7 @@
 
 
 /***/ }),
-/* 146 */
+/* 151 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15844,7 +16067,7 @@
 
 
 /***/ }),
-/* 147 */
+/* 152 */
 /***/ (function(module, exports) {
 
 	/*!
@@ -15871,17 +16094,17 @@
 
 
 /***/ }),
-/* 148 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(149);
-	var utils = __webpack_require__(145);
-	var InterceptorManager = __webpack_require__(160);
-	var dispatchRequest = __webpack_require__(161);
-	var isAbsoluteURL = __webpack_require__(164);
-	var combineURLs = __webpack_require__(165);
+	var defaults = __webpack_require__(154);
+	var utils = __webpack_require__(150);
+	var InterceptorManager = __webpack_require__(165);
+	var dispatchRequest = __webpack_require__(166);
+	var isAbsoluteURL = __webpack_require__(169);
+	var combineURLs = __webpack_require__(170);
 
 	/**
 	 * Create a new instance of Axios
@@ -15963,13 +16186,13 @@
 
 
 /***/ }),
-/* 149 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(145);
-	var normalizeHeaderName = __webpack_require__(150);
+	var utils = __webpack_require__(150);
+	var normalizeHeaderName = __webpack_require__(155);
 
 	var DEFAULT_CONTENT_TYPE = {
 	  'Content-Type': 'application/x-www-form-urlencoded'
@@ -15985,10 +16208,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(151);
+	    adapter = __webpack_require__(156);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(151);
+	    adapter = __webpack_require__(156);
 	  }
 	  return adapter;
 	}
@@ -16062,12 +16285,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 150 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -16080,18 +16303,18 @@
 
 
 /***/ }),
-/* 151 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(145);
-	var settle = __webpack_require__(152);
-	var buildURL = __webpack_require__(155);
-	var parseHeaders = __webpack_require__(156);
-	var isURLSameOrigin = __webpack_require__(157);
-	var createError = __webpack_require__(153);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(158);
+	var utils = __webpack_require__(150);
+	var settle = __webpack_require__(157);
+	var buildURL = __webpack_require__(160);
+	var parseHeaders = __webpack_require__(161);
+	var isURLSameOrigin = __webpack_require__(162);
+	var createError = __webpack_require__(158);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(163);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -16188,7 +16411,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(159);
+	      var cookies = __webpack_require__(164);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -16267,12 +16490,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 152 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(153);
+	var createError = __webpack_require__(158);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -16299,12 +16522,12 @@
 
 
 /***/ }),
-/* 153 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(154);
+	var enhanceError = __webpack_require__(159);
 
 	/**
 	 * Create an Error with the specified message, config, error code, request and response.
@@ -16323,7 +16546,7 @@
 
 
 /***/ }),
-/* 154 */
+/* 159 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16350,12 +16573,12 @@
 
 
 /***/ }),
-/* 155 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -16424,12 +16647,12 @@
 
 
 /***/ }),
-/* 156 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	/**
 	 * Parse headers into an object
@@ -16467,12 +16690,12 @@
 
 
 /***/ }),
-/* 157 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -16541,7 +16764,7 @@
 
 
 /***/ }),
-/* 158 */
+/* 163 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16583,12 +16806,12 @@
 
 
 /***/ }),
-/* 159 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -16642,12 +16865,12 @@
 
 
 /***/ }),
-/* 160 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -16700,15 +16923,15 @@
 
 
 /***/ }),
-/* 161 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
-	var transformData = __webpack_require__(162);
-	var isCancel = __webpack_require__(163);
-	var defaults = __webpack_require__(149);
+	var utils = __webpack_require__(150);
+	var transformData = __webpack_require__(167);
+	var isCancel = __webpack_require__(168);
+	var defaults = __webpack_require__(154);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -16785,12 +17008,12 @@
 
 
 /***/ }),
-/* 162 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(145);
+	var utils = __webpack_require__(150);
 
 	/**
 	 * Transform the data for a request or a response
@@ -16811,7 +17034,7 @@
 
 
 /***/ }),
-/* 163 */
+/* 168 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16822,7 +17045,7 @@
 
 
 /***/ }),
-/* 164 */
+/* 169 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16842,7 +17065,7 @@
 
 
 /***/ }),
-/* 165 */
+/* 170 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16862,7 +17085,7 @@
 
 
 /***/ }),
-/* 166 */
+/* 171 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16887,12 +17110,12 @@
 
 
 /***/ }),
-/* 167 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(166);
+	var Cancel = __webpack_require__(171);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -16950,7 +17173,7 @@
 
 
 /***/ }),
-/* 168 */
+/* 173 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16983,7 +17206,7 @@
 
 
 /***/ }),
-/* 169 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -34072,168 +34295,6 @@
 	}.call(this));
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(120)(module)))
-
-/***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	
-	/* styles */
-	__webpack_require__(171)
-
-	var Component = __webpack_require__(10)(
-	  /* script */
-	  __webpack_require__(173),
-	  /* template */
-	  __webpack_require__(174),
-	  /* scopeId */
-	  "data-v-4b8d88ce",
-	  /* cssModules */
-	  null
-	)
-	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/GoogleMap.vue"
-	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] GoogleMap.vue: functional components are not supported with templates, they should use render functions.")}
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4b8d88ce", Component.options)
-	  } else {
-	    hotAPI.reload("data-v-4b8d88ce", Component.options)
-	  }
-	})()}
-
-	module.exports = Component.exports
-
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(172);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	if(content.locals) module.exports = content.locals;
-	// add the styles to the DOM
-	var update = __webpack_require__(8)("7f0f20e4", content, false);
-	// Hot Module Replacement
-	if(false) {
-	 // When the styles change, update the <style> tags
-	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue");
-	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-	     update(newContent);
-	   });
-	 }
-	 // When the module is disposed, remove the <style> tags
-	 module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(7)(undefined);
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.google-map[data-v-4b8d88ce] {\n width: 800px;\n height: 600px;\n margin: 0 auto;\n background: gray;\n}\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	//
-	//
-	//
-	//
-
-	exports.default = {
-	  name: 'googlemap',
-	  props: ['name'],
-	  data: function data() {
-	    return {
-	      mapName: "multiMap",
-	      markerCoordinates: [],
-	      map: null,
-	      bounds: null,
-	      markers: []
-	    };
-	  },
-	  mounted: function mounted() {
-	    this.getEntries();
-
-	    var element = document.getElementById(this.mapName);
-	    var options = {
-	      zoom: 14,
-	      center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
-	      // center: new google.maps.LatLng(51.501527,-0.1921837)
-	    };
-
-	    this.map = new google.maps.Map(element, options);
-	  },
-	  methods: {
-	    getEntries: function getEntries() {
-	      var _this2 = this;
-
-	      axios.get('./locations.json').then(function (response) {
-	        var _this = _this2;
-	        //init marker positions
-	        response.data.data.forEach(function (item) {
-	          if (item.lat !== null && item.lng !== null) {
-	            _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng) });
-	          }
-	        });
-	        //init markers
-	        _this.markerCoordinates.forEach(function (coord) {
-	          var position = new google.maps.LatLng(coord.latitude, coord.longitude);
-	          var marker = new google.maps.Marker({
-	            position: position,
-	            map: _this.map
-	          });
-	          _this.markers.push(marker);
-	        });
-	      });
-	    }
-	  }
-	};
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "google-map",
-	    attrs: {
-	      "id": "multiMap"
-	    }
-	  })
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4b8d88ce", module.exports)
-	  }
-	}
 
 /***/ })
 /******/ ]);

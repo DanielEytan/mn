@@ -30,8 +30,6 @@ var vueApp = new Vue({
         savedlink: savedLink,
         myprogram: MyProgram,
         googlemap: GoogleMap
-
-
     },
     data: {
         menuOpen: false,
@@ -48,6 +46,21 @@ var vueApp = new Vue({
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
+        },
+        removeFilter: function (filter) {
+          // console.log(filter);
+          if(this.checkedInstitutions.indexOf(filter) > -1) {
+            this.checkedInstitutions.splice(this.checkedInstitutions.indexOf(filter),1);
+          }
+          if(this.checkedThemes.indexOf(filter) > -1) {
+            this.checkedThemes.splice(this.checkedThemes.indexOf(filter),1);
+          }
+          if(this.checkedEvents.indexOf(filter) > -1) {
+            this.checkedEvents.splice(this.checkedEvents.indexOf(filter),1);
+          }
+          if(this.checkedLanguages.indexOf(filter) > -1) {
+            this.checkedLanguages.splice(this.checkedLanguages.indexOf(filter),1);
+          }
         }
     },
     
