@@ -1,6 +1,6 @@
 <template>
   <div class="program--list">
-    <div>
+    <div class="number">
       <p>Anzahl der ausgewählten Events:{{calcNumberOfEvents()}}</p>
     </div>
     <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry"></programentry>
