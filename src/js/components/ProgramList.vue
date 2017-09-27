@@ -3,12 +3,20 @@
     <div class="number">
       <p>Anzahl der ausgewählten Events:{{calcNumberOfEvents()}}</p>
     </div>
+    <div class="filter--tag" v-for="filter in checkedFilters">
+      <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+    </div>
+    <div class="removeAll--tag" v-if="checkedFilters.length > 0">
+      <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
+    </div>
+
     <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry"></programentry>
   </div>
 </template>
 
 <script>
 import ProgramEntry from './ProgramEntry.vue'
+import { EventBus } from '../event-bus.js';
 
 module.exports = {
   name: 'programlist',
@@ -23,11 +31,21 @@ module.exports = {
     }
   },
   computed: {
+    checkedFilters: function () {
+      return this.checkedInstitutions.concat(this.checkedThemes).concat(this.checkedEvents).concat(this.checkedLanguages);
+    }
   },
   mounted () {
     this.getEntries();
   },
   methods: {
+    removeFromFilters: function (filter, removeAll) {
+      if(!removeAll) {
+        this.$emit('remove-filter',filter);
+      } else if(removeAll) {
+        EventBus.$emit('remove-all-filter');
+      }
+    },
     getEntries: function () {
       let _this = this;
       axios.get('program.json')
