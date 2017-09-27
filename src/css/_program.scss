@@ -1,13 +1,15 @@
 .program {
 	&--overview {
+		.program--entry {
+			margin-bottom: 100px;
+		}
 		.program--list {
-			.number {
-				margin-bottom: 100px;
-			}
+			
 			li.program--event {
 				position: relative;
 				background: rgb(230,230,230);
 				padding: 1em;
+				margin-bottom: 1em;
 				h2 {
 					margin-bottom: .5em;
 					font-weight: bold;
@@ -21,47 +23,33 @@
 					margin-right: .25em;
 				}
 			}
-			.themes, .kind-of-event {
+			.themes, .kind-of-event, .languages {
 				margin: 1em 0;
 			}
-			.save-element {
+			
+		}
+		&.program--overview-saved {
+			.program-list li {
+				position: relative;
+			}
+		}
+		.save-element {
 				position: absolute;
 				right: 1em;
 				top: 1em;
-				background: grey;
-				width: 30px;
-				height: 30px;
-				border-radius: 100%;
+				
 				z-index: 1;
-			}
-		}
-		&.program--overview-saved {
-			.program-list {
-				.save-element {
-					position: relative;
-				}
-			}
-		}
-		.filter--wrapper {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			>* {
-				margin-bottom: 50px;
-
-			}
-			.filter--headline--wrapper {
-				display: none;
-			}
-			@media only screen and (min-width: $bp2) {
-				>* {
-					flex: 0 1 24%;
-					&.time--filter--wrapper {
-						flex: 0 1 100%;
+				div {
+					background: grey;
+					width: 30px;
+					height: 30px;
+					border-radius: 100%;
+					&.active {
+						background: red;
 					}
 				}
 			}
-		}
+		
 	}
 	&--single {
 

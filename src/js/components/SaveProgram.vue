@@ -1,7 +1,7 @@
 <template>
    <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">
-      <span v-bind:class="{active: toggled}">{{ programevent.id }}</span>
-      <p  v-if="toggled">TOGGLED!</p>
+      <div v-bind:class="{active: toggled}">{{ programevent.id }}</div>
+      <!-- <p  v-if="toggled">TOGGLED!</p> -->
    </div>
 
 

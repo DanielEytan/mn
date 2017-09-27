@@ -46,7 +46,7 @@ body {
   line-height: 1.2em; }
 
 header#header {
-  margin-bottom: 2em;
+  width: 100%;
   position: relative; }
   header#header .saved-link {
     position: absolute;
@@ -57,13 +57,14 @@ footer#footer {
   border-top: 1px solid;
   padding-top: 1em; }
 
-.program--overview .program--list .number {
+.program--overview .program--entry {
   margin-bottom: 100px; }
 
 .program--overview .program--list li.program--event {
   position: relative;
   background: #e6e6e6;
-  padding: 1em; }
+  padding: 1em;
+  margin-bottom: 1em; }
   .program--overview .program--list li.program--event h2 {
     margin-bottom: .5em;
     font-weight: bold; }
@@ -75,40 +76,24 @@ footer#footer {
     display: inline;
     margin-right: .25em; }
 
-.program--overview .program--list .themes, .program--overview .program--list .kind-of-event {
+.program--overview .program--list .themes, .program--overview .program--list .kind-of-event, .program--overview .program--list .languages {
   margin: 1em 0; }
 
-.program--overview .program--list .save-element {
+.program--overview.program--overview-saved .program-list li {
+  position: relative; }
+
+.program--overview .save-element {
   position: absolute;
   right: 1em;
   top: 1em;
-  background: grey;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
   z-index: 1; }
-
-.program--overview.program--overview-saved .program-list .save-element {
-  position: relative; }
-
-.program--overview .filter--wrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-  .program--overview .filter--wrapper > * {
-    margin-bottom: 50px; }
-  .program--overview .filter--wrapper .filter--headline--wrapper {
-    display: none; }
-  @media only screen and (min-width: 1024px) {
-    .program--overview .filter--wrapper > * {
-      -ms-flex: 0 1 24%;
-      flex: 0 1 24%; }
-      .program--overview .filter--wrapper > *.time--filter--wrapper {
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%; } }
+  .program--overview .save-element div {
+    background: grey;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%; }
+    .program--overview .save-element div.active {
+      background: red; }
 
 .institutions .google-map[data-v-87e9ef04] {
   width: 100%;
@@ -146,8 +131,48 @@ footer#footer {
 .programevent {
   padding-left: 1em; }
 
-body {
-  margin: 20px 10vw; }
+.filter--wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .filter--wrapper > * {
+    margin-bottom: 50px; }
+  .filter--wrapper .filter--headline--wrapper {
+    display: none; }
+  @media only screen and (min-width: 1024px) {
+    .filter--wrapper > * {
+      -ms-flex: 0 1 24%;
+      flex: 0 1 24%; }
+      .filter--wrapper > *.time--filter--wrapper {
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%; } }
+
+.number {
+  margin-bottom: 50px; }
+
+.selection {
+  position: relative; }
+
+.filter-tags--container {
+  margin-bottom: 50px;
+  padding-right: 200px; }
+  .filter-tags--container .filter--tag {
+    padding: .3em .3em .2em;
+    border: 1px solid;
+    display: inline-block;
+    margin-right: .5em;
+    margin-bottom: .5em; }
+  .filter-tags--container .removeAll--tag {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+#container {
+  margin: 20px 10vw;
+  position: relative; }
 
 time {
   padding-left: 2em;
@@ -157,9 +182,6 @@ h1 {
   font-size: 1.5em;
   line-height: 1.2em;
   margin-bottom: .5em; }
-
-.active {
-  color: red; }
 
 #menu ul {
   height: 3em;

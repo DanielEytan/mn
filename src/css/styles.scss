@@ -5,13 +5,23 @@
 @import 'footer';
 @import 'program';
 @import 'institution';
-// @import 'can';
+@import 'can';
 @import 'daniel';
 
 
 body {
-	margin: 20px 10vw;
+	// margin: 20px 10vw;
 	// background: green;
+}
+
+#container{
+	margin: 20px 10vw;
+	position: relative;
+	@media only screen and (min-width: 1400px) {
+		// margin: 20px auto;
+		// width: 1400px;
+	}
+
 }
 time {
 	padding-left: 2em;
@@ -23,9 +33,7 @@ h1 {
 	margin-bottom: .5em;
 }
 
-.active {
-	color:red;
-}
+
 
 #menu {
 	ul {
