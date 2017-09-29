@@ -17,6 +17,8 @@
 		<div id="container">
 			<header id="header">
 				<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+				{# {% set mndate = mnDate.mnDate | date %} #}
+				{# <span>Datum: {{ mndate }} </span> #}
 				<nav id="menu" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
 					<div class="burger" >
 						<span></span>
