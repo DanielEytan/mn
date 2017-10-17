@@ -4,6 +4,8 @@
 @import 'header';
 @import 'footer';
 @import 'program';
+@import 'filter';
+@import 'filter-selection';
 @import 'institution';
 @import 'can';
 @import 'daniel';
@@ -13,52 +15,55 @@ body {
 	// margin: 20px 10vw;
 	// background: green;
 }
-
-#container{
-	margin: 20px 10vw;
+img {
+	max-width: 100%;
+}
+#container {
+	margin: 15px;
 	position: relative;
-	@media only screen and (min-width: 1400px) {
-		// margin: 20px auto;
-		// width: 1400px;
-	}
-
 }
-time {
-	padding-left: 2em;
-	color: gray;
-}
-h1 {
-	font-size: 1.5em;
-	line-height: 1.2em;
-	margin-bottom: .5em;
-}
-
-
-
-#menu {
-	ul {
-		height: 3em;
-		overflow: hidden;
-	}
-	&.open {
-		ul {
-			height: auto;
-		}
-	}
-	.burger {
-		span {
-			display: block;
-			background: black;
-			height: 4px;
-			width: 30px;
-			margin-bottom: 5px;
-		}
+main {
+	margin-top: 100px;
+	&.mt {
+		margin-top: 150px;
 	}
 }
+
+section header {
+	margin-bottom: 100px;
+	h1 {
+		letter-spacing: .05;
+	}
+}
+@media screen and (min-width: $bp2) {
+	.narrow {
+		width: 900px;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: $bp1) {
+	#container {
+		margin: 15px 30px;
+	}
+	
+}
+@media screen and (min-width: $bp1) {
+	// #container-wrapped {
+	// 	margin: 30px;
+	// }
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+
+
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+	transition: opacity .5s
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0
+	opacity: 0
 }
+
+

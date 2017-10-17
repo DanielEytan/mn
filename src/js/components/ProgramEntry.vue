@@ -1,17 +1,17 @@
 <template>
-    <div class="program--entry">
+    <div class="program--block narrow">
       <article v-if="showProgramEvents">
-        <h1><a :href="entry.url">{{ entry.number }} – {{ entry.title }}</a></h1>
-
-        <p>{{ entry.address }}<br><span v-for="color in entry.shuttleLine"> {{ color.title }} </span> – {{ entry.journey }}</p><br>
+        <div class="institution">
+        {{ entry.number }} <span v-for="color in entry.shuttleLine"> {{ color.title }} </span>
+        <h1><a :href="entry.url">{{ entry.title }}</a></h1>
+        <h2>{{ entry.programmTitle }}</h2>
+        <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
 
         <p>Essen: {{ entry.food }}</p><br>
 
-        <h2>{{ entry.programmTitle }}</h2>
-        <div v-html="entry.programmText"></div>
-        <br>
+        </div>
+        <!-- <div v-html="entry.programmText"></div> -->
 
-        <h3>Programm</h3><br>
         <ul class="program-list" >
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>

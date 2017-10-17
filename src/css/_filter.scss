@@ -1,0 +1,169 @@
+.program--overview .filter {
+	.filter__checklists--wrapper {
+		background: $dark;
+		color: white;
+		margin-bottom: 75px;
+	}
+	header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		color: black;
+		font-size: .8em;
+		>* {
+			flex: 0 1 50%;
+			div{
+				padding: 1em .7em 1.1em;
+				position: relative;
+				border-top: solid 1px $dark;
+			
+				
+				.arrow {
+					position: absolute;
+					right: .7em;
+				}
+				&.active, &.selected {
+					background: $dark;
+					color: white;
+				}
+
+			}
+			&:nth-child(1) div, &:nth-child(3) div {
+				border-right: solid 1px $dark;
+
+			}
+			&:nth-child(3) div, &:nth-child(4) div {
+				border-bottom: solid 1px $dark;
+
+			}
+		}
+	}
+	
+	.filter--list--wrapper {
+
+		ul {
+			height: 0;
+			overflow: hidden;
+			li {
+				padding: .4em .8em .65em;
+				border: solid 1px;
+				margin-bottom: 1em;
+				font-size: .8em;
+			}
+		}
+		&.active {
+			padding: 1em .7em 1.1em;
+			ul {
+				height: auto;
+			}
+		}
+	}
+	>* {
+		margin-bottom: 30px;
+
+	}
+	&__time {
+		width: 80%;
+		margin-bottom: 2em;
+		h2 {
+			margin-bottom: 3em;
+		}
+		.vue-slider-component .vue-slider-tooltip {
+			background: white;
+			border: solid black 1px;
+			border-radius: 0;
+			font-size: 1.2em;
+			color: black;
+			padding: .3em;
+		}
+	}
+
+	@media only screen and (min-width: $bp1) {
+		&__time {
+			padding: 0 30px;
+		}
+		&__time, &__checklists {
+
+		}
+		&__ckecklists {
+			margin-top: 4em;
+
+
+			header {
+				margin: 0 30px;
+
+				>* {
+					flex: 0 1 24%;
+					div {
+						padding: .45em .7em .5em;
+						border: solid $dark 1px;
+						&.active {
+							border-bottom: 10px $dark solid;
+						}
+					}
+
+				}
+			}
+			.filter--list--wrapper {
+				div {
+
+					ul {
+		// 				display: flex;
+		// flex-wrap: wrap;
+		// justify-content: space-between;
+						li {
+							// flex: 0 1 20%;
+							// padding: 0;
+							display: inline-block;
+							margin-right: 1em;
+							// padding: .7em .7em .75em;
+						}	
+
+					}
+				}
+				&.active {
+					padding: 1em 30px 1.1em;
+				}
+			}
+		}
+		.filter--list--wrapper {
+			&.active {
+				// padding: 30px;
+				ul {
+					// margin: 30px 0;
+				}
+			}
+		}
+	}
+	@media only screen and (min-width: $bp2) {
+
+		&__time {
+			padding: 0;
+			margin: 0 auto 3em;
+			width: 900px;
+		}
+	}
+	@media only screen and (min-width: $bp3) {
+
+		&__ckecklists header{
+			 
+				// margin: 0 auto;
+				margin: 0 30px;
+				width: auto;
+				// width: 1200px;
+			
+		}
+		&__ckecklists {
+			.filter--list--wrapper {
+				&.active {
+					padding: 50px 0;
+				}
+				ul {
+					// margin: 0 auto;
+					margin: 0 30px;
+					// width: 1200px;
+				}
+			}
+		}
+	}
+}

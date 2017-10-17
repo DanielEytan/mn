@@ -3,20 +3,34 @@
 
 
 	{% block content %}
-		<article class="institutions institutions--single">
-			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
-			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
+		<div id="container">	
+		<article class="institutions institutions--single narrow">
+			<span>{{ entry.number }} – {% for color in entry.shuttleLine %}{{ color.title }}{% endfor %}</span>
+			<h1>{{ entry.title }}</h1>
+
+			<div>
+				<div>
+					{% if entry.advanceSale %}Ticketvorverkauf<br>{% endif %}
+					    {{ entry.accessibility.label }}<br><br>
+					    <p>{{ entry.address }}<br><br>
+
+					    Anfahrt:<br>{{ entry.journey }}</p><br>
+					
+					
+				</div>
+			</div>
+			
 
 			
-			{% endif %}
+			{# {% endif %} #}
 			
 			<p>Essen: {{ entry.food }}</p><br>
 
 			<h2>{{ entry.programmTitle }}</h2>
-			{{ entry.programmText }}
-			<ul class="institutions institutions--single institutions--single__program-list">
-				
-				{% for entry in craft.entries.section('program').getDescendants(2) %}
+			{{ entry.programmText }}<br>
+			<ul class="institutions--single__program-list">
+				{% set children = entry.children().level(2) %}
+				{% for entry in children %}
 					<li>
 						<h2>{{ entry.title }}</h2>
 						{% for time in entry.time %}
@@ -36,4 +50,5 @@
 
 				
 			</article>
+		</div>
 		{% endblock %}

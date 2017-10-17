@@ -49,6 +49,7 @@ return [
                     $eventsInfo[] = [
                         'title' => $event->title,
                         'id' => $event->id,
+                        'description' => $event->description,
                         'time' => $timeBlocks,
                         'themes' => array_map( function (CategoryModel $category) {
                         return [
@@ -84,7 +85,6 @@ return [
                     'programmTitle' => (string) $entry->programmTitle,
                     'programmText' => (string) $entry->programmText,
                     'jsonUrl' => UrlHelper::getUrl("program/{$entry->id}.json"),
-                    'description' => (string)$entry->description,
                     'events' => $eventsInfo,
                     'shuttleLine' => array_map( function (CategoryModel $category) {
                         return [
