@@ -123,6 +123,10 @@
 	  },
 	  data: {
 	    menuOpen: false,
+	    openInstitution: false,
+	    openThemes: false,
+	    openKinds: false,
+	    openLang: false,
 	    checkedInstitutions: [],
 	    checkedThemes: [],
 	    checkedEvents: [],
@@ -136,6 +140,55 @@
 	  methods: {
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
+	    },
+	    toggleInstitution: function toggleInstitution() {
+	      this.openInstitution = !this.openInstitution;
+
+	      if (this.openThemes = true) {
+	        this.openThemes = !this.openThemes;
+	      };
+	      if (this.openKinds = true) {
+	        this.openKinds = !this.openKinds;
+	      };
+	      if (this.openLang = true) {
+	        this.openLang = !this.openLang;
+	      };
+	    },
+	    toggleThemes: function toggleThemes() {
+	      this.openThemes = !this.openThemes;
+	      if (this.openInstitution = true) {
+	        this.openInstitution = !this.openInstitution;
+	      };
+	      if (this.openKinds = true) {
+	        this.openKinds = !this.openKinds;
+	      };
+	      if (this.openLang = true) {
+	        this.openLang = !this.openLang;
+	      };
+	    },
+	    toggleKinds: function toggleKinds() {
+	      this.openKinds = !this.openKinds;
+	      if (this.openInstitution = true) {
+	        this.openInstitution = !this.openInstitution;
+	      };
+	      if (this.openThemes = true) {
+	        this.openThemes = !this.openThemes;
+	      };
+	      if (this.openLang = true) {
+	        this.openLang = !this.openLang;
+	      };
+	    },
+	    toggleLang: function toggleLang() {
+	      this.openLang = !this.openLang;
+	      if (this.openInstitution = true) {
+	        this.openInstitution = !this.openInstitution;
+	      };
+	      if (this.openThemes = true) {
+	        this.openThemes = !this.openThemes;
+	      };
+	      if (this.openKinds = true) {
+	        this.openKinds = !this.openKinds;
+	      };
 	    },
 	    removeFilter: function removeFilter(filter) {
 	      // console.log(filter);
@@ -11621,7 +11674,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.vue-slider-component .vue-slider-tooltip[data-v-243d86f3]  {\n  background: black;\n}\n", ""]);
 
 	// exports
 
@@ -11687,7 +11740,7 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "TimeFilter"
+	    staticClass: "filter__time"
 	  }, [_c('vue-slider', _vm._b({
 	    ref: "slider",
 	    model: {
@@ -11780,7 +11833,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -11807,6 +11860,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -13195,7 +13252,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13225,6 +13282,10 @@
 	  computed: {},
 	  watch: {}
 	}; //
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -13445,7 +13506,7 @@
 	    class: {
 	      active: _vm.toggled
 	    }
-	  }, [_vm._v(_vm._s(_vm.programevent.id))])])
+	  }, [_vm._v("♥")])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -13462,9 +13523,15 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return (_vm.programeventIsVisible) ? _c('li', {
 	    staticClass: "program--event"
-	  }, [_c('h2', [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v(" "), _vm._l((_vm.programevent.time), function(time) {
+	  }, [_c('h1', [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v("\n  " + _vm._s(_vm.programevent.programmText) + "\n\n  "), _vm._l((_vm.programevent.time), function(time) {
 	    return _c('time', [(time.type === 'setTimes') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " (Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('span', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
-	  }), _vm._v(" "), (_vm.programevent.themes.length) ? _c('div', [_c('div', {
+	  }), _vm._v(" "), _c('div', {
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.programevent.description)
+	    }
+	  }, [_vm._v(_vm._s(_vm.programevent.description))]), _vm._v(" "), _c('div', {
+	    staticClass: "cat-wrapper"
+	  }, [(_vm.programevent.themes.length) ? _c('div', [_c('div', {
 	    staticClass: "themes"
 	  }, [_c('h3', [_vm._v("Themen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_vm._v(_vm._s(theme.title))])
@@ -13476,7 +13543,7 @@
 	    staticClass: "languages"
 	  }, [_c('h3', [_vm._v("Sprachen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('li', [_vm._v(_vm._s(language.title))])
-	  }))])]) : _vm._e(), _c('br'), _vm._v(" "), _c('saveprogram', {
+	  }))])]) : _vm._e()]), _vm._v(" "), _c('saveprogram', {
 	    attrs: {
 	      "programevent": _vm.programevent
 	    }
@@ -13496,18 +13563,16 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "program--entry"
-	  }, [(_vm.showProgramEvents) ? _c('article', [_c('h1', [_c('a', {
+	    staticClass: "program--block narrow"
+	  }, [(_vm.showProgramEvents) ? _c('article', [_c('div', {
+	    staticClass: "institution"
+	  }, [_vm._v("\n    " + _vm._s(_vm.entry.number) + " "), _vm._l((_vm.entry.shuttleLine), function(color) {
+	    return _c('span', [_vm._v(" " + _vm._s(color.title) + " ")])
+	  }), _vm._v(" "), _c('h1', [_c('a', {
 	    attrs: {
 	      "href": _vm.entry.url
 	    }
-	  }, [_vm._v(_vm._s(_vm.entry.number) + " – " + _vm._s(_vm.entry.title))])]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.entry.address)), _c('br'), _vm._l((_vm.entry.shuttleLine), function(color) {
-	    return _c('span', [_vm._v(" " + _vm._s(color.title) + " ")])
-	  }), _vm._v(" – " + _vm._s(_vm.entry.journey))], 2), _c('br'), _vm._v(" "), _c('p', [_vm._v("Essen: " + _vm._s(_vm.entry.food))]), _c('br'), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))]), _vm._v(" "), _c('div', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.entry.programmText)
-	    }
-	  }), _vm._v(" "), _c('br'), _vm._v(" "), _c('h3', [_vm._v("Programm")]), _c('br'), _vm._v(" "), _c('ul', {
+	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))]), _vm._v(" "), _c('p', [_vm._v("Essen: " + _vm._s(_vm.entry.food))]), _c('br')], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "program-list"
 	  }, _vm._l((_vm.entry.events), function(programevent) {
 	    return _c('programevent', {
@@ -13541,8 +13606,8 @@
 	  return _c('div', {
 	    staticClass: "program--list"
 	  }, [_c('div', {
-	    staticClass: "number"
-	  }, [_c('p', [_vm._v("Anzahl der ausgewählten Events:" + _vm._s(_vm.calcNumberOfEvents()))])]), _vm._v(" "), _c('div', {
+	    staticClass: "filter__selection--wrapper"
+	  }, [_c('div', {
 	    staticClass: "selection"
 	  }, [_c('div', {
 	    staticClass: "filter-tags--container"
@@ -13564,7 +13629,13 @@
 	        _vm.removeFromFilters('', true)
 	      }
 	    }
-	  }, [_vm._v("(x)")])]) : _vm._e()], 2)]), _vm._v(" "), _vm._l((_vm.program), function(entry) {
+	  }, [_vm._v("(x)")])]) : _vm._e()], 2)]), _vm._v(" "), _c('div', {
+	    staticClass: "number"
+	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('div', {
+	    attrs: {
+	      "id": "container"
+	    }
+	  }, _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
 	      key: entry.id,
 	      ref: "program",
@@ -13581,7 +13652,7 @@
 	        "update-event-number-of-entry": _vm.updateEventNumberOfEntry
 	      }
 	    })
-	  })], 2)
+	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -13664,7 +13735,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13709,6 +13780,11 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 113 */
@@ -13716,12 +13792,16 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
+	    staticClass: "centered"
+	  }, [(_vm.items.length == 0) ? _c('div', {
+	    staticClass: "mn-date"
+	  }, [_vm._v("21.01.2018 "), _c('span', [_vm._v("– Noch 23 Tage bis zur Museumsnacht")])]) : _vm._e(), _vm._v(" "), (_vm.items.length > 0) ? _c('div', {
 	    staticClass: "saved-link"
 	  }, [_c('a', {
 	    attrs: {
 	      "href": _vm.url
 	    }
-	  }, [_vm._v("Saved Elements: "), _c('span', [_vm._v(_vm._s(_vm.items.length))])])])
+	  }, [_vm._v("♥ " + _vm._s(_vm.items.length) + " "), _c('span', [_vm._v("– MEIN PROGRAM")])])]) : _vm._e()])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
