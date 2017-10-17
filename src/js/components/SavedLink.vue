@@ -1,6 +1,11 @@
 <template>
-  <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items.length }}</span></a></div>
-  <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
+ <div class="centered">
+    <div class="mn-date" v-if="items.length == 0">21.01.2018 <span>– Noch 23 Tage bis zur Museumsnacht</span></div>
+    <div class="saved-link" v-if="items.length > 0"><a :href="url">♥ {{ items.length }} <span>– MEIN PROGRAM</span></a></div>
+
+ </div>
+
+ <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
 
 </template>
 
@@ -8,30 +13,30 @@
 import { EventBus } from '../event-bus.js';
 
 module.exports = {
-  name: 'savedlink',
-    data: function () {
-      return {
-        url: '/programm/mein-programm',
-        items: []
-    }
-  },
-  mounted () {
-    this.savedLinks();
-    this.initEventBus();
-  },
-  methods: {
-    initEventBus: function () {
+ name: 'savedlink',
+ data: function () {
+   return {
+    url: '/programm/mein-programm',
+    items: []
+ }
+},
+mounted () {
+  this.savedLinks();
+  this.initEventBus();
+},
+methods: {
+  initEventBus: function () {
       // Listen for the i-got-clicked event and its payload.
       var _this = this;
       EventBus.$on('program-saved', function () {
-        _this.savedLinks();
-      });
-    },
-    savedLinks: function () {
-     var idList = JSON.parse(localStorage.getItem('programId'));
-     this.items = idList !== null ? idList : [];
-   }
-  }
+       _this.savedLinks();
+    });
+   },
+   savedLinks: function () {
+    var idList = JSON.parse(localStorage.getItem('programId'));
+    this.items = idList !== null ? idList : [];
+ }
+}
 }
 
 </script>
