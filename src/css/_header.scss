@@ -1,10 +1,171 @@
 header#header {
 	width: 100%;
-	position: relative;
-
-	.saved-link {
-		position: absolute;
-		top: 0;
-		right:0;
+	position: fixed;
+	border-bottom: 1px solid;
+	background: white;
+	z-index: 10;
+	top: 0;
+	h1 {
+		margin-bottom: 0;
 	}
+	.logo {
+		width: 30px;
+	}
+	.flex-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// >* {
+		// 	flex: 0 1 auto;
+		// }
+	}
+	nav {
+		
+		div.nav-wrapper {
+			height: 0;
+			overflow: hidden;
+		}
+		ul {
+			margin: 50px 0;
+			li {
+				margin-bottom: 1em;
+				a {
+					border-bottom: solid 2px;
+					line-height: .8em;
+					text-transform: uppercase;
+				
+				}
+			}
+		}
+		&.open {
+			div.nav-wrapper  {
+				height: auto;
+			}
+			.burger-toggle .burger {
+				background: red;
+			}
+		}
+	}
+		// #mymenu {
+		// 	background: $dark;
+		// 	padding: 30px;
+		// 	text-align: center;
+		// 	a {
+		// 		color: white;
+		// 	}
+		// }
+		.burger-toggle {
+			// position: absolute;
+			// right: 0;
+			// top: 0;
+			letter-spacing: .05em;
+			>* {
+				display: inline-block;
+				&:first-child {
+					margin-right: .5em;
+				}
+			}
+			.burger span {
+				display: block;
+				height: 2px;
+				width: 20px;
+				margin-bottom: 3px;
+					background: black;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+			}
+			&:hover {
+				.burger span {
+				animation: burger 1s;
+				&:nth-child(1) {
+					animation: first 1s infinite;
+				}
+				&:nth-child(2) {
+					animation: middle 1s infinite;
+				}
+					
+				}
+			}
+		}
+		
+	
+	.centered {
+		// position: absolute;
+		// top: 0;
+		// left:50%;
+		// width: 300px;
+		// margin-left: -150px;
+		text-align: center;
+		.mn-date span {
+			display: none;
+		}
+		.saved-link a {
+			color: red;
+			span {
+				color: black;
+				// text-decoration: underline;
+			}
+		}
+	
+	}
+	@media screen and (max-width: 300px) {
+		.mn-date {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		.saved-link span {
+			display: none;
+		}
+	}
+	@media screen and (min-width: $bp1) {
+		#menu {
+			.burger-toggle {
+				// right: 30px;
+			}
+		}
+	}
+	@media screen and (min-width: $bp2) {
+		.logo {
+			width: 50px;
+		}
+		.centered {
+			.mn-date span{
+				display: inline-block;
+			}
+		}
+	}
+
+}
+@keyframes first {
+	0% {
+		width: 100%;
+	}
+	30% {
+		width: 70%
+	}
+	40% {
+		width: 90%;
+	}
+	80% {
+		width: 80%;
+	}
+}
+@keyframes middle {
+	0% {
+		width: 100%;
+	}
+	40% {
+		width: 30%
+	}
+	60% {
+		width: 80%;
+	}
+	80% {
+		width: 50%;
+	}
+
 }
