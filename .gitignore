@@ -13,3 +13,4 @@ general.php
 /src/js/components/.DS_Store
 /html/bilder/.DS_Store
 gulpfile.js
+/craft/templates/_includes/.DS_Store
