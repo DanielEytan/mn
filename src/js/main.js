@@ -33,6 +33,10 @@ var vueApp = new Vue({
     },
     data: {
         menuOpen: false,
+        openInstitution: false,
+        openThemes: false,
+        openKinds: false,
+        openLang: false,
         checkedInstitutions: [],
         checkedThemes: [],
         checkedEvents: [],
@@ -46,6 +50,55 @@ var vueApp = new Vue({
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
+        },
+         toggleInstitution: function(){
+            this.openInstitution = !this.openInstitution;
+
+            if (this.openThemes = true) {
+              this.openThemes = !this.openThemes;
+            };
+             if (this.openKinds = true) {
+              this.openKinds = !this.openKinds;              
+            };
+            if (this.openLang = true) {
+              this.openLang = !this.openLang;              
+            };
+        },
+         toggleThemes: function(){
+            this.openThemes = !this.openThemes;
+            if (this.openInstitution = true) {
+              this.openInstitution = !this.openInstitution;
+            };
+             if (this.openKinds = true) {
+              this.openKinds = !this.openKinds;              
+            };
+            if (this.openLang = true) {
+              this.openLang = !this.openLang;              
+            };
+        },
+         toggleKinds: function(){
+            this.openKinds = !this.openKinds;
+            if (this.openInstitution = true) {
+              this.openInstitution = !this.openInstitution;
+            };
+             if (this.openThemes = true) {
+              this.openThemes = !this.openThemes;              
+            };
+            if (this.openLang = true) {
+              this.openLang = !this.openLang;              
+            };
+        },
+         toggleLang: function(){
+            this.openLang = !this.openLang;
+            if (this.openInstitution = true) {
+              this.openInstitution = !this.openInstitution;
+            };
+             if (this.openThemes = true) {
+              this.openThemes = !this.openThemes;              
+            };
+            if (this.openKinds = true) {
+              this.openKinds = !this.openKinds;              
+            };
         },
         removeFilter: function (filter) {
           // console.log(filter);
