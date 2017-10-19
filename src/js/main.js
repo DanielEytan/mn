@@ -14,6 +14,8 @@ import savedLink from './components/SavedLink.vue'
 import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
 import GoogleMap from './components/GoogleMap.vue'
+import twitter from './components/twitter.vue'
+
 
 
 //vue main app instance
@@ -29,7 +31,8 @@ var vueApp = new Vue({
         saveprogram: saveProgram,
         savedlink: savedLink,
         myprogram: MyProgram,
-        googlemap: GoogleMap
+        googlemap: GoogleMap,
+        twitter: twitter,
     },
     data: {
         menuOpen: false,
@@ -46,6 +49,7 @@ var vueApp = new Vue({
         themesAPITitle: "themes",
         eventsAPITitle: "events",
         languagesAPITitle: "languages",
+
     },
     methods: {
         toggle: function() {
