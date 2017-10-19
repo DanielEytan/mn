@@ -3,7 +3,7 @@
   src: url('../fonts/LyonDisplay-Regular.woff') format('woff'), /* IE6-IE8 */
 }
 @font-face {
-  font-family: 'lyon-bold';
+  font-family: 'lyon-medium';
   src: url('../fonts/LyonDisplay-Bold.woff') format('woff'), /* IE6-IE8 */
 }
 @font-face {
@@ -27,16 +27,30 @@ body {
 	@media only screen and (min-width: $bp3) {
 		font-size: 1.3em;
 	}
+	// @media only screen and (min-width: $bp5) {
+	// 	font-size: 1.4em;
+	// }
 }
 
 // Font Main Extra-Bold
 
-.program--overview .institution h1,
+.program .institution h1,
+.institutions article h1.title,
 .filter header,
 .filter--tag,
 time,
 strong,
-header {
+header,
+.institutions--overview h1,
+.institutions--single h1.title,
+.institutions--single .program h2,
+span.shuttle-line, 
+.institutions .visitor-infos,
+.institutions address,
+.institutions h3
+
+
+{
 	font-family: 'main-eb', helvetica;
 }
 
@@ -44,10 +58,11 @@ header {
 
 // Font Lyon Black
 
-.program h1, .program--overview .institution h2,
+.program h1, .program .institution h2,
 .program-list h1,
-header h1 {
-	font-family: 'lyon-bold', times;
+header h1,
+.institutions--single .program-text {
+	font-family: 'lyon-medium', times;
 }
 
 // Font Lyon Regular
@@ -61,8 +76,17 @@ header .mn-date span {
 
 .program .institution h1,
 .program .institution h2,
-.filter header {
+.filter header,
+.institutions article h1,
+
+.institutions--single h1.title,
+.institutions--single span strong,
+.institutions--single .program h2,
+span.shuttle-line,
+section header .narrow {
 	text-transform: uppercase;
+	letter-spacing: .04em;
+	line-height: 1em !important;
 }
 
 // Font Size S
@@ -70,15 +94,50 @@ header .mn-date span {
 // Font Size L
 
 .program .institution h1,
-.program .institution h2 {
-	font-size: 1.5em;
-	line-height: 1em;
+.program .institution h2,
+.program .institution span strong,
+
+.institutions--single .program-text,
+.institutions--overview article h1,
+.institutions--single .program h2,
+.institutions--overview span strong, {
+	font-size: 1.25em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp2) {
+		font-size: 1.5em;
+	}
+	@media only screen and (min-width: $bp5) {
+		font-size: 1.75em;
+	}
 }
 
 // Font-Size XL
 
+.institutions--single  h1.title,
+.institutions--single  span strong,
+.institutions--single .program h1.program-title {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp2) {
+		font-size: 2em;
+	} 
+	@media only screen and (min-width: $bp5) {
+		font-size: 2.5em;
+	} 
+}
+// Font-Size XXL
+
 .nav-wrapper li a,
 section header h1{
-	font-size: 2em;
+	font-size: 1.75em;
 	line-height: 1.2em;
+	@media only screen and (min-width: $bp1) {
+		font-size: 2.5em;
+	} 
+	@media only screen and (min-width: $bp2) {
+		font-size: 3em;
+	} 
+	@media only screen and (min-width: $bp5) {
+		font-size: 3.25em;
+	} 
 }

@@ -1,4 +1,34 @@
 .program {
+	.program-list {
+		border-top: solid 1px;
+		padding-top: 1em;
+		li.program--event {
+			border-bottom: solid 1px;
+			position: relative;
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+			padding-right: 50px;
+			h2 {
+				margin-bottom: .5em;
+			}
+			.cat-wrapper {
+				display: none;
+				ul li {
+					font-size: .8em;
+					background: rgb(30,30,330);
+					color: white;
+					padding: .2em .3em;
+					display: inline;
+					margin-right: .25em;
+					margin-bottom: .25em;
+				}
+			}
+
+		}
+		.themes, .kind-of-event, .languages {
+			margin: 1em 0;
+		}
+	}
 	&--overview {
 		.program--block {
 			// margin:0 0 2em;
@@ -12,37 +42,7 @@
 					margin-bottom: 1em;
 				}
 			}
-			.program-list {
-				border-top: solid 1px;
-				padding-top: 1em;
-
-				li.program--event {
-					border-bottom: solid 1px;
-					position: relative;
-					margin-bottom: 1em;
-					padding-bottom: 1em;
-					padding-right: 50px;
-					h2 {
-						margin-bottom: .5em;
-					}
-					.cat-wrapper {
-						display: none;
-						ul li {
-							font-size: .8em;
-							background: rgb(30,30,330);
-							color: white;
-							padding: .2em .3em;
-							display: inline;
-							margin-right: .25em;
-							margin-bottom: .25em;
-						}
-					}
-					
-				}
-				.themes, .kind-of-event, .languages {
-					margin: 1em 0;
-				}
-			}
+			
 
 		}
 		&.program--overview-saved {
@@ -72,7 +72,7 @@
 		
 	}
 	&--single {
-
+		
 	}
 	@media screen and (min-width: $bp1) {
 		&--overview {

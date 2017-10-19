@@ -77,18 +77,18 @@ header#header {
 				}
 				
 			}
-			&:hover {
-				.burger span {
-				animation: burger 1s;
-				&:nth-child(1) {
-					animation: first 1s infinite;
-				}
-				&:nth-child(2) {
-					animation: middle 1s infinite;
-				}
+			// &:hover {
+			// 	.burger span {
+			// 	animation: burger 1s;
+			// 	&:nth-child(1) {
+			// 		animation: first 1s infinite;
+			// 	}
+			// 	&:nth-child(2) {
+			// 		animation: middle 1s infinite;
+			// 	}
 					
-				}
-			}
+			// 	}
+			// }
 		}
 		
 	

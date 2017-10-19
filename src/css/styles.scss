@@ -11,9 +11,13 @@
 @import 'daniel';
 
 
+
+
 body {
 	// margin: 20px 10vw;
 	// background: green;
+	// background: black;
+	// color: white;
 }
 img {
 	max-width: 100%;
@@ -23,23 +27,20 @@ img {
 	position: relative;
 }
 main {
-	margin-top: 100px;
+	margin-top: 50px;
 	&.mt {
-		margin-top: 150px;
+		margin-top: 100px;
+	}
+	@media screen and (min-width: $bp3) {
+			margin-top: 100px;
+		&.mt {
+			margin-top: 150px;
+		}
 	}
 }
 
-section header {
-	margin-bottom: 100px;
-	h1 {
-		letter-spacing: .05;
-	}
-}
-@media screen and (min-width: $bp2) {
-	.narrow {
-		width: 900px;
-		margin: 0 auto;
-	}
+section header .narrow {
+	margin-bottom: 50px;
 }
 @media screen and (min-width: $bp1) {
 	#container {
@@ -47,10 +48,17 @@ section header {
 	}
 	
 }
-@media screen and (min-width: $bp1) {
-	// #container-wrapped {
-	// 	margin: 30px;
-	// }
+@media screen and (min-width: $bp2) {
+	.narrow {
+		width: 900px;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: $bp3) {
+	.narrow {
+		width: 1000px;
+		margin: 0 auto;
+	}
 }
 a {
 	color: black;
