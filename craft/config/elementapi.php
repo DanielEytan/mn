@@ -49,7 +49,7 @@ return [
                     $eventsInfo[] = [
                         'title' => $event->title,
                         'id' => $event->id,
-                        'description' => $event->description,
+                        'description' => (string) $event->description,
                         'time' => $timeBlocks,
                         'themes' => array_map( function (CategoryModel $category) {
                         return [
@@ -88,7 +88,8 @@ return [
                     'events' => $eventsInfo,
                     'shuttleLine' => array_map( function (CategoryModel $category) {
                         return [
-                            'title' => $category->title
+                            'title' => $category->title,
+                            'color' => $category->color
                         ];
                     }, $entry->shuttleLine->find()),
                 ];
