@@ -13539,11 +13539,11 @@
 	    staticClass: "cat-wrapper"
 	  }, [(_vm.programevent.themes.length) ? _c('div', [_c('div', {
 	    staticClass: "themes"
-	  }, [_c('h3', [_vm._v("Themen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.themes), function(theme) {
+	  }, [_c('h3', [_vm._v("Themen und Sparten:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_vm._v(_vm._s(theme.title))])
 	  }))])]) : _vm._e(), _vm._v(" "), (_vm.programevent.kindOfEvent.length) ? _c('div', [_c('div', {
 	    staticClass: "kindOfEvent"
-	  }, [_c('h3', [_vm._v("Art der Veranstaltung:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	  }, [_c('h3', [_vm._v("Veranstaltungsarten:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return _c('li', [_vm._v(_vm._s(kindOfEvent.title))])
 	  }))])]) : _vm._e(), _vm._v(" "), (_vm.programevent.languages.length) ? _c('div', [_c('div', {
 	    staticClass: "languages"
