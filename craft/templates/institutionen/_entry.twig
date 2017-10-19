@@ -1,54 +1,56 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
 
-
-	{% block content %}
-		<div id="container">	
-		<article class="institutions institutions--single narrow">
-			<span>{{ entry.number }} – {% for color in entry.shuttleLine %}{{ color.title }}{% endfor %}</span>
-			<h1>{{ entry.title }}</h1>
-
+{% block content %}
+<div id="container">
+	<article class="institutions institutions--single narrow">
+		{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }} Shuttle Linie </span>{% endfor %}</span>
+		<h1 class="title">{{ entry.title }}</h1>
+		<div class="flex-container">
 			<div>
-				<div>
-					{% if entry.advanceSale %}Ticketvorverkauf<br>{% endif %}
-					    {{ entry.accessibility.label }}<br><br>
-					    <p>{{ entry.address }}<br><br>
-
-					    Anfahrt:<br>{{ entry.journey }}</p><br>
-					
-					
+				<div class="visitor-infos">
+					<span>{% if entry.advanceSale %}Ticketvorverkauf{% endif %}</span><br>
+					<span>{{ entry.accessibility.label }}</span>
 				</div>
+				<address>{{ entry.address }}</address>
+				<h3>Anfahrt:<</h3>
+				<p>{{ entry.journey }}</p>
 			</div>
-			
-
-			
-			{# {% endif %} #}
-			
-			<p>Essen: {{ entry.food }}</p><br>
-
-			<h2>{{ entry.programmTitle }}</h2>
-			{{ entry.programmText }}<br>
-			<ul class="institutions--single__program-list">
+			<div class="map-container">
+				<googlemap name="googleMap"></googlemap>
+			</div>
+		</div>
+		<section class="program">
+			<h1 class="program-title">{{ entry.programmTitle }}</h1>
+			<div class="program-text">{{ entry.programmText }}</div>
+			{% for img in entry.programImg %}
+			<figure>
+				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+			</figure>
+			{% endfor %}
+			<h2>Programm</h2>
+			<ul class="program-list">
 				{% set children = entry.children().level(2) %}
 				{% for entry in children %}
-					<li>
-						<h2>{{ entry.title }}</h2>
-						{% for time in entry.time %}
-							<time>
-								{% if time.type == "setTimes" %}
-									{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-								{% elseif time.type == "continuous" %}
-									{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-								{% elseif time.type == "iterating" %}
-									{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-								{% endif %}
-							</time>
-						{% endfor %}
-					</li><br>
-
+				<li class="program--event">
+					<h1>{{ entry.title }}</h1>
+					{% for time in entry.time %}
+					<time>
+						{% if time.type == "setTimes" %}
+						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+						{% elseif time.type == "continuous" %}
+						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
+						{% elseif time.type == "iterating" %}
+						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+						{% endif %}
+					</time>
+					{% endfor %}
+					{{ entry.description }}
+				</li>
 				{% endfor %}
-
-				
-			</article>
-		</div>
-		{% endblock %}
+			</ul>
+			<p>Essen: {{ entry.food }}</p>
+		</section>
+	</article>
+</div>
+{% endblock %}

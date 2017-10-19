@@ -1,7 +1,7 @@
 <template>
  <div class="centered">
     <div class="mn-date" v-if="items.length == 0">21.01.2018 <span>– Noch 23 Tage bis zur Museumsnacht</span></div>
-    <div class="saved-link" v-if="items.length > 0"><a :href="url">♥ {{ items.length }} <span>– MEIN PROGRAM</span></a></div>
+    <div class="saved-link" v-if="items.length > 0"><a :href="url">♥ {{ items.length }} <span>– MEIN PROGRAMM</span></a></div>
 
  </div>
 

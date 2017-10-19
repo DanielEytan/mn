@@ -20,8 +20,12 @@
 							<img src="{{ img.getUrl }}" alt="{{ img.title }}">
 						</figure>
 					{% endfor %}
-					<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
-					<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }} {% endfor %} – {{ entry.journey }}</p>
+{# 					{% set color = entry.shuttleLine.color.find() %}
+						{{ color }} #}
+
+					{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }} Shuttle Linie </span>{% endfor %}
+					<h1>{{ entry.title }}</h1>
+					<p>{{ entry.address }}<br>{{ entry.journey }}</p>
 					</a>
 				</article>
 			{% endfor %}

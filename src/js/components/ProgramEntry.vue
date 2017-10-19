@@ -2,7 +2,7 @@
     <div class="program--block narrow">
       <article v-if="showProgramEvents">
         <div class="institution">
-        {{ entry.number }} <span v-for="color in entry.shuttleLine"> {{ color.title }} </span>
+        <div v-for="color in entry.shuttleLine"><span  v-bind:style="{ color: color.color }"> <strong>{{ entry.number }}</strong>  {{ color.title }} Shuttle Linie </span></div>
         <h1><a :href="entry.url">{{ entry.title }}</a></h1>
         <h2>{{ entry.programmTitle }}</h2>
         <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->

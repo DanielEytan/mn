@@ -33,12 +33,12 @@
 						</div>
 						<div>
 							<div v-on:click="toggleThemes" v-bind:class="{ active: openThemes, selected: checkedThemes.length > 0 }">
-								<span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span> Themen <span class="arrow">${ openThemes ? '▲' : '▼'}</span>
+								<span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span> Themen und Sparten<span class="arrow">${ openThemes ? '▲' : '▼'}</span>
 							</div>
 						</div>
 						<div>
 							<div v-on:click="toggleKinds" v-bind:class="{ active: openKinds, selected: checkedEvents.length > 0  }">
-								<span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungen <span class="arrow">${ openKinds ? '▲' : '▼'}</span>
+								<span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungsarten <span class="arrow">${ openKinds ? '▲' : '▼'}</span>
 							</div>
 						</div>
 						<div>

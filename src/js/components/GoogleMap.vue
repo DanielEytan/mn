@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getEntries () {
-      axios.get('./locations.json')
+      axios.get('../locations.json')
       .then(response => {
           var _this = this;
           //init marker positions
@@ -56,8 +56,8 @@ export default {
 
 <style scoped>
 .google-map {
- width: 800px;
- height: 600px;
+ width: 100%;
+ height: 250px;
  margin: 0 auto;
  background: gray;
 }

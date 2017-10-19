@@ -17,7 +17,7 @@
       <div  class="cat-wrapper">
       <div v-if="programevent.themes.length">
         <div class="themes">
-          <h3>Themen:</h3>
+          <h3>Themen und Sparten:</h3>
           <ul>
             <li v-for="theme in programevent.themes">{{ theme.title }}</li>
           </ul>
@@ -25,7 +25,7 @@
       </div>
       <div v-if="programevent.kindOfEvent.length">
         <div class="kindOfEvent">
-          <h3>Art der Veranstaltung:</h3>
+          <h3>Veranstaltungsarten:</h3>
           <ul>
             <li v-for="kindOfEvent in programevent.kindOfEvent">{{ kindOfEvent.title }}</li>
           </ul>
