@@ -63,10 +63,10 @@ return [
                                 'title' => $category->title
                             ];
                         }, $event->kindOfEvent->find()),
-                        'languages' => array_map( function (TagModel $tag) {
+                        'languages' => array_map( function (CategoryModel $category) {
                             return [
-                                'id' => $tag->id,
-                                'title' => $tag->title
+                                'id' => $category->id,
+                                'title' => $category->title
                             ];
                         }, $event->languages->find()),
                     ];
@@ -142,9 +142,9 @@ return [
             },
         ],
         'languages.json' => [
-            'elementType' => ElementType::Tag,
+            'elementType' => ElementType::Category,
             'criteria' => ['group' => 'languages'],
-            'transformer' => function(TagModel $entry) {
+            'transformer' => function(CategoryModel $entry) {
                 return [
                     'title' => $entry->title,
                     'id' => $entry->id
