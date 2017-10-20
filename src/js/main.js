@@ -55,32 +55,32 @@ var vueApp = new Vue({
         languagesAPITitle: "languages",
 
     },
-    mounted () {
-      this.stateContrast();
+   //  mounted () {
+   //    this.stateContrast();
       
-   },
+   // },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
         },
         toggleContrast: function() {
             this.activeContrast = !this.activeContrast;
-            localStorage.setItem("contrast","active");
+            // localStorage.setItem("contrast","active");
         },
-        stateContrast: function() {
-          var contrast = this.activeContrast;
+        // stateContrast: function() {
+        //   var contrast = this.activeContrast;
 
-          if (contrast = true) {
-            console.log("contrast is active")
-            this.activeContrast = !this.activeContrast;
-          };
-          if (contrast = false) {
-            console.log("contrast is inactive")
-          };
-          //  if (this.activeContrast = false) {
-          //   console.log("contrast is not active")
-          // };
-        },
+        //   if (contrast = true) {
+        //     console.log("contrast is active")
+        //     this.activeContrast = !this.activeContrast;
+        //   };
+        //   if (contrast = false) {
+        //     console.log("contrast is inactive")
+        //   };
+        //   //  if (this.activeContrast = false) {
+        //   //   console.log("contrast is not active")
+        //   // };
+        // },
          toggleInstitution: function(){
             this.openInstitution = !this.openInstitution;
             if (this.openThemes = true) {
