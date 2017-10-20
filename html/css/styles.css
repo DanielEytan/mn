@@ -187,6 +187,10 @@ header#header {
     justify-content: space-between;
     -ms-flex-align: center;
     align-items: center; }
+  header#header #menu > * {
+    display: inline-block; }
+    header#header #menu > *:first-child {
+      margin-right: 1em; }
   header#header nav div.nav-wrapper {
     height: 0;
     overflow: hidden; }
@@ -310,7 +314,7 @@ footer#footer {
       color: red; }
 
 .program--overview .filter .filter__checklists--wrapper {
-  background: #141414;
+  background: #1A0042;
   color: white;
   margin-bottom: 75px; }
 
@@ -329,17 +333,17 @@ footer#footer {
     .program--overview .filter header > * div {
       padding: 1em .7em 1.1em;
       position: relative;
-      border-top: solid 1px #141414; }
+      border-top: solid 1px; }
       .program--overview .filter header > * div .arrow {
         position: absolute;
         right: .7em; }
       .program--overview .filter header > * div.active, .program--overview .filter header > * div.selected {
-        background: #141414;
+        background: #1A0042;
         color: white; }
     .program--overview .filter header > *:nth-child(1) div, .program--overview .filter header > *:nth-child(3) div {
-      border-right: solid 1px #141414; }
+      border-right: solid 1px #1A0042; }
     .program--overview .filter header > *:nth-child(3) div, .program--overview .filter header > *:nth-child(4) div {
-      border-bottom: solid 1px #141414; }
+      border-bottom: solid 1px #1A0042; }
 
 .program--overview .filter .filter--list--wrapper ul {
   height: 0;
@@ -349,6 +353,8 @@ footer#footer {
     border: solid 1px;
     margin-bottom: 1em;
     font-size: .8em; }
+    .program--overview .filter .filter--list--wrapper ul li input[type='checkbox'] {
+      background: red; }
 
 .program--overview .filter .filter--list--wrapper.active {
   padding: 1em .7em 1.1em; }
@@ -383,9 +389,9 @@ footer#footer {
         flex: 0 1 24%; }
         .program--overview .filter__ckecklists header > * div {
           padding: .45em .7em .5em;
-          border: solid #141414 1px; }
+          border: solid #1A0042 1px; }
           .program--overview .filter__ckecklists header > * div.active {
-            border-bottom: 10px #141414 solid; }
+            border-bottom: 10px #1A0042 solid; }
     .program--overview .filter__ckecklists .filter--list--wrapper div ul {
       display: -ms-flexbox;
       display: flex;
@@ -429,7 +435,7 @@ footer#footer {
       font-size: .8em;
       border-radius: .5em;
       display: inline-block;
-      background: #141414;
+      background: #1A0042;
       color: white;
       margin-right: .5em;
       margin-bottom: .5em; }
@@ -520,6 +526,34 @@ footer#footer {
 
 .filter--wrapper .filter--headline--wrapper {
   display: none; }
+
+#vue-app.active {
+  background: #1A0042;
+  color: white;
+  padding: 1px; }
+  #vue-app.active a {
+    color: white; }
+  #vue-app.active header#header {
+    background: #1A0042 !important; }
+    #vue-app.active header#header .burger-toggle .burger span {
+      background: white; }
+  #vue-app.active .program--overview .filter header {
+    border: #1A0042;
+    color: white; }
+    #vue-app.active .program--overview .filter header > * div.active, #vue-app.active .program--overview .filter header > * div.selected {
+      background: white;
+      color: #1A0042; }
+  #vue-app.active .filter--tag {
+    background: white !important;
+    color: #1A0042 !important; }
+  #vue-app.active .filter__checklists--wrapper {
+    background: white !important;
+    color: #1A0042; }
+  @media only screen and (min-width: 768px) {
+    #vue-app.active .program--overview .filter__ckecklists header > * div {
+      border: solid white 1px !important; }
+      #vue-app.active .program--overview .filter__ckecklists header > * div.active {
+        border-bottom: 10px white solid !important; } }
 
 img {
   max-width: 100%; }

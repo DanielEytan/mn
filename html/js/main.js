@@ -101,11 +101,15 @@
 
 	var _twitter2 = _interopRequireDefault(_twitter);
 
+	var _contrast = __webpack_require__(177);
+
+	var _contrast2 = _interopRequireDefault(_contrast);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
 	window.axios = __webpack_require__(150);
-	window._ = __webpack_require__(177);
+	window._ = __webpack_require__(182);
 
 	//import
 
@@ -124,10 +128,12 @@
 	    savedlink: _SavedLink2.default,
 	    myprogram: _MyProgram2.default,
 	    googlemap: _GoogleMap2.default,
-	    twitter: _twitter2.default
+	    twitter: _twitter2.default,
+	    contrast: _contrast2.default
 	  },
 	  data: {
 	    menuOpen: false,
+	    activeContrast: false,
 	    openInstitution: false,
 	    openThemes: false,
 	    openKinds: false,
@@ -143,13 +149,34 @@
 	    languagesAPITitle: "languages"
 
 	  },
+	  mounted: function mounted() {
+	    this.stateContrast();
+	  },
+
 	  methods: {
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
 	    },
+	    toggleContrast: function toggleContrast() {
+	      this.activeContrast = !this.activeContrast;
+	      localStorage.setItem("contrast", "active");
+	    },
+	    stateContrast: function stateContrast() {
+	      var contrast = this.activeContrast;
+
+	      if (contrast = true) {
+	        console.log("contrast is active");
+	        this.activeContrast = !this.activeContrast;
+	      };
+	      if (contrast = false) {
+	        console.log("contrast is inactive");
+	      };
+	      //  if (this.activeContrast = false) {
+	      //   console.log("contrast is not active")
+	      // };
+	    },
 	    toggleInstitution: function toggleInstitution() {
 	      this.openInstitution = !this.openInstitution;
-
 	      if (this.openThemes = true) {
 	        this.openThemes = !this.openThemes;
 	      };
@@ -17425,6 +17452,132 @@
 
 /***/ }),
 /* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(178)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(180),
+	  /* template */
+	  __webpack_require__(181),
+	  /* scopeId */
+	  "data-v-5d61e830",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/www/sites/mn/src/js/components/contrast.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] contrast.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-5d61e830", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-5d61e830", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(179);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("c002a1ee", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5d61e830\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5d61e830\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	  name: 'contrast',
+	  data: function data() {
+	    return {
+	      // entries: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    // this.getEntries();
+	  },
+
+	  methods: {}
+	};
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "contrast-toggle",
+	    on: {
+	      "click": _vm.toggleContrast
+	    }
+	  }, [_vm._v("\n  O\n")])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5d61e830", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**

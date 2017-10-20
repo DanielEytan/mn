@@ -15,6 +15,8 @@ import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
 import GoogleMap from './components/GoogleMap.vue'
 import twitter from './components/twitter.vue'
+import contrast from './components/contrast.vue'
+
 
 
 
@@ -33,9 +35,11 @@ var vueApp = new Vue({
         myprogram: MyProgram,
         googlemap: GoogleMap,
         twitter: twitter,
+        contrast: contrast,
     },
     data: {
         menuOpen: false,
+        activeContrast: false,
         openInstitution: false,
         openThemes: false,
         openKinds: false,
@@ -51,13 +55,34 @@ var vueApp = new Vue({
         languagesAPITitle: "languages",
 
     },
+    mounted () {
+      this.stateContrast();
+      
+   },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
         },
+        toggleContrast: function() {
+            this.activeContrast = !this.activeContrast;
+            localStorage.setItem("contrast","active");
+        },
+        stateContrast: function() {
+          var contrast = this.activeContrast;
+
+          if (contrast = true) {
+            console.log("contrast is active")
+            this.activeContrast = !this.activeContrast;
+          };
+          if (contrast = false) {
+            console.log("contrast is inactive")
+          };
+          //  if (this.activeContrast = false) {
+          //   console.log("contrast is not active")
+          // };
+        },
          toggleInstitution: function(){
             this.openInstitution = !this.openInstitution;
-
             if (this.openThemes = true) {
               this.openThemes = !this.openThemes;
             };
@@ -67,6 +92,7 @@ var vueApp = new Vue({
             if (this.openLang = true) {
               this.openLang = !this.openLang;              
             };
+        
         },
          toggleThemes: function(){
             this.openThemes = !this.openThemes;

@@ -10,7 +10,46 @@
 @import 'can';
 @import 'daniel';
 
+#vue-app.active {
+	background: $dark;
+	color: white;
+	padding: 1px;
+	a {
+		color: white;
+	}
+	header#header {
+		background: $dark !important;
+		.burger-toggle .burger span {
+			background: white;
+		}
+	}
+	.program--overview .filter header {
+		border: $dark;
+		color: white;
 
+		>* div {
+		 	&.active, &.selected {background:white;color:$dark;}
+		} 
+	}
+	.filter--tag {
+		background: white !important;
+		color: $dark !important;
+	}
+	.filter__checklists--wrapper {
+		background: white !important;
+		color: $dark;
+
+	}
+	@media only screen and (min-width: $bp1) {
+		.program--overview .filter__ckecklists header > * div {
+				border: solid white 1px !important;
+						&.active {
+							border-bottom: 10px white solid !important;
+						}
+					}
+	}
+
+}
 
 
 body {

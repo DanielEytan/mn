@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="{{ siteUrl }}/css/styles.css"/>
 </head>
 
-<body {% if title is defined %}class="{{ title }}"{% endif %}>
-	<div id="vue-app">
+<body>
+	<div id="vue-app" v-bind:class="{ active: activeContrast }">
 		
 		<header id="header">
 			<div id="container">
@@ -29,8 +29,12 @@
 
 				<savedlink></savedlink>
 
-				<div id="menu" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
-					<div class="burger-toggle">
+				<div id="menu" >
+						{# <contrast></contrast> #}
+					<div class="contrast-toggle" v-on:click="toggleContrast">
+					    O
+					  </div>
+					<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
 						<span>MENU</span>
 						<div class="burger" >
 							<span></span>

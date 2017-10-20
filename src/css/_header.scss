@@ -19,6 +19,14 @@ header#header {
 		// 	flex: 0 1 auto;
 		// }
 	}
+	#menu {
+		>* {
+			display: inline-block;
+			&:first-child {
+				margin-right: 1em;
+			}
+		}
+	}
 	nav {
 		
 		div.nav-wrapper {
