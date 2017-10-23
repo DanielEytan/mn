@@ -149,32 +149,37 @@
 	    languagesAPITitle: "languages"
 
 	  },
-	  //  mounted () {
-	  //    this.stateContrast();
+	  beforeMount: function beforeMount() {
+	    this.stateContrast();
+	  },
 
-	  // },
 	  methods: {
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
 	    },
 	    toggleContrast: function toggleContrast() {
-	      this.activeContrast = !this.activeContrast;
-	      // localStorage.setItem("contrast","active");
+	      var contrastState = localStorage.getItem('contrast');
+	      if (contrastState == null) {
+	        localStorage.setItem("contrast", "active");
+	        this.activeContrast = true;
+	      } else if (contrastState == 'active') {
+	        localStorage.setItem("contrast", "inactive");
+	        this.activeContrast = false;
+	      } else if (contrastState == 'inactive') {
+	        localStorage.setItem("contrast", "active");
+	        this.activeContrast = true;
+	      }
 	    },
-	    // stateContrast: function() {
-	    //   var contrast = this.activeContrast;
-
-	    //   if (contrast = true) {
-	    //     console.log("contrast is active")
-	    //     this.activeContrast = !this.activeContrast;
-	    //   };
-	    //   if (contrast = false) {
-	    //     console.log("contrast is inactive")
-	    //   };
-	    //   //  if (this.activeContrast = false) {
-	    //   //   console.log("contrast is not active")
-	    //   // };
-	    // },
+	    stateContrast: function stateContrast() {
+	      var contrastState = localStorage.getItem('contrast');
+	      if (contrastState == null) {
+	        this.activeContrast = false;
+	      } else if (contrastState == 'active') {
+	        this.activeContrast = true;
+	      } else if (contrastState == 'inactive') {
+	        this.activeContrast = false;
+	      }
+	    },
 	    toggleInstitution: function toggleInstitution() {
 	      this.openInstitution = !this.openInstitution;
 	      if (this.openThemes = true) {
