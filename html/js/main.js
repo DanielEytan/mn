@@ -15719,73 +15719,106 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n height: 250px;\n margin: 0 auto;\n background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 50%;\n /*height: 250px;*/\n height: 600px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
 /* 146 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	   value: true
 	});
+
+	var _stringify = __webpack_require__(103);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	//
 	//
 	//
 	//
 
 	exports.default = {
-	  name: 'googlemap',
-	  props: ['name'],
-	  data: function data() {
-	    return {
-	      mapName: "multiMap",
-	      markerCoordinates: [],
-	      map: null,
-	      bounds: null,
-	      markers: []
-	    };
-	  },
-	  mounted: function mounted() {
-	    this.getEntries();
+	   name: 'googlemap',
+	   props: ['name'],
+	   data: function data() {
+	      return {
+	         mapName: "multiMap",
+	         markerCoordinates: [],
+	         map: null,
+	         bounds: null,
+	         markers: []
+	      };
+	   },
+	   mounted: function mounted() {
+	      this.getEntries();
 
-	    var element = document.getElementById(this.mapName);
-	    var options = {
-	      zoom: 14,
-	      center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
-	      // center: new google.maps.LatLng(51.501527,-0.1921837)
-	    };
+	      var element = document.getElementById(this.mapName);
+	      var options = {
+	         zoom: 14,
+	         center: new google.maps.LatLng(47.55959860000001, 7.588576099999955),
+	         label: {
+	            color: 'white',
+	            fontWeight: 'bold',
+	            fontSize: '20px'
+	         },
+	         icon: {
+	            labelOrigin: new google.maps.Point(11, 50),
+	            url: 'default_marker.png',
+	            size: new google.maps.Size(22, 40),
+	            origin: new google.maps.Point(0, 0),
+	            anchor: new google.maps.Point(11, 40)
+	         }
+	         // center: new google.maps.LatLng(51.501527,-0.1921837)
+	      };
+	      this.map = new google.maps.Map(element, options);
+	   },
+	   methods: {
+	      getEntries: function getEntries() {
+	         var _this2 = this;
 
-	    this.map = new google.maps.Map(element, options);
-	  },
-	  methods: {
-	    getEntries: function getEntries() {
-	      var _this2 = this;
+	         axios.get('../locations.json').then(function (response) {
+	            var _this = _this2;
+	            // var color = this.shuttleLine.color;
+	            //init marker positions
+	            response.data.data.forEach(function (item) {
+	               // for (color in item.shuttleLine) {
+	               //    var color = color;
+	               //    // console.log(color);
+	               // }
+	               if (item.lat !== null && item.lng !== null) {
+	                  _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng), label: item.title, number: item.number, url: item.url, linecolor: item.shuttleLine });
+	               }
+	            });
+	            //init markers
+	            _this.markerCoordinates.forEach(function (coord) {
+	               var color = (0, _stringify2.default)(coord.linecolor);
+	               // var color = coord.linecolor[2];
 
-	      axios.get('../locations.json').then(function (response) {
-	        var _this = _this2;
-	        //init marker positions
-	        response.data.data.forEach(function (item) {
-	          if (item.lat !== null && item.lng !== null) {
-	            _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng) });
-	          }
-	        });
-	        //init markers
-	        _this.markerCoordinates.forEach(function (coord) {
-	          var position = new google.maps.LatLng(coord.latitude, coord.longitude);
-	          var marker = new google.maps.Marker({
-	            position: position,
-	            map: _this.map
-	          });
-	          _this.markers.push(marker);
-	        });
-	      });
-	    }
-	  }
+	               console.log(color);
+	               var position = new google.maps.LatLng(coord.latitude, coord.longitude);
+	               var marker = new google.maps.Marker({
+	                  position: position,
+	                  // label: {text:coord.number + " " + coord.label, fontFamily: 'main-eb'},
+	                  label: { text: coord.number, fontFamily: 'main-eb' },
+	                  number: coord.number,
+	                  url: coord.url,
+	                  // color: coord.color,
+	                  // color: coord.red,
+	                  map: _this.map
+	               });
+	               _this.markers.push(marker);
+	            });
+	         });
+	      }
+	   }
 	};
 
 /***/ }),

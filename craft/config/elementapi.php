@@ -163,6 +163,14 @@ return [
                     'title' => $entry->title,
                     'lat' => $entry->map->lat,
                     'lng' => $entry->map->lng,
+                    'number' => $entry->number,
+                    'url' => $entry->url,
+                    'shuttleLine' => array_map( function (CategoryModel $category) {
+                        return [
+                            'title' => $category->title,
+                            'color' => $category->color
+                        ];
+                    }, $entry->shuttleLine->find()),
                 ];
             },
         ],
