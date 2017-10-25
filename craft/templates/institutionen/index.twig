@@ -3,16 +3,16 @@
 {% set mt = "mt" %}
 	{% block content %}
 		<section class="institutions institutions--overview">
-			<div id="container">
-			<header class="section-header">
-				<h1 class="narrow">INSTITUTIONEN</h1>
-			</header>
+			
 
-			<div class="map-container">
+			{# <div class="map-container">
 				<googlemap name="googleMap"></googlemap>
-			</div>
-			<div class="flex-container">
-			{% for entry in craft.entries.section('program').type('institution').find() %}
+			</div> #}
+			
+				<institutions></institutions>
+			
+			{#<div class="flex-container">
+			 {% for entry in craft.entries.section('program').type('institution').find() %}
 				<article class="institutions--overview_child">
 					<a href="{{ entry.url }}">
 					{% for img in entry.programImg %}
@@ -44,8 +44,8 @@
 					<p>{{ entry.address }}<br>{{ entry.journey }}</p>
 					</a>
 				</article>
-			{% endfor %}
-			</div>
+			{% endfor %} 
+			</div>#}
 			</div>
 		</section>
 	{% endblock %}

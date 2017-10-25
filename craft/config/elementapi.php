@@ -138,11 +138,26 @@ return [
             'elementType' => ElementType::Entry,
             'criteria' => ['section' => 'program', 'type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
+                 $photos = [];
+                    foreach ($entry->programImg as $photo) {
+                        $photos[] = $photo->url;
+                    }
                 return [
                     'title' => $entry->title,
                     'id' => $entry->id,
+                    'number' => $entry->number,
+                    'address' => $entry->address,
+                    'journey' => $entry->journey,
                     'url' => $entry->url,
-                    'jsonUrl' => UrlHelper::getUrl("institution/{$entry->id}.json")
+                    'advanceSale' => $entry->advanceSale,
+                    'accessibility' => $entry->accessibility,
+                    'photos' => $photos,
+                    'shuttleLine' => array_map( function (CategoryModel $category) {
+                        return [
+                            'title' => $category->title,
+                            'color' => $category->color
+                        ];
+                    }, $entry->shuttleLine->find()),
                 ];
             },
         ],

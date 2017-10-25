@@ -109,11 +109,15 @@
 
 	var _presell2 = _interopRequireDefault(_presell);
 
+	var _institutions = __webpack_require__(187);
+
+	var _institutions2 = _interopRequireDefault(_institutions);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
 	window.axios = __webpack_require__(150);
-	window._ = __webpack_require__(187);
+	window._ = __webpack_require__(192);
 
 	//import
 
@@ -134,7 +138,8 @@
 	    googlemap: _GoogleMap2.default,
 	    twitter: _twitter2.default,
 	    contrast: _contrast2.default,
-	    presell: _presell2.default
+	    presell: _presell2.default,
+	    institutions: _institutions2.default
 	  },
 	  data: {
 	    menuOpen: false,
@@ -15724,27 +15729,20 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 50%;\n /*height: 250px;*/\n height: 600px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n height: 600px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
 /* 146 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	   value: true
 	});
-
-	var _stringify = __webpack_require__(103);
-
-	var _stringify2 = _interopRequireDefault(_stringify);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	//
 	//
 	//
@@ -15791,33 +15789,63 @@
 
 	         axios.get('../locations.json').then(function (response) {
 	            var _this = _this2;
-	            // var color = this.shuttleLine.color;
 	            //init marker positions
 	            response.data.data.forEach(function (item) {
-	               // for (color in item.shuttleLine) {
-	               //    var color = color;
-	               //    // console.log(color);
-	               // }
 	               if (item.lat !== null && item.lng !== null) {
 	                  _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng), label: item.title, number: item.number, url: item.url, linecolor: item.shuttleLine });
 	               }
 	            });
 	            //init markers
 	            _this.markerCoordinates.forEach(function (coord) {
-	               var color = (0, _stringify2.default)(coord.linecolor);
-	               var thiscolor = color.color;
-
-	               console.log(color);
+	               var colors = coord.linecolor;
+	               var color = colors[0].color;
 	               var position = new google.maps.LatLng(coord.latitude, coord.longitude);
 	               var marker = new google.maps.Marker({
 	                  position: position,
 	                  // label: {text:coord.number + " " + coord.label, fontFamily: 'main-eb'},
-	                  label: { text: coord.number, fontFamily: 'main-eb' },
+	                  label: {
+	                     text: coord.number,
+	                     fontFamily: 'main-eb',
+	                     fontSize: '1.2em',
+	                     color: 'white'
+	                  },
+	                  icon: {
+	                     path: google.maps.SymbolPath.CIRCLE,
+	                     scale: 15,
+	                     fillColor: color,
+	                     fillOpacity: 1,
+	                     strokeColor: color,
+	                     strokeWeight: 1
+	                  },
 	                  number: coord.number,
 	                  url: coord.url,
-	                  // color: coord.color,
-	                  // color: coord.red,
 	                  map: _this.map
+	               });
+	               google.maps.event.addListener(marker, "mouseover", function (evt) {
+	                  var label = this.getLabel();
+	                  label.color = "rgba(240,240,240,0.5";
+	                  label.fontSize = "1.5em";
+	                  this.setLabel(label);
+	                  var icon = this.getIcon();
+	                  icon.scale = 17;
+	                  this.setIcon(icon);
+	               });
+	               google.maps.event.addListener(marker, "click", function (evt) {
+	                  var label = this.getLabel();
+	                  label.color = "rgba(240,240,240,0.5";
+	                  this.setLabel(label);
+	                  var icon = this.getIcon();
+	                  icon.scale = 27;
+	                  this.setIcon(icon);
+	               });
+	               google.maps.event.addListener(marker, "mouseout", function (evt) {
+	                  var label = this.getLabel();
+	                  label.color = "white";
+	                  label.fontSize = "1.2em";
+	                  this.setLabel(label);
+	                  var icon = this.getIcon();
+	                  icon.scale = 15;
+	                  this.setIcon(icon);
 	               });
 	               _this.markers.push(marker);
 	            });
@@ -17786,6 +17814,268 @@
 
 /***/ }),
 /* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(188)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(190),
+	  /* template */
+	  __webpack_require__(191),
+	  /* scopeId */
+	  "data-v-09882769",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/www/sites/mn/src/js/components/institutions.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] institutions.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-09882769", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-09882769", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(189);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("30804d67", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-09882769\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-09882769\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _GoogleMap = __webpack_require__(143);
+
+	var _GoogleMap2 = _interopRequireDefault(_GoogleMap);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = {
+	  name: 'institutions',
+	  components: {
+	    googlemap: _GoogleMap2.default
+	  },
+	  data: function data() {
+	    return {
+	      listView: true,
+	      mapView: false,
+	      institutions: []
+
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+	  },
+
+	  methods: {
+	    toggleListView: function toggleListView() {
+	      this.listView = !this.listView;
+	      if (this.mapView = true) {
+	        this.mapView = !this.mapView;
+	      };
+	    },
+	    toggleMapView: function toggleMapView() {
+	      this.mapView = !this.mapView;
+	      if (this.listView = true) {
+	        this.listView = !this.listView;
+	      };
+	    },
+	    getEntries: function getEntries() {
+	      var _this = this;
+
+	      var vm = this;
+	      axios.get('institution.json').then(function (response) {
+	        // var presell = this.presellLocations;
+	        // var presell = JSON.parse(string);
+	        _this.institutions = response.data.data;
+	      });
+	    }
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    attrs: {
+	      "id": "container"
+	    }
+	  }, [_c('header', {
+	    staticClass: "section-header"
+	  }, [_c('div', {
+	    staticClass: "narrow"
+	  }, [_c('h1', [_vm._v("INSTITUTIONEN")]), _vm._v(" "), _c('nav', [_c('span', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.mapView),
+	      expression: "mapView"
+	    }]
+	  }, [_c('i', {
+	    on: {
+	      "click": _vm.toggleListView
+	    }
+	  }, [_vm._v("▦")]), _vm._v(" "), _c('i', {
+	    staticClass: "inactive"
+	  }, [_vm._v("📌")])]), _vm._v(" "), _c('span', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.listView),
+	      expression: "listView"
+	    }]
+	  }, [_c('i', {
+	    staticClass: "inactive"
+	  }, [_vm._v("▦")]), _vm._v(" "), _c('i', {
+	    on: {
+	      "click": _vm.toggleMapView
+	    }
+	  }, [_vm._v("📌")])])])])]), _vm._v(" "), _c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.mapView),
+	      expression: "mapView"
+	    }],
+	    staticClass: "map-container"
+	  }, [_c('googlemap', {
+	    attrs: {
+	      "name": "googleMap"
+	    }
+	  })], 1), _vm._v(" "), _c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.listView),
+	      expression: "listView"
+	    }],
+	    staticClass: "flex-container"
+	  }, _vm._l((_vm.institutions), function(entry) {
+	    return _c('article', {
+	      staticClass: "institutions--overview_child"
+	    }, [_c('a', {
+	      attrs: {
+	        "href": entry.url
+	      }
+	    }, [_c('figure', [_c('img', {
+	      attrs: {
+	        "src": entry.photos
+	      }
+	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('div', [_c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])])
+	    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      staticClass: "icons"
+	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
+	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
+	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address)), _c('br'), _vm._v(_vm._s(entry.journey))])], 2)])
+	  }))])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-09882769", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**

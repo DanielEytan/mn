@@ -17,6 +17,8 @@ import GoogleMap from './components/GoogleMap.vue'
 import twitter from './components/twitter.vue'
 import contrast from './components/contrast.vue'
 import presell from './components/presell.vue'
+import institutions from './components/institutions.vue'
+
 
 
 
@@ -37,7 +39,8 @@ var vueApp = new Vue({
         googlemap: GoogleMap,
         twitter: twitter,
         contrast: contrast,
-        presell: presell
+        presell: presell,
+        institutions: institutions,
     },
     data: {
         menuOpen: false,
@@ -58,8 +61,8 @@ var vueApp = new Vue({
 
     },
     beforeMount(){
-    this.stateContrast()
-  },
+      this.stateContrast()
+    },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;

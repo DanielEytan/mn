@@ -152,18 +152,21 @@ section header .narrow,
 
 .institutions--single h1.title,
 .institutions--single span strong,
-.institutions--single .program h1.program-title {
+.institutions--single .program h1.program-title,
+header.section-header nav span {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title {
+    .institutions--single .program h1.program-title,
+    header.section-header nav span {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title {
+    .institutions--single .program h1.program-title,
+    header.section-header nav span {
       font-size: 2.5em; } }
 
 .nav-wrapper li a,
@@ -508,6 +511,16 @@ footer#footer {
   margin-bottom: 3em; }
 
 @media screen and (min-width: 768px) {
+  .institutions--overview header.section-header .narrow {
+    position: relative; }
+    .institutions--overview header.section-header .narrow nav {
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+      .institutions--overview header.section-header .narrow nav span {
+        margin-left: .5em; }
+        .institutions--overview header.section-header .narrow nav span i.inactive {
+          color: grey; }
   .institutions--overview .flex-container {
     display: -ms-flexbox;
     display: flex;
