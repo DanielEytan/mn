@@ -32,7 +32,7 @@
 				<div id="menu" >
 						{# <contrast></contrast> #}
 					<div class="contrast-toggle" v-on:click="toggleContrast">
-					    O
+					    &#61506;
 					  </div>
 					<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
 						<span>MENU</span>
@@ -49,7 +49,7 @@
 							<ul v-if="menuOpen">
 								<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
 								<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-								<li><a href="{{ url('informationen') }}" {% if craft.request.firstSegment == 'informationen' %}class="active"{% endif %}>Ihr Besuch</a></li>
+								<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
 								<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
 							</ul>
 							<div id="mymenu">

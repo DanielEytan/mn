@@ -27,6 +27,9 @@ header#header {
 			}
 		}
 	}
+	.contrast-toggle {
+		cursor: pointer;
+	}
 	nav {
 		
 		div.nav-wrapper {
@@ -63,9 +66,7 @@ header#header {
 		// 	}
 		// }
 		.burger-toggle {
-			// position: absolute;
-			// right: 0;
-			// top: 0;
+			cursor: pointer;
 			letter-spacing: .05em;
 			>* {
 				display: inline-block;

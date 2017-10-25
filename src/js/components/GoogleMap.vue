@@ -57,7 +57,7 @@ methods: {
          //init markers
          _this.markerCoordinates.forEach(function (coord) {
             var color = JSON.stringify(coord.linecolor);
-            // var color = coord.linecolor[2];
+            var thiscolor = color.color;
 
             console.log(color);
             const position = new google.maps.LatLng(coord.latitude, coord.longitude);
@@ -75,7 +75,6 @@ methods: {
          });
       });
    }
-   
 }
 };
 </script>

@@ -10,7 +10,7 @@ module.exports = {
   name: 'contrast',
   data: function () {
     return {
-      // entries: []
+      entries: []
     }
   },
   mounted () {

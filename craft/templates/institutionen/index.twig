@@ -4,28 +4,43 @@
 	{% block content %}
 		<section class="institutions institutions--overview">
 			<div id="container">
-			<header>
+			<header class="section-header">
 				<h1 class="narrow">INSTITUTIONEN</h1>
 			</header>
 
-			<div class="map-container">
+			{# <div class="map-container">
 				<googlemap name="googleMap"></googlemap>
-			</div>
+			</div> #}
 			<div class="flex-container">
 			{% for entry in craft.entries.section('program').type('institution').find() %}
 				<article class="institutions--overview_child">
-					{# <a href="{{ siteUrl }}institutionen/{{ entry.slug }}"> #}
 					<a href="{{ entry.url }}">
 					{% for img in entry.programImg %}
 						<figure>
 							<img src="{{ img.getUrl }}" alt="{{ img.title }}">
 						</figure>
 					{% endfor %}
-{# 					{% set color = entry.shuttleLine.color.find() %}
-						{{ color }} #}
 
 					{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }} Shuttle Linie </span>{% endfor %}
 					<h1>{{ entry.title }}</h1>
+					<div class="icons">	
+					{% if entry.advanceSale %}<span>&#127915;</span>{% endif %}
+					{% set accessibility =  entry.accessibility %}
+					{% if accessibility | length %}
+						{% switch accessibility %}
+						
+							{% case "wheelchair" %}
+							<span>&#9855;</span>
+						
+							{% case "partlyWheelchair" %}
+							<span>&#9855;*</span>
+							
+						
+						{% endswitch %}
+						
+					{% endif %}
+					</div>
+					
 					<p>{{ entry.address }}<br>{{ entry.journey }}</p>
 					</a>
 				</article>
