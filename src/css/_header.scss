@@ -79,6 +79,8 @@ header#header {
 				height: 2px;
 				width: 20px;
 				margin-bottom: 3px;
+				transition: background .5s;
+
 					background: black;
 
 				&:last-child {
@@ -114,6 +116,7 @@ header#header {
 		.saved-link a {
 			color: red;
 			span {
+				transition: color .15s;
 				color: black;
 				// text-decoration: underline;
 			}

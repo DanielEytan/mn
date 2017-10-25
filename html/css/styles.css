@@ -234,6 +234,7 @@ header#header {
       height: 2px;
       width: 20px;
       margin-bottom: 3px;
+      transition: background .5s;
       background: black; }
       header#header .burger-toggle .burger span:last-child {
         margin-bottom: 0; }
@@ -244,6 +245,7 @@ header#header {
     header#header .centered .saved-link a {
       color: red; }
       header#header .centered .saved-link a span {
+        transition: color .15s;
         color: black; }
   @media screen and (max-width: 300px) {
     header#header .mn-date {
@@ -561,6 +563,8 @@ footer#footer {
     background: #1A0042 !important; }
     #vue-app.active header#header .burger-toggle .burger span {
       background: white; }
+    #vue-app.active header#header .saved-link a span {
+      color: white; }
   #vue-app.active .program--overview .filter header {
     border: #1A0042;
     color: white; }
@@ -597,20 +601,20 @@ footer#footer {
     padding: .15em .35em .35em;
     cursor: pointer;
     border: solid 1px; }
-  .visit .presell .toggle-list.open {
-    display: none; }
-    .visit .presell .toggle-list.open .presell-toggle {
-      border-radius: .5em;
-      border: none; }
-      .visit .presell .toggle-list.open .presell-toggle i {
-        display: none; }
+  .visit .presell .toggle-list.open .presell-toggle {
+    cursor: auto;
+    border-radius: .5em;
+    border: none;
+    padding: .15em 0 .35em; }
+    .visit .presell .toggle-list.open .presell-toggle i {
+      display: none; }
   .visit .presell .presell-location {
-    display: none;
-    display: none;
-    transition: opacity .25s;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s;
     opacity: 0; }
     .visit .presell .presell-location.open {
-      display: block;
+      height: auto;
       opacity: 1; }
     .visit .presell .presell-location p {
       margin-bottom: 0; }

@@ -17761,7 +17761,7 @@
 	    on: {
 	      "click": _vm.toggleList
 	    }
-	  }, [_c('i', [_vm._v("+")]), _vm._v(" Zusätzliche Vorverkaufsstellen in Ihrer Nähe")])]), _vm._v(" "), _vm._l((_vm.presellLocations), function(block) {
+	  }, [_c('i', [_vm._v("+")]), _vm._v(" Zusätzliche Vorverkaufsstellen")])]), _vm._v(" "), _vm._l((_vm.presellLocations), function(block) {
 	    return _c('div', {
 	      staticClass: "presell-location",
 	      class: {

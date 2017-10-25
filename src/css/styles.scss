@@ -25,6 +25,9 @@
 		.burger-toggle .burger span {
 			background: white;
 		}
+		.saved-link a span{			
+			color: white;
+		}
 	}
 	.program--overview .filter header {
 		border: $dark;
@@ -78,11 +81,13 @@
 
 			}
 			&.open {
-				display: none;
-
+				
 				.presell-toggle {
+					cursor: auto;
 					border-radius: .5em;
 					border: none;
+					padding: .15em 0 .35em;
+
 					i {
 						display: none;
 					}
@@ -91,13 +96,13 @@
 		}
 		
 		.presell-location {
-			display: none;
 			// margin-top: 1em;
-			display: none;
-			transition: opacity .25s;
+			height: 0;
+			overflow: hidden;
+			transition: opacity 1s;
 			opacity: 0;
 			&.open {
-				display: block;
+				height: auto;
 				opacity: 1;
 			}
 			p {
