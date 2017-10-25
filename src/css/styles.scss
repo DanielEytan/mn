@@ -10,6 +10,9 @@
 @import 'can';
 @import 'daniel';
 
+#vue-app, header#header {
+	transition: background .15s ease, color .15s ease;
+}
 #vue-app.active {
 	background: $dark;
 	color: white;
@@ -51,7 +54,63 @@
 
 }
 
+.visit {
+	article {
+		border-bottom: solid 1px;
+		padding: 2em 0;
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	h2 {
+		margin-bottom: .5em;
+	}
+	p {
+		margin-bottom: 1em;
+	}
+	.presell {
+		margin-bottom: 2em;
+		.toggle-list {
+			.presell-toggle {
+				padding: .15em .35em .35em;
+				cursor: pointer;
+				border: solid 1px;
 
+			}
+			&.open {
+				display: none;
+
+				.presell-toggle {
+					border-radius: .5em;
+					border: none;
+					i {
+						display: none;
+					}
+				}
+			}
+		}
+		
+		.presell-location {
+			display: none;
+			// margin-top: 1em;
+			display: none;
+			transition: opacity .25s;
+			opacity: 0;
+			&.open {
+				display: block;
+				opacity: 1;
+			}
+			p {
+				margin-bottom: 0;
+			}
+			>div {
+				border-bottom: solid 1px;
+				padding: 1em 0;
+			}
+		}
+	}
+
+}
 body {
 	// margin: 20px 10vw;
 	// background: green;
@@ -60,6 +119,9 @@ body {
 }
 img {
 	max-width: 100%;
+}
+.section-header {
+	margin-bottom: 1em;
 }
 #container {
 	margin: 15px;

@@ -16,6 +16,7 @@ import moment from 'moment.min.js'
 import GoogleMap from './components/GoogleMap.vue'
 import twitter from './components/twitter.vue'
 import contrast from './components/contrast.vue'
+import presell from './components/presell.vue'
 
 
 
@@ -36,6 +37,7 @@ var vueApp = new Vue({
         googlemap: GoogleMap,
         twitter: twitter,
         contrast: contrast,
+        presell: presell
     },
     data: {
         menuOpen: false,

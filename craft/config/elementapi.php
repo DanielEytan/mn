@@ -3,6 +3,31 @@ namespace Craft;
 
 return [
     'endpoints' => [
+        'visit.json' => [
+            'elementType' => ElementType::Entry,
+            'criteria' => ['section' => 'visit'],
+            'transformer' => function(EntryModel $entry) {
+                // Create an array of all the "Body" Matrix field's blocks
+                $listBlocks = [];
+                foreach ($entry->boxOfficeLocations as $block) {
+                    switch ($block->type->handle) {
+                        case 'block':
+                        $listBlocks[] = [
+                            'listContent' => $block->list->getParsedContent(),
+                        ];
+                        break;
+                    }
+                }
+
+                return [
+
+                    'list' => $listBlocks
+                ];
+            },
+
+
+
+        ],
         'program.json' => [
             'elementType' => ElementType::Entry,
             'criteria' => ['section' => 'program','type' =>'institution'],
@@ -174,6 +199,8 @@ return [
                 ];
             },
         ],
+
+
         'programevent.json' => [
             'elementType' => ElementType::Entry,
             'criteria' => ['section' => 'program','type' =>'Event'],

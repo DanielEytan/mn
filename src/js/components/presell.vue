@@ -1,0 +1,45 @@
+<template>
+ 	<div>
+ 		<<div class="toggle-list" v-bind:class="{ open: listOpen }"><span v-on:click="toggleList" class="presell-toggle"><i>+</i> Zusätzliche Vorverkaufsstellen in Ihrer Nähe</span></div>
+		<div v-for="block in presellLocations" class="presell-location" v-bind:class="{ open: listOpen }">
+			<div v-for="entry in block.list">
+				<div v-html="entry.listContent"></div> </div>
+			<!-- <div v-html="block"></div> -->
+			<!-- <div>{{ block }}</div> -->
+		</div>
+ 	</div>
+</template>
+
+<script>
+
+module.exports = {
+	name: 'presell',
+  	data: function () {
+    	return {
+      	listOpen: false,
+      	presellLocations: []
+    	}
+  	},
+  	mounted () {
+  		this.getEntries();
+  	},
+  	methods: {
+  		toggleList () {
+  			this.listOpen = !this.listOpen;	
+  		},
+  		getEntries () {
+  			let vm = this;
+  			axios.get('visit.json')
+  				.then(response => {
+  					// var presell = this.presellLocations;
+  					// var presell = JSON.parse(string);
+  					this.presellLocations = response.data.data
+  				})
+  		}
+  	}
+}
+
+</script>
+
+<style lang="css" scoped>
+</style>

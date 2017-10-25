@@ -32,6 +32,14 @@ body {
 	// }
 }
 
+// Link Border Bottom
+.visit {
+	a {
+		border-bottom: solid 1px;
+		font-family: 'main-eb', helvetica;
+	}
+}
+
 // Font Main Extra-Bold
 
 .program .institution h1,
@@ -47,9 +55,9 @@ header,
 span.shuttle-line, 
 .institutions .visitor-infos,
 .institutions address,
-.institutions h3
-
-
+.institutions h3,
+.visit article h2,
+.presell-toggle 
 {
 	font-family: 'main-eb', helvetica;
 }
@@ -83,7 +91,9 @@ header .mn-date span {
 .institutions--single span strong,
 .institutions--single .program h2,
 span.shuttle-line,
-section header .narrow {
+section header .narrow,
+.visit article h2,
+.presell-toggle  {
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	line-height: 1em !important;
@@ -99,8 +109,11 @@ section header .narrow {
 
 .institutions--single .program-text,
 .institutions--overview article h1,
+.institutions--overview article .icons,
+
 .institutions--single .program h2,
-.institutions--overview span strong, {
+.institutions--overview span strong,
+.visit article h2 {
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {

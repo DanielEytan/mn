@@ -105,11 +105,15 @@
 
 	var _contrast2 = _interopRequireDefault(_contrast);
 
+	var _presell = __webpack_require__(182);
+
+	var _presell2 = _interopRequireDefault(_presell);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
 	window.axios = __webpack_require__(150);
-	window._ = __webpack_require__(182);
+	window._ = __webpack_require__(187);
 
 	//import
 
@@ -129,7 +133,8 @@
 	    myprogram: _MyProgram2.default,
 	    googlemap: _GoogleMap2.default,
 	    twitter: _twitter2.default,
-	    contrast: _contrast2.default
+	    contrast: _contrast2.default,
+	    presell: _presell2.default
 	  },
 	  data: {
 	    menuOpen: false,
@@ -15800,7 +15805,7 @@
 	            //init markers
 	            _this.markerCoordinates.forEach(function (coord) {
 	               var color = (0, _stringify2.default)(coord.linecolor);
-	               // var color = coord.linecolor[2];
+	               var thiscolor = color.color;
 
 	               console.log(color);
 	               var position = new google.maps.LatLng(coord.latitude, coord.longitude);
@@ -17584,7 +17589,7 @@
 	  name: 'contrast',
 	  data: function data() {
 	    return {
-	      // entries: []
+	      entries: []
 	    };
 	  },
 	  mounted: function mounted() {
@@ -17616,6 +17621,171 @@
 
 /***/ }),
 /* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(183)
+
+	var Component = __webpack_require__(10)(
+	  /* script */
+	  __webpack_require__(185),
+	  /* template */
+	  __webpack_require__(186),
+	  /* scopeId */
+	  "data-v-4e20ab92",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/www/sites/mn/src/js/components/presell.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] presell.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-4e20ab92", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-4e20ab92", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(184);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(8)("11ffc565", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4e20ab92\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4e20ab92\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	  name: 'presell',
+	  data: function data() {
+	    return {
+	      listOpen: false,
+	      presellLocations: []
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.getEntries();
+	  },
+
+	  methods: {
+	    toggleList: function toggleList() {
+	      this.listOpen = !this.listOpen;
+	    },
+	    getEntries: function getEntries() {
+	      var _this = this;
+
+	      var vm = this;
+	      axios.get('visit.json').then(function (response) {
+	        // var presell = this.presellLocations;
+	        // var presell = JSON.parse(string);
+	        _this.presellLocations = response.data.data;
+	      });
+	    }
+	  }
+	};
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', [_vm._v("\n \t\t<"), _c('div', {
+	    staticClass: "toggle-list",
+	    class: {
+	      open: _vm.listOpen
+	    }
+	  }, [_c('span', {
+	    staticClass: "presell-toggle",
+	    on: {
+	      "click": _vm.toggleList
+	    }
+	  }, [_c('i', [_vm._v("+")]), _vm._v(" Zusätzliche Vorverkaufsstellen in Ihrer Nähe")])]), _vm._v(" "), _vm._l((_vm.presellLocations), function(block) {
+	    return _c('div', {
+	      staticClass: "presell-location",
+	      class: {
+	        open: _vm.listOpen
+	      }
+	    }, _vm._l((block.list), function(entry) {
+	      return _c('div', [_c('div', {
+	        domProps: {
+	          "innerHTML": _vm._s(entry.listContent)
+	        }
+	      })])
+	    }))
+	  })], 2)
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4e20ab92", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
