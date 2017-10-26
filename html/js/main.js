@@ -15729,7 +15729,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n height: 800px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n /*height: 800px;*/\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
 
 	// exports
 

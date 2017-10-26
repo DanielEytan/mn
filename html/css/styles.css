@@ -486,6 +486,11 @@ footer#footer {
   height: 800px;
   margin-bottom: 50px; }
 
+.institutions--overview header.section-header .narrow nav {
+  font-size: 2em; }
+  .institutions--overview header.section-header .narrow nav i {
+    margin-right: .25em; }
+
 .institutions--overview article {
   margin-bottom: 60px; }
   .institutions--overview article figure {
@@ -496,6 +501,9 @@ footer#footer {
     margin-bottom: 1em; }
     .institutions--overview article .icons span {
       margin-right: .25em; }
+
+.institutions--overview .google-map {
+  height: 400px; }
 
 .institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address {
   margin-bottom: 1em; }
@@ -515,9 +523,19 @@ footer#footer {
     height: 100%; }
     .institutions--overview .map-container .selected-institution {
       position: fixed;
-      bottom: 0; }
+      bottom: 0;
+      z-index: 9;
+      background: white;
+      white: 100%;
+      right: 0;
+      left: 0;
+      padding: 20px; }
       .institutions--overview .map-container .selected-institution figure {
-        display: none; } }
+        display: none; }
+      .institutions--overview .map-container .selected-institution .icons {
+        display: none; }
+      .institutions--overview .map-container .selected-institution article {
+        margin-bottom: 0; } }
 
 @media screen and (min-width: 768px) {
   .institutions--overview header.section-header .narrow {
@@ -543,6 +561,8 @@ footer#footer {
       -ms-flex: 0 1 calc(50% - 30px);
       flex: 0 1 calc(50% - 30px);
       margin-right: 30px; }
+  .institutions--overview .map-container .google-map {
+    height: 600px; }
   .institutions--overview .map-container > div {
     display: -ms-flexbox;
     display: flex; }
@@ -564,6 +584,8 @@ footer#footer {
     -ms-flex: 0 1 calc(100%/3 - 30px);
     flex: 0 1 calc(100%/3 - 30px);
     margin-right: 30px; }
+  .institutions--overview .map-container .google-map {
+    height: 800px; }
   .institutions--overview .map-container > div .selected-institution {
     -ms-flex: 0 1 calc(100%/3 - 30px);
     flex: 0 1 calc(100%/3 - 30px); } }

@@ -184,7 +184,7 @@ methods: {
 .google-map {
  width: 100%;
  /*height: 250px;*/
- height: 800px;
+ /*height: 800px;*/
  margin: 0 auto 50px;
  background: gray;
 }

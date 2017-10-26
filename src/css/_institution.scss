@@ -5,6 +5,14 @@
 			margin-bottom: 50px;
 		}
 	&--overview {
+		header.section-header .narrow {
+			nav {
+				font-size: 2em;
+				i {
+					margin-right: .25em;
+				}
+			}
+		}
 		article {
 			margin-bottom: 60px;
 
@@ -20,6 +28,9 @@
 					margin-right: .25em;
 				}
 			}
+		}
+		.google-map {
+			height: 400px;
 		}
 		
 	}
@@ -52,8 +63,20 @@
 					figure {
 						display: none;
 					}
+					.icons {
+						display: none;
+					}
 					position: fixed;
 					bottom: 0;
+					z-index: 9;
+					background: white;
+					white: 100%;
+					right: 0;
+					left: 0;
+					padding: 20px;
+					article {
+						margin-bottom: 0;
+					}
 				}
 			}
 		}
@@ -92,6 +115,9 @@
 				}
 			}
 			.map-container {
+				.google-map {
+					height: 600px;
+				}
 				>div {
 					display: flex;
 
@@ -123,6 +149,9 @@
 				margin-right: 30px;
 			}
 			.map-container {
+				.google-map {
+					height: 800px;
+				}
 				>div {
 					.selected-institution {
 						// width: 25%;
