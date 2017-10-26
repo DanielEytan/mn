@@ -1,22 +1,64 @@
 <template>
- <div class="google-map" id="multiMap"></div>
+   <div>
+      <div class="selected-institution">
+         <!-- {{ institutions.id }} -->
+      <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
+         <a v-bind:href="entry.url">
+            <figure>
+                  <img v-bind:src="entry.photos">
+               </figure>
+         <div v-for="color in entry.shuttleLine">
+               <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+            </div>
+         <h1>{{ entry.title }}</h1>
+         <div class="icons">
+               <span v-if="entry.advanceSale == 1">&#127915;</span>
+               <span v-for="value in entry.accessibility">
+                  <i v-if="value === 'wheelchair'">&#9855;</i>
+                  <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
+               </span>
+            </div>
+            <p>{{ entry.address }}<br>{{ entry.journey }}</p>
+
+         </a>
+      </article>
+      <article class="institutions--overview_child" v-if="inst == 0">
+         <p>Klicken Sie auf einen der Marker auf der Karte.</p>
+      </article>
+      </div>
+      <div class="google-map" id="multiMap"></div>
+<!--    <article v-for="entry in institutions" class="institutions--overview_child">
+      {{ entry.title }}
+   </article> -->
+   
+ </div>
 </template>
 
 <script>
 export default {
  name: 'googlemap',
- props: ['name'],
+ props: ['name', 'institutions'],
  data: function () {
   return {
     mapName: "multiMap",
     markerCoordinates: [],
     map: null,
     bounds: null,
-    markers: []
+    markers: [],
+    institutionsData: [],
+    inst: "0",
  }
 },
+// computed: {
+//    this.inst;
+
+// },
 mounted: function () {
+   this.inst;
+
    this.getEntries();
+   // this.getEntriesInstitutions();
+
 
    const element = document.getElementById(this.mapName)
    const options = {
@@ -39,9 +81,19 @@ mounted: function () {
    this.map = new google.maps.Map(element, options);
 },
 methods: {
+   // getEntriesInstitutions () {
+   //       let vm = this;
+   //       axios.get('institution.json')
+   //          .then(response => {
+   //             // var presell = this.presellLocations;
+   //             // var presell = JSON.parse(string);
+   //             this.institutions = response.data.data
+   //          })
+   //    },
    getEntries () {
       axios.get('../locations.json')
       .then(response => {
+         this.institutionsData = response.data.data
          var _this = this;
          //init marker positions
          response.data.data.forEach(function (item) {
@@ -83,6 +135,8 @@ methods: {
                var icon = this.getIcon();
                icon.scale=17;
                this.setIcon(icon);
+               // var number = this.number;
+               // console.log(number);
             });
             google.maps.event.addListener(marker, "click", function(evt) {
                var label = this.getLabel();
@@ -91,6 +145,21 @@ methods: {
                var icon = this.getIcon();
                icon.scale=27;
                this.setIcon(icon);
+                  // var vm = this;
+
+                  var number = this.number;
+                  // vm.$set('insta', 'number');
+                  _this.inst = number;
+                  // return this.inst;
+                  // this.inst.push(number);
+
+               // this.selectInst() {
+               // }
+               // this.selectInst(function() {
+               //    this.inst = number;
+
+               // });
+               console.log(number);
             });
             google.maps.event.addListener(marker, "mouseout", function(evt) {
                var label = this.getLabel();
@@ -102,6 +171,8 @@ methods: {
                this.setIcon(icon);
             });
             _this.markers.push(marker);
+          
+
          });
       });
    }
@@ -113,7 +184,7 @@ methods: {
 .google-map {
  width: 100%;
  /*height: 250px;*/
- height: 600px;
+ height: 800px;
  margin: 0 auto 50px;
  background: gray;
 }

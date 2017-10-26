@@ -9,8 +9,11 @@
 				</nav>
 			</div>
 		</header>
-		<div class="map-container" v-show="mapView">
+		<div class="map-container" v-if="mapView">
+		<!-- <div class="map-container"> -->
+
 			<googlemap name="googleMap"></googlemap>
+
 		</div>
 	 	<div  class="flex-container" v-show="listView">
 	 		<article v-for="entry in institutions" class="institutions--overview_child">
@@ -59,13 +62,13 @@ module.exports = {
   		toggleListView () {
   				this.listView = !this.listView;
   			if (this.mapView = true) {
-              this.mapView = !this.mapView;
+              this.mapView = false;
             };
   		},
   		toggleMapView () {
   			this.mapView = !this.mapView;
   			if (this.listView = true) {
-              this.listView = !this.listView;
+              this.listView = false;
             };
   		},
   		getEntries () {

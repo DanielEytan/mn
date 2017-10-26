@@ -15729,7 +15729,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n height: 600px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n height: 800px;\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
 
 	// exports
 
@@ -15747,21 +15747,63 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	   name: 'googlemap',
-	   props: ['name'],
+	   props: ['name', 'institutions'],
 	   data: function data() {
 	      return {
 	         mapName: "multiMap",
 	         markerCoordinates: [],
 	         map: null,
 	         bounds: null,
-	         markers: []
+	         markers: [],
+	         institutionsData: [],
+	         inst: "0"
 	      };
 	   },
+	   // computed: {
+	   //    this.inst;
+
+	   // },
 	   mounted: function mounted() {
+	      this.inst;
+
 	      this.getEntries();
+	      // this.getEntriesInstitutions();
+
 
 	      var element = document.getElementById(this.mapName);
 	      var options = {
@@ -15784,10 +15826,20 @@
 	      this.map = new google.maps.Map(element, options);
 	   },
 	   methods: {
+	      // getEntriesInstitutions () {
+	      //       let vm = this;
+	      //       axios.get('institution.json')
+	      //          .then(response => {
+	      //             // var presell = this.presellLocations;
+	      //             // var presell = JSON.parse(string);
+	      //             this.institutions = response.data.data
+	      //          })
+	      //    },
 	      getEntries: function getEntries() {
 	         var _this2 = this;
 
 	         axios.get('../locations.json').then(function (response) {
+	            _this2.institutionsData = response.data.data;
 	            var _this = _this2;
 	            //init marker positions
 	            response.data.data.forEach(function (item) {
@@ -15829,6 +15881,8 @@
 	                  var icon = this.getIcon();
 	                  icon.scale = 17;
 	                  this.setIcon(icon);
+	                  // var number = this.number;
+	                  // console.log(number);
 	               });
 	               google.maps.event.addListener(marker, "click", function (evt) {
 	                  var label = this.getLabel();
@@ -15837,6 +15891,21 @@
 	                  var icon = this.getIcon();
 	                  icon.scale = 27;
 	                  this.setIcon(icon);
+	                  // var vm = this;
+
+	                  var number = this.number;
+	                  // vm.$set('insta', 'number');
+	                  _this.inst = number;
+	                  // return this.inst;
+	                  // this.inst.push(number);
+
+	                  // this.selectInst() {
+	                  // }
+	                  // this.selectInst(function() {
+	                  //    this.inst = number;
+
+	                  // });
+	                  console.log(number);
 	               });
 	               google.maps.event.addListener(marker, "mouseout", function (evt) {
 	                  var label = this.getLabel();
@@ -15859,12 +15928,39 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
+	  return _c('div', [_c('div', {
+	    staticClass: "selected-institution"
+	  }, [_vm._l((_vm.institutionsData), function(entry) {
+	    return (entry.number == _vm.inst) ? _c('article', {
+	      staticClass: "institutions--overview_child"
+	    }, [_c('a', {
+	      attrs: {
+	        "href": entry.url
+	      }
+	    }, [_c('figure', [_c('img', {
+	      attrs: {
+	        "src": entry.photos
+	      }
+	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('div', [_c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])])
+	    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      staticClass: "icons"
+	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
+	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
+	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address)), _c('br'), _vm._v(_vm._s(entry.journey))])], 2)]) : _vm._e()
+	  }), _vm._v(" "), (_vm.inst == 0) ? _c('article', {
+	    staticClass: "institutions--overview_child"
+	  }, [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte.")])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
 	    attrs: {
 	      "id": "multiMap"
 	    }
-	  })
+	  })])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17720,7 +17816,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17731,7 +17827,6 @@
 
 	'use strict';
 
-	//
 	//
 	//
 	//
@@ -17779,7 +17874,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_vm._v("\n \t\t<"), _c('div', {
+	  return _c('div', [_c('div', {
 	    staticClass: "toggle-list",
 	    class: {
 	      open: _vm.listOpen
@@ -17885,7 +17980,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17923,13 +18018,13 @@
 	    toggleListView: function toggleListView() {
 	      this.listView = !this.listView;
 	      if (this.mapView = true) {
-	        this.mapView = !this.mapView;
+	        this.mapView = false;
 	      };
 	    },
 	    toggleMapView: function toggleMapView() {
 	      this.mapView = !this.mapView;
 	      if (this.listView = true) {
-	        this.listView = !this.listView;
+	        this.listView = false;
 	      };
 	    },
 	    getEntries: function getEntries() {
@@ -17944,6 +18039,9 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
 	//
 	//
 	//
@@ -18021,19 +18119,13 @@
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌")])])])])]), _vm._v(" "), _c('div', {
-	    directives: [{
-	      name: "show",
-	      rawName: "v-show",
-	      value: (_vm.mapView),
-	      expression: "mapView"
-	    }],
+	  }, [_vm._v("📌")])])])])]), _vm._v(" "), (_vm.mapView) ? _c('div', {
 	    staticClass: "map-container"
 	  }, [_c('googlemap', {
 	    attrs: {
 	      "name": "googleMap"
 	    }
-	  })], 1), _vm._v(" "), _c('div', {
+	  })], 1) : _vm._e(), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",

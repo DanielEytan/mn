@@ -10,6 +10,10 @@
 @import 'can';
 @import 'daniel';
 
+html, body {
+	height: 100%;
+	position: relative;
+}
 #vue-app, header#header {
 	transition: background .15s ease, color .15s ease;
 }
@@ -78,6 +82,10 @@
 				padding: .15em .35em .35em;
 				cursor: pointer;
 				border: solid 1px;
+
+			}
+			&:not(.open) .presell-toggle {
+				font-size: .8em;
 
 			}
 			&.open {

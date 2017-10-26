@@ -510,6 +510,15 @@ footer#footer {
 .institutions--single .flex-container {
   margin-bottom: 3em; }
 
+@media screen and (max-width: 768px) {
+  .institutions--overview .map-container {
+    height: 100%; }
+    .institutions--overview .map-container .selected-institution {
+      position: fixed;
+      bottom: 0; }
+      .institutions--overview .map-container .selected-institution figure {
+        display: none; } }
+
 @media screen and (min-width: 768px) {
   .institutions--overview header.section-header .narrow {
     position: relative; }
@@ -521,6 +530,8 @@ footer#footer {
         margin-left: .5em; }
         .institutions--overview header.section-header .narrow nav span i.inactive {
           color: grey; }
+        .institutions--overview header.section-header .narrow nav span i:not(.inactive) {
+          cursor: pointer; }
   .institutions--overview .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -532,6 +543,13 @@ footer#footer {
       -ms-flex: 0 1 calc(50% - 30px);
       flex: 0 1 calc(50% - 30px);
       margin-right: 30px; }
+  .institutions--overview .map-container > div {
+    display: -ms-flexbox;
+    display: flex; }
+    .institutions--overview .map-container > div .selected-institution {
+      margin-right: 30px;
+      -ms-flex: 0 1 calc(50% - 30px);
+      flex: 0 1 calc(50% - 30px); }
   .institutions--single .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -545,7 +563,10 @@ footer#footer {
   .institutions--overview .flex-container article {
     -ms-flex: 0 1 calc(100%/3 - 30px);
     flex: 0 1 calc(100%/3 - 30px);
-    margin-right: 30px; } }
+    margin-right: 30px; }
+  .institutions--overview .map-container > div .selected-institution {
+    -ms-flex: 0 1 calc(100%/3 - 30px);
+    flex: 0 1 calc(100%/3 - 30px); } }
 
 @media screen and (min-width: 1900px) {
   .institutions--overview .flex-container article {
@@ -562,6 +583,10 @@ footer#footer {
 
 .filter--wrapper .filter--headline--wrapper {
   display: none; }
+
+html, body {
+  height: 100%;
+  position: relative; }
 
 #vue-app, header#header {
   transition: background .15s ease, color .15s ease; }
@@ -614,6 +639,8 @@ footer#footer {
     padding: .15em .35em .35em;
     cursor: pointer;
     border: solid 1px; }
+  .visit .presell .toggle-list:not(.open) .presell-toggle {
+    font-size: .8em; }
   .visit .presell .toggle-list.open .presell-toggle {
     cursor: auto;
     border-radius: .5em;

@@ -1,11 +1,10 @@
 <template>
  	<div>
- 		<<div class="toggle-list" v-bind:class="{ open: listOpen }"><span v-on:click="toggleList" class="presell-toggle"><i>+</i> Zusätzliche Vorverkaufsstellen</span></div>
+ 		<div class="toggle-list" v-bind:class="{ open: listOpen }"><span v-on:click="toggleList" class="presell-toggle"><i>+</i> Zusätzliche Vorverkaufsstellen</span></div>
 		<div v-for="block in presellLocations" class="presell-location" v-bind:class="{ open: listOpen }">
 			<div v-for="entry in block.list">
-				<div v-html="entry.listContent"></div> </div>
-			<!-- <div v-html="block"></div> -->
-			<!-- <div>{{ block }}</div> -->
+				<div v-html="entry.listContent"></div>
+      </div>
 		</div>
  	</div>
 </template>

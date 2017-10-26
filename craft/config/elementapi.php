@@ -134,33 +134,7 @@ return [
             ];
         },
 
-        'institution.json' => [
-            'elementType' => ElementType::Entry,
-            'criteria' => ['section' => 'program', 'type' =>'institution'],
-            'transformer' => function(EntryModel $entry) {
-                 $photos = [];
-                    foreach ($entry->programImg as $photo) {
-                        $photos[] = $photo->url;
-                    }
-                return [
-                    'title' => $entry->title,
-                    'id' => $entry->id,
-                    'number' => $entry->number,
-                    'address' => $entry->address,
-                    'journey' => $entry->journey,
-                    'url' => $entry->url,
-                    'advanceSale' => $entry->advanceSale,
-                    'accessibility' => $entry->accessibility,
-                    'photos' => $photos,
-                    'shuttleLine' => array_map( function (CategoryModel $category) {
-                        return [
-                            'title' => $category->title,
-                            'color' => $category->color
-                        ];
-                    }, $entry->shuttleLine->find()),
-                ];
-            },
-        ],
+        
         'themes.json' => [
             'elementType' => ElementType::Category,
             'criteria' => ['group' => 'themes'],
@@ -191,6 +165,33 @@ return [
                 ];
             },
         ],
+        'institution.json' => [
+            'elementType' => ElementType::Entry,
+            'criteria' => ['section' => 'program', 'type' =>'institution'],
+            'transformer' => function(EntryModel $entry) {
+                 $photos = [];
+                    foreach ($entry->programImg as $photo) {
+                        $photos[] = $photo->url;
+                    }
+                return [
+                    'title' => $entry->title,
+                    'id' => $entry->id,
+                    'number' => $entry->number,
+                    'address' => $entry->address,
+                    'journey' => $entry->journey,
+                    'url' => $entry->url,
+                    'advanceSale' => $entry->advanceSale,
+                    'accessibility' => $entry->accessibility,
+                    'photos' => $photos,
+                    'shuttleLine' => array_map( function (CategoryModel $category) {
+                        return [
+                            'title' => $category->title,
+                            'color' => $category->color
+                        ];
+                    }, $entry->shuttleLine->find()),
+                ];
+            },
+        ],
         'locations.json' => [
             'elementType' => ElementType::Entry,
             // 'paginate' => false,
@@ -199,12 +200,22 @@ return [
                 'type' => 'institution'
             ],
             'transformer' => function(EntryModel $entry) {
+                 $photos = [];
+                    foreach ($entry->programImg as $photo) {
+                        $photos[] = $photo->url;
+                    }
                 return [
                     'title' => $entry->title,
                     'lat' => $entry->map->lat,
                     'lng' => $entry->map->lng,
                     'number' => $entry->number,
                     'url' => $entry->url,
+                    'address' => $entry->address,
+                    'journey' => $entry->journey,
+                    'advanceSale' => $entry->advanceSale,
+                    'accessibility' => $entry->accessibility,
+                    'photos' => $photos,
+                    
                     'shuttleLine' => array_map( function (CategoryModel $category) {
                         return [
                             'title' => $category->title,
