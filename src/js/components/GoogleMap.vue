@@ -50,7 +50,7 @@ export default {
     markers: [],
     institutionsData: [],
     inst: "0",
-    institutInfo: true,
+    institutInfo: false,
  }
 },
 // computed: {
@@ -114,13 +114,14 @@ methods: {
             var color = colors[0].color;
             const position = new google.maps.LatLng(coord.latitude, coord.longitude);
             const marker = new google.maps.Marker({ 
+               animation: google.maps.Animation.DROP,
                position,
                // label: {text:coord.number + " " + coord.label, fontFamily: 'main-eb'},
                label: {
                   text:coord.number, 
                   fontFamily: 'main-eb', 
                   fontSize: '1.2em',
-                  color: 'white'
+                  color:"rgba(240,240,240,0.8",
                },
                icon: {
                   path: google.maps.SymbolPath.CIRCLE,
@@ -134,10 +135,11 @@ methods: {
                url: coord.url,
                map: _this.map
             });
+             marker.addListener('click', toggleBounce);
             google.maps.event.addListener(marker, "mouseover", function(evt) {
                var label = this.getLabel();
-               label.color="rgba(240,240,240,0.5";
-               label.fontSize="1.5em";
+               label.color="white";
+               // label.fontSize="1.5em";
                this.setLabel(label);
                var icon = this.getIcon();
                icon.scale=17;
@@ -146,6 +148,8 @@ methods: {
                // console.log(number);
             });
             google.maps.event.addListener(marker, "click", function(evt) {
+
+               
                // var label = this.getLabel();
                // label.color="rgba(240,240,240,0.5";
                // this.setLabel(label);
@@ -169,7 +173,13 @@ methods: {
                this.setIcon(icon);
             });
             _this.markers.push(marker);
-          
+          function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          // marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
 
          });
       });
