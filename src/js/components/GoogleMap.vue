@@ -1,8 +1,10 @@
 <template>
    <div>
-      <div class="selected-institution">
+      <div class="selected-institution" v-bind:class="{ closed: institutInfo }">
          <!-- {{ institutions.id }} -->
+         <div class="dismiss" v-on:click="toggleInstitutInfo">×</div>
       <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
+
          <a v-bind:href="entry.url">
             <figure>
                   <img v-bind:src="entry.photos">
@@ -18,7 +20,8 @@
                   <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
                </span>
             </div>
-            <p>{{ entry.address }}<br>{{ entry.journey }}</p>
+            <p>{{ entry.address }}</p>
+            <p class="journey">{{ entry.journey }}</p>
 
          </a>
       </article>
@@ -47,6 +50,7 @@ export default {
     markers: [],
     institutionsData: [],
     inst: "0",
+    institutInfo: true,
  }
 },
 // computed: {
@@ -90,6 +94,9 @@ methods: {
    //             this.institutions = response.data.data
    //          })
    //    },
+   toggleInstitutInfo () {
+      this.institutInfo = !this.institutInfo;
+   },
    getEntries () {
       axios.get('../locations.json')
       .then(response => {
@@ -139,27 +146,18 @@ methods: {
                // console.log(number);
             });
             google.maps.event.addListener(marker, "click", function(evt) {
-               var label = this.getLabel();
-               label.color="rgba(240,240,240,0.5";
-               this.setLabel(label);
-               var icon = this.getIcon();
-               icon.scale=27;
-               this.setIcon(icon);
-                  // var vm = this;
-
-                  var number = this.number;
-                  // vm.$set('insta', 'number');
-                  _this.inst = number;
-                  // return this.inst;
-                  // this.inst.push(number);
-
-               // this.selectInst() {
-               // }
-               // this.selectInst(function() {
-               //    this.inst = number;
-
-               // });
-               console.log(number);
+               // var label = this.getLabel();
+               // label.color="rgba(240,240,240,0.5";
+               // this.setLabel(label);
+               // var icon = this.getIcon();
+               // icon.scale=27;
+               // this.setIcon(icon);
+               var number = this.number;
+               _this.inst = number;
+               if ( _this.institutInfo = false) {
+                  _this.institutInfo = !_this.institutInfo;
+               }
+               
             });
             google.maps.event.addListener(marker, "mouseout", function(evt) {
                var label = this.getLabel();

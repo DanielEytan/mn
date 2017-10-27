@@ -32,7 +32,8 @@
 						<i v-if="value === 'partlyWheelchair'">&#9855;*</i>
 					</span>
 				</div>
-				<p>{{ entry.address }}<br>{{ entry.journey }}</p>
+				<p>{{ entry.address }}</p>
+				<p class="journey">{{ entry.journey }}</p>
 			</a>
 			</article>
 	 	</div>

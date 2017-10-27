@@ -420,16 +420,23 @@ footer#footer {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
       .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
-        -ms-flex: 0 1 22.5%;
-        flex: 0 1 22.5%;
-        margin-right: 1.5%;
+        -ms-flex: 0 1 46.5%;
+        flex: 0 1 46.5%;
+        margin-right: 1%;
         padding: .45em .7em .5em; }
-        .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(4n) {
+        .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
           margin-right: 0; }
     .program--overview .filter__ckecklists .filter--list--wrapper.active {
       padding: 1em 30px 1.1em; } }
 
 @media only screen and (min-width: 1024px) {
+  .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
+    -ms-flex: 0 1 21.9%;
+    flex: 0 1 21.9%; }
+    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
+      margin-right: 1%; }
+    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(4n) {
+      margin-right: 0; }
   .program--overview .filter__time {
     padding: 0;
     margin: 0 auto 3em;
@@ -529,10 +536,18 @@ footer#footer {
       white: 100%;
       right: 0;
       left: 0;
-      padding: 20px; }
+      padding: 5px 30px 10px 15px;
+      border-top: solid 1px; }
+      .institutions--overview .map-container .selected-institution.closed {
+        bottom: -20vh; }
+      .institutions--overview .map-container .selected-institution .dismiss {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 1.5em; }
       .institutions--overview .map-container .selected-institution figure {
         display: none; }
-      .institutions--overview .map-container .selected-institution .icons {
+      .institutions--overview .map-container .selected-institution .icons, .institutions--overview .map-container .selected-institution .journey {
         display: none; }
       .institutions--overview .map-container .selected-institution article {
         margin-bottom: 0; } }
@@ -570,6 +585,8 @@ footer#footer {
       margin-right: 30px;
       -ms-flex: 0 1 calc(50% - 30px);
       flex: 0 1 calc(50% - 30px); }
+      .institutions--overview .map-container > div .selected-institution .dismiss {
+        display: none; }
   .institutions--single .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -580,6 +597,10 @@ footer#footer {
       flex: 0 1 49%; } }
 
 @media screen and (min-width: 1024px) {
+  .institutions--overview header.section-header .narrow nav {
+    font-size: 1em; }
+    .institutions--overview header.section-header .narrow nav i {
+      margin-right: .25em; }
   .institutions--overview .flex-container article {
     -ms-flex: 0 1 calc(100%/3 - 30px);
     flex: 0 1 calc(100%/3 - 30px);
@@ -625,6 +646,8 @@ html, body {
       background: white; }
     #vue-app.active header#header .saved-link a span {
       color: white; }
+  #vue-app.active .selected-institution {
+    background: #1A0042 !important; }
   #vue-app.active .program--overview .filter header {
     border: #1A0042;
     color: white; }

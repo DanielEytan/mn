@@ -33,6 +33,10 @@ html, body {
 			color: white;
 		}
 	}
+	.selected-institution {
+		background: $dark !important;
+
+	}
 	.program--overview .filter header {
 		border: $dark;
 		color: white;

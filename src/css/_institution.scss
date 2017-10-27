@@ -60,12 +60,6 @@
 			.map-container {
 				height: 100%;
 				.selected-institution {
-					figure {
-						display: none;
-					}
-					.icons {
-						display: none;
-					}
 					position: fixed;
 					bottom: 0;
 					z-index: 9;
@@ -73,7 +67,24 @@
 					white: 100%;
 					right: 0;
 					left: 0;
-					padding: 20px;
+					padding: 5px 30px 10px 15px;
+					border-top: solid 1px;
+					&.closed {
+						bottom: -20vh;
+					}
+					.dismiss {
+						position: absolute;
+						top: 5px;
+						right: 20px;
+						font-size: 1.5em;
+					}
+					figure {
+						display: none;
+					}
+					.icons, .journey {
+						display: none;
+					}
+					
 					article {
 						margin-bottom: 0;
 					}
@@ -126,7 +137,9 @@
 						margin-right: 30px;
 					flex: 0 1 calc(50% - 30px);
 						
-
+						.dismiss {
+							display: none;
+						}
 					}
 
 				}
@@ -144,6 +157,14 @@
 	}
 	@media screen and (min-width: $bp2) {
 		&--overview {
+			header.section-header .narrow {
+				nav {
+					font-size: 1em;
+					i {
+						margin-right: .25em;
+					}
+				}
+			}
 			.flex-container article {
 				flex: 0 1 calc(100%/3 - 30px);
 				margin-right: 30px;

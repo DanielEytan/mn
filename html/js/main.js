@@ -15779,6 +15779,9 @@
 	//
 	//
 	//
+	//
+	//
+	//
 
 	exports.default = {
 	   name: 'googlemap',
@@ -15791,7 +15794,8 @@
 	         bounds: null,
 	         markers: [],
 	         institutionsData: [],
-	         inst: "0"
+	         inst: "0",
+	         institutInfo: true
 	      };
 	   },
 	   // computed: {
@@ -15835,6 +15839,9 @@
 	      //             this.institutions = response.data.data
 	      //          })
 	      //    },
+	      toggleInstitutInfo: function toggleInstitutInfo() {
+	         this.institutInfo = !this.institutInfo;
+	      },
 	      getEntries: function getEntries() {
 	         var _this2 = this;
 
@@ -15885,27 +15892,17 @@
 	                  // console.log(number);
 	               });
 	               google.maps.event.addListener(marker, "click", function (evt) {
-	                  var label = this.getLabel();
-	                  label.color = "rgba(240,240,240,0.5";
-	                  this.setLabel(label);
-	                  var icon = this.getIcon();
-	                  icon.scale = 27;
-	                  this.setIcon(icon);
-	                  // var vm = this;
-
+	                  // var label = this.getLabel();
+	                  // label.color="rgba(240,240,240,0.5";
+	                  // this.setLabel(label);
+	                  // var icon = this.getIcon();
+	                  // icon.scale=27;
+	                  // this.setIcon(icon);
 	                  var number = this.number;
-	                  // vm.$set('insta', 'number');
 	                  _this.inst = number;
-	                  // return this.inst;
-	                  // this.inst.push(number);
-
-	                  // this.selectInst() {
-	                  // }
-	                  // this.selectInst(function() {
-	                  //    this.inst = number;
-
-	                  // });
-	                  console.log(number);
+	                  if (_this.institutInfo = false) {
+	                     _this.institutInfo = !_this.institutInfo;
+	                  }
 	               });
 	               google.maps.event.addListener(marker, "mouseout", function (evt) {
 	                  var label = this.getLabel();
@@ -15929,8 +15926,16 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
-	    staticClass: "selected-institution"
-	  }, [_vm._l((_vm.institutionsData), function(entry) {
+	    staticClass: "selected-institution",
+	    class: {
+	      closed: _vm.institutInfo
+	    }
+	  }, [_c('div', {
+	    staticClass: "dismiss",
+	    on: {
+	      "click": _vm.toggleInstitutInfo
+	    }
+	  }, [_vm._v("×")]), _vm._v(" "), _vm._l((_vm.institutionsData), function(entry) {
 	    return (entry.number == _vm.inst) ? _c('article', {
 	      staticClass: "institutions--overview_child"
 	    }, [_c('a', {
@@ -15952,7 +15957,9 @@
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address)), _c('br'), _vm._v(_vm._s(entry.journey))])], 2)]) : _vm._e()
+	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
+	      staticClass: "journey"
+	    }, [_vm._v(_vm._s(entry.journey))])], 2)]) : _vm._e()
 	  }), _vm._v(" "), (_vm.inst == 0) ? _c('article', {
 	    staticClass: "institutions--overview_child"
 	  }, [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte.")])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
@@ -17980,7 +17987,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18039,6 +18046,7 @@
 	    }
 	  }
 	}; //
+	//
 	//
 	//
 	//
@@ -18155,7 +18163,9 @@
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address)), _c('br'), _vm._v(_vm._s(entry.journey))])], 2)])
+	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
+	      staticClass: "journey"
+	    }, [_vm._v(_vm._s(entry.journey))])], 2)])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
