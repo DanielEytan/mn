@@ -18207,13 +18207,13 @@
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), (_vm.mapView) ? _c('div', {
 	    staticClass: "map-container"
 	  }, [_c('googlemap', {
 	    attrs: {
 	      "name": "googleMap"
 	    }
-	  })], 1), _vm._v(" "), _c('div', {
+	  })], 1) : _vm._e(), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
