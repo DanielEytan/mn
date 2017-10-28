@@ -152,21 +152,18 @@ section header .narrow,
 
 .institutions--single h1.title,
 .institutions--single span strong,
-.institutions--single .program h1.program-title,
-header.section-header nav span {
+.institutions--single .program h1.program-title {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title,
-    header.section-header nav span {
+    .institutions--single .program h1.program-title {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title,
-    header.section-header nav span {
+    .institutions--single .program h1.program-title {
       font-size: 2.5em; } }
 
 .nav-wrapper li a,
@@ -493,10 +490,12 @@ footer#footer {
   height: 800px;
   margin-bottom: 50px; }
 
-.institutions--overview header.section-header .narrow nav {
-  font-size: 2em; }
-  .institutions--overview header.section-header .narrow nav i {
-    margin-right: .25em; }
+.institutions--overview header.section-header .narrow nav i {
+  padding: .2em .4em .3em;
+  border: solid 1px; }
+  .institutions--overview header.section-header .narrow nav i.inactive {
+    background: #1A0042;
+    color: white; }
 
 .institutions--overview article {
   margin-bottom: 60px; }
@@ -514,6 +513,15 @@ footer#footer {
 
 .institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address {
   margin-bottom: 1em; }
+
+.institutions--single .visitor-infos i {
+  font-size: 1.1em;
+  width: 50px;
+  display: inline-block;
+  margin-bottom: .25em; }
+
+.institutions--single figure img {
+  width: 100%; }
 
 .institutions--single .program {
   margin-bottom: 2em; }
@@ -550,7 +558,16 @@ footer#footer {
       .institutions--overview .map-container .selected-institution .icons, .institutions--overview .map-container .selected-institution .journey {
         display: none; }
       .institutions--overview .map-container .selected-institution article {
-        margin-bottom: 0; } }
+        margin-bottom: 0; }
+  .institutions--overview .institutions-list {
+    display: none;
+    height: 100%; }
+  .institutions--overview header.section-header h1 {
+    margin-bottom: 1em; }
+  .institutions--overview header.section-header nav {
+    font-size: 1.5em; }
+    .institutions--overview header.section-header nav i {
+      margin-right: .25em; } }
 
 @media screen and (min-width: 768px) {
   .institutions--overview header.section-header .narrow {
@@ -558,11 +575,10 @@ footer#footer {
     .institutions--overview header.section-header .narrow nav {
       position: absolute;
       right: 0;
-      bottom: 0; }
+      bottom: 19px; }
       .institutions--overview header.section-header .narrow nav span {
-        margin-left: .5em; }
-        .institutions--overview header.section-header .narrow nav span i.inactive {
-          color: grey; }
+        margin-left: .5em;
+        margin-right: 0; }
         .institutions--overview header.section-header .narrow nav span i:not(.inactive) {
           cursor: pointer; }
   .institutions--overview .flex-container {
@@ -576,17 +592,38 @@ footer#footer {
       -ms-flex: 0 1 calc(50% - 30px);
       flex: 0 1 calc(50% - 30px);
       margin-right: 30px; }
-  .institutions--overview .map-container .google-map {
-    height: 600px; }
-  .institutions--overview .map-container > div {
-    display: -ms-flexbox;
-    display: flex; }
-    .institutions--overview .map-container > div .selected-institution {
-      margin-right: 30px;
-      -ms-flex: 0 1 calc(50% - 30px);
-      flex: 0 1 calc(50% - 30px); }
-      .institutions--overview .map-container > div .selected-institution .dismiss {
-        display: none; }
+  .institutions--overview .map-container {
+    position: relative; }
+    .institutions--overview .map-container .google-map {
+      height: 600px; }
+    .institutions--overview .map-container > div {
+      display: -ms-flexbox;
+      display: flex; }
+      .institutions--overview .map-container > div .selected-institution {
+        margin-right: 30px;
+        -ms-flex: 0 1 calc(50% - 30px);
+        flex: 0 1 calc(50% - 30px); }
+        .institutions--overview .map-container > div .selected-institution .dismiss {
+          display: none; }
+        .institutions--overview .map-container > div .selected-institution .back {
+          margin-top: 2em; }
+  .institutions--overview .aside {
+    height: 600px;
+    overflow-y: scroll; }
+    .institutions--overview .aside .institutions-list {
+      font-size: .75em; }
+      .institutions--overview .aside .institutions-list li {
+        margin-bottom: 1em;
+        display: -ms-flexbox;
+        display: flex; }
+        .institutions--overview .aside .institutions-list li .suttle-line {
+          color: white;
+          width: 27px;
+          height: 27px;
+          border-radius: 100%;
+          display: inline-block;
+          text-align: center;
+          margin-right: 1em; }
   .institutions--single .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -609,7 +646,9 @@ footer#footer {
     height: 800px; }
   .institutions--overview .map-container > div .selected-institution {
     -ms-flex: 0 1 calc(100%/3 - 30px);
-    flex: 0 1 calc(100%/3 - 30px); } }
+    flex: 0 1 calc(100%/3 - 30px); }
+  .institutions--overview .aside {
+    height: 800px; } }
 
 @media screen and (min-width: 1900px) {
   .institutions--overview .flex-container article {

@@ -13787,7 +13787,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -15729,7 +15729,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n width: 100%;\n /*height: 250px;*/\n /*height: 800px;*/\n margin: 0 auto 50px;\n background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n  width: 100%;\n  /*height: 250px;*/\n  /*height: 800px;*/\n  margin: 0 auto 50px;\n  background: gray;\n}\n", ""]);
 
 	// exports
 
@@ -15743,6 +15743,17 @@
 	Object.defineProperty(exports, "__esModule", {
 	   value: true
 	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -15803,6 +15814,8 @@
 
 	   // },
 	   mounted: function mounted() {
+	      this.activeLabel();
+
 	      this.inst;
 
 	      this.getEntries();
@@ -15829,6 +15842,7 @@
 	      };
 	      this.map = new google.maps.Map(element, options);
 	   },
+
 	   methods: {
 	      // getEntriesInstitutions () {
 	      //       let vm = this;
@@ -15877,46 +15891,61 @@
 	                     strokeColor: color,
 	                     strokeWeight: 1
 	                  },
+	                  // var number = coord.number;
+	                  // if (number = 2) {
+	                  //    label: {
+	                  //       color: 'blue',
+	                  //    }
+	                  // },
 	                  number: coord.number,
 	                  url: coord.url,
 	                  map: _this.map
+
 	               });
 	               marker.addListener('click', toggleBounce);
 	               google.maps.event.addListener(marker, "mouseover", function (evt) {
 	                  var label = this.getLabel();
 	                  label.color = "white";
-	                  // label.fontSize="1.5em";
 	                  this.setLabel(label);
-	                  var icon = this.getIcon();
-	                  icon.scale = 17;
-	                  this.setIcon(icon);
-	                  // var number = this.number;
-	                  // console.log(number);
 	               });
-	               google.maps.event.addListener(marker, "click", function (evt) {
 
-	                  // var label = this.getLabel();
-	                  // label.color="rgba(240,240,240,0.5";
-	                  // this.setLabel(label);
-	                  // var icon = this.getIcon();
-	                  // icon.scale=27;
-	                  // this.setIcon(icon);
+	               google.maps.event.addListener(marker, "click", function (evt) {
+	                  // var normalIcon = {
+	                  //    url: "http://maps.google.com/mapfiles/ms/micons/blue.png"
+	                  //  };
+
+
 	                  var number = this.number;
+	                  var instNumber = _this.inst;
 	                  _this.inst = number;
-	                  if (_this.institutInfo = false) {
-	                     _this.institutInfo = !_this.institutInfo;
+	                  console.log(number);
+	                  // console.log(instNumber);
+	                  if (instNumber != number) {
+
+	                     console.log('true');
+
+	                     var icon = this.getIcon();
+	                     icon.scale = 27;
+	                     this.setIcon(icon);
 	                  }
 	               });
+
 	               google.maps.event.addListener(marker, "mouseout", function (evt) {
 	                  var label = this.getLabel();
 	                  label.color = "white";
 	                  label.fontSize = "1.2em";
 	                  this.setLabel(label);
-	                  var icon = this.getIcon();
-	                  icon.scale = 15;
-	                  this.setIcon(icon);
+	                  // var icon = this.getIcon();
+	                  // icon.scale=15;
+	                  // this.setIcon(icon);
 	               });
-	               _this.markers.push(marker);
+	               google.maps.event.addListener(marker, function (evt) {
+	                  var number = this.number;
+	                  console.log(number);
+	               });
+	               // _this.markers.push(marker);
+
+
 	               function toggleBounce() {
 	                  if (marker.getAnimation() !== null) {
 	                     marker.setAnimation(null);
@@ -15926,9 +15955,26 @@
 	               }
 	            });
 	         });
+	      },
+
+	      activeLabel: function activeLabel() {
+	         var inst = this.inst;
+	         console.log(inst);
+	         // var marker = google.maps.Marker();
+	         //  for (var i = 0; i < marker.length; i++) {
+	         // var data = marker[i];
+	         //    console.log(data);
+	         // }
 	      }
-	   }
-	};
+	      // computed: {
+	      //    activeLabel: function() {
+
+	      //    }
+
+	      //    }
+
+
+	   } };
 
 /***/ }),
 /* 147 */
@@ -15969,10 +16015,34 @@
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
 	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
 	      staticClass: "journey"
-	    }, [_vm._v(_vm._s(entry.journey))])], 2)]) : _vm._e()
+	    }, [_vm._v(_vm._s(entry.journey))])], 2), _vm._v(" "), _c('div', {
+	      staticClass: "back",
+	      on: {
+	        "click": function($event) {
+	          _vm.inst = 0
+	        }
+	      }
+	    }, [_vm._v("← Zurück zur Übersicht")])]) : _vm._e()
 	  }), _vm._v(" "), (_vm.inst == 0) ? _c('article', {
-	    staticClass: "institutions--overview_child"
-	  }, [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte.")])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
+	    staticClass: "aside"
+	  }, [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte oder wählen eine Institution aus der Liste aus.")]), _c('br'), _c('br'), _vm._v(" "), _c('ul', {
+	    staticClass: "institutions-list"
+	  }, _vm._l((_vm.institutionsData), function(entry) {
+	    return _c('li', {
+	      on: {
+	        "click": function($event) {
+	          _vm.inst = entry.number
+	        }
+	      }
+	    }, [_vm._l((entry.shuttleLine), function(color) {
+	      return _c('div', [_c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(" " + _vm._s(entry.number))])])
+	    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))])], 2)
+	  }))]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
 	    attrs: {
 	      "id": "multiMap"
@@ -18122,9 +18192,9 @@
 	    on: {
 	      "click": _vm.toggleListView
 	    }
-	  }, [_vm._v("▦")]), _vm._v(" "), _c('i', {
+	  }, [_vm._v("▦ Liste")]), _vm._v(" "), _c('i', {
 	    staticClass: "inactive"
-	  }, [_vm._v("📌")])]), _vm._v(" "), _c('span', {
+	  }, [_vm._v("📌 Karte")])]), _vm._v(" "), _c('span', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -18133,17 +18203,17 @@
 	    }]
 	  }, [_c('i', {
 	    staticClass: "inactive"
-	  }, [_vm._v("▦")]), _vm._v(" "), _c('i', {
+	  }, [_vm._v("▦ Liste")]), _vm._v(" "), _c('i', {
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌")])])])])]), _vm._v(" "), (_vm.mapView) ? _c('div', {
+	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "map-container"
 	  }, [_c('googlemap', {
 	    attrs: {
 	      "name": "googleMap"
 	    }
-	  })], 1) : _vm._e(), _vm._v(" "), _c('div', {
+	  })], 1), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",

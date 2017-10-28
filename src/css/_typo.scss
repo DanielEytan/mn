@@ -128,8 +128,7 @@ section header .narrow,
 
 .institutions--single  h1.title,
 .institutions--single  span strong,
-.institutions--single .program h1.program-title,
-header.section-header nav span {
+.institutions--single .program h1.program-title {
 	font-size: 1.5em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {

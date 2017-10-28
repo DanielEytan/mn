@@ -3,61 +3,74 @@
       <div class="selected-institution" v-bind:class="{ closed: institutInfo }">
          <!-- {{ institutions.id }} -->
          <div class="dismiss" v-on:click="toggleInstitutInfo">×</div>
-      <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
 
-         <a v-bind:href="entry.url">
-            <figure>
+         <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
+
+            <a v-bind:href="entry.url">
+               <figure>
                   <img v-bind:src="entry.photos">
                </figure>
-         <div v-for="color in entry.shuttleLine">
-               <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
-            </div>
-         <h1>{{ entry.title }}</h1>
-         <div class="icons">
-               <span v-if="entry.advanceSale == 1">&#127915;</span>
-               <span v-for="value in entry.accessibility">
-                  <i v-if="value === 'wheelchair'">&#9855;</i>
-                  <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
-               </span>
-            </div>
-            <p>{{ entry.address }}</p>
-            <p class="journey">{{ entry.journey }}</p>
+               <div v-for="color in entry.shuttleLine">
+                  <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+               </div>
+               <h1>{{ entry.title }}</h1>
+               <div class="icons">
+                  <span v-if="entry.advanceSale == 1">&#127915;</span>
+                  <span v-for="value in entry.accessibility">
+                     <i v-if="value === 'wheelchair'">&#9855;</i>
+                     <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
+                  </span>
+               </div>
+               <p>{{ entry.address }}</p>
+               <p class="journey">{{ entry.journey }}</p>
 
-         </a>
+            </a>
+            <div class="back" v-on:click="inst = 0">← Zurück zur Übersicht</div>
+
+         </article>
+         <article class="aside" v-if="inst == 0">
+            <p>Klicken Sie auf einen der Marker auf der Karte oder wählen eine Institution aus der Liste aus.</p><br><br>
+            <ul class="institutions-list">
+               <li v-for="entry in institutionsData" v-on:click="inst = entry.number">
+                 <div v-for="color in entry.shuttleLine">
+                  <span class="suttle-line" v-bind:style="{background: color.color}"> {{ entry.number }}</span>
+               </div>
+               <h1>{{ entry.title }}</h1>
+            </li>
+         </ul>
       </article>
-      <article class="institutions--overview_child" v-if="inst == 0">
-         <p>Klicken Sie auf einen der Marker auf der Karte.</p>
-      </article>
-      </div>
-      <div class="google-map" id="multiMap"></div>
+   </div>
+   <div class="google-map" id="multiMap"></div>
 <!--    <article v-for="entry in institutions" class="institutions--overview_child">
       {{ entry.title }}
    </article> -->
    
- </div>
+</div>
 </template>
 
 <script>
 export default {
- name: 'googlemap',
- props: ['name', 'institutions'],
- data: function () {
-  return {
-    mapName: "multiMap",
-    markerCoordinates: [],
-    map: null,
-    bounds: null,
-    markers: [],
-    institutionsData: [],
-    inst: "0",
-    institutInfo: false,
- }
+  name: 'googlemap',
+  props: ['name', 'institutions'],
+  data: function () {
+    return {
+     mapName: "multiMap",
+     markerCoordinates: [],
+     map: null,
+     bounds: null,
+     markers: [],
+     institutionsData: [],
+     inst: "0",
+     institutInfo: false,
+  }
 },
 // computed: {
 //    this.inst;
 
 // },
 mounted: function () {
+   this.activeLabel();
+
    this.inst;
 
    this.getEntries();
@@ -84,6 +97,7 @@ mounted: function () {
    }
    this.map = new google.maps.Map(element, options);
 },
+
 methods: {
    // getEntriesInstitutions () {
    //       let vm = this;
@@ -131,69 +145,107 @@ methods: {
                   strokeColor: color,
                   strokeWeight: 1
                },
+               // var number = coord.number;
+               // if (number = 2) {
+               //    label: {
+               //       color: 'blue',
+               //    }
+               // },
                number: coord.number,
                url: coord.url,
                map: _this.map
+
+               
             });
-             marker.addListener('click', toggleBounce);
+            marker.addListener('click', toggleBounce);
             google.maps.event.addListener(marker, "mouseover", function(evt) {
                var label = this.getLabel();
                label.color="white";
-               // label.fontSize="1.5em";
                this.setLabel(label);
-               var icon = this.getIcon();
-               icon.scale=17;
-               this.setIcon(icon);
-               // var number = this.number;
-               // console.log(number);
-            });
-            google.maps.event.addListener(marker, "click", function(evt) {
 
-               
-               // var label = this.getLabel();
-               // label.color="rgba(240,240,240,0.5";
-               // this.setLabel(label);
-               // var icon = this.getIcon();
-               // icon.scale=27;
-               // this.setIcon(icon);
-               var number = this.number;
-               _this.inst = number;
-               if ( _this.institutInfo = false) {
-                  _this.institutInfo = !_this.institutInfo;
-               }
-               
             });
+
+            google.maps.event.addListener(marker, "click", function(evt) {
+                // var normalIcon = {
+                //    url: "http://maps.google.com/mapfiles/ms/micons/blue.png"
+                //  };
+
+
+               var number = this.number;
+               var instNumber = _this.inst;
+               _this.inst = number;
+               console.log(number);
+               // console.log(instNumber);
+               if (instNumber != number) {
+
+                  console.log('true');
+
+
+                  var icon = this.getIcon();
+                  icon.scale=27;
+                  this.setIcon(icon);
+
+               }
+
+
+            });
+               
+      
             google.maps.event.addListener(marker, "mouseout", function(evt) {
                var label = this.getLabel();
                label.color="white";
                label.fontSize="1.2em";               
                this.setLabel(label);
-               var icon = this.getIcon();
-               icon.scale=15;
-               this.setIcon(icon);
+               // var icon = this.getIcon();
+               // icon.scale=15;
+               // this.setIcon(icon);
             });
-            _this.markers.push(marker);
-          function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          // marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-      }
+            google.maps.event.addListener(marker, function(evt) {
+               var number = this.number;
+               console.log(number);
 
-         });
+            });
+            // _this.markers.push(marker);
+
+
+            function toggleBounce() {
+             if (marker.getAnimation() !== null) {
+              marker.setAnimation(null);
+           } else {
+                   // marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+             }
+
+          });
       });
+   },
+   activeLabel: function () {
+      var inst = this.inst;
+      console.log(inst);
+      // var marker = google.maps.Marker();
+                  //  for (var i = 0; i < marker.length; i++) {
+                  // var data = marker[i];
+                  //    console.log(data);
+                  // }
    }
 }
+// computed: {
+//    activeLabel: function() {
+
+//    }
+
+//    }
+
+
 };
 </script>
 
 <style scoped>
 .google-map {
- width: 100%;
- /*height: 250px;*/
- /*height: 800px;*/
- margin: 0 auto 50px;
- background: gray;
+  width: 100%;
+  /*height: 250px;*/
+  /*height: 800px;*/
+  margin: 0 auto 50px;
+  background: gray;
 }
 </style>

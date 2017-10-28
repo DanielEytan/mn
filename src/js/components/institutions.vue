@@ -4,13 +4,13 @@
 			<div class="narrow"	>
 				<h1>INSTITUTIONEN</h1>
 				<nav>
-					<span v-show="mapView"><i v-on:click="toggleListView">&#9638;</i> <i class="inactive">&#128204;</i></span>
-					<span v-show="listView"><i class="inactive">&#9638;</i> <i v-on:click="toggleMapView">&#128204;</i></span>
+					<span v-show="mapView"><i v-on:click="toggleListView">&#9638; Liste</i> <i class="inactive">&#128204; Karte</i></span>
+					<span v-show="listView"><i class="inactive">&#9638; Liste</i> <i v-on:click="toggleMapView">&#128204; Karte</i></span>
 				</nav>
 			</div>
 		</header>
-		<div class="map-container" v-if="mapView">
-		<!-- <div class="map-container"> -->
+		<!-- <div class="map-container" v-if="mapView"> -->
+		<div class="map-container">
 
 			<googlemap name="googleMap"></googlemap>
 

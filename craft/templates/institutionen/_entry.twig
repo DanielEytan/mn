@@ -9,16 +9,36 @@
 		<div class="flex-container">
 			<div>
 				<div class="visitor-infos">
-					<span>{% if entry.advanceSale %}Ticketvorverkauf{% endif %}</span><br>
-					<span>{{ entry.accessibility.label }}</span>
+					{% if entry.advanceSale %}<span><i>&#127915;</i> Ticketvorverkauf</span><br>{% endif %}
+					{% set accessibility = entry.accessibility.value %}
+					{% switch accessibility %}
+					
+						{% case "wheelchair" %}
+						<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
+						
+					
+						{% case "partlyWheelchair" %}
+						<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
+						
+					
+						{% default %}
+						
+					
+					{% endswitch %}
+					
 				</div>
 				<address>{{ entry.address }}</address>
 				<h3>Anfahrt:<</h3>
 				<p>{{ entry.journey }}</p>
 			</div>
-			<div class="map-container">
+			{% for img in entry.imgInstitution %}
+				<figure>
+					<img src="{{ img.getUrl }}" alt="Bild vom Institut">
+				</figure>
+			{% endfor %}
+			{# <div class="map-container">
 				<googlemap name="googleMap"></googlemap>
-			</div>
+			</div> #}
 		</div>
 		<section class="program">
 			<h1 class="program-title">{{ entry.programmTitle }}</h1>
