@@ -74,28 +74,39 @@
 				</main>
 				<footer id="footer">
 					<div id="container">
-						<div class="sponsors">
+						{# <div class="sponsors">
 							{{ sponsores.textForSponsors }}
 							<div class="flex-container">
 								{% for sponsor in sponsores.sponsorBlocks %}
 									<div>
 										<a href="{{ sponsor.sponsorLink }}">
 											<h1>{{ sponsor.sponsorName }}</h1>
-							    		{# {% if sponsor.logo | length %}
+							    		{% if sponsor.logo | length %}
 								    		{% for img in logo.sponsor %}
 								    	    <figure>
 								    	    	<img src="{{ img.getUrl }}" alt="{{ img.title }}">
 								    	    </figure>
 								    		{% endfor %}
-								    	{% endif %} #}
+								    	{% endif %}
 								    </a>
 
 								</div>
 							{% endfor %}
-						</div>
+						</div> #}
+					<div class="footerinfos">
+					Museumsnacht Basel 2018<br><br>
+					<nav>
+						<ul>
+							<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+								<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+								<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
+								<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
+						</ul>
 					</div>
-					Copyright {{ now.year }}
+					</nav>
 				</div>
+					</div>
+
 			</footer>
 		</div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>

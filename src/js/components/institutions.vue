@@ -1,7 +1,7 @@
 <template>
 	<div id="container">
 		<header class="section-header">
-			<div class="narrow"	>
+			<div class="narrow">
 				<h1>INSTITUTIONEN</h1>
 				<nav>
 					<span v-show="mapView"><i v-on:click="toggleListView">&#9638; Liste</i> <i class="inactive">&#128204; Karte</i></span>

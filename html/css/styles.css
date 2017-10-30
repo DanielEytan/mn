@@ -81,15 +81,21 @@ body {
 time,
 strong,
 header,
-.institutions--overview h1,
+.institutions--overview article h1,
 .institutions--single h1.title,
+.journal--single article h1,
+.journal--single h2,
 .institutions--single .program h2,
 span.shuttle-line,
 .institutions .visitor-infos,
 .institutions address,
 .institutions h3,
 .visit article h2,
-.presell-toggle {
+.presell-toggle,
+.home .info a,
+.journal--overview article h1,
+.link a,
+.footerinfos {
   font-family: 'main-eb', helvetica; }
 
 .program h1, .program .institution h2,
@@ -106,12 +112,18 @@ header .mn-date span {
 .filter header,
 .institutions article h1,
 .institutions--single h1.title,
+.journal--single h1.title,
 .institutions--single span strong,
 .institutions--single .program h2,
 span.shuttle-line,
 section header .narrow,
 .visit article h2,
-.presell-toggle {
+.presell-toggle,
+.journal--overview article h1,
+.journal--single h1,
+.journal--single h2,
+section header.section-header h1,
+.footerinfos {
   text-transform: uppercase;
   letter-spacing: .04em;
   line-height: 1em !important; }
@@ -124,7 +136,9 @@ section header .narrow,
 .institutions--overview article .icons,
 .institutions--single .program h2,
 .institutions--overview span strong,
-.visit article h2 {
+.visit article h2,
+.home .info .narrow p:nth-child(1),
+.journal--overview h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -136,7 +150,9 @@ section header .narrow,
     .institutions--overview article .icons,
     .institutions--single .program h2,
     .institutions--overview span strong,
-    .visit article h2 {
+    .visit article h2,
+    .home .info .narrow p:nth-child(1),
+    .journal--overview h1 {
       font-size: 1.5em; } }
   @media only screen and (min-width: 1900px) {
     .program .institution h1,
@@ -147,40 +163,45 @@ section header .narrow,
     .institutions--overview article .icons,
     .institutions--single .program h2,
     .institutions--overview span strong,
-    .visit article h2 {
+    .visit article h2,
+    .home .info .narrow p:nth-child(1),
+    .journal--overview h1 {
       font-size: 1.75em; } }
 
 .institutions--single h1.title,
 .institutions--single span strong,
-.institutions--single .program h1.program-title {
+.institutions--single .program h1.program-title,
+.journal--single h1.title {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title {
+    .institutions--single .program h1.program-title,
+    .journal--single h1.title {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title {
+    .institutions--single .program h1.program-title,
+    .journal--single h1.title {
       font-size: 2.5em; } }
 
 .nav-wrapper li a,
-section header h1 {
+section header.section-header h1 {
   font-size: 1.75em;
   line-height: 1.2em; }
   @media only screen and (min-width: 768px) {
     .nav-wrapper li a,
-    section header h1 {
+    section header.section-header h1 {
       font-size: 2.5em; } }
   @media only screen and (min-width: 1024px) {
     .nav-wrapper li a,
-    section header h1 {
+    section header.section-header h1 {
       font-size: 3em; } }
   @media only screen and (min-width: 1900px) {
     .nav-wrapper li a,
-    section header h1 {
+    section header.section-header h1 {
       font-size: 3.25em; } }
 
 header#header {
@@ -666,6 +687,46 @@ footer#footer {
 .filter--wrapper .filter--headline--wrapper {
   display: none; }
 
+.journal figure {
+  margin: 30px; }
+
+.journal--overview > * {
+  margin-bottom: 30px; }
+
+.journal--single h1 {
+  margin-bottom: 1em; }
+
+.journal--single h2 {
+  margin-bottom: 1em; }
+
+.journal--single .text, .journal--single .program {
+  margin-bottom: 2em; }
+
+@media only screen and (min-width: 768px) {
+  .journal--overview .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .journal--overview .flex-container > * {
+      margin-bottom: 60px;
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%; }
+      .journal--overview .flex-container > *:nth-child(2n) {
+        margin-left: 2%; } }
+
+@media only screen and (min-width: 1500px) {
+  .journal figure {
+    margin: 50px; }
+  .journal--overview .flex-container > * {
+    -ms-flex: 0 1 32%;
+    flex: 0 1 32%;
+    margin-right: 2%; }
+    .journal--overview .flex-container > *:nth-child(2n) {
+      margin-left: 0; }
+    .journal--overview .flex-container > *:nth-child(3n) {
+      margin-right: 0; } }
+
 html, body {
   height: 100%;
   position: relative; }
@@ -704,6 +765,25 @@ html, body {
       border: solid white 1px !important; }
       #vue-app.active .program--overview .filter__ckecklists header > * div.active {
         border-bottom: 10px white solid !important; } }
+
+.home .cover {
+  height: 80vh;
+  overflow: hidden;
+  background: url(../bilder/keyvisual.jpg) no-repeat bottom center;
+  background-size: cover; }
+  .home .cover img {
+    width: 100%; }
+
+.home .info {
+  padding: 1em 0 2em; }
+  .home .info .narrow {
+    margin: 1em auto 2em; }
+  .home .info p {
+    margin-bottom: 1em; }
+
+.home .journal {
+  padding: 1em 0 2em;
+  border-top: solid 1px; }
 
 .visit article {
   border-bottom: solid 1px;
@@ -762,7 +842,7 @@ main {
     margin-top: 100px; }
   @media screen and (min-width: 1224px) {
     main {
-      margin-top: 100px; }
+      margin-top: 70px; }
       main.mt {
         margin-top: 150px; } }
 

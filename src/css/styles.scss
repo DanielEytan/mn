@@ -9,6 +9,7 @@
 @import 'institution';
 @import 'can';
 @import 'daniel';
+@import 'journal';
 
 html, body {
 	height: 100%;
@@ -64,6 +65,32 @@ html, body {
 	}
 
 }
+.home {
+	.cover {
+		height: 80vh;
+		overflow: hidden;
+		background: url(../bilder/keyvisual.jpg) no-repeat bottom center;
+		background-size: cover;
+		img {
+			width: 100%;
+		}
+	}
+	.info {
+		padding: 1em 0 2em;
+		.narrow {
+			margin: 1em auto 2em; 
+		}
+		p {
+			margin-bottom: 1em;
+		}
+	}
+	.journal {
+		padding: 1em 0 2em;
+		border-top: solid 1px;
+	
+	}
+}
+
 
 .visit {
 	article {
@@ -150,7 +177,7 @@ main {
 		margin-top: 100px;
 	}
 	@media screen and (min-width: $bp3) {
-			margin-top: 100px;
+			margin-top: 70px;
 		&.mt {
 			margin-top: 150px;
 		}

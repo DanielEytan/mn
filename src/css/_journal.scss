@@ -1,0 +1,61 @@
+.journal {
+	figure {
+		margin: 30px;
+	}
+	&--overview {
+		>* {
+			margin-bottom: 30px;
+		}
+		h1 {
+			// margin-bottom: 1em;
+		}
+
+	}
+	&--single {
+
+		h1 {
+			margin-bottom: 1em;
+		}
+		h2 {
+			margin-bottom: 1em;
+		}
+		.text, .program {
+			margin-bottom: 2em;
+		}
+	}
+	@media only screen and (min-width: $bp1) {
+		&--overview .flex-container {
+			display: flex;
+			flex-wrap: wrap;
+			>* {
+				margin-bottom: 60px;
+				flex: 0 1 49%;
+				&:nth-child(2n) {
+					margin-left: 2%;
+				}
+			}
+			// figure {
+			// 	margin: 60px;
+			// }
+		}
+	}
+	@media only screen and (min-width: $bp4) {
+		figure {
+			margin: 50px;
+		}
+		&--overview .flex-container{
+			>* {
+				flex: 0 1 32%;
+				&:nth-child(2n) {
+					margin-left: 0;
+				}
+				margin-right: 2%;
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+			
+		}
+
+	}
+}

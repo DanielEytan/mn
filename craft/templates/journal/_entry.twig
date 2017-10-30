@@ -1,0 +1,46 @@
+{% extends "_layout" %}
+{% set title = "Home" %}
+{% set mt = "mt" %}
+
+
+{% block content %}
+
+{# <twitter></twitter> #}
+
+	<section class="journal journal--single" id="container">
+			<div class="narrow">
+				<h1 class="title">{{ entry.title }}</h1>
+					{% for img in entry.cover %}
+						<figure>
+							<img src="{{ img.url }}" alt="{{ img.title }}">
+						</figure>
+					{% endfor %}
+				{% for block in entry.contentJournal %}
+					{% switch block.type %}
+				
+						{% case "subtitle" %}
+							<h2>{{ block.subtitle }}</h2>
+						{% case "text" %}
+							<div class="text">
+								{{ block.text }}
+							</div>
+						{% case "img" %}
+							{% for img in block.img %}
+								<figure>
+									<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+								</figure>
+							{% endfor %}
+						{% case "program" %}
+							{% for entry in block.entry %}
+								<h1>{{ entry.title }}</h1>
+							{% endfor %}
+					
+					{% endswitch %}
+				{% endfor %}
+				
+				
+					
+			</div>
+	</section>
+
+{% endblock %}

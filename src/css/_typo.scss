@@ -49,16 +49,22 @@ body {
 time,
 strong,
 header,
-.institutions--overview h1,
+.institutions--overview article h1,
 .institutions--single h1.title,
+.journal--single article h1,
+.journal--single h2,
+
 .institutions--single .program h2,
 span.shuttle-line, 
 .institutions .visitor-infos,
 .institutions address,
 .institutions h3,
 .visit article h2,
-.presell-toggle 
-{
+.presell-toggle,
+.home .info a,
+.journal--overview article h1,
+.link a, 
+.footerinfos {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -80,6 +86,7 @@ header .mn-date span {
 }
 
 
+
 // Uppercase
 
 .program .institution h1,
@@ -88,12 +95,19 @@ header .mn-date span {
 .institutions article h1,
 
 .institutions--single h1.title,
+.journal--single h1.title,
 .institutions--single span strong,
 .institutions--single .program h2,
 span.shuttle-line,
 section header .narrow,
 .visit article h2,
-.presell-toggle  {
+.presell-toggle,
+.journal--overview article h1,
+.journal--single h1,
+.journal--single h2,
+section header.section-header h1,
+.footerinfos 
+  {
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	line-height: 1em !important;
@@ -113,7 +127,9 @@ section header .narrow,
 
 .institutions--single .program h2,
 .institutions--overview span strong,
-.visit article h2 {
+.visit article h2,
+.home .info .narrow p:nth-child(1),
+.journal--overview  h1 {
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {
@@ -128,7 +144,8 @@ section header .narrow,
 
 .institutions--single  h1.title,
 .institutions--single  span strong,
-.institutions--single .program h1.program-title {
+.institutions--single .program h1.program-title,
+.journal--single h1.title {
 	font-size: 1.5em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {
@@ -141,7 +158,7 @@ section header .narrow,
 // Font-Size XXL
 
 .nav-wrapper li a,
-section header h1{
+section header.section-header h1{
 	font-size: 1.75em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp1) {
