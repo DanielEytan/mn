@@ -1,5 +1,6 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
+{% set mt = "mt" %}
 
 {% block content %}
 <div id="container">
@@ -13,16 +14,16 @@
 					{% set accessibility = entry.accessibility.value %}
 					{% switch accessibility %}
 					
-						{% case "wheelchair" %}
-						<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
-						
+					{% case "wheelchair" %}
+					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
+
 					
-						{% case "partlyWheelchair" %}
-						<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
-						
+					{% case "partlyWheelchair" %}
+					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
+
 					
-						{% default %}
-						
+					{% default %}
+
 					
 					{% endswitch %}
 					
@@ -32,9 +33,9 @@
 				<p>{{ entry.journey }}</p>
 			</div>
 			{% for img in entry.imgInstitution %}
-				<figure>
-					<img src="{{ img.getUrl }}" alt="Bild vom Institut">
-				</figure>
+			<figure>
+				<img src="{{ img.getUrl }}" alt="Bild vom Institut">
+			</figure>
 			{% endfor %}
 			{# <div class="map-container">
 				<googlemap name="googleMap"></googlemap>
@@ -56,13 +57,14 @@
 					<h1>{{ entry.title }}</h1>
 					{% for time in entry.time %}
 					<time>
-						{% if time.type == "setTimes" %}
+						{% switch time.type %}
+						{% case "setTimes" %}
 						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-						{% elseif time.type == "continuous" %}
+						{% case "continuous" %}
 						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-						{% elseif time.type == "iterating" %}
+						{% case "iterating" %}									
 						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-						{% endif %}
+						{% endswitch %}
 					</time>
 					{% endfor %}
 					{{ entry.description }}

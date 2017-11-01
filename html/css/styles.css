@@ -84,7 +84,7 @@ header,
 .institutions--overview article h1,
 .institutions--single h1.title,
 .journal--single article h1,
-.journal--single h2,
+.journal--single h2.subtitle,
 .institutions--single .program h2,
 span.shuttle-line,
 .institutions .visitor-infos,
@@ -95,7 +95,9 @@ span.shuttle-line,
 .home .info a,
 .journal--overview article h1,
 .link a,
-.footerinfos {
+.footerinfos,
+.visit h3,
+.selected .institution {
   font-family: 'main-eb', helvetica; }
 
 .program h1, .program .institution h2,
@@ -120,24 +122,36 @@ section header .narrow,
 .visit article h2,
 .presell-toggle,
 .journal--overview article h1,
-.journal--single h1,
 .journal--single h2,
 section header.section-header h1,
-.footerinfos {
+.footerinfos,
+.visit h3,
+.selected .institution {
   text-transform: uppercase;
   letter-spacing: .04em;
   line-height: 1em !important; }
 
+.program li.program--event h1 {
+  font-size: 1.25em;
+  line-height: 1.2em; }
+  @media only screen and (min-width: 1024px) {
+    .program li.program--event h1 {
+      font-size: 1.25em; } }
+  @media only screen and (min-width: 1900px) {
+    .program li.program--event h1 {
+      font-size: 1.35em; } }
+
 .program .institution h1,
 .program .institution h2,
 .program .institution span strong,
+.program .selected h1,
 .institutions--single .program-text,
 .institutions--overview article h1,
 .institutions--overview article .icons,
 .institutions--single .program h2,
 .institutions--overview span strong,
 .visit article h2,
-.home .info .narrow p:nth-child(1),
+.home .info .narrow p.intro,
 .journal--overview h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
@@ -145,28 +159,30 @@ section header.section-header h1,
     .program .institution h1,
     .program .institution h2,
     .program .institution span strong,
+    .program .selected h1,
     .institutions--single .program-text,
     .institutions--overview article h1,
     .institutions--overview article .icons,
     .institutions--single .program h2,
     .institutions--overview span strong,
     .visit article h2,
-    .home .info .narrow p:nth-child(1),
+    .home .info .narrow p.intro,
     .journal--overview h1 {
-      font-size: 1.5em; } }
+      font-size: 1.75em; } }
   @media only screen and (min-width: 1900px) {
     .program .institution h1,
     .program .institution h2,
     .program .institution span strong,
+    .program .selected h1,
     .institutions--single .program-text,
     .institutions--overview article h1,
     .institutions--overview article .icons,
     .institutions--single .program h2,
     .institutions--overview span strong,
     .visit article h2,
-    .home .info .narrow p:nth-child(1),
+    .home .info .narrow p.intro,
     .journal--overview h1 {
-      font-size: 1.75em; } }
+      font-size: 2em; } }
 
 .institutions--single h1.title,
 .institutions--single span strong,
@@ -306,13 +322,15 @@ footer#footer {
 
 .program .program-list {
   border-top: solid 1px;
-  padding-top: 1em; }
+  padding-top: 1.5em; }
   .program .program-list li.program--event {
     border-bottom: solid 1px;
     position: relative;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+    padding-bottom: 1.75em;
     padding-right: 50px; }
+    .program .program-list li.program--event h1 {
+      margin-bottom: .15em; }
     .program .program-list li.program--event h2 {
       margin-bottom: .5em; }
     .program .program-list li.program--event .cat-wrapper {
@@ -327,6 +345,15 @@ footer#footer {
         margin-bottom: .25em; }
   .program .program-list .themes, .program .program-list .kind-of-event, .program .program-list .languages {
     margin: 1em 0; }
+  .program .program-list.selected li {
+    position: relative;
+    border-bottom: solid 1px;
+    margin-bottom: 1.5em;
+    padding-bottom: 1.75em; }
+    .program .program-list.selected li .institution {
+      margin-bottom: 1em; }
+    .program .program-list.selected li h1 {
+      margin-bottom: .15em; }
 
 .program--overview .program--block {
   margin-bottom: 50px; }
@@ -338,19 +365,20 @@ footer#footer {
 .program--overview.program--overview-saved .program-list li {
   position: relative; }
 
-.program--overview .save-element {
+.program .save-element {
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1; }
-  .program--overview .save-element div {
+  .program .save-element div {
     font-size: 2em;
     color: #d2d2d2;
     transition: color .25s;
     cursor: pointer; }
-    .program--overview .save-element div:hover {
-      color: #969696; }
-    .program--overview .save-element div.active {
+    .program .save-element div:hover {
+      text-shadow: 0px 0px 1px red;
+      color: white; }
+    .program .save-element div.active {
       color: red; }
 
 .program--overview .filter .filter__checklists--wrapper {
@@ -693,14 +721,14 @@ footer#footer {
 .journal--overview > * {
   margin-bottom: 30px; }
 
-.journal--single h1 {
-  margin-bottom: 1em; }
-
 .journal--single h2 {
   margin-bottom: 1em; }
 
 .journal--single .text, .journal--single .program {
   margin-bottom: 2em; }
+
+.journal--single .program .selected li {
+  padding-bottom: 1em; }
 
 @media only screen and (min-width: 768px) {
   .journal--overview .flex-container {
@@ -730,6 +758,9 @@ footer#footer {
 html, body {
   height: 100%;
   position: relative; }
+
+hr {
+  margin: 1.5em 0; }
 
 #vue-app, header#header {
   transition: background .15s ease, color .15s ease; }
@@ -765,6 +796,8 @@ html, body {
       border: solid white 1px !important; }
       #vue-app.active .program--overview .filter__ckecklists header > * div.active {
         border-bottom: 10px white solid !important; } }
+  #vue-app.active #save-toggle > div:hover {
+    color: #1A0042 !important; }
 
 .home .cover {
   height: 80vh;
@@ -780,10 +813,20 @@ html, body {
     margin: 1em auto 2em; }
   .home .info p {
     margin-bottom: 1em; }
+    .home .info p.intro {
+      margin-bottom: 2em; }
+  .home .info .lang {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+    .home .info .lang > * {
+      text-align: center;
+      -ms-flex: 0 1 100px;
+      flex: 0 1 100px; }
 
 .home .journal {
-  padding: 1em 0 2em;
-  border-top: solid 1px; }
+  padding: 1em 0 2em; }
 
 .visit article {
   border-bottom: solid 1px;

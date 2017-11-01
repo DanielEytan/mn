@@ -46,6 +46,8 @@ module.exports = {
          }
          localStorage.setItem("programId", JSON.stringify(idListArray));
          EventBus.$emit('program-saved');
+         this.$emit('clicked');
+
       }
    }
 }

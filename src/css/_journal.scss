@@ -14,13 +14,18 @@
 	&--single {
 
 		h1 {
-			margin-bottom: 1em;
+			// margin-bottom: 1em;
 		}
 		h2 {
 			margin-bottom: 1em;
 		}
 		.text, .program {
 			margin-bottom: 2em;
+		}
+		.program .selected {
+			li {
+				padding-bottom: 1em;
+			}
 		}
 	}
 	@media only screen and (min-width: $bp1) {

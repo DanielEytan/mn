@@ -13450,7 +13450,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13506,6 +13506,7 @@
 	         }
 	         localStorage.setItem("programId", (0, _stringify2.default)(idListArray));
 	         _eventBus.EventBus.$emit('program-saved');
+	         this.$emit('clicked');
 	      }
 	   }
 	}; //
@@ -13936,7 +13937,7 @@
 
 
 	// module
-	exports.push([module.id, "\nspan[data-v-21a7b4da] {\n  color:red;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -13975,6 +13976,22 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'myprogram',
@@ -13986,7 +14003,8 @@
 	  data: function data() {
 	    return {
 	      programevents: [],
-	      items: []
+	      items: [],
+	      itemSaved: false
 	    };
 	  },
 	  mounted: function mounted() {
@@ -14019,7 +14037,12 @@
 	      if (!results) return null;
 	      if (!results[2]) return '';
 	      return decodeURIComponent(results[2].replace(/\+/g, " "));
+	    },
+	    toggled: function toggled() {
+	      this.itemSaved = !this.itemSaved;
+	      console.log('event is triggered');
 	    }
+
 	  }
 	};
 
@@ -14031,14 +14054,40 @@
 	  return _c('div', {
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
-	    staticClass: "program-list"
+	    staticClass: "program-list selected"
 	  }, _vm._l((_vm.items), function(item) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
-	      return (entry.id == item) ? _c('li', [_c('h2', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', [_vm._v("\n             Im " + _vm._s(entry.parent.title)), _c('br')]), _c('br'), _vm._v(" "), _c('saveprogram', {
+	      return (entry.id == item) ? _c('li', {
+	        class: {
+	          inactive: _vm.itemSaved
+	        }
+	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
+	        return _c('div', {
+	          staticClass: "institution"
+	        }, [_c('span', {
+	          staticClass: "suttle-line",
+	          style: ({
+	            color: color.color
+	          })
+	        }, [_vm._v(" " + _vm._s(entry.parent.number) + " " + _vm._s(color.title))]), _c('br'), _vm._v(" "), _c('a', {
+	          attrs: {
+	            "href": entry.parent.url
+	          }
+	        }, [_vm._v(_vm._s(entry.parent.title))]), _c('br')])
+	      }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
+	        return _c('time', [(time.type === 'setTimes') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " (Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('span', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
+	      }), _vm._v(" "), _c('div', {
+	        domProps: {
+	          "innerHTML": _vm._s(entry.description)
+	        }
+	      }, [_vm._v(_vm._s(entry.description))]), _vm._v(" "), _c('div'), _vm._v(" "), _c('saveprogram', {
 	        attrs: {
 	          "programevent": entry
+	        },
+	        on: {
+	          "clicked": _vm.toggled
 	        }
-	      })], 1) : _vm._e()
+	      })], 2) : _vm._e()
 	    }))
 	  }))])])
 	},staticRenderFns: []}

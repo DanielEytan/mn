@@ -1,13 +1,16 @@
 .program {
 	.program-list {
 		border-top: solid 1px;
-		padding-top: 1em;
+		padding-top: 1.5em;
 		li.program--event {
 			border-bottom: solid 1px;
 			position: relative;
-			margin-bottom: 1em;
-			padding-bottom: 1em;
+			margin-bottom: 1.5em;
+			padding-bottom: 1.75em;
 			padding-right: 50px;
+			h1 {
+				margin-bottom: .15em;
+			}
 			h2 {
 				margin-bottom: .5em;
 			}
@@ -27,6 +30,24 @@
 		}
 		.themes, .kind-of-event, .languages {
 			margin: 1em 0;
+		}
+		&.selected {
+			li {
+				position: relative;
+				border-bottom: solid 1px;
+				margin-bottom: 1.5em;
+				padding-bottom: 1.75em;
+				// &.inactive {
+				// 	opacity: .5;
+				// }
+				.institution {
+					margin-bottom: 1em;
+				}
+				h1 {
+					margin-bottom: .15em;
+				}
+			}
+			
 		}
 	}
 	&--overview {
@@ -50,7 +71,11 @@
 				position: relative;
 			}
 		}
-		.save-element {
+		
+		
+		
+	}
+	.save-element {
 			position: absolute;
 			right: 0;
 			top: 0;
@@ -61,16 +86,16 @@
 				transition: color .25s;
 				cursor: pointer;
 				&:hover {
-					color: rgb(150,150,150);
+					// color: rgb(150,150,150);
+					text-shadow:0px 0px 1px rgb(255, 0, 0);
+					color: white;
+
 				}
 				&.active {
 					color: rgb(255, 0, 0);
 				}
 			}
 		}
-		
-		
-	}
 	&--single {
 		
 	}

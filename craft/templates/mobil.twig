@@ -1,0 +1,28 @@
+{% extends "_layout" %}
+{% set title = "Besuch" %}
+
+{% block content %}
+
+<section class="visit">		
+	<article>
+		<div id="container">
+			<div class="narrow">
+				<header class="section-header">
+					<h1>Mobil durch die Nacht</h1>
+				</header>
+				{{ entry.text }}
+			</div>
+		</div>
+	</article>
+	{% for block in entry.textBlock %}
+		<article>
+			<div id="container">
+				<div class="narrow">
+					{{ block.text }}
+				</div>
+			</div>
+		</article>
+	{% endfor %}
+	
+</section>
+{% endblock %}

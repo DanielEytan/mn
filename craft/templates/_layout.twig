@@ -18,10 +18,18 @@
 		<header id="header">
 			<div id="container">
 				<div class="flex-container">
-				<div class="logo">
+				<div class="logo" v-if="activeContrast == true">
 					<a href="{{ siteUrl }}">
 						{# {% include '_includes/logo.twig' %} #}
+
 						<img src="/bilder/logo.svg" alt="">
+					</a>
+				</div>
+				<div class="logo" v-if="activeContrast == false">
+					<a href="{{ siteUrl }}">
+						{# {% include '_includes/logo.twig' %} #}
+
+						<img src="/bilder/logo_schwarz.svg" alt="">
 					</a>
 				</div>
 				{# {% set mndate = mnDate.mnDate | date %} #}
