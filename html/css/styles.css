@@ -365,6 +365,11 @@ footer#footer {
 .program--overview.program--overview-saved .program-list li {
   position: relative; }
 
+.program--overview.program--overview-saved .saved {
+  background: red;
+  height: 200px;
+  width: 100%; }
+
 .program .save-element {
   position: absolute;
   right: 0;
@@ -754,6 +759,19 @@ footer#footer {
       margin-left: 0; }
     .journal--overview .flex-container > *:nth-child(3n) {
       margin-right: 0; } }
+
+.share-program {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .share-program > * {
+    -ms-flex: 0 1 49%;
+    flex: 0 1 49%; }
+  .share-program a {
+    padding: .5em;
+    border: solid 1px;
+    display: block; }
 
 html, body {
   height: 100%;

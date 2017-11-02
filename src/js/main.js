@@ -4,12 +4,16 @@ window._ = require('lodash');
 
 //import
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import ThemeList from './components/ThemeList.vue'
 import InstitutionFilter from './components/InstitutionFilter.vue'
 import CheckboxFilter from './components/CheckboxFilter.vue'
 import TimeFilter from './components/TimeFilter.vue'
 import ProgramList from './components/ProgramList.vue'
 import saveProgram from './components/SaveProgram.vue'
+import shareProgram from './components/ShareMyProgram.vue'
+import proposedProgram from './components/proposedProgram.vue'
+
 import savedLink from './components/SavedLink.vue'
 import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
@@ -21,7 +25,7 @@ import institutions from './components/institutions.vue'
 
 
 
-
+Vue.use(VueRouter);
 
 //vue main app instance
 var vueApp = new Vue({
@@ -34,6 +38,9 @@ var vueApp = new Vue({
         timefilter:TimeFilter,
         programlist: ProgramList,
         saveprogram: saveProgram,
+        shareprogram: shareProgram,
+        proposedprogram: proposedProgram,
+
         savedlink: savedLink,
         myprogram: MyProgram,
         googlemap: GoogleMap,
@@ -58,14 +65,22 @@ var vueApp = new Vue({
         themesAPITitle: "themes",
         eventsAPITitle: "events",
         languagesAPITitle: "languages",
-
+        daysLeft: "81",
     },
-    beforeMount(){
-      this.stateContrast()
+     beforeMount(){
+      this.stateContrast(),
+      this.time()
     },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
+        },
+        time: function() {
+            var eventdate = moment("2018-01-21");
+            var todaysdate = moment();
+            var counter = eventdate.diff(todaysdate, 'days');
+            this.daysLeft = counter;
+            console.log(counter);
         },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')
@@ -82,8 +97,13 @@ var vueApp = new Vue({
         },
         stateContrast: function() {
            var contrastState = localStorage.getItem('contrast')
+           var now = moment().format('HH');
             if( contrastState == null ) {
               this.activeContrast = false;
+              if( now > 17 || now <= 9) {
+                this.activeContrast = true;
+                console.log('its bright out');
+              }
             } else if( contrastState == 'active' ) {
               this.activeContrast = true;
             } else if( contrastState == 'inactive') {

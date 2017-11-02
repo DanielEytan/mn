@@ -1,0 +1,12 @@
+.share-program {
+	display: flex;
+	justify-content: space-between;
+	>* {
+		flex: 0 1 49%;
+	}
+	a {
+		padding: .5em;
+		border: solid 1px;
+		display: block;
+	}
+}

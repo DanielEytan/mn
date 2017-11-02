@@ -13,8 +13,8 @@
 </head>
 
 <body>
+
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
-		
 		<header id="header">
 			<div id="container">
 				<div class="flex-container">
@@ -35,7 +35,7 @@
 				{# {% set mndate = mnDate.mnDate | date %} #}
 				{# <span>Datum: {{ mndate }} </span> #}
 
-				<savedlink></savedlink>
+				<savedlink :days="daysLeft"></savedlink>
 
 				<div id="menu" >
 						{# <contrast></contrast> #}
@@ -129,6 +129,7 @@
 			document.getElementById("header").classList.toggle("active");
 		}
 		</script>
+
 
 
 	</body>
