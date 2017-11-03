@@ -16648,38 +16648,38 @@
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('button', {
+	  }, [_c('button', [_c('a', {
 	    attrs: {
 	      "href": _vm.mail
 	    }
-	  }, [_vm._v("Link per Mail versenden")])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("Link per Mail versenden")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "button",
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('button', {
+	  }, [_c('button', [_c('a', {
 	    attrs: {
 	      "href": _vm.facebook + _vm.url
 	    }
-	  }, [_vm._v("Link auf Facebook teilen.")])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("Link auf Facebook teilen")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "button",
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('button', {
+	  }, [_c('button', [_c('a', {
 	    attrs: {
 	      "href": _vm.twitter
 	    }
-	  }, [_vm._v("Link auf Twitter teilen.")])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("Link auf Twitter teilen")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "button",
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('button', {
+	  }, [_c('button', [_c('a', {
 	    attrs: {
 	      "href": _vm.google + _vm.url
 	    }
-	  }, [_vm._v("Link auf Google+ teilen.")])])])])])
+	  }, [_vm._v("Link auf Google+ teilen")])])])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

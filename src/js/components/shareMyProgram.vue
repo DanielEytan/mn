@@ -15,11 +15,11 @@
  </div>
  <div class="share"><p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
 
- <div v-on:click="getItems" class="button"><button :href="mail">Link per Mail versenden</button></div>
- <div v-on:click="getItems" class="button"><button :href="facebook + url">Link auf Facebook teilen.</button></div>
+ <div v-on:click="getItems" class="button"><button><a :href="mail">Link per Mail versenden</a></button></div>
+ <div v-on:click="getItems" class="button"><button><a :href="facebook + url">Link auf Facebook teilen</a></button></div>
 
- <div v-on:click="getItems" class="button"><button :href="twitter">Link auf Twitter teilen.</button></div>
- <div v-on:click="getItems" class="button"><button :href="google + url">Link auf Google+ teilen.</button></div>
+ <div v-on:click="getItems" class="button"><button><a :href="twitter">Link auf Twitter teilen</a></button></div>
+ <div v-on:click="getItems" class="button"><button><a :href="google + url">Link auf Google+ teilen</a></button></div>
  </div>
 
 
