@@ -17027,7 +17027,7 @@
 	    staticClass: "centered"
 	  }, [(_vm.items.length == 0) ? _c('div', {
 	    staticClass: "mn-date"
-	  }, [_vm._v("21.01.2018 "), _c('span', [_vm._v("– Noch " + _vm._s(_vm.days) + " bis zur Museumsnacht")])]) : _vm._e(), _vm._v(" "), (_vm.items.length > 0) ? _c('div', {
+	  }, [_vm._v("21.01.2018 "), _c('span', [_vm._v("– Noch " + _vm._s(_vm.days) + " Nächte bis zur Museumsnacht")])]) : _vm._e(), _vm._v(" "), (_vm.items.length > 0) ? _c('div', {
 	    staticClass: "saved-link"
 	  }, [_c('a', {
 	    attrs: {
