@@ -13,13 +13,13 @@
     </div>
     <p v-show="saved">Der Link zu deiner Auswahl kannst du jetzt über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br>
  </div>
- <div class="share"><p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.
+ <div class="share"><p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
 
- <div v-on:click="getItems" class="button"><a :href="mail">Link per Mail versenden</a></div>
- <div v-on:click="getItems" class="button"><a :href="facebook + url">Link auf Facebook teilen.</a></div>
+ <div v-on:click="getItems" class="button"><button :href="mail">Link per Mail versenden</button></div>
+ <div v-on:click="getItems" class="button"><button :href="facebook + url">Link auf Facebook teilen.</button></div>
 
- <div v-on:click="getItems" class="button"><a :href="twitter">Link auf Twitter teilen.</a></div>
- <div v-on:click="getItems" class="button"><a :href="google + url">Link auf Google+ teilen.</a></div>
+ <div v-on:click="getItems" class="button"><button :href="twitter">Link auf Twitter teilen.</button></div>
+ <div v-on:click="getItems" class="button"><button :href="google + url">Link auf Google+ teilen.</button></div>
  </div>
 
 

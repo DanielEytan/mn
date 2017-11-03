@@ -16643,12 +16643,12 @@
 	    }]
 	  }, [_vm._v("Der Link zu deiner Auswahl kannst du jetzt über "), _c('nobr', [_vm._v("[Strg] + [v]")]), _vm._v(" respektive "), _c('nobr', [_vm._v("[Command] + [v]")]), _vm._v(" am gewünschten Ort einfügen.")], 1), _c('br')]), _vm._v(" "), _c('div', {
 	    staticClass: "share"
-	  }, [_c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.\n\n ")]), _c('div', {
+	  }, [_c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.")]), _vm._v(" "), _c('div', {
 	    staticClass: "button",
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('a', {
+	  }, [_c('button', {
 	    attrs: {
 	      "href": _vm.mail
 	    }
@@ -16657,7 +16657,7 @@
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('a', {
+	  }, [_c('button', {
 	    attrs: {
 	      "href": _vm.facebook + _vm.url
 	    }
@@ -16666,7 +16666,7 @@
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('a', {
+	  }, [_c('button', {
 	    attrs: {
 	      "href": _vm.twitter
 	    }
@@ -16675,7 +16675,7 @@
 	    on: {
 	      "click": _vm.getItems
 	    }
-	  }, [_c('a', {
+	  }, [_c('button', {
 	    attrs: {
 	      "href": _vm.google + _vm.url
 	    }

@@ -28,12 +28,13 @@
 
 	.share {
 		p {
-			margin-bottom: 2em;
+			margin-bottom: 1em;
 		}
 	}
 	.button {
-		margin-bottom: 2em;
-		a, button {
+		margin-bottom: .5em;
+		display: inline-block;
+		button {
 			cursor: pointer;
 			font-size: 1em;
 			background: white;
