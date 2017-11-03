@@ -21,7 +21,7 @@
          </div>
       </ul>
 
-   </article>
+   </article><br><br>
    <shareprogram :programevent="programevents"></shareprogram>   
 </div>
 </template>

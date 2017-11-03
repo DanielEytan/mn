@@ -16454,7 +16454,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16491,6 +16491,16 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 
 	module.exports = {
@@ -16499,13 +16509,18 @@
 
 	   data: function data() {
 	      return {
-	         mail: '/programm/mein-programm',
+	         mail: '',
 	         url: '',
 	         savedItems: [],
 	         name: '',
 	         message: 'Copy These Text',
-	         buttonText: 'Link zur Auswahl in der Zischenablage speichern',
-	         saved: false
+	         buttonText: 'Link kopieren',
+	         saved: false,
+	         facebook: '',
+	         // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
+	         twitter: '',
+	         google: ''
+
 	      };
 	   },
 	   ready: function ready() {
@@ -16521,8 +16536,12 @@
 	         this.savedItems = idListFromLocalStorage;
 	         var savedList = (0, _stringify2.default)(idListFromLocalStorage);
 	         var savedListAsString = idListFromLocalStorage.join('+');
+	         var savedListAsStringForSM = idListFromLocalStorage.join('%2B');
+
 	         var name = this.name;
 	         var url = "http://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
+	         var urlSm = "http://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM + "&name=" + name;
+
 	         this.url = url;
 	         var myProgram = this.programevent;
 	         var titles = [];
@@ -16540,14 +16559,18 @@
 	         }
 	         if (get) {
 	            this.mail = 'mailto:' + '?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
+	            this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm;
+	            this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm;
+	            this.google = 'https://plus.google.com/share?url=' + urlSm;
 	         }
+	         if (get) {}
 	      },
 	      onCopy: function onCopy(e) {
 	         this.buttonText = "✔︎ Dein Link ist gespeichert.";
 	         this.saved = !this.saved;
 	      },
 	      onError: function onError(e) {
-	         this.buttonText = "Deine Auswahl konnte leider nicht in der Zischenablage gespeichert werden";
+	         this.buttonText = "Deine Auswahl konnte leider nicht in der Zwischenablage gespeichert werden";
 	      }
 
 	   }
@@ -16562,9 +16585,9 @@
 	    staticClass: "share-program"
 	  }, [_c('h1', [_vm._v("Teile deine Auswahl")]), _vm._v(" "), _c('div', [_c('div', {
 	    staticClass: "link"
-	  }, [_c('p', [_vm._v("Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschinken.")]), _vm._v(" "), _c('p', {
+	  }, [_c('p', [_vm._v("Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschicken.")]), _vm._v(" "), _c('p', {
 	    staticClass: "mb"
-	  }, [_vm._v("Trage dafür deinen "), _c('input', {
+	  }, [_vm._v("Trage dafür deinen Namen ein.")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -16584,7 +16607,7 @@
 	        _vm.name = $event.target.value
 	      }
 	    }
-	  }), _vm._v(" ein.")]), _vm._v(" "), _c('div', {
+	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', {
 	    staticClass: "flex-container"
 	  }, [_c('div', {
 	    staticClass: "button",
@@ -16611,25 +16634,52 @@
 	      expression: "onError",
 	      arg: "error"
 	    }]
-	  }, [_vm._v(_vm._s(_vm.buttonText))])]), _vm._v(" "), _c('p', [_c('a', {
-	    staticClass: "directlink",
-	    attrs: {
-	      "href": _vm.url
-	    }
-	  }, [_vm._v("Link öffnen")])])]), _vm._v(" "), _c('p', {
+	  }, [_vm._v(_vm._s(_vm.buttonText))])])]), _vm._v(" "), _c('p', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
 	      value: (_vm.saved),
 	      expression: "saved"
 	    }]
-	  }, [_vm._v("Der Link zu deiner gespeicherten Auswahl kannst du jetzt über [Strg] + [v] respektive [Command] + [v] am gewünschten Ort einfügen.")]), _c('br')]), _vm._v(" "), _c('div', {
-	    staticClass: "mail"
-	  }, [_vm._v("Du kannst deine Auswahl auch "), _c('a', {
+	  }, [_vm._v("Der Link zu deiner Auswahl kannst du jetzt über "), _c('nobr', [_vm._v("[Strg] + [v]")]), _vm._v(" respektive "), _c('nobr', [_vm._v("[Command] + [v]")]), _vm._v(" am gewünschten Ort einfügen.")], 1), _c('br')]), _vm._v(" "), _c('div', {
+	    staticClass: "share"
+	  }, [_c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.\n\n ")]), _c('div', {
+	    staticClass: "button",
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('a', {
 	    attrs: {
 	      "href": _vm.mail
 	    }
-	  }, [_vm._v("per Mail")]), _vm._v(" verschicken.")])])])
+	  }, [_vm._v("Link per Mail versenden")])]), _vm._v(" "), _c('div', {
+	    staticClass: "button",
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('a', {
+	    attrs: {
+	      "href": _vm.facebook + _vm.url
+	    }
+	  }, [_vm._v("Link auf Facebook teilen.")])]), _vm._v(" "), _c('div', {
+	    staticClass: "button",
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('a', {
+	    attrs: {
+	      "href": _vm.twitter
+	    }
+	  }, [_vm._v("Link auf Twitter teilen.")])]), _vm._v(" "), _c('div', {
+	    staticClass: "button",
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('a', {
+	    attrs: {
+	      "href": _vm.google + _vm.url
+	    }
+	  }, [_vm._v("Link auf Google+ teilen.")])])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17221,7 +17271,7 @@
 	        }
 	      })], 2) : _vm._e()
 	    }))
-	  }))]), _vm._v(" "), _c('shareprogram', {
+	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }

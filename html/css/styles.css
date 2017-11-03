@@ -98,8 +98,9 @@ span.shuttle-line,
 .footerinfos,
 .visit h3,
 .selected .institution,
-.share-program h1,
+.program .share-program h1,
 .share-program .button,
+.share-program .button button,
 .share-program .mail a {
   font-family: 'main-eb', helvetica; }
 
@@ -769,10 +770,10 @@ footer#footer {
 
 .share-program {
   padding-bottom: 2em; }
-  .share-program h1, .share-program p {
+  .share-program h1 {
     margin-bottom: 1em; }
   .share-program .mb {
-    margin-bottom: 2em; }
+    margin-bottom: 1em; }
   .share-program input {
     font-size: 1em;
     border: none;
@@ -787,10 +788,10 @@ footer#footer {
       .share-program .flex-container > * {
         -ms-flex: 1 0 49%;
         flex: 1 0 49%; } }
-  .share-program .directlink, .share-program .mail a {
-    border-bottom: 1px solid; }
+  .share-program .share p {
+    margin-bottom: 2em; }
   .share-program .button {
-    margin-bottom: 1em; }
+    margin-bottom: 2em; }
     .share-program .button a, .share-program .button button {
       cursor: pointer;
       font-size: 1em;
