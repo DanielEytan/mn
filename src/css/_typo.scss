@@ -66,7 +66,10 @@ span.shuttle-line,
 .link a, 
 .footerinfos,
 .visit h3,
-.selected .institution {
+.selected .institution,
+.share-program h1,
+.share-program .button,
+.share-program .mail a {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -110,7 +113,8 @@ section header .narrow,
 section header.section-header h1,
 .footerinfos,
 .visit h3,
-.selected .institution
+.selected .institution,
+.share-program h1
   {
 	text-transform: uppercase;
 	letter-spacing: .04em;
@@ -147,7 +151,8 @@ section header.section-header h1,
 .institutions--overview span strong,
 .visit article h2,
 .home .info .narrow p.intro,
-.journal--overview  h1 {
+.journal--overview  h1,
+.share-program h1 {
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {

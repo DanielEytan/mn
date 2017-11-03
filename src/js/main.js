@@ -23,7 +23,8 @@ import contrast from './components/contrast.vue'
 import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
 
-
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
 
 Vue.use(VueRouter);
 

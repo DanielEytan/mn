@@ -97,7 +97,10 @@ span.shuttle-line,
 .link a,
 .footerinfos,
 .visit h3,
-.selected .institution {
+.selected .institution,
+.share-program h1,
+.share-program .button,
+.share-program .mail a {
   font-family: 'main-eb', helvetica; }
 
 .program h1, .program .institution h2,
@@ -126,7 +129,8 @@ section header .narrow,
 section header.section-header h1,
 .footerinfos,
 .visit h3,
-.selected .institution {
+.selected .institution,
+.share-program h1 {
   text-transform: uppercase;
   letter-spacing: .04em;
   line-height: 1em !important; }
@@ -152,7 +156,8 @@ section header.section-header h1,
 .institutions--overview span strong,
 .visit article h2,
 .home .info .narrow p.intro,
-.journal--overview h1 {
+.journal--overview h1,
+.share-program h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -167,7 +172,8 @@ section header.section-header h1,
     .institutions--overview span strong,
     .visit article h2,
     .home .info .narrow p.intro,
-    .journal--overview h1 {
+    .journal--overview h1,
+    .share-program h1 {
       font-size: 1.75em; } }
   @media only screen and (min-width: 1900px) {
     .program .institution h1,
@@ -181,7 +187,8 @@ section header.section-header h1,
     .institutions--overview span strong,
     .visit article h2,
     .home .info .narrow p.intro,
-    .journal--overview h1 {
+    .journal--overview h1,
+    .share-program h1 {
       font-size: 2em; } }
 
 .institutions--single h1.title,
@@ -761,17 +768,35 @@ footer#footer {
       margin-right: 0; } }
 
 .share-program {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-  .share-program > * {
-    -ms-flex: 0 1 49%;
-    flex: 0 1 49%; }
-  .share-program a {
-    padding: .5em;
-    border: solid 1px;
-    display: block; }
+  padding-bottom: 2em; }
+  .share-program h1, .share-program p {
+    margin-bottom: 1em; }
+  .share-program .mb {
+    margin-bottom: 2em; }
+  .share-program input {
+    font-size: 1em;
+    border: none;
+    border-bottom: solid 1px;
+    width: 150px; }
+  @media only screen and (min-width: 768px) {
+    .share-program .flex-container {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center; }
+      .share-program .flex-container > * {
+        -ms-flex: 1 0 49%;
+        flex: 1 0 49%; } }
+  .share-program .directlink, .share-program .mail a {
+    border-bottom: 1px solid; }
+  .share-program .button {
+    margin-bottom: 1em; }
+    .share-program .button a, .share-program .button button {
+      cursor: pointer;
+      font-size: 1em;
+      background: white;
+      padding: .5em;
+      border: solid 1px; }
 
 html, body {
   height: 100%;
