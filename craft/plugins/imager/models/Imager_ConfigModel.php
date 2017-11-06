@@ -94,12 +94,22 @@ class Imager_ConfigModel extends BaseModel
           'optimizeType' => array(AttributeType::String),
           'skipExecutableExistCheck' => array(AttributeType::Bool),
           'logOptimizations' => array(AttributeType::Bool),
+          'imgixEnabled' => array(AttributeType::Bool),
+          'imgixDomains' => array(AttributeType::Mixed),
+          'imgixUseHttps' => array(AttributeType::Bool),
+          'imgixSignKey' => array(AttributeType::String),
+          'imgixSourceIsWebProxy' => array(AttributeType::Bool),
+          'imgixUseCloudSourcePath' => array(AttributeType::Bool),
+          'imgixShardStrategy' => array(AttributeType::String),
+          'imgixGetExternalImageDimensions' => array(AttributeType::Bool),
+          'imgixDefaultParams' => array(AttributeType::Mixed),
           'awsEnabled' => array(AttributeType::Bool),
           'awsAccessKey' => array(AttributeType::String),
           'awsSecretAccessKey' => array(AttributeType::String),
           'awsBucket' => array(AttributeType::String),
           'awsFolder' => array(AttributeType::String),
           'awsCacheDuration' => array(AttributeType::Number),
+          'awsCacheDurationNonOptimized' => array(AttributeType::Number),
           'awsRequestHeaders' => array(AttributeType::Mixed),
           'awsStorageType' => array(AttributeType::String),
           'gcsEnabled' => array(AttributeType::Bool),
@@ -108,6 +118,7 @@ class Imager_ConfigModel extends BaseModel
           'gcsBucket' => array(AttributeType::String),
           'gcsFolder' => array(AttributeType::String),
           'gcsCacheDuration' => array(AttributeType::Number),
+          'gcsCacheDurationNonOptimized' => array(AttributeType::Number),
           'cloudfrontInvalidateEnabled' => array(AttributeType::String),
           'cloudfrontDistributionId' => array(AttributeType::String),
           'removeMetadata' => array(AttributeType::Bool),
@@ -138,12 +149,7 @@ class Imager_ConfigModel extends BaseModel
      */
     private function _addToOverrideFilestring($k, $v)
     {
-        $r = (isset(ImagerService::$transformKeyTranslate[$k]) ? ImagerService::$transformKeyTranslate[$k] : $k) . $v;
+        $r = (isset(ImagerService::$transformKeyTranslate[$k]) ? ImagerService::$transformKeyTranslate[$k] : $k) . (is_array($v) ? md5(implode('-',$v)) : $v);
         $this->configOverrideString .= '_' . str_replace('%', '', str_replace(array(' ', '.'), '-', $r));
-    }
-
-    function __toString()
-    {
-        return Craft::t($this->url);
     }
 }
