@@ -16291,7 +16291,7 @@
 	    attrs: {
 	      "href": _vm.entry.url
 	    }
-	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))]), _vm._v(" "), _c('p', [_vm._v("Essen: " + _vm._s(_vm.entry.food))]), _c('br')], 2), _vm._v(" "), _c('ul', {
+	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "program-list"
 	  }, _vm._l((_vm.entry.events), function(programevent) {
 	    return _c('programevent', {
@@ -16515,7 +16515,7 @@
 	         name: '',
 	         message: 'Copy These Text',
 	         buttonText: 'Link kopieren',
-	         saved: false,
+	         // saved: false,
 	         facebook: '',
 	         // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
 	         twitter: '',
@@ -16566,8 +16566,8 @@
 	         if (get) {}
 	      },
 	      onCopy: function onCopy(e) {
-	         this.buttonText = "✔︎ Dein Link ist gespeichert.";
-	         this.saved = !this.saved;
+	         this.buttonText = "✔︎ Dein Link ist in der Zwischenablage gespeichert.";
+	         // this.saved = !this.saved;
 	      },
 	      onError: function onError(e) {
 	         this.buttonText = "Deine Auswahl konnte leider nicht in der Zwischenablage gespeichert werden";
@@ -16634,14 +16634,7 @@
 	      expression: "onError",
 	      arg: "error"
 	    }]
-	  }, [_vm._v(_vm._s(_vm.buttonText))])])]), _vm._v(" "), _c('p', {
-	    directives: [{
-	      name: "show",
-	      rawName: "v-show",
-	      value: (_vm.saved),
-	      expression: "saved"
-	    }]
-	  }, [_vm._v("Der Link zu deiner Auswahl kannst du jetzt über "), _c('nobr', [_vm._v("[Strg] + [v]")]), _vm._v(" respektive "), _c('nobr', [_vm._v("[Command] + [v]")]), _vm._v(" am gewünschten Ort einfügen.")], 1), _c('br')]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.buttonText))])])]), _vm._v(" "), _c('p', [_vm._v("Der Link zu deiner Auswahl kannst du über "), _c('nobr', [_vm._v("[Strg] + [v]")]), _vm._v(" respektive "), _c('nobr', [_vm._v("[Command] + [v]")]), _vm._v(" am gewünschten Ort einfügen.")], 1), _c('br')]), _vm._v(" "), _c('div', {
 	    staticClass: "share"
 	  }, [_c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.")]), _vm._v(" "), _c('div', {
 	    staticClass: "button",
@@ -21442,13 +21435,13 @@
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), (_vm.mapView) ? _c('div', {
+	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "map-container"
 	  }, [_c('googlemap', {
 	    attrs: {
 	      "name": "googleMap"
 	    }
-	  })], 1) : _vm._e(), _vm._v(" "), _c('div', {
+	  })], 1), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",

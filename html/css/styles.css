@@ -330,12 +330,12 @@ footer#footer {
 
 .program .program-list {
   border-top: solid 1px;
-  padding-top: 1.5em; }
+  padding-top: 1.25em; }
   .program .program-list li.program--event {
     border-bottom: solid 1px;
     position: relative;
-    margin-bottom: 1.5em;
-    padding-bottom: 1.75em;
+    margin-bottom: 1.15em;
+    padding-bottom: 1.25em;
     padding-right: 50px; }
     .program .program-list li.program--event h1 {
       margin-bottom: .15em; }
@@ -356,8 +356,8 @@ footer#footer {
   .program .program-list.selected li {
     position: relative;
     border-bottom: solid 1px;
-    margin-bottom: 1.5em;
-    padding-bottom: 1.75em; }
+    margin-bottom: 1.15em;
+    padding-bottom: 1.25em; }
     .program .program-list.selected li .institution {
       margin-bottom: 1em; }
     .program .program-list.selected li h1 {
@@ -665,6 +665,8 @@ footer#footer {
         margin-right: 30px;
         -ms-flex: 0 1 calc(50% - 30px);
         flex: 0 1 calc(50% - 30px); }
+        .institutions--overview .map-container > div .selected-institution .institutions-list {
+          font-size: .75em; }
         .institutions--overview .map-container > div .selected-institution .dismiss {
           display: none; }
         .institutions--overview .map-container > div .selected-institution .back {
@@ -792,13 +794,19 @@ footer#footer {
     margin-bottom: 1em; }
   .share-program .button {
     margin-bottom: .5em;
-    display: inline-block; }
+    display: inline-block;
+    margin-right: .25em; }
     .share-program .button button {
       cursor: pointer;
       font-size: 1em;
       background: white;
-      padding: .5em;
+      padding: .3em .5em .45em;
       border: solid 1px; }
+      .share-program .button button:hover {
+        color: white;
+        background: black; }
+        .share-program .button button:hover a {
+          color: white; }
 
 html, body {
   height: 100%;
@@ -840,6 +848,11 @@ hr {
     background: #1A0042;
     border: solid white 1px;
     color: white; }
+    #vue-app.active .program .share-program .button button:hover {
+      color: #1A0042;
+      background: white; }
+      #vue-app.active .program .share-program .button button:hover a {
+        color: #1A0042; }
   @media only screen and (min-width: 768px) {
     #vue-app.active .program--overview .filter__ckecklists header > * div {
       border: solid white 1px !important; }
@@ -849,7 +862,7 @@ hr {
     color: #1A0042 !important; }
 
 .home .cover {
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   background: url(../bilder/keyvisual.jpg) no-repeat bottom center;
   background-size: cover; }

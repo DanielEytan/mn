@@ -11,7 +11,7 @@
     <div class="button" v-on:click="getItems"><button  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</button></div>
     <!-- <p><a :href="url" class="directlink">Link öffnen</a></p> -->
     </div>
-    <p v-show="saved">Der Link zu deiner Auswahl kannst du jetzt über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br>
+    <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br>
  </div>
  <div class="share"><p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
 
@@ -43,7 +43,7 @@ module.exports = {
      name: '',
      message: 'Copy These Text',
      buttonText: 'Link kopieren',
-     saved: false,
+     // saved: false,
      facebook: '',
      // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
      twitter: '',
@@ -99,8 +99,8 @@ methods: {
       }
    },
    onCopy: function (e) {
-      this.buttonText = "✔︎ Dein Link ist gespeichert.";
-      this.saved = !this.saved;
+      this.buttonText = "✔︎ Dein Link ist in der Zwischenablage gespeichert.";
+      // this.saved = !this.saved;
    },
    onError: function (e) {
       this.buttonText = "Deine Auswahl konnte leider nicht in der Zwischenablage gespeichert werden";

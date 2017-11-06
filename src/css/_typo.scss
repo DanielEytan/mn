@@ -125,7 +125,8 @@ section header.section-header h1,
 
 // Font Size S
 
-.program li.program--event h1{
+.program li.program--event h1,
+{
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {

@@ -7,7 +7,7 @@
         <h2>{{ entry.programmTitle }}</h2>
         <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
 
-        <p>Essen: {{ entry.food }}</p><br>
+        <!-- <p>Essen: {{ entry.food }}</p><br> -->
 
         </div>
         <!-- <div v-html="entry.programmText"></div> -->

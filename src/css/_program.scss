@@ -1,12 +1,12 @@
 .program {
 	.program-list {
 		border-top: solid 1px;
-		padding-top: 1.5em;
+		padding-top: 1.25em;
 		li.program--event {
 			border-bottom: solid 1px;
 			position: relative;
-			margin-bottom: 1.5em;
-			padding-bottom: 1.75em;
+			margin-bottom: 1.15em;
+			padding-bottom: 1.25em;
 			padding-right: 50px;
 			h1 {
 				margin-bottom: .15em;
@@ -35,8 +35,8 @@
 			li {
 				position: relative;
 				border-bottom: solid 1px;
-				margin-bottom: 1.5em;
-				padding-bottom: 1.75em;
+				margin-bottom: 1.15em;
+			padding-bottom: 1.25em;
 				// &.inactive {
 				// 	opacity: .5;
 				// }

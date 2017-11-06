@@ -9,8 +9,8 @@
 				</nav>
 			</div>
 		</header>
-		<div class="map-container" v-if="mapView">
-		<!-- <div class="map-container"> -->
+		<!-- <div class="map-container" v-if="mapView"> -->
+		<div class="map-container">
 
 			<googlemap name="googleMap"></googlemap>
 

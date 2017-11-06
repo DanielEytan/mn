@@ -173,8 +173,10 @@
 					.selected-institution {
 						// width: 25%;
 						margin-right: 30px;
-					flex: 0 1 calc(50% - 30px);
-						
+						flex: 0 1 calc(50% - 30px);
+						.institutions-list {
+							font-size: .75em;
+						}
 						.dismiss {
 							display: none;
 						}

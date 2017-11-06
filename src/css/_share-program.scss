@@ -34,12 +34,20 @@
 	.button {
 		margin-bottom: .5em;
 		display: inline-block;
+		margin-right: .25em;
 		button {
 			cursor: pointer;
 			font-size: 1em;
 			background: white;
-			padding: .5em;
+			padding: .3em .5em .45em;
 			border: solid 1px;
+			&:hover {
+				color: white;
+				background: black;
+				a {
+					color: white;
+				}
+			}
 			// display: block;
 		}
 	}

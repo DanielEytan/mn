@@ -23,7 +23,7 @@
 	<section class="journal journal--overview" >
 		<div class="flex-container" id="container">
 
-			{% for entry in craft.entries.section('journal').limit(3) %}
+			{% for entry in craft.entries.section('journal').limit(6) %}
 				<article>
 					<a href="{{ entry.url }}">
 						<h1>{{ entry.title }}</h1>
