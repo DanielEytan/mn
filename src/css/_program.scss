@@ -102,7 +102,15 @@
 			}
 		}
 	&--single {
-		
+		.program-list.selected li {
+			border: none;
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.program-list {
+			margin-bottom: 1em;
+			border: none;
+		}
 	}
 	@media screen and (min-width: $bp1) {
 		&--overview {

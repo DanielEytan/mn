@@ -521,6 +521,15 @@ footer#footer {
     .program .save-element div.active {
       color: red; }
 
+.program--single .program-list.selected li {
+  border: none;
+  padding: 0;
+  margin-bottom: 0; }
+
+.program--single .program-list {
+  margin-bottom: 1em;
+  border: none; }
+
 .institutions .google-map[data-v-87e9ef04] {
   width: 100%;
   height: 800px;
