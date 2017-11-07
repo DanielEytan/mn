@@ -2,8 +2,10 @@
     <div class="checkBoxFilter">
       <ul class="list-group">
         <li class="list-group-item" v-for="entry in possibleValues">
+          <div>
           <input type="checkbox" v-bind:id="'program-input-'+entry.id" v-bind:value="entry.title" v-model="internalCheckedValues">
           <label v-bind:for="entry.title">{{ entry.title }}</label>
+        </div>
         </li >
       </ul>
     </div>

@@ -1,6 +1,6 @@
 .home {
 	.cover {
-		height: 80vh;
+		height: 70vh;
 		overflow: hidden;
 		background:  url(../bilder/keyvisual-2.jpg) no-repeat center center;
 		background-size: cover;
@@ -54,12 +54,11 @@
 				margin-bottom: 2em;
 			}	
 		}
+
 		.lang {
-			display: flex;
-			justify-content: space-around;
+			margin-bottom: 2em;
 			>* {
 				text-align: center;
-				flex: 0 1 100px;
 			}
 		}
 	}
@@ -68,5 +67,16 @@
 		padding: 1em 0 2em;
 		// border-top: solid 1px;
 	
+	}
+	@media only screen and (min-width: $bp1) {
+		.info {
+			.lang {
+				display: flex;
+			justify-content: space-around;
+			>* {
+				flex: 0 1 45%;
+			}
+			}
+		}
 	}
 }

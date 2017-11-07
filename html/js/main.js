@@ -14169,7 +14169,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14235,6 +14235,8 @@
 	//
 	//
 	//
+	//
+	//
 
 /***/ }),
 /* 23 */
@@ -14267,7 +14269,7 @@
 	  }, _vm._l((_vm.possibleValues), function(entry) {
 	    return _c('li', {
 	      staticClass: "list-group-item"
-	    }, [_c('input', {
+	    }, [_c('div', [_c('input', {
 	      directives: [{
 	        name: "model",
 	        rawName: "v-model",
@@ -14304,7 +14306,7 @@
 	      attrs: {
 	        "for": entry.title
 	      }
-	    }, [_vm._v(_vm._s(entry.title))])])
+	    }, [_vm._v(_vm._s(entry.title))])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
@@ -18960,7 +18962,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n   width: 100%;\n   /*height: 250px;*/\n   /*height: 800px;*/\n   margin: 0 auto 50px;\n   background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n  width: 100%;\n  /*margin: 0 auto 50px;*/\n  background: gray;\n}\n", ""]);
 
 	// exports
 
@@ -18972,7 +18974,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	//
 	//
@@ -19023,398 +19025,267 @@
 	//
 	//
 	//
-	//
-	//
-	//
 
-	// import {load, Map, Marker} from 'vue-google-maps'
-	//  load('AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U')
 	exports.default = {
-	    name: 'googlemap',
-	    props: ['name', 'institutions'],
-	    data: function data() {
-	        return {
-	            mapName: "multiMap",
-	            markerCoordinates: [],
-	            map: null,
-	            bounds: null,
-	            markers: [],
-	            institutionsData: [],
-	            inst: "0",
-	            institutInfo: false,
-	            center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
-	            // styles: [],
-	            // marker: []
+	  name: 'googlemap',
+	  props: ['name', 'institutions'],
+	  data: function data() {
+	    return {
+	      mapName: "multiMap",
+	      markerCoordinates: [],
+	      map: null,
+	      bounds: null,
+	      markers: [],
+	      institutionsData: [],
+	      inst: "0",
+	      institutInfo: false,
+	      center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
+	    };
+	  },
 
-	            // center: {lat: 10.0, lng: 10.0},
-	            //     markers: [{
-	            //       position: {lat: 10.0, lng: 10.0}
-	            //     }, {
-	            //       position: {lat: 11.0, lng: 11.0}
-	            //     }]
-	        };
+	  mounted: function mounted() {
+	    this.inst;
+	    this.getEntries();
+	    var element = document.getElementById(this.mapName);
+	    var options = {
+	      zoom: 13,
+	      center: this.center,
+	      disableDefaultUI: false,
+	      label: {
+	        color: 'white',
+	        fontWeight: 'bold',
+	        fontSize: '20px'
+	      },
+	      icon: {
+	        labelOrigin: new google.maps.Point(11, 50),
+	        url: 'default_marker.png',
+	        size: new google.maps.Size(22, 40),
+	        origin: new google.maps.Point(0, 0),
+	        anchor: new google.maps.Point(11, 40)
+	      },
+	      styles: [{
+	        "featureType": "water",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          // "color": "#e9e9e9"
+	          "color": "#1A0042"
+	        }, {
+	          "lightness": 0
+	        }]
+	      }, {
+	        "featureType": "landscape",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#f5f5f5"
+	        }, {
+	          "lightness": 20
+	        }]
+	      }, {
+	        "featureType": "road.highway",
+	        "elementType": "geometry.fill",
+	        "stylers": [{
+	          "color": "#ffffff"
+	        }, {
+	          "lightness": 17
+	        }]
+	      }, {
+	        "featureType": "road.highway",
+	        "elementType": "geometry.stroke",
+	        "stylers": [{
+	          "color": "#ffffff"
+	        }, {
+	          "lightness": 29
+	        }, {
+	          "weight": 0.2
+	        }]
+	      }, {
+	        "featureType": "road.arterial",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#ffffff"
+	        }, {
+	          "lightness": 18
+	        }]
+	      }, {
+	        "featureType": "road.local",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#ffffff"
+	        }, {
+	          "lightness": 16
+	        }]
+	      }, {
+	        "featureType": "poi",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#c2ea90"
+	        }, {
+	          "lightness": 20
+	        }]
+	      }, {
+	        "featureType": "poi.park",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#dedede"
+	          // color: "#c2ea90"
+
+	        }, {
+	          "lightness": 21
+	        }]
+	      }, {
+	        "elementType": "labels.text.stroke",
+	        "stylers": [{
+	          "visibility": "on"
+	        }, {
+	          "color": "#ffffff"
+	        }, {
+	          "lightness": 16
+	        }]
+	      }, {
+	        "elementType": "labels.text.fill",
+	        "stylers": [{
+	          "saturation": 36
+	        }, {
+	          "color": "#333333"
+	        }, {
+	          "lightness": 40
+	        }]
+	      }, {
+	        "elementType": "labels.icon",
+	        "stylers": [{
+	          "visibility": "off"
+	        }]
+	      }, {
+	        "featureType": "transit",
+	        "elementType": "geometry",
+	        "stylers": [{
+	          "color": "#f2f2f2"
+	        }, {
+	          "lightness": 19
+	        }]
+	      }, {
+	        "featureType": "administrative",
+	        "elementType": "geometry.fill",
+	        "stylers": [{
+	          "color": "#fefefe"
+	        }, {
+	          "lightness": 20
+	        }]
+	      }, {
+	        "featureType": "administrative",
+	        "elementType": "geometry.stroke",
+	        "stylers": [{
+	          "color": "#fefefe"
+	        }, {
+	          "lightness": 17
+	        }, {
+	          "weight": 1.2
+	        }]
+	      }]
+	    };
+	    this.map = new google.maps.Map(element, options);
+	  },
+
+	  methods: {
+	    toggleInstitutInfo: function toggleInstitutInfo() {
+	      this.institutInfo = !this.institutInfo;
 	    },
+	    getEntries: function getEntries() {
+	      var _this2 = this;
 
-	    mounted: function mounted() {
-	        this.activeLabel();
-
-	        this.inst;
-	        this.getEntries();
-
-	        // this.getEntriesInstitutions();
-	        // const VueGoogleMap = require('vue-google-maps')
-	        var element = document.getElementById(this.mapName);
-	        var options = {
-	            zoom: 13,
-	            center: this.center,
-	            disableDefaultUI: true,
-	            label: {
-	                color: 'white',
-	                fontWeight: 'bold',
-	                fontSize: '20px'
-	            },
-	            icon: {
-	                labelOrigin: new google.maps.Point(11, 50),
-	                url: 'default_marker.png',
-	                size: new google.maps.Size(22, 40),
-	                origin: new google.maps.Point(0, 0),
-	                anchor: new google.maps.Point(11, 40)
-	            },
-	            styles: [{
-	                "featureType": "water",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    // "color": "#e9e9e9"
-	                    color: "#1A0042"
-	                }, {
-	                    "lightness": 0
-	                }]
-	            }, {
-	                "featureType": "landscape",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    "color": "#f5f5f5"
-	                }, {
-	                    "lightness": 20
-	                }]
-	            }, {
-	                "featureType": "road.highway",
-	                "elementType": "geometry.fill",
-	                "stylers": [{
-	                    "color": "#ffffff"
-	                }, {
-	                    "lightness": 17
-	                }]
-	            }, {
-	                "featureType": "road.highway",
-	                "elementType": "geometry.stroke",
-	                "stylers": [{
-	                    "color": "#ffffff"
-	                }, {
-	                    "lightness": 29
-	                }, {
-	                    "weight": 0.2
-	                }]
-	            }, {
-	                "featureType": "road.arterial",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    "color": "#ffffff"
-	                }, {
-	                    "lightness": 18
-	                }]
-	            }, {
-	                "featureType": "road.local",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    "color": "#ffffff"
-	                }, {
-	                    "lightness": 16
-	                }]
-	            }, {
-	                "featureType": "poi",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    "color": "#c2ea90"
-	                }, {
-	                    "lightness": 20
-	                }]
-	            }, {
-	                "featureType": "poi.park",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    // "color": "#dedede"
-	                    color: "#c2ea90"
-
-	                }, {
-	                    "lightness": 21
-	                }]
-	            }, {
-	                "elementType": "labels.text.stroke",
-	                "stylers": [{
-	                    "visibility": "on"
-	                }, {
-	                    "color": "#ffffff"
-	                }, {
-	                    "lightness": 16
-	                }]
-	            }, {
-	                "elementType": "labels.text.fill",
-	                "stylers": [{
-	                    "saturation": 36
-	                }, {
-	                    "color": "#333333"
-	                }, {
-	                    "lightness": 40
-	                }]
-	            }, {
-	                "elementType": "labels.icon",
-	                "stylers": [{
-	                    "visibility": "off"
-	                }]
-	            }, {
-	                "featureType": "transit",
-	                "elementType": "geometry",
-	                "stylers": [{
-	                    "color": "#f2f2f2"
-	                }, {
-	                    "lightness": 19
-	                }]
-	            }, {
-	                "featureType": "administrative",
-	                "elementType": "geometry.fill",
-	                "stylers": [{
-	                    "color": "#fefefe"
-	                }, {
-	                    "lightness": 20
-	                }]
-	            }, {
-	                "featureType": "administrative",
-	                "elementType": "geometry.stroke",
-	                "stylers": [{
-	                    "color": "#fefefe"
-	                }, {
-	                    "lightness": 17
-	                }, {
-	                    "weight": 1.2
-	                }]
-	            }]
-	            // center: new google.maps.LatLng(51.501527,-0.1921837)
-	        };
-	        this.map = new google.maps.Map(element, options);
+	      axios.get('../locations.json').then(function (response) {
+	        _this2.institutionsData = response.data.data;
+	        var _this = _this2;
+	        response.data.data.forEach(function (item) {
+	          if (item.lat !== null && item.lng !== null) {
+	            _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng), label: item.title, number: item.number, url: item.url, linecolor: item.shuttleLine });
+	          }
+	        });
+	        _this2.createMap();
+	      });
 	    },
+	    selctedInst: function selctedInst() {
+	      var _this = this;
+	      var inst = _this.inst;
+	      var map = _this.map;
 
-	    methods: {
-	        // getEntriesInstitutions () {
-	        //       let vm = this;
-	        //       axios.get('institution.json')
-	        //          .then(response => {
-	        //             // var presell = this.presellLocations;
-	        //             // var presell = JSON.parse(string);
-	        //             this.institutions = response.data.data
-	        //          })
-	        //    },
-	        toggleInstitutInfo: function toggleInstitutInfo() {
-	            this.institutInfo = !this.institutInfo;
-	        },
-	        getEntries: function getEntries() {
-	            var _this2 = this;
-
-	            axios.get('../locations.json').then(function (response) {
-	                _this2.institutionsData = response.data.data;
-	                var _this = _this2;
-	                //init marker positions
-	                response.data.data.forEach(function (item) {
-	                    if (item.lat !== null && item.lng !== null) {
-	                        _this.markerCoordinates.push({ latitude: parseFloat(item.lat), longitude: parseFloat(item.lng), label: item.title, number: item.number, url: item.url, linecolor: item.shuttleLine });
-	                    }
-	                });
-	                //init markers
-	                _this2.createMap();
-	            });
-	        },
-	        selctedInst: function selctedInst() {
-	            // this.markerCoordinates = []
-	            // this.markerCoordinates.push(marker);
-	            var _this = this;
-	            var inst = _this.inst;
-	            var map = _this.map;
-
-	            _this.markerCoordinates.forEach(function (coord) {
-	                var colors = coord.linecolor;
-	                var color = colors[0].color;
-	                var number = coord.number;
-
-	                // console.log(inst)
-	                // if (number == inst) {
-	                //   _this.center = new google.maps.LatLng(coord.latitude,coord.longitude)
-	                //     var scale = 40;
-	                // } else {
-	                //   var scale = 15;
-	                // }
-
-
-	                // if (1 == 1) {
-	                if (number == inst) {
-	                    var position = new google.maps.LatLng(coord.latitude, coord.longitude);
-	                    console.log(position);
-	                    _this.center = new google.maps.LatLng(50, 50);
-	                    map.setCenter(new google.maps.LatLng(coord.latitude, coord.longitude));
-	                    map.setZoom(18);
-	                }
-
-	                // map: _this.map,
-	                //   map.setZoom(18);
-	                //    map.setCenter(marker.getPosition());
-	                // const marker = new google.maps.Marker({ 
-	                //    animation: google.maps.Animation.DROP,
-	                //    position,
-	                //    label: {
-	                //       text:coord.number, 
-	                //       fontFamily: 'main-eb', 
-	                //       fontSize: '1.2em',
-	                //       color:"rgba(240,240,240,0.8",
-	                //    },
-	                //    icon: {
-	                //       path: google.maps.SymbolPath.CIRCLE,
-	                //       scale: scale,
-	                //       fillColor: color,
-	                //       fillOpacity: 1,
-	                //       strokeColor: color,
-	                //       strokeWeight: 1
-	                //    },
-
-	                //    number: coord.number,
-	                //    url: coord.url,
-
-
-	                // });
-	            });
-	        },
-	        zoomOut: function zoomOut() {
-	            var _this = this;
-	            var inst = _this.inst;
-	            var map = _this.map;
-	            map.setZoom(14);
-	            map.setCenter(new google.maps.LatLng(47.55959860000001, 7.588576099999955));
-	        },
-	        createMap: function createMap() {
-	            var _this = this;
-	            var inst = _this.inst;
-
-	            console.log(inst);
-	            // if (inst == 2) {
-	            //   alert('2');
-	            // }
-	            // if (inst == 0) {
-
-
-	            _this.markerCoordinates.forEach(function (coord) {
-	                var colors = coord.linecolor;
-	                var color = colors[0].color;
-	                var number = coord.number;
-	                // var scale = 10;
-	                console.log(inst);
-	                if (number == inst) {
-	                    var scale = 40;
-	                    // const position = new google.maps.LatLng(coord.latitude, coord.longitude);
-	                } else {
-	                    var scale = 15;
-	                    // const position = new google.maps.LatLng(false, false);
-	                }
-
-	                var position = new google.maps.LatLng(coord.latitude, coord.longitude);
-	                // if (1 == 1) {
-	                // if (number == inst) {
-
-	                var marker = new google.maps.Marker({
-	                    animation: google.maps.Animation.DROP,
-	                    position: position,
-	                    label: {
-	                        text: coord.number,
-	                        fontFamily: 'main-eb',
-	                        fontSize: '1.2em',
-	                        color: "rgba(240,240,240,0.8"
-	                    },
-
-	                    icon: {
-	                        path: google.maps.SymbolPath.CIRCLE,
-	                        scale: scale,
-	                        fillColor: color,
-	                        fillOpacity: 1,
-	                        strokeColor: color,
-	                        strokeWeight: 1
-	                    },
-	                    // var number = coord.number;
-	                    // if (number = 2) {
-	                    //    label: {
-	                    //       color: 'blue',
-	                    //    }
-	                    // },
-	                    number: coord.number,
-	                    url: coord.url,
-	                    map: _this.map
-	                });
-	                // }
-	                // }
-	                // this.marker = marker;
-	                marker.addListener('click', toggleBounce);
-
-	                google.maps.event.addListener(marker, "click", function (evt) {
-	                    // var normalIcon = {
-	                    //    url: "http://maps.google.com/mapfiles/ms/micons/blue.png"
-	                    //  };
-	                    var number = this.number;
-	                    var instNumber = _this.inst;
-	                    var map = this.map;
-	                    _this.inst = number;
-	                    map.setZoom(18);
-	                    map.setCenter(marker.getPosition());
-	                    // console.log(number);
-	                    // console.log(instNumber);
-	                });
-	                google.maps.event.addListener(marker, "mouseover", function (evt) {
-	                    // var label = this.getLabel();
-	                    // label.color="white";
-	                    // this.setLabel(label);
-	                    var icon = this.getIcon();
-	                    icon.scale = 18;
-	                    this.setIcon(icon);
-	                });
-	                google.maps.event.addListener(marker, "mouseout", function (evt) {
-	                    // var label = this.getLabel();
-	                    // label.color="white";
-	                    // label.fontSize="1.2em";               
-	                    // this.setLabel(label);
-	                    var icon = this.getIcon();
-	                    icon.scale = 15;
-	                    this.setIcon(icon);
-	                });
-	                google.maps.event.addListener(marker, function (evt) {
-	                    var number = this.number;
-	                    // console.log(number);
-	                });
-	                function toggleBounce() {
-	                    if (marker.getAnimation() !== null) {
-	                        marker.setAnimation(null);
-	                    } else {
-	                        // marker.setAnimation(google.maps.Animation.BOUNCE);
-	                    }
-	                };
-	            });
-	            // }
-	        },
-
-	        activeLabel: function activeLabel() {
-	            var inst = this.inst;
-	            // console.log(inst);
-	        },
-	        changeInst: function changeInst() {
-	            var inst = this.inst;
-	            // console.log(inst);
+	      _this.markerCoordinates.forEach(function (coord) {
+	        var number = coord.number;
+	        if (number == inst) {
+	          map.setCenter(new google.maps.LatLng(coord.latitude, coord.longitude));
+	          map.setZoom(18);
 	        }
-
+	      });
+	    },
+	    zoomOut: function zoomOut() {
+	      var _this = this;
+	      var inst = _this.inst;
+	      var map = _this.map;
+	      map.setZoom(14);
+	      map.setCenter(new google.maps.LatLng(47.55959860000001, 7.588576099999955));
+	    },
+	    createMap: function createMap() {
+	      var _this = this;
+	      var inst = _this.inst;
+	      _this.markerCoordinates.forEach(function (coord) {
+	        var colors = coord.linecolor;
+	        var color = colors[0].color;
+	        var number = coord.number;
+	        var scale = 15;
+	        var position = new google.maps.LatLng(coord.latitude, coord.longitude);
+	        var marker = new google.maps.Marker({
+	          animation: google.maps.Animation.DROP,
+	          position: position,
+	          label: {
+	            text: coord.number,
+	            fontFamily: 'main-eb',
+	            fontSize: '1.2em',
+	            color: "rgba(240,240,240,0.8"
+	          },
+	          icon: {
+	            path: google.maps.SymbolPath.CIRCLE,
+	            scale: scale,
+	            fillColor: color,
+	            fillOpacity: 1,
+	            strokeColor: color,
+	            strokeWeight: 1
+	          },
+	          number: coord.number,
+	          url: coord.url,
+	          map: _this.map
+	        });
+	        marker.addListener('click', toggleBounce);
+	        google.maps.event.addListener(marker, "click", function (evt) {
+	          var number = this.number;
+	          var instNumber = _this.inst;
+	          var map = this.map;
+	          _this.inst = number;
+	          map.setZoom(18);
+	          map.setCenter(marker.getPosition());
+	        });
+	        google.maps.event.addListener(marker, "mouseover", function (evt) {
+	          var icon = this.getIcon();
+	          icon.scale = 18;
+	          this.setIcon(icon);
+	        });
+	        google.maps.event.addListener(marker, "mouseout", function (evt) {
+	          var icon = this.getIcon();
+	          icon.scale = 15;
+	          this.setIcon(icon);
+	        });
+	        google.maps.event.addListener(marker, function (evt) {
+	          var number = this.number;
+	        });
+	        function toggleBounce() {
+	          if (marker.getAnimation() !== null) {
+	            marker.setAnimation(null);
+	          } else {
+	            // marker.setAnimation(google.maps.Animation.BOUNCE);
+	          }
+	        };
+	      });
 	    }
+	  }
 	};
 
 /***/ }),
