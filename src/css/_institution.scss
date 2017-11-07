@@ -34,6 +34,13 @@
 					margin-right: .25em;
 				}
 			}
+
+		}
+		&_child {
+			&:hover .link {
+				border-bottom: solid 1px;
+				display: inline-block;
+			}
 		}
 		.google-map {
 			height: 400px;
@@ -175,7 +182,7 @@
 						margin-right: 30px;
 						flex: 0 1 calc(50% - 30px);
 						.institutions-list {
-							font-size: .75em;
+							// font-size: .75em;
 						}
 						.dismiss {
 							display: none;
@@ -193,9 +200,14 @@
 
 			.aside {
 				height: 600px;
-				overflow-y: scroll;
+				overflow: hidden;
+				>div {
+					overflow: scroll;
+					max-height: 100%;
+					 margin-right: -100px;
+    				padding-right: 100px;
+				}
 				.institutions-list {
-					font-size: .75em;
 					li {
 						margin-bottom: 1em;
 						.suttle-line {
@@ -238,7 +250,7 @@
 			}
 			.map-container {
 				.google-map {
-					height: 800px;
+					// height: 800px;
 				}
 				>div {
 					.selected-institution {
@@ -250,7 +262,20 @@
 				}
 			}
 			.aside {
-				height: 800px;
+				// height: 800px;
+				ul.institutions-list li {
+					// line-height: 1.2em;
+					font-size: 1em;
+					.suttle-line {
+						width: 30px;
+						height: 30px;
+					}
+					strong {
+						line-height: 1.2em;
+						// padding-top: .2em;
+					}
+		
+				}
 			}
 		}
 	}

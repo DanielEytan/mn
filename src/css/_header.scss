@@ -9,7 +9,10 @@ header#header {
 		margin-bottom: 0;
 	}
 	.logo {
+		width: 150px;
+		figure {
 		width: 30px;
+	}
 	}
 	.flex-container {
 		display: flex;
@@ -20,6 +23,8 @@ header#header {
 		// }
 	}
 	#menu {
+		width: 150px;
+		text-align: right;
 		>* {
 			display: inline-block;
 			&:first-child {
@@ -123,12 +128,14 @@ header#header {
 		}
 	
 	}
-	@media screen and (max-width: 300px) {
+	@media screen and (max-width: 600px) {
+	font-size: 1.25em;
+		
 		.mn-date {
 			display: none;
 		}
 	}
-	@media screen and (max-width: 450px) {
+	@media screen and (max-width: 600px) {
 		.saved-link span {
 			display: none;
 		}
@@ -141,16 +148,26 @@ header#header {
 		}
 	}
 	@media screen and (min-width: $bp2) {
+		#menu {
+			width: 300px;
+		}
 		.logo {
+			width: 300px;
+		figure {
+
 			width: 50px;
 		}
-		.centered {
+		}
+		
+	}
+	@media screen and (min-width: $bp3) {
+
+	.centered {
 			.mn-date span{
 				display: inline-block;
 			}
 		}
 	}
-
 }
 @keyframes first {
 	0% {

@@ -77,11 +77,11 @@ var vueApp = new Vue({
             this.menuOpen = !this.menuOpen;
         },
         time: function() {
-            var eventdate = moment("2018-01-21");
+            var eventdate = moment("2018-01-19");
             var todaysdate = moment();
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;
-            console.log(counter);
+            // console.log(counter);
         },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')
@@ -103,7 +103,7 @@ var vueApp = new Vue({
               this.activeContrast = false;
               if( now > 17 || now <= 9) {
                 this.activeContrast = true;
-                console.log('its bright out');
+                // console.log('its bright out');
               }
             } else if( contrastState == 'active' ) {
               this.activeContrast = true;

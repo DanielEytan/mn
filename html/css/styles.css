@@ -101,7 +101,8 @@ span.shuttle-line,
 .program .share-program h1,
 .share-program .button,
 .share-program .button button,
-.share-program .mail a {
+.share-program .mail a,
+.home .site-title h1 {
   font-family: 'main-eb', helvetica; }
 
 .program h1, .program .institution h2,
@@ -131,7 +132,8 @@ section header.section-header h1,
 .footerinfos,
 .visit h3,
 .selected .institution,
-.share-program h1 {
+.share-program h1,
+.home .site-title {
   text-transform: uppercase;
   letter-spacing: .04em;
   line-height: 1em !important; }
@@ -151,10 +153,10 @@ section header.section-header h1,
 .program .institution span strong,
 .program .selected h1,
 .institutions--single .program-text,
-.institutions--overview article h1,
-.institutions--overview article .icons,
+.institutions--overview .list-view article h1,
+.institutions--overview .list-view article .icons,
+.institutions--overview .list-view article span strong,
 .institutions--single .program h2,
-.institutions--overview span strong,
 .visit article h2,
 .home .info .narrow p.intro,
 .journal--overview h1,
@@ -167,10 +169,10 @@ section header.section-header h1,
     .program .institution span strong,
     .program .selected h1,
     .institutions--single .program-text,
-    .institutions--overview article h1,
-    .institutions--overview article .icons,
+    .institutions--overview .list-view article h1,
+    .institutions--overview .list-view article .icons,
+    .institutions--overview .list-view article span strong,
     .institutions--single .program h2,
-    .institutions--overview span strong,
     .visit article h2,
     .home .info .narrow p.intro,
     .journal--overview h1,
@@ -182,10 +184,10 @@ section header.section-header h1,
     .program .institution span strong,
     .program .selected h1,
     .institutions--single .program-text,
-    .institutions--overview article h1,
-    .institutions--overview article .icons,
+    .institutions--overview .list-view article h1,
+    .institutions--overview .list-view article .icons,
+    .institutions--overview .list-view article span strong,
     .institutions--single .program h2,
-    .institutions--overview span strong,
     .visit article h2,
     .home .info .narrow p.intro,
     .journal--overview h1,
@@ -212,21 +214,73 @@ section header.section-header h1,
       font-size: 2.5em; } }
 
 .nav-wrapper li a,
-section header.section-header h1 {
+section header.section-header h1,
+.home .site-title {
   font-size: 1.75em;
   line-height: 1.2em; }
   @media only screen and (min-width: 768px) {
     .nav-wrapper li a,
-    section header.section-header h1 {
+    section header.section-header h1,
+    .home .site-title {
       font-size: 2.5em; } }
   @media only screen and (min-width: 1024px) {
     .nav-wrapper li a,
-    section header.section-header h1 {
+    section header.section-header h1,
+    .home .site-title {
       font-size: 3em; } }
   @media only screen and (min-width: 1900px) {
     .nav-wrapper li a,
-    section header.section-header h1 {
+    section header.section-header h1,
+    .home .site-title {
       font-size: 3.25em; } }
+
+html, body {
+  height: 100%;
+  position: relative; }
+
+hr {
+  margin: 1.5em 0; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+.section-header {
+  margin-bottom: 1em; }
+
+#container {
+  margin: 15px;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    #container {
+      margin: 15px 30px; } }
+
+main {
+  margin-top: 50px; }
+  main.mt {
+    margin-top: 100px; }
+  @media screen and (min-width: 1224px) {
+    main {
+      margin-top: 70px; }
+      main.mt {
+        margin-top: 150px; } }
+
+section header .narrow {
+  margin-bottom: 50px; }
+
+@media screen and (min-width: 1024px) {
+  .narrow {
+    width: 900px;
+    margin: 0 auto; } }
+
+@media screen and (min-width: 1224px) {
+  .narrow {
+    width: 1000px;
+    margin: 0 auto; } }
 
 header#header {
   width: 100%;
@@ -238,7 +292,9 @@ header#header {
   header#header h1 {
     margin-bottom: 0; }
   header#header .logo {
-    width: 30px; }
+    width: 150px; }
+    header#header .logo figure {
+      width: 30px; }
   header#header .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -246,10 +302,13 @@ header#header {
     justify-content: space-between;
     -ms-flex-align: center;
     align-items: center; }
-  header#header #menu > * {
-    display: inline-block; }
-    header#header #menu > *:first-child {
-      margin-right: 1em; }
+  header#header #menu {
+    width: 150px;
+    text-align: right; }
+    header#header #menu > * {
+      display: inline-block; }
+      header#header #menu > *:first-child {
+        margin-right: 1em; }
   header#header .contrast-toggle {
     cursor: pointer; }
   header#header nav div.nav-wrapper {
@@ -292,15 +351,22 @@ header#header {
       header#header .centered .saved-link a span {
         transition: color .15s;
         color: black; }
-  @media screen and (max-width: 300px) {
-    header#header .mn-date {
-      display: none; } }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 600px) {
+    header#header {
+      font-size: 1.25em; }
+      header#header .mn-date {
+        display: none; } }
+  @media screen and (max-width: 600px) {
     header#header .saved-link span {
       display: none; } }
   @media screen and (min-width: 1024px) {
+    header#header #menu {
+      width: 300px; }
     header#header .logo {
-      width: 50px; }
+      width: 300px; }
+      header#header .logo figure {
+        width: 50px; } }
+  @media screen and (min-width: 1224px) {
     header#header .centered .mn-date span {
       display: inline-block; } }
 
@@ -327,6 +393,61 @@ header#header {
 footer#footer {
   border-top: 1px solid;
   padding-top: 1em; }
+
+.home .cover {
+  height: 80vh;
+  overflow: hidden;
+  background: url(../bilder/keyvisual-2.jpg) no-repeat center center;
+  background-size: cover;
+  background-color: #646464;
+  background-blend-mode: multiply;
+  animation: bc 2s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+@keyframes bc {
+  0% {
+    background-color: rgba(100, 100, 100, 0); }
+  100% {
+    background-color: #646464; } }
+  .home .cover img {
+    width: 100%; }
+  .home .cover .site-title {
+    color: whitesmoke;
+    text-align: center;
+    animation: st 2s;
+    padding-bottom: .25em; }
+
+@keyframes st {
+  0% {
+    color: rgba(245, 245, 245, 0); }
+  100% {
+    color: whitesmoke; } }
+
+.home .info {
+  padding: 1em 0 2em; }
+  .home .info .narrow {
+    margin: 1em auto 2em; }
+  .home .info p {
+    margin-bottom: 1em; }
+    .home .info p.intro {
+      margin-bottom: 2em; }
+  .home .info .lang {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+    .home .info .lang > * {
+      text-align: center;
+      -ms-flex: 0 1 100px;
+      flex: 0 1 100px; }
+
+.home .journal {
+  padding: 1em 0 2em; }
 
 .program .program-list {
   border-top: solid 1px;
@@ -393,6 +514,306 @@ footer#footer {
       color: white; }
     .program .save-element div.active {
       color: red; }
+
+.institutions .google-map[data-v-87e9ef04] {
+  width: 100%;
+  height: 800px;
+  margin-bottom: 50px; }
+
+.institutions--overview header.section-header .narrow nav i {
+  padding: .2em .4em .3em;
+  border: solid 1px; }
+  .institutions--overview header.section-header .narrow nav i.inactive {
+    background: #1A0042;
+    color: white; }
+
+.institutions--overview article {
+  margin-bottom: 60px; }
+  .institutions--overview article figure {
+    margin-bottom: 7.5px; }
+  .institutions--overview article h1 {
+    margin-bottom: .25em; }
+  .institutions--overview article .icons {
+    margin-bottom: 1em; }
+    .institutions--overview article .icons span {
+      margin-right: .25em; }
+
+.institutions--overview_child:hover .link {
+  border-bottom: solid 1px;
+  display: inline-block; }
+
+.institutions--overview .google-map {
+  height: 400px; }
+
+.institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address {
+  margin-bottom: 1em; }
+
+.institutions--single .visitor-infos i {
+  font-size: 1.1em;
+  width: 50px;
+  display: inline-block;
+  margin-bottom: .25em; }
+
+.institutions--single figure img {
+  width: 100%; }
+
+.institutions--single .program {
+  margin-bottom: 2em; }
+  .institutions--single .program h1.program-title, .institutions--single .program h2 {
+    margin-bottom: .5em; }
+  .institutions--single .program .program-text, .institutions--single .program figure {
+    margin-bottom: 2em; }
+
+.institutions--single .flex-container {
+  margin-bottom: 3em; }
+
+@media screen and (max-width: 768px) {
+  .institutions--overview .map-container {
+    height: 100%; }
+    .institutions--overview .map-container .selected-institution {
+      position: fixed;
+      bottom: 0;
+      z-index: 9;
+      background: white;
+      white: 100%;
+      right: 0;
+      left: 0;
+      padding: 5px 30px 10px 15px;
+      border-top: solid 1px; }
+      .institutions--overview .map-container .selected-institution.closed {
+        bottom: -20vh; }
+      .institutions--overview .map-container .selected-institution .dismiss {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 1.5em; }
+      .institutions--overview .map-container .selected-institution figure {
+        display: none; }
+      .institutions--overview .map-container .selected-institution .icons, .institutions--overview .map-container .selected-institution .journey {
+        display: none; }
+      .institutions--overview .map-container .selected-institution article {
+        margin-bottom: 0; }
+  .institutions--overview .institutions-list {
+    display: none;
+    height: 100%; }
+  .institutions--overview header.section-header h1 {
+    margin-bottom: 1em; }
+  .institutions--overview header.section-header nav {
+    font-size: 1.5em; }
+    .institutions--overview header.section-header nav i {
+      margin-right: .25em; } }
+
+@media screen and (min-width: 768px) {
+  .institutions--overview header.section-header .narrow {
+    position: relative; }
+    .institutions--overview header.section-header .narrow nav {
+      position: absolute;
+      right: 0;
+      bottom: 19px; }
+      .institutions--overview header.section-header .narrow nav span {
+        margin-left: .5em;
+        margin-right: 0; }
+        .institutions--overview header.section-header .narrow nav span i:not(.inactive) {
+          cursor: pointer; }
+  .institutions--overview .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    width: calc(100% + 30px); }
+    .institutions--overview .flex-container article {
+      -ms-flex: 0 1 calc(50% - 30px);
+      flex: 0 1 calc(50% - 30px);
+      margin-right: 30px; }
+  .institutions--overview .map-container {
+    position: relative; }
+    .institutions--overview .map-container .google-map {
+      height: 600px; }
+    .institutions--overview .map-container > div {
+      display: -ms-flexbox;
+      display: flex; }
+      .institutions--overview .map-container > div .selected-institution {
+        margin-right: 30px;
+        -ms-flex: 0 1 calc(50% - 30px);
+        flex: 0 1 calc(50% - 30px); }
+        .institutions--overview .map-container > div .selected-institution .dismiss {
+          display: none; }
+        .institutions--overview .map-container > div .selected-institution .back {
+          margin-top: 2em; }
+  .institutions--overview .aside {
+    height: 600px;
+    overflow: hidden; }
+    .institutions--overview .aside > div {
+      overflow: scroll;
+      max-height: 100%;
+      margin-right: -100px;
+      padding-right: 100px; }
+    .institutions--overview .aside .institutions-list li {
+      margin-bottom: 1em;
+      display: -ms-flexbox;
+      display: flex; }
+      .institutions--overview .aside .institutions-list li .suttle-line {
+        color: white;
+        width: 27px;
+        height: 27px;
+        border-radius: 100%;
+        display: inline-block;
+        text-align: center;
+        margin-right: 1em; }
+  .institutions--single .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .institutions--single .flex-container > * {
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%; } }
+
+@media screen and (min-width: 1024px) {
+  .institutions--overview header.section-header .narrow nav {
+    font-size: 1em; }
+    .institutions--overview header.section-header .narrow nav i {
+      margin-right: .25em; }
+  .institutions--overview .flex-container article {
+    -ms-flex: 0 1 calc(100%/3 - 30px);
+    flex: 0 1 calc(100%/3 - 30px);
+    margin-right: 30px; }
+  .institutions--overview .map-container > div .selected-institution {
+    -ms-flex: 0 1 calc(100%/3 - 30px);
+    flex: 0 1 calc(100%/3 - 30px); }
+  .institutions--overview .aside ul.institutions-list li {
+    font-size: 1em; }
+    .institutions--overview .aside ul.institutions-list li .suttle-line {
+      width: 30px;
+      height: 30px; }
+    .institutions--overview .aside ul.institutions-list li strong {
+      line-height: 1.2em; } }
+
+@media screen and (min-width: 1900px) {
+  .institutions--overview .flex-container article {
+    -ms-flex: 0 1 calc(100%/4 - 30px);
+    flex: 0 1 calc(100%/4 - 30px);
+    margin-right: 30px; } }
+
+.journal figure {
+  margin: 30px; }
+
+.journal--overview > * {
+  margin-bottom: 30px; }
+
+.journal--single h2 {
+  margin-bottom: 1em; }
+
+.journal--single .text, .journal--single .program {
+  margin-bottom: 2em; }
+
+.journal--single .program .selected li {
+  padding-bottom: 1em; }
+
+@media only screen and (min-width: 768px) {
+  .journal--overview .flex-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .journal--overview .flex-container > * {
+      margin-bottom: 60px;
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%; }
+      .journal--overview .flex-container > *:nth-child(2n) {
+        margin-left: 2%; } }
+
+@media only screen and (min-width: 1500px) {
+  .journal figure {
+    margin: 50px; }
+  .journal--overview .flex-container > * {
+    -ms-flex: 0 1 32%;
+    flex: 0 1 32%;
+    margin-right: 2%; }
+    .journal--overview .flex-container > *:nth-child(2n) {
+      margin-left: 0; }
+    .journal--overview .flex-container > *:nth-child(3n) {
+      margin-right: 0; } }
+
+.visit article {
+  border-bottom: solid 1px;
+  padding: 2em 0; }
+  .visit article:last-of-type {
+    border-bottom: none; }
+
+.visit h2 {
+  margin-bottom: .5em; }
+
+.visit p {
+  margin-bottom: 1em; }
+
+.visit .presell {
+  margin-bottom: 2em; }
+  .visit .presell .toggle-list .presell-toggle {
+    padding: .15em .35em .35em;
+    cursor: pointer;
+    border: solid 1px; }
+  .visit .presell .toggle-list:not(.open) .presell-toggle {
+    font-size: .8em; }
+  .visit .presell .toggle-list.open .presell-toggle {
+    cursor: auto;
+    border-radius: .5em;
+    border: none;
+    padding: .15em 0 .35em; }
+    .visit .presell .toggle-list.open .presell-toggle i {
+      display: none; }
+  .visit .presell .presell-location {
+    height: 0;
+    overflow: hidden;
+    transition: opacity 1s;
+    opacity: 0; }
+    .visit .presell .presell-location.open {
+      height: auto;
+      opacity: 1; }
+    .visit .presell .presell-location p {
+      margin-bottom: 0; }
+    .visit .presell .presell-location > div {
+      border-bottom: solid 1px;
+      padding: 1em 0; }
+
+.share-program {
+  padding-bottom: 2em; }
+  .share-program h1 {
+    margin-bottom: 1em; }
+  .share-program .mb {
+    margin-bottom: 1em; }
+  .share-program input {
+    font-size: 1em;
+    border: none;
+    border-bottom: solid 1px;
+    width: 150px; }
+  @media only screen and (min-width: 768px) {
+    .share-program .flex-container {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center; }
+      .share-program .flex-container > * {
+        -ms-flex: 1 0 49%;
+        flex: 1 0 49%; } }
+  .share-program .share p {
+    margin-bottom: 1em; }
+  .share-program .button {
+    margin-bottom: .5em;
+    display: inline-block;
+    margin-right: .25em; }
+    .share-program .button button {
+      cursor: pointer;
+      font-size: 1em;
+      background: white;
+      padding: .3em .5em .45em;
+      border: solid 1px; }
+      .share-program .button button:hover {
+        color: white;
+        background: black; }
+        .share-program .button button:hover a {
+          color: white; }
 
 .program--overview .filter .filter__checklists--wrapper {
   background: #1A0042;
@@ -547,274 +968,6 @@ footer#footer {
           right: 0;
           top: 0; } }
 
-.institutions .google-map[data-v-87e9ef04] {
-  width: 100%;
-  height: 800px;
-  margin-bottom: 50px; }
-
-.institutions--overview header.section-header .narrow nav i {
-  padding: .2em .4em .3em;
-  border: solid 1px; }
-  .institutions--overview header.section-header .narrow nav i.inactive {
-    background: #1A0042;
-    color: white; }
-
-.institutions--overview article {
-  margin-bottom: 60px; }
-  .institutions--overview article figure {
-    margin-bottom: 7.5px; }
-  .institutions--overview article h1 {
-    margin-bottom: .25em; }
-  .institutions--overview article .icons {
-    margin-bottom: 1em; }
-    .institutions--overview article .icons span {
-      margin-right: .25em; }
-
-.institutions--overview .google-map {
-  height: 400px; }
-
-.institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address {
-  margin-bottom: 1em; }
-
-.institutions--single .visitor-infos i {
-  font-size: 1.1em;
-  width: 50px;
-  display: inline-block;
-  margin-bottom: .25em; }
-
-.institutions--single figure img {
-  width: 100%; }
-
-.institutions--single .program {
-  margin-bottom: 2em; }
-  .institutions--single .program h1.program-title, .institutions--single .program h2 {
-    margin-bottom: .5em; }
-  .institutions--single .program .program-text, .institutions--single .program figure {
-    margin-bottom: 2em; }
-
-.institutions--single .flex-container {
-  margin-bottom: 3em; }
-
-@media screen and (max-width: 768px) {
-  .institutions--overview .map-container {
-    height: 100%; }
-    .institutions--overview .map-container .selected-institution {
-      position: fixed;
-      bottom: 0;
-      z-index: 9;
-      background: white;
-      white: 100%;
-      right: 0;
-      left: 0;
-      padding: 5px 30px 10px 15px;
-      border-top: solid 1px; }
-      .institutions--overview .map-container .selected-institution.closed {
-        bottom: -20vh; }
-      .institutions--overview .map-container .selected-institution .dismiss {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        font-size: 1.5em; }
-      .institutions--overview .map-container .selected-institution figure {
-        display: none; }
-      .institutions--overview .map-container .selected-institution .icons, .institutions--overview .map-container .selected-institution .journey {
-        display: none; }
-      .institutions--overview .map-container .selected-institution article {
-        margin-bottom: 0; }
-  .institutions--overview .institutions-list {
-    display: none;
-    height: 100%; }
-  .institutions--overview header.section-header h1 {
-    margin-bottom: 1em; }
-  .institutions--overview header.section-header nav {
-    font-size: 1.5em; }
-    .institutions--overview header.section-header nav i {
-      margin-right: .25em; } }
-
-@media screen and (min-width: 768px) {
-  .institutions--overview header.section-header .narrow {
-    position: relative; }
-    .institutions--overview header.section-header .narrow nav {
-      position: absolute;
-      right: 0;
-      bottom: 19px; }
-      .institutions--overview header.section-header .narrow nav span {
-        margin-left: .5em;
-        margin-right: 0; }
-        .institutions--overview header.section-header .narrow nav span i:not(.inactive) {
-          cursor: pointer; }
-  .institutions--overview .flex-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-    width: calc(100% + 30px); }
-    .institutions--overview .flex-container article {
-      -ms-flex: 0 1 calc(50% - 30px);
-      flex: 0 1 calc(50% - 30px);
-      margin-right: 30px; }
-  .institutions--overview .map-container {
-    position: relative; }
-    .institutions--overview .map-container .google-map {
-      height: 600px; }
-    .institutions--overview .map-container > div {
-      display: -ms-flexbox;
-      display: flex; }
-      .institutions--overview .map-container > div .selected-institution {
-        margin-right: 30px;
-        -ms-flex: 0 1 calc(50% - 30px);
-        flex: 0 1 calc(50% - 30px); }
-        .institutions--overview .map-container > div .selected-institution .institutions-list {
-          font-size: .75em; }
-        .institutions--overview .map-container > div .selected-institution .dismiss {
-          display: none; }
-        .institutions--overview .map-container > div .selected-institution .back {
-          margin-top: 2em; }
-  .institutions--overview .aside {
-    height: 600px;
-    overflow-y: scroll; }
-    .institutions--overview .aside .institutions-list {
-      font-size: .75em; }
-      .institutions--overview .aside .institutions-list li {
-        margin-bottom: 1em;
-        display: -ms-flexbox;
-        display: flex; }
-        .institutions--overview .aside .institutions-list li .suttle-line {
-          color: white;
-          width: 27px;
-          height: 27px;
-          border-radius: 100%;
-          display: inline-block;
-          text-align: center;
-          margin-right: 1em; }
-  .institutions--single .flex-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    .institutions--single .flex-container > * {
-      -ms-flex: 0 1 49%;
-      flex: 0 1 49%; } }
-
-@media screen and (min-width: 1024px) {
-  .institutions--overview header.section-header .narrow nav {
-    font-size: 1em; }
-    .institutions--overview header.section-header .narrow nav i {
-      margin-right: .25em; }
-  .institutions--overview .flex-container article {
-    -ms-flex: 0 1 calc(100%/3 - 30px);
-    flex: 0 1 calc(100%/3 - 30px);
-    margin-right: 30px; }
-  .institutions--overview .map-container .google-map {
-    height: 800px; }
-  .institutions--overview .map-container > div .selected-institution {
-    -ms-flex: 0 1 calc(100%/3 - 30px);
-    flex: 0 1 calc(100%/3 - 30px); }
-  .institutions--overview .aside {
-    height: 800px; } }
-
-@media screen and (min-width: 1900px) {
-  .institutions--overview .flex-container article {
-    -ms-flex: 0 1 calc(100%/4 - 30px);
-    flex: 0 1 calc(100%/4 - 30px);
-    margin-right: 30px; } }
-
-#map {
-  height: 400px;
-  margin-bottom: 50px; }
-
-.programevent {
-  padding-left: 1em; }
-
-.filter--wrapper .filter--headline--wrapper {
-  display: none; }
-
-.journal figure {
-  margin: 30px; }
-
-.journal--overview > * {
-  margin-bottom: 30px; }
-
-.journal--single h2 {
-  margin-bottom: 1em; }
-
-.journal--single .text, .journal--single .program {
-  margin-bottom: 2em; }
-
-.journal--single .program .selected li {
-  padding-bottom: 1em; }
-
-@media only screen and (min-width: 768px) {
-  .journal--overview .flex-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
-    .journal--overview .flex-container > * {
-      margin-bottom: 60px;
-      -ms-flex: 0 1 49%;
-      flex: 0 1 49%; }
-      .journal--overview .flex-container > *:nth-child(2n) {
-        margin-left: 2%; } }
-
-@media only screen and (min-width: 1500px) {
-  .journal figure {
-    margin: 50px; }
-  .journal--overview .flex-container > * {
-    -ms-flex: 0 1 32%;
-    flex: 0 1 32%;
-    margin-right: 2%; }
-    .journal--overview .flex-container > *:nth-child(2n) {
-      margin-left: 0; }
-    .journal--overview .flex-container > *:nth-child(3n) {
-      margin-right: 0; } }
-
-.share-program {
-  padding-bottom: 2em; }
-  .share-program h1 {
-    margin-bottom: 1em; }
-  .share-program .mb {
-    margin-bottom: 1em; }
-  .share-program input {
-    font-size: 1em;
-    border: none;
-    border-bottom: solid 1px;
-    width: 150px; }
-  @media only screen and (min-width: 768px) {
-    .share-program .flex-container {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center; }
-      .share-program .flex-container > * {
-        -ms-flex: 1 0 49%;
-        flex: 1 0 49%; } }
-  .share-program .share p {
-    margin-bottom: 1em; }
-  .share-program .button {
-    margin-bottom: .5em;
-    display: inline-block;
-    margin-right: .25em; }
-    .share-program .button button {
-      cursor: pointer;
-      font-size: 1em;
-      background: white;
-      padding: .3em .5em .45em;
-      border: solid 1px; }
-      .share-program .button button:hover {
-        color: white;
-        background: black; }
-        .share-program .button button:hover a {
-          color: white; }
-
-html, body {
-  height: 100%;
-  position: relative; }
-
-hr {
-  margin: 1.5em 0; }
-
 #vue-app, header#header {
   transition: background .15s ease, color .15s ease; }
 
@@ -861,116 +1014,21 @@ hr {
   #vue-app.active #save-toggle > div:hover {
     color: #1A0042 !important; }
 
-.home .cover {
-  height: 85vh;
-  overflow: hidden;
-  background: url(../bilder/keyvisual.jpg) no-repeat bottom center;
-  background-size: cover; }
-  .home .cover img {
-    width: 100%; }
-
-.home .info {
-  padding: 1em 0 2em; }
-  .home .info .narrow {
-    margin: 1em auto 2em; }
-  .home .info p {
-    margin-bottom: 1em; }
-    .home .info p.intro {
-      margin-bottom: 2em; }
-  .home .info .lang {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
-    .home .info .lang > * {
-      text-align: center;
-      -ms-flex: 0 1 100px;
-      flex: 0 1 100px; }
-
-.home .journal {
-  padding: 1em 0 2em; }
-
-.visit article {
-  border-bottom: solid 1px;
-  padding: 2em 0; }
-  .visit article:last-of-type {
-    border-bottom: none; }
-
-.visit h2 {
-  margin-bottom: .5em; }
-
-.visit p {
-  margin-bottom: 1em; }
-
-.visit .presell {
-  margin-bottom: 2em; }
-  .visit .presell .toggle-list .presell-toggle {
-    padding: .15em .35em .35em;
-    cursor: pointer;
-    border: solid 1px; }
-  .visit .presell .toggle-list:not(.open) .presell-toggle {
-    font-size: .8em; }
-  .visit .presell .toggle-list.open .presell-toggle {
-    cursor: auto;
-    border-radius: .5em;
-    border: none;
-    padding: .15em 0 .35em; }
-    .visit .presell .toggle-list.open .presell-toggle i {
-      display: none; }
-  .visit .presell .presell-location {
-    height: 0;
-    overflow: hidden;
-    transition: opacity 1s;
-    opacity: 0; }
-    .visit .presell .presell-location.open {
-      height: auto;
-      opacity: 1; }
-    .visit .presell .presell-location p {
-      margin-bottom: 0; }
-    .visit .presell .presell-location > div {
-      border-bottom: solid 1px;
-      padding: 1em 0; }
-
-img {
-  max-width: 100%; }
-
-.section-header {
-  margin-bottom: 1em; }
-
-#container {
-  margin: 15px;
-  position: relative; }
-
-main {
-  margin-top: 50px; }
-  main.mt {
-    margin-top: 100px; }
-  @media screen and (min-width: 1224px) {
-    main {
-      margin-top: 70px; }
-      main.mt {
-        margin-top: 150px; } }
-
-section header .narrow {
+#map {
+  height: 400px;
   margin-bottom: 50px; }
 
-@media screen and (min-width: 768px) {
-  #container {
-    margin: 15px 30px; } }
+.programevent {
+  padding-left: 1em; }
 
-@media screen and (min-width: 1024px) {
-  .narrow {
-    width: 900px;
-    margin: 0 auto; } }
+.filter--wrapper .filter--headline--wrapper {
+  display: none; }
 
-@media screen and (min-width: 1224px) {
-  .narrow {
-    width: 1000px;
-    margin: 0 auto; } }
+html {
+  box-sizing: border-box; }
 
-a {
-  color: black;
-  text-decoration: none; }
+*, *:before, *:after {
+  box-sizing: inherit; }
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s; }

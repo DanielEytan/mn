@@ -9,13 +9,13 @@
 				</nav>
 			</div>
 		</header>
-		<!-- <div class="map-container" v-if="mapView"> -->
-		<div class="map-container">
+		<div class="map-container" v-if="mapView">
+		<!-- <div class="map-container"> -->
 
 			<googlemap name="googleMap"></googlemap>
 
 		</div>
-	 	<div  class="flex-container" v-show="listView">
+	 	<div  class="flex-container list-view" v-show="listView">
 	 		<article v-for="entry in institutions" class="institutions--overview_child">
 	 			<a v-bind:href="entry.url">
 	 				<figure>

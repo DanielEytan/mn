@@ -71,7 +71,8 @@ span.shuttle-line,
 .share-program .button,
 .share-program .button button,
 
-.share-program .mail a {
+.share-program .mail a,
+.home .site-title h1 {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -116,7 +117,8 @@ section header.section-header h1,
 .footerinfos,
 .visit h3,
 .selected .institution,
-.share-program h1
+.share-program h1,
+.home .site-title
   {
 	text-transform: uppercase;
 	letter-spacing: .04em;
@@ -147,11 +149,11 @@ section header.section-header h1,
 // .program li.program--event h1,
 
 .institutions--single .program-text,
-.institutions--overview article h1,
-.institutions--overview article .icons,
+.institutions--overview .list-view article h1,
+.institutions--overview .list-view article .icons,
+.institutions--overview .list-view article span strong,
 
 .institutions--single .program h2,
-.institutions--overview span strong,
 .visit article h2,
 .home .info .narrow p.intro,
 .journal--overview  h1,
@@ -171,7 +173,8 @@ section header.section-header h1,
 .institutions--single  h1.title,
 .institutions--single  span strong,
 .institutions--single .program h1.program-title,
-.journal--single h1.title {
+.journal--single h1.title
+ {
 	font-size: 1.5em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp2) {
@@ -184,7 +187,8 @@ section header.section-header h1,
 // Font-Size XXL
 
 .nav-wrapper li a,
-section header.section-header h1{
+section header.section-header h1,
+.home .site-title {
 	font-size: 1.75em;
 	line-height: 1.2em;
 	@media only screen and (min-width: $bp1) {

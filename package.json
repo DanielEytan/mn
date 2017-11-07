@@ -29,6 +29,7 @@
     "moment": "^2.19.1",
     "vue": "^2.1.10",
     "vue-clipboard2": "0.0.6",
+    "vue-google-maps": "^0.1.21",
     "vue-router": "^3.0.1",
     "vue-slider-component": "^2.4.1",
     "vue2-google-maps": "^0.8.3",
