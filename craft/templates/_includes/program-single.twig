@@ -1,101 +1,51 @@
 <article class="program program--single" id="container">
-	{# <h2>{{ entry.title }}</h2>
-	{% for time in entry.time %}
-		<time>
-			{% if time.type == "setTimes" %}
-				{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-			{% elseif time.type == "continuous" %}
-				{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-			{% elseif time.type == "iterating" %}
-				{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-			{% endif %}
-		</time>
-	{% endfor %}
-	{% if entry.themes | length %}
-
-		<div class="themes">
-			<h3>Themen:</h3>
-			<ul>
-				{% for theme in entry.themes %}
-					<li>{{ theme.title }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	{% endif %}
-	{% if entry.kindOfEvent | length %}
-		
-		<div class="kind-of-event">
-			<h3>Art der Veranstaltung:</h3>
-			<ul>
-				{% for kindOfEvent in entry.kindOfEvent %}
-					<li>{{ kindOfEvent.title }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	{% endif %}
-	{% if entry.languages | length %}
-
-		<div class="languages">
-			<h3>Sprachen:</h3>
-			<ul>
-				{% for lang in entry.languages %}
-					<li>{{ lang.title }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	{% endif %} #}
-
 	<div class="program narrow">
-   							<ul class="program-list selected" >
-   							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
-								
-								<li>
-				
-						          	 <div class="institution">
-									{% for linie in parent.shuttleLine %}
-										<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
-						               <a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
-									{% endfor %}
-						               
+		<ul class="program-list selected" >
+			{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+			<li>
+				<div class="institution">
+					{% for linie in parent.shuttleLine %}
+					<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
+					<a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
+					{% endfor %}
+				</div>
+				<h1>{{ entry.title }}</h1>
+				{% for time in entry.time%}
+				<time>
+					{% switch time.type %}
+					{% case "setTimes" %}
+					{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+					{% case "continuous" %}
+					{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
+					{% case "iterating" %}									
+					{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+					{% endswitch %}
+				</time>
+				{% endfor %}
+				{{ entry.description }}
+				<br>
+				<h2><strong>Art der Veranstaltung</strong></h2>
+				<ul>
+					{% for entry in entry.kindOfEvent %}
+					<li>{{ entry.title }}</li>	
+					{% endfor %}
+				</ul><br>
+				<h2><strong>Themen und Sparten</strong></h2>
+				<ul>
+					{% for entry in entry.themes %}
+					<li>{{ entry.title }}</li>	
+					{% endfor %}
+				</ul><br>
+				<h2><strong>Sprachen</strong></h2>
+				<ul>
+					{% for entry in entry.languages %}
+					<li>{{ entry.title }}</li>	
+					{% endfor %}
+				</ul>
+				{# <saveprogram></saveprogram> #}
 
-						            </div>
-						            <h1>{{ entry.title }}</h1>
-						            {% for time in entry.time%}
-						            	<time>
-											{% switch time.type %}
-												{% case "setTimes" %}
-													{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-												{% case "continuous" %}
-													{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-												{% case "iterating" %}									
-												{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-											{% endswitch %}
-										</time>
-						            {% endfor %}
-						            {{ entry.description }}
-						            <br>
-						            <h2><strong>Art der Veranstaltung</strong></h2>
-						            <ul>
-						            {% for entry in entry.kindOfEvent %}
-						            	<li>{{ entry.title }}</li>	
-						            {% endfor %}
-						        	</ul><br>
-						            <h2><strong>Themen und Sparten</strong></h2>
-						            <ul>
-						            {% for entry in entry.themes %}
-						            	<li>{{ entry.title }}</li>	
-						            {% endfor %}
-						        	</ul><br>
-						        	<h2><strong>Sprachen</strong></h2>
-						            <ul>
-						            {% for entry in entry.languages %}
-						            	<li>{{ entry.title }}</li>	
-						            {% endfor %}
-						        	</ul>
-      									{# <saveprogram></saveprogram> #}
 
-								
-						         </li>
-							</ul>
-						</div>
+			</li>
+		</ul>
+	</div>
 </article>

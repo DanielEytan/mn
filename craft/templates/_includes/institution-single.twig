@@ -1,6 +1,6 @@
 <div id="container">
 	<article class="institutions institutions--single narrow">
-		{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }} Shuttle Linie </span>{% endfor %}</span>
+		{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %}</span>
 		<h1 class="title">{{ entry.title }}</h1>
 		<div class="flex-container">
 			<div>
@@ -21,10 +21,13 @@
 
 					
 					{% endswitch %}
+					{% if entry.wifi %}<span>W</span>{% endif %}
+					
 					
 				</div>
-				<address>{{ entry.address }}</address>
-				<h3>Anfahrt:<</h3>
+				<address>{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}
+				</address>
+				<h3>Anfahrt:</h3>
 				<p>{{ entry.journey }}</p>
 			</div>
 			{% for img in entry.imgInstitution %}
@@ -42,6 +45,10 @@
 			{% for img in entry.programImg %}
 			<figure>
 				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+				{% if img.caption %}
+					<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+				
 			</figure>
 			{% endfor %}
 			<h2>Programm</h2>
@@ -66,7 +73,7 @@
 				</li>
 				{% endfor %}
 			</ul>
-			<p>Essen: {{ entry.food }}</p>
+			<p>Essen und trinken: {{ entry.food }}</p>
 		</section>
 	</article>
 </div>

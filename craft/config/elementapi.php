@@ -178,9 +178,11 @@ return [
                     'id' => $entry->id,
                     'number' => $entry->number,
                     'address' => $entry->address,
-                    'journey' => $entry->journey,
+                    'location' => $entry->location,
+                    'journey' => (string) $entry->journey,
                     'url' => $entry->url,
                     'advanceSale' => $entry->advanceSale,
+                    'wifi' => $entry->wifi,
                     'accessibility' => $entry->accessibility,
                     'photos' => $photos,
                     'shuttleLine' => array_map( function (CategoryModel $category) {

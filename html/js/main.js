@@ -21383,7 +21383,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -21442,6 +21442,8 @@
 	    }
 	  }
 	}; //
+	//
+	//
 	//
 	//
 	//
@@ -21559,8 +21561,11 @@
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
-	      staticClass: "journey"
+	    }), _vm._v(" "), (entry.wifi == 1) ? _c('span', [_vm._v("w")]) : _vm._e()], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address) + " "), (entry.location) ? _c('span', [_vm._v(_vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('p', {
+	      staticClass: "journey",
+	      domProps: {
+	        "innerHTML": _vm._s(entry.journey)
+	      }
 	    }, [_vm._v(_vm._s(entry.journey))])], 2)])
 	  }))])
 	},staticRenderFns: []}

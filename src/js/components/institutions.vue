@@ -31,9 +31,11 @@
 						<i v-if="value === 'wheelchair'">&#9855;</i>
 						<i v-if="value === 'partlyWheelchair'">&#9855;*</i>
 					</span>
+					<span v-if="entry.wifi == 1">w</span>
+
 				</div>
-				<p>{{ entry.address }}</p>
-				<p class="journey">{{ entry.journey }}</p>
+				<p>{{ entry.address }} <span v-if="entry.location">{{ entry.location }}</span></p>
+				<p class="journey" v-html="entry.journey">{{ entry.journey }}</p>
 			</a>
 			</article>
 	 	</div>
