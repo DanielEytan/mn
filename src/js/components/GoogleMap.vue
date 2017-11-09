@@ -32,11 +32,18 @@
     <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br>
     <ul class="institutions-list">
       <li v-for="entry in institutionsData" v-on:click="inst = entry.number; selctedInst()">
-       <div v-for="color in entry.shuttleLine">
+        <div>
+       <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
          <span class="suttle-line" v-bind:style="{background: color.color}"> {{ entry.number }}</span>
        </div>
+        <div v-if="entry.shuttleLine.length > 1">
+         <span class="suttle-line multiple">{{ entry.number }}</span>
+       </div>
+       </div>
+
        <strong>{{ entry.title }}</strong>
      </li>
+  
    </ul>
  </div>
 </article>

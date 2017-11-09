@@ -676,6 +676,8 @@ footer#footer {
         display: inline-block;
         text-align: center;
         margin-right: 1em; }
+        .institutions--overview .aside .institutions-list li .suttle-line.multiple {
+          background: black; }
   .institutions--single .flex-container {
     display: -ms-flexbox;
     display: flex;

@@ -218,6 +218,9 @@
 							display: inline-block;
 							text-align: center;
 							margin-right: 1em;
+							&.multiple {
+								background: black;
+							}
 						}
 						display: flex;
 					}

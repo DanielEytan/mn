@@ -19041,6 +19041,13 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	  name: 'googlemap',
@@ -19366,14 +19373,16 @@
 	          _vm.selctedInst()
 	        }
 	      }
-	    }, [_vm._l((entry.shuttleLine), function(color) {
-	      return _c('div', [_c('span', {
+	    }, [_c('div', [_vm._l((entry.shuttleLine), function(color) {
+	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
 	          background: color.color
 	        })
-	      }, [_vm._v(" " + _vm._s(entry.number))])])
-	    }), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])], 2)
+	      }, [_vm._v(" " + _vm._s(entry.number))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line multiple"
+	    }, [_vm._v(_vm._s(entry.number))])]) : _vm._e()], 2), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])])
 	  }))])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
 	    attrs: {
