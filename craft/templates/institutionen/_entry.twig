@@ -34,7 +34,7 @@
 			</div>
 			{% for img in entry.imgInstitution %}
 			<figure>
-				<img src="{{ img.getUrl }}" alt="Bild vom Institut">
+				<img src="{{ img.getUrl }}"  style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %}
 			{# <div class="map-container">

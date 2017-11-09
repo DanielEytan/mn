@@ -1,6 +1,20 @@
 <div id="container">
 	<article class="institutions institutions--single narrow">
-		{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %}</span>
+		{% set shuttleLine = entry.shuttleLine %}
+		{% if shuttleLine | length < 2 %}
+		
+		{% for color in entry.shuttleLine %}
+			<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>
+		{% endfor %}
+		{% else %}
+			<span class="shuttle-line"><strong>{{ entry.number }}</strong></span>
+
+			{% for color in entry.shuttleLine %}
+				<span class="shuttle-line" style="color: {{ color.color }}"><nobr>{{ color.title }} </nobr></span>
+			{% endfor %}
+		{% endif %}
+		{# {% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %} #}
+
 		<h1 class="title">{{ entry.title }}</h1>
 		<div class="flex-container">
 			<div>
@@ -21,7 +35,7 @@
 
 					
 					{% endswitch %}
-					{% if entry.wifi %}<span>W</span>{% endif %}
+					{% if entry.wifi %}<span>&#8980;</span>{% endif %}
 					
 					
 				</div>
@@ -32,7 +46,7 @@
 			</div>
 			{% for img in entry.imgInstitution %}
 			<figure>
-				<img src="{{ img.getUrl }}" alt="Bild vom Institut">
+				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %}
 			{# <div class="map-container">

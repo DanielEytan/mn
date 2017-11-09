@@ -495,7 +495,7 @@ footer#footer {
   .program--overview .program--block .institution h1 {
     margin-bottom: .15em; }
   .program--overview .program--block .institution h2 {
-    margin-bottom: 1em; }
+    margin-bottom: .5em; }
 
 .program--overview.program--overview-saved .program-list li {
   position: relative; }
@@ -703,7 +703,10 @@ footer#footer {
       width: 30px;
       height: 30px; }
     .institutions--overview .aside ul.institutions-list li strong {
-      line-height: 1.2em; } }
+      line-height: 1.2em; }
+  .institutions--single figure {
+    margin: 0 auto 50px;
+    width: 80%; } }
 
 @media screen and (min-width: 1900px) {
   .institutions--overview .flex-container article {

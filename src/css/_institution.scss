@@ -278,6 +278,12 @@
 				}
 			}
 		}
+		&--single {
+			figure {
+				margin: 0 auto 50px;
+				width: 80%;
+			}
+		}
 	}
 	@media screen and (min-width: $bp5) {
 		&--overview {

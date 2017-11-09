@@ -15701,7 +15701,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -15874,6 +15874,12 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16284,12 +16290,22 @@
 	  }, [(_vm.showProgramEvents) ? _c('article', [_c('div', {
 	    staticClass: "institution"
 	  }, [_vm._l((_vm.entry.shuttleLine), function(color) {
-	    return _c('div', [_c('span', {
+	    return (_vm.entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line",
 	      style: ({
 	        color: color.color
 	      })
-	    }, [_c('strong', [_vm._v(_vm._s(_vm.entry.number))]), _vm._v("  " + _vm._s(color.title) + " Shuttle Linie ")])])
-	  }), _vm._v(" "), _c('h1', [_c('a', {
+	    }, [_c('strong', [_vm._v(_vm._s(_vm.entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	  }), _vm._v(" "), (_vm.entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	    staticClass: "suttle-line"
+	  }, [_c('strong', [_vm._v(_vm._s(_vm.entry.number))])]), _vm._v(" "), _vm._l((_vm.entry.shuttleLine), function(color) {
+	    return _c('span', {
+	      staticClass: "suttle-line",
+	      style: ({
+	        color: color.color
+	      })
+	    }, [_vm._v(_vm._s(color.title) + " ")])
+	  })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
 	    attrs: {
 	      "href": _vm.entry.url
 	    }
@@ -21383,7 +21399,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -21442,6 +21458,9 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
 	//
 	//
 	//
@@ -21551,17 +21570,28 @@
 	        "src": entry.photos
 	      }
 	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
-	      return _c('div', [_c('span', {
+	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])])
-	    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line"
+	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_vm._v(_vm._s(color.title) + " ")])
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
-	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    }), _vm._v(" "), (entry.wifi == 1) ? _c('span', [_vm._v("w")]) : _vm._e()], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address) + " "), (entry.location) ? _c('span', [_vm._v(_vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('p', {
+	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿")]) : _vm._e()
+	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
+	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿*")]) : _vm._e()
+	    }), _vm._v(" "), (entry.wifi == 1) ? _c('span', [_vm._v("⌔")]) : _vm._e()], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address) + " "), (entry.location) ? _c('span', [_vm._v(_vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('p', {
 	      staticClass: "journey",
 	      domProps: {
 	        "innerHTML": _vm._s(entry.journey)
