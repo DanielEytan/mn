@@ -52,23 +52,29 @@ body {
 
 // Font Main Extra-Bold
 
-.program .institution h1,
-.institutions article h1.title,
+.program .institution *:not(h2),
+
 .filter header,
 .filter--tag,
 time,
 strong,
 header,
-.institutions--overview article h1,
+
+// .institutions h1.title,
+
+.institutions .suttle-line,
+.institutions--overview h1,
 .institutions--single h1.title,
+.institutions .visitor-infos,
+.institutions address,
+.institutions--single .program h2,
+
+.institutions h3,
 // .journal--single article h1,
 .journal--single h2.subtitle,
 
-.institutions--single .program h2,
 span.shuttle-line, 
-.institutions .visitor-infos,
-.institutions address,
-.institutions h3,
+
 .visit h2,
 .presell-toggle,
 .home .info a,
@@ -109,16 +115,19 @@ header .mn-date span {
 
 // Uppercase
 
-.program .institution h1,
-.program .institution h2,
+.program__list .institution,
+.program .institution,
+
 .filter header,
-.institutions article h1,
+
+.institutions .suttle-line,
+.institutions--overview h1,
 
 .institutions--single h1.title,
 .journal--single h1.title,
 .institutions--single span strong,
 .institutions--single .program h2,
-span.shuttle-line,
+
 section header .narrow,
 .visit h2,
 .presell-toggle,
@@ -141,9 +150,12 @@ header.site-header h1,
 
 // Font Size M
 
-.program li.program--event h1,
+.program h1.event-title,
 .institutions--single .program-text,
-.journal .program-list.selected h1
+.journal .program-list.selected h1,
+.institutions--overview .map-view .suttle-line strong,
+
+.institutions--overview .map-view h1
 {
 	font-size: 1.25em;
 	line-height: 1.2em;
@@ -158,15 +170,16 @@ header.site-header h1,
 
 // Font Size L
 
-.program .institution h1,
-.program .institution h2,
-.program .institution span strong,
+.program--overview .institution h1,
+.program--overview .institution h2,
+.program--overview .institution span strong,
 .program .selected h1,
 // .program li.program--event h1,
 
-.institutions--overview .list-view article h1,
-.institutions--overview .list-view article .icons,
-.institutions--overview .list-view article span strong,
+.institutions--overview--list-view h1,
+.institutions--overview--list-view .icons,
+.institutions--overview--list-view span strong,
+
 
 .institutions--single .program h2,
 .visit h2,

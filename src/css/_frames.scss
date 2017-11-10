@@ -3,6 +3,7 @@
 
 header#header > div,
 footer#footer > section,
+.institutions--overview--list-view
 
 {
 	margin: 15px;
@@ -15,6 +16,7 @@ footer#footer > section,
 
 	}
 }
+
 .home section.info,
 .journal,
 .visit section {
@@ -37,13 +39,20 @@ footer#footer > section,
 
 
 // narrow-frame
-
-.text-block section > div,
+.text-block section >div,
 header.site-header,
 .home .info >div,
 .journal--single article,
-header#header nav
+header#header nav,
+ul.program__list,
+.program--single,
+.share-program,
+.institutions--single,
+.program .name
 {
+	margin: 15px;
+
+
 	@media screen and (min-width: $bp2) {
 		width: 900px;
 		margin: 0 auto;

@@ -14549,7 +14549,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14576,6 +14576,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
 	//
 	//
 	//
@@ -15974,7 +15975,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16004,6 +16005,12 @@
 	  computed: {},
 	  watch: {}
 	}; //
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16245,9 +16252,11 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return (_vm.programeventIsVisible) ? _c('li', {
-	    staticClass: "program--event"
-	  }, [_c('h1', [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v("\n  " + _vm._s(_vm.programevent.programmText) + "\n\n  "), _vm._l((_vm.programevent.time), function(time) {
-	    return _c('time', [(time.type === 'setTimes') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " (Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('span', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
+	    staticClass: "program__list__event program__list--complete__event"
+	  }, [_c('h1', {
+	    staticClass: "event-title"
+	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v("\n      " + _vm._s(_vm.programevent.programmText) + "\n\n"), _vm._v(" "), _vm._l((_vm.programevent.time), function(time) {
+	    return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration.length) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")"), _c('br')]) : _vm._e()])
 	  }), _vm._v(" "), _c('div', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.programevent.description)
@@ -16285,9 +16294,9 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "program--block narrow"
-	  }, [(_vm.showProgramEvents) ? _c('article', [_c('div', {
+	  return _c('li', {
+	    staticClass: "program--block"
+	  }, [(_vm.showProgramEvents) ? _c('div', [_c('section', {
 	    staticClass: "institution"
 	  }, [_vm._l((_vm.entry.shuttleLine), function(color) {
 	    return (_vm.entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
@@ -16310,7 +16319,7 @@
 	      "href": _vm.entry.url
 	    }
 	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
-	    staticClass: "program-list"
+	    staticClass: "program__list--complete__event-list"
 	  }, _vm._l((_vm.entry.events), function(programevent) {
 	    return _c('programevent', {
 	      key: programevent.id,
@@ -16340,9 +16349,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "program__list"
-	  }, [_c('div', {
+	  return _c('div', [_c('div', {
 	    staticClass: "filter__selection--wrapper"
 	  }, [_c('div', {
 	    staticClass: "selection"
@@ -16368,10 +16375,8 @@
 	    }
 	  }, [_vm._v("(x)")])]) : _vm._e()], 2)]), _vm._v(" "), _c('div', {
 	    staticClass: "number"
-	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('div', {
-	    attrs: {
-	      "id": "container"
-	    }
+	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('ul', {
+	    staticClass: "program__list program__list--complete"
 	  }, _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
 	      key: entry.id,
@@ -16773,7 +16778,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16784,6 +16789,21 @@
 
 	'use strict';
 
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16869,32 +16889,45 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [(_vm.name) ? _c('div', [_c('h1', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")]), _c('br'), _c('br')]) : _vm._e(), _vm._v(" "), _c('ul', {
-	    staticClass: "program-list selected"
+	  return _c('div', {
+	    staticClass: "program--entry"
+	  }, [(_vm.name) ? _c('div', {
+	    staticClass: "name"
+	  }, [_c('h1', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")]), _c('br'), _c('br')]) : _vm._e(), _vm._v(" "), _c('ul', {
+	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.ids), function(id) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
-	      return (entry.id == id) ? _c('li', [_vm._l((entry.parent.shuttleLine), function(color) {
-	        return _c('div', {
-	          staticClass: "institution"
-	        }, [_c('span', {
+	      return (entry.id == id) ? _c('li', [_c('section', {
+	        staticClass: "institution"
+	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
+	        return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	          staticClass: "suttle-line",
 	          style: ({
 	            color: color.color
 	          })
-	        }, [_vm._v(" " + _vm._s(entry.parent.number) + " " + _vm._s(color.title))]), _c('br'), _vm._v(" "), _c('a', {
-	          attrs: {
-	            "href": entry.parent.url
-	          }
-	        }, [_vm._v(_vm._s(entry.parent.title))]), _c('br')])
-	      }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
-	        return _c('time', [(time.type === 'setTimes') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " (Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('span', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
+	        }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	      }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	        staticClass: "suttle-line"
+	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	        return _c('span', {
+	          staticClass: "suttle-line",
+	          style: ({
+	            color: color.color
+	          })
+	        }, [_vm._v(_vm._s(color.title) + " ")])
+	      })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	        attrs: {
+	          "href": entry.url
+	        }
+	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
+	        return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration == true) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
 	      }), _vm._v(" "), _c('div', {
 	        domProps: {
 	          "innerHTML": _vm._s(entry.description)
 	        }
 	      }, [_vm._v(_vm._s(entry.description))])], 2) : _vm._e()
 	    }))
-	  }))])
+	  })), _c('br')])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17130,7 +17163,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17241,6 +17274,27 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 129 */
@@ -17250,28 +17304,40 @@
 	  return _c('div', {
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
-	    staticClass: "program-list selected"
+	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.items), function(item) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
 	      return (entry.id == item) ? _c('li', {
+	        staticClass: "program__list__event",
 	        class: {
 	          inactive: _vm.itemSaved
 	        }
+	      }, [_c('section', {
+	        staticClass: "institution"
 	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
-	        return _c('div', {
-	          staticClass: "institution"
-	        }, [_c('span', {
+	        return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	          staticClass: "suttle-line",
 	          style: ({
 	            color: color.color
 	          })
-	        }, [_vm._v(" " + _vm._s(entry.parent.number) + " " + _vm._s(color.title))]), _c('br'), _vm._v(" "), _c('a', {
-	          attrs: {
-	            "href": entry.parent.url
-	          }
-	        }, [_vm._v(_vm._s(entry.parent.title))]), _c('br')])
-	      }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
-	        return _c('time', [(time.type === 'setTimes') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " (Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('span', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('span', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
+	        }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	      }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	        staticClass: "suttle-line"
+	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	        return _c('span', {
+	          staticClass: "suttle-line",
+	          style: ({
+	            color: color.color
+	          })
+	        }, [_vm._v(_vm._s(color.title) + " ")])
+	      })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	        attrs: {
+	          "href": entry.url
+	        }
+	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('h1', {
+	        staticClass: "event-title"
+	      }, [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
+	        return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration.length) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")"), _c('br')]) : _vm._e()])
 	      }), _vm._v(" "), _c('div', {
 	        domProps: {
 	          "innerHTML": _vm._s(entry.description)
@@ -19048,6 +19114,16 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 	  name: 'googlemap',
@@ -19071,7 +19147,7 @@
 	    this.getEntries();
 	    var element = document.getElementById(this.mapName);
 	    var options = {
-	      zoom: 13,
+	      zoom: 12,
 	      center: this.center,
 	      disableDefaultUI: false,
 	      label: {
@@ -19244,7 +19320,7 @@
 	      var _this = this;
 	      var inst = _this.inst;
 	      var map = _this.map;
-	      map.setZoom(14);
+	      map.setZoom(12);
 	      map.setCenter(new google.maps.LatLng(47.55959860000001, 7.588576099999955));
 	    },
 	    createMap: function createMap() {
@@ -19327,9 +19403,9 @@
 	      "click": _vm.toggleInstitutInfo
 	    }
 	  }, [_vm._v("×")]), _vm._v(" "), _vm._l((_vm.institutionsData), function(entry) {
-	    return (entry.number == _vm.inst) ? _c('article', {
+	    return (entry.number == _vm.inst) ? _c('aside', {
 	      staticClass: "institutions--overview_child"
-	    }, [_c('a', {
+	    }, [_c('div', [_c('div', [_c('a', {
 	      attrs: {
 	        "href": entry.url
 	      }
@@ -19338,21 +19414,31 @@
 	        "src": entry.photos
 	      }
 	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
-	      return _c('div', [_c('span', {
+	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])])
-	    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line"
+	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_vm._v(_vm._s(color.title) + " ")])
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    })], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
-	      staticClass: "journey"
-	    }, [_vm._v(_vm._s(entry.journey))]), _c('br'), _vm._v(" "), _c('p', {
-	      staticClass: "link"
-	    }, [_vm._v("Infos und Programm →")])], 2), _vm._v(" "), _c('div', {
+	    })], 2), _c('br'), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
+	      staticClass: "journey",
+	      domProps: {
+	        "innerHTML": _vm._s(entry.journey)
+	      }
+	    }, [_vm._v(_vm._s(entry.journey))])], 2)]), _vm._v(" "), _c('div', {
 	      staticClass: "back",
 	      on: {
 	        "click": function($event) {
@@ -19360,10 +19446,8 @@
 	          _vm.zoomOut()
 	        }
 	      }
-	    }, [_vm._v("← Zurück zur Übersicht")])]) : _vm._e()
-	  }), _vm._v(" "), (_vm.inst == 0) ? _c('article', {
-	    staticClass: "aside"
-	  }, [_c('div', [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.")]), _c('br'), _c('br'), _vm._v(" "), _c('ul', {
+	    }, [_vm._v("← Zurück zur Übersicht")])])]) : _vm._e()
+	  }), _vm._v(" "), (_vm.inst == 0) ? _c('aside', [_c('div', [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.")]), _c('br'), _c('br'), _vm._v(" "), _c('ul', {
 	    staticClass: "institutions-list"
 	  }, _vm._l((_vm.institutionsData), function(entry) {
 	    return _c('li', {
@@ -21408,7 +21492,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -21508,25 +21592,14 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
 
 /***/ }),
 /* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    attrs: {
-	      "id": "container"
-	    }
-	  }, [_c('header', {
-	    staticClass: "section-header"
-	  }, [_c('div', {
-	    staticClass: "narrow"
+	  return _c('div', [_c('header', {
+	    staticClass: "site-header"
 	  }, [_c('h1', [_vm._v("INSTITUTIONEN")]), _vm._v(" "), _c('nav', [_c('span', {
 	    directives: [{
 	      name: "show",
@@ -21553,22 +21626,22 @@
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌 Karte")])])])])]), _vm._v(" "), (_vm.mapView) ? _c('div', {
-	    staticClass: "map-container"
+	  }, [_vm._v("📌 Karte")])])])]), _vm._v(" "), (_vm.mapView) ? _c('section', {
+	    staticClass: "institution--overview--map-view map-view"
 	  }, [_c('googlemap', {
 	    attrs: {
 	      "name": "googleMap"
 	    }
-	  })], 1) : _vm._e(), _vm._v(" "), _c('div', {
+	  })], 1) : _vm._e(), _vm._v(" "), _c('section', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
 	      value: (_vm.listView),
 	      expression: "listView"
 	    }],
-	    staticClass: "flex-container list-view"
+	    staticClass: "group of-three institutions--overview--list-view list-view"
 	  }, _vm._l((_vm.institutions), function(entry) {
-	    return _c('article', {
+	    return _c('div', {
 	      staticClass: "institutions--overview_child"
 	    }, [_c('a', {
 	      attrs: {

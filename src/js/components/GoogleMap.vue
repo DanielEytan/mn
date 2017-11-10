@@ -4,15 +4,23 @@
    <!-- {{ institutions.id }} -->
    <div class="dismiss" v-on:click="toggleInstitutInfo">×</div>
 
-   <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
-
+   <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
+  <div>
+    <div>
     <a v-bind:href="entry.url">
      <figure>
       <img v-bind:src="entry.photos">
     </figure>
-    <div v-for="color in entry.shuttleLine">
+    <!-- <div v-for="color in entry.shuttleLine">
       <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
-    </div>
+    </div> -->
+    <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
+            <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+          </div>
+          <div v-if="entry.shuttleLine.length > 1">
+            <span class="suttle-line"><strong>{{ entry.number }}</strong></span>
+            <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
+          </div>
     <h1>{{ entry.title }}</h1>
     <div class="icons">
       <span v-if="entry.advanceSale == 1">&#127915;</span>
@@ -20,14 +28,16 @@
        <i v-if="value === 'wheelchair'">&#9855;</i>
        <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
      </span>
-   </div>
+   </div><br>
    <p>{{ entry.address }}</p>
-   <p class="journey">{{ entry.journey }}</p><br> 
-   <p class="link">Infos und Programm →</p>
+   <p class="journey" v-html="entry.journey">{{ entry.journey }}</p>
+   <!-- <p class="link">Infos und Programm →</p> -->
  </a>
+</div>
  <div class="back" v-on:click="inst = 0; zoomOut()">← Zurück zur Übersicht</div>
-</article>
-<article class="aside" v-if="inst == 0">
+</div>
+</aside>
+<aside v-if="inst == 0">
   <div>
     <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br>
     <ul class="institutions-list">
@@ -46,7 +56,7 @@
     
    </ul>
  </div>
-</article>
+</aside>
 </div>
 <div class="google-map" id="multiMap"></div>
 
@@ -77,7 +87,7 @@ mounted: function () {
  this.getEntries();
  const element = document.getElementById(this.mapName)
  const options = {
-  zoom: 13,
+  zoom: 12,
   center: this.center,
   disableDefaultUI: false,
   label: {
@@ -311,7 +321,7 @@ mounted: function () {
          var _this = this;
          var inst = _this.inst;
          var map = _this.map
-         map.setZoom(14)
+         map.setZoom(12)
          map.setCenter(new google.maps.LatLng(47.55959860000001,7.588576099999955));
        },
        createMap () {

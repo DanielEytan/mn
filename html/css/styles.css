@@ -80,21 +80,21 @@ body {
 .visit p {
   margin-bottom: 1em; }
 
-.program .institution h1,
-.institutions article h1.title,
+.program .institution *:not(h2),
 .filter header,
 .filter--tag,
 time,
 strong,
 header,
-.institutions--overview article h1,
+.institutions .suttle-line,
+.institutions--overview h1,
 .institutions--single h1.title,
-.journal--single h2.subtitle,
-.institutions--single .program h2,
-span.shuttle-line,
 .institutions .visitor-infos,
 .institutions address,
+.institutions--single .program h2,
 .institutions h3,
+.journal--single h2.subtitle,
+span.shuttle-line,
 .visit h2,
 .presell-toggle,
 .home .info a,
@@ -121,15 +121,15 @@ header h1,
 header .mn-date span {
   font-family: 'lyon-regular'; }
 
-.program .institution h1,
-.program .institution h2,
+.program__list .institution,
+.program .institution,
 .filter header,
-.institutions article h1,
+.institutions .suttle-line,
+.institutions--overview h1,
 .institutions--single h1.title,
 .journal--single h1.title,
 .institutions--single span strong,
 .institutions--single .program h2,
-span.shuttle-line,
 section header .narrow,
 .visit h2,
 .presell-toggle,
@@ -147,29 +147,35 @@ header.site-header h1,
   letter-spacing: .04em;
   line-height: 1em !important; }
 
-.program li.program--event h1,
+.program h1.event-title,
 .institutions--single .program-text,
-.journal .program-list.selected h1 {
+.journal .program-list.selected h1,
+.institutions--overview .map-view .suttle-line strong,
+.institutions--overview .map-view h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
-    .program li.program--event h1,
+    .program h1.event-title,
     .institutions--single .program-text,
-    .journal .program-list.selected h1 {
+    .journal .program-list.selected h1,
+    .institutions--overview .map-view .suttle-line strong,
+    .institutions--overview .map-view h1 {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
-    .program li.program--event h1,
+    .program h1.event-title,
     .institutions--single .program-text,
-    .journal .program-list.selected h1 {
+    .journal .program-list.selected h1,
+    .institutions--overview .map-view .suttle-line strong,
+    .institutions--overview .map-view h1 {
       font-size: 1.35em; } }
 
-.program .institution h1,
-.program .institution h2,
-.program .institution span strong,
+.program--overview .institution h1,
+.program--overview .institution h2,
+.program--overview .institution span strong,
 .program .selected h1,
-.institutions--overview .list-view article h1,
-.institutions--overview .list-view article .icons,
-.institutions--overview .list-view article span strong,
+.institutions--overview--list-view h1,
+.institutions--overview--list-view .icons,
+.institutions--overview--list-view span strong,
 .institutions--single .program h2,
 .visit h2,
 .home .info p.intro,
@@ -179,13 +185,13 @@ header.site-header h1,
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
-    .program .institution h1,
-    .program .institution h2,
-    .program .institution span strong,
+    .program--overview .institution h1,
+    .program--overview .institution h2,
+    .program--overview .institution span strong,
     .program .selected h1,
-    .institutions--overview .list-view article h1,
-    .institutions--overview .list-view article .icons,
-    .institutions--overview .list-view article span strong,
+    .institutions--overview--list-view h1,
+    .institutions--overview--list-view .icons,
+    .institutions--overview--list-view span strong,
     .institutions--single .program h2,
     .visit h2,
     .home .info p.intro,
@@ -194,13 +200,13 @@ header.site-header h1,
     .share-program h1 {
       font-size: 1.75em; } }
   @media only screen and (min-width: 1900px) {
-    .program .institution h1,
-    .program .institution h2,
-    .program .institution span strong,
+    .program--overview .institution h1,
+    .program--overview .institution h2,
+    .program--overview .institution span strong,
     .program .selected h1,
-    .institutions--overview .list-view article h1,
-    .institutions--overview .list-view article .icons,
-    .institutions--overview .list-view article span strong,
+    .institutions--overview--list-view h1,
+    .institutions--overview--list-view .icons,
+    .institutions--overview--list-view span strong,
     .institutions--single .program h2,
     .visit h2,
     .home .info p.intro,
@@ -263,18 +269,21 @@ header.site-header,
 
 #container,
 header#header > div,
-footer#footer > section {
+footer#footer > section,
+.institutions--overview--list-view {
   margin: 15px;
   position: relative; }
   @media screen and (min-width: 768px) {
     #container,
     header#header > div,
-    footer#footer > section {
+    footer#footer > section,
+    .institutions--overview--list-view {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     #container,
     header#header > div,
-    footer#footer > section {
+    footer#footer > section,
+    .institutions--overview--list-view {
       margin: 20px 40px; } }
 
 .home section.info,
@@ -293,23 +302,43 @@ footer#footer > section {
     .visit section {
       padding: 60px 50px 65px; } }
 
-@media screen and (min-width: 1024px) {
-  .text-block section > div,
-  header.site-header,
-  .home .info > div,
-  .journal--single article,
-  header#header nav {
-    width: 900px;
-    margin: 0 auto; } }
-
-@media screen and (min-width: 1224px) {
-  .text-block section > div,
-  header.site-header,
-  .home .info > div,
-  .journal--single article,
-  header#header nav {
-    width: 1000px;
-    margin: 0 auto; } }
+.text-block section > div,
+header.site-header,
+.home .info > div,
+.journal--single article,
+header#header nav,
+ul.program__list,
+.program--single,
+.share-program,
+.institutions--single,
+.program .name {
+  margin: 15px; }
+  @media screen and (min-width: 1024px) {
+    .text-block section > div,
+    header.site-header,
+    .home .info > div,
+    .journal--single article,
+    header#header nav,
+    ul.program__list,
+    .program--single,
+    .share-program,
+    .institutions--single,
+    .program .name {
+      width: 900px;
+      margin: 0 auto; } }
+  @media screen and (min-width: 1224px) {
+    .text-block section > div,
+    header.site-header,
+    .home .info > div,
+    .journal--single article,
+    header#header nav,
+    ul.program__list,
+    .program--single,
+    .share-program,
+    .institutions--single,
+    .program .name {
+      width: 1000px;
+      margin: 0 auto; } }
 
 @media only screen and (min-width: 768px) {
   .group--overview .flex-container > * {
@@ -475,18 +504,18 @@ header#header {
   @media screen and (max-width: 600px) {
     header#header {
       font-size: 1.25em; }
+      header#header .saved-link span {
+        display: none; }
       header#header .mn-date {
         display: none; } }
-  @media screen and (max-width: 600px) {
-    header#header .saved-link span {
-      display: none; } }
   @media screen and (min-width: 1024px) {
     header#header #menu {
       width: 300px; }
     header#header a.logo {
       background: url(./../bilder/logo_schwarz.svg);
+      background-repeat: no-repeat;
       background-size: 50px 44px;
-      width: 50px;
+      width: 150px;
       height: 44px; }
       header#header a.logo.active {
         background: url(./../bilder/logo.svg); } }
@@ -576,107 +605,48 @@ footer#footer {
   .journal figure {
     margin: 40px 50px 45px; } }
 
-.program .program-list {
+.program__list--complete .institution h1 a:hover {
+  text-decoration: underline; }
+
+.program__list--complete__event-list {
   border-top: solid 1px;
-  padding-top: 1.25em; }
-  .program .program-list li.program--event {
-    border-bottom: solid 1px;
-    position: relative;
-    margin-bottom: 1.15em;
-    padding-bottom: 1.25em;
-    padding-right: 50px; }
-    .program .program-list li.program--event h1 {
-      margin-bottom: .15em; }
-    .program .program-list li.program--event h2 {
-      margin-bottom: .5em; }
-    .program .program-list li.program--event .cat-wrapper {
-      display: none; }
-      .program .program-list li.program--event .cat-wrapper ul li {
-        font-size: .8em;
-        background: #1e1eff;
-        color: white;
-        padding: .2em .3em;
-        display: inline;
-        margin-right: .25em;
-        margin-bottom: .25em; }
-  .program .program-list .themes, .program .program-list .kind-of-event, .program .program-list .languages {
-    margin: 1em 0; }
-  .program .program-list.selected li {
-    position: relative;
-    border-bottom: solid 1px;
-    margin-bottom: 1.15em;
-    padding-bottom: 1.25em; }
-    .program .program-list.selected li .institution {
-      margin-bottom: 1em; }
-    .program .program-list.selected li h1 {
-      margin-bottom: .15em; }
+  padding-top: 1.25em;
+  margin-top: 1.15em;
+  margin-bottom: 2em; }
 
-.program--overview .program--block {
-  margin-bottom: 50px; }
-  .program--overview .program--block .institution h1 {
-    margin-bottom: .15em; }
-  .program--overview .program--block .institution h2 {
-    margin-bottom: .5em; }
+.program__list--selection .institution {
+  margin-bottom: 1em; }
 
-.program--overview.program--overview-saved .program-list li {
-  position: relative; }
+.program__list__event {
+  position: relative;
+  border-bottom: solid 1px;
+  margin-bottom: 1.15em;
+  padding-bottom: 1.25em;
+  padding-right: 50px; }
 
-.program--overview.program--overview-saved .saved {
-  background: red;
-  height: 200px;
-  width: 100%; }
-
-.program .save-element {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1; }
-  .program .save-element div {
-    font-size: 2em;
-    color: #d2d2d2;
-    transition: color .25s;
-    cursor: pointer; }
-    .program .save-element div:hover {
-      text-shadow: 0px 0px 1px red;
-      color: white; }
-    .program .save-element div.active {
-      color: red; }
-
-.program--single .program-list.selected li {
-  border: none;
-  padding: 0;
-  margin-bottom: 0; }
-
-.program--single .program-list {
-  margin-bottom: 1em;
-  border: none; }
+.program--single {
+  margin-bottom: 2em; }
+  .program--single .institution {
+    margin-bottom: 1em; }
 
 .institutions .google-map[data-v-87e9ef04] {
   width: 100%;
   height: 800px;
   margin-bottom: 50px; }
 
-.institutions--overview header.section-header .narrow nav i {
-  padding: .2em .4em .3em;
-  border: solid 1px; }
-  .institutions--overview header.section-header .narrow nav i.inactive {
-    background: #1A0042;
-    color: white; }
-
-.institutions--overview article {
+.institutions--overview--list-view > * {
   margin-bottom: 60px; }
-  .institutions--overview article figure {
+  .institutions--overview--list-view > * figure {
     margin-bottom: 7.5px; }
-  .institutions--overview article h1 {
+  .institutions--overview--list-view > * h1 {
     margin-bottom: .25em; }
-  .institutions--overview article .icons {
+  .institutions--overview--list-view > * .icons {
     margin-bottom: 1em; }
-    .institutions--overview article .icons span {
+    .institutions--overview--list-view > * .icons span {
       margin-right: .25em; }
 
-.institutions--overview_child:hover .link {
-  border-bottom: solid 1px;
-  display: inline-block; }
+.institutions--overview_child > div > div:hover h1 {
+  text-decoration: underline; }
 
 .institutions--overview .google-map {
   height: 400px; }
@@ -704,9 +674,9 @@ footer#footer {
   margin-bottom: 3em; }
 
 @media screen and (max-width: 768px) {
-  .institutions--overview .map-container {
+  .institutions--overview .map-view {
     height: 100%; }
-    .institutions--overview .map-container .selected-institution {
+    .institutions--overview .map-view .selected-institution {
       position: fixed;
       bottom: 0;
       z-index: 9;
@@ -716,89 +686,71 @@ footer#footer {
       left: 0;
       padding: 5px 30px 10px 15px;
       border-top: solid 1px; }
-      .institutions--overview .map-container .selected-institution.closed {
+      .institutions--overview .map-view .selected-institution.closed {
         bottom: -20vh; }
-      .institutions--overview .map-container .selected-institution .dismiss {
+      .institutions--overview .map-view .selected-institution .dismiss {
         position: absolute;
         top: 5px;
         right: 20px;
         font-size: 1.5em; }
-      .institutions--overview .map-container .selected-institution figure {
+      .institutions--overview .map-view .selected-institution figure {
         display: none; }
-      .institutions--overview .map-container .selected-institution .icons, .institutions--overview .map-container .selected-institution .journey {
+      .institutions--overview .map-view .selected-institution .icons, .institutions--overview .map-view .selected-institution .journey {
         display: none; }
-      .institutions--overview .map-container .selected-institution article {
+      .institutions--overview .map-view .selected-institution_child {
         margin-bottom: 0; }
   .institutions--overview .institutions-list {
     display: none;
-    height: 100%; }
-  .institutions--overview header.section-header h1 {
-    margin-bottom: 1em; }
-  .institutions--overview header.section-header nav {
-    font-size: 1.5em; }
-    .institutions--overview header.section-header nav i {
-      margin-right: .25em; } }
+    height: 100%; } }
 
 @media screen and (min-width: 768px) {
-  .institutions--overview header.section-header .narrow {
+  .institutions--overview .map-view {
     position: relative; }
-    .institutions--overview header.section-header .narrow nav {
-      position: absolute;
-      right: 0;
-      bottom: 19px; }
-      .institutions--overview header.section-header .narrow nav span {
-        margin-left: .5em;
-        margin-right: 0; }
-        .institutions--overview header.section-header .narrow nav span i:not(.inactive) {
-          cursor: pointer; }
-  .institutions--overview .flex-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-    width: calc(100% + 30px); }
-    .institutions--overview .flex-container article {
-      -ms-flex: 0 1 calc(50% - 30px);
-      flex: 0 1 calc(50% - 30px);
-      margin-right: 30px; }
-  .institutions--overview .map-container {
-    position: relative; }
-    .institutions--overview .map-container .google-map {
+    .institutions--overview .map-view .google-map {
       height: 600px; }
-    .institutions--overview .map-container > div {
+    .institutions--overview .map-view > div {
       display: -ms-flexbox;
       display: flex; }
-      .institutions--overview .map-container > div .selected-institution {
+      .institutions--overview .map-view > div .selected-institution {
         margin-right: 30px;
         -ms-flex: 0 1 calc(50% - 30px);
         flex: 0 1 calc(50% - 30px); }
-        .institutions--overview .map-container > div .selected-institution .dismiss {
+        .institutions--overview .map-view > div .selected-institution .dismiss {
           display: none; }
-        .institutions--overview .map-container > div .selected-institution .back {
-          margin-top: 2em; }
-  .institutions--overview .aside {
-    height: 600px;
-    overflow: hidden; }
-    .institutions--overview .aside > div {
-      overflow-y: scroll;
-      max-height: 100%;
-      margin-right: -100px;
-      padding-right: 100px; }
-    .institutions--overview .aside .institutions-list li {
-      margin-bottom: 1em;
-      display: -ms-flexbox;
-      display: flex; }
-      .institutions--overview .aside .institutions-list li .suttle-line {
-        color: white;
-        width: 27px;
-        height: 27px;
-        border-radius: 100%;
-        display: inline-block;
-        text-align: center;
-        margin-right: 1em; }
-        .institutions--overview .aside .institutions-list li .suttle-line.multiple {
-          background: black; }
+        .institutions--overview .map-view > div .selected-institution .back {
+          margin-top: 2em;
+          border: solid 1px;
+          display: inline-block;
+          padding: .5em .5em .7em;
+          cursor: pointer; }
+          .institutions--overview .map-view > div .selected-institution .back:hover {
+            background: #1A0042;
+            color: white; }
+    .institutions--overview .map-view aside {
+      padding-left: 30px;
+      height: 600px;
+      overflow: hidden; }
+      .institutions--overview .map-view aside > div {
+        overflow-y: scroll;
+        max-height: 100%;
+        margin-right: -100px;
+        padding-right: 100px; }
+      .institutions--overview .map-view aside .institutions-list li {
+        margin-bottom: 1em;
+        display: -ms-flexbox;
+        display: flex; }
+        .institutions--overview .map-view aside .institutions-list li .suttle-line {
+          font-size: .8em;
+          color: white;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          display: inline-block;
+          text-align: center;
+          margin-right: 1em;
+          padding: .4em 0em 1em; }
+          .institutions--overview .map-view aside .institutions-list li .suttle-line.multiple {
+            background: black; }
   .institutions--single .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -809,33 +761,19 @@ footer#footer {
       flex: 0 1 49%; } }
 
 @media screen and (min-width: 1024px) {
-  .institutions--overview header.section-header .narrow nav {
-    font-size: 1em; }
-    .institutions--overview header.section-header .narrow nav i {
-      margin-right: .25em; }
-  .institutions--overview .flex-container article {
-    -ms-flex: 0 1 calc(100%/3 - 30px);
-    flex: 0 1 calc(100%/3 - 30px);
-    margin-right: 30px; }
-  .institutions--overview .map-container > div .selected-institution {
+  .institutions--overview--map-view > div .selected-institution {
     -ms-flex: 0 1 calc(100%/3 - 30px);
     flex: 0 1 calc(100%/3 - 30px); }
-  .institutions--overview .aside ul.institutions-list li {
+  .institutions--overview aside ul.institutions-list li {
     font-size: 1em; }
-    .institutions--overview .aside ul.institutions-list li .suttle-line {
+    .institutions--overview aside ul.institutions-list li .suttle-line {
       width: 30px;
       height: 30px; }
-    .institutions--overview .aside ul.institutions-list li strong {
+    .institutions--overview aside ul.institutions-list li strong {
       line-height: 1.2em; }
   .institutions--single figure {
     margin: 0 auto 50px;
     width: 80%; } }
-
-@media screen and (min-width: 1900px) {
-  .institutions--overview .flex-container article {
-    -ms-flex: 0 1 calc(100%/4 - 30px);
-    flex: 0 1 calc(100%/4 - 30px);
-    margin-right: 30px; } }
 
 .share-program {
   padding-bottom: 2em; }
@@ -1106,15 +1044,74 @@ footer#footer {
       border-bottom: solid 1px;
       padding: 1em 0; }
 
+.save-element {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1; }
+  .save-element div {
+    font-size: 2em;
+    color: #d2d2d2;
+    transition: color .25s;
+    cursor: pointer; }
+    .save-element div:hover {
+      text-shadow: 0px 0px 1px red;
+      color: white; }
+    .save-element div.active {
+      color: red; }
+
+header.site-header h1 {
+  margin-bottom: .5em; }
+
+header.site-header nav {
+  font-size: 1.25rem; }
+  header.site-header nav i {
+    padding: .2em .4em .3em;
+    border: solid 1px; }
+    header.site-header nav i.inactive {
+      background: #1A0042;
+      color: white; }
+
+@media screen and (min-width: 768px) {
+  header.site-header {
+    position: relative; }
+    header.site-header nav {
+      position: absolute;
+      right: 0;
+      bottom: -10px; }
+      header.site-header nav span {
+        margin-left: .5em;
+        margin-right: 0; }
+        header.site-header nav span i {
+          margin-right: .25em; }
+        header.site-header nav span i:not(.inactive) {
+          cursor: pointer; } }
+
 #map {
   height: 400px;
   margin-bottom: 50px; }
 
-.programevent {
-  padding-left: 1em; }
-
 .filter--wrapper .filter--headline--wrapper {
   display: none; }
+
+.cat-wrapper {
+  display: none; }
+  .cat-wrapper ul li {
+    font-size: .8em;
+    background: #1e1eff;
+    color: white;
+    padding: .2em .3em;
+    display: inline;
+    margin-right: .25em;
+    margin-bottom: .25em; }
+  .cat-wrapper .themes, .cat-wrapper .kind-of-event, .cat-wrapper .languages {
+    margin: 1em 0; }
+
+.program__list__event h1 {
+  margin-bottom: .15em; }
+
+.program__list__event h2 {
+  margin-bottom: .5em; }
 
 html {
   box-sizing: border-box; }

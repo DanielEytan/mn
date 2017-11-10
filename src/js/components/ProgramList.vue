@@ -1,5 +1,5 @@
 <template>
-  <div class="program__list">
+  <div>
     <div class="filter__selection--wrapper">
       
       <div class="selection">
@@ -16,9 +16,10 @@
         <p>Anzahl Veranstaltungen: {{calcNumberOfEvents()}}</p>
       </div>
     </div>
-    <div id="container">
+    
+    <ul class="program__list program__list--complete">
     <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry"></programentry>
-    </div>
+    </ul>
   </div>
 </template>
 

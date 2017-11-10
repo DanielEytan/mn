@@ -1,14 +1,17 @@
 {% extends "_layout" %}
 {% set title = "Besuch" %}
+{% set mt = "mt" %}
 
 {% block content %}
 
+<div class="visit">
+	<header class="site-header">
+					<h1>Ihr Besuch</h1>
+				</header>
 <div class="visit text-block">		
 	<section>
 			<div>
-				<header class="section-header">
-					<h1>Ihr Besuch</h1>
-				</header>
+				
 				{{ entry.text }}
 			</div>
 	</section>
@@ -39,4 +42,6 @@
 	{% endfor %}
 	
 </div>
+</div>
+
 {% endblock %}

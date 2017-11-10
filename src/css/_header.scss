@@ -138,13 +138,10 @@ header#header {
 	}
 	@media screen and (max-width: 600px) {
 	font-size: 1.25em;
-		
-		.mn-date {
-			display: none;
-		}
-	}
-	@media screen and (max-width: 600px) {
 		.saved-link span {
+			display: none;
+		}		
+		.mn-date {
 			display: none;
 		}
 	}
@@ -161,8 +158,9 @@ header#header {
 		}
 			a.logo {
 				background: url(./../bilder/logo_schwarz.svg);
+				background-repeat: no-repeat;
 		  		background-size: 50px 44px;
-		  		width: 50px;
+		  		width: 150px;
 		  		height: 44px;
 		  		&.active {
 					background: url(./../bilder/logo.svg);

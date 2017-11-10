@@ -1,5 +1,4 @@
-<div id="container">
-	<article class="institutions institutions--single narrow">
+	<article class="institutions institutions--single">
 		{% set shuttleLine = entry.shuttleLine %}
 		{% if shuttleLine | length < 2 %}
 		
@@ -66,30 +65,32 @@
 			</figure>
 			{% endfor %}
 			<h2>Programm</h2>
-			<ul class="program-list">
+			<ul class="program__list program__list--selection">
 				{% set children = entry.children().level(2) %}
 				{% for entry in children %}
-				<li class="program--event">
-					<h1>{{ entry.title }}</h1>
+				<li class="program__list__event">
+					<h1 class="event-title">{{ entry.title }}</h1>
 					{% for time in entry.time %}
 					<time>
 						{% switch time.type %}
 						{% case "setTimes" %}
-						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+						{{ time.start | date("h:i") }} 
+						{% if time.duration | length %}(Dauer: {{ time.duration }}){% endif %}<br>
 						{% case "continuous" %}
 						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
 						{% case "iterating" %}									
-						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}{% if time.duration | length %}, Dauer: {{ time.duration }} {% endif %})
 						{% endswitch %}
 					</time>
 					{% endfor %}
 					{{ entry.description }}
+      									{# <saveprogram></saveprogram> #}
+
 				</li>
 				{% endfor %}
 			</ul>
 			<p>Essen und trinken: {{ entry.food }}</p>
 		</section>
 	</article>
-</div>
 
 		

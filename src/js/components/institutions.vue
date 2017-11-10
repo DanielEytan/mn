@@ -1,22 +1,17 @@
 <template>
-	<div id="container">
-		<header class="section-header">
-			<div class="narrow">
+	<div>
+		<header class="site-header">
 				<h1>INSTITUTIONEN</h1>
 				<nav>
 					<span v-show="mapView"><i v-on:click="toggleListView">&#9638; Liste</i> <i class="inactive">&#128204; Karte</i></span>
 					<span v-show="listView"><i class="inactive">&#9638; Liste</i> <i v-on:click="toggleMapView">&#128204; Karte</i></span>
 				</nav>
-			</div>
 		</header>
-		<div class="map-container" v-if="mapView">
-		<!-- <div class="map-container"> -->
-
+		<section class="institution--overview--map-view map-view" v-if="mapView">
 			<googlemap name="googleMap"></googlemap>
-
-		</div>
-	 	<div  class="flex-container list-view" v-show="listView">
-	 		<article v-for="entry in institutions" class="institutions--overview_child">
+		</section>
+	 	<section class="group of-three institutions--overview--list-view list-view" v-show="listView">
+	 		<div v-for="entry in institutions" class="institutions--overview_child">
 	 			<a v-bind:href="entry.url">
 	 				<figure>
 	 					<img v-bind:src="entry.photos">
@@ -40,8 +35,8 @@
 				<p>{{ entry.address }} <span v-if="entry.location">{{ entry.location }}</span></p>
 				<p class="journey" v-html="entry.journey">{{ entry.journey }}</p>
 			</a>
-			</article>
-	 	</div>
+			</div>
+	 	</section>
 	 </div>
 </template>
 
