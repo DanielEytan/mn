@@ -1,5 +1,7 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
+{% set mt = "mt" %}
+
 
 
 {% block content %}
@@ -8,7 +10,7 @@
 		{% include '_includes/institution-single' %}
 
 	{% elseif entry.type == 'Event' %}
-
+		
 		{% include '_includes/program-single' %}
 		
 	{% endif %}

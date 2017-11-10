@@ -1,17 +1,23 @@
 <template>
-    <div class="program--entry">
+    <div class="program--block narrow">
       <article v-if="showProgramEvents">
-        <h1><a :href="entry.url">{{ entry.number }} – {{ entry.title }}</a></h1>
-
-        <p>{{ entry.address }}<br><span v-for="color in entry.shuttleLine"> {{ color.title }} </span> – {{ entry.journey }}</p><br>
-
-        <p>Essen: {{ entry.food }}</p><br>
-
+        <div class="institution">
+        <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
+            <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+          </div>
+          <div v-if="entry.shuttleLine.length > 1">
+            <span class="suttle-line"><strong>{{ entry.number }}</strong></span>
+            <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
+          </div>
+        <h1><a :href="entry.url">{{ entry.title }}</a></h1>
         <h2>{{ entry.programmTitle }}</h2>
-        <div v-html="entry.programmText"></div>
-        <br>
+        <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
 
-        <h3>Programm</h3><br>
+        <!-- <p>Essen: {{ entry.food }}</p><br> -->
+
+        </div>
+        <!-- <div v-html="entry.programmText"></div> -->
+
         <ul class="program-list" >
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>

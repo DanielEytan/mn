@@ -1,0 +1,100 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% set oauthProvider = authenticationProvider.oauthProvider %}
+
+{% set title = oauthProvider.name %}
+
+{% set crumbs = [
+    { label: "Rest"|t, url: url('rest') },
+    { label: "Authentications"|t, url: url('rest/authentications') }
+] %}
+
+{% set content %}
+
+    <form method="post" accept-charset="UTF-8" data-saveshortcut>
+
+        {{ getCsrfInput() }}
+
+        <input type="hidden" name="action" value="rest/authentications/connect">
+        <input type="hidden" name="redirect" value="rest/authentications">
+        <input type="hidden" name="handle" value="{{ oauthProvider.handle }}">
+
+        <h2 class="first">Status</h2>
+
+        <ul>
+            <li>
+                {% if authentication and authentication.token %}
+                    <span class="status on"></span> {{ "Connected"|t }}
+                {% else %}
+                    <span class="status"></span><span class="light">{{ "Not Connected"|t }}</span>
+                {% endif %}
+            </li>
+        </ul>
+
+        <hr>
+
+        {% set scope = authenticationProvider.getScope() %}
+
+        <h2>{{ "OAuth Scope"|t }}</h2>
+
+        <p class="light">{{ "Scopes express the permissions you'll be authorized for when making requests."|t }}</p>
+
+        {% if scope %}
+            <ul>
+                {% for permission in scope %}
+                    <li>{{ permission }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="light">{{ "No scope defined." }}</p>
+        {% endif %}
+
+        {% if oauthProvider.scopeDocsUrl %}
+            <p><a href="{{ oauthProvider.scopeDocsUrl }}" target="_blank">{{ "See available scopes for {provider}"|t({ provider: oauthProvider.name }) }}</a></p>
+        {% endif %}
+
+
+        <hr>
+
+        {% set authorizationOptions = authenticationProvider.getAuthorizationOptions() %}
+
+        <h2>{{ "OAuth Authorization Options"|t }}</h2>
+
+        {% if authorizationOptions %}
+            <ul>
+                {% for optionKey, optionValue in authorizationOptions %}
+                    <li><strong>{{ optionKey }}:</strong> {{ optionValue }} </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="light">{{ "No authorization options defined." }}</p>
+        {% endif %}
+
+        <hr>
+
+        <h2>{{ "OAuth Provider"|t }}</h2>
+
+        <p>
+            {% if oauthProvider.isConfigured %}
+                <span class="status on"></span> {{ "{provider} OAuth provider is configured"|t({ provider: oauthProvider.name }) }}
+            {% else %}
+                <span class="status"></span><span class="light">{{ "{provider} OAuth provider not configured"|t({ provider: oauthProvider.name }) }}</span>
+            {% endif %}
+        </p>
+
+        <p><a href="{{ url('oauth/providers/'~oauthProvider.handle) }}">{{ "{provider} OAuth Settings"|t({ provider: oauthProvider.name }) }}</a></p>
+
+        <hr>
+
+        <div class="buttons">
+            {% if authentication and authentication.token %}
+                <a class="btn" href="{{ actionUrl('rest/authentications/disconnect', { handle: authenticationProvider.handle }) }}">Disconnect</a>
+            {% else %}
+                <input type="submit" name="connect" class="btn submit" value="Connect" />
+            {% endif %}
+        </div>
+
+    </form>
+
+{% endset %}

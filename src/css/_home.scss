@@ -1,0 +1,82 @@
+.home {
+	.cover {
+		height: 70vh;
+		overflow: hidden;
+		background:  url(../bilder/keyvisual-2.jpg) no-repeat center center;
+		background-size: cover;
+		background-color: rgba(100,100,100, 1);
+  		background-blend-mode: multiply;
+  		animation: bc 2s;
+  		@keyframes bc {
+  			0% {
+				background-color: rgba(100,100,100, 0);
+
+  			}
+  			100% {
+				background-color: rgba(100,100,100, 1);
+
+  			}
+  		}
+
+		img {
+			width: 100%;
+		}
+		display: flex;
+		align-items: center;
+  		justify-content: center;
+  		.site-title {
+  			color: rgba(245,245,245,1);
+  			text-align: center;
+  			animation: st 2s;
+  			padding-bottom: .25em;
+  		}
+  		@keyframes st {
+  			0% {
+  			color: rgba(245,245,245,0);
+				
+
+  			}
+  			100% {
+  			color: rgba(245,245,245,1);
+				
+
+  			}
+  		}
+	}
+	.info {
+		padding: 1em 0 2em;
+		.narrow {
+			margin: 1em auto 2em; 
+		}
+		p {
+			margin-bottom: 1em;
+			&.intro {
+				margin-bottom: 2em;
+			}	
+		}
+
+		.lang {
+			margin-bottom: 2em;
+			>* {
+				text-align: center;
+			}
+		}
+	}
+
+	.journal {
+		padding: 1em 0 2em;
+		// border-top: solid 1px;
+	
+	}
+	@media only screen and (min-width: $bp1) {
+		.info {
+			.lang {
+				display: flex;
+			justify-content: space-around;
+			>* {
+				flex: 0 1 45%;
+			}
+			}
+		}
+	}
+}

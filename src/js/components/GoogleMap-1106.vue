@@ -1,0 +1,249 @@
+<template>
+   <div>
+      <div class="selected-institution" v-bind:class="{ closed: institutInfo }">
+         <!-- {{ institutions.id }} -->
+         <div class="dismiss" v-on:click="toggleInstitutInfo">×</div>
+
+         <article class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
+
+            <a v-bind:href="entry.url">
+               <figure>
+                  <img v-bind:src="entry.photos">
+               </figure>
+               <div v-for="color in entry.shuttleLine">
+                  <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+               </div>
+               <h1>{{ entry.title }}</h1>
+               <div class="icons">
+                  <span v-if="entry.advanceSale == 1">&#127915;</span>
+                  <span v-for="value in entry.accessibility">
+                     <i v-if="value === 'wheelchair'">&#9855;</i>
+                     <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
+                  </span>
+               </div>
+               <p>{{ entry.address }}</p>
+               <p class="journey">{{ entry.journey }}</p>
+
+            </a>
+            <div class="back" v-on:click="inst = 0">← Zurück zur Übersicht</div>
+
+         </article>
+         <article class="aside" v-if="inst == 0">
+            <p>Klicken Sie auf einen der Marker auf der Karte oder wählen eine Institution aus der Liste aus.</p><br><br>
+            <ul class="institutions-list">
+               <!-- <li v-for="entry in institutionsData" v-on:click="inst = entry.number"> -->
+                  <li v-for="entry in institutionsData" v-on:click="changeInst(); inst = entry.number">
+
+                   <div v-for="color in entry.shuttleLine">
+                     <span class="suttle-line" v-bind:style="{background: color.color}"> {{ entry.number }}</span>
+                  </div>
+                  <h1>{{ entry.title }}</h1>
+               </li>
+            </ul>
+         </article>
+      </div>
+      <div class="google-map" id="multiMap"></div>
+<!--    <article v-for="entry in institutions" class="institutions--overview_child">
+      {{ entry.title }}
+   </article> -->
+   
+</div>
+</template>
+
+<script>
+export default {
+ name: 'googlemap',
+ props: ['name', 'institutions'],
+ data: function () {
+  return {
+    mapName: "multiMap",
+    markerCoordinates: [],
+    map: null,
+    bounds: null,
+    markers: [],
+    institutionsData: [],
+    inst: "0",
+    institutInfo: false,
+ }
+},
+// computed: {
+//    this.inst;
+
+// },
+mounted: function () {
+   this.activeLabel();
+
+   this.inst;
+
+   this.getEntries();
+   // this.getEntriesInstitutions();
+   const VueGoogleMap = require('vue-google-maps')
+   const element = document.getElementById(this.mapName)
+   const options = {
+      zoom: 14,
+      center: new google.maps.LatLng(47.55959860000001,7.588576099999955),
+      label: {
+         color: 'white',
+         fontWeight: 'bold',
+         fontSize: '20px',
+      },
+      icon: {
+         labelOrigin: new google.maps.Point(11, 50),
+         url: 'default_marker.png',
+         size: new google.maps.Size(22, 40),
+         origin: new google.maps.Point(0, 0),
+         anchor: new google.maps.Point(11, 40),
+      },
+      // center: new google.maps.LatLng(51.501527,-0.1921837)
+   }
+   this.map = new google.maps.Map(element, options);
+},
+
+methods: {
+   // getEntriesInstitutions () {
+   //       let vm = this;
+   //       axios.get('institution.json')
+   //          .then(response => {
+   //             // var presell = this.presellLocations;
+   //             // var presell = JSON.parse(string);
+   //             this.institutions = response.data.data
+   //          })
+   //    },
+   toggleInstitutInfo () {
+      this.institutInfo = !this.institutInfo;
+   },
+   getEntries () {
+      axios.get('../locations.json')
+      .then(response => {
+         this.institutionsData = response.data.data
+         var _this = this;
+         //init marker positions
+         response.data.data.forEach(function (item) {
+            if (item.lat !== null && item.lng !== null) {
+               _this.markerCoordinates.push({latitude:parseFloat(item.lat),longitude:parseFloat(item.lng), label: item.title, number:item.number, url:item.url, linecolor:item.shuttleLine});
+            }
+         });
+         //init markers
+         _this.markerCoordinates.forEach(function (coord) {
+            var colors = coord.linecolor;
+            var color = colors[0].color;
+            var image1 = 'http://labs.google.com/ridefinder/images/mm_20_blue.png';
+      var image2 = 'http://labs.google.com/ridefinder/images/mm_20_red.png';
+            const position = new google.maps.LatLng(coord.latitude, coord.longitude);
+            const marker = new google.maps.Marker({ 
+               animation: google.maps.Animation.DROP,
+               position,
+               // label: {text:coord.number + " " + coord.label, fontFamily: 'main-eb'},
+               label: {
+                  text:coord.number, 
+                  fontFamily: 'main-eb', 
+                  fontSize: '1.2em',
+                  color:"rgba(240,240,240,0.8",
+               },
+               icon: {
+                  path: google.maps.SymbolPath.CIRCLE,
+                  scale: 15,
+                  fillColor: color,
+                  fillOpacity: 1,
+                  strokeColor: color,
+                  strokeWeight: 1
+               },
+               
+               // var number = coord.number;
+               // if (number = 2) {
+               //    label: {
+               //       color: 'blue',
+               //    }
+               // },
+               number: coord.number,
+               url: coord.url,
+               map: _this.map,
+
+               
+     
+            });
+   
+            marker.addListener('click', toggleBounce);
+
+            google.maps.event.addListener(marker, "mouseover", function(evt) {
+               var label = this.getLabel();
+               label.color="white";
+               this.setLabel(label);
+
+            });
+
+            google.maps.event.addListener(marker, "click", function(evt) {
+                // var normalIcon = {
+                //    url: "http://maps.google.com/mapfiles/ms/micons/blue.png"
+                //  };
+
+
+                var number = this.number;
+                var instNumber = _this.inst;
+                _this.inst = number;
+                console.log(number);
+               // console.log(instNumber);
+              
+
+
+            });
+
+
+            google.maps.event.addListener(marker, "mouseout", function(evt) {
+               var label = this.getLabel();
+               label.color="white";
+               label.fontSize="1.2em";               
+               this.setLabel(label);
+               // var icon = this.getIcon();
+               // icon.scale=15;
+               // this.setIcon(icon);
+            });
+            google.maps.event.addListener(marker, function(evt) {
+               var number = this.number;
+               console.log(number);
+
+            });
+            // _this.markers.push(marker);
+
+
+            function toggleBounce() {
+               if (marker.getAnimation() !== null) {
+                  marker.setAnimation(null);
+               } else {
+                      // marker.setAnimation(google.maps.Animation.BOUNCE);
+               }
+            };
+            // function changeInst() {
+            //    console.log('test');
+               
+            // }
+
+          });
+   //        function changeInst  (i) {
+   //    var marker = new google.maps.Marker();
+   //     google.maps.event.trigger(markers[i], 'click');
+   // }
+      });
+   },
+   activeLabel: function () {
+      var inst = this.inst;
+      console.log(inst);
+   },
+   changeInst: function () {
+      var inst = this.inst;
+      console.log(inst);
+   },
+
+   }
+   };
+   </script>
+
+         <style scoped>
+         .google-map {
+          width: 100%;
+          /*height: 250px;*/
+          /*height: 800px;*/
+          margin: 0 auto 50px;
+          background: gray;
+       }
+       </style>

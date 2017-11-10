@@ -1,40 +1,46 @@
 <template>
-  <div class="saved-link" v-if="items"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div>
-  <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
+ <div class="centered">
+    <div class="mn-date" v-if="items.length == 0"><span>Noch {{ days }} Nächte bis zur Museumsnacht</span></div>
+    <div class="saved-link" v-if="items.length > 0"><a :href="url">♥ {{ items.length }} <span>– MEIN PROGRAMM</span></a></div>
+ </div>
+
+ <!-- <div class="saved-link"><a :href="url">Saved Elements: <span>{{ items }}</span></a></div> -->
 
 </template>
 
 <script>
-
-module.exports = {
-   name: 'savedlink',
-   data: function () {
+  import { EventBus } from '../event-bus.js';
+  module.exports = {
+    name: 'savedlink',
+    props: ['days'],
+    data: function () {
       return {
-        url: './programm/mein-programm',
-        items: ''
-    }
-  },
+        url: '/programm/mein-programm',
+        items: [],
+      }
+    },
   mounted () {
     this.savedLinks();
+    this.initEventBus();
   },
-   methods: {
+  methods: {
 
+    initEventBus: function () {
+        // Listen for the i-got-clicked event and its payload.
+        var _this = this;
+        EventBus.$on('program-saved', function () {
+           _this.savedLinks();
+        });
+     },
     savedLinks: function () {
-
-     var allIds = localStorage.getItem('programId');
-
-     var allIds = JSON.parse("[" + allIds + "]");
-     allIds.shift();
-     console.log(allIds);
-
-     var allIds = allIds.length;
-
-     // this.$set(this.items, allIds)
-     this.items = allIds;
-     // return
-   }
- }
-}
+      var idList = JSON.parse(localStorage.getItem('programId'));
+      this.items = idList !== null ? idList : [];
+    },
+    change: function () {
+      alert('hover');
+    }
+  }
+  }
 
 </script>
 

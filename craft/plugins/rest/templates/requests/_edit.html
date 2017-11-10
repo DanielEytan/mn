@@ -1,0 +1,106 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% set crumbs = [
+{ label: "REST"|t, url: url('rest') },
+{ label: "Requests"|t, url: url('rest/requests') },
+] %}
+
+{% set content %}
+
+    <form method="post" accept-charset="UTF-8" data-saveshortcut>
+
+		{{ getCsrfInput() }}
+        
+        <input type="hidden" name="action" value="rest/requests/save">
+        <input type="hidden" name="redirect" value="rest/requests">
+
+        {% if request.id %}
+          <input type="hidden" name="requestId" value="{{ request.id }}">
+        {% endif %}
+
+        {{ forms.textField({
+            label: 'Name'|t,
+            name: 'name',
+            id: 'name',
+            required: true,
+            first: true,
+            value : request ? request.name : null,
+            errors: request.getErrors('name')
+        }) }}
+
+        {{ forms.textField({
+            label: 'Handle'|t,
+            name: 'handle',
+            id: 'handle',
+            required: true,
+            value : request ? request.handle : null,
+            errors: request.getErrors('handle')
+        }) }}
+
+        <hr>
+
+        {% set authenticationOptions = [{label:"None", value:""}] %}
+
+        {% for authentication in authentications %}
+            {% if authentication.oauthProvider %}
+                {% set authenticationOptions = authenticationOptions|merge([{ label: authentication.oauthProvider.name, value: authentication.oauthProvider.handle }]) %}
+            {% endif %}
+        {% endfor %}
+
+        {{ forms.selectField({
+            label: "Authentication" | t,
+            name: 'authenticationHandle',
+            options: authenticationOptions,
+            value : request ? request.authenticationHandle : null
+        }) }}
+
+
+        {{ forms.textField({
+            label: 'URL'|t,
+            name: 'url',
+            required: true,
+            value : request ? request.url : null,
+            errors: request.getErrors('url')
+        }) }}
+
+        {% set queryRows = [] %}
+        {% for key, value in request.query %}
+          {% set queryRows = queryRows|merge([{ key: key, value: value }]) %}
+        {% endfor %}
+
+        {{ forms.editableTableField({
+          label: 'Query Parameters',
+          id: 'query',
+          rows: 4,
+          textual: false,
+          name: 'query',
+          addRowLabel : 'Add parameter',
+          cols : {
+            'key' : {
+                'heading' : 'Key',
+                'type'   : 'singleline'
+            },
+            'value' : {
+                'heading' : 'Value',
+                'type'   : 'singleline'
+            }
+          },
+          rows : queryRows
+        }) }}
+
+        <hr>
+
+        <div class="buttons">
+            <input type="submit" class="btn submit" value="{{ 'Save'|t }}">
+        </div>
+    </form>
+
+{% endset %}
+
+{% if isNew %}
+    {% set js %}
+        new Craft.HandleGenerator('#name', '#handle');
+    {% endset %}
+    {% includeJs js %}
+{% endif %}

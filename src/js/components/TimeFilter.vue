@@ -1,5 +1,5 @@
 <template>
-    <div class="TimeFilter">
+    <div class="filter__time">
       <vue-slider ref="slider" v-model="value" v-bind="sliderProps"></vue-slider>
     </div>
 </template>
@@ -78,4 +78,7 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
+.vue-slider-component .vue-slider-tooltip  {
+  background: black;
+}
 </style>

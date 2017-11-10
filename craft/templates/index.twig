@@ -1,7 +1,50 @@
 {% extends "_layout" %}
 {% set title = "Home" %}
 
-
 {% block content %}
+
+{# <twitter></twitter> #}
+<section class="home">
+	<div class="cover">
+		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
+		<div class="site-title">
+		<h1>Museumsnacht Basel</h1>
+		<p>19. Januar 2018</p>
+		</div>
+	</div>
+	<div id="container" class="info">
+		<div class="narrow">
+			<div class="lang">
+				<p>Nuit Des Musées Bale<br><a href="/">Informations en francais</a></p>
+				<p>Night of the museums Basel<br><a href="/">Informations in English</a></p>
+			</div>
+			<p class="intro">Am Freitag, 19. Januar 2018 findet von 18.00 bis 2.00 Uhr die <nobr>18. Museumsnacht Basel</nobr> statt. Mit nur einem <a href="/besuch">Ticket</a> haben Sie die Möglichkeit <a href="/programm">xx Veranstaltungen</a>  in <a href="/institutionen">36 Museen und Gastinstitutionen </a> in drei Ländern zu besuchen.</p>
+			{# <p>Ticketpreise und weitere Informationen erfahren Sie unter <a href="/besuch">Ihr Besuch</a>.</p> #}
+			
+		</div>
+		
+	</div>
+	<section class="journal journal--overview" >
+		<div class="flex-container" id="container">
+
+			{% for entry in craft.entries.section('journal').limit(6) %}
+				<article>
+					<a href="{{ entry.url }}">
+						<h1>{{ entry.title }}</h1>
+						{% for img in entry.cover %}
+							<figure>
+								<img src="{{ img.url }}" alt="{{ img.title }}">
+							</figure>
+						{% endfor %}
+						{{ entry.excerpt }}
+					</a>
+				</article>
+			{% endfor %}
+		</div>
+		<div class="narrow link">
+			<a href="/journal">Alle Beiträge</a>
+		</div>
+	</section>
+</section>
 
 {% endblock %}

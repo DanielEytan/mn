@@ -1,52 +1,45 @@
+// modules
+
 @import 'reset';
 @import 'variables';
 @import 'typo';
+
+// partial
+
+@import 'base';
 @import 'header';
 @import 'footer';
+@import 'home';
 @import 'program';
 @import 'institution';
+@import 'journal';
+@import 'visit';
+
+// components
+
+@import 'share-program';
+@import 'filter';
+@import 'filter-selection';
+@import 'contrast';
+
+// temporary
+
 @import 'can';
 @import 'daniel';
 
-
-body {
-	margin: 20px 10vw;
-	// background: green;
+html {
+  box-sizing: border-box;
 }
-time {
-	padding-left: 2em;
-	color: gray;
-}
-h1 {
-	font-size: 1.5em;
-	line-height: 1.2em;
-	margin-bottom: .5em;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-#menu {
-	ul {
-		height: 3em;
-		overflow: hidden;
-	}
-	&.open {
-		ul {
-			height: auto;
-		}
-	}
-	.burger {
-		span {
-			display: block;
-			background: black;
-			height: 4px;
-			width: 30px;
-			margin-bottom: 5px;
-		}
-	}
-}
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+	transition: opacity .5s
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0
+	opacity: 0
 }
+
+

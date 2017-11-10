@@ -1,62 +1,95 @@
+<div id="container">
+	<article class="institutions institutions--single narrow">
+		{% set shuttleLine = entry.shuttleLine %}
+		{% if shuttleLine | length < 2 %}
+		
+		{% for color in entry.shuttleLine %}
+			<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>
+		{% endfor %}
+		{% else %}
+			<span class="shuttle-line"><strong>{{ entry.number }}</strong></span>
 
-	
-	<article class="institutions institutions--single">
-			{% for img in entry.imgInstitution %}
-			    <figure>
-			    	<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-			    </figure>
+			{% for color in entry.shuttleLine %}
+				<span class="shuttle-line" style="color: {{ color.color }}"><nobr>{{ color.title }} </nobr></span>
 			{% endfor %}
-			<h1><a href="{{ entry.url }}">{{ entry.number }} – {{ entry.title }}</a></h1>
-			<p>{{ entry.address }}<br>{% for color in entry.shuttleLine %}{{ color.title }}{% endfor %} – {{ entry.journey }}</p><br>
-				<div class="map-container">
-				<googlemap name="googleMap"></googlemap>
+		{% endif %}
+		{# {% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %} #}
+
+		<h1 class="title">{{ entry.title }}</h1>
+		<div class="flex-container">
+			<div>
+				<div class="visitor-infos">
+					{% if entry.advanceSale %}<span><i>&#127915;</i> Ticketvorverkauf</span><br>{% endif %}
+					{% set accessibility = entry.accessibility.value %}
+					{% switch accessibility %}
+					
+					{% case "wheelchair" %}
+					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
+
+					
+					{% case "partlyWheelchair" %}
+					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
+
+					
+					{% default %}
+
+					
+					{% endswitch %}
+					{% if entry.wifi %}<span>&#8980;</span>{% endif %}
+					
+					
+				</div>
+				<address>{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}
+				</address>
+				<h3>Anfahrt:</h3>
+				<p>{{ entry.journey }}</p>
 			</div>
-
-				{# {% if entry.map | length %}
-					<div class="map-container">
-
-						<div id="map"></div>
-						<script>
-						var map;
-						function initMap() {
-						  map = new google.maps.Map(document.getElementById("map"), {
-						    center: {
-						      lat: {{ entry.map.lat }},
-						      lng: {{ entry.map.lng }}
-						    },
-						    zoom: {{ entry.map.zoom }}
-						  });
-						}
-						</script>
-					</div>
-				{% endif %} #}
-
-
-			<p>Essen: {{ entry.food }}</p><br>
-
-			<h2>{{ entry.programmTitle }}</h2>
-			{{ entry.programmText }}
-			<ul class="institutions institutions--single institutions--single__program-list">
-			
-			{% for entry in craft.entries.section('program').getDescendants(2) %}
-			<li>
-			    <h2>{{ entry.title }}</h2>
-			    {% for time in entry.time %}
-			    	 <time>
-			        {% if time.type == "setTimes" %}
-						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
-					{% elseif time.type == "continuous" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-					{% elseif time.type == "iterating" %}
-					    {{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
-			        {% endif %}
-			   		</time>
-			    {% endfor %}
-				</li><br>
-
+			{% for img in entry.imgInstitution %}
+			<figure>
+				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
+			</figure>
 			{% endfor %}
-
-			
-		</article>
+			{# <div class="map-container">
+				<googlemap name="googleMap"></googlemap>
+			</div> #}
+		</div>
+		<section class="program">
+			<h1 class="program-title">{{ entry.programmTitle }}</h1>
+			<div class="program-text">{{ entry.programmText }}</div>
+			{% for img in entry.programImg %}
+			<figure>
+				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+				{% if img.caption %}
+					<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+				
+			</figure>
+			{% endfor %}
+			<h2>Programm</h2>
+			<ul class="program-list">
+				{% set children = entry.children().level(2) %}
+				{% for entry in children %}
+				<li class="program--event">
+					<h1>{{ entry.title }}</h1>
+					{% for time in entry.time %}
+					<time>
+						{% switch time.type %}
+						{% case "setTimes" %}
+						{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+						{% case "continuous" %}
+						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
+						{% case "iterating" %}									
+						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+						{% endswitch %}
+					</time>
+					{% endfor %}
+					{{ entry.description }}
+				</li>
+				{% endfor %}
+			</ul>
+			<p>Essen und trinken: {{ entry.food }}</p>
+		</section>
+	</article>
+</div>
 
 		

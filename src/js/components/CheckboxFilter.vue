@@ -2,8 +2,10 @@
     <div class="checkBoxFilter">
       <ul class="list-group">
         <li class="list-group-item" v-for="entry in possibleValues">
+          <div>
           <input type="checkbox" v-bind:id="'program-input-'+entry.id" v-bind:value="entry.title" v-model="internalCheckedValues">
           <label v-bind:for="entry.title">{{ entry.title }}</label>
+        </div>
         </li >
       </ul>
     </div>
@@ -32,9 +34,16 @@ module.exports = {
   },
   mounted () {
     this.getEntries();
+    this.initEventBus();
   },
   methods: {
-    getEntries () {
+    initEventBus: function () {
+      var _this = this;
+      EventBus.$on('remove-all-filter', function () {
+        _this.internalCheckedValues = [];
+      });
+    },
+    getEntries: function () {
       let _this = this;
       axios.get(this.valueName + '.json')
         .then(response => {

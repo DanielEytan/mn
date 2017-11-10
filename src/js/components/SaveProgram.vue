@@ -1,37 +1,54 @@
 <template>
-  <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">{{ programevent.id }}</div>
+   <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">
+      <div v-bind:class="{active: toggled}">♥</div>
+      <!-- <p  v-if="toggled">TOGGLED!</p> -->
+   </div>
+
 
 </template>
 
 <script>
+import { EventBus } from '../event-bus.js';
 
 module.exports = {
    name: 'saveProgram',
    props: ['programevent'],
    data: function () {
       return {
+         toggled: false
       }
    },
+   mounted () {
+      this.init();
+   },
    methods: {
-      save: function (save) {
-         var id = save;
+      init: function () {
+         var id = this.programevent.id;
+         var idListString = localStorage.getItem("programId");
+         var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
+         if( idListArray.indexOf(id) >= 0 ) {
+            this.toggled = true;
+         }
+      },
+      save: function (id) {
+         var idListString = localStorage.getItem("programId");
+         var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
+         // var idListArray = JSON.parse(localStorage.getItem("programId"));
 
-         var idList = localStorage.getItem("programId", '');
-         // if (idList.includes(id) == false) {
-         // }
-         var newIdList = idList + "," + id;
-         localStorage.setItem("programId", newIdList);
-         var newIdList = localStorage.getItem("programId", '');
-         var newIdList = newIdList.split(',');
-         newIdList = newIdList.filter(function( element ) {
-            return element !== null;
-         });
-         this.$emit('program-saved');
-         console.log(newIdList);
+         if( idListArray.indexOf(id) >= 0 ) {
+            // id is already in array -> remove and toggle off
+            idListArray.splice(idListArray.indexOf(id),1);
+            this.toggled = false;
+         } else {
+            // id is not in array -> add and toggle on
+            idListArray.push(id);
+            this.toggled = true;
+         }
+         localStorage.setItem("programId", JSON.stringify(idListArray));
+         EventBus.$emit('program-saved');
+         this.$emit('clicked');
+
       }
-
-
-
    }
 }
 

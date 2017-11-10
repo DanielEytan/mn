@@ -1,14 +1,21 @@
 .program {
-	&--overview {
-		.program-list {
-			li.program--event {
-				position: relative;
-				background: rgb(230,230,230);
-				padding: 1em;
-				h2 {
-					margin-bottom: .5em;
-					font-weight: bold;
-				}
+	.program-list {
+		border-top: solid 1px;
+		padding-top: 1.25em;
+		li.program--event {
+			border-bottom: solid 1px;
+			position: relative;
+			margin-bottom: 1.15em;
+			padding-bottom: 1.25em;
+			padding-right: 50px;
+			h1 {
+				margin-bottom: .15em;
+			}
+			h2 {
+				margin-bottom: .5em;
+			}
+			.cat-wrapper {
+				display: none;
 				ul li {
 					font-size: .8em;
 					background: rgb(30,30,330);
@@ -16,27 +23,110 @@
 					padding: .2em .3em;
 					display: inline;
 					margin-right: .25em;
+					margin-bottom: .25em;
 				}
 			}
-			.themes, .kind-of-event {
-				margin: 1em 0;
+
+		}
+		.themes, .kind-of-event, .languages {
+			margin: 1em 0;
+		}
+		&.selected {
+			li {
+				position: relative;
+				border-bottom: solid 1px;
+				margin-bottom: 1.15em;
+			padding-bottom: 1.25em;
+				// &.inactive {
+				// 	opacity: .5;
+				// }
+				.institution {
+					margin-bottom: 1em;
+				}
+				h1 {
+					margin-bottom: .15em;
+				}
 			}
-			.save-element {
-				position: absolute;
-				right: 1em;
-				top: 1em;
-				background: grey;
-				width: 30px;
-				height: 30px;
-				border-radius: 100%;
-				z-index: 1;
-				&.saved {
-					background: red;
+			
+		}
+	}
+	&--overview {
+		.program--block {
+			// margin:0 0 2em;
+			margin-bottom: 50px;
+
+			.institution {
+				h1 {
+					margin-bottom: .15em;
+				}
+				h2 {
+					margin-bottom: .5em;
+				}
+			}
+			
+
+		}
+		&.program--overview-saved {
+			.program-list li {
+				position: relative;
+			}
+			.saved {
+				background: red;
+				height: 200px;
+				width: 100%;
+			}
+		}
+		
+		
+		
+	}
+	.save-element {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+			div {
+				font-size: 2em;
+				color: rgb(210,210,210);
+				transition: color .25s;
+				cursor: pointer;
+				&:hover {
+					// color: rgb(150,150,150);
+					text-shadow:0px 0px 1px rgb(255, 0, 0);
+					color: white;
+
+				}
+				&.active {
+					color: rgb(255, 0, 0);
 				}
 			}
 		}
-	}
 	&--single {
-
+		.program-list.selected li {
+			border: none;
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.program-list {
+			margin-bottom: 1em;
+			border: none;
+		}
 	}
+	@media screen and (min-width: $bp1) {
+		&--overview {
+			// .program--block {
+			// 	margin:0 30px 2em;
+			// }
+		}
+	}
+	@media screen and (min-width: $bp2) {
+		&--overview {
+			.program--block {
+				// width: 900px;
+				// margin: 0 auto 2em;
+			}
+		}
+	}
+
+	
 }

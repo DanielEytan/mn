@@ -1,0 +1,10 @@
+{% extends "_layouts/cp" %}
+
+{% set tabs = {
+    requests: { label: "Requests"|t, url: url('rest/requests') },
+    authentications: { label: "Authentications"|t, url: url('rest/authentications') },
+} %}
+
+{% includeCssResource "rest/css/styles.css" %}
+
+{% set title = 'REST'|t %}

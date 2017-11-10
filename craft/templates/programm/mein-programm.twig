@@ -1,9 +1,16 @@
 {% extends "_layout" %}
 {% set title = "Mein Programm" %}
+{% set mt = "mt" %}
+
 
 {% block content %}
-	<section class="program program--overview program--overview-saved">
-		<h1>Mein Programm</h1>
+	<div id="container">
+	<section class="program program--overview program--overview-saved narrow">
+		<header class="section-header">
+				<h1 class="narrow">MEIN PROGRAMM</h1>
+			</header>
 		<myprogram></myprogram>
+		
 	</section>
+	</div>
 {% endblock %}

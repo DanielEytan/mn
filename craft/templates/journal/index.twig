@@ -1,0 +1,38 @@
+{% extends "_layout" %}
+{% set title = "Home" %}
+{% set mt = "mt" %}
+
+
+{% block content %}
+
+{# <twitter></twitter> #}
+
+<section class="journal journal--overview" id="container">
+	<div id="container">
+		<div class="narrow">
+			<header class="section-header">
+				<h1 class="title">Journal</h1>
+			</header>
+		</div>
+	</div><br><br>
+	<div class="flex-container">
+		
+	
+	{% for entry in craft.entries.section('journal') %}
+	<article>
+		<a href="{{ entry.url }}">
+			<h1>{{ entry.title }}</h1>
+			{% for img in entry.cover %}
+			<figure>
+				<img src="{{ img.url }}" alt="{{ img.title }}">
+			</figure>
+			{% endfor %}
+			{{ entry.excerpt }}
+		</a>
+	</article>
+	{% endfor %}
+	</div>
+
+</section>
+
+{% endblock %}

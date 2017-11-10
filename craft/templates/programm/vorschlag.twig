@@ -1,0 +1,27 @@
+{% extends "_layout" %}
+{% set title = "Vorgeschlagenes Programm" %}
+{% set mt = "mt" %}
+
+
+{% block content %}
+	<div id="container">
+	<section class="program program--overview program--overview-saved narrow">
+		<header class="section-header">
+			<h1 class="narrow">EMPFANGENES PROGRAMM</h1>
+		</header>
+		{# {% set url = craft.request.query('ids') %}
+		{% set entries = craft.entries.section('program') %}
+		{% for ids in url %}
+			{{ url }}
+
+		{% endfor %}
+		{% for entry in entries %}
+		{% if entry.id == url %} {{ entry.title }}{% endif %}
+		
+			{{ entry.id }}
+		{% endfor %} #}
+		<proposedprogram></proposedprogram>
+		
+	</section>
+	</div>
+{% endblock %}

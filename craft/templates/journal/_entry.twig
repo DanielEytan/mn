@@ -1,0 +1,81 @@
+{% extends "_layout" %}
+{% set title = "Home" %}
+{% set mt = "mt" %}
+
+
+{% block content %}
+
+{# <twitter></twitter> #}
+
+	<section class="journal journal--single" id="container">
+			<div class="narrow">
+				<header class="section-header">
+					<h1 class="title">{{ entry.title }}</h1>
+				</header>
+				<h1 class="title"></h1>
+					{% for img in entry.cover %}
+						<figure>
+							<img src="{{ img.url }}" alt="{{ img.title }}">
+						</figure>
+					{% endfor %}
+				{% for block in entry.contentJournal %}
+					{% switch block.type %}
+				
+						{% case "subtitle" %}
+							<h2 class="subtitle">{{ block.subtitle }}</h2>
+						{% case "text" %}
+							<div class="text">
+								{{ block.text }}
+							</div>
+						{% case "img" %}
+							{% for img in block.img %}
+								<figure>
+									<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+								</figure>
+							{% endfor %}
+						{% case "program" %}
+						<div class="program">
+   							<ul class="program-list selected" >
+							{% for entry in block.entry %}
+   							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+								
+								<li>
+				
+						          	 <div class="institution">
+									{% for linie in parent.shuttleLine %}
+										<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
+						               <a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
+									{% endfor %}
+						               
+
+						            </div>
+						            <h1>{{ entry.title }}</h1>
+						            {% for time in entry.time%}
+						            	<time>
+											{% switch time.type %}
+												{% case "setTimes" %}
+													{{ time.start | date("h:i") }} (Dauer: {{ time.duration }})<br>
+												{% case "continuous" %}
+													{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
+												{% case "iterating" %}									
+												{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}, Dauer: {{ time.duration }})
+											{% endswitch %}
+										</time>
+						            {% endfor %}
+						            {{ entry.description }}
+      									{# <saveprogram></saveprogram> #}
+
+								
+						         </li>
+							{% endfor %}
+							</ul>
+						</div>
+					{% endswitch %}
+				{% endfor %}
+				
+				
+					
+			</div>
+	</section>
+
+{% endblock %}

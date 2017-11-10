@@ -1,4 +1,205 @@
+@font-face {
+  font-family: 'lyon-regular';
+  src: url('../fonts/LyonDisplay-Regular.woff') format('woff'), /* IE6-IE8 */
+}
+@font-face {
+  font-family: 'lyon-medium';
+  src: url('../fonts/LyonDisplay-Medium.woff') format('woff'), /* IE6-IE8 */
+}
+@font-face {
+  font-family: 'main-book';
+  src: url('../fonts/MainMN-Book.woff') format('woff'), /* IE6-IE8 */
+}
+@font-face {
+  font-family: 'main-eb';
+  src: url('../fonts/MainMN-ExtraBold.woff') format('woff'), /* IE6-IE8 */
+}
+
 body {
-	font-family: helvetica;
+	font-family: 'main-book', helvetica;
+	font-size: 1.1em;
 	line-height: 1.2em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@media only screen and (min-width: $bp2) {
+		font-size: 1.2em;
+	}
+	@media only screen and (min-width: $bp3) {
+		font-size: 1.3em;
+	}
+	// @media only screen and (min-width: $bp5) {
+	// 	font-size: 1.4em;
+	// }
+}
+
+// Link Border Bottom
+.visit {
+	a {
+		border-bottom: solid 1px;
+		font-family: 'main-eb', helvetica;
+	}
+}
+
+// Font Main Extra-Bold
+
+.program .institution h1,
+.institutions article h1.title,
+.filter header,
+.filter--tag,
+time,
+strong,
+header,
+.institutions--overview article h1,
+.institutions--single h1.title,
+.journal--single article h1,
+.journal--single h2.subtitle,
+
+.institutions--single .program h2,
+span.shuttle-line, 
+.institutions .visitor-infos,
+.institutions address,
+.institutions h3,
+.visit article h2,
+.presell-toggle,
+.home .info a,
+.journal--overview article h1,
+.link a, 
+.footerinfos,
+.visit h3,
+.selected .institution,
+.program .share-program h1,
+.share-program .button,
+.share-program .button button,
+
+.share-program .mail a,
+.home .site-title h1 {
+	font-family: 'main-eb', helvetica;
+}
+
+// Font Main Book
+
+// Font Lyon Black
+
+.program h1, .program .institution h2,
+.program-list h1,
+header h1,
+.institutions--single .program-text {
+	font-family: 'lyon-medium', times;
+}
+
+// Font Lyon Regular
+
+header .mn-date span {
+	font-family: 'lyon-regular';
+}
+
+
+
+// Uppercase
+
+.program .institution h1,
+.program .institution h2,
+.filter header,
+.institutions article h1,
+
+.institutions--single h1.title,
+.journal--single h1.title,
+.institutions--single span strong,
+.institutions--single .program h2,
+span.shuttle-line,
+section header .narrow,
+.visit article h2,
+.presell-toggle,
+.journal--overview article h1,
+// .journal--single h1,
+.journal--single h2,
+section header.section-header h1,
+.footerinfos,
+.visit h3,
+.selected .institution,
+.share-program h1,
+.home .site-title,
+.home .lang
+  {
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	line-height: 1em !important;
+}
+
+// Font Size S
+
+.program li.program--event h1,
+{
+	font-size: 1.25em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp2) {
+		font-size: 1.25em;
+	}
+	@media only screen and (min-width: $bp5) {
+		font-size: 1.35em;
+	}
+}
+
+
+// Font Size L
+
+.program .institution h1,
+.program .institution h2,
+.program .institution span strong,
+.program .selected h1,
+// .program li.program--event h1,
+
+.institutions--single .program-text,
+.institutions--overview .list-view article h1,
+.institutions--overview .list-view article .icons,
+.institutions--overview .list-view article span strong,
+
+.institutions--single .program h2,
+.visit article h2,
+.home .info .narrow p.intro,
+
+.journal--overview  h1,
+.share-program h1 {
+	font-size: 1.25em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp2) {
+		font-size: 1.75em;
+	}
+	@media only screen and (min-width: $bp5) {
+		font-size: 2em;
+	}
+}
+
+// Font-Size XL
+
+.institutions--single  h1.title,
+.institutions--single  span strong,
+.institutions--single .program h1.program-title,
+.journal--single h1.title
+ {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp2) {
+		font-size: 2em;
+	} 
+	@media only screen and (min-width: $bp5) {
+		font-size: 2.5em;
+	} 
+}
+// Font-Size XXL
+
+.nav-wrapper li a,
+section header.section-header h1,
+.home .site-title {
+	font-size: 1.75em;
+	line-height: 1.2em;
+	@media only screen and (min-width: $bp1) {
+		font-size: 2.5em;
+	} 
+	@media only screen and (min-width: $bp2) {
+		font-size: 3em;
+	} 
+	@media only screen and (min-width: $bp5) {
+		font-size: 3.25em;
+	} 
 }

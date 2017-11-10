@@ -1,7 +1,8 @@
 <template>
 
     <li v-if="programeventIsVisible" class="program--event">
-      <h2>{{ programevent.title }}</h2>
+      <h1>{{ programevent.title }}</h1>
+      {{ programevent.programmText }}
 
       <time v-for="time in programevent.time">
         <span v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} (Dauer: {{ time.duration }})<br></span>
@@ -11,10 +12,12 @@
 
         <span v-if="time.type === 'iterating'">  {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} ({{ time.frequency }}, Dauer: {{ time.duration }})<br></span>
       </time>
-
+      <!-- <div v-if="programevent.description.length">{{ programevent.description }} test</div> -->
+      <div v-html="programevent.description">{{ programevent.description }}</div>
+      <div  class="cat-wrapper">
       <div v-if="programevent.themes.length">
         <div class="themes">
-          <h3>Themen:</h3>
+          <h3>Themen und Sparten:</h3>
           <ul>
             <li v-for="theme in programevent.themes">{{ theme.title }}</li>
           </ul>
@@ -22,7 +25,7 @@
       </div>
       <div v-if="programevent.kindOfEvent.length">
         <div class="kindOfEvent">
-          <h3>Art der Veranstaltung:</h3>
+          <h3>Veranstaltungsarten:</h3>
           <ul>
             <li v-for="kindOfEvent in programevent.kindOfEvent">{{ kindOfEvent.title }}</li>
           </ul>
@@ -35,7 +38,8 @@
             <li v-for="language in programevent.languages">{{ language.title }}</li>
           </ul>
         </div>
-      </div></br>
+      </div>
+      </div>
       <saveprogram :programevent="programevent"></saveprogram>
     </li>
 
