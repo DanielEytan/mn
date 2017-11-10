@@ -3,19 +3,16 @@
 
 {% block content %}
 
-<section class="visit">		
-	<article>
-		<div id="container">
-			<div class="narrow">
+<div class="visit text-block">		
+	<section>
+			<div>
 				<header class="section-header">
 					<h1>Ihr Besuch</h1>
 				</header>
 				{{ entry.text }}
 			</div>
-		</div>
-	</article>
-	<article>
-		<div id="container">
+	</section>
+	<section>
 			<div class="narrow">
 				
 				<div>
@@ -26,32 +23,20 @@
 						{{ entry.presell }}
 					</div>
 					<presell></presell>
-					
-					{# <div class="presell-location">
-						{% for block in entry.boxOfficeLocations %}
-							<div>
-								{{ block.list }}
-							</div>
-											
-						{% endfor %}				
-					</div> #}
 				</div>
 				<div>
 					{{ entry.boxOffice }}
 				</div>
 			</div>
 
-		</div>
-	</article>
+	</section>
 	{% for block in entry.additionalInfos %}
-		<article>
-			<div id="container">
-				<div class="narrow">
+		<section>
+				<div>
 					{{ block.text }}
 				</div>
-			</div>
-		</article>
+		</section>
 	{% endfor %}
 	
-</section>
+</div>
 {% endblock %}

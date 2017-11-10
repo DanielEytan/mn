@@ -7,7 +7,6 @@
 	&--overview {
 		header.section-header .narrow {
 			nav {
-				// font-size: 2em;
 				i {
 					&.inactive {
 						background: $dark;
@@ -34,7 +33,6 @@
 					margin-right: .25em;
 				}
 			}
-
 		}
 		&_child {
 			&:hover .link {
@@ -45,7 +43,6 @@
 		.google-map {
 			height: 400px;
 		}
-		
 	}
 	&--single {
 		h1.title, .visitor-infos, address {

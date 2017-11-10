@@ -1,5 +1,5 @@
 <template>
-  <div class="program--list">
+  <div class="program__list">
     <div class="filter__selection--wrapper">
       
       <div class="selection">

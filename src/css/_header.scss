@@ -8,11 +8,19 @@ header#header {
 	h1 {
 		margin-bottom: 0;
 	}
-	.logo {
-		width: 150px;
-		figure {
-		width: 30px;
-	}
+	a.logo {
+		width: 50px;
+		text-indent: -9999px;
+		display: block;
+		background: url(./../bilder/logo_schwarz.svg);
+  		background-size: 50px 44px;
+  		background-size: 30px 27px;
+  		width: 30px;
+  		height: 27px;
+  		&.active {
+			background: url(./../bilder/logo.svg);
+
+  		}
 	}
 	.flex-container {
 		display: flex;
@@ -151,13 +159,17 @@ header#header {
 		#menu {
 			width: 300px;
 		}
-		.logo {
-			width: 300px;
-		figure {
+			a.logo {
+				background: url(./../bilder/logo_schwarz.svg);
+		  		background-size: 50px 44px;
+		  		width: 50px;
+		  		height: 44px;
+		  		&.active {
+					background: url(./../bilder/logo.svg);
 
-			width: 50px;
-		}
-		}
+		  		}
+			}
+		
 		
 	}
 	@media screen and (min-width: $bp3) {

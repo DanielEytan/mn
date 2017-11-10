@@ -40,6 +40,16 @@ body {
 	}
 }
 
+// Margins
+
+.visit h2 {
+	margin-bottom: .5em;
+}
+.visit p {
+	margin-bottom: 1em;
+}
+
+
 // Font Main Extra-Bold
 
 .program .institution h1,
@@ -51,7 +61,7 @@ strong,
 header,
 .institutions--overview article h1,
 .institutions--single h1.title,
-.journal--single article h1,
+// .journal--single article h1,
 .journal--single h2.subtitle,
 
 .institutions--single .program h2,
@@ -59,12 +69,13 @@ span.shuttle-line,
 .institutions .visitor-infos,
 .institutions address,
 .institutions h3,
-.visit article h2,
+.visit h2,
 .presell-toggle,
 .home .info a,
-.journal--overview article h1,
+.journal--overview .group h1,
 .link a, 
-.footerinfos,
+footer h3,
+footer a,
 .visit h3,
 .selected .institution,
 .program .share-program h1,
@@ -72,7 +83,8 @@ span.shuttle-line,
 .share-program .button button,
 
 .share-program .mail a,
-.home .site-title h1 {
+.home .site-title h1,
+.link-with-arrow {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -108,27 +120,30 @@ header .mn-date span {
 .institutions--single .program h2,
 span.shuttle-line,
 section header .narrow,
-.visit article h2,
+.visit h2,
 .presell-toggle,
 .journal--overview article h1,
 // .journal--single h1,
 .journal--single h2,
-section header.section-header h1,
+header.site-header h1,
 .footerinfos,
 .visit h3,
 .selected .institution,
 .share-program h1,
 .home .site-title,
-.home .lang
+.home .lang,
+.link-with-arrow
   {
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	line-height: 1em !important;
 }
 
-// Font Size S
+// Font Size M
 
 .program li.program--event h1,
+.institutions--single .program-text,
+.journal .program-list.selected h1
 {
 	font-size: 1.25em;
 	line-height: 1.2em;
@@ -149,16 +164,16 @@ section header.section-header h1,
 .program .selected h1,
 // .program li.program--event h1,
 
-.institutions--single .program-text,
 .institutions--overview .list-view article h1,
 .institutions--overview .list-view article .icons,
 .institutions--overview .list-view article span strong,
 
 .institutions--single .program h2,
-.visit article h2,
-.home .info .narrow p.intro,
+.visit h2,
+.home .info p.intro,
 
-.journal--overview  h1,
+.journal--overview .group h1,
+.journal--single h2.subtitle,
 .share-program h1 {
 	font-size: 1.25em;
 	line-height: 1.2em;
@@ -189,7 +204,7 @@ section header.section-header h1,
 // Font-Size XXL
 
 .nav-wrapper li a,
-section header.section-header h1,
+header.site-header,
 .home .site-title {
 	font-size: 1.75em;
 	line-height: 1.2em;

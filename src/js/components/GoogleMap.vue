@@ -43,7 +43,7 @@
 
        <strong>{{ entry.title }}</strong>
      </li>
-  
+    
    </ul>
  </div>
 </article>
@@ -387,3 +387,4 @@ mounted: function () {
     background: gray;
   }
   </style>
+

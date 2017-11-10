@@ -16341,7 +16341,7 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "program--list"
+	    staticClass: "program__list"
 	  }, [_c('div', {
 	    staticClass: "filter__selection--wrapper"
 	  }, [_c('div', {

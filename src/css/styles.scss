@@ -3,6 +3,9 @@
 @import 'reset';
 @import 'variables';
 @import 'typo';
+@import 'animations';
+@import 'frames';
+@import 'group';
 
 // partial
 
@@ -10,10 +13,9 @@
 @import 'header';
 @import 'footer';
 @import 'home';
+@import 'journal';
 @import 'program';
 @import 'institution';
-@import 'journal';
-@import 'visit';
 
 // components
 
@@ -21,6 +23,7 @@
 @import 'filter';
 @import 'filter-selection';
 @import 'contrast';
+@import 'presell';
 
 // temporary
 
@@ -43,3 +46,19 @@ html {
 }
 
 
+.text-block {
+	section {
+		border-bottom: solid 1px;
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+}
+
+header.site-header {
+	margin-bottom: 1em;
+}
+
+// .link-with-arrow::after {
+// 	content: "↗︎ arrow";︎
+// }

@@ -16,38 +16,27 @@
 
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
 		<header id="header">
-			<div id="container">
+			<div>
 				<div class="flex-container">
-				<div class="logo" v-if="activeContrast == true">
-					<a href="{{ siteUrl }}">
-						{# {% include '_includes/logo.twig' %} #}
-						<figure>
-						<img src="/bilder/logo.svg" alt="Logo MN Basel">
+						<a class="logo" href="{{ siteUrl }}" v-bind:class="{ active: activeContrast }">
+							Logo MN Basel
+						</a>
+					{# <div class="logo" v-if="activeContrast == false">
+						<a href="{{ siteUrl }}">
+							<figure>
+								<img src="/bilder/logo_schwarz.svg" alt="Logo MN Basel">
 							</figure>
-					</a>
-				</div>
-				<div class="logo" v-if="activeContrast == false">
-					<a href="{{ siteUrl }}">
-						{# {% include '_includes/logo.twig' %} #}
-						<figure>
-						
-						<img src="/bilder/logo_schwarz.svg" alt="Logo MN Basel">
-					</figure>
-					</a>
-				</div>
-				{# {% set mndate = mnDate.mnDate | date %} #}
-				{# <span>Datum: {{ mndate }} </span> #}
-
-				<savedlink :days="daysLeft"></savedlink>
-
-				<div id="menu" >
+						</a>
+					</div> #}
+					<savedlink :days="daysLeft"></savedlink>
+					<div id="menu" >
 						{# <contrast></contrast> #}
-					<div class="contrast-toggle" v-on:click="toggleContrast">
-					    &#61506;
-					  </div>
-					<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
-						<span>MENU</span>
-						<div class="burger" >
+						<div class="contrast-toggle" v-on:click="toggleContrast">
+							&#61506;
+						</div>
+						<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
+							<span>MENU</span>
+							<div class="burger" >
 							{# <span></span>
 							<span></span>
 							<span></span> #}
@@ -57,37 +46,37 @@
 					</div>
 				</div>
 			</div>
-				<transition name="fade">
-						<nav class="nav-wrapper narrow">
-							<ul v-if="menuOpen">
-								<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
-								<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-								<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
-								<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
+			<transition name="fade">
+				<nav class="nav-wrapper narrow">
+					<ul v-if="menuOpen">
+						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+						<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+						<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
+						<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
 
-								<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
-							</ul>
-							<div id="mymenu">
-								{# <savedlink></savedlink> #}
-								{# <span><a href="{{ url('mein-programm') }}" {% if craft.request.firstSegment == 'mein-programm' %}class="active"{% endif %}>Mein Programm</a></span> #}
-							</div>
-						</nav>
-					</transition>
-			</div>
+						<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
+					</ul>
+					<div id="mymenu">
+						{# <savedlink></savedlink> #}
+						{# <span><a href="{{ url('mein-programm') }}" {% if craft.request.firstSegment == 'mein-programm' %}class="active"{% endif %}>Mein Programm</a></span> #}
+					</div>
+				</nav>
+			</transition>
+		</div>
 
-		</header>
-		<main id="content" role="main" {% if mt is defined %}class="mt"{% endif %}>
+	</header>
+	<main id="content" role="main" {% if mt is defined %}class="mt"{% endif %}>
 					{# <Hello></Hello>
-					<categorylist></categorylist> #}
-					{# <map></map> #}
-					{% block content %}
+						<categorylist></categorylist> #}
+						{# <map></map> #}
+						{% block content %}
 						<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 						<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-					{% endblock %}
-				</main>
-				<footer id="footer">
-					<div id="container">
-						{# <div class="sponsors">
+						{% endblock %}
+					</main>
+					<footer id="footer">
+						{# <div>
+						<div class="sponsors">
 							{{ sponsores.textForSponsors }}
 							<div class="flex-container">
 								{% for sponsor in sponsores.sponsorBlocks %}
@@ -106,38 +95,24 @@
 								</div>
 							{% endfor %}
 						</div> #}
-					<div class="footerinfos">
-					Museumsnacht Basel 2018<br><br>
-					<nav>
-						<ul>
-							<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
-								<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-								<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
-								<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
-								
-								<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
-						</ul>
-					</div>
-					</nav>
-				</div>
-					</div>
+						<section class="nav">
+							<h3>Museumsnacht Basel 2018</h3>
+							<nav>
+								<ul>
+									<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+									<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+									<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
+									<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
 
-			</footer>
+									<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
+								</ul>
+							</nav>
+						</section>
+					</footer>
 		</div>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
-
-		<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
-
-		<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
-
-		<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
-		<script>
-		function menu() {
-			document.getElementById("header").classList.toggle("active");
-		}
-		</script>
-
-
-
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
+			<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
+			<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
+			<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
 	</body>
 	</html>
