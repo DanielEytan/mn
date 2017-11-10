@@ -5,7 +5,7 @@
       </div>
       <ul class="program__list program__list--selection">
          <div v-for="id in ids">
-         <li v-for="entry in programevents" v-if="entry.id == id">
+         <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == id">
              <!-- <div v-for="color in entry.parent.shuttleLine" class="institution">
                   <span class="suttle-line" v-bind:style="{color: color.color}"> {{ entry.parent.number }} {{ color.title }}</span><br>
                   <a v-bind:href="entry.parent.url">{{ entry.parent.title }}</a><br>

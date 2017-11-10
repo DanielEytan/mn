@@ -16897,7 +16897,9 @@
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.ids), function(id) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
-	      return (entry.id == id) ? _c('li', [_c('section', {
+	      return (entry.id == id) ? _c('li', {
+	        staticClass: "program__list__event"
+	      }, [_c('section', {
 	        staticClass: "institution"
 	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
 	        return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
