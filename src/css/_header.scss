@@ -164,6 +164,8 @@ header#header {
 		  		height: 44px;
 		  		&.active {
 					background: url(./../bilder/logo.svg);
+				background-repeat: no-repeat;
+					
 
 		  		}
 			}

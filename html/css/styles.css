@@ -115,6 +115,7 @@ footer a,
 .program h1, .program .institution h2,
 .program-list h1,
 header h1,
+header.site-header h1,
 .institutions--single .program-text {
   font-family: 'lyon-medium', times; }
 
@@ -518,7 +519,8 @@ header#header {
       width: 150px;
       height: 44px; }
       header#header a.logo.active {
-        background: url(./../bilder/logo.svg); } }
+        background: url(./../bilder/logo.svg);
+        background-repeat: no-repeat; } }
   @media screen and (min-width: 1224px) {
     header#header .centered .mn-date span {
       display: inline-block; } }
