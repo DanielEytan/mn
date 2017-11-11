@@ -28,6 +28,7 @@ Vue.use(VueClipboard)
 
 Vue.use(VueRouter);
 
+
 //vue main app instance
 var vueApp = new Vue({
     delimiters: ['${', '}'],
