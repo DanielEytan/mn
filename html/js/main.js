@@ -14306,7 +14306,7 @@
 	      attrs: {
 	        "for": entry.title
 	      }
-	    }, [_vm._v(_vm._s(entry.title))])])])
+	    }, [_vm._v("☑ ☐ " + _vm._s(entry.title))])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
