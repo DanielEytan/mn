@@ -23,18 +23,18 @@
 					{% switch accessibility %}
 					
 					{% case "wheelchair" %}
-					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
+					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span><br>
 
 					
 					{% case "partlyWheelchair" %}
-					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
+					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span><br>
 
 					
 					{% default %}
 
 					
 					{% endswitch %}
-					{% if entry.wifi %}<span>&#8980;</span>{% endif %}
+					{% if entry.wifi %}<span><i>&#8980;</i> Wi-Fi</span>{% endif %}
 					
 					
 				</div>

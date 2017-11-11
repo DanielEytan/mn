@@ -21,7 +21,6 @@
                   <h1><a :href="entry.url">{{ entry.parent.title }}</a></h1>
                   <!-- <h2>{{ entry.parent.programmTitle }}</h2> -->
                 <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
-
                 <!-- <p>Essen: {{ entry.food }}</p><br> -->
 
                 </section>

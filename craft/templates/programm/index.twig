@@ -20,7 +20,7 @@
 				</div>
 				<div class="filter__ckecklists">
 					<div id="container">
-						<h2><strong>FILTERN NACH:</strong></h2>
+						<h2>FILTERN NACH:</h2>
 					</div>
 
 					<header>
@@ -76,6 +76,8 @@
 				</div>
 				
 			</div>
+			{% cache %}
 			<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:remove-filter="removeFilter"></programlist>
+			{% endcache %}
 		</section>
 	{% endblock %}

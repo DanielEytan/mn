@@ -83,6 +83,7 @@ body {
 .program .institution *:not(h2),
 .filter header,
 .filter--tag,
+.filter h2,
 time,
 strong,
 header,
@@ -125,6 +126,7 @@ header .mn-date span {
 .program__list .institution,
 .program .institution,
 .filter header,
+.filter h2,
 .institutions .suttle-line,
 .institutions--overview h1,
 .institutions--single h1.title,
@@ -720,7 +722,7 @@ footer#footer {
         .institutions--overview .map-view > div .selected-institution .dismiss {
           display: none; }
         .institutions--overview .map-view > div .selected-institution .back {
-          margin-top: 2em;
+          margin-bottom: 1em;
           border: solid 1px;
           display: inline-block;
           padding: .5em .5em .7em;
@@ -731,7 +733,8 @@ footer#footer {
     .institutions--overview .map-view aside {
       padding-left: 30px;
       height: 600px;
-      overflow: hidden; }
+      overflow: hidden;
+      margin-bottom: 1em; }
       .institutions--overview .map-view aside > div {
         overflow-y: scroll;
         max-height: 100%;
@@ -763,9 +766,9 @@ footer#footer {
       flex: 0 1 49%; } }
 
 @media screen and (min-width: 1024px) {
-  .institutions--overview--map-view > div .selected-institution {
-    -ms-flex: 0 1 calc(100%/3 - 30px);
-    flex: 0 1 calc(100%/3 - 30px); }
+  .institutions--overview .map-view > div .selected-institution {
+    -ms-flex: 0 1 calc(30% - 30px);
+    flex: 0 1 calc(30% - 30px); }
   .institutions--overview aside ul.institutions-list li {
     font-size: 1em; }
     .institutions--overview aside ul.institutions-list li .suttle-line {
@@ -821,31 +824,22 @@ footer#footer {
   margin-bottom: 75px; }
 
 .program--overview .filter header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   color: black;
   font-size: .8em; }
   .program--overview .filter header > * {
-    -ms-flex: 0 1 50%;
-    flex: 0 1 50%; }
+    display: block; }
+    .program--overview .filter header > *:last-child div {
+      border-bottom: solid 1px; }
     .program--overview .filter header > * div {
+      border-top: solid 1px;
       padding: 1em .7em 1.1em;
-      position: relative;
-      border-top: solid 1px; }
+      position: relative; }
       .program--overview .filter header > * div .arrow {
         position: absolute;
         right: .7em; }
       .program--overview .filter header > * div.active, .program--overview .filter header > * div.selected {
         background: #1A0042;
         color: white; }
-    .program--overview .filter header > *:nth-child(1) div, .program--overview .filter header > *:nth-child(3) div {
-      border-right: solid 1px #1A0042; }
-    .program--overview .filter header > *:nth-child(3) div, .program--overview .filter header > *:nth-child(4) div {
-      border-bottom: solid 1px #1A0042; }
 
 .program--overview .filter .filter--list--wrapper ul {
   height: 0;
@@ -867,8 +861,8 @@ footer#footer {
   margin-bottom: 30px; }
 
 .program--overview .filter__time {
-  width: 80%;
-  margin-bottom: 2em; }
+  width: 93%;
+  margin: 0 15px 2em; }
   .program--overview .filter__time h2 {
     margin-bottom: 3em; }
   .program--overview .filter__time .vue-slider-component .vue-slider-tooltip {
@@ -878,6 +872,22 @@ footer#footer {
     font-size: 1.2em;
     color: black;
     padding: .3em; }
+
+@media only screen and (min-width: 500px) {
+  .program--overview .filter header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .program--overview .filter header > * {
+      -ms-flex: 0 1 50%;
+      flex: 0 1 50%; }
+      .program--overview .filter header > *:nth-child(1) div, .program--overview .filter header > *:nth-child(3) div {
+        border-right: solid 1px #1A0042; }
+      .program--overview .filter header > *:nth-child(3) div, .program--overview .filter header > *:nth-child(4) div {
+        border-bottom: solid 1px #1A0042; } }
 
 @media only screen and (min-width: 768px) {
   .program--overview .filter__time {
@@ -907,8 +917,8 @@ footer#footer {
       -ms-flex: 0 1 24%;
       flex: 0 1 24%; }
       .program--overview .filter__ckecklists header > * div {
-        padding: .45em .7em .5em;
-        border: solid #1A0042 1px; }
+        border: solid #1A0042 1px;
+        padding: .45em .7em .5em; }
         .program--overview .filter__ckecklists header > * div.active {
           border-bottom: 10px #1A0042 solid; }
   .program--overview .filter__ckecklists .filter--list--wrapper div ul li {

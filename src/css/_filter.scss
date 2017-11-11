@@ -5,19 +5,19 @@
 		margin-bottom: 75px;
 	}
 	header {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+
 		color: black;
 		font-size: .8em;
 		>* {
-			flex: 0 1 50%;
+			display: block;
+			&:last-child div{
+				border-bottom: solid 1px;
+			}
 			div{
+				border-top: solid 1px;
+
 				padding: 1em .7em 1.1em;
 				position: relative;
-				border-top: solid 1px;
-			
-				
 				.arrow {
 					position: absolute;
 					right: .7em;
@@ -28,14 +28,7 @@
 				}
 
 			}
-			&:nth-child(1) div, &:nth-child(3) div {
-				border-right: solid 1px $dark;
-
-			}
-			&:nth-child(3) div, &:nth-child(4) div {
-				border-bottom: solid 1px $dark;
-
-			}
+			
 		}
 	}
 	
@@ -66,8 +59,8 @@
 
 	}
 	&__time {
-		width: 80%;
-		margin-bottom: 2em;
+		width: 93%;
+		margin: 0 15px 2em;
 		h2 {
 			margin-bottom: 3em;
 		}
@@ -80,8 +73,26 @@
 			padding: .3em;
 		}
 	}
+	@media only screen and (min-width: 500px) {
+		header {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			>* {
+				flex: 0 1 50%;
+				&:nth-child(1) div, &:nth-child(3) div {
+					border-right: solid 1px $dark;
 
+				}
+				&:nth-child(3) div, &:nth-child(4) div {
+					border-bottom: solid 1px $dark;
+				}
+				// &:last-child
+			}
+		}
+	}
 	@media only screen and (min-width: $bp1) {
+		
 		&__time {
 			padding: 0 30px;
 		}
@@ -137,8 +148,9 @@
 				>* {
 					flex: 0 1 24%;
 					div {
-						padding: .45em .7em .5em;
 						border: solid $dark 1px;
+
+						padding: .45em .7em .5em;
 						&.active {
 							border-bottom: 10px $dark solid;
 						}
