@@ -14306,7 +14306,7 @@
 	      attrs: {
 	        "for": entry.title
 	      }
-	    }, [_vm._v(_vm._s(entry.title))])])])
+	    }, [_vm._v("☑ ☐ " + _vm._s(entry.title))])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
@@ -16355,25 +16355,25 @@
 	    staticClass: "selection"
 	  }, [_c('div', {
 	    staticClass: "filter-tags--container"
-	  }, [_vm._l((_vm.checkedFilters), function(filter) {
+	  }, _vm._l((_vm.checkedFilters), function(filter) {
 	    return _c('div', {
 	      staticClass: "filter--tag"
-	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	    }, [_c('i', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
 	        }
 	      }
-	    }, [_vm._v("(x)")])])
-	  }), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
+	    }, [_vm._v("ⓧ")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(filter))])])
+	  })), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
 	    staticClass: "removeAll--tag"
-	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
+	  }, [_c('span', {
 	    on: {
 	      "click": function($event) {
 	        _vm.removeFromFilters('', true)
 	      }
 	    }
-	  }, [_vm._v("(x)")])]) : _vm._e()], 2)]), _vm._v(" "), _c('div', {
+	  }, [_c('i', [_vm._v("ⓧ")]), _vm._v(" Alle Filter zurücksetzen")])]) : _vm._e()]), _vm._v(" "), _c('div', {
 	    staticClass: "number"
 	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"

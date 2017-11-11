@@ -55,8 +55,10 @@ body {
 .program .institution *:not(h2),
 
 .filter header,
-.filter--tag,
-.filter h2,
+
+.filter__selection--wrapper,
+
+.filter,
 time,
 strong,
 header,

@@ -82,8 +82,8 @@ body {
 
 .program .institution *:not(h2),
 .filter header,
-.filter--tag,
-.filter h2,
+.filter__selection--wrapper,
+.filter,
 time,
 strong,
 header,
@@ -821,7 +821,7 @@ footer#footer {
 .program--overview .filter .filter__checklists--wrapper {
   background: #1A0042;
   color: white;
-  margin-bottom: 75px; }
+  margin-bottom: .5em; }
 
 .program--overview .filter header {
   color: black;
@@ -861,7 +861,7 @@ footer#footer {
   margin-bottom: 30px; }
 
 .program--overview .filter__time {
-  width: 93%;
+  width: 90%;
   margin: 0 15px 2em; }
   .program--overview .filter__time h2 {
     margin-bottom: 3em; }
@@ -890,6 +890,8 @@ footer#footer {
         border-bottom: solid 1px #1A0042; } }
 
 @media only screen and (min-width: 768px) {
+  .program--overview .filter .filter__checklists--wrapper {
+    margin-bottom: 1em; }
   .program--overview .filter__time {
     padding: 0 30px; }
   .program--overview .filter__ckecklists {
@@ -947,39 +949,49 @@ footer#footer {
 .filter__selection--wrapper {
   margin: 15px; }
   .filter__selection--wrapper .number {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    text-align: center; }
   .filter__selection--wrapper .selection {
     position: relative; }
   .filter__selection--wrapper .filter-tags--container {
-    margin-bottom: 50px; }
+    margin-bottom: 1em; }
     .filter__selection--wrapper .filter-tags--container .filter--tag {
-      padding: .4em .8em .65em;
-      font-size: .8em;
-      border-radius: .5em;
-      display: inline-block;
       background: #1A0042;
       color: white;
       margin-right: .5em;
       margin-bottom: .5em; }
+  .filter__selection--wrapper .filter--tag, .filter__selection--wrapper .removeAll--tag {
+    padding: .3em .8em .65em;
+    border-radius: .5em;
+    display: inline-block;
+    font-size: .8em; }
+    .filter__selection--wrapper .filter--tag > *, .filter__selection--wrapper .removeAll--tag > * {
+      vertical-align: middle; }
+    .filter__selection--wrapper .filter--tag i, .filter__selection--wrapper .removeAll--tag i {
+      font-size: 1.5em;
+      line-height: 0em;
+      margin-right: .25em; }
+  .filter__selection--wrapper .removeAll--tag {
+    margin-bottom: 2em;
+    border: 1px solid; }
   @media only screen and (min-width: 768px) {
     .filter__selection--wrapper {
       margin: 30px; }
-      .filter__selection--wrapper .filter-tags--container {
-        margin-bottom: 75px; }
       .filter__selection--wrapper .number {
         text-align: center;
         margin-bottom: 75px; } }
   @media only screen and (min-width: 1024px) {
     .filter__selection--wrapper {
       margin: 0 auto;
-      width: 1200px; }
+      width: 1200px;
+      position: relative; }
       .filter__selection--wrapper .filter-tags--container {
         padding-right: 250px;
-        position: relative; }
-        .filter__selection--wrapper .filter-tags--container .removeAll--tag {
-          position: absolute;
-          right: 0;
-          top: 0; } }
+        margin-bottom: 2em; }
+      .filter__selection--wrapper .removeAll--tag {
+        position: absolute;
+        right: 0;
+        top: 0; } }
 
 #vue-app, header#header {
   transition: background .15s ease, color .15s ease; }

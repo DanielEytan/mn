@@ -2,7 +2,7 @@
 	.filter__checklists--wrapper {
 		background: $dark;
 		color: white;
-		margin-bottom: 75px;
+		margin-bottom: .5em;
 	}
 	header {
 
@@ -59,7 +59,7 @@
 
 	}
 	&__time {
-		width: 93%;
+		width: 90%;
 		margin: 0 15px 2em;
 		h2 {
 			margin-bottom: 3em;
@@ -92,7 +92,9 @@
 		}
 	}
 	@media only screen and (min-width: $bp1) {
-		
+		.filter__checklists--wrapper {
+			margin-bottom: 1em;
+		}
 		&__time {
 			padding: 0 30px;
 		}
