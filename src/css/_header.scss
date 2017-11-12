@@ -18,7 +18,9 @@ header#header {
   		width: 30px;
   		height: 27px;
   		&.active {
-			background: url(./../bilder/logo.svg);
+			background: url(./../bilder/logo_weiss.svg);
+  		background-size: 31px 27px;
+
 
   		}
 	}
