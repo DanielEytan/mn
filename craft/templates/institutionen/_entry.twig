@@ -3,7 +3,6 @@
 {% set mt = "mt" %}
 
 {% block content %}
-<div id="container">
 	<article class="institutions institutions--single narrow">
 		{% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }} Shuttle Linie </span>{% endfor %}</span>
 		<h1 class="title">{{ entry.title }}</h1>
@@ -74,5 +73,4 @@
 			<p>Essen: {{ entry.food }}</p>
 		</section>
 	</article>
-</div>
 {% endblock %}
