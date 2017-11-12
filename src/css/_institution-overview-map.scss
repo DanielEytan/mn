@@ -1,0 +1,166 @@
+.institutions--overview {
+	.map-view {
+		aside {
+			.institutions-list {
+				li {
+					margin-bottom: 1em;
+					.suttle-line {
+						font-size: .8em;
+						color: white;
+						width: 30px;
+						height: 30px;
+						border-radius:100%;
+						display: inline-block;
+						text-align: center;
+						margin-right: 1em;
+						padding: .4em 0em 1em;
+						&.multiple {
+							background: black;
+						}
+					}
+					display: flex;
+				}
+			}
+		}
+	}
+	.google-map {
+		height: 400px;
+	}
+	@media screen and (max-width: $bp1) {
+
+			.map-view {
+				height: 100%;
+				aside {
+					position: relative;
+				}
+				.selected-institution {
+					position: fixed;
+					bottom: 0;
+					z-index: 9;
+					background: white;
+					width: 100%;
+					height: 150px;
+					overflow: scroll;
+					right: 0;
+					left: 0;
+					padding: 5px 60px 10px 15px;
+					border-top: solid 1px;
+					&.closed {
+						height: 50px;
+						.dismiss{
+							bottom: 15px;
+
+							&:before {
+							content: "▲";
+						}
+							
+						}
+					}
+					.dismiss {
+						position: fixed;
+						bottom: 110px;
+						right: 10px;
+						width: 30px;
+						height: 30px;
+						font-size:2em;
+						&:before {
+							content: "▼";
+
+						}
+					}
+					figure {
+						display: none;
+					}
+					.icons, .journey {
+						display: none;
+					}
+					
+					&_child {
+						margin-bottom: 0;
+					}
+					.back {
+						margin-bottom: 1em;
+						margin-top: 2px;
+					}
+
+				}
+			}
+			.institutions-list {
+						// display: none;
+						margin-top: 1em;
+						// height: 100%;
+					}
+		}
+		
+	@media only screen and (min-width: $bp1) {
+		.map-view {
+				position: relative;
+				.google-map {
+					height: 600px;
+				}
+				>div {
+					display: flex;
+
+					.selected-institution {
+						// width: 25%;
+						margin-right: 30px;
+						flex: 0 1 calc(50% - 30px);
+
+						.dismiss {
+							display: none;
+						}
+						.back {
+							margin-bottom: 1em;
+							border: solid 1px;
+							display: inline-block;
+							padding: .5em .5em .7em;
+							cursor: pointer;
+							&:hover {
+								background: $dark;
+								color: white;
+							}
+						}
+					}
+
+				}
+				aside {
+					padding-left: 30px;
+					height: 600px;
+					overflow: hidden;
+					margin-bottom: 1em;
+					>div {
+						overflow-y: scroll;
+						max-height: 100%;
+						 margin-right: -100px;
+	    				padding-right: 100px;
+					}
+					
+				}
+				
+			}
+		}
+	// }
+	@media screen and (min-width: $bp2) {
+		.map-view  {
+			>div {
+				.selected-institution {
+					flex: 0 1 calc(30% - 30px);
+
+				}
+			}
+			aside {
+				ul.institutions-list li {
+					font-size: 1em;
+					.suttle-line {
+						width: 30px;
+						height: 30px;
+					}
+					strong {
+						line-height: 1.2em;
+					}
+		
+				}
+			}
+		}
+	}
+}

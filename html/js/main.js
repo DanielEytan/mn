@@ -19122,6 +19122,8 @@
 	//
 	//
 	//
+	//
+	//
 
 	exports.default = {
 	   name: 'googlemap',
@@ -19337,7 +19339,7 @@
 	                  text: coord.number,
 	                  fontFamily: 'main-eb',
 	                  fontSize: '1.2em',
-	                  color: "rgba(240,240,240,0.8"
+	                  color: "rgba(240,240,240,1)"
 	               },
 	               icon: {
 	                  path: google.maps.SymbolPath.CIRCLE,
@@ -19359,6 +19361,7 @@
 	               _this.inst = number;
 	               map.setZoom(18);
 	               map.setCenter(marker.getPosition());
+	               // this.institutInfo = true;
 	            });
 	            google.maps.event.addListener(marker, "mouseover", function (evt) {
 	               var icon = this.getIcon();
@@ -19400,7 +19403,7 @@
 	    on: {
 	      "click": _vm.toggleInstitutInfo
 	    }
-	  }, [_vm._v("×")]), _vm._v(" "), _vm._l((_vm.institutionsData), function(entry) {
+	  }), _vm._v(" "), _vm._l((_vm.institutionsData), function(entry) {
 	    return (entry.number == _vm.inst) ? _c('aside', {
 	      staticClass: "institutions--overview_child"
 	    }, [_c('div', [_c('div', {
@@ -19444,8 +19447,8 @@
 	      domProps: {
 	        "innerHTML": _vm._s(entry.journey)
 	      }
-	    }, [_vm._v(_vm._s(entry.journey))])], 2)])])]) : _vm._e()
-	  }), _vm._v(" "), (_vm.inst == 0) ? _c('aside', [_c('div', [_c('p', [_vm._v("Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.")]), _c('br'), _c('br'), _vm._v(" "), _c('ul', {
+	    }, [_vm._v(_vm._s(entry.journey))]), _c('br'), _vm._v(" "), _c('p', [_vm._v("Zur Instituts-Unterseite →")]), _c('br')], 2)])])]) : _vm._e()
+	  }), _vm._v(" "), (_vm.inst == 0) ? _c('aside', [_c('div', [_c('ul', {
 	    staticClass: "institutions-list"
 	  }, _vm._l((_vm.institutionsData), function(entry) {
 	    return _c('li', {

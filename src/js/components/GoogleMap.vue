@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="selected-institution" v-bind:class="{ closed: institutInfo }">
-      <div class="dismiss" v-on:click="toggleInstitutInfo">×</div>
+        <div class="dismiss" v-on:click="toggleInstitutInfo"></div>
+      
       <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
         <div>
           <div class="back" v-on:click="inst = 0; zoomOut()">← Zurück zur Übersicht</div>
@@ -27,14 +28,15 @@
                </span>
             </div><br>
             <p>{{ entry.address }}</p>
-            <p class="journey" v-html="entry.journey">{{ entry.journey }}</p>
+            <p class="journey" v-html="entry.journey">{{ entry.journey }}</p><br>
+            <p>Zur Instituts-Unterseite &rarr;</p><br>
          </a>
       </div>
    </div>
 </aside>
 <aside v-if="inst == 0">
  <div>
-  <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br>
+  <!-- <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br> -->
   <ul class="institutions-list">
    <li v-for="entry in institutionsData" v-on:click="inst = entry.number; selctedInst()">
     <div>
@@ -335,7 +337,7 @@ createMap () {
       text:coord.number, 
       fontFamily: 'main-eb', 
       fontSize: '1.2em',
-      color:"rgba(240,240,240,0.8",
+      color:"rgba(240,240,240,1)",
    },
    icon: {
       path: google.maps.SymbolPath.CIRCLE,
@@ -357,6 +359,7 @@ createMap () {
    _this.inst = number;
    map.setZoom(18);
    map.setCenter(marker.getPosition());
+   // this.institutInfo = true;
 });
   google.maps.event.addListener(marker, "mouseover", function(evt) {
    var icon = this.getIcon();
