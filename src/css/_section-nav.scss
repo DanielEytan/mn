@@ -1,0 +1,42 @@
+		header.site-header{
+			h1 {
+				margin-bottom: .5em;
+			}
+			nav {
+				font-size: 1.25rem;
+
+				i {
+					&.inactive {
+						background: $dark;
+						color: white;
+					}
+					padding: .2em .4em .3em;
+					border: solid 1px;
+				}
+			}
+			@media screen and (min-width: $bp1) {
+				position: relative;
+				nav {
+					position: absolute;
+					right: 0;
+					bottom: -10px;
+					// font-size: 1.5rem;
+
+					span {
+						margin-left: .5em;
+						margin-right: 0;
+						i {
+							margin-right: .25em;
+						}
+						// margin-top: 1em;
+						i.inactive {
+							// color:grey;
+						}
+						i:not(.inactive) {
+							cursor: pointer;
+						}
+					}
+				
+				}
+			}
+		}

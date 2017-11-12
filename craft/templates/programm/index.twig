@@ -5,10 +5,8 @@
 	{% block content %}
 		<section class="program program--overview">
 
-			<header class="section-header">
-				<div id="container">
-				<h1 class="narrow">PROGRAMM</h1>
-				</div>
+			<header class="site-header">
+				<h1>PROGRAMM</h1>
 			</header>
 
 			<div class="filter">
@@ -78,6 +76,8 @@
 				</div>
 				
 			</div>
+			{% cache %}
 			<programlist :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:remove-filter="removeFilter"></programlist>
+			{% endcache %}
 		</section>
 	{% endblock %}

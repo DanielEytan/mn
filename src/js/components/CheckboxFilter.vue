@@ -4,7 +4,7 @@
         <li class="list-group-item" v-for="entry in possibleValues">
           <div>
           <input type="checkbox" v-bind:id="'program-input-'+entry.id" v-bind:value="entry.title" v-model="internalCheckedValues">
-          <label v-bind:for="entry.title">{{ entry.title }}</label>
+          <label v-bind:for="entry.title">&#9745; &#9744; {{ entry.title }}</label>
         </div>
         </li >
       </ul>

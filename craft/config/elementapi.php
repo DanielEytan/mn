@@ -213,7 +213,7 @@ return [
                     'number' => $entry->number,
                     'url' => $entry->url,
                     'address' => $entry->address,
-                    'journey' => $entry->journey,
+                    'journey' => (string) $entry->journey,
                     'advanceSale' => $entry->advanceSale,
                     'accessibility' => $entry->accessibility,
                     'photos' => $photos,

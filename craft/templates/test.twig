@@ -1,51 +1,21 @@
 {% extends "_layout" %}
-{% set title = "Home" %}
+{% set title = "News" %}
 {% set mt = "mt" %}
+	{% block content %}
 
 
-{% block content %}
-
-{# <twitter></twitter> #}
-
-	<section class="journal journal--single">
-			<article>
-				<header class="section-header">
-					<h1 class="title">{{ entry.title }}</h1>
-				</header>
-				<h1 class="title"></h1>
-					{% for img in entry.cover %}
-						<figure>
-							<img src="{{ img.url }}" alt="{{ img.title }}">
-						</figure>
-					{% endfor %}
-				{% for block in entry.contentJournal %}
-					{% switch block.type %}
-				
-						{% case "subtitle" %}
-							<h2 class="subtitle">{{ block.subtitle }}</h2>
-						{% case "text" %}
-							<div class="text">
-								{{ block.text }}
-							</div>
-						{% case "img" %}
-							{% for img in block.img %}
-								<figure>
-									<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-								</figure>
-							{% endfor %}
-						{% case "program" %}
-						<div class="program">
+	<div class="program">
    							<ul class="program__list program__list--selection" >
-							{% for entry in block.entry %}
+							{% for entry in craft.entries.section('program') %}
    							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
 								
 								<li class="program__list__event">
 				
 						          	 <section class="institution">
-									{% for linie in parent.shuttleLine %}
+								{# 	{% for linie in parent.shuttleLine %}
 										<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
 						               <a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
-									{% endfor %}
+									{% endfor %} #}
 						               
 
 						            </section>
@@ -71,12 +41,4 @@
 							{% endfor %}
 							</ul>
 						</div>
-					{% endswitch %}
-				{% endfor %}
-				
-				
-					
-			</article>
-	</section>
-
-{% endblock %}
+	{% endblock %}

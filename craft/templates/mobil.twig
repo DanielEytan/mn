@@ -3,26 +3,21 @@
 
 {% block content %}
 
-<section class="visit">		
-	<article>
-		<div id="container">
-			<div class="narrow">
-				<header class="section-header">
+<div class="visit text-block">		
+	<section>
+				<header class="site-header">
 					<h1>Mobil durch die Nacht</h1>
 				</header>
+				<div>
 				{{ entry.text }}
 			</div>
-		</div>
-	</article>
+	</section>
 	{% for block in entry.textBlock %}
-		<article>
-			<div id="container">
-				<div class="narrow">
+		<section>
+			<div>
 					{{ block.text }}
 				</div>
-			</div>
-		</article>
+		</section>
 	{% endfor %}
-	
-</section>
+</div>
 {% endblock %}

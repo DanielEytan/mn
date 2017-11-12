@@ -1,28 +1,28 @@
 <template>
-    <div class="program--block narrow">
-      <article v-if="showProgramEvents">
-        <div class="institution">
-        <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-            <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+    <li class="program--block">
+      <div v-if="showProgramEvents">
+        <section class="institution">
+          <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
+              <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
           </div>
           <div v-if="entry.shuttleLine.length > 1">
-            <span class="suttle-line"><strong>{{ entry.number }}</strong></span>
-            <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
+              <span class="suttle-line"><strong>{{ entry.number }}</strong></span>
+              <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
           </div>
-        <h1><a :href="entry.url">{{ entry.title }}</a></h1>
-        <h2>{{ entry.programmTitle }}</h2>
+          <h1><a :href="entry.url">{{ entry.title }}</a></h1>
+          <h2>{{ entry.programmTitle }}</h2>
         <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
 
         <!-- <p>Essen: {{ entry.food }}</p><br> -->
 
-        </div>
+        </section>
         <!-- <div v-html="entry.programmText"></div> -->
 
-        <ul class="program-list" >
+        <ul class="program__list--complete__event-list" >
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>
-      </article>
-    </div>
+      </div>
+    </li>
 </template>
 
 <script>

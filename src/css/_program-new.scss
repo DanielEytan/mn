@@ -1,15 +1,6 @@
 .program {
 	&__list {
 		&--complete {
-			.institution {
-				h1 {
-
-					a:hover {
-						text-decoration: underline;
-						
-					}
-				}
-			}
 			&__event-list {
 				border-top: solid 1px;
 				padding-top: 1.25em;

@@ -1,17 +1,23 @@
 <template>
 
-    <li v-if="programeventIsVisible" class="program--event">
-      <h1>{{ programevent.title }}</h1>
+    <li v-if="programeventIsVisible" class="program__list__event program__list--complete__event">
+      <h1 class="event-title">{{ programevent.title }}</h1>
       {{ programevent.programmText }}
 
-      <time v-for="time in programevent.time">
+<!--       <time v-for="time in programevent.time">
         <span v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} (Dauer: {{ time.duration }})<br></span>
 
         <span v-if="time.type === 'continuous'"> {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} (Durchgehend)<br></span>
 
 
         <span v-if="time.type === 'iterating'">  {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} ({{ time.frequency }}, Dauer: {{ time.duration }})<br></span>
-      </time>
+      </time> -->
+
+       <div v-for="time in programevent.time">
+                  <time v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} <span v-if="time.duration.length">(Dauer: {{ time.duration }})</span><br></time>
+                  <time v-if="time.type === 'continuous'"> {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} (Durchgehend)<br></time>
+                  <time v-if="time.type === 'iterating'">  {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} ({{ time.frequency }}<span v-if="time.duration.length">, Dauer: {{ time.duration }}</span>)<br></time>
+               </div>
       <!-- <div v-if="programevent.description.length">{{ programevent.description }} test</div> -->
       <div v-html="programevent.description">{{ programevent.description }}</div>
       <div  class="cat-wrapper">

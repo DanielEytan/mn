@@ -1,21 +1,21 @@
 {% extends "_layout" %}
 {% set title = "Besuch" %}
+{% set mt = "mt" %}
 
 {% block content %}
 
-<section class="visit">		
-	<article>
-		<div id="container">
-			<div class="narrow">
-				<header class="section-header">
+<div class="visit">
+	<header class="site-header">
 					<h1>Ihr Besuch</h1>
 				</header>
+<div class="visit text-block">		
+	<section>
+			<div>
+				
 				{{ entry.text }}
 			</div>
-		</div>
-	</article>
-	<article>
-		<div id="container">
+	</section>
+	<section>
 			<div class="narrow">
 				
 				<div>
@@ -26,32 +26,22 @@
 						{{ entry.presell }}
 					</div>
 					<presell></presell>
-					
-					{# <div class="presell-location">
-						{% for block in entry.boxOfficeLocations %}
-							<div>
-								{{ block.list }}
-							</div>
-											
-						{% endfor %}				
-					</div> #}
 				</div>
 				<div>
 					{{ entry.boxOffice }}
 				</div>
 			</div>
 
-		</div>
-	</article>
+	</section>
 	{% for block in entry.additionalInfos %}
-		<article>
-			<div id="container">
-				<div class="narrow">
+		<section>
+				<div>
 					{{ block.text }}
 				</div>
-			</div>
-		</article>
+		</section>
 	{% endfor %}
 	
-</section>
+</div>
+</div>
+
 {% endblock %}

@@ -19,14 +19,6 @@ a {
 
 // Base Layout
 
-#container {
-	margin: 15px;
-	position: relative;
-	@media screen and (min-width: $bp1) {
-		margin: 15px 30px;
-	}
-}
-
 main {
 	margin-top: 50px;
 	&.mt {
@@ -44,13 +36,3 @@ section header .narrow {
 	margin-bottom: 50px;
 }
 
-.narrow {
-	@media screen and (min-width: $bp2) {
-		width: 900px;
-		margin: 0 auto;
-	}
-	@media screen and (min-width: $bp3) {
-		width: 1000px;
-		margin: 0 auto;
-	}
-}
