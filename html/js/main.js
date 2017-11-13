@@ -14169,7 +14169,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.filter-checkbox[data-v-697d8ad5] {\n  display: none;\n}\n.label--wrapper label[data-v-697d8ad5]:before {\n  content:\"\\2610   \";\n}\n.label--wrapper label.checked[data-v-697d8ad5]:before {\n  content:\"\\2611   \";\n}\n", ""]);
 
 	// exports
 
@@ -14205,6 +14205,24 @@
 	  },
 
 	  methods: {
+	    checkedLabel: function checkedLabel(entry) {
+	      var index = this.internalCheckedValues.indexOf(entry.title);
+	      var isChecked = false;
+	      if (index !== -1) {
+	        isChecked = true;
+	      } else {
+	        isChecked = false;
+	      }
+	      return isChecked;
+	    },
+	    filterChecked: function filterChecked(entry) {
+	      var index = this.internalCheckedValues.indexOf(entry.title);
+	      if (index !== -1) {
+	        this.internalCheckedValues.splice(index, 1);
+	      } else {
+	        this.internalCheckedValues.push(entry.title);
+	      }
+	    },
 	    initEventBus: function initEventBus() {
 	      var _this = this;
 	      _eventBus.EventBus.$on('remove-all-filter', function () {
@@ -14269,13 +14287,21 @@
 	  }, _vm._l((_vm.possibleValues), function(entry) {
 	    return _c('li', {
 	      staticClass: "list-group-item"
-	    }, [_c('div', [_c('input', {
+	    }, [_c('div', {
+	      staticClass: "label--wrapper",
+	      on: {
+	        "click": function($event) {
+	          _vm.filterChecked(entry)
+	        }
+	      }
+	    }, [_c('input', {
 	      directives: [{
 	        name: "model",
 	        rawName: "v-model",
 	        value: (_vm.internalCheckedValues),
 	        expression: "internalCheckedValues"
 	      }],
+	      staticClass: "filter-checkbox",
 	      attrs: {
 	        "type": "checkbox",
 	        "id": 'program-input-' + entry.id
@@ -14303,10 +14329,13 @@
 	        }
 	      }
 	    }), _vm._v(" "), _c('label', {
+	      class: {
+	        checked: _vm.checkedLabel(entry)
+	      },
 	      attrs: {
 	        "for": entry.title
 	      }
-	    }, [_vm._v("☑ ☐ " + _vm._s(entry.title))])])])
+	    }, [_vm._v(_vm._s(entry.title))])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
