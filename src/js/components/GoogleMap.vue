@@ -55,7 +55,7 @@
 </div>
 </aside>
 </div>
-<div class="google-map" id="multiMap"></div>
+<div class="google-map" id="multiMap" v-bind:class="{ top: mapTop }"></div>
 
 
 </div>
@@ -75,6 +75,7 @@ export default {
      institutionsData: [],
      inst: "0",
      institutInfo: false,
+     mapTop: false,
      center: new google.maps.LatLng(47.55959860000001,7.588576099999955),
   }
 },
@@ -82,6 +83,7 @@ export default {
 mounted: function () {
   this.inst;
   this.getEntries();
+  this.scrollTop();
   const element = document.getElementById(this.mapName)
   const options = {
     zoom: 12,
@@ -286,6 +288,9 @@ methods: {
    toggleInstitutInfo () {
      this.institutInfo = !this.institutInfo;
   },
+  scrollTop () {
+    this.$el.querySelector("#multiMap").scrollTop;
+  },
   getEntries () {
      axios.get('../locations.json')
      .then(response => {
@@ -304,6 +309,9 @@ methods: {
      var _this = this;
      var inst = _this.inst;
      var map = _this.map;
+    _this.mapTop = true;
+    this.$el.querySelector("#multiMap").scrollTop;
+
 
      _this.markerCoordinates.forEach(function (coord) {
       var number = coord.number;
@@ -357,6 +365,8 @@ createMap () {
    var instNumber = _this.inst;
    var map = this.map;
    _this.inst = number;
+  _this.mapTop = true;
+
    map.setZoom(18);
    map.setCenter(marker.getPosition());
    // this.institutInfo = true;

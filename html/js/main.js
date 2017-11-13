@@ -14169,7 +14169,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14225,6 +14225,8 @@
 	    }
 	  }
 	}; //
+	//
+	//
 	//
 	//
 	//
@@ -14306,7 +14308,7 @@
 	      attrs: {
 	        "for": entry.title
 	      }
-	    }, [_vm._v("☑ ☐ " + _vm._s(entry.title))])])])
+	    }, [_vm._v(_vm._s(entry.title))])])])
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
@@ -19138,6 +19140,7 @@
 	         institutionsData: [],
 	         inst: "0",
 	         institutInfo: false,
+	         mapTop: false,
 	         center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
 	      };
 	   },
@@ -19145,6 +19148,7 @@
 	   mounted: function mounted() {
 	      this.inst;
 	      this.getEntries();
+	      this.scrollTop();
 	      var element = document.getElementById(this.mapName);
 	      var options = {
 	         zoom: 12,
@@ -19289,6 +19293,9 @@
 	      toggleInstitutInfo: function toggleInstitutInfo() {
 	         this.institutInfo = !this.institutInfo;
 	      },
+	      scrollTop: function scrollTop() {
+	         this.$el.querySelector("#multiMap").scrollTop;
+	      },
 	      getEntries: function getEntries() {
 	         var _this2 = this;
 
@@ -19307,6 +19314,8 @@
 	         var _this = this;
 	         var inst = _this.inst;
 	         var map = _this.map;
+	         _this.mapTop = true;
+	         this.$el.querySelector("#multiMap").scrollTop;
 
 	         _this.markerCoordinates.forEach(function (coord) {
 	            var number = coord.number;
@@ -19359,6 +19368,8 @@
 	               var instNumber = _this.inst;
 	               var map = this.map;
 	               _this.inst = number;
+	               _this.mapTop = true;
+
 	               map.setZoom(18);
 	               map.setCenter(marker.getPosition());
 	               // this.institutInfo = true;
@@ -19470,6 +19481,9 @@
 	    }, [_vm._v(_vm._s(entry.number))])]) : _vm._e()], 2), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])])
 	  }))])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
+	    class: {
+	      top: _vm.mapTop
+	    },
 	    attrs: {
 	      "id": "multiMap"
 	    }

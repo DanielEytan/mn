@@ -527,6 +527,7 @@ header#header {
       height: 44px; }
       header#header a.logo.active {
         background: url(./../bilder/logo.svg);
+        background-size: 50px 44px;
         background-repeat: no-repeat; } }
   @media screen and (min-width: 1224px) {
     header#header .centered .mn-date span {
@@ -875,8 +876,6 @@ footer#footer {
     border: solid 1px;
     margin-bottom: 1em;
     font-size: .8em; }
-    .program--overview .filter .filter--list--wrapper ul li div input[type='checkbox'] {
-      background: red; }
 
 .program--overview .filter .filter--list--wrapper.active {
   padding: 1em .7em 1.1em; }
