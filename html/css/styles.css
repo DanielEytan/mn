@@ -527,6 +527,7 @@ header#header {
       height: 44px; }
       header#header a.logo.active {
         background: url(./../bilder/logo.svg);
+        background-size: 50px 44px;
         background-repeat: no-repeat; } }
   @media screen and (min-width: 1224px) {
     header#header .centered .mn-date span {

@@ -65,7 +65,7 @@ module.exports = {
       let _this = this;
       axios.get(this.valueName + '.json')
         .then(response => {
-          this.possibleValues = response.data.data;
+          this.possibleValues = _.sortBy(response.data.data,'title');
           this.initValues();
         })
     },
