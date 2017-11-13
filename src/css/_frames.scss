@@ -3,6 +3,7 @@
 
 header#header > div,
 footer#footer > section,
+.journal--overview,
 .institutions--overview--list-view
 
 {
@@ -18,7 +19,7 @@ footer#footer > section,
 }
 
 .home section.info,
-.journal,
+// .journal,
 .visit section {
 	padding: 30px 15px;
 	position: relative;
@@ -44,8 +45,10 @@ header.site-header,
 .home .info >div,
 .journal--single article,
 header#header nav,
-ul.program__list,
+.program--overview ul.program__list,
+.program--saved ul.program__list,
 .program--single,
+
 .share-program,
 .institutions--single,
 .program .name
