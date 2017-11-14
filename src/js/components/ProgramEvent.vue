@@ -1,6 +1,6 @@
 <template>
 
-    <li v-if="programeventIsVisible" class="program__list__event program__list--complete__event">
+    <li v-if="programeventIsVisible" class="program__list__event program__list--complete__event" v-on:click="saveProgram"  v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave" v-bind:class="{ active: hover }">
       <h1 class="event-title">{{ programevent.title }}</h1>
       {{ programevent.programmText }}
 
@@ -46,13 +46,14 @@
         </div>
       </div>
       </div>
-      <saveprogram :programevent="programevent"></saveprogram>
+      <saveprogram  ref="saveprogram" :programevent="programevent"></saveprogram>
     </li>
 
 </template>
 
 <script>
 import SaveProgram from './SaveProgram.vue'
+import { EventBus } from '../event-bus.js';
 
 module.exports = {
   name: 'programevent',
@@ -62,9 +63,20 @@ module.exports = {
   },
   data: function () {
     return {
+      hover: false
     }
   },
   methods: {
+    mouseOver: function () {
+      this.hover = true;
+    },
+    mouseLeave: function () {
+      this.hover = false;
+    },
+    saveProgram: function () {
+      var saveprogram_child_component = this.$refs.saveprogram;
+      saveprogram_child_component.save(this.programevent.id);
+    }
   },
   computed: {
   },
@@ -75,4 +87,5 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
+
 </style>

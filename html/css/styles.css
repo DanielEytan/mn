@@ -97,7 +97,6 @@ header,
 .institutions h3,
 .journal--single h2.subtitle,
 span.shuttle-line,
-header .mn-date span,
 .visit h2,
 .presell-toggle,
 .home .info a,
@@ -122,7 +121,7 @@ header.site-header h1,
 .institutions--single .program-text {
   font-family: 'lyon-medium', times; }
 
-header .mn-date {
+header .mn-date span {
   font-family: 'lyon-regular'; }
 
 .program__list .institution,
@@ -465,10 +464,9 @@ header#header {
     width: 150px;
     text-align: right; }
     header#header #menu > * {
-      display: inline-block;
-      margin-right: 1em; }
-      header#header #menu > *:last-child {
-        margin-right: 0; }
+      display: inline-block; }
+      header#header #menu > *:first-child {
+        margin-right: 1em; }
   header#header .contrast-toggle {
     cursor: pointer; }
   header#header nav div.nav-wrapper {
@@ -506,11 +504,11 @@ header#header {
     text-align: center; }
     header#header .centered .mn-date span {
       display: none; }
-    header#header .centered .saved-link.active a {
-      color: red; }
     header#header .centered .saved-link a {
-      transition: color .15s;
-      color: grey; }
+      color: red; }
+      header#header .centered .saved-link a span {
+        transition: color .15s;
+        color: black; }
   @media screen and (max-width: 600px) {
     header#header {
       font-size: 1.25em; }
@@ -878,6 +876,11 @@ footer#footer {
     border: solid 1px;
     margin-bottom: 1em;
     font-size: .8em; }
+    .program--overview .filter .filter--list--wrapper ul li div.checked {
+      background-color: white;
+      color: #1A0042; }
+    .program--overview .filter .filter--list--wrapper ul li div input[type='checkbox'] {
+      background: red; }
 
 .program--overview .filter .filter--list--wrapper.active {
   padding: 1em .7em 1.1em; }
@@ -921,56 +924,62 @@ footer#footer {
     margin-bottom: 1em; }
   .program--overview .filter__time {
     padding: 0 30px; }
-  .program--overview .filter__ckecklists {
+  .program--overview .filter__checklists {
     margin-top: 4em; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul {
+    .program--overview .filter__checklists .filter--list--wrapper div ul {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
+      .program--overview .filter__checklists .filter--list--wrapper div ul li {
         -ms-flex: 0 1 49%;
         flex: 0 1 49%;
-        margin-right: 2%; }
-        .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
+        margin-right: 1%; }
+        .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
           margin-right: 0; }
-        .program--overview .filter__ckecklists .filter--list--wrapper div ul li div {
+        .program--overview .filter__checklists .filter--list--wrapper div ul li div {
           padding: .45em .7em .5em; }
-    .program--overview .filter__ckecklists .filter--list--wrapper.active {
+    .program--overview .filter__checklists .filter--list--wrapper.active {
       padding: 1em 30px 1.1em; } }
 
 @media only screen and (min-width: 1024px) {
-  .program--overview .filter__ckecklists header {
+  .program--overview .filter__checklists header {
     margin: 0 30px; }
-    .program--overview .filter__ckecklists header > * {
+    .program--overview .filter__checklists header > * {
       -ms-flex: 0 1 24%;
       flex: 0 1 24%; }
-      .program--overview .filter__ckecklists header > * div {
+      .program--overview .filter__checklists header > * div {
         border: solid #1A0042 1px;
         padding: .45em .7em .5em; }
-        .program--overview .filter__ckecklists header > * div.active {
+        .program--overview .filter__checklists header > * div.active {
           border-bottom: 10px #1A0042 solid; }
-  .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
-    -ms-flex: 0 1 23.5%;
-    flex: 0 1 23.5%; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
-      margin-right: 2%; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(4n) {
-      margin-right: 0; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li div {
-      margin-bottom: 1.5em; }
+  .program--overview .filter__checklists .filter--list--wrapper div ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .program--overview .filter__checklists .filter--list--wrapper div ul li {
+    -ms-flex: none;
+    flex: none;
+    display: inline-block;
+    float: left;
+    width: auto; }
+    .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
+      margin-right: 1%; }
+    .program--overview .filter__checklists .filter--list--wrapper div ul li div {
+      margin-bottom: .75em; }
   .program--overview .filter__time {
     padding: 0;
     margin: 0 auto 3em;
     width: 900px; } }
 
 @media only screen and (min-width: 1224px) {
-  .program--overview .filter__ckecklists header {
+  .program--overview .filter__checklists header {
     margin: 0 30px;
     width: auto; }
-  .program--overview .filter__ckecklists .filter--list--wrapper.active {
+  .program--overview .filter__checklists .filter--list--wrapper.active {
     padding: 50px 0; }
-  .program--overview .filter__ckecklists .filter--list--wrapper ul {
+  .program--overview .filter__checklists .filter--list--wrapper ul {
     margin: 0 30px; } }
 
 .filter__selection--wrapper {
@@ -1049,6 +1058,9 @@ footer#footer {
   #vue-app.active .filter__checklists--wrapper {
     background: white !important;
     color: #1A0042; }
+  #vue-app.active .label--wrapper.checked {
+    background: #1A0042;
+    color: white; }
   #vue-app.active .program .share-program .button button {
     background: #1A0042;
     border: solid white 1px;
@@ -1059,9 +1071,9 @@ footer#footer {
       #vue-app.active .program .share-program .button button:hover a {
         color: #1A0042; }
   @media only screen and (min-width: 768px) {
-    #vue-app.active .program--overview .filter__ckecklists header > * div {
+    #vue-app.active .program--overview .filter__checklists header > * div {
       border: solid white 1px !important; }
-      #vue-app.active .program--overview .filter__ckecklists header > * div.active {
+      #vue-app.active .program--overview .filter__checklists header > * div.active {
         border-bottom: 10px white solid !important; } }
   #vue-app.active #save-toggle > div:hover {
     color: #1A0042 !important; }
@@ -1100,15 +1112,15 @@ footer#footer {
   right: 0;
   top: 0;
   z-index: 1; }
-  .save-element div {
+  .save-element div.save-heart {
     font-size: 2em;
     color: #d2d2d2;
     transition: color .25s;
     cursor: pointer; }
-    .save-element div:hover {
+    .save-element div.save-heart:hover, .program__list__event.active .save-element div {
       text-shadow: 0px 0px 1px red;
       color: white; }
-    .save-element div.active {
+    .save-element div.save-heart.active {
       color: red; }
 
 header.site-header h1 {
@@ -1183,6 +1195,3 @@ html {
 
 header.site-header {
   margin-bottom: 1em; }
-
-.institutions--single address a {
-  text-decoration: underline; }
