@@ -42,6 +42,10 @@
 				border: solid 1px;
 				margin-bottom: 1em;
 				font-size: .8em;
+				&.checked {
+					background-color: white;
+					color: $dark;
+				}
 				input[type='checkbox'] {
 					background: red;
 				}

@@ -36,7 +36,10 @@
 	.filter__checklists--wrapper {
 		background: white !important;
 		color: $dark;
-
+	}
+	.label--wrapper.checked {
+		background: $dark;
+		color: white;
 	}
 	.program .share-program .button button {
 		background: $dark;

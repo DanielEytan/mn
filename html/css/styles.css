@@ -876,6 +876,9 @@ footer#footer {
     border: solid 1px;
     margin-bottom: 1em;
     font-size: .8em; }
+    .program--overview .filter .filter--list--wrapper ul li div.checked {
+      background-color: white;
+      color: #1A0042; }
     .program--overview .filter .filter--list--wrapper ul li div input[type='checkbox'] {
       background: red; }
 
@@ -1049,6 +1052,9 @@ footer#footer {
   #vue-app.active .filter__checklists--wrapper {
     background: white !important;
     color: #1A0042; }
+  #vue-app.active .label--wrapper.checked {
+    background: #1A0042;
+    color: white; }
   #vue-app.active .program .share-program .button button {
     background: #1A0042;
     border: solid white 1px;
