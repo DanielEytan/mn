@@ -24,7 +24,10 @@ import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
 
 import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard)
+Vue.use(VueClipboard);
+
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo);
 
 Vue.use(VueRouter);
 
