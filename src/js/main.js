@@ -89,6 +89,25 @@ var vueApp = new Vue({
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;
         },
+        toggleFilters: function (valueName) {
+          var _this = this;
+          switch(valueName) {
+              case 'institution':
+                  _this.toggleInstitution();
+                  break;
+              case 'themes':
+                  _this.toggleThemes();
+                  break;
+              case 'events':
+                  _this.toggleKinds();
+                  break;
+              case 'languages':
+                  _this.toggleLang();
+                  break;
+              default:
+                  break;
+          }
+        },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')
             if( contrastState == null ) {

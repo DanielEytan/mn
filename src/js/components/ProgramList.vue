@@ -31,6 +31,9 @@
             <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
           </div>
         </div>
+        <div class="removeAll--tag" v-if="checkedFilters.length > 0">
+          <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
+        </div>
       </div>
       <div class="number">
         <p>Anzahl Veranstaltungen: {{calcNumberOfEvents()}}</p>
@@ -38,7 +41,8 @@
     </div>
     
     <ul class="program__list program__list--complete">
-    <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry"></programentry>
+      <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry">
+      </programentry>
     </ul>
   </div>
 </template>

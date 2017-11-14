@@ -7,6 +7,9 @@
           <label v-bind:class="{checked:checkedLabel(entry)}" v-bind:for="entry.title">{{ entry.title }}</label> 
         </div>
         </li >
+        <div class="filter-checkbox--close" v-on:click="toggleFilters">
+          SCHLIEßEN
+        </div>
       </ul>
     </div>
 </template>
@@ -37,6 +40,9 @@ module.exports = {
     this.initEventBus();
   },
   methods: {
+    toggleFilters: function () {
+      this.$emit('toggle-filters',this.valueName);
+    },
     checkedLabel: function (entry) {
       var index = this.internalCheckedValues.indexOf(entry.title)
       var isChecked = false;
@@ -86,5 +92,13 @@ module.exports = {
   }
   .label--wrapper label.checked:before {
     content:"☑ ";
+  }
+
+  .filter-checkbox--close {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 30px;
   }
 </style>

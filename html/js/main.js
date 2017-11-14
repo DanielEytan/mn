@@ -201,6 +201,25 @@
 	      var counter = eventdate.diff(todaysdate, 'days');
 	      this.daysLeft = counter;
 	    },
+	    toggleFilters: function toggleFilters(valueName) {
+	      var _this = this;
+	      switch (valueName) {
+	        case 'institution':
+	          _this.toggleInstitution();
+	          break;
+	        case 'themes':
+	          _this.toggleThemes();
+	          break;
+	        case 'events':
+	          _this.toggleKinds();
+	          break;
+	        case 'languages':
+	          _this.toggleLang();
+	          break;
+	        default:
+	          break;
+	      }
+	    },
 	    toggleContrast: function toggleContrast() {
 	      var contrastState = localStorage.getItem('contrast');
 	      if (contrastState == null) {
@@ -14174,7 +14193,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.filter-checkbox[data-v-697d8ad5] {\n  display: none;\n}\n.label--wrapper label[data-v-697d8ad5]:before {\n  content:\"\\2610   \";\n}\n.label--wrapper label.checked[data-v-697d8ad5]:before {\n  content:\"\\2611   \";\n}\n", ""]);
+	exports.push([module.id, "\n.filter-checkbox[data-v-697d8ad5] {\n  display: none;\n}\n.label--wrapper label[data-v-697d8ad5]:before {\n  content:\"\\2610   \";\n}\n.label--wrapper label.checked[data-v-697d8ad5]:before {\n  content:\"\\2611   \";\n}\n.filter-checkbox--close[data-v-697d8ad5] {\n  display: block;\n  width: 100%;\n  text-align: center;\n  text-decoration: underline;\n  margin-top: 30px;\n}\n", ""]);
 
 	// exports
 
@@ -14210,6 +14229,9 @@
 	  },
 
 	  methods: {
+	    toggleFilters: function toggleFilters() {
+	      this.$emit('toggle-filters', this.valueName);
+	    },
 	    checkedLabel: function checkedLabel(entry) {
 	      var index = this.internalCheckedValues.indexOf(entry.title);
 	      var isChecked = false;
@@ -14260,6 +14282,9 @@
 	//
 	//
 	//
+	//
+	//
+	//
 
 /***/ }),
 /* 23 */
@@ -14289,7 +14314,7 @@
 	    staticClass: "checkBoxFilter"
 	  }, [_c('ul', {
 	    staticClass: "list-group"
-	  }, _vm._l((_vm.possibleValues), function(entry) {
+	  }, [_vm._l((_vm.possibleValues), function(entry) {
 	    return _c('li', {
 	      staticClass: "list-group-item"
 	    }, [_c('div', {
@@ -14344,7 +14369,12 @@
 	        "for": entry.title
 	      }
 	    }, [_vm._v(_vm._s(entry.title))])])])
-	  }))])
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "filter-checkbox--close",
+	    on: {
+	      "click": _vm.toggleFilters
+	    }
+	  }, [_vm._v("\n      SCHLIEßEN\n    ")])], 2)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -14586,7 +14616,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14613,6 +14643,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16458,7 +16492,15 @@
 	        }
 	      }
 	    }, [_vm._v("(x)")])])
-	  }))]), _vm._v(" "), _c('div', {
+	  })), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
+	    staticClass: "removeAll--tag"
+	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
+	    on: {
+	      "click": function($event) {
+	        _vm.removeFromFilters('', true)
+	      }
+	    }
+	  }, [_vm._v("(x)")])]) : _vm._e()]), _vm._v(" "), _c('div', {
 	    staticClass: "number"
 	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"
