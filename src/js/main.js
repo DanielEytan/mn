@@ -76,16 +76,21 @@ var vueApp = new Vue({
       this.stateContrast(),
       this.time()
     },
+    mounted(){
+      window.addEventListener("scroll", this.menuScroll);
+    },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
+        },
+        menuScroll: function () {
+          this.menuOpen = false;
         },
         time: function() {
             var eventdate = moment("2018-01-19");
             var todaysdate = moment();
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;
-            // console.log(counter);
         },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')

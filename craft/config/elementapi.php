@@ -5,6 +5,7 @@ return [
     'endpoints' => [
         'visit.json' => [
             'elementType' => ElementType::Entry,
+            'cache' => true,
             'criteria' => ['section' => 'visit'],
             'transformer' => function(EntryModel $entry) {
                 // Create an array of all the "Body" Matrix field's blocks
@@ -30,6 +31,7 @@ return [
         ],
         'program.json' => [
             'elementType' => ElementType::Entry,
+            'cache' => true,
             'criteria' => ['section' => 'program','type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
 
@@ -123,6 +125,7 @@ return [
         'program/<entryId:\d+>.json' => function($entryId) {
             return [
                 'elementType' => ElementType::Entry,
+                'cache' => true,
                 'criteria' => ['id' => $entryId],
                 'first' => true,
                 'transformer' => function(EntryModel $entry) {
@@ -137,6 +140,7 @@ return [
         
         'themes.json' => [
             'elementType' => ElementType::Category,
+            'cache' => true,
             'criteria' => ['group' => 'themes'],
             'transformer' => function(CategoryModel $entry) {
                 return [
@@ -147,6 +151,7 @@ return [
         ],
         'events.json' => [
             'elementType' => ElementType::Category,
+            'cache' => true,
             'criteria' => ['group' => 'kindOfEvent'],
             'transformer' => function(CategoryModel $entry) {
                 return [
@@ -157,6 +162,7 @@ return [
         ],
         'languages.json' => [
             'elementType' => ElementType::Category,
+            'cache' => true,
             'criteria' => ['group' => 'languages'],
             'transformer' => function(CategoryModel $entry) {
                 return [
@@ -167,6 +173,7 @@ return [
         ],
         'institution.json' => [
             'elementType' => ElementType::Entry,
+            'cache' => true,
             'criteria' => ['section' => 'program', 'type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
                  $photos = [];
@@ -196,6 +203,7 @@ return [
         ],
         'locations.json' => [
             'elementType' => ElementType::Entry,
+            'cache' => true,
             // 'paginate' => false,
             'criteria' => [
                 'section' => 'program',
@@ -231,6 +239,7 @@ return [
 
         'programevent.json' => [
             'elementType' => ElementType::Entry,
+            'cache' => true,
             'criteria' => ['section' => 'program','type' =>'Event'],
             'transformer' => function(EntryModel $entry) {
                 $parent = $entry->getParent();

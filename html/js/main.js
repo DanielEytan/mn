@@ -93,51 +93,47 @@
 
 	var _proposedProgram2 = _interopRequireDefault(_proposedProgram);
 
-	var _institutionProgram = __webpack_require__(120);
-
-	var _institutionProgram2 = _interopRequireDefault(_institutionProgram);
-
-	var _SavedLink = __webpack_require__(125);
+	var _SavedLink = __webpack_require__(120);
 
 	var _SavedLink2 = _interopRequireDefault(_SavedLink);
 
-	var _MyProgram = __webpack_require__(130);
+	var _MyProgram = __webpack_require__(125);
 
 	var _MyProgram2 = _interopRequireDefault(_MyProgram);
 
-	var _momentMin = __webpack_require__(135);
+	var _momentMin = __webpack_require__(130);
 
 	var _momentMin2 = _interopRequireDefault(_momentMin);
 
-	var _GoogleMap = __webpack_require__(159);
+	var _GoogleMap = __webpack_require__(154);
 
 	var _GoogleMap2 = _interopRequireDefault(_GoogleMap);
 
-	var _twitter = __webpack_require__(164);
+	var _twitter = __webpack_require__(159);
 
 	var _twitter2 = _interopRequireDefault(_twitter);
 
-	var _contrast = __webpack_require__(193);
+	var _contrast = __webpack_require__(188);
 
 	var _contrast2 = _interopRequireDefault(_contrast);
 
-	var _presell = __webpack_require__(198);
+	var _presell = __webpack_require__(193);
 
 	var _presell2 = _interopRequireDefault(_presell);
 
-	var _institutions = __webpack_require__(203);
+	var _institutions = __webpack_require__(198);
 
 	var _institutions2 = _interopRequireDefault(_institutions);
 
-	var _vueClipboard = __webpack_require__(208);
+	var _vueClipboard = __webpack_require__(203);
 
 	var _vueClipboard2 = _interopRequireDefault(_vueClipboard);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
-	window.axios = __webpack_require__(166);
-	window._ = __webpack_require__(217);
+	window.axios = __webpack_require__(161);
+	window._ = __webpack_require__(214);
 
 	//import
 
@@ -158,7 +154,6 @@
 	    saveprogram: _SaveProgram2.default,
 	    shareprogram: _ShareMyProgram2.default,
 	    proposedprogram: _proposedProgram2.default,
-	    institutionprogram: _institutionProgram2.default,
 
 	    savedlink: _SavedLink2.default,
 	    myprogram: _MyProgram2.default,
@@ -189,17 +184,22 @@
 	  beforeMount: function beforeMount() {
 	    this.stateContrast(), this.time();
 	  },
+	  mounted: function mounted() {
+	    window.addEventListener("scroll", this.menuScroll);
+	  },
 
 	  methods: {
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
+	    },
+	    menuScroll: function menuScroll() {
+	      this.menuOpen = false;
 	    },
 	    time: function time() {
 	      var eventdate = (0, _momentMin2.default)("2018-01-19");
 	      var todaysdate = (0, _momentMin2.default)();
 	      var counter = eventdate.diff(todaysdate, 'days');
 	      this.daysLeft = counter;
-	      // console.log(counter);
 	    },
 	    toggleContrast: function toggleContrast() {
 	      var contrastState = localStorage.getItem('contrast');
@@ -13381,11 +13381,11 @@
 	  /* template */
 	  __webpack_require__(13),
 	  /* scopeId */
-	  "data-v-195a1429",
+	  "data-v-5f105f3d",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/ThemeList.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/ThemeList.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] ThemeList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13396,9 +13396,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-195a1429", Component.options)
+	    hotAPI.createRecord("data-v-5f105f3d", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-195a1429", Component.options)
+	    hotAPI.reload("data-v-5f105f3d", Component.options)
 	  }
 	})()}
 
@@ -13416,13 +13416,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("6aadf2c4", content, false);
+	var update = __webpack_require__(9)("141580ea", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-195a1429\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ThemeList.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-195a1429\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ThemeList.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5f105f3d\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ThemeList.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5f105f3d\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ThemeList.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -13897,7 +13897,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-195a1429", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5f105f3d", module.exports)
 	  }
 	}
 
@@ -13915,11 +13915,11 @@
 	  /* template */
 	  __webpack_require__(18),
 	  /* scopeId */
-	  "data-v-560e42f2",
+	  "data-v-27a23a06",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/InstitutionFilter.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/InstitutionFilter.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] InstitutionFilter.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13930,9 +13930,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-560e42f2", Component.options)
+	    hotAPI.createRecord("data-v-27a23a06", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-560e42f2", Component.options)
+	    hotAPI.reload("data-v-27a23a06", Component.options)
 	  }
 	})()}
 
@@ -13950,13 +13950,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("ac78139a", content, false);
+	var update = __webpack_require__(9)("601123ee", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-560e42f2\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InstitutionFilter.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-560e42f2\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InstitutionFilter.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-27a23a06\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InstitutionFilter.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-27a23a06\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InstitutionFilter.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -14097,7 +14097,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-560e42f2", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-27a23a06", module.exports)
 	  }
 	}
 
@@ -14115,11 +14115,11 @@
 	  /* template */
 	  __webpack_require__(24),
 	  /* scopeId */
-	  "data-v-6fdc0969",
+	  "data-v-697d8ad5",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/CheckboxFilter.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/CheckboxFilter.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] CheckboxFilter.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -14130,9 +14130,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6fdc0969", Component.options)
+	    hotAPI.createRecord("data-v-697d8ad5", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-6fdc0969", Component.options)
+	    hotAPI.reload("data-v-697d8ad5", Component.options)
 	  }
 	})()}
 
@@ -14150,13 +14150,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("4ad81a51", content, false);
+	var update = __webpack_require__(9)("751ac320", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6fdc0969\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckboxFilter.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6fdc0969\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckboxFilter.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-697d8ad5\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckboxFilter.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-697d8ad5\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckboxFilter.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -14174,7 +14174,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.filter-checkbox[data-v-6fdc0969] {\n  display: none;\n}\n.label--wrapper label[data-v-6fdc0969]:before {\n  content:\"\\2610   \";\n}\n.label--wrapper label.checked[data-v-6fdc0969]:before {\n  content:\"\\2611   \";\n}\n", ""]);
+	exports.push([module.id, "\n.filter-checkbox[data-v-697d8ad5] {\n  display: none;\n}\n.label--wrapper label[data-v-697d8ad5]:before {\n  content:\"\\2610   \";\n}\n.label--wrapper label.checked[data-v-697d8ad5]:before {\n  content:\"\\2611   \";\n}\n", ""]);
 
 	// exports
 
@@ -14347,7 +14347,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6fdc0969", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-697d8ad5", module.exports)
 	  }
 	}
 
@@ -14365,11 +14365,11 @@
 	  /* template */
 	  __webpack_require__(30),
 	  /* scopeId */
-	  "data-v-243d86f3",
+	  "data-v-d55ec342",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/TimeFilter.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/TimeFilter.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] TimeFilter.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -14380,9 +14380,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-243d86f3", Component.options)
+	    hotAPI.createRecord("data-v-d55ec342", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-243d86f3", Component.options)
+	    hotAPI.reload("data-v-d55ec342", Component.options)
 	  }
 	})()}
 
@@ -14400,13 +14400,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("041bae2c", content, false);
+	var update = __webpack_require__(9)("add84aca", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-243d86f3\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TimeFilter.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-243d86f3\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TimeFilter.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d55ec342\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TimeFilter.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d55ec342\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TimeFilter.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -14424,7 +14424,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.vue-slider-component .vue-slider-tooltip[data-v-243d86f3]  {\n  background: black;\n}\n", ""]);
+	exports.push([module.id, "\n.vue-slider-component .vue-slider-tooltip[data-v-d55ec342]  {\n  background: black;\n}\n", ""]);
 
 	// exports
 
@@ -14506,7 +14506,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-243d86f3", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-d55ec342", module.exports)
 	  }
 	}
 
@@ -14524,11 +14524,11 @@
 	  /* template */
 	  __webpack_require__(109),
 	  /* scopeId */
-	  "data-v-005b3764",
+	  "data-v-9ca9e510",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/ProgramList.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/ProgramList.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] ProgramList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -14539,9 +14539,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-005b3764", Component.options)
+	    hotAPI.createRecord("data-v-9ca9e510", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-005b3764", Component.options)
+	    hotAPI.reload("data-v-9ca9e510", Component.options)
 	  }
 	})()}
 
@@ -14559,13 +14559,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("a3b4835c", content, false);
+	var update = __webpack_require__(9)("85f520a0", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-005b3764\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramList.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-005b3764\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramList.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9ca9e510\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramList.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9ca9e510\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramList.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -14583,7 +14583,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14646,8 +14646,7 @@
 	    return {
 	      program: [],
 	      eventHash: { 0: 0 },
-	      dummyProgram: { "data": [{ "title": "Vitra Design Museum", "id": "290", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/vitra-design-museum", "number": "36", "address": "Charles-Eames-Strasse 2", "journey": {}, "food": "Urban Food und Drinks, auch zum Mitnehmen", "programmTitle": "Celebration!", "programmText": '<p>Wir feiern die Designer Charles und Ray Eames. F\xFCr die beiden war das Spiel Grundlage aller Kreativit\xE4t. Entdecken Sie das Werk des Designerpaares und lassen Sie sich durch Spiele \xFCberraschen.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/290.json", "events": [{ "title": "Kreisel-Workshop in der Vitra Design Museum Gallery", "id": "757", "description": "<p>Das Spielzeug der Eames ausprobieren und einen Kreisel gestalten<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "20", "title": "Architektur & Design" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Elefantenparade im Schaudepot-Lab", "id": "759", "description": '<p>Den legend\xE4ren Spielzeugelefanten der Eames\xA0mit Pappe nachbauen</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "20", "title": "Architektur & Design" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }] }, { "title": "Anatomisches Museum Basel", "id": "4", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/institution-1", "number": "1", "address": "Pestalozzistrasse 20", "journey": {}, "food": 'Herzbar, Knuspriges zum Essen, s\xFCsse \xDCberraschungen ', "programmTitle": "FASZINATION MENSCH", "programmText": '<p>Das Anatomische Museum zeigt Originalpr\xE4parate von menschlichen K\xF6rperbereichen, Organen und Geweben. Workshops, Spiele und Vortr\xE4ge zeigen\ndie Funktionsweisen und Zusammenh\xE4nge unseres K\xF6rpers auf.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/4.json", "events": [{ "title": "Die Knochenklinik im 21. Jahrhundert", "id": "34", "description": '<p>Die Orthoklinik Dornach bietet Einblicke in die H\xFCftprothetik.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Setze die Knochen deines K\xF6rpers zusammen', "id": "37", "description": "<p>Ist es leise, ist es richtig: Hier kann die ganze Familie aus einzelnen Knochen Skelette zusammenbauen.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Tatort Apotheke: dem T\xE4ter auf der Spur', "id": "39", "description": '<p>Spielen Sie in unseren R\xE4umlichkeiten das ber\xFChmte \xABCluedo\xBB mithilfe des Instituts f\xFCr Rechtsmedizin Basel.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Verletzungen und Narben im Showgesch\xE4ft', "id": "43", "description": '<p>Ist das Schminke oder echt? Wie werden Verletzungen und Narben so hergestellt, dass sie t\xE4uschend echt aussehen?</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "In den Katakomben des Anatomischen Instituts", "id": "298", "description": '<p>Unsere Pr\xE4paratoren f\xFChren Sie durch ihre Berufswelt.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Stressen und essen?", "id": "300", "description": '<p>Die gegenseitige Beeinflussung von Stress, Essverhalten, k\xF6rperlicher Aktivit\xE4t und Schlaf. Vortrag von Prof. Markus Gerber (Institut f\xFCr Sportwissenschaft, Basel)<br /></p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Faszien: Netzwerk des Lebens", "id": "304", "description": '<p>Die Bedeutung des muskul\xE4ren Bindegewebes in der modernen Medizin. Vortrag von Dr. Robert Schleip (Faszienforscher, Ulm)</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Antikenmuseum Basel und Sammlung Ludwig", "id": "46", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/antikenmuseum-basel-und-sammlung-ludwig", "number": "2", "address": "St. Alban-Graben 5", "journey": {}, "food": 'Unser Bistro verw\xF6hnt Sie kulinarisch. ', "programmTitle": "IM PHARAONENGRAB", "programmText": '<p>Bestaunen Sie die zwei pr\xE4chtigsten Grabkammern von Pharao Sethos I. in ihrer ganzen Sch\xF6nheit.\nDer Entdecker Giovanni Belzoni l\xE4dt Furchtlose auf\neinen Grabrundgang ein \u2013 zur Geisterstunde!\n<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/46.json", "events": [{ "title": 'Sch\xF6n wie im alten \xC4gypten', "id": "47", "description": '<p>Lass dich in unserem Schminkstudio als Pharaonin\xA0oder Pharao schminken.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "In Pharaos Grab", "id": "49", "description": '<p>Kinderf\xFChrungen mit Claudia Manser</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Meet and Greet in der B\xFCcherlounge', "id": "308", "description": '<p>Schm\xF6kern Sie in B\xFCchern zum alten \xC4gypten und treffen Sie die useumsleitung.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Kobra, K\xFCken, Krokodil', "id": "313", "description": '<p>Die lustigsten Hieroglyphen und ihre Bedeutung.\xA0Eine Pr\xE4sentation mit Claudia Manser</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Scanning Sethos. Die Wiedergeburt eines Pharaonengrabes", "id": "315", "description": '<p>Einf\xFChrung in die Sonderausstellung mit Andr\xE9 Wiese</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Scanning Seti. La r\xE9g\xE9neration d\u2019une tombe de pharaon', "id": "325", "description": '<p>Introduction \xE0 l\u2019exposition par Laurent Gorgerat</p>', "time": [], "themes": [{ "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "89", "title": 'Franz\xF6sisch' }] }, { "title": "Der Untergang der Helden. Krise oder Glanzzeit? (im Rahmen von Culturescapes)", "id": "317", "description": '<p>F\xFChrung durch die Sonderausstellung mit Esa\xF9 Dozio</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 23:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Um Mitternacht in Sethos\u2019 Grab', "id": "319", "description": '<p>Rollenf\xFChrung mit dem Entdecker Giovanni Belzoni</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 00:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Arch\xE4ologische Bodenforschung Basel-Stadt', "id": "221", "url": 'http://localhost:8888/mnb/html/programm/arch\xE4ologische-bodenforschung-basel-stadt', "number": "3a", "address": "Leonhardskirchplatz", "journey": {}, "food": 'Bei 3b, M\xFCnsterplatz: W\xFCrste vom Grill und w\xE4rmender Hypokras', "programmTitle": "VERBORGENE ORTE", "programmText": '<p>Die ersten zwei Basler Stadtmauern sind heute aus dem Stadtbild weitgehend verschwunden.\nIm Innern von Geb\xE4uden entlang des alten\nStadtgrabens finden die Arch\xE4ologen jedoch immer\nwieder Spuren. Auf F\xFChrungen und in\nPr\xE4sentationen k\xF6nnen diese entdeckt werden.<strong>\n</strong></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/221.json", "events": [{ "title": 'Ein Juwel: der Arch\xE4ologische Keller im Teufelhof', "id": "323", "description": '<p>Eine \xFCberraschende F\xFChrung zu den ersten zwei Basler\xA0Stadtmauern durch den verwinkelten Teufelhof</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "A jewel in the depths of the Teufelhof", "id": "327", "description": '<p>Guided tour of the old Basel city walls situated in the labyrinth\xA0of the Archaeological Cellar.<br />\u2192 Meeting point: Leonhardskirchplatz</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "90", "title": "Englisch" }] }, { "title": "Der Eckturm und das Erdbeben", "id": "329", "description": '<p>F\xFChrung in den Eckturm der Inneren Stadtmauer, der durch\xA0<br />das Erdbeben von 1356 schwer besch\xE4digt wurde<br /></p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "The medieval city wall tower and the earthquake", "id": "331", "description": '<p>Guided tour through the medieval city wall tower where\xA0<br />traces of the earthquake from\xA0AD\xA01356 are still visible<br />\u2192 Meeting point: Leonhardskirchplatz<br /></p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "90", "title": "Englisch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Arch\xE4ologische Bodenforschung Basel-Stadt', "id": "222", "url": 'http://localhost:8888/mnb/html/programm/arch\xE4ologische-bodenforschung-basel-stadt-1', "number": "3b", "address": 'M\xFCnsterplatz', "journey": {}, "food": 'M\xFCnsterplatz: W\xFCrste vom Grill und w\xE4rmender Hypokras', "programmTitle": "VERBORGENE ORTE", "programmText": '<p>Die ersten zwei Basler Stadtmauern sind heute aus</p>\n<p>dem Stadtbild weitgehend verschwunden. Im Innern von Geb\xE4uden entlang des alten Stadtgrabens finden die Arch\xE4ologen jedoch immer wieder Spuren. Auf F\xFChrungen und in Pr\xE4sentationen k\xF6nnen diese entdeckt werden.</p>\n<p><br /></p>\n<p><strong><strong><strong></strong></strong></strong></p>\n<p><br /></p>\n<p><strong><strong><strong></strong></strong></strong></p>\n<p><br /></p>\n<p><strong><strong></strong></strong></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/222.json", "events": [{ "title": 'Basels Stadtmauern \u2013 eine arch\xE4ologische Spurensuche', "id": "333", "description": '<p>Pr\xE4sentation \xFCber die Entwicklung der Stadtmauern</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Mittelalterliche Spielmanns-Musik", "id": "335", "description": '<p>Liebeslieder, Gassenhauer und Totenklagen aus der Zeit\xA0<br />zwischen 1200 und 1550, interpretiert vom Ensemble Mirabilis</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "23", "title": "Geschichte" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }, { "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Ausstellungsraum Klingental", "id": "76", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/ausstellungsraum-klingental", "number": "4", "address": "Kasernenstrasse 23", "journey": {}, "food": "In unserem Garten am Feuer: Suppe und Wurst mit Maske", "programmTitle": "IT'S JUST ABOUT WE", "programmText": '<p>In der Ausstellung \xABIt\u2019s Just About We\xBB von Celia &amp; Nathalie Sidler, Nina Willimann\nund Barbara Muff wird der Konstruktion einer kollektiven Identit\xE4t nachgegangen. Wie entsteht ein Wir-Gef\xFChl?</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/76.json", "events": [{ "title": 'Maskenball mit DJ Marcelle/Another Nice Mess  (NL /Klangbad) und DJ Donattt (CH)\u2028', "id": "77", "description": '<p>Tanz zu den Beats von\xA0DJ\xA0Marcelle/Another Nice Mess\xA0(NL\xA0/ Klangbad) und\xA0DJ\xA0Donattt. Eintritt nur maskiert!</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "138", "title": "Party" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Screenings: Kunst und Animation ", "id": "79", "description": '<p>Animationen und Kurzvideos von Bruno Steiner und Friends\xA0im Dauerbetrieb\xA0</p>', "time": [{ "type": "continuous", "start": { "date": "2017-09-20 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-09-20 04:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [], "kindOfEvent": [], "languages": [] }, { "title": 'Maske und H\xFClle', "id": "337", "description": '<p>Eigene Masken und Verh\xFCllungen f\xFCr den Ausstellungs- und Maskenballbesuch k\xF6nnen vor Ort hergestellt werden. Materialien daf\xFCr sind vorhanden.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Verh\xFCllt und maskiert durch die Ausstellung', "id": "340", "description": '<p>Die Ausstellung \xABIt\u2019s Just About We\xBB wird f\xFCr die\xA0Besucher/-innen erst begehbar mit Maske und H\xFClle.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": "Violette Shuttle-Linie", "color": "#530E66" }] }, { "title": 'Basler M\xFCnster', "id": "82", "url": 'http://localhost:8888/mnb/html/programm/basler-m\xFCnster', "number": "5", "address": 'M\xDCNSTERPLATZ', "journey": {}, "food": 'Gl\xFChwein, L\xE4ckerli und Fastenw\xE4he', "programmTitle": "GLOCKENGLANZ UND GLORIA", "programmText": '<p>Das M\xFCnster ist die ganze Nacht voller Kl\xE4nge: Glocken, Harfen, Pauken\nund Trompeten ert\xF6nen und laden zu\neiner musikalischen Entdeckungsreise ein.\n</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/82.json", "events": [{ "title": "Abendsegen", "id": "344", "description": "", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Stille in der Katharinenkapelle", "id": "346", "description": '<p>R\xFCckzugsort im Kreuzgang des M\xFCnsters:\xA0<br />Geniessen Sie die Stille.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": '\xABSchellen-Ursli\xBB (Kinderfilm von 1964)', "id": "348", "description": "<p>Dazu Livemusik des Sinfonieorchesters Basel<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:10:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "25", "title": "Musik" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "141", "title": "Film" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Glockenglanz und Gloria: F\xFChrungen', "id": "350", "description": '<p>Kurzf\xFChrungen im und ums M\xFCnster gew\xE4hren Einblicke\xA0<br />und geben anregende Impulse</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Glockenglanz und Gloria: Konzerte", "id": "352", "description": '<p>Musiker/-innen des Sinfonieorchesters Basel spielen\xA0\nin unterschiedlichen Besetzungen.\xA0</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede volle Stunde", "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Kammermusik in der Niklauskapelle", "id": "354", "description": '<p>Kammerensembles des Sinfonieorchesters Basel spielen\xA0<br />in der klangerf\xFCllten Niklauskapelle.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:40:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "25", "title": "Musik" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Jazz im Kreuzgang", "id": "356", "description": '<p>Die Magdalenakapelle l\xE4dt zum w\xE4rmenden\xA0<br />Verweilen bei Gl\xFChwein, L\xE4ckerli, hochkar\xE4tigem Jazz\xA0<br />und bestem Irish Folk.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Nachtgedanken", "id": "358", "description": "<p>Innehalten, nachdenken, (Nacht-)Ruhe finden<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }, { "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Basler Papierm\xFChle', "id": "83", "url": 'http://localhost:8888/mnb/html/programm/basler-papierm\xFChle', "number": "6", "address": "ST. ALBAN-TAL 37 ", "journey": {}, "food": 'Grill-Bar im Museum und Feines im Restaurant Papierm\xFChle', "programmTitle": "EXPERIMENTIERWERKSTATT", "programmText": "<p>Experimentieren, improvisieren, ausprobieren. Wir suchen\nneue Wege in alten Techniken.\nMach mit!<\/p>", "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/83.json", "events": [{ "title": 'Sichtbar \u2013 unsichtbar', "id": "360", "description": "<p>Fluoreszierender Parcours mit Carlos Poete<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "142", "title": "Installationen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "144", "title": "Spanisch" }] }, { "title": 'Wir sch\xF6pfen Kraut und R\xFCben', "id": "362", "description": '<p>Demonstrationen und Mitmachaktionen:\xA0\xABGeldgeschenke \u2013 papierig verpackt\xBB und \xABDer kleine\xA0Papiergarten \u2013 selbst gesch\xF6pft\xBB</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }] }, { "title": 'B\xE4renstark \u2013 B\xFCcher machen Kinder froh', "id": "364", "description": '<p>Gummib\xE4rchen als Klebstoff in der Buchbinderei</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Drucklabor", "id": "366", "description": "<p>Iris-Druck, Kunstdruck und mehr in der Druckerei<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }] }, { "title": "Kupferdruck", "id": "368", "description": '<p>Experimente mit den Druckk\xFCnstlerinnen Helga Halbritter\xA0und Gina Gunaratnam</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }] }, { "title": "Die Impronauten", "id": "372", "description": '<p>Wunderbar grausam, schrecklich komisch, unberechenbar\xA0<br />und erfinderisch: Die Impronauten st\xFCrzen sich\xA0<br />ins Abenteuer, inspiriert und befl\xFCgelt durch Ideen aus\xA0<br />dem Publikum.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Tiki-Bar im Exil", "id": "370", "description": '<p>Die Tiki-Bar unterbricht den Winterschlaf und\xA0mixt tropisch Gef\xE4hrliches.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }] }, { "title": 'Botanischer Garten der Universit\xE4t Basel', "id": "145", "url": 'http://localhost:8888/mnb/html/programm/botanischer-garten-der-universit\xE4t-basel', "number": "7", "address": 'Sch\xF6nbeinstrasse 6', "journey": {}, "food": 'Milder Linsen-Curry-Eintopf, scharfer Gem\xFCse-Curry-Reis', "programmTitle": "CURRY SELBST GEMIXT!", "programmText": '<p>Curry ist eine indische Gew\xFCrzmischung. Kurkuma, Koriander, Kreuzk\xFCmmel,\nPfeffer und Bockshornklee ... was geh\xF6rt\nsonst noch dazu?<strong>\n</strong></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/145.json", "events": [{ "title": "Mischen Sie Ihr eigenes Curry-Pulver!", "id": "373", "description": '<p>DE: Lassen Sie sich zuerst einige typische Gew\xFCrzpflanzen\xA0\nzeigen und stellen Sie danach unter fachkundiger\xA0\nLeitung Ihre eigene Curry-Mischung zusammen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Cartoonmuseum Basel", "id": "146", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/cartoonmuseum-basel", "number": "8", "address": "St. Alban-Vorstadt 28", "journey": {}, "food": 'Suppen aus Mattottis Heimat Italien, angerichtet von so\u2019up', "programmTitle": "DIE NEUNTE KUNST", "programmText": '<p><strong>\n</strong>Die Ausstellung \xABLorenzo Mattotti. Imago\xBB zeigt einen weltbekannten K\xFCnstler, der dem Unterbewussten mit gl\xFChenden \xD6lkreiden, nachtschwarzem Pinselstrich und zerbrechlichen Tuschelinien Gestalt verleiht.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/146.json", "events": [{ "title": "Ein selbst gezeichneter Button ist eine schicke Sache!", "id": "375", "description": '<p>Kreiere deinen eigenen Button mithilfe von Eva Rust\xA0und Andreas Lori (Verein Illustratoren Schweiz).\xA0Erfahre alle Tipps und Tricks und verlasse den orkshop mit einem eigenen Button an deiner Jacke.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede volle Stunde", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "20", "title": "Architektur & Design" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }] }, { "title": "Es war so finster und auch so bitterkalt ", "id": "391", "description": '<p>Direktorin Anette Gehrig f\xFChrt auf den Spuren von H\xE4nsel\xA0und Gretel in den finsteren M\xE4rchenwald Lorenzo Mattottis.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "129", "title": "Literatur" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }] }, { "title": "Feux ", "id": "394", "description": '<p>Les sp\xE9cialistes de la bande dessin\xE9e Gabriela Giallombardo\xA0et Judith Schifferle vous guident dans l\u2019oeuvre\xA0fascinante et les dessins puissants de Lorenzo Mattotis.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "89", "title": 'Franz\xF6sisch' }] }, { "title": "Herbst in der Hose", "id": "397", "description": '<p>Wer hat Angst vor dem \xABKlimakterium virile\xBB? Ralf K\xF6nig,\xA0<br />der erfolgreichste deutschsprachige Comiczeichner, bringt in\xA0<br />einer Liveperformance sein neuestes Werk auf die B\xFChne.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "125", "title": "Kunst" }, { "id": "129", "title": "Literatur" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "134", "title": "Tanz & Theater" }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Peur(s) du Noir", "id": "400", "description": '<p>Ein Feuerwerk filmischer Kreativit\xE4t: Animationsfilme\xA0von Lorenzo Mattotti und eine Auswahl vom Fantoche 2017\xA0(Internationales Festival f\xFCr Animationsfilm)</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "129", "title": "Literatur" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "141", "title": "Film" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }] }, { "title": "Fondation Beyeler", "id": "147", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/fondation-beyeler", "number": "9", "address": "Baselstrasse 101", "journey": {}, "food": 'Berner Platte: Spezialit\xE4ten aus Klees Heimat', "programmTitle": "NACHTMUSIK IM WUNDERLAND", "programmText": '<p>Wunderbare Malerei und Musik an der letzten Nacht der Ausstellung \xABPaul Klee\xBB und\n</p>\n<p>Nacht-Premiere von \xABGeorg Baselitz\xBB.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/147.json", "events": [{ "title": 'Workshop \xABSchriftzeichen und Symbole\xBB', "id": "404", "description": '<p>Wie entstehen Buchstaben? Wie entsteht eine Schrift?\xA0Klees Zeichen und Symbole inspirieren zu eigenen\xA0typografischen Kreationen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Was ist das f\xFCr 1 Paul Klee?', "id": "406", "description": '<p>Das Art Lab nimmt dich mit in die r\xE4tselhafte Welt\xA0voller Waldhexen, pr\xE4mierter \xC4pfel und auff\xE4lliger Haare.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Museumsspiel", "id": "408", "description": '<p>Mit einem Blick f\xFCrs Detail k\xF6nnen geheime Zeichen und\xA0mystische Farblandschaften entdeckt werden.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Musikalische Welten", "id": "410", "description": '<p>Kinder und Jugendliche der Musikschule Riehen\xA0begleiten musizierend\xA0die Ausstellung\xA0\xABPaul Klee\xBB.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Kurzf\xFChrungen \xABPaul Klee\xBB', "id": "412", "description": "", "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Guided tours \xABPaul Klee\xBB', "id": "417", "description": "", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "90", "title": "Englisch" }] }, { "title": 'Visites guid\xE9es \xABPaul Klee\xBB', "id": "425", "description": "", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "89", "title": 'Franz\xF6sisch' }] }, { "title": '\xABPaul Klee\xBB Kurzf\xFChrungen / t\xE1rlatvezet\xE9s / \u044D\u043A\u0441\u043A\u0443\u0440\u0441\u0438\u044F / visita guidata', "id": "420", "description": '<p>Kurzf\xFChrungen \xABPaul Klee\xBB<br />HU 19.15\xA0t\xE1rlatvezet\xE9s<br />RU 20.15\xA0\u044D\u043A\u0441\u043A\u0443\u0440\u0441\u0438\u044F<br />ES \xA021.15\xA0visita guiada\xA0<br />IT \xA022.15\xA0visita guidata</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Duftende Erinnerungen \u2013 ein Spaziergang', "id": "428", "description": '<p>Gehe mit dem Parf\xFCmeur Vincent Micotti auf einen\xA0<br />sinnlichen Spaziergang durch \xABPaul Klee\xBB.</p>', "time": [], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Taschenlampen-F\xFChrung', "id": "429", "description": "<p>Mit der Taschenlampe durch den Park der Fondation Beyeler<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Nacht-Premiere: \xABGeorg Baselitz\xBB', "id": "432", "description": "", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [], "languages": [{ "id": "339", "title": "Multilingual" }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }] }, { "title": "Fondation Fernet Branca", "id": "223", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/fondation-fernet-branca", "number": "10", "address": "Rue du Ballon", "journey": {}, "food": "Flammkuchen, Snacks, Suppe, Kuchen und Cocktails", "programmTitle": 'LET\'S ROCK \u2019N\u2019 ROLL', "programmText": '<p>Die ehemalige Fernet-Branca-Destillerie wurde vom Architekten Jean-Michel Wilmotte in einen Ausstellungsraum umgewandelt. Die aktuelle Ausstellung \xABLet\u2019s Rock \u2019n\u2019 Roll\xBB verlangt selbstverst\xE4ndlich nach einem lauten Konzert \u2013 die Band \xABLes sans pattes\xBB sorgt daf\xFCr.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/223.json", "events": [{ "title": 'Ausstellung \xABGilgian Gelzer \u2013 Ra\xFAl Illarramendi\xBB', "id": "434", "description": '<p>Die Doppelausstellung zeigt Malereien, Fotografien\xA0\nund Zeichnungen von Gilgian Gelzer und Ra\xFAl Illarramendi.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [], "languages": [] }, { "title": 'Ausstellung \xABLet\u2019s Rock \u2019n\u2019 Roll\xBB ', "id": "437", "description": '<p>Thomas L\xE9vy-Lasne: \xABLes F\xEAtes\xBB (Zeichnungsserie) Beno\xEEt Grimbert: Fotos und K\xFCnstlerb\xFCcher \xFCber Nico und David Bowie</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [], "languages": [] }, { "title": "Musikalische Performance", "id": "439", "description": '<p>\xABLes sans pattes\xBB: Robert Combas &amp; Lucas Mancione</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "135", "title": "Performance" }], "languages": [] }], "shuttleLine": [{ "title": "Gelbe Shuttle-Linie", "color": "#FEC209" }] }, { "title": 'HeK (Haus der elektronischen K\xFCnste Basel)', "id": "224", "url": 'http://localhost:8888/mnb/html/programm/hek-haus-der-elektronischen-k\xFCnste-basel', "number": "11", "address": "Freilager-Platz 9", "journey": {}, "food": 'K\xF6stlichkeiten im \xABBistro Paradis\xBB', "programmTitle": "DIGITALE SINNWELTEN", "programmText": '<p>Die Zukunft der Liebe, interaktive Bildwelten und bezaubernde Retro\xE4sthetiken werden in Performances, Installationen und Workshops erfahrbar. <br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/224.json", "events": [{ "title": "Do it yourself: Atem-Puls-Klang-Bild-Maschine", "id": "442", "description": '<p>Workshop: K\xF6rpersignale wie Atem oder Herzschl\xE4ge mit\xA0<br />einer selbst gebauten Maschine zu Kl\xE4ngen und Bildern\xA0<br />verwandeln. In Zusammenarbeit mit der\xA0SGMK\xA0(Schweizerische\xA0<br />Gesellschaft f\xFCr mechatronische Kunst).</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Interaktive Installation: Camille Scherrer", "id": "444", "description": '<p>Die K\xFCnstlerin Camille Scherrer pr\xE4sentiert eine interaktive\xA0Installation, bei der Kinder und Erwachsene in eine\xA0fantastische Welt eintauchen k\xF6nnen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "142", "title": "Installationen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": 'Interaktive Installation: \xABE.E.G. KISS\xBB', "id": "446", "description": '<p>In der Installation von Karen Lancel und Hermen Maat\xA0k\xF6nnen die Teilnehmer/-innen einen gemeinsamen Kuss\xA0mit allen Sinnen erleben.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "142", "title": "Installationen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Kurzf\xFChrungen durch die Ausstellung \xABFuture Love\xBB', "id": "448", "description": '<p>F\xFChrungen in Deutsch\xA0und Franz\xF6sisch</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }] }, { "title": "Performance: Dmitry Morozov und Anastasia Tolchneva", "id": "456", "description": '<p>Die russische S\xE4ngerin und der Medienk\xFCnstler interagieren in\xA0ihrer Performance \xFCber ein selbst gebautes kybernetisches Ger\xE4t.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "25", "title": "Musik" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Kuratorenf\xFChrungen durch die Ausstellung \xABFuture Love\xBB', "id": "452", "description": "", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Visuelle Performance: Raquel Meyers", "id": "460", "description": '<p>Raquel Meyers erzeugt mit Commodore-64-Computern, alten Teletext-Systemen und Schreibmaschinen bezaubernde\xA0\nBilder in Retro\xE4sthetik.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "25", "title": "Musik" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "135", "title": "Performance" }, { "id": "142", "title": "Installationen" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }] }, { "title": "Helvetia Art Foyer", "id": "225", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/helvetia-art-foyer", "number": "12", "address": "Steinengraben 25", "journey": {}, "food": 'Soul Kitchen f\xFCr Nachtschw\xE4rmer', "programmTitle": "GOODBYE BLUE SKY", "programmText": '<p>Letzte Gelegenheit, die Ausstellung \xABSave Our Souls\xBB von huber.huber im Helvetia Art Foyer zu sehen. Programm mit Kurzf\xFChrungen, einem Workshop f\xFCr Kinder und Soul Food f\xFCr Nachtschw\xE4rmer.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/225.json", "events": [{ "title": 'SOS \u2013 das musikalische Rahmenprogramm', "id": "462", "description": '<p>Songs rund um die Themen der Ausstellung\xA0zwischen Rettung und Untergang von\xA0ABBA\xA0\xFCber\xA0David Bowie bis Pink Floyd</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "25", "title": "Musik" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Kinderworkshop: \xABAlter Falter\xBB', "id": "464", "description": "<p>Wir basteln uns schmucke Schmetterlinge und flatternde Falter.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "128", "title": "Natur" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'K\xFCnstlerf\xFChrungen', "id": "466", "description": '<p>Mit den K\xFCnstlern huber.huber durch die Ausstellung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Kuratorenf\xFChrungen', "id": "470", "description": "<p>Mit den Kuratoren der Helvetia Kunst Sammlung durch die Ausstellung<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Historisches Museum Basel \u2013 Barf\xFCsserkirche', "id": "226", "url": 'http://localhost:8888/mnb/html/programm/historisches-museum-basel-barf\xFCsserkirche', "number": "13", "address": 'Barf\xFCsserplatz', "journey": {}, "food": 'Nautisches Bistro mit H\xE4ppchen aus der Komb\xFCse von so\u2019up', "programmTitle": "ABGETAUCHT", "programmText": '<p>Das ganze Museum steht unter Wasser und das Kirchenschiff ist gesunken.\xA0Basels geheimnisvolle Wasserfunde aus\xA0dem Rhein geben ungew\xF6hnliche Einblicke in die Stadtgeschichte.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/226.json", "events": [{ "title": 'U-Boot-Bauen f\xFCr Jung und Alt', "id": "474", "description": '<p>In entspannter Unterwasseratmosph\xE4re k\xF6nnen aus\xA0einfachsten Mitteln odelle von U-Booten gebaut werden.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "20", "title": "Architektur & Design" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "WunderBar", "id": "476", "description": '<p>Chillen in der gem\xFCtlichen Unterwasseratmosph\xE4re der\xA0Kirche \u2013 mit ausschliesslich klaren Getr\xE4nken von R(h)einwasser bis \u2026 Ein sturmerprobter\xA0DJ\xA0sorgt f\xFCr erfrischenden\xA0Sound und Walges\xE4nge.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Die Vergangenheit erleben", "id": "478", "description": '<p>Mit der Arch\xE4ologie Baselland k\xF6nnen Sie Originalfunde\xA0sehen, Geschichten h\xF6ren, R\xE4tsel l\xF6sen und sich Kopien\xA0von Fussfesseln anlegen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Live inszeniert: heisse Spur im kalten Nass", "id": "480", "description": '<p>Der spektakul\xE4re Einbruch in das Lohnb\xFCro der\xA0\n\xABDurand &amp; Huguenin\xA0AG\xBB wird in Szene gesetzt von\xA0</p>\n<p>Reto B. M\xFCller (Erz\xE4hler) und Philipp Emmel (Inszenierung).</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "134", "title": "Tanz & Theater" }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Kurzf\xFChrung durch die Sammlung', "id": "486", "description": '<p>Die sch\xF6nsten, interessantesten und merkw\xFCrdigsten St\xFCcke\xA0<br />im Museum werden kurz vorgestellt.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Guided tour through the collection", "id": "489", "description": "<p>Short tour of the most beautiful, interesting and curious things shown in the Museum<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "90", "title": "Englisch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Historisches Museum Basel \u2013 Musikmuseum', "id": "227", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/historisches-museum-basel-musikmuseum", "number": "14", "address": "Im Lohnhof 9", "journey": {}, "food": 'Lauschige Bar mit Snacks und Getr\xE4nken von so\u2019up', "programmTitle": "Rhythm and Dance", "programmText": "<p>Mit Rhythmus und Takt durch die Museumsnacht. Geben Sie selbst den Takt an oder erleben Sie Klang, Bewegung und Rhythmus beim Steppen.<br \/><\/p>", "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/227.json", "events": [{ "title": 'Kreieren \u2013 Dirigieren', "id": "492", "description": '<p>Hier k\xF6nnen Sie Ihren eigenen Dirigierstab gestalten und\xA0sich in die verschiedenen Taktschl\xE4ge einf\xFChren lassen.\xA0Mit etwas Gl\xFCck k\xF6nnen Sie nach der Probe einer Musikerin\xA0den Takt vorgeben.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Step \u2013 Stamp \u2013 Stomp', "id": "494", "description": '<p>Stepptanzshow mit Kindern und Junioren der Stepptanzschule \xABtanzwerk\xBB, angeleitet durch Sabine Freuler,\xA0Andreas D\xE4nel, Simone Locher, Ana Lopez und\xA0Marion W\xFCrtz-Servet</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "134", "title": "Tanz & Theater" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Dirigieren \u2013 Agieren', "id": "498", "description": '<p>W\xE4hlen Sie das Musikst\xFCck (Klassik, Jazz, Pop) aus\xA0und leiten Sie die Musikerinnen Giovanna Baviera\xA0(Gambe) und Martyna Kazmierczak (Tasteninstrumente)\xA0mit dem Dirigierstab an.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Every hour", "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Step \u2013 Stamp \u2013 Stomp zum Mitmachen', "id": "500", "description": '<p>Steppen Sie mit! Einf\xFChrung in die ersten Schritte\xA0mit tanzwerk, der Schule f\xFCr Stepptanz.\xA0Schuhe stehen zur Verf\xFCgung!</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "134", "title": "Tanz & Theater" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'J\xFCdisches Museum der Schweiz', "id": "228", "url": 'http://localhost:8888/mnb/html/programm/j\xFCdisches-museum-der-schweiz', "number": "15a", "address": "Kornhausgasse 8", "journey": {}, "food": 'Vegi Tscholent im Kosher-Style vom 121\xB0 Foodtruck bei der Galerie am Petersgraben', "programmTitle": "JEWISH NIGHT OUT", "programmText": '<p>Das J\xFCdische Museum zeigt sich in diesem Jahr an zwei Standorten mit doppeltem Programm: an der Kornhausgasse im J\xFCdischen Museum und neu auch in der Galerie am Petersgraben.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/228.json", "events": [{ "title": 'Kinder f\xFChren Kinder', "id": "504", "description": "<p>Junge Expertinnen begleiten Gleichaltrige durch das Museum.<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "3000 Jahre Judentum in 30 Minuten", "id": "507", "description": '<p>Crazy David erkl\xE4rt mit Comics und einer grossen Prise\xA0Humor das Judentum im Schnelldurchlauf.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "30 Minuten" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "135", "title": "Performance" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Curator's choice", "id": "509", "description": '<p>Kuratorinnen stellen ausgew\xE4hlte Objekte der Sammlung vor.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'J\xFCdisches Museum Galerie', "id": "231", "url": 'http://localhost:8888/mnb/html/programm/j\xFCdisches-museum-galerie', "number": "15b", "address": "Petersgraben 31", "journey": {}, "food": 'Vegi Tscholent im Kosher-Style vom 121\xB0 Foodtruck bei der Galerie am Petersgraben', "programmTitle": "JEWISH NIGHT OUT", "programmText": '<p>Das J\xFCdische Museum zeigt sich in diesem Jahr an zwei Standorten mit doppeltem Programm: an der Kornhausgasse im J\xFCdischen Museum und neu auch in der Galerie am Petersgraben.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/231.json", "events": [{ "title": "Aus alt mach neu!", "id": "512", "description": "<p>Kinder toben sich im bunten Upcycling-Workshop aus.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }] }, { "title": '\u042D\u043A\u0441\u043A\u0443\u0440\u0441\u0438\u044F \u043F\u043E \u0432\u044B\u0441\u0442\u0430\u0432\u043A\u0435 \xAB\u0418\u0441\u043A\u0443\u0441\u0441\u0442\u0432\u043E \u043F\u043E\u0441\u043B\u0435 \u0428\u0430\u0433\u0430\u043B\u0430\xBB', "id": "514", "description": '<p>Kurzf\xFChrung durch die Ausstellung \xABKunst nach Chagall\xBB</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Balkan Beats", "id": "516", "description": '<p>Die Haiducken spielen Klezmer- und Balkanst\xFCcke.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Golem zum Gruseln", "id": "518", "description": "<p>Lesung mit Horrormusik: Der Golem lehrt euch das Gruseln.<\/p>", "time": [{ "type": "iterating", "start": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Kunst Raum Riehen", "id": "232", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/kunst-raum-riehen", "number": "16", "address": "Im Berowergut, Baselstrasse 71", "journey": {}, "food": 'K\xE4seschnitten vom \xABWirth\u2019s Huus\xBB', "programmTitle": "Abattre les murs", "programmText": '<p>Wir sprengen die Grenzen! Mit K\xFCnstlerinnen und K\xFCnstlern der \xABRegionale 18\xBB aus dem Dreiland, einer Kunstsprechstunde, in der Sie alles fragen d\xFCrfen, und last but not least: Rock \u2019n\u2019 Roll!<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/232.json", "events": [{ "title": 'Mix & Match \u2013 Bildcollagen-Workshop', "id": "520", "description": '<p>Atelier f\xFCr alle Altersstufen mit Rebekka Moser</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Kurzf\xFChrungen', "id": "522", "description": '<p>Mit Kuratorin Kiki Seiler-Michalitsi und K\xFCnstlerinnen\xA0\nund K\xFCnstlern der Ausstellung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Dr. Stegmanns Sprechstunde", "id": "525", "description": '<p>Individuelle Beratungen \xE0 15 Minuten zu allen Fragen der\xA0Kunst mit Markus Stegmann (Direktor Museum\xA0Langmatt Baden). Wer zuerst kommt, kommt zuerst dran.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "139", "title": "Talk" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Arthur Gepting", "id": "527", "description": '<p>Drama Rock \u2019n\u2019 Roll</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }] }, { "title": "Kunsthalle Basel", "id": "233", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/kunsthalle-basel", "number": "17", "address": "Steinenberg 7", "journey": {}, "food": 'Es ist nie zu kalt f\xFCr einen fruchtigen Drink. An der Saftbar Ju Ju\u2019s Juice Bar in tropischem Ambiente k\xF6nnt ihr euch aufw\xE4rmen und verweilen \u2013 vor, w\xE4hrend oder nachdem ihr die Kunsthalle Basel zu eurer B\xFChne gemacht habt.', "programmTitle": 'AB AUF DIE B\xDCHNE!', "programmText": '<p>Die Kunsthalle Basel zeigt neben der RegionaleAusstellung \xABOOO Object Oriented Ontology\xBB auch \xABNew Swiss Performance Now\xBB und l\xE4dt ein, selber Teil einer kollektiven Performance zu werden.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/233.json", "events": [{ "title": 'Talk to me \u2013 I talk to you!', "id": "529", "description": '<p>Wir verwickeln dich geschickt in ein Gespr\xE4ch, oder du uns?\xA0Unsere Guides warten in der Regionale-Ausstellung\xA0\xABOOO Object Oriented Ontology\xBB darauf, mit euch ins\xA0Gespr\xE4ch zu kommen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "139", "title": "Talk" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Macht die Kunsthalle Basel zu eurer B\xFChne!', "id": "531", "description": '<p>Auch ihr k\xF6nnt zum Kunstwerk werden. Wir laden euch\xA0\nein, Teil des Geschehens zu werden und selbst in der Kunsthalle Basel zu performen. Lasst euch zu humorvollen\xA0\nAktionen f\xFCr die ganze Familie verleiten, w\xE4hrend ihr etwas \xFCber die Geschichte der Performancekunst lernt.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "23", "title": "Geschichte" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }, { "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Live-Performances", "id": "533", "description": '<p>Junge Schweizer K\xFCnstler/-innen wie Florence Jung,\xA0Nils Amadeus Lange (19.30, 20.30, 21.30), J\xE9r\xF4me Leuba,\xA0Marta Margnetti und Yves Scherer zeigen ihre\xA0Performances im Rahmen der Ausstellung\xA0\xABPerformanceProcess. New Swiss Performance Now\xBB.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Kunstmuseum Basel Hauptbau | Neubau", "id": "234", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/kunstmuseum-basel-hauptbau-neubau", "number": "18", "address": "St. Alban-Graben 16", "journey": {}, "food": "Food und Drinks im grossen Innenhof", "programmTitle": "Multiversum", "programmText": '<p>Revolutionen, Wanderer, Huren und Heilige und vieles mehr \u2013 das Museum als Kaleidoskop von Geschichten. Plus: Plattentaufe mit Daniel Kahn &amp; The Painted Bird und Russendisko mit DJ KimSka.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/234.json", "events": [{ "title": '1911\u20131919: Chagalls Jahre des Durchbruchs', "id": "535", "description": '<p>Kurzf\xFChrungen</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Hinter den Kulissen: Kupferstichkabinett", "id": "537", "description": "<p>Eine Auswahl besonderer Werke im Studienraum<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Schweben \u2013 fliegen \u2013 fallen', "id": "539", "description": '<p>Schwerelos im Atelier: Experimente in Anlehnung an\xA0Chagalls taumelnde und schwebende Figuren</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-10 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'It\u2019s a wild world', "id": "541", "description": '<p>Pr\xE4sentation von Papierarbeiten von Walther Dahn</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Klassische Moderne: Kurzf\xFChrungen', "id": "544", "description": '<p>19.30, 20.30\xA0Wie kommt die Kunst ins Kunstmuseum?<br />21.30, 22.30\xA0B\xF6cklin jenseits von Gut und B\xF6se</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": '\xABI am for \u2026 banana art, apple art, turkey art \u2026\xBB', "id": "549", "description": '<p>Anf\xE4nge der Pop Art mit Claes Oldenburg</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Radikaler Klezmer mit Daniel Kahn & The Painted Bird", "id": "552", "description": "<p>Drei Konzert-Sets (Plattentaufe)<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Alte Meister: Neuerwerbungen in der Altmeister-Galerie", "id": "558", "description": '<p>Kurzf\xFChrung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Alte Meister: Richter nach Tizian", "id": "560", "description": '<p>Kurzf\xFChrung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Alte Meister: Huren und Heilige \u2013 Spielarten des Caravaggismus', "id": "562", "description": '<p>Kurzf\xFChrung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-10 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'DJ KimSka \u2013 Balkan Beats und Russendisko im Neubau', "id": "564", "description": "", "time": [{ "type": "continuous", "start": { "date": "2017-11-10 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-10 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "135", "title": "Performance" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Alte Meister: Fr\xFChe Leinwandmalerei', "id": "556", "description": '<p>Kurzf\xFChrung</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Kunstmuseum Basel | Gegenwart", "id": "235", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/kunstmuseum-basel-gegenwart", "number": "19", "address": "St. Alban-Rheinweg 60", "journey": {}, "food": "Nur beim Hauptbau | Neubau", "programmTitle": 'DREIZEHN NEUE R\xC4UME', "programmText": '<p>Neueinrichtungen \xFCber zwei Etagen: Werke aus den Sammlungen und Rauminstallationen. Wechselausstellung: Michael Clegg &amp; Martin Guttmann.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/235.json", "events": [{ "title": "Besichtigungstermin", "id": "566", "description": '<p>Begehung der Sammlungs-Neuh\xE4ngung</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Fokus Michael Clegg & Martin Guttmann", "id": "568", "description": '<p>120 Jahre nach dem ersten Zionistenkongress in Basel:\xA0Einf\xFChrung ins neu inszenierte Werk des K\xFCnstlerduos\xA0Michael Clegg &amp; Martin Guttmann</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Zur vollen Stunde", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": "Shuttle Schiffe", "color": "#B8DCEA" }] }, { "title": 'M\xFChlemuseum', "id": "236", "url": 'http://localhost:8888/mnb/html/programm/m\xFChlemuseum', "number": "20", "address": 'Merian G\xE4rten, Vorder Br\xFCglingen 5', "journey": {}, "food": 'Heisser Gew\xFCrzapfelsaft, Flammkuchen und Tarte Tatin', "programmTitle": "Die Fetzen fliegen", "programmText": '<p>Steigen Sie in die Kutsche ein und folgen Sie Mme Fourchette auf den n\xE4chtlichen Br\xFCglinger Hof.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/236.json", "events": [{ "title": 'Krach unterm Dach \u2013 szenischer Ausflug ins Jahr 1775', "id": "570", "description": '<p>Wohlverdiente Nachtruhe? Von wegen! Der redselige M\xFCller,\xA0der bankrotte Patron und ein gewiefter Kaufinteressent\xA0\nliefern sich in der M\xFChle und der Villa ein hitziges\xA0\nGefecht \u2013 und Sie stecken als Hausangestellte mittendrin. Ein Theater mit Wahrheitsgehalt und Unterhaltungswert.\xA0</p><p>\u2192\xA0Vorstellungsbeginn bei der Shuttlebus-Haltestelle</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "134", "title": "Tanz & Theater" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }] }, { "title": "Museum der Kulturen Basel", "id": "237", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/museum-der-kulturen-basel", "number": "21", "address": 'M\xFCnsterplatz 20', "journey": {}, "food": "Geburtstagsbar im Hof: Gourmet-Hotdog, Kuchen und Zuckerwatte", "programmTitle": "Happy Birthday", "programmText": '<p>Feiern Sie mit uns 125 Jahre Museum der Kulturen Basel. Wir entf\xFChren Sie zu Festlichkeiten aus aller Welt, gehen auf Zeitreise mit den Sarasins und verf\xFChren Sie mit streng geheimer Trommelkunst.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/237.json", "events": [{ "title": 'Workshop: Girlanden kn\xFCpfen', "id": "572", "description": '<p>Girlanden sind in Indien festliche Gaben. Aus Stoff und\xA0B\xE4ndeli werden Girlanden gekn\xFCpft und mit Ganesha, dem\xA0Gott mit Elefantenkopf, sowie eigenen Kreationen verziert.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Fotostation: Sprung aus der Torte", "id": "574", "description": '<p>Alle Geburtstagsg\xE4ste d\xFCrfen f\xFCr einmal aus der Geburtstagstorte springen und werden dabei fotografisch festgehalten.<br /></p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Performance: Sarasins live", "id": "576", "description": '<p>Die Forscher und Museumsgr\xFCnder Fritz und Paul Sarasin\xA0wurden als Wachsfiguren 125 Jahre lang in Balangonong\xA0ausgestellt und bestaunt. Nun kommen sie als Leihgabe\xA0zur\xFCck und werden zum Leben erweckt.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 19:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 21:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Kurzf\xFChrungen: Feste feiern', "id": "583", "description": '<p>Gefeiert wird in jeder Kultur. Wie und warum erz\xE4hlen\xA0unsere Kuratorinnen und Kuratoren an festlichen F\xFChrungen\xA0durch die aktuellen Ausstellungen.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 21:40:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:40:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "144", "title": "Spanisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Konzert: Top Secret Drummelschuel", "id": "587", "description": '<p>Der Nachwuchs des weltber\xFChmten Trommelcorps\xA0l\xE4sst die Schlegel bei Konzerten im Museumshof tanzen\xA0und trommelt so unser Jubil\xE4umsjahr ein.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede volle Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Schwarze Shuttle Linie", "color": "#000000" }, { "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }, { "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Museum f\xFCr Musikautomaten', "id": "238", "url": 'http://localhost:8888/mnb/html/programm/museum-f\xFCr-musikautomaten', "number": "22", "address": "Zu Gast im Musikmuseum, Leonhardskirche", "journey": {}, "food": 'Kurbel-Bar mit Kaffifertig, C\xFCpli und alkoholfreiem Punsch', "programmTitle": "Kurbelsound", "programmText": '<p>Es gibt viel zu entdecken im Museum f\xFCr Musikautomaten: H\xF6ren Sie Paul Ragaz\u2019 \xFCberraschendes Kurbel-Konzert, bestaunen Sie verschiedene Instrumente mit Kurbelantrieb und versuchen Sie Ihr Gl\xFCck beim Kurbel-Wettbewerb.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/238.json", "events": [{ "title": "Instrumente mit Kurbelantrieb", "id": "589", "description": "<p>Die Restauratoren des Museums zeigen, wie man Musikautomaten mit einer Kurbel zum Klingen bringt.<\/p>", "time": [{ "type": "iterating", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde, ausser 20.00, 22.00, 00.00", "duration": "" }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Kurbel-Wettbewerb: Songtitel gesucht!", "id": "591", "description": '<p>Sie erraten die Titel von vielf\xE4ltigen Melodien, die Sie selber\xA0auf kleinen Kurbel-Musikwerken spielen. Sind alle Songtitel\xA0richtig erkannt, bestimmt das Kurbel-Gl\xFCcksrad den\xA0Wettbewerbspreis.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Automat trifft Musiker", "id": "593", "description": '<p>Vergn\xFCgliches Kurbel-Kurzprogramm mit Paul Ragaz,\xA0einem B\xFCndel Lochstreifen, verschiedenen Instrumenten\xA0und abenteuerlichen Konstruktionen.\xA0<br />\u2192\xA0In der Leonhardskirche.\xA0P\xFCnktlicher Beginn (kein Einlass w\xE4hrend des Konzerts)</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Museum Kleines Klingental", "id": "51", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/museum-kleines-klingental", "number": "23", "address": "Unterer Rheinweg 26", "journey": {}, "food": '\xABLes Gare\xE7ons\xBB im Klingental: Kulinarik in der Klosterk\xFCche', "programmTitle": "Bewegter Musiksaal", "programmText": '<p>\xABDer Musiksaal in Basel\xBB gibt den Ton an: ein Erlebnisangebot mit Konzerten, einem Duell zwischen Boxsport und Klassik, tierischen Instrumenten, F\xFChrungen und einem Tanzkurs.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/51.json", "events": [{ "title": 'Kleidung aus der Belle \xC9poque', "id": "52", "description": '<p>Vorgef\xFChrt von Patrick Schlenker</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Konzerte mit Werken von Mozart,  Smetana, Huber und Levy", "id": "56", "description": '<p>Alternierend gespielt vom Trio Fontane sowie von\xA0Cornelia Lenzin, Cunta Abele und Junko Otani Mast</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 03:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Kurzf\xFChrungen durch die Musiksaal-Ausstellung', "id": "58", "description": "<p>Mit der Kuratorin Sandra Fiechter<\/p>", "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede volle Stunde", "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Kinderprogramm: Giraffenklavier und  Drachenposaune", "id": "598", "description": '<p>Kinder entdecken tierische Musikinstrumente.\xA0Mit Kathrin M. Menzel, Schola Cantorum Basiliensis</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Walzer-Tanzkurs", "id": "600", "description": "<p>Grundschritte des klassischen Walzers mit Robin Keller<\/p>", "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "134", "title": "Tanz & Theater" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Anekdoten aus dem Musiksaal", "id": "602", "description": '<p>Erz\xE4hlt von Satu Blanc und Daniel Schneller</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 21:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Boxen versus Klassik", "id": "605", "description": '<p>\xABDer Bessere gewinnt\xBB: Musiker und Boxer spielen\xA0und boxen um die Wette. Eine Begegnung zwischen\xA0dem Boxclub Basel und dem Violinisten Gregor Haenssler</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "127", "title": "Sport & Gesundheit" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Violette Shuttle-Linie", "color": "#530E66" }] }, { "title": "Museum Tinguely", "id": "269", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/museum-tinguely", "number": "24", "address": "Paul Sacher-Anlage 1", "journey": {}, "food": "Showkochen im Bistro und Bratwurststand vor dem Museum ", "programmTitle": "Perform the Museum!", "programmText": "<p>Aktion und Interaktion! Das Museum Tinguely zeigt 60 Jahre Performancekunst live und zum Mitmachen. Ausserdem: Stahlguss-Spektakel im Solitude Park.<br \/><\/p>", "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/269.json", "events": [{ "title": "Stahlguss", "id": "608", "description": '<p>Andreas Glaser (Schlosserei Glaser) und Kurt K\xFCng (FHNW)\xA0pr\xE4sentieren im Solitudepark das Stahlgussverfahren\xA0vom Einheizen des Ofens bis zum Anstechen und Giessen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "20", "title": "Architektur & Design" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Performance von San Keller", "id": "610", "description": '<p>In seiner Performance \xABNach der Kunst\xBB schneidet\xA0San Keller den Besuchenden die Haare.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Instant Sculptures", "id": "612", "description": '<p>Performe deine eigene Tinguely-Skulptur und verewige\xA0dich per Handyfoto.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }, { "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Performance eines Roboters", "id": "614", "description": '<p>Der Roboter\xA0DAI\xA0lernt in der Ausstellung tanzen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Kurzf\xFChrungen in verschiedenen Sprachen', "id": "617", "description": '<p>DE 18.15, 20.15, 22.15\xA0Kurzf\xFChrungen<br />EN 18.45, 22.45 Guided tours\xA0<br />FR 19.15, 21.15 Visites guid\xE9es<br />IT\xA0 20.45\xA0visita guidata</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:45:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "", "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }, { "id": "616", "title": "Italienisch" }] }, { "title": 'T\xEAte-\xE0-T\xEAte', "id": "619", "description": "<p>Hartgesottene Eier auf Crashkurs!<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }, { "type": "continuous", "start": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Performance von Heinrich L\xFCber', "id": "622", "description": '<p>In seiner Performance \xABVolute\xBB verteilt Heinrich L\xFCber\xA0Worte und Gesten in Wirbeln und Kringeln im Raum.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "134", "title": "Tanz & Theater" }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }] }, { "title": "Naturhistorisches Museum Basel", "id": "270", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/naturhistorisches-museum-basel", "number": "25", "address": 'M\xFCnsterplatz, Augustinergasse 2', "journey": {}, "food": "Einzigartige Bar mit Snacks, Drinks und DJ", "programmTitle": "Rekordhalter", "programmText": '<p>Wir zeigen sie alle: die 100 besten Naturfotografien des Jahres 2017. Atemberaubende Landschaften, \xFCberraschende Tierportr\xE4ts und dramatische Naturschauspiele zeigen die Sch\xF6nheiten und den Zauber der Natur.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/270.json", "events": [{ "title": '\xABWildlife Photographer of the Year\xBB', "id": "651", "description": '<p>Die besten Naturfotografien des Jahres 2017.\xA0Mit dem Smartphone multilingual und interaktiv\xA0durch die Sonderausstellung</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "144", "title": "Spanisch" }, { "id": "339", "title": "Multilingual" }, { "id": "616", "title": "Italienisch" }] }, { "title": "Rekordhalter", "id": "649", "description": '<p>Unsere Experten erz\xE4hlen \xFCber Kolossales, Winziges,\xA0Haariges und Gefiedertes.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "132", "title": 'Lesung und Erz\xE4hlung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Kreativecke", "id": "647", "description": '<p>Es entsteht etwas Gigantisches \u2013 hilf mit!</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Bitte l\xE4cheln!', "id": "645", "description": '<p>Halten Sie einen besonderen Museumsnacht-Moment\xA0fotografisch fest.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Live-Pr\xE4paration: Zittern verboten \u2013 Fingerspitzengef\xFChl bei der  Spinnenpr\xE4paration', "id": "642", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber\xA0ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": '\u200BLive-Pr\xE4paration: Extrem versteckt \u2013 Reise durchs Innenohr\u200B', "id": "638", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber\xA0ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Live-Pr\xE4paration: Pr\xE4paratoren am Limit \u2013 federleicht und knifflig', "id": "634", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber\xA0ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Live-Pr\xE4paration: Filigrane Sch\xF6nheiten \u2013 Computertomografie an Mikrofossilien', "id": "631", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber\xA0ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Live-Pr\xE4paration: Genadelt und geklebt \u2013 winzige und riesige Insekten', "id": "627", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber\xA0ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Live-Pr\xE4paration: Unser Skelett \u2013 rekordverd\xE4chtige Knochen', "id": "624", "description": '<p>Wir pr\xE4parieren unsere Rekordhalter und erz\xE4hlen \xFCber ihre Besonderheiten \u2013 live und w\xE4hrend der ganzen Nacht.<br /></p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "128", "title": "Natur" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }, { "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Pharmazie- Historisches Museum Basel", "id": "271", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/pharmazie-historisches-museum-basel", "number": "26", "address": 'Toteng\xE4sslein 3', "journey": {}, "food": '\xABBar \xE0 Celsus\xBB: bunte Drinks, leckere Speisen und Gl\xFChwein', "programmTitle": "Bunt und Wirksam", "programmText": "<p>Farbstoff oder Arznei? Manchmal ist es beides, manchmal das eine aus dem anderen! Entdecken Sie inmitten der historischen Apothekensammlung das Zusammenspiel von Farb- und Wirkstoffen.<br \/><\/p>", "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/271.json", "events": [{ "title": "Vom Farbstoff zum Wirkstoff", "id": "655", "description": "<p>Museumsparcours mit Wettbewerb<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Farbstoff \u2013 Wirkstoff \u2013 Denkstoff', "id": "657", "description": '<p>Buntes Treiben im H\xF6rsaal</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Handcr\xE8me selbst gemacht', "id": "659", "description": "<p>Workshop<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Das Auge isst mit", "id": "661", "description": '<p>Dragieren: altes Apothekerhandwerk vorgef\xFChrt</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": "Wir bekennen Farbe", "id": "663", "description": '<p>Aufl\xF6sung des Wettbewerbs und Ziehung der\xA0Gewinnerinnen und Gewinner</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Rappaz Museum", "id": "273", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/rappaz-museum", "number": "27", "address": "Klingental 11", "journey": {}, "food": 'Konkretes f\xFCr den kleinen Hunger aus K\xFCche und Keller', "programmTitle": "Konkretes", "programmText": '<p>Im RappazMuseum steht das Spiel mit Farben und Grundformen \u2013 die konzeptionell-konkrete Kunst \u2013 im Zentrum. Jede Stunde startet ein Kreislauf mit Ausstellungsf\xFChrung, K\xFCnstlergespr\xE4ch und anschliessendem Kurzkonzert.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/273.json", "events": [{ "title": "Konzerte", "id": "665", "description": '<p>Geniessen Sie zwischen den F\xFChrungen musikalische\xA0\nDarbietungen der\xA0 Jodlerin Christine Lauterburg, des Baritons\xA0\nMichel Anner und der Pianistin Ioana Illie. Um 22.00 Uhr\xA0\nwerden die Musiker/-innen ein gemeinsames Konzert geben.<br /></p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": 'Zwischen den F\xFChrungen', "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Konkretes im RappazMuseum", "id": "668", "description": '<p>Abwechslungsweise F\xFChrungen mit Kurator Armin Vogt\xA0durch die Dauerausstellung von Rolf Rappaz und\xA0mit der K\xFCnstlerin Elena Lux-Marx durch ihre Ausstellung</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Violette Shuttle-Linie", "color": "#530E66" }] }, { "title": "S AM Schweizerisches Architekturmuseum", "id": "274", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/s-am-schweizerisches-architekturmuseum", "number": "28", "address": "Steinenberg 7", "journey": {}, "food": 'Bengalische Spezialit\xE4ten und Bar', "programmTitle": "Bengal Style", "programmText": '<p>Bangladeschs vibrierende Architekturszene gilt international als Geheimtipp. Wir f\xFChren Sie durch das Dickicht und die Weite der Ausstellung \xABBengal Stream\xBB und kreieren aus Altem Neues.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/274.json", "events": [{ "title": "Workshop: Keep that paper!", "id": "670", "description": '<p>Upcycling ist hier eine trendige Modeerscheinung,\xA0in Bangladesch aber geh\xF6rt die Wiederverwertung von\xA0Materialien zum Alltag. Aus Alt mach Neu!</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'In der Str\xF6mung', "id": "672", "description": '<p>Kurzf\xFChrung durch die Ausstellung \xABBengal Stream\xBB</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": 'Sammlung Friedhof H\xF6rnli', "id": "276", "url": 'http://localhost:8888/mnb/html/programm/sammlung-friedhof-h\xF6rnli', "number": "29", "address": 'H\xF6rnliallee 70', "journey": {}, "food": 'H\xF6rnli und Gehacktes (mit Apfelmus), Totenbeinli und Kaffee zum Dessert', "programmTitle": "Leben und Sterben", "programmText": '<p>Vom Bestatter selber gegr\xFCndet, zeigt die Sammlung Einblicke in die Geschichte der Bestattungskultur und offenbart den Besuchenden einiges \xFCber den Umgang unserer Gesellschaft mit dem Tod.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/276.json", "events": [{ "title": "Vom Baum zum Sarg", "id": "675", "description": '<p>Pr\xE4sentation der alten Kunst der Sargbaumschnitzerei:\xA0Vor Ort wird aus einer F\xF6hre von Hand ein Sarg hergestellt.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Erz\xE4hlungen \xFCber Leben und Tod', "id": "677", "description": '<p>Peter Galler, der Gr\xFCnder der Sammlung Friedhof H\xF6rnli,\xA0hat aus seiner 39-j\xE4hrigen T\xE4tigkeit als Bestatter\xA0allerhand Anekdoten und Weisheiten zu erz\xE4hlen.\xA0Besucher/-innen k\xF6nnen im Keller verschiedenste Objekte\xA0<br />aus der Bestattungskultur betrachten.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }] }, { "title": "Schweizerisches Feuerwehr- museum Basel", "id": "277", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/schweizerisches-feuerwehr-museum-basel", "number": "30", "address": "Spalenvorstadt 11", "journey": {}, "food": "Bistro im Feuerwehrkeller, Feuerbar mit Grill", "programmTitle": 'Brandgef\xE4hrlich', "programmText": '<p>Innerhalb von maximal 60 Sekunden r\xFCckt die Mannschaft der Berufsfeuerwehr Basel aus, aber nicht nur, um Feuer zu l\xF6schen: Heute wirst du Teil des Teams und unterst\xFCtzt uns bei der Strassenrettung.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/277.json", "events": [{ "title": "Gestalte dein eigenes Feuerwehrauto", "id": "679", "description": '<p>Momente der Ruhe beim kreativen Gestalten eines\xA0eigenen Feuerwehrautos</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Achtung: technische Hilfeleistung \u2013 Verkehrsunfall', "id": "681", "description": '<p>... diese drei Stichworte ert\xF6nen bei einer Alarmierung,\xA0wenn es einmal nicht um das Feuer, sondern um\xA0eine Strassenrettung geht. Vom Brandh\xFCter zum Strassenretter \u2013 eine szenische Action-F\xFChrung</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "133", "title": "Showing" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Skulpturhalle Basel", "id": "282", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/skulpturhalle-basel", "number": "31", "address": "Mittlere Strasse 17", "journey": {}, "food": 'Baked Potatoes mit verschiedenen F\xFCllungen', "programmTitle": "Wonder Women der Antike", "programmText": '<p>Wer kennt sie nicht, die kriegerischen T\xF6chter des Ares? Aber gab es die Amazonen wirklich? Wie lebten und wen liebten sie? Bei uns dreht sich alles um das mythische Frauenvolk.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/282.json", "events": [{ "title": "Das Gold der Amazonen", "id": "683", "description": '<p>Workshop: Mach dir ein Schmuckst\xFCck, wie es auch\xA0die Amazonen trugen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "20", "title": "Architektur & Design" }, { "id": "23", "title": "Geschichte" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Bist du eine gute Amazone?", "id": "685", "description": '<p>Postenlauf: Teste deine F\xE4higkeiten als Kriegerin (auch f\xFCr\xA0Jungs und M\xE4nner geeignet).</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Welche Amazone ist die sch\xF6nste?', "id": "687", "description": '<p>Erk\xFCre deine Lieblingsamazone.\xA0Kurzf\xFChrung und Sch\xF6nheitswettbewerb</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Wonder Woman und Co.", "id": "689", "description": '<p>Kurzpr\xE4sentation: Amazonen in Film und Comic</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "129", "title": "Literatur" }, { "id": "130", "title": "Film & Medienkunst" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Amazonen: Mythos vs. Realit\xE4t', "id": "692", "description": '<p>Kurzpr\xE4sentation: Gab es das kriegerische Frauenvolk wirklich?</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Zwischen Liebe und Hass", "id": "694", "description": '<p>Kurzf\xFChrung: Die Amazonen und ihre M\xE4nner</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "131", "title": "Vortrag" }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Spielzeugmuseum, Dorf- & Rebbaumuseum Riehen", "id": "285", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/spielzeugmuseum-dorf-rebbaumuseum-riehen", "number": "32", "address": "Baselstrasse 34", "journey": {}, "food": 'Warmes aus geschmolzenem K\xE4se von der Racletteria', "programmTitle": "Feel like Heidi!", "programmText": '<p>Alpin-urbane Sinnesreise durch die Nacht: Jodelcrashkurs trifft auf DJ-Sounds, Buttersch\xFCtteln auf Knigge-Stunde. Dazu heisst es Alphorn h\xF6ren, Wanderstock schnitzen, Heidi treffen und endlos spielen!<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/285.json", "events": [{ "title": "Geissenpeters Stockwerkstatt", "id": "696", "description": "<p>Workshop: Gestalte deinen Wanderstock.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Seelenrastpl\xE4tze: Sinnesparcours und Spielstationen', "id": "698", "description": "", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "136", "title": "Spiel & Spass" }, { "id": "137", "title": "Kinder & Familien" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Milk Magic nach Alp\xF6hi: aus Rahm wird Butter', "id": "700", "description": "<p>Workshop: Stell Butter her und koste sie.<\/p>", "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 01:15:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde \/ Toutes les heures \/ Every hour", "duration": "" }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'F\xFChrungen: mit Heidi, Klara und Peter durchs Museum', "id": "702", "description": '<p>Museumslieblingsst\xFCcke pr\xE4sentiert von Heidi und Co</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 18:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 19:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 21:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Who is Heidi?", "id": "706", "description": '<p>F\xFChrung mit Blick hinter die Kulissen\xA0</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "90", "title": "Englisch" }, { "id": "339", "title": "Multilingual" }] }, { "title": 'Knigge-Crashkurs: Rottenmeier\u2019sche Benimmstunde', "id": "709", "description": "", "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Zauren, Juchzen und Jodeln f\xFCr alle', "id": "713", "description": "<p>Jodelcrashkurs mit Thomas-Maria Reck<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 23:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }, { "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Urbane Volksmusik: DJ-Pult meets Alphorn und Tr\xFCmpi', "id": "717", "description": '<p>Heimfernwehmusik mit Singoh Nketia, Balthasar Streiff\xA0und David Studer</p>', "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 01:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "25", "title": "Musik" }], "kindOfEvent": [{ "id": "61", "title": "Konzert" }, { "id": "138", "title": "Party" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }] }, { "title": "Spielzeug Welten Museum Basel", "id": "286", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/spielzeug-welten-museum-basel", "number": "33", "address": "Steinenvorstadt 1", "journey": {}, "food": 'Durchgehend warme K\xFCche, feine Desserts, coole Drinks', "programmTitle": "Duftwelten", "programmText": '<p>Der Duft der grossen, weiten Welt weht durch unsere R\xE4ume. Es dreht sich alles um Parfums. Man kann sie riechen, selber kreieren oder dabei zuschauen, wie sie von Profis hergestellt werden.</p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/286.json", "events": [{ "title": 'Live-Performance: \xABParfumflakons\xBB', "id": "721", "description": '<p>Darbietung des einzigartigen K\xF6rpertheaters \xABLiving frames\xBB\xA0vom\xA0HELMNOT\xA0&gt;span class="SC-LIGHT"&gt;TER</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Alle 40 Minuten", "duration": "" }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "135", "title": "Performance" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Drom Fragrances", "id": "723", "description": '<p>Parfumeure kreieren Ihnen einen pers\xF6nlichen Duft.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "89", "title": 'Franz\xF6sisch' }, { "id": "90", "title": "Englisch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Glasbl\xE4ser live erleben', "id": "725", "description": '<p>Miterleben, wie aus Glasst\xE4ben ein Parfumflakon entsteht</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Ger\xFCche sehen mit modernster Technik', "id": "727", "description": '<p>Ger\xFCche werden mit einem Lichteffekt sichtbar gemacht.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "142", "title": "Installationen" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Parfumeur live", "id": "729", "description": "<p>Erfahren Sie im Labor, wie ein Parfum entsteht.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "133", "title": "Showing" }, { "id": "137", "title": "Kinder & Familien" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Workshop: Parfumflakon gestalten", "id": "731", "description": "<p>Flakon und Duft zum Mitnehmen<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "20", "title": "Architektur & Design" }, { "id": "22", "title": "Technik & Wissenschaft" }, { "id": "343", "title": "Ruhe & Kontemplation" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Das eigene Nasenportr\xE4t', "id": "733", "description": "<p>Foto zum Mitnehmen: Setzen Sie Ihre Nase in Szene.<\/p>", "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "137", "title": "Kinder & Familien" }, { "id": "140", "title": "Workshop & Interaktives" }], "languages": [{ "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Nasenraten und Parfum-Memory ", "id": "735", "description": '<p>Zu welcher Pers\xF6nlichkeit geh\xF6rt diese Nase und wo ist\xA0das Paar des Parfumklassikers?</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }], "languages": [] }], "shuttleLine": [{ "title": "Rote Shuttle-Linie", "color": "#FF0000" }] }, { "title": "Sportmuseum Schweiz", "id": "287", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/sportmuseum-schweiz", "number": "34", "address": "Reinacherstrasse 1", "journey": {}, "food": 'Bier und Fischbr\xF6tchen', "programmTitle": "Mythos Rotblau", "programmText": '<p>Der FC Basel feiert 2018 den 125. Geburtstag. Zum Jubil\xE4um pr\xE4sentieren verschiedene Exponenten Einsichten zur Geschichte des Clubs. Filme und Privatsammlungen machen den \xABMythos Rotblau\xBB greifbar.<br /></p>', "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/287.json", "events": [{ "title": "Historische Trikots des FCB", "id": "737", "description": '<p>Lorenz Schumacher pr\xE4sentiert die Schmuckst\xFCcke\xA0<br />aus seiner\xA0FCB-Trikotsammlung.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "139", "title": "Talk" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": "Mythos Rotblau", "id": "739", "description": '<p>Vertiefen Sie sich in eine Ausstellung rund um Objekte\xA0aus der Geschichte des\xA0FC\xA0Basel. Alle Exponate\xA0werden exklusiv von\xA0FCB-Fans zur Verf\xFCgung gestellt.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "126", "title": "Basiliensia" }, { "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'Mythos Rotblau \u2013 Lesungen, Talk, Film  und Pr\xE4sentationen', "id": "741", "description": '<p>Verschiedene Autoren geben Einblick in ihre Texte \xFCber\xA0den\xA0FC\xA0Basel, ehemalige Funktion\xE4re gehen dem \xABMythos\xA0Rotblau\xBB auf den Grund, das\xA0Flutlicht Fussball\xA0Film Festival\xA0pr\xE4sentiert einen Film von 1964 zur Weltreise\xA0des\xA0FC\xA0Basel und Fans pr\xE4sentieren ihre Sammlungen.</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede halbe Stunde", "duration": "" }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "127", "title": "Sport & Gesundheit" }], "kindOfEvent": [{ "id": "131", "title": "Vortrag" }, { "id": "132", "title": 'Lesung und Erz\xE4hlung' }, { "id": "141", "title": "Film" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": "Sportgeschichten", "id": "743", "description": '<p>F\xFChrung durch das Begehlager mit \xFCberraschenden\xA0Anekdoten aus der Schweizer Sportgeschichte</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "127", "title": "Sport & Gesundheit" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }], "shuttleLine": [{ "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }] }, { "title": "Staatsarchiv Basel-Stadt", "id": "289", "url": "http:\/\/localhost:8888\/mnb\/html\/programm\/staatsarchiv-basel-stadt", "number": "35", "address": "Martinsgasse 2", "journey": {}, "food": "Deftiges und Edles mit BARrikade", "programmTitle": "Klassenkampf", "programmText": "<p>Propaganda, Streik und Krisen: Erleben Sie, was Basel vor hundert Jahren bewegte.<br \/><\/p>", "jsonUrl": "http:\/\/localhost:8888\/mnb\/html\/program\/289.json", "events": [{ "title": "Klassenkampf und Spiele", "id": "745", "description": '<p>Interventionen von Studierenden des Instituts Lehrberufe\xA0f\xFCr Gestaltung und Kunst (FHNW)</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "125", "title": "Kunst" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }, { "id": "135", "title": "Performance" }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'B\xFCrgerkrieg in Basel', "id": "747", "description": '<p>Ausstellung mit Archivdokumenten zu den\xA0Krisenjahren um 1918</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 18:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 02:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "126", "title": "Basiliensia" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }, { "title": 'F\xFChrungen hinter die Kulissen', "id": "749", "description": '<p>Mitarbeitende erkl\xE4ren das Archiv</p>', "time": [{ "type": "iterating", "start": { "date": "2017-11-11 19:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 00:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "frequency": "Jede Stunde", "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "23", "title": "Geschichte" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }] }, { "title": 'Wof\xFCr k\xE4mpfst du?', "id": "751", "description": '<p>Ob f\xFCr N\xE4chstenliebe, offene Grenzen oder\xA0Schoggikuchen: Erz\xE4hl, wof\xFCr du k\xE4mpfst, und lass\xA0dich vom Illustrationskollektiv\xA0BALSAM\xA0auf die Protestwand zeichnen.</p>', "time": [{ "type": "continuous", "start": { "date": "2017-11-11 20:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "end": { "date": "2017-11-11 23:00:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" } }], "themes": [{ "id": "124", "title": "Kultur & Gesellschaft" }], "kindOfEvent": [{ "id": "140", "title": "Workshop & Interaktives" }, { "id": "143", "title": "Zum Verweilen" }], "languages": [{ "id": "339", "title": "Multilingual" }] }, { "title": "Alles digital?", "id": "753", "description": "<p>Einblicke in das Digitalisierungslabor des Archivs<\/p>", "time": [{ "type": "setTimes", "start": { "date": "2017-11-11 20:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 21:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }, { "type": "setTimes", "start": { "date": "2017-11-11 22:30:00.000000", "timezone_type": 3, "timezone": "Europe\/Zurich" }, "duration": "" }], "themes": [{ "id": "123", "title": "Rund ums Museum" }, { "id": "22", "title": "Technik & Wissenschaft" }], "kindOfEvent": [{ "id": "63", "title": 'F\xFChrung' }], "languages": [{ "id": "88", "title": "Deutsch" }, { "id": "455", "title": 'Sprachunabh\xE4ngig' }] }], "shuttleLine": [{ "title": "Orange Shuttle-Linie", "color": "#FF9900" }, { "title": 'Hellgr\xFCne Shuttle-Linie', "color": "#65AE21" }, { "title": "Blaue Shuttle-Linie", "color": "#0C65B6" }, { "title": "Violette Shuttle-Linie", "color": "#530E66" }, { "title": "Rote Shuttle-Linie", "color": "#FF0000" }, { "title": "Gelbe Shuttle-Linie", "color": "#FEC209" }, { "title": "Graue Oldtimer-Tram", "color": "#747473" }, { "title": "Shuttle Schiffe", "color": "#B8DCEA" }] }], "meta": { "pagination": { "total": 38, "count": 38, "per_page": 100, "current_page": 1, "total_pages": 1, "links": [] } } }
-
+	      dummyProgram: { data: [] }
 	    };
 	  },
 	  computed: {
@@ -14668,13 +14667,14 @@
 	      }
 	    },
 	    getEntries: function getEntries() {
+	      var _this2 = this;
+
 	      // this.program = this.dummyProgram.data;
-	      this.program = _.sortBy(this.dummyProgram.data, 'title');
-	      // let _this = this;
-	      // axios.get('program.json')
-	      //   .then(response => {
-	      //     this.program = response.data.data;
-	      //   })
+	      // this.program = _.sortBy(this.dummyProgram.data,'title');
+	      var _this = this;
+	      axios.get('program.json').then(function (response) {
+	        _this2.program = response.data.data;
+	      });
 	    },
 	    initEventHash: function initEventHash() {
 	      var _iteratorNormalCompletion = true;
@@ -15680,11 +15680,11 @@
 	  /* template */
 	  __webpack_require__(108),
 	  /* scopeId */
-	  "data-v-3a0f449c",
+	  "data-v-9a8b9df0",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/ProgramEntry.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/ProgramEntry.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] ProgramEntry.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15695,9 +15695,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3a0f449c", Component.options)
+	    hotAPI.createRecord("data-v-9a8b9df0", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-3a0f449c", Component.options)
+	    hotAPI.reload("data-v-9a8b9df0", Component.options)
 	  }
 	})()}
 
@@ -15715,13 +15715,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("aecfa05e", content, false);
+	var update = __webpack_require__(9)("067bd48a", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3a0f449c\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEntry.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3a0f449c\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEntry.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9a8b9df0\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEntry.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9a8b9df0\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEntry.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -15953,11 +15953,11 @@
 	  /* template */
 	  __webpack_require__(107),
 	  /* scopeId */
-	  "data-v-58815ac4",
+	  "data-v-5da771a0",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/ProgramEvent.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/ProgramEvent.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] ProgramEvent.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15968,9 +15968,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-58815ac4", Component.options)
+	    hotAPI.createRecord("data-v-5da771a0", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-58815ac4", Component.options)
+	    hotAPI.reload("data-v-5da771a0", Component.options)
 	  }
 	})()}
 
@@ -15988,13 +15988,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("3c135f98", content, false);
+	var update = __webpack_require__(9)("ae54d32e", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-58815ac4\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEvent.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-58815ac4\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEvent.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5da771a0\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEvent.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5da771a0\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ProgramEvent.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16109,11 +16109,11 @@
 	  /* template */
 	  __webpack_require__(106),
 	  /* scopeId */
-	  "data-v-5da6ec2e",
+	  "data-v-fb074006",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/SaveProgram.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/SaveProgram.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] SaveProgram.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16124,9 +16124,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5da6ec2e", Component.options)
+	    hotAPI.createRecord("data-v-fb074006", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-5da6ec2e", Component.options)
+	    hotAPI.reload("data-v-fb074006", Component.options)
 	  }
 	})()}
 
@@ -16144,13 +16144,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("4ff50a07", content, false);
+	var update = __webpack_require__(9)("6c36ccd7", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5da6ec2e\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5da6ec2e\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb074006\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb074006\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SaveProgram.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16279,7 +16279,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5da6ec2e", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-fb074006", module.exports)
 	  }
 	}
 
@@ -16322,7 +16322,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-58815ac4", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5da771a0", module.exports)
 	  }
 	}
 
@@ -16377,7 +16377,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3a0f449c", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-9a8b9df0", module.exports)
 	  }
 	}
 
@@ -16437,7 +16437,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-005b3764", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-9ca9e510", module.exports)
 	  }
 	}
 
@@ -16455,11 +16455,11 @@
 	  /* template */
 	  __webpack_require__(114),
 	  /* scopeId */
-	  "data-v-bc83e132",
+	  "data-v-c940de5a",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/ShareMyProgram.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/ShareMyProgram.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] ShareMyProgram.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16470,9 +16470,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-bc83e132", Component.options)
+	    hotAPI.createRecord("data-v-c940de5a", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-bc83e132", Component.options)
+	    hotAPI.reload("data-v-c940de5a", Component.options)
 	  }
 	})()}
 
@@ -16490,13 +16490,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("1c873b42", content, false);
+	var update = __webpack_require__(9)("90d5f652", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bc83e132\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShareMyProgram.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-bc83e132\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShareMyProgram.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-c940de5a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShareMyProgram.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-c940de5a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShareMyProgram.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16738,7 +16738,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-bc83e132", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-c940de5a", module.exports)
 	  }
 	}
 
@@ -16756,11 +16756,11 @@
 	  /* template */
 	  __webpack_require__(119),
 	  /* scopeId */
-	  "data-v-2932b100",
+	  "data-v-25f55394",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/proposedProgram.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/proposedProgram.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] proposedProgram.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -16771,9 +16771,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2932b100", Component.options)
+	    hotAPI.createRecord("data-v-25f55394", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-2932b100", Component.options)
+	    hotAPI.reload("data-v-25f55394", Component.options)
 	  }
 	})()}
 
@@ -16791,13 +16791,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("59564ab0", content, false);
+	var update = __webpack_require__(9)("d6f6234c", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-2932b100\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proposedProgram.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-2932b100\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proposedProgram.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-25f55394\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proposedProgram.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-25f55394\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./proposedProgram.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16971,7 +16971,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2932b100", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-25f55394", module.exports)
 	  }
 	}
 
@@ -16989,13 +16989,13 @@
 	  /* template */
 	  __webpack_require__(124),
 	  /* scopeId */
-	  "data-v-9f4dc34c",
+	  "data-v-436aa952",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/institutionProgram.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/SavedLink.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] institutionProgram.vue: functional components are not supported with templates, they should use render functions.")}
+	if (Component.options.functional) {console.error("[vue-loader] SavedLink.vue: functional components are not supported with templates, they should use render functions.")}
 
 	/* hot reload */
 	if (false) {(function () {
@@ -17004,9 +17004,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-9f4dc34c", Component.options)
+	    hotAPI.createRecord("data-v-436aa952", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-9f4dc34c", Component.options)
+	    hotAPI.reload("data-v-436aa952", Component.options)
 	  }
 	})()}
 
@@ -17024,13 +17024,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("5abdc6a1", content, false);
+	var update = __webpack_require__(9)("57519d83", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9f4dc34c\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutionProgram.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-9f4dc34c\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutionProgram.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-436aa952\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SavedLink.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-436aa952\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SavedLink.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17048,178 +17048,13 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _SaveProgram = __webpack_require__(100);
-
-	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	module.exports = {
-	   name: 'institutionprogram',
-	   props: ['parent'],
-	   components: {
-	      saveprogram: _SaveProgram2.default
-	   },
-	   data: function data() {
-	      return {
-	         programevents: []
-	      };
-	   },
-	   mounted: function mounted() {
-	      this.getEntries();
-	   },
-
-	   methods: {
-	      getEntries: function getEntries() {
-	         var _this2 = this;
-
-	         var _this = this;
-	         axios.get('../programevent.json').then(function (response) {
-	            _this2.programevents = response.data.data;
-	         });
-	      }
-	   }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('ul', {
-	    staticClass: "program__list program__list--selection"
-	  }, _vm._l((_vm.programevents), function(entry) {
-	    return (entry.parent.number == _vm.parent) ? _c('li', {
-	      staticClass: "program__list__event"
-	    }, [_c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
-	      return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration == true) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
-	    }), _vm._v(" "), _c('div', {
-	      domProps: {
-	        "innerHTML": _vm._s(entry.description)
-	      }
-	    }, [_vm._v(_vm._s(entry.description))]), _vm._v(" "), _c('saveprogram', {
-	      attrs: {
-	        "programevent": entry
-	      }
-	    })], 2) : _vm._e()
-	  }))])
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-9f4dc34c", module.exports)
-	  }
-	}
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	
-	/* styles */
-	__webpack_require__(126)
-
-	var Component = __webpack_require__(11)(
-	  /* script */
-	  __webpack_require__(128),
-	  /* template */
-	  __webpack_require__(129),
-	  /* scopeId */
-	  "data-v-ced73f7a",
-	  /* cssModules */
-	  null
-	)
-	Component.options.__file = "/www/sites/mn/src/js/components/SavedLink.vue"
-	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] SavedLink.vue: functional components are not supported with templates, they should use render functions.")}
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-ced73f7a", Component.options)
-	  } else {
-	    hotAPI.reload("data-v-ced73f7a", Component.options)
-	  }
-	})()}
-
-	module.exports = Component.exports
-
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(127);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	if(content.locals) module.exports = content.locals;
-	// add the styles to the DOM
-	var update = __webpack_require__(9)("b0177160", content, false);
-	// Hot Module Replacement
-	if(false) {
-	 // When the styles change, update the <style> tags
-	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-ced73f7a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SavedLink.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-ced73f7a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SavedLink.vue");
-	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-	     update(newContent);
-	   });
-	 }
-	 // When the module is disposed, remove the <style> tags
-	 module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(8)(undefined);
-	// imports
-
-
-	// module
 	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 128 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17269,7 +17104,7 @@
 	//
 
 /***/ }),
-/* 129 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17289,29 +17124,29 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-ced73f7a", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-436aa952", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 130 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(131)
+	__webpack_require__(126)
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(133),
+	  __webpack_require__(128),
 	  /* template */
-	  __webpack_require__(134),
+	  __webpack_require__(129),
 	  /* scopeId */
-	  "data-v-21a7b4da",
+	  "data-v-675dffee",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/MyProgram.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/MyProgram.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] MyProgram.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17322,9 +17157,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-21a7b4da", Component.options)
+	    hotAPI.createRecord("data-v-675dffee", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-21a7b4da", Component.options)
+	    hotAPI.reload("data-v-675dffee", Component.options)
 	  }
 	})()}
 
@@ -17332,23 +17167,23 @@
 
 
 /***/ }),
-/* 131 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(132);
+	var content = __webpack_require__(127);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("55d24a32", content, false);
+	var update = __webpack_require__(9)("40fe00bb", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-21a7b4da\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProgram.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-21a7b4da\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProgram.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-675dffee\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProgram.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-675dffee\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MyProgram.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17358,7 +17193,7 @@
 	}
 
 /***/ }),
-/* 132 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)(undefined);
@@ -17372,7 +17207,7 @@
 
 
 /***/ }),
-/* 133 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17500,7 +17335,7 @@
 	//
 
 /***/ }),
-/* 134 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17564,12 +17399,12 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-21a7b4da", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-675dffee", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 135 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {"use strict";
@@ -17578,11 +17413,11 @@
 
 	var _keys2 = _interopRequireDefault(_keys);
 
-	var _isFrozen = __webpack_require__(137);
+	var _isFrozen = __webpack_require__(132);
 
 	var _isFrozen2 = _interopRequireDefault(_isFrozen);
 
-	var _typeof2 = __webpack_require__(140);
+	var _typeof2 = __webpack_require__(135);
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -18623,10 +18458,10 @@
 	    c._d = new Date(u(a));
 	  }), a.version = "2.18.1", b(tb), a.fn = bf, a.min = vb, a.max = wb, a.now = Qe, a.utc = l, a.unix = Pc, a.months = Vc, a.isDate = h, a.locale = $a, a.invalid = p, a.duration = Sb, a.isMoment = s, a.weekdays = Xc, a.parseZone = Qc, a.localeData = bb, a.isDuration = Bb, a.monthsShort = Wc, a.weekdaysMin = Zc, a.defineLocale = _a, a.updateLocale = ab, a.locales = cb, a.weekdaysShort = Yc, a.normalizeUnits = K, a.relativeTimeRounding = od, a.relativeTimeThreshold = pd, a.calendarFormat = Yb, a.prototype = bf, a;
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(136)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(131)(module)))
 
 /***/ }),
-/* 136 */
+/* 131 */
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -18642,21 +18477,21 @@
 
 
 /***/ }),
-/* 137 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(138), __esModule: true };
+	module.exports = { "default": __webpack_require__(133), __esModule: true };
 
 /***/ }),
-/* 138 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(139);
+	__webpack_require__(134);
 	module.exports = __webpack_require__(57).Object.isFrozen;
 
 
 /***/ }),
-/* 139 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.12 Object.isFrozen(O)
@@ -18670,18 +18505,18 @@
 
 
 /***/ }),
-/* 140 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _iterator = __webpack_require__(141);
+	var _iterator = __webpack_require__(136);
 
 	var _iterator2 = _interopRequireDefault(_iterator);
 
-	var _symbol = __webpack_require__(144);
+	var _symbol = __webpack_require__(139);
 
 	var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -18696,46 +18531,46 @@
 	};
 
 /***/ }),
-/* 141 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(142), __esModule: true };
+	module.exports = { "default": __webpack_require__(137), __esModule: true };
 
 /***/ }),
-/* 142 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(87);
 	__webpack_require__(72);
-	module.exports = __webpack_require__(143).f('iterator');
+	module.exports = __webpack_require__(138).f('iterator');
 
 
 /***/ }),
-/* 143 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports.f = __webpack_require__(85);
 
 
 /***/ }),
-/* 144 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(145), __esModule: true };
+	module.exports = { "default": __webpack_require__(140), __esModule: true };
 
 /***/ }),
-/* 145 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(146);
-	__webpack_require__(156);
-	__webpack_require__(157);
-	__webpack_require__(158);
+	__webpack_require__(141);
+	__webpack_require__(151);
+	__webpack_require__(152);
+	__webpack_require__(153);
 	module.exports = __webpack_require__(57).Symbol;
 
 
 /***/ }),
-/* 146 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18745,23 +18580,23 @@
 	var DESCRIPTORS = __webpack_require__(65);
 	var $export = __webpack_require__(56);
 	var redefine = __webpack_require__(79);
-	var META = __webpack_require__(147).KEY;
+	var META = __webpack_require__(142).KEY;
 	var $fails = __webpack_require__(66);
 	var shared = __webpack_require__(51);
 	var setToStringTag = __webpack_require__(84);
 	var uid = __webpack_require__(53);
 	var wks = __webpack_require__(85);
-	var wksExt = __webpack_require__(143);
-	var wksDefine = __webpack_require__(148);
-	var enumKeys = __webpack_require__(149);
-	var isArray = __webpack_require__(152);
+	var wksExt = __webpack_require__(138);
+	var wksDefine = __webpack_require__(143);
+	var enumKeys = __webpack_require__(144);
+	var isArray = __webpack_require__(147);
 	var anObject = __webpack_require__(62);
 	var toIObject = __webpack_require__(43);
 	var toPrimitive = __webpack_require__(68);
 	var createDesc = __webpack_require__(69);
 	var _create = __webpack_require__(81);
-	var gOPNExt = __webpack_require__(153);
-	var $GOPD = __webpack_require__(155);
+	var gOPNExt = __webpack_require__(148);
+	var $GOPD = __webpack_require__(150);
 	var $DP = __webpack_require__(61);
 	var $keys = __webpack_require__(40);
 	var gOPD = $GOPD.f;
@@ -18886,9 +18721,9 @@
 
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f = $defineProperty;
-	  __webpack_require__(154).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(151).f = $propertyIsEnumerable;
-	  __webpack_require__(150).f = $getOwnPropertySymbols;
+	  __webpack_require__(149).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(146).f = $propertyIsEnumerable;
+	  __webpack_require__(145).f = $getOwnPropertySymbols;
 
 	  if (DESCRIPTORS && !__webpack_require__(78)) {
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -18975,7 +18810,7 @@
 
 
 /***/ }),
-/* 147 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var META = __webpack_require__(53)('meta');
@@ -19034,13 +18869,13 @@
 
 
 /***/ }),
-/* 148 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(52);
 	var core = __webpack_require__(57);
 	var LIBRARY = __webpack_require__(78);
-	var wksExt = __webpack_require__(143);
+	var wksExt = __webpack_require__(138);
 	var defineProperty = __webpack_require__(61).f;
 	module.exports = function (name) {
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -19049,13 +18884,13 @@
 
 
 /***/ }),
-/* 149 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(40);
-	var gOPS = __webpack_require__(150);
-	var pIE = __webpack_require__(151);
+	var gOPS = __webpack_require__(145);
+	var pIE = __webpack_require__(146);
 	module.exports = function (it) {
 	  var result = getKeys(it);
 	  var getSymbols = gOPS.f;
@@ -19070,21 +18905,21 @@
 
 
 /***/ }),
-/* 150 */
+/* 145 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 151 */
+/* 146 */
 /***/ (function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 152 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -19095,12 +18930,12 @@
 
 
 /***/ }),
-/* 153 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(43);
-	var gOPN = __webpack_require__(154).f;
+	var gOPN = __webpack_require__(149).f;
 	var toString = {}.toString;
 
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -19120,7 +18955,7 @@
 
 
 /***/ }),
-/* 154 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -19133,10 +18968,10 @@
 
 
 /***/ }),
-/* 155 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var pIE = __webpack_require__(151);
+	var pIE = __webpack_require__(146);
 	var createDesc = __webpack_require__(69);
 	var toIObject = __webpack_require__(43);
 	var toPrimitive = __webpack_require__(68);
@@ -19155,44 +18990,44 @@
 
 
 /***/ }),
-/* 156 */
+/* 151 */
 /***/ (function(module, exports) {
 
 	
 
 /***/ }),
-/* 157 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(148)('asyncIterator');
+	__webpack_require__(143)('asyncIterator');
 
 
 /***/ }),
-/* 158 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(148)('observable');
+	__webpack_require__(143)('observable');
 
 
 /***/ }),
-/* 159 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(160)
+	__webpack_require__(155)
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(162),
+	  __webpack_require__(157),
 	  /* template */
-	  __webpack_require__(163),
+	  __webpack_require__(158),
 	  /* scopeId */
-	  "data-v-d6fa1ef6",
+	  "data-v-4b8d88ce",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/GoogleMap.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/GoogleMap.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] GoogleMap.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -19203,9 +19038,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-d6fa1ef6", Component.options)
+	    hotAPI.createRecord("data-v-4b8d88ce", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-d6fa1ef6", Component.options)
+	    hotAPI.reload("data-v-4b8d88ce", Component.options)
 	  }
 	})()}
 
@@ -19213,23 +19048,23 @@
 
 
 /***/ }),
-/* 160 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(161);
+	var content = __webpack_require__(156);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("1b574d8f", content, false);
+	var update = __webpack_require__(9)("7f0f20e4", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d6fa1ef6\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d6fa1ef6\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4b8d88ce\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GoogleMap.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -19239,7 +19074,7 @@
 	}
 
 /***/ }),
-/* 161 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)(undefined);
@@ -19247,13 +19082,13 @@
 
 
 	// module
-	exports.push([module.id, "\n.google-map[data-v-d6fa1ef6] {\n  width: 100%;\n  /*margin: 0 auto 50px;*/\n  background: gray;\n}\n", ""]);
+	exports.push([module.id, "\n.google-map[data-v-4b8d88ce] {\n  width: 100%;\n  /*margin: 0 auto 50px;*/\n  background: gray;\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 162 */
+/* 157 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19338,7 +19173,6 @@
 	         institutionsData: [],
 	         inst: "0",
 	         institutInfo: false,
-	         mapTop: false,
 	         center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
 	      };
 	   },
@@ -19346,7 +19180,6 @@
 	   mounted: function mounted() {
 	      this.inst;
 	      this.getEntries();
-	      this.scrollTop();
 	      var element = document.getElementById(this.mapName);
 	      var options = {
 	         zoom: 12,
@@ -19491,9 +19324,6 @@
 	      toggleInstitutInfo: function toggleInstitutInfo() {
 	         this.institutInfo = !this.institutInfo;
 	      },
-	      scrollTop: function scrollTop() {
-	         this.$el.querySelector("#multiMap").scrollTop;
-	      },
 	      getEntries: function getEntries() {
 	         var _this2 = this;
 
@@ -19512,8 +19342,6 @@
 	         var _this = this;
 	         var inst = _this.inst;
 	         var map = _this.map;
-	         _this.mapTop = true;
-	         this.$el.querySelector("#multiMap").scrollTop;
 
 	         _this.markerCoordinates.forEach(function (coord) {
 	            var number = coord.number;
@@ -19566,8 +19394,6 @@
 	               var instNumber = _this.inst;
 	               var map = this.map;
 	               _this.inst = number;
-	               _this.mapTop = true;
-
 	               map.setZoom(18);
 	               map.setCenter(marker.getPosition());
 	               // this.institutInfo = true;
@@ -19598,7 +19424,7 @@
 	};
 
 /***/ }),
-/* 163 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19679,9 +19505,6 @@
 	    }, [_vm._v(_vm._s(entry.number))])]) : _vm._e()], 2), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])])
 	  }))])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
-	    class: {
-	      top: _vm.mapTop
-	    },
 	    attrs: {
 	      "id": "multiMap"
 	    }
@@ -19691,25 +19514,25 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-d6fa1ef6", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4b8d88ce", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 164 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(165),
+	  __webpack_require__(160),
 	  /* template */
-	  __webpack_require__(192),
+	  __webpack_require__(187),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/twitter.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/twitter.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] twitter.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -19720,9 +19543,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-8e76a596", Component.options)
+	    hotAPI.createRecord("data-v-180aa56e", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-8e76a596", Component.options)
+	    hotAPI.reload("data-v-180aa56e", Component.options)
 	  }
 	})()}
 
@@ -19730,12 +19553,12 @@
 
 
 /***/ }),
-/* 165 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _axios = __webpack_require__(166);
+	var _axios = __webpack_require__(161);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -19795,21 +19618,21 @@
 	};
 
 /***/ }),
-/* 166 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(167);
+	module.exports = __webpack_require__(162);
 
 /***/ }),
-/* 167 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
-	var bind = __webpack_require__(169);
-	var Axios = __webpack_require__(171);
-	var defaults = __webpack_require__(172);
+	var utils = __webpack_require__(163);
+	var bind = __webpack_require__(164);
+	var Axios = __webpack_require__(166);
+	var defaults = __webpack_require__(167);
 
 	/**
 	 * Create an instance of Axios
@@ -19842,15 +19665,15 @@
 	};
 
 	// Expose Cancel & CancelToken
-	axios.Cancel = __webpack_require__(189);
-	axios.CancelToken = __webpack_require__(190);
-	axios.isCancel = __webpack_require__(186);
+	axios.Cancel = __webpack_require__(184);
+	axios.CancelToken = __webpack_require__(185);
+	axios.isCancel = __webpack_require__(181);
 
 	// Expose all/spread
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(191);
+	axios.spread = __webpack_require__(186);
 
 	module.exports = axios;
 
@@ -19859,13 +19682,13 @@
 
 
 /***/ }),
-/* 168 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var bind = __webpack_require__(169);
-	var isBuffer = __webpack_require__(170);
+	var bind = __webpack_require__(164);
+	var isBuffer = __webpack_require__(165);
 
 	/*global toString:true*/
 
@@ -20168,7 +19991,7 @@
 
 
 /***/ }),
-/* 169 */
+/* 164 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20185,7 +20008,7 @@
 
 
 /***/ }),
-/* 170 */
+/* 165 */
 /***/ (function(module, exports) {
 
 	/*!
@@ -20212,17 +20035,17 @@
 
 
 /***/ }),
-/* 171 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(172);
-	var utils = __webpack_require__(168);
-	var InterceptorManager = __webpack_require__(183);
-	var dispatchRequest = __webpack_require__(184);
-	var isAbsoluteURL = __webpack_require__(187);
-	var combineURLs = __webpack_require__(188);
+	var defaults = __webpack_require__(167);
+	var utils = __webpack_require__(163);
+	var InterceptorManager = __webpack_require__(178);
+	var dispatchRequest = __webpack_require__(179);
+	var isAbsoluteURL = __webpack_require__(182);
+	var combineURLs = __webpack_require__(183);
 
 	/**
 	 * Create a new instance of Axios
@@ -20304,13 +20127,13 @@
 
 
 /***/ }),
-/* 172 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(168);
-	var normalizeHeaderName = __webpack_require__(173);
+	var utils = __webpack_require__(163);
+	var normalizeHeaderName = __webpack_require__(168);
 
 	var DEFAULT_CONTENT_TYPE = {
 	  'Content-Type': 'application/x-www-form-urlencoded'
@@ -20326,10 +20149,10 @@
 	  var adapter;
 	  if (typeof XMLHttpRequest !== 'undefined') {
 	    // For browsers use XHR adapter
-	    adapter = __webpack_require__(174);
+	    adapter = __webpack_require__(169);
 	  } else if (typeof process !== 'undefined') {
 	    // For node use HTTP adapter
-	    adapter = __webpack_require__(174);
+	    adapter = __webpack_require__(169);
 	  }
 	  return adapter;
 	}
@@ -20403,12 +20226,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 173 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -20421,18 +20244,18 @@
 
 
 /***/ }),
-/* 174 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(168);
-	var settle = __webpack_require__(175);
-	var buildURL = __webpack_require__(178);
-	var parseHeaders = __webpack_require__(179);
-	var isURLSameOrigin = __webpack_require__(180);
-	var createError = __webpack_require__(176);
-	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(181);
+	var utils = __webpack_require__(163);
+	var settle = __webpack_require__(170);
+	var buildURL = __webpack_require__(173);
+	var parseHeaders = __webpack_require__(174);
+	var isURLSameOrigin = __webpack_require__(175);
+	var createError = __webpack_require__(171);
+	var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(176);
 
 	module.exports = function xhrAdapter(config) {
 	  return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -20529,7 +20352,7 @@
 	    // This is only done if running in a standard browser environment.
 	    // Specifically not if we're in a web worker, or react-native.
 	    if (utils.isStandardBrowserEnv()) {
-	      var cookies = __webpack_require__(182);
+	      var cookies = __webpack_require__(177);
 
 	      // Add xsrf header
 	      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -20608,12 +20431,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 175 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var createError = __webpack_require__(176);
+	var createError = __webpack_require__(171);
 
 	/**
 	 * Resolve or reject a Promise based on response status.
@@ -20640,12 +20463,12 @@
 
 
 /***/ }),
-/* 176 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var enhanceError = __webpack_require__(177);
+	var enhanceError = __webpack_require__(172);
 
 	/**
 	 * Create an Error with the specified message, config, error code, request and response.
@@ -20664,7 +20487,7 @@
 
 
 /***/ }),
-/* 177 */
+/* 172 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20691,12 +20514,12 @@
 
 
 /***/ }),
-/* 178 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -20765,12 +20588,12 @@
 
 
 /***/ }),
-/* 179 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	/**
 	 * Parse headers into an object
@@ -20808,12 +20631,12 @@
 
 
 /***/ }),
-/* 180 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -20882,7 +20705,7 @@
 
 
 /***/ }),
-/* 181 */
+/* 176 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20924,12 +20747,12 @@
 
 
 /***/ }),
-/* 182 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -20983,12 +20806,12 @@
 
 
 /***/ }),
-/* 183 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -21041,15 +20864,15 @@
 
 
 /***/ }),
-/* 184 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
-	var transformData = __webpack_require__(185);
-	var isCancel = __webpack_require__(186);
-	var defaults = __webpack_require__(172);
+	var utils = __webpack_require__(163);
+	var transformData = __webpack_require__(180);
+	var isCancel = __webpack_require__(181);
+	var defaults = __webpack_require__(167);
 
 	/**
 	 * Throws a `Cancel` if cancellation has been requested.
@@ -21126,12 +20949,12 @@
 
 
 /***/ }),
-/* 185 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(168);
+	var utils = __webpack_require__(163);
 
 	/**
 	 * Transform the data for a request or a response
@@ -21152,7 +20975,7 @@
 
 
 /***/ }),
-/* 186 */
+/* 181 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21163,7 +20986,7 @@
 
 
 /***/ }),
-/* 187 */
+/* 182 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21183,7 +21006,7 @@
 
 
 /***/ }),
-/* 188 */
+/* 183 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21203,7 +21026,7 @@
 
 
 /***/ }),
-/* 189 */
+/* 184 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21228,12 +21051,12 @@
 
 
 /***/ }),
-/* 190 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Cancel = __webpack_require__(189);
+	var Cancel = __webpack_require__(184);
 
 	/**
 	 * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -21291,7 +21114,7 @@
 
 
 /***/ }),
-/* 191 */
+/* 186 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21324,7 +21147,7 @@
 
 
 /***/ }),
-/* 192 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21338,29 +21161,29 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8e76a596", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-180aa56e", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 193 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(194)
+	__webpack_require__(189)
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(196),
+	  __webpack_require__(191),
 	  /* template */
-	  __webpack_require__(197),
+	  __webpack_require__(192),
 	  /* scopeId */
-	  "data-v-5d61e830",
+	  "data-v-ee282ac8",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/contrast.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/contrast.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] contrast.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -21371,9 +21194,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5d61e830", Component.options)
+	    hotAPI.createRecord("data-v-ee282ac8", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-5d61e830", Component.options)
+	    hotAPI.reload("data-v-ee282ac8", Component.options)
 	  }
 	})()}
 
@@ -21381,23 +21204,23 @@
 
 
 /***/ }),
-/* 194 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(195);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("c002a1ee", content, false);
+	var update = __webpack_require__(9)("1670caf9", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5d61e830\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5d61e830\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-ee282ac8\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-ee282ac8\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contrast.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -21407,7 +21230,7 @@
 	}
 
 /***/ }),
-/* 195 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)(undefined);
@@ -21421,7 +21244,7 @@
 
 
 /***/ }),
-/* 196 */
+/* 191 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21449,7 +21272,7 @@
 	};
 
 /***/ }),
-/* 197 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21464,29 +21287,29 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5d61e830", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-ee282ac8", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 198 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(199)
+	__webpack_require__(194)
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(201),
+	  __webpack_require__(196),
 	  /* template */
-	  __webpack_require__(202),
+	  __webpack_require__(197),
 	  /* scopeId */
-	  "data-v-4e20ab92",
+	  "data-v-1425aa4b",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/presell.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/presell.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] presell.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -21497,9 +21320,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4e20ab92", Component.options)
+	    hotAPI.createRecord("data-v-1425aa4b", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-4e20ab92", Component.options)
+	    hotAPI.reload("data-v-1425aa4b", Component.options)
 	  }
 	})()}
 
@@ -21507,23 +21330,23 @@
 
 
 /***/ }),
-/* 199 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(200);
+	var content = __webpack_require__(195);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("11ffc565", content, false);
+	var update = __webpack_require__(9)("722b690c", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4e20ab92\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4e20ab92\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-1425aa4b\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-1425aa4b\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./presell.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -21533,7 +21356,7 @@
 	}
 
 /***/ }),
-/* 200 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)(undefined);
@@ -21547,7 +21370,7 @@
 
 
 /***/ }),
-/* 201 */
+/* 196 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21595,7 +21418,7 @@
 	};
 
 /***/ }),
-/* 202 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21628,29 +21451,29 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4e20ab92", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1425aa4b", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 203 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(204)
+	__webpack_require__(199)
 
 	var Component = __webpack_require__(11)(
 	  /* script */
-	  __webpack_require__(206),
+	  __webpack_require__(201),
 	  /* template */
-	  __webpack_require__(207),
+	  __webpack_require__(202),
 	  /* scopeId */
-	  "data-v-09882769",
+	  "data-v-fb99d856",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/www/sites/mn/src/js/components/institutions.vue"
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/institutions.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] institutions.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -21661,9 +21484,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-09882769", Component.options)
+	    hotAPI.createRecord("data-v-fb99d856", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-09882769", Component.options)
+	    hotAPI.reload("data-v-fb99d856", Component.options)
 	  }
 	})()}
 
@@ -21671,23 +21494,23 @@
 
 
 /***/ }),
-/* 204 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(200);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(9)("30804d67", content, false);
+	var update = __webpack_require__(9)("6cf7e027", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-09882769\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-09882769\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb99d856\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-fb99d856\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./institutions.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -21697,7 +21520,7 @@
 	}
 
 /***/ }),
-/* 205 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)(undefined);
@@ -21711,12 +21534,12 @@
 
 
 /***/ }),
-/* 206 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _GoogleMap = __webpack_require__(159);
+	var _GoogleMap = __webpack_require__(154);
 
 	var _GoogleMap2 = _interopRequireDefault(_GoogleMap);
 
@@ -21807,7 +21630,7 @@
 	//
 
 /***/ }),
-/* 207 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21898,15 +21721,15 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-09882769", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-fb99d856", module.exports)
 	  }
 	}
 
 /***/ }),
-/* 208 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Clipboard = __webpack_require__(209)
+	var Clipboard = __webpack_require__(204)
 
 	var VueClipboard = {
 	  install: function (Vue) {
@@ -21966,12 +21789,12 @@
 
 
 /***/ }),
-/* 209 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
 	    if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(210), __webpack_require__(212), __webpack_require__(213)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(205), __webpack_require__(207), __webpack_require__(208)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof exports !== "undefined") {
 	        factory(module, require('./clipboard-action'), require('tiny-emitter'), require('good-listener'));
 	    } else {
@@ -22178,12 +22001,12 @@
 	});
 
 /***/ }),
-/* 210 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
 	    if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(211)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(206)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof exports !== "undefined") {
 	        factory(module, require('select'));
 	    } else {
@@ -22412,7 +22235,7 @@
 	});
 
 /***/ }),
-/* 211 */
+/* 206 */
 /***/ (function(module, exports) {
 
 	function select(element) {
@@ -22461,7 +22284,7 @@
 
 
 /***/ }),
-/* 212 */
+/* 207 */
 /***/ (function(module, exports) {
 
 	function E () {
@@ -22533,11 +22356,11 @@
 
 
 /***/ }),
-/* 213 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var is = __webpack_require__(214);
-	var delegate = __webpack_require__(215);
+	var is = __webpack_require__(209);
+	var delegate = __webpack_require__(210);
 
 	/**
 	 * Validates all params and calls the right
@@ -22634,7 +22457,7 @@
 
 
 /***/ }),
-/* 214 */
+/* 209 */
 /***/ (function(module, exports) {
 
 	/**
@@ -22689,10 +22512,10 @@
 
 
 /***/ }),
-/* 215 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var closest = __webpack_require__(216);
+	var closest = __webpack_require__(211);
 
 	/**
 	 * Delegates event to a selector.
@@ -22739,7 +22562,7 @@
 
 
 /***/ }),
-/* 216 */
+/* 211 */
 /***/ (function(module, exports) {
 
 	var DOCUMENT_NODE_TYPE = 9;
@@ -22778,7 +22601,9 @@
 
 
 /***/ }),
-/* 217 */
+/* 212 */,
+/* 213 */,
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -39866,7 +39691,7 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(136)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(131)(module)))
 
 /***/ })
 /******/ ]);
