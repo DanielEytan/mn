@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="scroll-top-button" v-on:click="scrollTop" >▲</div>
     <div class="filter__selection--wrapper">
        <div class="number">
         <p>Anzahl Veranstaltungen: {{calcNumberOfEvents()}}</p>
@@ -44,11 +45,12 @@
       <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry">
       </programentry>
     </ul>
+
   </div>
 </template>
 
 <script>
-import ProgramEntry from './ProgramEntry.vue'
+import ProgramEntry from './ProgramEntry.vue';
 import { EventBus } from '../event-bus.js';
 
 module.exports = {
@@ -72,6 +74,9 @@ module.exports = {
     this.getEntries();
   },
   methods: {
+    scrollTop: function () {
+      VueScrollTo.scrollTo(document.getElementById('header'), 500);
+    },
     removeFromFilters: function (filter, removeAll) {
       if(!removeAll) {
         this.$emit('remove-filter',filter);
@@ -107,4 +112,19 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
+  .scroll-top-button {
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding-bottom: 9px;
+    background:rgba(255,255,255,.95);
+    border: 1px solid black;
+    z-index: 10;
+  }
 </style>
