@@ -953,13 +953,19 @@ footer#footer {
         padding: .45em .7em .5em; }
         .program--overview .filter__checklists header > * div.active {
           border-bottom: 10px #1A0042 solid; }
+  .program--overview .filter__checklists .filter--list--wrapper div ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center; }
   .program--overview .filter__checklists .filter--list--wrapper div ul li {
-    -ms-flex: 0 1 23.5%;
-    flex: 0 1 23.5%; }
+    -ms-flex: none;
+    flex: none;
+    display: inline-block;
+    float: left;
+    width: auto; }
     .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
       margin-right: 2%; }
-    .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(4n) {
-      margin-right: 0; }
     .program--overview .filter__checklists .filter--list--wrapper div ul li div {
       margin-bottom: 1.5em; }
   .program--overview .filter__time {

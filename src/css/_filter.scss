@@ -165,13 +165,21 @@
 				}
 			}
 			.filter--list--wrapper div {
+				ul {
+					display: flex;
+					justify-content: center;
+				}
 				ul li {
-					flex: 0 1 23.5%;
+					// flex: 0 1 23.5%;
+					flex: none;
+					display: inline-block;
+					float: left;
+					width: auto;
 					&:nth-child(2n) {
 						margin-right: 2%;
 					}
 					&:nth-child(4n) {
-						margin-right: 0;
+						// margin-right: 0;
 					}
 					div {
 						margin-bottom: 1.5em;
