@@ -185,29 +185,21 @@
 	    this.stateContrast(), this.time();
 	  },
 	  mounted: function mounted() {
-	    var _this = this;
-	    var doc = document.documentElement;
-	    window.addEventListener("scroll", function (e) {
-	      _this.menuScroll(e, doc);
-	    });
+	    window.addEventListener("scroll", this.menuScroll);
 	  },
 
 	  methods: {
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
 	    },
-	    menuScroll: function menuScroll(e, doc) {
-	      // var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-	      // if(top > 300) {
+	    menuScroll: function menuScroll() {
 	      this.menuOpen = false;
-	      // }
 	    },
 	    time: function time() {
 	      var eventdate = (0, _momentMin2.default)("2018-01-19");
 	      var todaysdate = (0, _momentMin2.default)();
 	      var counter = eventdate.diff(todaysdate, 'days');
 	      this.daysLeft = counter;
-	      // console.log(counter);
 	    },
 	    toggleContrast: function toggleContrast() {
 	      var contrastState = localStorage.getItem('contrast');

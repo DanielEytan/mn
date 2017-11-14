@@ -74,28 +74,20 @@ var vueApp = new Vue({
       this.time()
     },
     mounted(){
-      var _this = this;
-      var doc = document.documentElement;
-      window.addEventListener("scroll", function (e) {
-        _this.menuScroll(e, doc);
-      });
+      window.addEventListener("scroll", this.menuScroll);
     },
     methods: {
         toggle: function() {
             this.menuOpen = !this.menuOpen;
         },
-        menuScroll: function (e, doc) {
-          // var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-          // if(top > 300) {
-            this.menuOpen = false;
-          // }
+        menuScroll: function () {
+          this.menuOpen = false;
         },
         time: function() {
             var eventdate = moment("2018-01-19");
             var todaysdate = moment();
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;
-            // console.log(counter);
         },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')
