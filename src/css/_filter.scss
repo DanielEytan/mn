@@ -119,14 +119,13 @@
 						// justify-content: space-between;
 						li {
 							flex: 0 1 49%;
-							margin-right: 2%;
+							margin-right: 1%;
 
 							&:nth-child(2n) {
 								margin-right: 0;
 							}
 							div {
-							padding: .45em .7em .5em;
-								
+								padding: .45em .7em .5em;
 							}
 						}	
 
@@ -176,13 +175,14 @@
 					float: left;
 					width: auto;
 					&:nth-child(2n) {
-						margin-right: 2%;
+						margin-right: 1%;
 					}
 					&:nth-child(4n) {
 						// margin-right: 0;
 					}
 					div {
-						margin-bottom: 1.5em;
+						margin-bottom: .75em;
+						// margin-bottom: 1.5em;
 					}
 				}
 			}

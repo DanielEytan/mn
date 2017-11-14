@@ -934,7 +934,7 @@ footer#footer {
       .program--overview .filter__checklists .filter--list--wrapper div ul li {
         -ms-flex: 0 1 49%;
         flex: 0 1 49%;
-        margin-right: 2%; }
+        margin-right: 1%; }
         .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
           margin-right: 0; }
         .program--overview .filter__checklists .filter--list--wrapper div ul li div {
@@ -965,9 +965,9 @@ footer#footer {
     float: left;
     width: auto; }
     .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
-      margin-right: 2%; }
+      margin-right: 1%; }
     .program--overview .filter__checklists .filter--list--wrapper div ul li div {
-      margin-bottom: 1.5em; }
+      margin-bottom: .75em; }
   .program--overview .filter__time {
     padding: 0;
     margin: 0 auto 3em;
