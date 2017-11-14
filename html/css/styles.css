@@ -97,6 +97,7 @@ header,
 .institutions h3,
 .journal--single h2.subtitle,
 span.shuttle-line,
+header .mn-date span,
 .visit h2,
 .presell-toggle,
 .home .info a,
@@ -121,7 +122,7 @@ header.site-header h1,
 .institutions--single .program-text {
   font-family: 'lyon-medium', times; }
 
-header .mn-date span {
+header .mn-date {
   font-family: 'lyon-regular'; }
 
 .program__list .institution,
@@ -464,9 +465,10 @@ header#header {
     width: 150px;
     text-align: right; }
     header#header #menu > * {
-      display: inline-block; }
-      header#header #menu > *:first-child {
-        margin-right: 1em; }
+      display: inline-block;
+      margin-right: 1em; }
+      header#header #menu > *:last-child {
+        margin-right: 0; }
   header#header .contrast-toggle {
     cursor: pointer; }
   header#header nav div.nav-wrapper {
@@ -504,11 +506,11 @@ header#header {
     text-align: center; }
     header#header .centered .mn-date span {
       display: none; }
-    header#header .centered .saved-link a {
+    header#header .centered .saved-link.active a {
       color: red; }
-      header#header .centered .saved-link a span {
-        transition: color .15s;
-        color: black; }
+    header#header .centered .saved-link a {
+      transition: color .15s;
+      color: grey; }
   @media screen and (max-width: 600px) {
     header#header {
       font-size: 1.25em; }
@@ -1181,3 +1183,6 @@ html {
 
 header.site-header {
   margin-bottom: 1em; }
+
+.institutions--single address a {
+  text-decoration: underline; }

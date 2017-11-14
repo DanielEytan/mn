@@ -28,12 +28,16 @@
 							</figure>
 						</a>
 					</div> #}
-					<savedlink :days="daysLeft"></savedlink>
+					 <div class="centered">
+					 	<counter :days="daysLeft"></counter>
+					 </div>
 					<div id="menu" >
 						{# <contrast></contrast> #}
 						<div class="contrast-toggle" v-on:click="toggleContrast">
 							&#61506;
 						</div>
+						<savedlink></savedlink>
+
 						<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
 							<span>MENU</span>
 							<div class="burger" >

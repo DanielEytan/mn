@@ -38,9 +38,8 @@
 					
 					
 				</div>
-				<address>{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}
+				<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a>
 				</address>
-				<p><a target="_blank" href="https://www.google.com/maps/search/?api=1&{{ entry.address}}">Google Maps</a></p>
 				<h3>Anfahrt:</h3>
 				<p>{{ entry.journey }}</p>
 			</div>

@@ -37,8 +37,10 @@ header#header {
 		text-align: right;
 		>* {
 			display: inline-block;
-			&:first-child {
 				margin-right: 1em;
+
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -128,12 +130,13 @@ header#header {
 		.mn-date span {
 			display: none;
 		}
-		.saved-link a {
-			color: red;
-			span {
+		.saved-link {
+			&.active a{
+				color: red;
+			}
+			a {
 				transition: color .15s;
-				color: black;
-				// text-decoration: underline;
+				color: grey; 
 			}
 		}
 	

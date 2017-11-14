@@ -16,6 +16,8 @@ import proposedProgram from './components/proposedProgram.vue'
 import institutionProgram from './components/institutionProgram.vue'
 
 import savedLink from './components/SavedLink.vue'
+import counter from './components/Counter.vue'
+
 import MyProgram from './components/MyProgram.vue'
 import moment from 'moment.min.js'
 import GoogleMap from './components/GoogleMap.vue'
@@ -47,6 +49,8 @@ var vueApp = new Vue({
 
 
         savedlink: savedLink,
+        counter: counter,
+
         myprogram: MyProgram,
         googlemap: GoogleMap,
         twitter: twitter,
