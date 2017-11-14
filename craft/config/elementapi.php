@@ -31,7 +31,7 @@ return [
         ],
         'program.json' => [
             'elementType' => ElementType::Entry,
-            'cache' => false,
+            'cache' => true,
             'criteria' => ['section' => 'program','type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
 
