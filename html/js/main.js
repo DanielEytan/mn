@@ -14294,6 +14294,9 @@
 	      staticClass: "list-group-item"
 	    }, [_c('div', {
 	      staticClass: "label--wrapper",
+	      class: {
+	        checked: _vm.checkedLabel(entry)
+	      },
 	      on: {
 	        "click": function($event) {
 	          _vm.filterChecked(entry)
@@ -14583,7 +14586,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14635,6 +14638,26 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'programlist',
@@ -14645,8 +14668,7 @@
 	  data: function data() {
 	    return {
 	      program: [],
-	      eventHash: { 0: 0 },
-	      dummyProgram: { data: [] }
+	      eventHash: { 0: 0 }
 	    };
 	  },
 	  computed: {
@@ -14669,8 +14691,6 @@
 	    getEntries: function getEntries() {
 	      var _this2 = this;
 
-	      // this.program = this.dummyProgram.data;
-	      // this.program = _.sortBy(this.dummyProgram.data,'title');
 	      var _this = this;
 	      axios.get('program.json').then(function (response) {
 	        _this2.program = response.data.data;
@@ -16391,8 +16411,8 @@
 	  }, [_c('div', {
 	    staticClass: "selection"
 	  }, [_c('div', {
-	    staticClass: "filter-tags--container"
-	  }, [_vm._l((_vm.checkedFilters), function(filter) {
+	    staticClass: "filter-tags--container filter-tags--institutions filter-tags--column"
+	  }, _vm._l((_vm.checkedInstitutions), function(filter) {
 	    return _c('div', {
 	      staticClass: "filter--tag"
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
@@ -16402,15 +16422,43 @@
 	        }
 	      }
 	    }, [_vm._v("(x)")])])
-	  }), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
-	    staticClass: "removeAll--tag"
-	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
-	    on: {
-	      "click": function($event) {
-	        _vm.removeFromFilters('', true)
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "filter-tags--container filter-tags--themes filter-tags--column"
+	  }, _vm._l((_vm.checkedThemes), function(filter) {
+	    return _c('div', {
+	      staticClass: "filter--tag"
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	      on: {
+	        "click": function($event) {
+	          _vm.removeFromFilters(filter)
+	        }
 	      }
-	    }
-	  }, [_vm._v("(x)")])]) : _vm._e()], 2)]), _vm._v(" "), _c('div', {
+	    }, [_vm._v("(x)")])])
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "filter-tags--container filter-tags--events filter-tags--column"
+	  }, _vm._l((_vm.checkedEvents), function(filter) {
+	    return _c('div', {
+	      staticClass: "filter--tag"
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	      on: {
+	        "click": function($event) {
+	          _vm.removeFromFilters(filter)
+	        }
+	      }
+	    }, [_vm._v("(x)")])])
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "filter-tags--container filter-tags--languages filter-tags--column"
+	  }, _vm._l((_vm.checkedLanguages), function(filter) {
+	    return _c('div', {
+	      staticClass: "filter--tag"
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	      on: {
+	        "click": function($event) {
+	          _vm.removeFromFilters(filter)
+	        }
+	      }
+	    }, [_vm._v("(x)")])])
+	  }))]), _vm._v(" "), _c('div', {
 	    staticClass: "number"
 	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"
