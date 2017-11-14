@@ -48,9 +48,6 @@
 				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %}
-			{# <div class="map-container">
-				<googlemap name="googleMap"></googlemap>
-			</div> #}
 		</div>
 		<section class="program">
 			<h1 class="program-title">{{ entry.programmTitle }}</h1>
@@ -65,30 +62,10 @@
 			</figure>
 			{% endfor %}
 			<h2>Programm</h2>
-			<ul class="program__list program__list--selection">
-				{% set children = entry.children().level(2) %}
-				{% for entry in children %}
-				<li class="program__list__event">
-					<h1 class="event-title">{{ entry.title }}</h1>
-					{% for time in entry.time %}
-					<time>
-						{% switch time.type %}
-						{% case "setTimes" %}
-						{{ time.start | date("h:i") }} 
-						{% if time.duration | length %}(Dauer: {{ time.duration }}){% endif %}<br>
-						{% case "continuous" %}
-						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-						{% case "iterating" %}									
-						{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}{% if time.duration | length %}, Dauer: {{ time.duration }} {% endif %})
-						{% endswitch %}
-					</time>
-					{% endfor %}
-					{{ entry.description }}
-      									{# <saveprogram></saveprogram> #}
 
-				</li>
-				{% endfor %}
-			</ul>
+				{% set children = entry.children().level(2) %}
+			
+			<institutionprogram parent="{{entry.number}}"></institutionprogram>
 			<p>Essen und trinken: {{ entry.food }}</p>
 		</section>
 	</article>
