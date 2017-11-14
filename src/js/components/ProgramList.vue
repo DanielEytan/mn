@@ -2,14 +2,34 @@
   <div>
     <div class="filter__selection--wrapper">
       
-      <div class="selection">
-      <div class="filter-tags--container">
-        <div class="filter--tag" v-for="filter in checkedFilters">
-          <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+      <div class="selection"><!-- 
+        <div class="filter-tags--container">
+          <div class="filter--tag" v-for="filter in checkedFilters">
+            <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+          </div>
+          <div class="removeAll--tag" v-if="checkedFilters.length > 0">
+            <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
+          </div>
+        </div> -->
+        <div class="filter-tags--container filter-tags--institutions filter-tags--column">
+          <div class="filter--tag" v-for="filter in checkedInstitutions">
+            <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+          </div>
         </div>
-        <div class="removeAll--tag" v-if="checkedFilters.length > 0">
-          <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
+        <div class="filter-tags--container filter-tags--themes filter-tags--column">
+          <div class="filter--tag" v-for="filter in checkedThemes">
+            <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+          </div>
         </div>
+        <div class="filter-tags--container filter-tags--events filter-tags--column">
+          <div class="filter--tag" v-for="filter in checkedEvents">
+            <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+          </div>
+        </div>
+        <div class="filter-tags--container filter-tags--languages filter-tags--column">
+          <div class="filter--tag" v-for="filter in checkedLanguages">
+            <span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">(x)</span>
+          </div>
         </div>
       </div>
       <div class="number">
