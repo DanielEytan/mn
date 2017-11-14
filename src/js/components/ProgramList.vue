@@ -37,7 +37,6 @@ module.exports = {
     return {
       program: [],
       eventHash: {0:0},
-      dummyProgram:{data:[]}
     }
   },
   computed: {
@@ -57,8 +56,6 @@ module.exports = {
       }
     },
     getEntries: function () {
-      // this.program = this.dummyProgram.data;
-      // this.program = _.sortBy(this.dummyProgram.data,'title');
       let _this = this;
       axios.get('program.json')
         .then(response => {

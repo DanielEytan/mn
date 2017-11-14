@@ -924,43 +924,43 @@ footer#footer {
     margin-bottom: 1em; }
   .program--overview .filter__time {
     padding: 0 30px; }
-  .program--overview .filter__ckecklists {
+  .program--overview .filter__checklists {
     margin-top: 4em; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul {
+    .program--overview .filter__checklists .filter--list--wrapper div ul {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
+      .program--overview .filter__checklists .filter--list--wrapper div ul li {
         -ms-flex: 0 1 49%;
         flex: 0 1 49%;
         margin-right: 2%; }
-        .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
+        .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
           margin-right: 0; }
-        .program--overview .filter__ckecklists .filter--list--wrapper div ul li div {
+        .program--overview .filter__checklists .filter--list--wrapper div ul li div {
           padding: .45em .7em .5em; }
-    .program--overview .filter__ckecklists .filter--list--wrapper.active {
+    .program--overview .filter__checklists .filter--list--wrapper.active {
       padding: 1em 30px 1.1em; } }
 
 @media only screen and (min-width: 1024px) {
-  .program--overview .filter__ckecklists header {
+  .program--overview .filter__checklists header {
     margin: 0 30px; }
-    .program--overview .filter__ckecklists header > * {
+    .program--overview .filter__checklists header > * {
       -ms-flex: 0 1 24%;
       flex: 0 1 24%; }
-      .program--overview .filter__ckecklists header > * div {
+      .program--overview .filter__checklists header > * div {
         border: solid #1A0042 1px;
         padding: .45em .7em .5em; }
-        .program--overview .filter__ckecklists header > * div.active {
+        .program--overview .filter__checklists header > * div.active {
           border-bottom: 10px #1A0042 solid; }
-  .program--overview .filter__ckecklists .filter--list--wrapper div ul li {
+  .program--overview .filter__checklists .filter--list--wrapper div ul li {
     -ms-flex: 0 1 23.5%;
     flex: 0 1 23.5%; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(2n) {
+    .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
       margin-right: 2%; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li:nth-child(4n) {
+    .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(4n) {
       margin-right: 0; }
-    .program--overview .filter__ckecklists .filter--list--wrapper div ul li div {
+    .program--overview .filter__checklists .filter--list--wrapper div ul li div {
       margin-bottom: 1.5em; }
   .program--overview .filter__time {
     padding: 0;
@@ -968,12 +968,12 @@ footer#footer {
     width: 900px; } }
 
 @media only screen and (min-width: 1224px) {
-  .program--overview .filter__ckecklists header {
+  .program--overview .filter__checklists header {
     margin: 0 30px;
     width: auto; }
-  .program--overview .filter__ckecklists .filter--list--wrapper.active {
+  .program--overview .filter__checklists .filter--list--wrapper.active {
     padding: 50px 0; }
-  .program--overview .filter__ckecklists .filter--list--wrapper ul {
+  .program--overview .filter__checklists .filter--list--wrapper ul {
     margin: 0 30px; } }
 
 .filter__selection--wrapper {
@@ -1065,9 +1065,9 @@ footer#footer {
       #vue-app.active .program .share-program .button button:hover a {
         color: #1A0042; }
   @media only screen and (min-width: 768px) {
-    #vue-app.active .program--overview .filter__ckecklists header > * div {
+    #vue-app.active .program--overview .filter__checklists header > * div {
       border: solid white 1px !important; }
-      #vue-app.active .program--overview .filter__ckecklists header > * div.active {
+      #vue-app.active .program--overview .filter__checklists header > * div.active {
         border-bottom: 10px white solid !important; } }
   #vue-app.active #save-toggle > div:hover {
     color: #1A0042 !important; }

@@ -14586,7 +14586,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14648,8 +14648,7 @@
 	  data: function data() {
 	    return {
 	      program: [],
-	      eventHash: { 0: 0 },
-	      dummyProgram: { data: [] }
+	      eventHash: { 0: 0 }
 	    };
 	  },
 	  computed: {
@@ -14672,8 +14671,6 @@
 	    getEntries: function getEntries() {
 	      var _this2 = this;
 
-	      // this.program = this.dummyProgram.data;
-	      // this.program = _.sortBy(this.dummyProgram.data,'title');
 	      var _this = this;
 	      axios.get('program.json').then(function (response) {
 	        _this2.program = response.data.data;
