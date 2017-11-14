@@ -1112,15 +1112,15 @@ footer#footer {
   right: 0;
   top: 0;
   z-index: 1; }
-  .save-element div {
+  .save-element div.save-heart {
     font-size: 2em;
     color: #d2d2d2;
     transition: color .25s;
     cursor: pointer; }
-    .save-element div:hover {
+    .save-element div.save-heart:hover, .program__list__event.active .save-element div {
       text-shadow: 0px 0px 1px red;
       color: white; }
-    .save-element div.active {
+    .save-element div.save-heart.active {
       color: red; }
 
 header.site-header h1 {

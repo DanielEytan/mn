@@ -15793,7 +15793,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16066,7 +16066,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16081,7 +16081,63 @@
 
 	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
 
+	var _eventBus = __webpack_require__(23);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'programevent',
@@ -16090,64 +16146,25 @@
 	    saveprogram: _SaveProgram2.default
 	  },
 	  data: function data() {
-	    return {};
+	    return {
+	      hover: false
+	    };
 	  },
-	  methods: {},
+	  methods: {
+	    mouseOver: function mouseOver() {
+	      this.hover = true;
+	    },
+	    mouseLeave: function mouseLeave() {
+	      this.hover = false;
+	    },
+	    saveProgram: function saveProgram() {
+	      var saveprogram_child_component = this.$refs.saveprogram;
+	      saveprogram_child_component.save(this.programevent.id);
+	    }
+	  },
 	  computed: {},
 	  watch: {}
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 100 */
@@ -16222,7 +16239,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16324,6 +16341,7 @@
 	      }
 	    }
 	  }, [_c('div', {
+	    staticClass: "save-heart",
 	    class: {
 	      active: _vm.toggled
 	    }
@@ -16343,7 +16361,15 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return (_vm.programeventIsVisible) ? _c('li', {
-	    staticClass: "program__list__event program__list--complete__event"
+	    staticClass: "program__list__event program__list--complete__event",
+	    class: {
+	      active: _vm.hover
+	    },
+	    on: {
+	      "click": _vm.saveProgram,
+	      "mouseover": _vm.mouseOver,
+	      "mouseleave": _vm.mouseLeave
+	    }
 	  }, [_c('h1', {
 	    staticClass: "event-title"
 	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v("\n      " + _vm._s(_vm.programevent.programmText) + "\n\n"), _vm._v(" "), _vm._l((_vm.programevent.time), function(time) {
@@ -16367,6 +16393,7 @@
 	  }, [_c('h3', [_vm._v("Sprachen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('li', [_vm._v(_vm._s(language.title))])
 	  }))])]) : _vm._e()]), _vm._v(" "), _c('saveprogram', {
+	    ref: "saveprogram",
 	    attrs: {
 	      "programevent": _vm.programevent
 	    }
