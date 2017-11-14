@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="filter__selection--wrapper">
-      
+       <div class="number">
+        <p>Anzahl Veranstaltungen: {{calcNumberOfEvents()}}</p>
+      </div>
       <div class="selection"><!-- 
         <div class="filter-tags--container">
           <div class="filter--tag" v-for="filter in checkedFilters">
@@ -35,9 +37,7 @@
           <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
         </div>
       </div>
-      <div class="number">
-        <p>Anzahl Veranstaltungen: {{calcNumberOfEvents()}}</p>
-      </div>
+     
     </div>
     
     <ul class="program__list program__list--complete">

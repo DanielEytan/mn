@@ -1,5 +1,5 @@
 <template>
- <div class="centered">
+ <div>
     <!-- <div class="mn-date" v-if="items.length == 0"><span>Noch {{ days }} Nächte bis zur Museumsnacht</span></div> -->
     <div class="saved-link" v-bind:class="{ active: activeHearth }"><a :href="url">♥ <span v-if="this.items.length > 0">{{ items.length }}</span></a></div>
  </div>

@@ -432,10 +432,26 @@ main {
 section header .narrow {
   margin-bottom: 50px; }
 
+header#header.reduced a.logo {
+  background: url(./../bilder/logo_schwarz.svg);
+  background-size: 30px 27px;
+  background-repeat: no-repeat;
+  height: 27px; }
+  header#header.reduced a.logo.active {
+    background: url(./../bilder/logo_weiss.svg);
+    background-size: 31px 27px;
+    background-repeat: no-repeat; }
+
+header#header.reduced .centered .mn-date span {
+  display: none; }
+
+header#header.reduced .flex-container {
+  height: 40px; }
+
 header#header {
   width: 100%;
   position: fixed;
-  border-bottom: 1px solid;
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
   background: white;
   z-index: 10;
   top: 0; }
@@ -449,7 +465,8 @@ header#header {
     background-size: 50px 44px;
     background-size: 30px 27px;
     width: 30px;
-    height: 27px; }
+    height: 27px;
+    transition: background .25s; }
     header#header a.logo.active {
       background: url(./../bilder/logo_weiss.svg);
       background-size: 31px 27px; }
@@ -459,14 +476,17 @@ header#header {
     -ms-flex-pack: justify;
     justify-content: space-between;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    height: 70px;
+    transition: height .25s; }
   header#header #menu {
-    width: 150px;
+    width: 200px;
     text-align: right; }
     header#header #menu > * {
-      display: inline-block; }
-      header#header #menu > *:first-child {
-        margin-right: 1em; }
+      display: inline-block;
+      margin-right: 1em; }
+      header#header #menu > *:last-child {
+        margin-right: 0; }
   header#header .contrast-toggle {
     cursor: pointer; }
   header#header nav div.nav-wrapper {
@@ -504,12 +524,12 @@ header#header {
     text-align: center; }
     header#header .centered .mn-date span {
       display: none; }
-    header#header .centered .saved-link a {
-      color: red; }
-      header#header .centered .saved-link a span {
-        transition: color .15s;
-        color: black; }
-  @media screen and (max-width: 600px) {
+  header#header .saved-link.active a {
+    color: red; }
+  header#header .saved-link a {
+    transition: color .15s;
+    color: grey; }
+  @media screen and (max-width: 768px) {
     header#header {
       font-size: 1.25em; }
       header#header .saved-link span {
@@ -520,18 +540,20 @@ header#header {
     header#header #menu {
       width: 300px; }
     header#header a.logo {
-      background: url(./../bilder/logo_schwarz.svg);
+      background: url(./../bilder/MN18_LOGO_16.svg);
       background-repeat: no-repeat;
-      background-size: 50px 44px;
-      width: 150px;
+      background-size: 130px 41px;
+      width: 300px;
       height: 44px; }
       header#header a.logo.active {
-        background: url(./../bilder/logo.svg);
-        background-size: 50px 44px;
+        background: url(./../bilder/MN18_LOGO_16-weiss.svg);
+        background-size: 130px 41px;
         background-repeat: no-repeat; } }
   @media screen and (min-width: 1224px) {
-    header#header .centered .mn-date span {
-      display: inline-block; } }
+    header#header .centered {
+      width: 370px; }
+      header#header .centered .mn-date span {
+        display: inline-block; } }
 
 @keyframes first {
   0% {
@@ -879,8 +901,6 @@ footer#footer {
     .program--overview .filter .filter--list--wrapper ul li div.checked {
       background-color: white;
       color: #1A0042; }
-    .program--overview .filter .filter--list--wrapper ul li div input[type='checkbox'] {
-      background: red; }
 
 .program--overview .filter .filter--list--wrapper.active {
   padding: 1em .7em 1.1em; }
@@ -1195,3 +1215,6 @@ html {
 
 header.site-header {
   margin-bottom: 1em; }
+
+.institutions--single address a {
+  text-decoration: underline; }

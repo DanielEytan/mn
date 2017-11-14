@@ -1,5 +1,5 @@
 <template>
-   <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">
+   <div id="save-toggle" class="save-element">
       <div class="save-heart" v-bind:class="{active: toggled}">♥</div>
       <!-- <p  v-if="toggled">TOGGLED!</p> -->
    </div>
