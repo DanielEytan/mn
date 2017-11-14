@@ -18004,7 +18004,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18036,7 +18036,6 @@
 	    programevent: _ProgramEvent2.default,
 	    saveprogram: _SaveProgram2.default,
 	    shareprogram: _ShareMyProgram2.default
-
 	  },
 	  data: function data() {
 	    return {
@@ -18044,7 +18043,6 @@
 	      items: [],
 	      itemSaved: false,
 	      url: '/programm/programm'
-
 	    };
 	  },
 	  mounted: function mounted() {
@@ -18082,24 +18080,9 @@
 	    toggled: function toggled() {
 
 	      this.itemSaved = !this.itemSaved;
-
-	      console.log('event is triggered');
 	    }
-
 	  }
 	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -18175,11 +18158,11 @@
 	        attrs: {
 	          "href": entry.url
 	        }
-	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('h1', {
+	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('div', [_c('h1', {
 	        staticClass: "event-title"
 	      }, [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
 	        return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration.length) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")"), _c('br')]) : _vm._e()])
-	      }), _vm._v(" "), _c('div', {
+	      })], 2), _vm._v(" "), _c('div', {
 	        domProps: {
 	          "innerHTML": _vm._s(entry.description)
 	        }
@@ -18190,7 +18173,7 @@
 	        on: {
 	          "clicked": _vm.toggled
 	        }
-	      })], 2) : _vm._e()
+	      })], 1) : _vm._e()
 	    }))
 	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
