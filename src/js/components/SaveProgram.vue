@@ -1,6 +1,6 @@
 <template>
-   <div id="save-toggle" class="save-element" v-on:click="save(programevent.id)">
-      <div v-bind:class="{active: toggled}">♥</div>
+   <div id="save-toggle" class="save-element">
+      <div class="save-heart" v-bind:class="{active: toggled}">♥</div>
       <!-- <p  v-if="toggled">TOGGLED!</p> -->
    </div>
 
@@ -47,7 +47,6 @@ module.exports = {
          localStorage.setItem("programId", JSON.stringify(idListArray));
          EventBus.$emit('program-saved');
          this.$emit('clicked');
-
       }
    }
 }

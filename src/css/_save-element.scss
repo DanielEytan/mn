@@ -3,7 +3,7 @@
 		right: 0;
 		top: 0;
 		z-index: 1;
-		div {
+		div.save-heart {
 			font-size: 2em;
 			color: rgb(210,210,210);
 			transition: color .25s;
@@ -19,3 +19,7 @@
 				}
 			}
 		}
+
+  .program__list__event.active .save-element div {
+		@extend .save-heart:hover;
+  }

@@ -18,7 +18,7 @@
 						<timefilter v-model="checkedTimes"></timefilter>
 					</div>
 				</div>
-				<div class="filter__ckecklists">
+				<div class="filter__checklists">
 					<div id="container">
 						<h2>FILTERN NACH:</h2>
 					</div>
@@ -50,25 +50,25 @@
 						<div class="filter--institutions">
 							<div class="filter--list--wrapper"  v-bind:class="{ active: openInstitution }">
 								{# <header v-on:click="toggleInstitution"><span v-if="checkedInstitutions.length > 0">(${checkedInstitutions.length})</span> Institutionen <span class="arrow">${ openInstitution ? '▲' : '▼'}</span></header> #}
-								<checkboxfilter v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions"></checkboxfilter>
+								<checkboxfilter @toggle-filters="toggleFilters" v-bind:value-name="institutionsAPITitle" v-model="checkedInstitutions"></checkboxfilter>
 							</div>
 						</div>
 						<div class="filter--themes">
 							<div class="filter--list--wrapper"  v-bind:class="{ active: openThemes }">
 								{# <header v-on:click="toggleThemes"><span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span> Themen <span class="arrow">${ openThemes ? '▲' : '▼'}</span></header> #}
-								<checkboxfilter v-bind:value-name="themesAPITitle" v-model="checkedThemes"></checkboxfilter>
+								<checkboxfilter @toggle-filters="toggleFilters" v-bind:value-name="themesAPITitle" v-model="checkedThemes"></checkboxfilter>
 							</div>
 						</div>
 						<div class="filter--kind-of-event">
 							<div class="filter--list--wrapper" v-bind:class="{ active: openKinds }">
 								{#  <header v-on:click="toggleKinds"><span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungen <span class="arrow">${ openKinds ? '▲' : '▼'}</span></header> #}
-								<checkboxfilter v-bind:value-name="eventsAPITitle" v-model="checkedEvents"></checkboxfilter>
+								<checkboxfilter @toggle-filters="toggleFilters" v-bind:value-name="eventsAPITitle" v-model="checkedEvents"></checkboxfilter>
 							</div>
 						</div>
 						<div class="filter--languages">
 							<div class="filter--list--wrapper" v-bind:class="{ active: openLang }">
 								{#   <header v-on:click="toggleLang"><span v-if="checkedLanguages.length > 0">(${checkedLanguages.length})</span> Sprachen <span class="arrow">${ openLang ? '▲' : '▼'}</span></header> #}
-								<checkboxfilter v-bind:value-name="languagesAPITitle" v-model="checkedLanguages"></checkboxfilter>
+								<checkboxfilter @toggle-filters="toggleFilters" v-bind:value-name="languagesAPITitle" v-model="checkedLanguages"></checkboxfilter>
 							</div>
 						</div>
 

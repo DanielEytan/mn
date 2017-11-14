@@ -15,8 +15,8 @@
 <body>
 
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
-		<header id="header">
-			<div>
+		<header id="header" v-bind:class="{ reduced: headerReduced }">
+			<div class="header--wrapper--inner">
 				<div class="flex-container">
 						<a class="logo" href="{{ siteUrl }}" v-bind:class="{ active: activeContrast }">
 							Logo MN Basel

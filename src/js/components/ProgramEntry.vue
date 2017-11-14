@@ -28,7 +28,6 @@
 <script>
 import ProgramEvent from './ProgramEvent.vue'
 
-
 module.exports = {
   name: 'programentry',
   props: ['entry','checkedInstitutions','checkedThemes','checkedEvents','checkedLanguages','checkedTimes'],

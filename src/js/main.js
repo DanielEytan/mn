@@ -60,6 +60,7 @@ var vueApp = new Vue({
     },
     data: {
         menuOpen: false,
+        headerReduced: false,
         activeContrast: false,
         openInstitution: false,
         openThemes: false,
@@ -89,12 +90,42 @@ var vueApp = new Vue({
         },
         menuScroll: function () {
           this.menuOpen = false;
+
+          var doc = document.documentElement;
+          var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+          console.log(top);
+          if (top > 50) {
+            this.headerReduced = true;
+          } else {
+            this.headerReduced = false;
+          }
+            
+
         },
         time: function() {
             var eventdate = moment("2018-01-19");
             var todaysdate = moment();
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;
+        },
+        toggleFilters: function (valueName) {
+          var _this = this;
+          switch(valueName) {
+              case 'institution':
+                  _this.toggleInstitution();
+                  break;
+              case 'themes':
+                  _this.toggleThemes();
+                  break;
+              case 'events':
+                  _this.toggleKinds();
+                  break;
+              case 'languages':
+                  _this.toggleLang();
+                  break;
+              default:
+                  break;
+          }
         },
         toggleContrast: function() {
             var contrastState = localStorage.getItem('contrast')
