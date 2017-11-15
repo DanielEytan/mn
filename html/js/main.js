@@ -215,12 +215,16 @@
 
 	      var doc = document.documentElement;
 	      var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-	      console.log(top);
+	      //           console.log(top);
 	      if (top > 50) {
 	        this.headerReduced = true;
 	      } else {
 	        this.headerReduced = false;
-	      }
+	      };
+
+	      if (top > 500) {
+	        // alert('tadaaa');
+	      } else {}
 	    },
 	    time: function time() {
 	      var eventdate = (0, _momentMin2.default)("2018-01-19");
@@ -14401,7 +14405,7 @@
 	    on: {
 	      "click": _vm.toggleFilters
 	    }
-	  }, [_vm._v("\n      SCHLIEßEN\n    ")])], 2)])
+	  }, [_vm._v("\n      SCHLIESSEN\n    ")])], 2)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -14643,7 +14647,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.scroll-top-button[data-v-005b3764] {\n  cursor: pointer;\n  position: fixed;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  bottom: 20px;\n  right: 20px;\n  width: 40px;\n  height: 40px;\n  padding-bottom: 9px;\n  background:rgba(255,255,255,.95);\n  border: 1px solid black;\n  z-index: 10;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14721,6 +14725,36 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'programlist',
@@ -14731,7 +14765,10 @@
 	  data: function data() {
 	    return {
 	      program: [],
-	      eventHash: { 0: 0 }
+	      eventHash: { 0: 0 },
+	      index: '',
+	      hideWhenScrolled: true,
+	      showWhenScrolled: false
 	    };
 	  },
 	  computed: {
@@ -14741,11 +14778,24 @@
 	  },
 	  mounted: function mounted() {
 	    this.getEntries();
+	    window.addEventListener("scroll", this.scrolled);
 	  },
 
 	  methods: {
 	    scrollTop: function scrollTop() {
 	      VueScrollTo.scrollTo(document.getElementById('header'), 500);
+	    },
+	    scrolled: function scrolled() {
+	      var doc = document.documentElement;
+	      var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+	      console.log(top);
+	      if (top > 5000) {
+	        this.hideWhenScrolled = true;
+	        this.showWhenScrolled = true;
+	      } else {
+	        this.hideWhenScrolled = false;
+	        this.showWhenScrolled = false;
+	      }
 	    },
 	    removeFromFilters: function removeFromFilters(filter, removeAll) {
 	      if (!removeAll) {
@@ -14760,6 +14810,7 @@
 	      var _this = this;
 	      axios.get('program.json').then(function (response) {
 	        _this2.program = response.data.data;
+	        _this2.hideWhenScrolled = false;
 	      });
 	    },
 	    initEventHash: function initEventHash() {
@@ -16496,64 +16547,72 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
 	    staticClass: "scroll-top-button",
+	    class: {
+	      show: _vm.showWhenScrolled
+	    },
 	    on: {
 	      "click": _vm.scrollTop
 	    }
 	  }, [_vm._v("▲")]), _vm._v(" "), _c('div', {
 	    staticClass: "filter__selection--wrapper"
 	  }, [_c('div', {
-	    staticClass: "number"
-	  }, [_c('p', [_vm._v("Anzahl Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])]), _vm._v(" "), _c('div', {
+	    staticClass: "number button",
+	    class: {
+	      hide: _vm.hideWhenScrolled
+	    }
+	  }, [_c('p', [_c('nobr', [_vm._v("Veranstaltungen: " + _vm._s(_vm.calcNumberOfEvents()))])], 1)]), _vm._v(" "), _c('div', {
 	    staticClass: "selection"
 	  }, [_c('div', {
-	    staticClass: "filter-tags--container filter-tags--institutions filter-tags--column"
-	  }, _vm._l((_vm.checkedInstitutions), function(filter) {
+	    staticClass: "filter-tags--container"
+	  }, [_vm._l((_vm.checkedInstitutions), function(filter, index) {
 	    return _c('div', {
-	      staticClass: "filter--tag"
+	      staticClass: "filter--tag inst"
+	    }, [_c('div', {
+	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
 	        }
 	      }
-	    }, [_vm._v("(x)")])])
-	  })), _vm._v(" "), _c('div', {
-	    staticClass: "filter-tags--container filter-tags--themes filter-tags--column"
-	  }, _vm._l((_vm.checkedThemes), function(filter) {
+	    }, [_vm._v("ⓧ")])])])
+	  }), _vm._v(" "), _vm._l((_vm.checkedThemes), function(filter, index) {
 	    return _c('div', {
-	      staticClass: "filter--tag"
+	      staticClass: "filter--tag theme"
+	    }, [_c('div', {
+	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
 	        }
 	      }
-	    }, [_vm._v("(x)")])])
-	  })), _vm._v(" "), _c('div', {
-	    staticClass: "filter-tags--container filter-tags--events filter-tags--column"
-	  }, _vm._l((_vm.checkedEvents), function(filter) {
+	    }, [_vm._v("ⓧ")])])])
+	  }), _vm._v(" "), _vm._l((_vm.checkedEvents), function(filter, index) {
 	    return _c('div', {
-	      staticClass: "filter--tag"
+	      staticClass: "filter--tag kind"
+	    }, [_c('div', {
+	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
 	        }
 	      }
-	    }, [_vm._v("(x)")])])
-	  })), _vm._v(" "), _c('div', {
-	    staticClass: "filter-tags--container filter-tags--languages filter-tags--column"
-	  }, _vm._l((_vm.checkedLanguages), function(filter) {
+	    }, [_vm._v("ⓧ")])])])
+	  }), _vm._v(" "), _vm._l((_vm.checkedLanguages), function(filter, index) {
 	    return _c('div', {
-	      staticClass: "filter--tag"
+	      staticClass: "filter--tag languages"
+	    }, [_c('div', {
+	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
 	        }
 	      }
-	    }, [_vm._v("(x)")])])
-	  })), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
+	    }, [_vm._v("ⓧ")])])])
+	  })], 2), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
 	    staticClass: "removeAll--tag"
 	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
 	    on: {
@@ -16561,7 +16620,7 @@
 	        _vm.removeFromFilters('', true)
 	      }
 	    }
-	  }, [_vm._v("(x)")])]) : _vm._e()])]), _vm._v(" "), _c('ul', {
+	  }, [_vm._v("ⓧ")])]) : _vm._e()])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"
 	  }, _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
