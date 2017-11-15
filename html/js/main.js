@@ -16937,7 +16937,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16991,6 +16991,15 @@
 	            idListArray.push(id);
 	            this.toggled = true;
 	         }
+	         localStorage.setItem("programId", (0, _stringify2.default)(idListArray));
+	         _eventBus.EventBus.$emit('program-saved');
+	         this.$emit('clicked');
+	      },
+	      removeFromList: function removeFromList(id) {
+	         var idListString = localStorage.getItem("programId");
+	         var idListArray = idListString === '' || idListString === null ? [] : JSON.parse(idListString);
+	         idListArray.splice(idListArray.indexOf(id), 1);
+	         this.toggled = false;
 	         localStorage.setItem("programId", (0, _stringify2.default)(idListArray));
 	         _eventBus.EventBus.$emit('program-saved');
 	         this.$emit('clicked');
@@ -18308,7 +18317,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.reset-my-program[data-v-675dffee] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n  margin-bottom: 30px;\n}\n", ""]);
 
 	// exports
 
@@ -18337,6 +18346,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -18425,7 +18438,13 @@
 	    },
 	    toggled: function toggled() {
 	      this.itemSaved = !this.itemSaved;
-	      console.log(this);
+	    },
+	    resetMyProgram: function resetMyProgram() {
+	      var _this = this;
+	      var myprogramevent_child_components = this.$refs.myprogramevent;
+	      myprogramevent_child_components.forEach(function (o) {
+	        o.removeFromList();
+	      });
 	    }
 	  }
 	};
@@ -18503,7 +18522,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18538,9 +18557,15 @@
 	    mouseLeave: function mouseLeave() {
 	      this.hover = false;
 	    },
-	    saveProgram: function saveProgram(id) {
+	    saveProgram: function saveProgram() {
+	      var id = this.programevent.id;
 	      var saveprogram_child_component = this.$refs.saveprogram;
 	      saveprogram_child_component.save(id);
+	    },
+	    removeFromList: function removeFromList() {
+	      var id = this.programevent.id;
+	      var saveprogram_child_component = this.$refs.saveprogram;
+	      saveprogram_child_component.removeFromList(id);
 	    }
 	  }
 
@@ -18570,9 +18595,7 @@
 	      active: _vm.hover
 	    },
 	    on: {
-	      "click": function($event) {
-	        _vm.saveProgram(_vm.programevent.id)
-	      },
+	      "click": _vm.saveProgram,
 	      "mouseover": _vm.mouseOver,
 	      "mouseleave": _vm.mouseLeave
 	    }
@@ -18608,7 +18631,12 @@
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
-	  }, _vm._l((_vm.programevents), function(entry) {
+	  }, [_c('div', {
+	    staticClass: "reset-my-program",
+	    on: {
+	      "click": _vm.resetMyProgram
+	    }
+	  }, [_vm._v("\n        Alle zurücksetzen!\n      ")]), _vm._v(" "), _vm._l((_vm.programevents), function(entry) {
 	    return _c('div', [_c('li', {
 	      staticClass: "program__list__event"
 	    }, [_c('section', {
@@ -18634,11 +18662,13 @@
 	        "href": entry.url
 	      }
 	    }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
+	      ref: "myprogramevent",
+	      refInFor: true,
 	      attrs: {
 	        "programevent": entry
 	      }
 	    })], 1)])
-	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
+	  })], 2)]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }

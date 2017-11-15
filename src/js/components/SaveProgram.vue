@@ -47,6 +47,15 @@ module.exports = {
          localStorage.setItem("programId", JSON.stringify(idListArray));
          EventBus.$emit('program-saved');
          this.$emit('clicked');
+      },
+      removeFromList: function (id) {
+         var idListString = localStorage.getItem("programId");
+         var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
+         idListArray.splice(idListArray.indexOf(id),1);
+         this.toggled = false;
+         localStorage.setItem("programId", JSON.stringify(idListArray));
+         EventBus.$emit('program-saved');
+         this.$emit('clicked');
       }
    }
 }

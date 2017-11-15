@@ -1,5 +1,5 @@
 <template>
-  <div class="program__list__event__info--wrapper" v-on:click="saveProgram(programevent.id)" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave" v-bind:class="{ active: hover }">
+  <div class="program__list__event__info--wrapper" v-on:click="saveProgram" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave" v-bind:class="{ active: hover }">
     <h1 class="event-title">{{ programevent.title }}</h1>
     <div v-for="time in programevent.time">
       <time v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} <span v-if="time.duration.length">(Dauer: {{ time.duration }})</span><br></time>
@@ -33,9 +33,15 @@ module.exports = {
     mouseLeave: function () {
       this.hover = false;
     },
-    saveProgram: function (id) {
+    saveProgram: function () {
+      var id = this.programevent.id;
       var saveprogram_child_component = this.$refs.saveprogram;
       saveprogram_child_component.save(id);
+    },
+    removeFromList: function () {
+      var id = this.programevent.id;
+      var saveprogram_child_component = this.$refs.saveprogram;
+      saveprogram_child_component.removeFromList(id);
     }
   }
 
@@ -44,4 +50,5 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
+
 </style>

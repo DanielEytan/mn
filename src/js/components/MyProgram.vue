@@ -1,7 +1,11 @@
 <template>
   <div class="program--entry">
+
     <article>
       <ul class="program__list program__list--selection" >
+      <div class="reset-my-program" v-on:click="resetMyProgram">
+        Alle zurücksetzen!
+      </div>
         <div v-for="entry in programevents">
         <!-- <div v-for="item in items"> -->
           <!-- {{ item }} -->
@@ -16,7 +20,7 @@
                   </div>
                   <h1><a :href="entry.url">{{ entry.parent.title }}</a></h1>
                 </section>
-                <myprogramevent :programevent="entry"></myprogramevent>
+                <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
             </li>
          </div>
       </ul>
@@ -93,7 +97,13 @@ module.exports = {
     },
     toggled: function() {
       this.itemSaved = !this.itemSaved;
-      console.log(this);
+    },
+    resetMyProgram: function() {
+      var _this = this;
+      var myprogramevent_child_components = this.$refs.myprogramevent;
+      myprogramevent_child_components.forEach(function(o) {
+        o.removeFromList();
+      });
     }
   }
 }
@@ -101,5 +111,11 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
-
+  .reset-my-program {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
 </style>
