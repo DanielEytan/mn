@@ -27,7 +27,10 @@ import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
 
 import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard)
+Vue.use(VueClipboard);
+
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo);
 
 Vue.use(VueRouter);
 
@@ -93,11 +96,16 @@ var vueApp = new Vue({
 
           var doc = document.documentElement;
           var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-          console.log(top);
+//           console.log(top);
           if (top > 50) {
             this.headerReduced = true;
           } else {
             this.headerReduced = false;
+          };
+
+           if (top > 500) {
+            // alert('tadaaa');
+          } else {
           }
             
 

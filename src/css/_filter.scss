@@ -1,6 +1,6 @@
 .program--overview .filter {
 	.filter__checklists--wrapper {
-		background: $dark;
+		// background: $dark;
 		color: white;
 		margin-bottom: .5em;
 	}
@@ -23,7 +23,7 @@
 					right: .7em;
 				}
 				&.active, &.selected {
-					background: $dark;
+					// background: $dark;
 					color: white;
 				}
 
@@ -31,7 +31,7 @@
 			
 		}
 	}
-	
+
 	.filter--list--wrapper {
 
 		ul {
@@ -146,6 +146,7 @@
 		}
 	}
 	@media only screen and (min-width: $bp2) {
+
 		&__checklists {
 			header {
 				margin: 0 30px;
@@ -157,7 +158,7 @@
 
 						padding: .45em .7em .5em;
 						&.active {
-							border-bottom: 10px $dark solid;
+							// border-bottom: 10px $dark solid;
 						}
 					}
 
