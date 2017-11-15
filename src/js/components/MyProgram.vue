@@ -4,7 +4,7 @@
       <ul class="program__list program__list--selection" >
         <div v-for="item in items">
           <!-- {{ item }} -->
-            <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == item" v-bind:class="{ inactive: itemSaved }">
+            <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == item">
                <section class="institution">
                   <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2">
                       <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.parent.number }}</strong> {{ color.title }}</span>
@@ -15,17 +15,7 @@
                   </div>
                   <h1><a :href="entry.url">{{ entry.parent.title }}</a></h1>
                 </section>
-                <div>
-                  <h1 class="event-title">{{ entry.title }}</h1>
-                  <div v-for="time in entry.time">
-                    <time v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} <span v-if="time.duration.length">(Dauer: {{ time.duration }})</span><br></time>
-                    <time v-if="time.type === 'continuous'"> {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} (Durchgehend)<br></time>
-                    <time v-if="time.type === 'iterating'">  {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} ({{ time.frequency }}<span v-if="time.duration.length">, Dauer: {{ time.duration }}</span>)<br></time>
-                  </div>
-                </div>
-
-               <div v-html="entry.description">{{ entry.description }}</div>
-               <saveprogram :programevent="entry" v-on:clicked="toggled"></saveprogram>
+                <myprogramevent :programevent="entry"></myprogramevent>
             </li>
          </div>
       </ul>
@@ -39,6 +29,7 @@
 import ProgramEvent from './ProgramEvent.vue'
 import SaveProgram from './SaveProgram.vue'
 import shareProgram from './ShareMyProgram.vue'
+import MyProgramEvent from './MyProgramEvent.vue'
 
 
 
@@ -46,6 +37,7 @@ module.exports = {
   name: 'myprogram',
   props: [],
   components: {
+    myprogramevent: MyProgramEvent,
     programevent: ProgramEvent,
     saveprogram: SaveProgram,
     shareprogram: shareProgram
@@ -56,6 +48,7 @@ module.exports = {
       items: [],
       itemSaved: false,
       url: '/programm/programm',
+      hover: false
    }
   },
   mounted () {
@@ -89,9 +82,8 @@ module.exports = {
        return decodeURIComponent(results[2].replace(/\+/g, " "));
     },
     toggled: function() {
-
       this.itemSaved = !this.itemSaved;
-
+      console.log(this);
     }
   }
 }
