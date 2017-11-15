@@ -141,7 +141,7 @@
 
 	//require
 	window.axios = __webpack_require__(171);
-	window._ = __webpack_require__(223);
+	window._ = __webpack_require__(222);
 
 	//import
 
@@ -23038,8 +23038,7 @@
 
 
 /***/ }),
-/* 222 */,
-/* 223 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
