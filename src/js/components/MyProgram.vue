@@ -3,9 +3,10 @@
 
     <article>
       <ul class="program__list program__list--selection" >
-      <div class="reset-my-program" v-on:click="resetMyProgram">
-        Alle zurücksetzen!
-      </div>
+        <printbutton></printbutton>
+        <div class="reset-my-program" v-on:click="resetMyProgram">
+          Alle zurücksetzen!
+        </div>
         <div v-for="entry in programevents">
         <!-- <div v-for="item in items"> -->
           <!-- {{ item }} -->
@@ -35,6 +36,7 @@ import ProgramEvent from './ProgramEvent.vue'
 import SaveProgram from './SaveProgram.vue'
 import shareProgram from './ShareMyProgram.vue'
 import MyProgramEvent from './MyProgramEvent.vue'
+import printButton from './printButton.vue'
 
 
 
@@ -45,7 +47,8 @@ module.exports = {
     myprogramevent: MyProgramEvent,
     programevent: ProgramEvent,
     saveprogram: SaveProgram,
-    shareprogram: shareProgram
+    shareprogram: shareProgram,
+    printbutton: printButton
   },
   data: function () {
     return {
@@ -80,11 +83,18 @@ module.exports = {
         });
     },
     getItems: function () {
-       var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
-       var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
-       var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
-       window.history.pushState("add ids", "ids", "?ids="+idList.join('+'));
-       this.items = idList;
+      var prefix = "";
+      var idListFromLocalStorage = [];
+      idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
+      // var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
+       // var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
+      var idList = idListFromLocalStorage;
+
+      if(idList.length > 0) {
+        prefix = "?ids=";
+      }
+      window.history.pushState("add ids", "ids", prefix+idList.join('+'));
+      this.items = idList;
     },
     getParameterByName: function (name, url) {
        if (!url) url = window.location.href;

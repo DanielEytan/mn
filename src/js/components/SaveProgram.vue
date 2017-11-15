@@ -30,20 +30,22 @@ module.exports = {
             this.toggled = true;
          }
       },
-      save: function (id) {
+      save: function (id, toggle = true) {
          var idListString = localStorage.getItem("programId");
          var idListArray = (idListString === '' || idListString === null) ? [] : JSON.parse(idListString);
-         // var idListArray = JSON.parse(localStorage.getItem("programId"));
-
-         if( idListArray.indexOf(id) >= 0 ) {
+         if( idListArray.indexOf(id) >= 0 && toggle ) {
+            // default is to toggle the saved event if clicked save
             // id is already in array -> remove and toggle off
             idListArray.splice(idListArray.indexOf(id),1);
             this.toggled = false;
-         } else {
+         } else if(idListArray.indexOf(id) === -1) {
             // id is not in array -> add and toggle on
             idListArray.push(id);
             this.toggled = true;
          }
+
+         // if toggle is turned off and event is already added - just do nothing!
+
          localStorage.setItem("programId", JSON.stringify(idListArray));
          EventBus.$emit('program-saved');
          this.$emit('clicked');

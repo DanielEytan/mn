@@ -8,7 +8,6 @@
     </div>
     <div v-html="programevent.description">{{ programevent.description }}</div>
     <saveprogram ref="saveprogram" :programevent="programevent"></saveprogram>
-
   </div>
 </template>
 
@@ -33,10 +32,11 @@ module.exports = {
     mouseLeave: function () {
       this.hover = false;
     },
-    saveProgram: function () {
+    saveProgram: function (toggle) {
       var id = this.programevent.id;
       var saveprogram_child_component = this.$refs.saveprogram;
-      saveprogram_child_component.save(id);
+      // saveprogram_child_component.removeFromList(id);
+      saveprogram_child_component.save(id,toggle);
     },
     removeFromList: function () {
       var id = this.programevent.id;

@@ -4,6 +4,9 @@
          <h1>Dieses Program wurde von {{ name }} zusammengestellt.</h1><br><br>
       </div>
       <ul class="program__list program__list--selection">
+        <div class="add-to-my-program" v-on:click="addToMyProgram">
+          Alle in "Mein Programm" aufnehmen!
+        </div>
          <div v-for="id in ids">
          <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == id">
              <!-- <div v-for="color in entry.parent.shuttleLine" class="institution">
@@ -24,14 +27,14 @@
                 <!-- <p>Essen: {{ entry.food }}</p><br> -->
 
                 </section>
-               <h1>{{ entry.title }}</h1>
+<!--                <h1>{{ entry.title }}</h1>
                <div v-for="time in entry.time">
                   <time v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} <span v-if="time.duration == true">(Dauer: {{ time.duration }})</span><br></time>
                   <time v-if="time.type === 'continuous'"> {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} (Durchgehend)<br></time>
                   <time v-if="time.type === 'iterating'">  {{ time.start.date | formatDate }} – {{ time.end.date | formatDate }} ({{ time.frequency }}, Dauer: {{ time.duration }})<br></time>
                </div>
-               <div v-html="entry.description">{{ entry.description }}</div>
-               <!-- <saveprogram :programevent="entry"></saveprogram> -->
+               <div v-html="entry.description">{{ entry.description }}</div> -->
+                <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
          </li>
          </div>
       </ul><br>
@@ -39,8 +42,13 @@
 </template>
 
 <script>
+import MyProgramEvent from './MyProgramEvent.vue'
+
 module.exports = {
    name: 'proposedprogram',
+   components: {
+      myprogramevent: MyProgramEvent
+   },
    data: function () {
       return {
          url: '',
@@ -86,6 +94,13 @@ module.exports = {
             var itemId = item.id;
             console.log(itemId);
          }
+      },
+      addToMyProgram: function () {
+        var _this = this;
+        var myprogramevent_child_components = this.$refs.myprogramevent;
+        myprogramevent_child_components.forEach(function(o) {
+          o.saveProgram(false);
+        });
       }
    },
 }
@@ -93,4 +108,11 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
+  .add-to-my-program {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
 </style>
