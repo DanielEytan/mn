@@ -15434,6 +15434,10 @@
 	      var _this = this;
 	      axios.get('program.json').then(function (response) {
 	        _this2.program = response.data.data;
+	        // console.log(this.program);
+	        // console.log(_.reduce(this.program,function(result,current) {
+	        //   return parseInt(result+current.events.length);
+	        // },0));
 	      });
 	    },
 	    initEventHash: function initEventHash() {
@@ -15447,6 +15451,7 @@
 
 	          this.eventHash[entry.id] = 0;
 	        }
+	        // console.log(this.eventHash);
 	      } catch (err) {
 	        _didIteratorError = true;
 	        _iteratorError = err;
@@ -15464,6 +15469,7 @@
 	    },
 	    calcNumberOfEvents: function calcNumberOfEvents() {
 	      var sum = 0;
+	      console.log(this.eventHash);
 	      for (var key in this.eventHash) {
 	        sum += parseInt(this.eventHash[key]);
 	      }
@@ -16772,7 +16778,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16856,7 +16862,6 @@
 	    },
 	    saveProgram: function saveProgram() {
 	      var saveprogram_child_component = this.$refs.saveprogram;
-	      console.log(saveprogram_child_component);
 	      saveprogram_child_component.save(this.programevent.id);
 	    }
 	  },
@@ -18577,7 +18582,7 @@
 	        var programevents = _.filter(response.data.data, function (o) {
 	          return _this.items.indexOf(o.id) !== -1;
 	        });
-
+	        console.log(response.data.data);
 	        programevents = _.sortBy(programevents, function (o) {
 	          var date = o.time[0].start.date;
 	          return o.time[0].start.date;

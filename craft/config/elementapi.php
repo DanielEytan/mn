@@ -32,6 +32,9 @@ return [
         'program.json' => [
             'elementType' => ElementType::Entry,
             'cache' => true,
+            'elementsPerPage' => 999,
+            'paginate' => false,
+            'limit' => 999,
             'criteria' => ['section' => 'program','type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
 
@@ -240,6 +243,9 @@ return [
         'programevent.json' => [
             'elementType' => ElementType::Entry,
             'cache' => true,
+            'elementsPerPage' => 999,
+            'paginate' => false,
+            'limit' => 999,
             'criteria' => ['section' => 'program','type' =>'Event'],
             'transformer' => function(EntryModel $entry) {
                 $parent = $entry->getParent();
