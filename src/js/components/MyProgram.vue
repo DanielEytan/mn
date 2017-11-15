@@ -83,18 +83,9 @@ module.exports = {
         });
     },
     getItems: function () {
-      var prefix = "";
       var idListFromLocalStorage = [];
       idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
-      // var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
-       // var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
-      var idList = idListFromLocalStorage;
-
-      if(idList.length > 0) {
-        prefix = "?ids=";
-      }
-      window.history.pushState("add ids", "ids", prefix+idList.join('+'));
-      this.items = idList;
+      this.items = idListFromLocalStorage;
     },
     getParameterByName: function (name, url) {
        if (!url) url = window.location.href;

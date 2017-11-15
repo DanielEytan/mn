@@ -16937,7 +16937,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16978,19 +16978,32 @@
 	         }
 	      },
 	      save: function save(id) {
+	         var toggle = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
 	         var idListString = localStorage.getItem("programId");
 	         var idListArray = idListString === '' || idListString === null ? [] : JSON.parse(idListString);
-	         // var idListArray = JSON.parse(localStorage.getItem("programId"));
-
-	         if (idListArray.indexOf(id) >= 0) {
+	         if (idListArray.indexOf(id) >= 0 && toggle) {
+	            // default is to toggle the saved event if clicked save
 	            // id is already in array -> remove and toggle off
 	            idListArray.splice(idListArray.indexOf(id), 1);
 	            this.toggled = false;
-	         } else {
+	         } else if (idListArray.indexOf(id) === -1) {
 	            // id is not in array -> add and toggle on
 	            idListArray.push(id);
 	            this.toggled = true;
 	         }
+
+	         // if toggle is turned off and event is already added - just do nothing!
+
+	         localStorage.setItem("programId", (0, _stringify2.default)(idListArray));
+	         _eventBus.EventBus.$emit('program-saved');
+	         this.$emit('clicked');
+	      },
+	      removeFromList: function removeFromList(id) {
+	         var idListString = localStorage.getItem("programId");
+	         var idListArray = idListString === '' || idListString === null ? [] : JSON.parse(idListString);
+	         idListArray.splice(idListArray.indexOf(id), 1);
+	         this.toggled = false;
 	         localStorage.setItem("programId", (0, _stringify2.default)(idListArray));
 	         _eventBus.EventBus.$emit('program-saved');
 	         this.$emit('clicked');
@@ -17630,60 +17643,28 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.add-to-my-program[data-v-25f55394] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n  margin-bottom: 30px;\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
 /* 120 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	var _MyProgramEvent = __webpack_require__(121);
+
+	var _MyProgramEvent2 = _interopRequireDefault(_MyProgramEvent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
 	   name: 'proposedprogram',
+	   components: {
+	      myprogramevent: _MyProgramEvent2.default
+	   },
 	   data: function data() {
 	      return {
 	         url: '',
@@ -17731,9 +17712,58 @@
 	            var itemId = item.id;
 	            console.log(itemId);
 	         }
+	      },
+	      addToMyProgram: function addToMyProgram() {
+	         var _this = this;
+	         var myprogramevent_child_components = this.$refs.myprogramevent;
+	         myprogramevent_child_components.forEach(function (o) {
+	            o.saveProgram(false);
+	         });
 	      }
 	   }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 121 */
@@ -17808,7 +17838,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17843,14 +17873,20 @@
 	    mouseLeave: function mouseLeave() {
 	      this.hover = false;
 	    },
-	    saveProgram: function saveProgram(id) {
+	    saveProgram: function saveProgram(toggle) {
+	      var id = this.programevent.id;
 	      var saveprogram_child_component = this.$refs.saveprogram;
-	      saveprogram_child_component.save(id);
+	      // saveprogram_child_component.removeFromList(id);
+	      saveprogram_child_component.save(id, toggle);
+	    },
+	    removeFromList: function removeFromList() {
+	      var id = this.programevent.id;
+	      var saveprogram_child_component = this.$refs.saveprogram;
+	      saveprogram_child_component.removeFromList(id);
 	    }
 	  }
 
 	}; //
-	//
 	//
 	//
 	//
@@ -17875,9 +17911,7 @@
 	      active: _vm.hover
 	    },
 	    on: {
-	      "click": function($event) {
-	        _vm.saveProgram(_vm.programevent.id)
-	      },
+	      "click": _vm.saveProgram,
 	      "mouseover": _vm.mouseOver,
 	      "mouseleave": _vm.mouseLeave
 	    }
@@ -17915,7 +17949,12 @@
 	    staticClass: "name"
 	  }, [_c('h1', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")]), _c('br'), _c('br')]) : _vm._e(), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--selection"
-	  }, _vm._l((_vm.ids), function(id) {
+	  }, [_c('div', {
+	    staticClass: "add-to-my-program",
+	    on: {
+	      "click": _vm.addToMyProgram
+	    }
+	  }, [_vm._v("\n          Alle in \"Mein Programm\" aufnehmen!\n        ")]), _vm._v(" "), _vm._l((_vm.ids), function(id) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
 	      return (entry.id == id) ? _c('li', {
 	        staticClass: "program__list__event"
@@ -17941,15 +17980,15 @@
 	        attrs: {
 	          "href": entry.url
 	        }
-	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
-	        return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration == true) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
-	      }), _vm._v(" "), _c('div', {
-	        domProps: {
-	          "innerHTML": _vm._s(entry.description)
+	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
+	        ref: "myprogramevent",
+	        refInFor: true,
+	        attrs: {
+	          "programevent": entry
 	        }
-	      }, [_vm._v(_vm._s(entry.description))])], 2) : _vm._e()
+	      })], 1) : _vm._e()
 	    }))
-	  })), _c('br')])
+	  })], 2), _c('br')])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -18032,7 +18071,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18047,12 +18086,28 @@
 
 	var _SaveProgram2 = _interopRequireDefault(_SaveProgram);
 
+	var _MyProgramEvent = __webpack_require__(121);
+
+	var _MyProgramEvent2 = _interopRequireDefault(_MyProgramEvent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	   name: 'institutionprogram',
 	   props: ['parent'],
 	   components: {
+	      myprogramevent: _MyProgramEvent2.default,
 	      saveprogram: _SaveProgram2.default
 	   },
 	   data: function data() {
@@ -18074,24 +18129,7 @@
 	         });
 	      }
 	   }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 131 */
@@ -18103,17 +18141,13 @@
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return (entry.parent.number == _vm.parent) ? _c('li', {
 	      staticClass: "program__list__event"
-	    }, [_c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _vm._l((entry.time), function(time) {
-	      return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration == true) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency) + ", Dauer: " + _vm._s(time.duration) + ")"), _c('br')]) : _vm._e()])
-	    }), _vm._v(" "), _c('div', {
-	      domProps: {
-	        "innerHTML": _vm._s(entry.description)
-	      }
-	    }, [_vm._v(_vm._s(entry.description))]), _vm._v(" "), _c('saveprogram', {
+	    }, [_c('myprogramevent', {
+	      ref: "myprogramevent",
+	      refInFor: true,
 	      attrs: {
 	        "programevent": entry
 	      }
-	    })], 2) : _vm._e()
+	    })], 1) : _vm._e()
 	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
@@ -18477,7 +18511,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.reset-my-program[data-v-675dffee] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n  margin-bottom: 30px;\n}\n", ""]);
 
 	// exports
 
@@ -18504,36 +18538,11 @@
 
 	var _MyProgramEvent2 = _interopRequireDefault(_MyProgramEvent);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _printButton = __webpack_require__(146);
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	var _printButton2 = _interopRequireDefault(_printButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
 	  name: 'myprogram',
@@ -18542,7 +18551,8 @@
 	    myprogramevent: _MyProgramEvent2.default,
 	    programevent: _ProgramEvent2.default,
 	    saveprogram: _SaveProgram2.default,
-	    shareprogram: _ShareMyProgram2.default
+	    shareprogram: _ShareMyProgram2.default,
+	    printbutton: _printButton2.default
 	  },
 	  data: function data() {
 	    return {
@@ -18577,11 +18587,9 @@
 	      });
 	    },
 	    getItems: function getItems() {
-	      var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
-	      var idListFromUrl = this.getParameterByName('ids') !== null ? this.getParameterByName('ids').split(" ") : null;
-	      var idList = idListFromUrl !== null ? idListFromUrl : idListFromLocalStorage ? idListFromLocalStorage : [];
-	      window.history.pushState("add ids", "ids", "?ids=" + idList.join('+'));
-	      this.items = idList;
+	      var idListFromLocalStorage = [];
+	      idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
+	      this.items = idListFromLocalStorage;
 	    },
 	    getParameterByName: function getParameterByName(name, url) {
 	      if (!url) url = window.location.href;
@@ -18594,17 +18602,175 @@
 	    },
 	    toggled: function toggled() {
 	      this.itemSaved = !this.itemSaved;
-	      console.log(this);
+	    },
+	    resetMyProgram: function resetMyProgram() {
+	      var _this = this;
+	      var myprogramevent_child_components = this.$refs.myprogramevent;
+	      myprogramevent_child_components.forEach(function (o) {
+	        o.removeFromList();
+	      });
+	    }
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(147)
+
+	var Component = __webpack_require__(13)(
+	  /* script */
+	  __webpack_require__(149),
+	  /* template */
+	  __webpack_require__(150),
+	  /* scopeId */
+	  "data-v-3cd57e15",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Applications/MAMP/htdocs/mnb/src/js/components/printButton.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] printButton.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-3cd57e15", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-3cd57e15", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(148);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(11)("d1c3db9e", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3cd57e15\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./printButton.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3cd57e15\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./printButton.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(10)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.print-button[data-v-3cd57e15] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n}\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	  name: 'printbutton',
+	  data: function data() {
+	    return {};
+	  },
+	  methods: {
+	    print: function print() {
+	      window.print();
 	    }
 	  }
 	};
 
 /***/ }),
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "print-button"
+	  }, [_c('div', {
+	    on: {
+	      "click": _vm.print
+	    }
+	  }, [_vm._v("drucken")])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3cd57e15", module.exports)
+	  }
+	}
+
+/***/ }),
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18613,7 +18779,12 @@
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
-	  }, _vm._l((_vm.programevents), function(entry) {
+	  }, [_c('printbutton'), _vm._v(" "), _c('div', {
+	    staticClass: "reset-my-program",
+	    on: {
+	      "click": _vm.resetMyProgram
+	    }
+	  }, [_vm._v("\n          Alle zurücksetzen!\n        ")]), _vm._v(" "), _vm._l((_vm.programevents), function(entry) {
 	    return _c('div', [_c('li', {
 	      staticClass: "program__list__event"
 	    }, [_c('section', {
@@ -18639,11 +18810,13 @@
 	        "href": entry.url
 	      }
 	    }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
+	      ref: "myprogramevent",
+	      refInFor: true,
 	      attrs: {
 	        "programevent": entry
 	      }
 	    })], 1)])
-	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
+	  })], 2)]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }
