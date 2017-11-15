@@ -20,6 +20,6 @@
 			}
 		}
 
-  .program__list__event.active .save-element div {
+  .program__list__event.active .save-element div,.program__list__event__info--wrapper.active .save-element div {
 		@extend .save-heart:hover;
   }
