@@ -18308,7 +18308,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18364,6 +18364,7 @@
 	//
 	//
 	//
+	//
 
 	module.exports = {
 	  name: 'myprogram',
@@ -18384,19 +18385,26 @@
 	    };
 	  },
 	  mounted: function mounted() {
-	    this.getEntries();
 	    this.getItems();
+	    this.getEntries();
 	    // this.sendItems();
 	  },
 
 
 	  methods: {
 	    getEntries: function getEntries() {
-	      var _this2 = this;
-
 	      var _this = this;
 	      axios.get('../programevent.json').then(function (response) {
-	        _this2.programevents = response.data.data;
+	        var programevents = _.filter(response.data.data, function (o) {
+	          return _this.items.indexOf(o.id) !== -1;
+	        });
+
+	        programevents = _.sortBy(programevents, function (o) {
+	          var date = o.time[0].start.date;
+	          return o.time[0].start.date;
+	        });
+
+	        _this.programevents = programevents;
 	      });
 	    },
 	    getItems: function getItems() {
@@ -18600,38 +18608,36 @@
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
-	  }, _vm._l((_vm.items), function(item) {
-	    return _c('div', _vm._l((_vm.programevents), function(entry) {
-	      return (entry.id == item) ? _c('li', {
-	        staticClass: "program__list__event"
-	      }, [_c('section', {
-	        staticClass: "institution"
-	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
-	        return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	          staticClass: "suttle-line",
-	          style: ({
-	            color: color.color
-	          })
-	        }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	      }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line"
-	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
-	        return _c('span', {
-	          staticClass: "suttle-line",
-	          style: ({
-	            color: color.color
-	          })
-	        }, [_vm._v(_vm._s(color.title) + " ")])
-	      })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
-	        attrs: {
-	          "href": entry.url
-	        }
-	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
-	        attrs: {
-	          "programevent": entry
-	        }
-	      })], 1) : _vm._e()
-	    }))
+	  }, _vm._l((_vm.programevents), function(entry) {
+	    return _c('div', [_c('li', {
+	      staticClass: "program__list__event"
+	    }, [_c('section', {
+	      staticClass: "institution"
+	    }, [_vm._l((entry.parent.shuttleLine), function(color) {
+	      return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line"
+	    }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_vm._v(_vm._s(color.title) + " ")])
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	      attrs: {
+	        "href": entry.url
+	      }
+	    }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
+	      attrs: {
+	        "programevent": entry
+	      }
+	    })], 1)])
 	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents

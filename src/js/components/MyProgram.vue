@@ -2,9 +2,10 @@
   <div class="program--entry">
     <article>
       <ul class="program__list program__list--selection" >
-        <div v-for="item in items">
+        <div v-for="entry in programevents">
+        <!-- <div v-for="item in items"> -->
           <!-- {{ item }} -->
-            <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == item">
+            <li class="program__list__event">
                <section class="institution">
                   <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2">
                       <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.parent.number }}</strong> {{ color.title }}</span>
@@ -52,8 +53,8 @@ module.exports = {
    }
   },
   mounted () {
-   this.getEntries();
    this.getItems();
+   this.getEntries();
    // this.sendItems();
   },
 
@@ -62,8 +63,17 @@ module.exports = {
        let _this = this;
        axios.get('../programevent.json')
        .then(response => {
-         this.programevents = response.data.data;
-      })
+          var programevents = _.filter(response.data.data, function (o) {
+            return (_this.items.indexOf(o.id) !== -1);
+          });
+
+          programevents = _.sortBy(programevents,function (o) {
+            let date = o.time[0].start.date;
+            return o.time[0].start.date;
+          });
+
+          _this.programevents = programevents;
+        });
     },
     getItems: function () {
        var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
