@@ -96,16 +96,10 @@ var vueApp = new Vue({
 
           var doc = document.documentElement;
           var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-//           console.log(top);
           if (top > 50) {
             this.headerReduced = true;
           } else {
             this.headerReduced = false;
-          };
-
-           if (top > 500) {
-            // alert('tadaaa');
-          } else {
           }
             
 
