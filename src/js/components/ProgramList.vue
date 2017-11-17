@@ -38,9 +38,9 @@
           <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">(x)</span>
         </div>
       </div>
-     
+
     </div>
-    
+
     <ul class="program__list program__list--complete">
       <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry">
       </programentry>
@@ -89,19 +89,44 @@ module.exports = {
       axios.get('program.json')
         .then(response => {
           this.program = response.data.data;
+          // var response_logger = _.map(this.program, function (o,index) {
+          //   var hash = {};
+          //   hash[o.id] = o.events.length;
+          //   return hash;
+          //   // console.log(o.events.length);
+          //   // console.log(index);
+          // });
+
+          // var eventHash_logger = _.map(this.eventHash, function (key, value) {
+          //   var hash = {};
+          //   hash[key] = value;
+          //   return hash;
+          // });
+          // console.log(response_logger);
+          // console.log(this.eventHash);
+          // console.log("response:",_.reduce(this.program,function(result,current) {
+          //   return parseInt(result+current.events.length);
+          // },0));
         })
     },
-    initEventHash: function () {
-      for (let entry of this.program ) {
-        this.eventHash[entry.id] = 0;
-      }
-    },
+    // initEventHash: function () {
+    //   for (let entry of this.program ) {
+    //     this.eventHash[entry.id] = 0;
+    //   }
+    //   // console.log(this.eventHash);
+    // },
     calcNumberOfEvents: function () {
-      var sum = 0;
-      for(var key in this.eventHash){
-        sum += parseInt(this.eventHash[key]);
-      }
-      return sum;
+      // var sum = 0;
+      // console.log(this.eventHash);
+      // for(var key in this.eventHash){
+      //   sum += parseInt(this.eventHash[key]);
+      // }
+      // return sum;
+      var eventHashReduced = _.reduce(this.eventHash,function(result, current) {
+        return result+current;
+      },0);
+      return eventHashReduced;
+      // console.log("calculated:",eventHashReduced)
     },
     updateEventNumberOfEntry: function (data) {
       this.$set(this.eventHash, Object.keys(data)[0], data[Object.keys(data)[0]]);

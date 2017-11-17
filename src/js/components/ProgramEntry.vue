@@ -47,6 +47,9 @@ module.exports = {
     }
   },
   methods: {
+    padNumber: function (n) {
+      return (n < 10) ? '0' + n.toString() : n.toString();
+    },
     checkIntersectionForFilters: function (checkedSelection, eventSpecificEntries){
       var inCheckedSelection = (_.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title') , _.isEqual).length > 0) || (checkedSelection.length === 0);
       return inCheckedSelection;
@@ -55,12 +58,35 @@ module.exports = {
       var isOneInRange = false
       var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
       var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
-
+      var _this = this;
       for(let time of eventTime) {
         var eventStart = this.$options.filters.timeTable(this.$options.filters.formatDate(time.start.date));
         if ( ( eventStart >= selectedStart ) && (eventStart <= selectedEnd) ) {
           isOneInRange = true;
           break;
+        } else {
+          var old_time = String(this.$options.filters.formatDate(time.start.date));
+          var minutes = parseInt(old_time.slice(old_time.indexOf(":")+1));
+          var hours = parseInt(old_time.substr(0,old_time.indexOf(":")));
+          // console.log("hours: ",hours);
+          // console.log("minutes: ",minutes);
+          var m = (parseInt((minutes + 7.5)/15) * 15) % 60;
+          if(m > 0) {
+            m -= 15;
+          }
+          var h = minutes > 52 ? (hours === 23 ? 0 : ++hours) : hours;
+          // console.log("h: ",h);
+          // console.log("m: ",m);
+          var new_time = _this.padNumber(h)+":"+_this.padNumber(m);
+
+          // console.log(old_time,new_time);
+          var newEventStart = this.$options.filters.timeTable(new_time);
+
+          // console.log("bed time: ",newEventStart);
+          if ( ( newEventStart >= selectedStart ) && (newEventStart <= selectedEnd) ) {
+            isOneInRange = true;
+            break;
+          }
         }
       }
       return isOneInRange;
@@ -81,15 +107,27 @@ module.exports = {
 
       programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
+      // if(!programEventIsVisible) {
+      //   console.log(inCheckedInstitutions);
+      //   console.log(inCheckedThemes);
+      //   console.log(inCheckedKindOfEvents);
+      //   console.log(inCheckedLanguages);
+      //   console.log(inSelectedTime);
+      // }
+
       return programEventIsVisible;
     },
     numberOfEventsOfEntry: function () {
       var counter = 0;
       var childStatusList = {};
 
+      // console.log(this.entry.events)
+      var numberOfEvents = _.reduce(this.entry.events)
       for (let programevent of this.entry.events) {
         if(this.programEventIsVisible(programevent)) {
           counter++;
+        } else {
+          // console.log("hidden: ",programevent);
         }
       }
       this.internalNumberOfEvents = counter;
