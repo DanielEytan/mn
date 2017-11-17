@@ -15458,7 +15458,7 @@
 	    scrolled: function scrolled() {
 	      var doc = document.documentElement;
 	      var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-	      console.log(top);
+	      //           console.log(top);
 	      if (top > 5000) {
 	        this.hideWhenScrolled = true;
 	        this.showWhenScrolled = true;
