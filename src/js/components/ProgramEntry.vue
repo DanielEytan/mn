@@ -65,6 +65,7 @@ module.exports = {
           isOneInRange = true;
           break;
         } else {
+          // if time is not in range, calculate if it is not full 15 min and round down to earlier 15min interval.
           var old_time = String(this.$options.filters.formatDate(time.start.date));
           var minutes = parseInt(old_time.slice(old_time.indexOf(":")+1));
           var hours = parseInt(old_time.substr(0,old_time.indexOf(":")));
