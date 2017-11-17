@@ -8,7 +8,7 @@
         </div>
         </li >
         <div class="filter-checkbox--close" v-on:click="toggleFilters">
-          SCHLIEßEN
+          SCHLIESSEN
         </div>
       </ul>
     </div>

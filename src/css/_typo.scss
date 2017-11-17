@@ -45,7 +45,8 @@ body {
 .visit h2 {
 	margin-bottom: .5em;
 }
-.visit p {
+.visit p,
+.filter__checklists .title h2 {
 	margin-bottom: 1em;
 }
 

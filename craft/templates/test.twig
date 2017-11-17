@@ -5,11 +5,15 @@
 
 
 	<div class="program">
+
+
+		{% set count = craft.entries.section('program').type('Event').total() %}
+		{{ count }}
    							<ul class="program__list program__list--selection" >
-							{% for entry in craft.entries.section('program') %}
-   							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
-								
-								<li class="program__list__event">
+							{# {% for entry in craft.entries.section('program').total() %} #}
+   							{# {% set parent = craft.entries.ancestorOf(entry).level(1).first() %} #}
+							
+							{# 	<li class="program__list__event">
 				
 						          	 <section class="institution">
 								{# 	{% for linie in parent.shuttleLine %}
@@ -17,7 +21,7 @@
 						               <a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
 									{% endfor %} #}
 						               
-
+{# 
 						            </section>
 						            <h1 class="event-title">{{ entry.title }}</h1>
 						            {% for time in entry.time%}
@@ -33,12 +37,12 @@
 											{% endswitch %}
 										</time>
 						            {% endfor %}
-						            {{ entry.description }}
+						            {{ entry.description }} #}
       									{# <saveprogram></saveprogram> #}
 
 								
-						         </li>
-							{% endfor %}
+						         </li> #}
+							{# {% endfor %} #}
 							</ul>
 						</div>
 	{% endblock %}

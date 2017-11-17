@@ -4,16 +4,17 @@
 header#header > div,
 footer#footer > section,
 .journal--overview,
-.institutions--overview--list-view
+.institutions--overview--list-view,
+.filter__selection--wrapper
 
 {
-	margin: 15px;
+	margin: 15px 15px 16px;
 	position: relative;
 	@media screen and (min-width: $bp1) {
 		margin: 15px 30px;
 	}
 	@media screen and (min-width: $bp4) {
-		margin: 20px 40px;
+		margin: 20px 40px 22.5px;
 
 	}
 }
@@ -21,10 +22,10 @@ footer#footer > section,
 .home section.info,
 // .journal,
 .visit section {
-	padding: 30px 15px;
+	padding: 30px 15px 32.5px;
 	position: relative;
 	@media screen and (min-width: $bp1) {
-		padding: 40px 30px;
+		padding: 40px 30px 42.5px;
 	}
 	// @media screen and (min-width: $bp2) {
 	// 	padding: 50px 30px 55px;
