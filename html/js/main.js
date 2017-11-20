@@ -219,11 +219,7 @@
 	        this.headerReduced = true;
 	      } else {
 	        this.headerReduced = false;
-	      };
-
-	      if (top > 500) {
-	        // alert('tadaaa');
-	      } else {}
+	      }
 	    },
 	    time: function time() {
 	      var eventdate = (0, _momentMin2.default)("2018-01-19");
@@ -14787,7 +14783,7 @@
 	    scrolled: function scrolled() {
 	      var doc = document.documentElement;
 	      var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-	      console.log(top);
+	      //           console.log(top);
 	      if (top > 5000) {
 	        this.hideWhenScrolled = true;
 	        this.showWhenScrolled = true;
@@ -15875,7 +15871,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -15915,6 +15911,9 @@
 	    }
 	  },
 	  methods: {
+	    padNumber: function padNumber(n) {
+	      return n < 10 ? '0' + n.toString() : n.toString();
+	    },
 	    checkIntersectionForFilters: function checkIntersectionForFilters(checkedSelection, eventSpecificEntries) {
 	      var inCheckedSelection = _.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title'), _.isEqual).length > 0 || checkedSelection.length === 0;
 	      return inCheckedSelection;
@@ -15923,7 +15922,7 @@
 	      var isOneInRange = false;
 	      var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
 	      var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
-
+	      var _this = this;
 	      var _iteratorNormalCompletion = true;
 	      var _didIteratorError = false;
 	      var _iteratorError = undefined;
@@ -15936,6 +15935,30 @@
 	          if (eventStart >= selectedStart && eventStart <= selectedEnd) {
 	            isOneInRange = true;
 	            break;
+	          } else {
+	            // if time is not in range, calculate if it is not full 15 min and round down to earlier 15min interval.
+	            var old_time = String(this.$options.filters.formatDate(time.start.date));
+	            var minutes = parseInt(old_time.slice(old_time.indexOf(":") + 1));
+	            var hours = parseInt(old_time.substr(0, old_time.indexOf(":")));
+	            // console.log("hours: ",hours);
+	            // console.log("minutes: ",minutes);
+	            var m = parseInt((minutes + 7.5) / 15) * 15 % 60;
+	            if (m > 0) {
+	              m -= 15;
+	            }
+	            var h = minutes > 52 ? hours === 23 ? 0 : ++hours : hours;
+	            // console.log("h: ",h);
+	            // console.log("m: ",m);
+	            var new_time = _this.padNumber(h) + ":" + _this.padNumber(m);
+
+	            // console.log(old_time,new_time);
+	            var newEventStart = this.$options.filters.timeTable(new_time);
+
+	            // console.log("bed time: ",newEventStart);
+	            if (newEventStart >= selectedStart && newEventStart <= selectedEnd) {
+	              isOneInRange = true;
+	              break;
+	            }
 	          }
 	        }
 	      } catch (err) {
@@ -15970,12 +15993,22 @@
 
 	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
+	      // if(!programEventIsVisible) {
+	      //   console.log(inCheckedInstitutions);
+	      //   console.log(inCheckedThemes);
+	      //   console.log(inCheckedKindOfEvents);
+	      //   console.log(inCheckedLanguages);
+	      //   console.log(inSelectedTime);
+	      // }
+
 	      return programEventIsVisible;
 	    },
 	    numberOfEventsOfEntry: function numberOfEventsOfEntry() {
 	      var counter = 0;
 	      var childStatusList = {};
 
+	      // console.log(this.entry.events)
+	      var numberOfEvents = _.reduce(this.entry.events);
 	      var _iteratorNormalCompletion2 = true;
 	      var _didIteratorError2 = false;
 	      var _iteratorError2 = undefined;
@@ -15986,6 +16019,8 @@
 
 	          if (this.programEventIsVisible(programevent)) {
 	            counter++;
+	          } else {
+	            // console.log("hidden: ",programevent);
 	          }
 	        }
 	      } catch (err) {

@@ -78,7 +78,8 @@ body {
 .visit h2 {
   margin-bottom: .5em; }
 
-.visit p {
+.visit p,
+.filter__checklists .title h2 {
   margin-bottom: 1em; }
 
 .program .institution *:not(h2),
@@ -461,18 +462,18 @@ header#header {
   header#header h1 {
     margin-bottom: 0; }
   header#header a.logo {
-    width: 50px;
     text-indent: -9999px;
     display: block;
-    background: url(./../bilder/logo_schwarz.svg);
-    background-size: 50px 44px;
-    background-size: 30px 27px;
-    width: 30px;
-    height: 27px;
+    background: url(./../bilder/MN18_LOGO_16.svg);
+    background-repeat: no-repeat;
+    background-size: 90px 44px;
+    width: 90px;
+    height: 44px;
     transition: background .25s; }
     header#header a.logo.active {
-      background: url(./../bilder/logo_weiss.svg);
-      background-size: 31px 27px; }
+      background: url(./../bilder/MN18_LOGO_16-weiss.svg);
+      background-repeat: no-repeat;
+      background-size: 90px 44px; }
   header#header .flex-container {
     display: -ms-flexbox;
     display: flex;
@@ -480,7 +481,7 @@ header#header {
     justify-content: space-between;
     -ms-flex-align: center;
     align-items: center;
-    height: 70px;
+    height: 50px;
     transition: height .25s; }
   header#header #menu {
     width: 200px;
@@ -543,15 +544,11 @@ header#header {
     header#header #menu {
       width: 300px; }
     header#header a.logo {
-      background: url(./../bilder/MN18_LOGO_16.svg);
-      background-repeat: no-repeat;
       background-size: 130px 41px;
       width: 300px;
       height: 44px; }
       header#header a.logo.active {
-        background: url(./../bilder/MN18_LOGO_16-weiss.svg);
-        background-size: 130px 41px;
-        background-repeat: no-repeat; } }
+        background-size: 130px 41px; } }
   @media screen and (min-width: 1224px) {
     header#header .centered {
       width: 370px; }
@@ -897,11 +894,13 @@ footer#footer {
   height: 0;
   overflow: hidden; }
   .program--overview .filter .filter--list--wrapper ul li div {
+    box-sizing: border-box;
     padding: .4em .8em .65em;
-    border: solid 1px;
+    border: solid 1px white;
     margin-bottom: 1em;
     font-size: .8em; }
     .program--overview .filter .filter--list--wrapper ul li div.checked {
+      box-sizing: border-box;
       background-color: white;
       color: #1A0042; }
 
@@ -948,7 +947,7 @@ footer#footer {
   .program--overview .filter__time {
     padding: 0 30px; }
   .program--overview .filter__checklists {
-    margin-top: 4em; }
+    margin-top: 2em; }
     .program--overview .filter__checklists .filter--list--wrapper div ul {
       display: -ms-flexbox;
       display: flex;
@@ -966,8 +965,10 @@ footer#footer {
       padding: 1em 30px 1.1em; } }
 
 @media only screen and (min-width: 1024px) {
+  .program--overview .filter__checklists .title, .program--overview .filter__checklists header {
+    margin: 0 40px; }
   .program--overview .filter__checklists header {
-    margin: 0 30px; }
+    margin: 0 40px; }
     .program--overview .filter__checklists header > * {
       -ms-flex: 0 1 24%;
       flex: 0 1 24%; }
@@ -991,12 +992,12 @@ footer#footer {
       margin-bottom: .75em; }
   .program--overview .filter__time {
     padding: 0;
-    margin: 0 auto 3em;
+    margin: 0 auto 1em;
     width: 900px; } }
 
 @media only screen and (min-width: 1224px) {
-  .program--overview .filter__checklists header {
-    margin: 0 30px;
+  .program--overview .filter__checklists header, .program--overview .filter .title {
+    margin: 0 40px;
     width: auto; }
   .program--overview .filter__checklists .filter--list--wrapper.active {
     padding: 50px 0; }
@@ -1017,31 +1018,31 @@ footer#footer {
 .filter header > *:nth-child(2) div.selected,
 .filter--themes,
 .theme > div {
-  background: rgba(26, 0, 66, 0.9); }
+  background: #301954; }
 
 @media only screen and (min-width: 1024px) {
   .filter header > *:nth-child(2) div.active {
-    border-bottom: 10px solid rgba(26, 0, 66, 0.9); } }
+    border-bottom: 10px solid #301954; } }
 
 .filter header > *:nth-child(3) div.active,
 .filter header > *:nth-child(3) div.selected,
 .filter--kind-of-event,
 .kind > div {
-  background: rgba(26, 0, 66, 0.8); }
+  background: #473267; }
 
 @media only screen and (min-width: 1024px) {
   .filter header > *:nth-child(3) div.active {
-    border-bottom: 10px solid rgba(26, 0, 66, 0.8); } }
+    border-bottom: 10px solid #473267; } }
 
 .filter header > *:nth-child(4) div.active,
 .filter header > *:nth-child(4) div.selected,
 .filter--languages,
 .languages > div {
-  background: rgba(26, 0, 66, 0.7); }
+  background: #5e4c7a; }
 
 @media only screen and (min-width: 1024px) {
   .filter header > *:nth-child(4) div.active {
-    border-bottom: 10px solid rgba(26, 0, 66, 0.7); } }
+    border-bottom: 10px solid #5e4c7a; } }
 
 .filter__selection--wrapper .number {
   position: fixed;
@@ -1065,10 +1066,8 @@ footer#footer {
     display: block;
     background: none;
     width: 100%; }
-  .filter__selection--wrapper .filter-tags--container .theme:nth-child(1) {
-    margin-left: 3em !important;
-    color: red; }
   .filter__selection--wrapper .filter-tags--container .filter--tag > div {
+    box-shadow: 0 0 4px rgba(26, 0, 66, 0.55);
     color: white;
     margin-right: .5em;
     margin-bottom: .5em; }
@@ -1302,7 +1301,7 @@ html {
     border-bottom: none; }
 
 header.site-header {
-  margin-bottom: 1em; }
+  margin-bottom: .5em; }
 
 .institutions--single address a {
   text-decoration: underline; }

@@ -66,7 +66,6 @@ module.exports = {
     },
     saveProgram: function () {
       var saveprogram_child_component = this.$refs.saveprogram;
-      console.log(saveprogram_child_component);
       saveprogram_child_component.save(this.programevent.id);
     }
   },

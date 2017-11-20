@@ -38,13 +38,17 @@
 			height: 0;
 			overflow: hidden;
 			li div {
+				box-sizing: border-box;
 				padding: .4em .8em .65em;
-				border: solid 1px;
+				border: solid 1px white;
 				margin-bottom: 1em;
 				font-size: .8em;
 				&.checked {
+				box-sizing: border-box;
+
 					background-color: white;
 					color: $dark;
+					// border: none;
 				}
 				input[type='checkbox'] {
 					// background: red;
@@ -106,7 +110,7 @@
 
 		}
 		&__checklists {
-			margin-top: 4em;
+			margin-top: 2em;
 
 
 			
@@ -148,8 +152,11 @@
 	@media only screen and (min-width: $bp2) {
 
 		&__checklists {
+			.title, header {
+				margin: 0 40px;
+			}
 			header {
-				margin: 0 30px;
+				margin: 0 40px;
 
 				>* {
 					flex: 0 1 24%;
@@ -190,16 +197,16 @@
 		}
 		&__time {
 			padding: 0;
-			margin: 0 auto 3em;
+			margin: 0 auto 1em;
 			width: 900px;
 		}
 	}
 	@media only screen and (min-width: $bp3) {
 
-		&__checklists header{
+		&__checklists header, .title{
 			 
 				// margin: 0 auto;
-				margin: 0 30px;
+				margin: 0 40px;
 				width: auto;
 				// width: 1200px;
 			

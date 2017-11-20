@@ -100,11 +100,6 @@ var vueApp = new Vue({
             this.headerReduced = true;
           } else {
             this.headerReduced = false;
-          };
-
-           if (top > 500) {
-            // alert('tadaaa');
-          } else {
           }
             
 
