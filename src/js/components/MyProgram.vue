@@ -2,32 +2,40 @@
   <div class="program--entry">
 
     <article>
-      <ul class="program__list program__list--selection" >
-        <printbutton></printbutton>
-        <div class="reset-my-program" v-on:click="resetMyProgram">
-          Alle zurücksetzen!
-        </div>
-        <div v-for="entry in programevents">
+      <ul class="program__list program__list--selection">
+      
         <!-- <div v-for="item in items"> -->
           <!-- {{ item }} -->
-            <li class="program__list__event">
+            <li class="program__list__event" v-for="entry in programevents">
+              <div>
                <section class="institution">
+                  <h1><a :href="entry.parent.url">{{ entry.parent.title }}</a></h1>
+
                   <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2">
-                      <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.parent.number }}</strong> {{ color.title }}</span>
+                      <span class="suttle-line" v-bind:style="{color: color.color}">{{ color.title }}</span>
                   </div>
                   <div v-if="entry.parent.shuttleLine.length > 1">
-                      <span class="suttle-line"><strong>{{ entry.parent.number}}</strong></span>
-                      <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
+                      <!-- <span class="suttle-line"><strong>{{ entry.parent.number}}</strong></span> -->
+                      <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
                   </div>
-                  <h1><a :href="entry.url">{{ entry.parent.title }}</a></h1>
                 </section>
                 <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
+                </div>
             </li>
-         </div>
-      </ul>
+        </ul>
+        
 
    </article><br><br>
+   <div class="control-program">
+    <div class="main-controls">
+          <printbutton></printbutton>
+          <button class="reset-my-program" v-on:click="resetMyProgram">
+            Mein Programm zurücksetzen
+          </button>
+    </div>
+
    <shareprogram :programevent="programevents"></shareprogram>   
+           </div>
 </div>
 </template>
 
@@ -112,11 +120,4 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
-  .reset-my-program {
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid black;
-    display: inline-block;
-    margin-bottom: 30px;
-  }
 </style>

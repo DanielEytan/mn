@@ -5,21 +5,24 @@
   <div  >
    <div class="link">
     <p>Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschicken.</p>
-    <p class="mb">Trage dafür deinen Namen ein.</p>
+    <!-- <p class="mb">Trage dafür deinen Namen ein.</p> -->
     <input @change="getItems" v-model="name" placeholder="Namen"><br><br>
-    <div class="flex-container">
-    <div class="button" v-on:click="getItems"><button  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</button></div>
-    <!-- <p><a :href="url" class="directlink">Link öffnen</a></p> -->
+    <div>
+    <p class="link-to-share"><a :href="url" class="directlink">{{ url }}{{ name }}</a></p>
+      
+    <div v-on:click="getItems"><button  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</button></div>
     </div>
-    <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br>
+    <!-- <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br> -->
  </div>
- <div class="share"><p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
+ <div class="share">
+  <h1>Auf Social-Media teilen</h1>
 
- <div v-on:click="getItems" class="button"><button><a :href="mail">Link per Mail versenden</a></button></div>
- <div v-on:click="getItems" class="button"><button><a :href="facebook + url">Link auf Facebook teilen</a></button></div>
+  <p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
 
- <div v-on:click="getItems" class="button"><button><a :href="twitter">Link auf Twitter teilen</a></button></div>
- <div v-on:click="getItems" class="button"><button><a :href="google + url">Link auf Google+ teilen</a></button></div>
+ <div v-on:click="getItems"><button><a :href="mail"><i>ⓜ</i> Mail</a></button></div>
+ <div v-on:click="getItems"><button><a :href="facebook + url"><i>ⓕ</i> Facebook</a></button></div>
+
+ <div v-on:click="getItems"><button><a :href="twitter"><i>ⓣ</i> Twitter</a></button></div>
  </div>
 
 
