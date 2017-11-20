@@ -243,7 +243,7 @@ return [
 
 'programevent.json' => [
     'elementType' => ElementType::Entry,
-    'cache' => true,
+    // 'cache' => true,
     'elementsPerPage' => 999,
     'paginate' => false,
     'limit' => 999,
