@@ -18288,7 +18288,13 @@
 	          color: color.color
 	        })
 	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })) : _vm._e()], 2)])])
+	    })) : _vm._e()], 2), _vm._v(" "), _c('myprogramevent', {
+	      ref: "myprogramevent",
+	      refInFor: true,
+	      attrs: {
+	        "programevent": entry
+	      }
+	    })], 1)])
 	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('div', {
 	    staticClass: "control-program"
 	  }, [_c('div', {
