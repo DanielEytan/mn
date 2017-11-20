@@ -2,7 +2,7 @@
   <div>
     <div class="scroll-top-button" v-bind:class="{ show : showWhenScrolled }" v-on:click="scrollTop" >▲</div>
     <div class="filter__selection--wrapper">
-       <div class="number button" v-bind:class="{ hide : hideWhenScrolled }">
+       <div class="number" v-bind:class="{ hide : hideWhenScrolled }">
         <p><nobr>Veranstaltungen: {{calcNumberOfEvents()}}</nobr></p>
       </div>
       <div class="selection"><!-- 
@@ -45,29 +45,31 @@
 
         <div class="filter-tags--container">
           <div class="filter--tag inst" v-for="(filter,index) in checkedInstitutions">
-            <!-- <span v-if="index == 0">I:</span> -->
+            <span v-if="index == 0">I</span>
             <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag theme" v-for="(filter,index) in checkedThemes">
+            <span v-if="index == 0">T</span>
+
             <!-- <div class="space-element" v-if="index == 0"></div> -->
 
             <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag kind" v-for="(filter,index) in checkedEvents">
-            <!-- <span v-if="index == 0">V:</span> -->
+            <span v-if="index == 0">V</span>
             <!-- <div class="space-element" v-if="index == 0"></div> -->
 
             <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag languages" v-for="(filter,index) in checkedLanguages">
-            <!-- <span v-if="index == 0">S:</span> -->
+            <span v-if="index == 0">S</span>
             <!-- <div class="space-element" v-if="index == 0"></div> -->
 
             <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
         </div>
-        <div class="removeAll--tag" v-if="checkedFilters.length > 0">
-          <span>Alle Filter zurücksetzen</span> <span v-on:click="removeFromFilters('',true)">&#9447;</span>
+        <div class="removeAll--tag" v-if="checkedFilters.length > 0" v-on:click="removeFromFilters('',true)">
+          <span>Alle Filter zurücksetzen</span> <span>&#9447;</span>
         </div>
       </div>
     </div>
@@ -115,7 +117,7 @@ module.exports = {
           var doc = document.documentElement;
           var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
           console.log(top);
-           if (top > 5000) {
+           if (top > 4000) {
             this.hideWhenScrolled = true;
             this.showWhenScrolled = true;
           } else {
@@ -137,13 +139,13 @@ module.exports = {
       axios.get('program.json')
         .then(response => {
           this.program = response.data.data;
-            this.hideWhenScrolled = false;
 
         })
     },
     initEventHash: function () {
       for (let entry of this.program ) {
         this.eventHash[entry.id] = 0;
+        
       }
     },
     calcNumberOfEvents: function () {
@@ -155,6 +157,7 @@ module.exports = {
     },
     updateEventNumberOfEntry: function (data) {
       this.$set(this.eventHash, Object.keys(data)[0], data[Object.keys(data)[0]]);
+
     }
   }
 }

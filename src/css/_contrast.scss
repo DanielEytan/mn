@@ -29,15 +29,40 @@
 		color: white;
 
 		>* div {
-		 	&.active, &.selected {background:white;color:$dark;}
+		 	// &.active, &.selected {background:white;color:$dark;}
 		} 
 	}
+	.program__list__event{
+		&:nth-child(2n) {
+			background:#210055;
+			// background:#1d004b;
+		}
+
+	}
 	.filter--tag {
+		// background: white !important;
+	}
+	.label--wrapper {
+		color: $dark;
+	}
+	.filter__selection--wrapper .filter-tags--container .filter--tag > div {
+		background: white;
+		color: $dark;
+
+	}
+	.filter__checklists--wrapper > div {
 		background: white !important;
-		color: $dark !important;
+	}
+
+	.filter header > * div.selected {
+		background: $grey-dark;
+	}
+		.filter header > * div.active {
+		background: white !important;
+		color: $dark;
 	}
 	.filter__checklists--wrapper {
-		background: white !important;
+		// background: white !important;
 		color: $dark;
 	}
 	.label--wrapper.checked {
@@ -63,6 +88,15 @@
 							border-bottom: 10px white solid !important;
 						}
 					}
+					.program__list__event{
+		&:nth-child(2n) {
+			// background:#210055;
+			background:$dark;
+		}
+		&:hover {
+			background: #210055;
+		}
+	}
 	}
 	#save-toggle > div:hover {
 		color: $dark !important;

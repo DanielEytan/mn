@@ -1,4 +1,8 @@
 footer#footer {
 	border-top: 1px solid;
 	padding-top: 1em;
+	z-index: 11;
+	position: relative;
+	background: white;
+	padding: 1px;
 }

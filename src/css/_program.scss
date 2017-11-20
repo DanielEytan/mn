@@ -1,7 +1,24 @@
 .program {
 	&__list {
+		.suttle-line {
+					font-size: .8em;
+				}
+
 		&--complete {
+			&__block {
+				border-top: solid 2px;
+				padding-top: 2em;
+				margin-top: 1.15em;
+				margin-bottom: 2em;
+				&:first-of-type {
+					border-top: none;
+				}
+				
+			}
 			.institution {
+				h2 {
+					margin-bottom: .5em;
+				}
 				h1 {
 
 					a:hover {
@@ -9,12 +26,16 @@
 						
 					}
 				}
+				
+			}
+			&__event {
+				
 			}
 			&__event-list {
-				border-top: solid 1px;
-				padding-top: 1.25em;
-				margin-top: 1.15em;
-				margin-bottom: 2em;
+				// border-top: solid 1px;
+				// padding-top: 1.25em;
+				// margin-top: 1.15em;
+				// margin-bottom: 2em;
 			}
 		}
 		&--selection {
@@ -23,11 +44,78 @@
 			}
 		}
 		&__event {
-			position: relative;
-			border-bottom: solid 1px;
-			margin-bottom: 1.15em;
-			padding-bottom: 1.25em;
-			padding-right: 50px;
+
+			&:nth-child(2n) {
+				background: $grey-bright;
+			}
+			>div {
+				border-bottom: solid 1px;
+				position: relative;
+				padding:25px 50px 30px 0;
+				margin-bottom: 0;
+				cursor: pointer;
+				// &:last-child {
+				// 	border-bottom: none;
+				// }
+				
+			}
+			h1 {
+				// margin-bottom: .25em;
+			}
+			p {
+				margin-bottom: 1em;
+			}
+
+			.time {
+				margin-bottom: 1em;
+				>* {
+					margin-right: .25em;
+					time:after {
+						content: ", ";
+					}
+					&:last-child time:after {
+						content: "";
+					}
+					display: inline-block;
+
+				}
+			}
+			.icons {
+				font-size: 1.2em;
+						margin-bottom: 1em;
+
+				>* {
+					span {
+
+					}					
+					display: inline-block;
+				}
+			}
+			.categories {
+				// display: none;
+				> div {
+					>* {
+						display: inline-block;
+
+					}
+				}
+				li {
+					font-size: .8em;
+					display: inline-block;
+					margin-right: .25em;
+					margin-bottom: .5em;
+					span {
+						padding: .1em .4em .35em;
+						border: solid 1px;
+					}
+				}
+				.themes, .kind-of-event, .languages {
+					margin: 1em 0;
+				}
+			}
+			&:last-child >div {
+				border-bottom: none;
+			}
 
 		}
 	}
@@ -37,4 +125,42 @@
 			margin-bottom: 1em;
 		}
 	}
+	@media only screen and (min-width: $bp1) {
+		&__list {
+			&__event {
+				div.flex-container {
+					display: flex;
+					flex-wrap: wrap;
+					
+					// >* {
+					// 	flex: 0 1 auto;
+					// }
+					p {
+						margin-bottom: 1.25em;
+					}
+					.time, .icons {
+						margin-right: 20px;
+						flex: 0 0 20%;
+					}
+					.text, .categories {
+						flex: 0 1 75%;
+					}
+					// .categories {
+					// 	flex: 1 0 100%;
+					// }
+				}
+				transition: background .4s ease-out;
+				&:nth-child(2n) {
+					background: white;
+				}
+				&:hover {
+					background: $grey-bright;
+					transition: background .15s ease-out;
+
+				}
+			}
+		}
+
+	}
 }
+
