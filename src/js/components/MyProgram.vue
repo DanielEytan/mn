@@ -19,7 +19,7 @@
                       <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
                   </div>
                 </section>
-                <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
+                <!-- <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent> -->
                 </div>
             </li>
         </ul>

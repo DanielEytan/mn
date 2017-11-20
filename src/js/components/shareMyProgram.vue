@@ -8,8 +8,8 @@
     <!-- <p class="mb">Trage dafür deinen Namen ein.</p> -->
     <input @change="getItems" v-model="name" placeholder="Namen"><br><br>
     <div>
-    <p class="link-to-share"><a :href="url" class="directlink">{{ url }}{{ name }}</a></p>
-      
+    <p class="link-to-share"><a :href="url" class="directlink">{{ url }}</a>{{name}}</p>
+
     <div v-on:click="getItems"><button  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</button></div>
     </div>
     <!-- <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br> -->
@@ -93,9 +93,6 @@ methods: {
          this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm;
          this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm;
          this.google = 'https://plus.google.com/share?url=' + urlSm;
-
-
-
       }
       if (get) {
 
