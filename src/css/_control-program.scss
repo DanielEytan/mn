@@ -1,0 +1,13 @@
+.program .control-program {
+
+	.main-controls {
+		margin-bottom: 5em;
+		background: $grey-bright;
+		display: flex;
+		justify-content: center;
+		padding: 2em;
+		button:first-of-type {
+			margin-right: 1em;
+		}
+	}
+}

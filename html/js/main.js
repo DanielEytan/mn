@@ -14642,7 +14642,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14669,6 +14669,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
 	//
 	//
 	//
@@ -14783,8 +14785,8 @@
 	    scrolled: function scrolled() {
 	      var doc = document.documentElement;
 	      var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-	      //           console.log(top);
-	      if (top > 5000) {
+	      console.log(top);
+	      if (top > 4000) {
 	        this.hideWhenScrolled = true;
 	        this.showWhenScrolled = true;
 	      } else {
@@ -14805,7 +14807,6 @@
 	      var _this = this;
 	      axios.get('program.json').then(function (response) {
 	        _this2.program = response.data.data;
-	        _this2.hideWhenScrolled = false;
 	      });
 	    },
 	    initEventHash: function initEventHash() {
@@ -15871,7 +15872,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -15911,9 +15912,6 @@
 	    }
 	  },
 	  methods: {
-	    padNumber: function padNumber(n) {
-	      return n < 10 ? '0' + n.toString() : n.toString();
-	    },
 	    checkIntersectionForFilters: function checkIntersectionForFilters(checkedSelection, eventSpecificEntries) {
 	      var inCheckedSelection = _.intersectionWith(checkedSelection, _.map(eventSpecificEntries, 'title'), _.isEqual).length > 0 || checkedSelection.length === 0;
 	      return inCheckedSelection;
@@ -15922,7 +15920,7 @@
 	      var isOneInRange = false;
 	      var selectedStart = this.$options.filters.timeTable(selectedTimes[0]);
 	      var selectedEnd = this.$options.filters.timeTable(selectedTimes[1]);
-	      var _this = this;
+
 	      var _iteratorNormalCompletion = true;
 	      var _didIteratorError = false;
 	      var _iteratorError = undefined;
@@ -15935,30 +15933,6 @@
 	          if (eventStart >= selectedStart && eventStart <= selectedEnd) {
 	            isOneInRange = true;
 	            break;
-	          } else {
-	            // if time is not in range, calculate if it is not full 15 min and round down to earlier 15min interval.
-	            var old_time = String(this.$options.filters.formatDate(time.start.date));
-	            var minutes = parseInt(old_time.slice(old_time.indexOf(":") + 1));
-	            var hours = parseInt(old_time.substr(0, old_time.indexOf(":")));
-	            // console.log("hours: ",hours);
-	            // console.log("minutes: ",minutes);
-	            var m = parseInt((minutes + 7.5) / 15) * 15 % 60;
-	            if (m > 0) {
-	              m -= 15;
-	            }
-	            var h = minutes > 52 ? hours === 23 ? 0 : ++hours : hours;
-	            // console.log("h: ",h);
-	            // console.log("m: ",m);
-	            var new_time = _this.padNumber(h) + ":" + _this.padNumber(m);
-
-	            // console.log(old_time,new_time);
-	            var newEventStart = this.$options.filters.timeTable(new_time);
-
-	            // console.log("bed time: ",newEventStart);
-	            if (newEventStart >= selectedStart && newEventStart <= selectedEnd) {
-	              isOneInRange = true;
-	              break;
-	            }
 	          }
 	        }
 	      } catch (err) {
@@ -15993,22 +15967,12 @@
 
 	      programEventIsVisible = inCheckedInstitutions && inCheckedThemes && inCheckedKindOfEvents && inCheckedLanguages && inSelectedTime;
 
-	      // if(!programEventIsVisible) {
-	      //   console.log(inCheckedInstitutions);
-	      //   console.log(inCheckedThemes);
-	      //   console.log(inCheckedKindOfEvents);
-	      //   console.log(inCheckedLanguages);
-	      //   console.log(inSelectedTime);
-	      // }
-
 	      return programEventIsVisible;
 	    },
 	    numberOfEventsOfEntry: function numberOfEventsOfEntry() {
 	      var counter = 0;
 	      var childStatusList = {};
 
-	      // console.log(this.entry.events)
-	      var numberOfEvents = _.reduce(this.entry.events);
 	      var _iteratorNormalCompletion2 = true;
 	      var _didIteratorError2 = false;
 	      var _iteratorError2 = undefined;
@@ -16019,8 +15983,6 @@
 
 	          if (this.programEventIsVisible(programevent)) {
 	            counter++;
-	          } else {
-	            // console.log("hidden: ",programevent);
 	          }
 	        }
 	      } catch (err) {
@@ -16083,6 +16045,9 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16183,7 +16148,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16202,6 +16167,29 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16267,6 +16255,7 @@
 	    },
 	    saveProgram: function saveProgram() {
 	      var saveprogram_child_component = this.$refs.saveprogram;
+	      console.log(saveprogram_child_component);
 	      saveprogram_child_component.save(this.programevent.id);
 	    }
 	  },
@@ -16486,34 +16475,38 @@
 	      "mouseover": _vm.mouseOver,
 	      "mouseleave": _vm.mouseLeave
 	    }
+	  }, [_c('div', {
+	    staticClass: "flex-container"
+	  }, [_c('div', {
+	    staticClass: "time"
+	  }, _vm._l((_vm.programevent.time), function(time) {
+	    return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date))), (time.duration.length) ? _c('span', [_c('br'), _vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e()]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)))]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " "), _c('br'), _vm._v("(" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")")]) : _vm._e()])
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "text"
 	  }, [_c('h1', {
 	    staticClass: "event-title"
-	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v("\n  " + _vm._s(_vm.programevent.programmText) + "\n\n\n   "), _vm._l((_vm.programevent.time), function(time) {
-	    return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration.length) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")"), _c('br')]) : _vm._e()])
-	  }), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v(" "), _c('div', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.programevent.description)
 	    }
-	  }, [_vm._v(_vm._s(_vm.programevent.description))]), _vm._v(" "), _c('div', {
-	    staticClass: "cat-wrapper"
-	  }, [(_vm.programevent.themes.length) ? _c('div', [_c('div', {
-	    staticClass: "themes"
-	  }, [_c('h3', [_vm._v("Themen und Sparten:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.themes), function(theme) {
-	    return _c('li', [_vm._v(_vm._s(theme.title))])
-	  }))])]) : _vm._e(), _vm._v(" "), (_vm.programevent.kindOfEvent.length) ? _c('div', [_c('div', {
-	    staticClass: "kindOfEvent"
-	  }, [_c('h3', [_vm._v("Veranstaltungsarten:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
-	    return _c('li', [_vm._v(_vm._s(kindOfEvent.title))])
-	  }))])]) : _vm._e(), _vm._v(" "), (_vm.programevent.languages.length) ? _c('div', [_c('div', {
-	    staticClass: "languages"
-	  }, [_c('h3', [_vm._v("Sprachen:")]), _vm._v(" "), _c('ul', _vm._l((_vm.programevent.languages), function(language) {
-	    return _c('li', [_vm._v(_vm._s(language.title))])
-	  }))])]) : _vm._e()]), _vm._v(" "), _c('saveprogram', {
+	  }, [_vm._v(_vm._s(_vm.programevent.description))])]), _vm._v(" "), _c('div', {
+	    staticClass: "icons"
+	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
+	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
+	    return _c('div', [(language.title == 'Deutsch') ? _c('span', [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', [_vm._v("⚄")]) : _vm._e()])
+	  })], 2), _vm._v(" "), _c('ul', {
+	    staticClass: "categories"
+	  }, [_vm._l((_vm.programevent.themes), function(theme) {
+	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
+	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	    return _c('li', [(kindOfEvent.title != 'Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
+	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
 	    attrs: {
 	      "programevent": _vm.programevent
 	    }
-	  })], 2) : _vm._e()
+	  })], 1)]) : _vm._e()
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -16528,31 +16521,29 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('li', {
-	    staticClass: "program--block"
-	  }, [(_vm.showProgramEvents) ? _c('div', [_c('section', {
+	  return (_vm.showProgramEvents) ? _c('li', {
+	    staticClass: "program__list--complete__block program--block"
+	  }, [_c('div', [_c('section', {
 	    staticClass: "institution"
-	  }, [_vm._l((_vm.entry.shuttleLine), function(color) {
+	  }, [_c('h1', [_c('a', {
+	    attrs: {
+	      "href": _vm.entry.url
+	    }
+	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _vm._l((_vm.entry.shuttleLine), function(color) {
 	    return (_vm.entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	      staticClass: "suttle-line",
 	      style: ({
 	        color: color.color
 	      })
-	    }, [_c('strong', [_vm._v(_vm._s(_vm.entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	  }), _vm._v(" "), (_vm.entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	    staticClass: "suttle-line"
-	  }, [_c('strong', [_vm._v(_vm._s(_vm.entry.number))])]), _vm._v(" "), _vm._l((_vm.entry.shuttleLine), function(color) {
+	    }, [_vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	  }), _vm._v(" "), (_vm.entry.shuttleLine.length > 1) ? _c('div', _vm._l((_vm.entry.shuttleLine), function(color) {
 	    return _c('span', {
 	      staticClass: "suttle-line",
 	      style: ({
 	        color: color.color
 	      })
 	    }, [_vm._v(_vm._s(color.title) + " ")])
-	  })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
-	    attrs: {
-	      "href": _vm.entry.url
-	    }
-	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
+	  })) : _vm._e(), _vm._v(" "), _c('br'), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list--complete__event-list"
 	  }, _vm._l((_vm.entry.events), function(programevent) {
 	    return _c('programevent', {
@@ -16568,7 +16559,7 @@
 	        "checked-times": _vm.checkedTimes
 	      }
 	    })
-	  }))]) : _vm._e()])
+	  }))])]) : _vm._e()
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -16594,7 +16585,7 @@
 	  }, [_vm._v("▲")]), _vm._v(" "), _c('div', {
 	    staticClass: "filter__selection--wrapper"
 	  }, [_c('div', {
-	    staticClass: "number button",
+	    staticClass: "number",
 	    class: {
 	      hide: _vm.hideWhenScrolled
 	    }
@@ -16605,7 +16596,7 @@
 	  }, [_vm._l((_vm.checkedInstitutions), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag inst"
-	    }, [_c('div', {
+	    }, [(index == 0) ? _c('span', [_vm._v("I")]) : _vm._e(), _vm._v(" "), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16617,7 +16608,7 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedThemes), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag theme"
-	    }, [_c('div', {
+	    }, [(index == 0) ? _c('span', [_vm._v("T")]) : _vm._e(), _vm._v(" "), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16629,7 +16620,7 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedEvents), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag kind"
-	    }, [_c('div', {
+	    }, [(index == 0) ? _c('span', [_vm._v("V")]) : _vm._e(), _vm._v(" "), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16641,7 +16632,7 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedLanguages), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag languages"
-	    }, [_c('div', {
+	    }, [(index == 0) ? _c('span', [_vm._v("S")]) : _vm._e(), _vm._v(" "), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16651,14 +16642,13 @@
 	      }
 	    }, [_vm._v("ⓧ")])])])
 	  })], 2), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
-	    staticClass: "removeAll--tag"
-	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', {
+	    staticClass: "removeAll--tag",
 	    on: {
 	      "click": function($event) {
 	        _vm.removeFromFilters('', true)
 	      }
 	    }
-	  }, [_vm._v("ⓧ")])]) : _vm._e()])]), _vm._v(" "), _c('ul', {
+	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', [_vm._v("ⓧ")])]) : _vm._e()])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"
 	  }, _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
@@ -16760,7 +16750,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16777,6 +16767,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16891,9 +16884,7 @@
 	    staticClass: "share-program"
 	  }, [_c('h1', [_vm._v("Teile deine Auswahl")]), _vm._v(" "), _c('div', [_c('div', {
 	    staticClass: "link"
-	  }, [_c('p', [_vm._v("Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschicken.")]), _vm._v(" "), _c('p', {
-	    staticClass: "mb"
-	  }, [_vm._v("Trage dafür deinen Namen ein.")]), _vm._v(" "), _c('input', {
+	  }, [_c('p', [_vm._v("Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschicken.")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -16913,10 +16904,14 @@
 	        _vm.name = $event.target.value
 	      }
 	    }
-	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', {
-	    staticClass: "flex-container"
-	  }, [_c('div', {
-	    staticClass: "button",
+	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', [_c('p', {
+	    staticClass: "link-to-share"
+	  }, [_c('a', {
+	    staticClass: "directlink",
+	    attrs: {
+	      "href": _vm.url
+	    }
+	  }, [_vm._v(_vm._s(_vm.url) + _vm._s(_vm.name))])]), _vm._v(" "), _c('div', {
 	    on: {
 	      "click": _vm.getItems
 	    }
@@ -16940,10 +16935,9 @@
 	      expression: "onError",
 	      arg: "error"
 	    }]
-	  }, [_vm._v(_vm._s(_vm.buttonText))])])]), _vm._v(" "), _c('p', [_vm._v("Der Link zu deiner Auswahl kannst du über "), _c('nobr', [_vm._v("[Strg] + [v]")]), _vm._v(" respektive "), _c('nobr', [_vm._v("[Command] + [v]")]), _vm._v(" am gewünschten Ort einfügen.")], 1), _c('br')]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.buttonText))])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "share"
-	  }, [_c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.")]), _vm._v(" "), _c('div', {
-	    staticClass: "button",
+	  }, [_c('h1', [_vm._v("Auf Social-Media teilen")]), _vm._v(" "), _c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.")]), _vm._v(" "), _c('div', {
 	    on: {
 	      "click": _vm.getItems
 	    }
@@ -16951,8 +16945,7 @@
 	    attrs: {
 	      "href": _vm.mail
 	    }
-	  }, [_vm._v("Link per Mail versenden")])])]), _vm._v(" "), _c('div', {
-	    staticClass: "button",
+	  }, [_c('i', [_vm._v("ⓜ")]), _vm._v(" Mail")])])]), _vm._v(" "), _c('div', {
 	    on: {
 	      "click": _vm.getItems
 	    }
@@ -16960,8 +16953,7 @@
 	    attrs: {
 	      "href": _vm.facebook + _vm.url
 	    }
-	  }, [_vm._v("Link auf Facebook teilen")])])]), _vm._v(" "), _c('div', {
-	    staticClass: "button",
+	  }, [_c('i', [_vm._v("ⓕ")]), _vm._v(" Facebook")])])]), _vm._v(" "), _c('div', {
 	    on: {
 	      "click": _vm.getItems
 	    }
@@ -16969,16 +16961,7 @@
 	    attrs: {
 	      "href": _vm.twitter
 	    }
-	  }, [_vm._v("Link auf Twitter teilen")])])]), _vm._v(" "), _c('div', {
-	    staticClass: "button",
-	    on: {
-	      "click": _vm.getItems
-	    }
-	  }, [_c('button', [_c('a', {
-	    attrs: {
-	      "href": _vm.google + _vm.url
-	    }
-	  }, [_vm._v("Link auf Google+ teilen")])])])])])])
+	  }, [_c('i', [_vm._v("ⓣ")]), _vm._v(" Twitter")])])])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17256,7 +17239,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17317,6 +17300,28 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 123 */
@@ -17324,7 +17329,7 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "program__list__event__info--wrapper",
+	    staticClass: "program__list__event__info--wrapper flex-container",
 	    class: {
 	      active: _vm.hover
 	    },
@@ -17333,20 +17338,36 @@
 	      "mouseover": _vm.mouseOver,
 	      "mouseleave": _vm.mouseLeave
 	    }
+	  }, [_c('div', {
+	    staticClass: "time"
+	  }, _vm._l((_vm.programevent.time), function(time) {
+	    return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date))), (time.duration.length) ? _c('span', [_c('br'), _vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e()]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)))]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " "), _c('br'), _vm._v("(" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")")]) : _vm._e()])
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "text"
 	  }, [_c('h1', {
 	    staticClass: "event-title"
-	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v(" "), _vm._l((_vm.programevent.time), function(time) {
-	    return _c('div', [(time.type === 'setTimes') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " "), (time.duration.length) ? _c('span', [_vm._v("(Dauer: " + _vm._s(time.duration) + ")")]) : _vm._e(), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'continuous') ? _c('time', [_vm._v(" " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (Durchgehend)"), _c('br')]) : _vm._e(), _vm._v(" "), (time.type === 'iterating') ? _c('time', [_vm._v("  " + _vm._s(_vm._f("formatDate")(time.start.date)) + " – " + _vm._s(_vm._f("formatDate")(time.end.date)) + " (" + _vm._s(time.frequency)), (time.duration.length) ? _c('span', [_vm._v(", Dauer: " + _vm._s(time.duration))]) : _vm._e(), _vm._v(")"), _c('br')]) : _vm._e()])
-	  }), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.programevent.title))]), _vm._v(" "), _c('div', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.programevent.description)
 	    }
-	  }, [_vm._v(_vm._s(_vm.programevent.description))]), _vm._v(" "), _c('saveprogram', {
+	  }, [_vm._v(_vm._s(_vm.programevent.description))])]), _vm._v(" "), _c('div', {
+	    staticClass: "icons"
+	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
+	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
+	    return _c('div', [(language.title == 'Deutsch') ? _c('span', [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', [_vm._v("⚄")]) : _vm._e()])
+	  })], 2), _vm._v(" "), _c('ul', {
+	    staticClass: "categories"
+	  }, [_vm._l((_vm.programevent.themes), function(theme) {
+	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
+	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	    return _c('li', [(kindOfEvent.title != 'Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
+	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
 	    attrs: {
 	      "programevent": _vm.programevent
 	    }
-	  })], 2)
+	  })], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17929,7 +17950,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.reset-my-program[data-v-21a7b4da] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n  margin-bottom: 30px;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18062,6 +18083,14 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 144 */
@@ -18136,7 +18165,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.print-button[data-v-e8f4affe] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18174,11 +18203,11 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "print-button"
-	  }, [_c('div', {
+	  }, [_c('button', {
 	    on: {
 	      "click": _vm.print
 	    }
-	  }, [_vm._v("drucken")])])
+	  }, [_vm._v("Drucken")])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -18197,48 +18226,50 @@
 	    staticClass: "program--entry"
 	  }, [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
-	  }, [_c('printbutton'), _vm._v(" "), _c('div', {
-	    staticClass: "reset-my-program",
-	    on: {
-	      "click": _vm.resetMyProgram
-	    }
-	  }, [_vm._v("\n          Alle zurücksetzen!\n        ")]), _vm._v(" "), _vm._l((_vm.programevents), function(entry) {
-	    return _c('div', [_c('li', {
+	  }, _vm._l((_vm.programevents), function(entry) {
+	    return _c('li', {
 	      staticClass: "program__list__event"
-	    }, [_c('section', {
+	    }, [_c('div', [_c('section', {
 	      staticClass: "institution"
-	    }, [_vm._l((entry.parent.shuttleLine), function(color) {
+	    }, [_c('h1', [_c('a', {
+	      attrs: {
+	        "href": entry.parent.url
+	      }
+	    }, [_vm._v(_vm._s(entry.parent.title))])]), _vm._v(" "), _vm._l((entry.parent.shuttleLine), function(color) {
 	      return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line"
-	    }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      }, [_vm._v(_vm._s(color.title))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', _vm._l((entry.parent.shuttleLine), function(color) {
 	      return _c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
 	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
-	      attrs: {
-	        "href": entry.url
-	      }
-	    }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
+	    })) : _vm._e()], 2), _vm._v(" "), _c('myprogramevent', {
 	      ref: "myprogramevent",
 	      refInFor: true,
 	      attrs: {
 	        "programevent": entry
 	      }
 	    })], 1)])
-	  })], 2)]), _c('br'), _c('br'), _vm._v(" "), _c('shareprogram', {
+	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('div', {
+	    staticClass: "control-program"
+	  }, [_c('div', {
+	    staticClass: "main-controls"
+	  }, [_c('printbutton'), _vm._v(" "), _c('button', {
+	    staticClass: "reset-my-program",
+	    on: {
+	      "click": _vm.resetMyProgram
+	    }
+	  }, [_vm._v("\n            Mein Programm zurücksetzen\n          ")])], 1), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }
-	  })], 1)
+	  })], 1)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

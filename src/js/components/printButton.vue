@@ -1,6 +1,6 @@
 <template>
   <div class="print-button">
-    <div v-on:click="print">drucken</div>
+    <button v-on:click="print">Drucken</button>
   </div>
 </template>
 
@@ -22,10 +22,4 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
-.print-button {
-  cursor: pointer;
-  padding: 10px;
-  border: 1px solid black;
-  display: inline-block;
-}
 </style>

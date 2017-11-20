@@ -30,6 +30,7 @@
 @import 'section-nav';
 @import 'button';
 @import 'scroll-top';
+@import 'control-program';
 
 // temporary
 
@@ -43,6 +44,9 @@ html {
   box-sizing: inherit;
 }
 
+figcaption {
+	
+}
 
 .fade-enter-active, .fade-leave-active {
 	transition: opacity .5s

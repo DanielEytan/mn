@@ -11,8 +11,15 @@ header#header.reduced {
   			background-repeat: no-repeat;
   		}
 	}
-	.centered .mn-date span {
-			display: none;
+	.centered .mn-date {
+				line-height: 0em;
+		span {
+			// display: none;
+			opacity: 0;
+			transform: translateY(-1.5em);
+			transition: opacity .15s, transform .25s;
+
+		}
 	}
 	.flex-container {
 		height: 30px;
@@ -21,7 +28,6 @@ header#header.reduced {
 
 header#header {
 	width: 100%;
-
 	position: fixed;
 	// border-bottom: 1px solid;
 	box-shadow: 0px 0px 8px 4px rgba(0,0,0,.1);
@@ -35,19 +41,17 @@ header#header {
 	a.logo {
 		text-indent: -9999px;
 		display: block;
-		background: url(./../bilder/MN18_LOGO_16.svg);
-  		background-repeat: no-repeat;
-
+		background: url(./../bilder/logo_schwarz.svg);
   		// background-size: 50px 44px;
-  		background-size: 90px 44px;
-  		width: 90px;
-  		height: 44px;
+  		background-size: 30px 27px;
+  		background-repeat: no-repeat;
+  		height: 27px;
   		transition: background .25s;
   		&.active {
-			background: url(./../bilder/MN18_LOGO_16-weiss.svg);
-  		background-repeat: no-repeat;
+			background: url(./../bilder/logo_weiss.svg);
+  			background-size: 31px 27px;
+  			background-repeat: no-repeat;
 
-  		background-size: 90px 44px;
   		
   		
 
@@ -65,7 +69,7 @@ header#header {
 		// }
 	}
 	#menu {
-		width: 200px;
+		width: 232px;
 		text-align: right;
 		>* {
 			display: inline-block;
@@ -137,25 +141,15 @@ header#header {
 				}
 				
 			}
-			// &:hover {
-			// 	.burger span {
-			// 	animation: burger 1s;
-			// 	&:nth-child(1) {
-			// 		animation: first 1s infinite;
-			// 	}
-			// 	&:nth-child(2) {
-			// 		animation: middle 1s infinite;
-			// 	}
-					
-			// 	}
-			// }
 		}
 		
 	
 	.centered {
 		text-align: center;
+
 		.mn-date span {
 			display: none;
+			
 		}
 		
 	
@@ -169,10 +163,24 @@ header#header {
 				color: grey; 
 			}
 		}
+	@media screen and (min-width: 375px) {
+		a.logo {
+			background: url(./../bilder/MN18_LOGO_16.svg);
+  			background-repeat: no-repeat;
+  			background-size: 90px 44px;
+  			width: 90px;
+  			height: 44px;
+			&.active {
+				background: url(./../bilder/MN18_LOGO_16-weiss.svg);
+			  	background-repeat: no-repeat;
+		  		background-size: 90px 44px;
+		  	}
+		}
+	}
 	@media screen and (max-width: $bp1) {
 	font-size: 1.25em;
 		.saved-link span {
-			display: none;
+			// display: none;
 		}		
 		.mn-date {
 			display: none;
@@ -205,8 +213,14 @@ header#header {
 
 	.centered {
 		width: 370px;
-			.mn-date span{
-				display: inline-block;
+			.mn-date {
+				line-height: 1.2em;
+
+				span{
+					display: inline-block;
+					opacity: 1;
+					transform: translateY(0);
+				}
 			}
 		}
 	}
