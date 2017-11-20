@@ -617,7 +617,6 @@ footer#footer {
   padding-top: 1em;
   z-index: 11;
   position: relative;
-  background: white;
   padding: 1px; }
 
 .home .cover {
@@ -1214,6 +1213,15 @@ footer#footer {
   padding: 1px; }
   #vue-app.active a {
     color: white; }
+  #vue-app.active button {
+    background: #1A0042;
+    border: 1px solid white;
+    color: white; }
+    #vue-app.active button:hover {
+      background: white;
+      color: #1A0042; }
+      #vue-app.active button:hover a {
+        color: #1A0042; }
   #vue-app.active header#header {
     background: #1A0042 !important;
     box-shadow: 0px 0px 8px 4px black; }
@@ -1223,6 +1231,8 @@ footer#footer {
       color: red; }
   #vue-app.active .selected-institution {
     background: #1A0042 !important; }
+  #vue-app.active .program .control-program .main-controls {
+    background: #210055; }
   #vue-app.active .program--overview .filter header {
     border: #1A0042;
     color: white; }

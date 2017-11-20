@@ -8,6 +8,18 @@
 	a {
 		color: white;
 	}
+	button {
+		background: $dark;
+		border: 1px solid white;
+		color: white;
+		&:hover {
+			background: white;
+			color: $dark;
+			a {
+				color: $dark;
+			}
+		}
+	}
 	header#header {
 		background: $dark !important;
 		box-shadow: 0px 0px 8px 4px rgba(0,0,0,1);
@@ -23,6 +35,9 @@
 	.selected-institution {
 		background: $dark !important;
 
+	}
+	.program .control-program .main-controls {
+		background: #210055;
 	}
 	.program--overview .filter header {
 		border: $dark;
