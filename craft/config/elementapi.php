@@ -19,15 +19,10 @@ return [
                         break;
                     }
                 }
-
                 return [
-
                     'list' => $listBlocks
                 ];
             },
-
-
-
         ],
         'program.json' => [
             'elementType' => ElementType::Entry,
@@ -140,8 +135,6 @@ return [
                 },
             ];
         },
-
-        
         'themes.json' => [
             'elementType' => ElementType::Category,
             'cache' => true,
@@ -180,8 +173,8 @@ return [
             'cache' => true,
             'criteria' => ['section' => 'program', 'type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
-               $photos = [];
-               foreach ($entry->programImg as $photo) {
+             $photos = [];
+             foreach ($entry->programImg as $photo) {
                 $photos[] = $photo->url;
             }
             return [
@@ -214,110 +207,111 @@ return [
             'type' => 'institution'
         ],
         'transformer' => function(EntryModel $entry) {
-           $photos = [];
-           foreach ($entry->programImg as $photo) {
-            $photos[] = $photo->url;
-        }
-        return [
-            'title' => $entry->title,
-            'lat' => $entry->map->lat,
-            'lng' => $entry->map->lng,
-            'number' => $entry->number,
-            'url' => $entry->url,
-            'address' => $entry->address,
-            'journey' => (string) $entry->journey,
-            'advanceSale' => $entry->advanceSale,
-            'accessibility' => $entry->accessibility,
-            'photos' => $photos,
-            
-            'shuttleLine' => array_map( function (CategoryModel $category) {
-                return [
-                    'title' => $category->title,
-                    'color' => $category->color
-                ];
-            }, $entry->shuttleLine->find()),
-        ];
-    },
-],
-
-
-'programevent.json' => [
-    'elementType' => ElementType::Entry,
-    'cache' => true,
-    'elementsPerPage' => 999,
-    'paginate' => false,
-    'limit' => 999,
-    'criteria' => ['section' => 'program','type' =>'Event'],
-    'transformer' => function(EntryModel $entry) {
-        $parent = $entry->getParent();
-                //read time matrix
-        $timeBlocks = [];
-        foreach ($entry->time as $block) {
-            switch ($block->type->handle) {
-                case 'setTimes':
-                $timeBlocks[] = [
-                    'type' => 'setTimes',
-                    'start' => $block->start,
-                    'duration' => $block->duration
-                ];
-                break;
-                case 'continuous':
-                $timeBlocks[] = [
-                    'type' => 'continuous',
-                    'start' => $block->start,
-                    'end' => $block->end
-                ];
-                break;
-                case 'iterating':
-                $timeBlocks[] = [
-                    'type' => 'iterating',
-                    'start' => $block->start,
-                    'end' => $block->end,
-                    'frequency' => $block->frequency,
-                    'duration' => $block->duration
-                ];
-                break;
+            $photos = [];
+            foreach ($entry->programImg as $photo) {
+                $photos[] = $photo->url;
             }
-        }
-        return [
-            'title' => $entry->title,
-            'url' => $entry->url,
-            'id' => $entry->id,
-            'description' => (string) $entry->description,
-            'level' => $entry->level,
-            'time' => $timeBlocks,
-            'themes' => array_map( function (CategoryModel $category) {
-                return [
-                    'id' => $category->id,
-                    'title' => $category->title
-                ];
-            }, $entry->themes->find()),
-            'kindOfEvent' => array_map( function (CategoryModel $category) {
-                return [
-                    'id' => $category->id,
-                    'title' => $category->title
-                ];
-            }, $entry->kindOfEvent->find()),
-            'languages' => array_map( function (CategoryModel $category) {
-                return [
-                    'id' => $category->id,
-                    'title' => $category->title
-                ];
-            }, $entry->languages->find()),
-            'parent' => $parent ? [
-                'title' => $parent->title,
-                'number' => $parent->number,
-                'url' => $parent->url,
+            return [
+                'title' => $entry->title,
+                'lat' => $entry->map->lat,
+                'lng' => $entry->map->lng,
+                'number' => $entry->number,
+                'url' => $entry->url,
+                'address' => $entry->address,
+                'journey' => (string) $entry->journey,
+                'advanceSale' => $entry->advanceSale,
+                'accessibility' => $entry->accessibility,
+                'photos' => $photos,
+                
                 'shuttleLine' => array_map( function (CategoryModel $category) {
                     return [
                         'title' => $category->title,
                         'color' => $category->color
                     ];
-                }, $parent->shuttleLine->find()),
-            ] : null,
+                }, $entry->shuttleLine->find()),
+            ];
+        },
+    ],
+    'programevent.json' => [
+        'elementType' => ElementType::Entry,
+        'cache' => true,
+        'elementsPerPage' => 999,
+        'paginate' => false,
+        'limit' => 999,
+        'criteria' => ['section' => 'program','type' =>'Event'],
+        'transformer' => function(EntryModel $entry) {
+            HeaderHelper::setHeader([
+                'Access-Control-Allow-Origin' => '*'
+            ]);
+            $parent = $entry->getParent();
+            $timeBlocks = [];
+            foreach ($entry->time as $block) {
+                switch ($block->type->handle) {
+                    case 'setTimes':
+                    $timeBlocks[] = [
+                        'type' => 'setTimes',
+                        'start' => $block->start,
+                        'duration' => $block->duration
+                    ];
+                    break;
+                    case 'continuous':
+                    $timeBlocks[] = [
+                        'type' => 'continuous',
+                        'start' => $block->start,
+                        'end' => $block->end
+                    ];
+                    break;
+                    case 'iterating':
+                    $timeBlocks[] = [
+                        'type' => 'iterating',
+                        'start' => $block->start,
+                        'end' => $block->end,
+                        'frequency' => $block->frequency,
+                        'duration' => $block->duration
+                    ];
+                    break;
+                }
+            }
+            return [
+                'title' => $entry->title,
+                'url' => $entry->url,
+                'id' => $entry->id,
+                'description' => (string) $entry->description,
+                'level' => $entry->level,
+                'time' => $timeBlocks,
+                'themes' => array_map( function (CategoryModel $category) {
+                    return [
+                        'id' => $category->id,
+                        'title' => $category->title
+                    ];
+                }, $entry->themes->find()),
+                'kindOfEvent' => array_map( function (CategoryModel $category) {
+                    return [
+                        'id' => $category->id,
+                        'title' => $category->title
+                    ];
+                }, $entry->kindOfEvent->find()),
+                'languages' => array_map( function (CategoryModel $category) {
+                    return [
+                        'id' => $category->id,
+                        'title' => $category->title
+                    ];
+                }, $entry->languages->find()),
+                // 'categories' => $categories,
+                'parent' => $parent ? [
+                    'title' => $parent->title,
+                    'number' => $parent->number,
+                    'url' => $parent->url,
+                    'shuttleLine' => array_map( function (CategoryModel $category) {
+                        return [
+                            'title' => $category->title,
+                            'color' => $category->color
+                        ];
+                    }, $parent->shuttleLine->find()),
+                ] : null,
 
-        ];
-    },
-],
+            ];
+        },
+    ],
 ]
 ];

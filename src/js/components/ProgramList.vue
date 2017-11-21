@@ -140,7 +140,8 @@ module.exports = {
       axios.get('program.json')
         .then(response => {
           this.program = response.data.data;
-
+            this.hideWhenScrolled = false;
+ 
         })
     },
     initEventHash: function () {
