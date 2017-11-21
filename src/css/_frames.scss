@@ -4,7 +4,7 @@
 header#header > div,
 footer#footer > section,
 .journal--overview,
-.institutions--overview--list-view,
+.institutions--overview--grid-view,
 .filter__selection--wrapper
 
 {
@@ -55,6 +55,7 @@ header#header nav,
 .program--single,
 
 .control-program,
+.institutions--overview .list-view,
 .institutions--single header,
 .institutions--single .institution-infos,
 .program .name
@@ -71,7 +72,9 @@ header#header nav,
 		margin: 0 auto;
 	}
 }
-.program__list__event >div {
+.program__list__event >div,
+.program--overview .food
+ {
 	margin: 0 15px;
 	@media screen and (min-width: $bp2) {
 		width: 900px;

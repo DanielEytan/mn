@@ -90,11 +90,12 @@ time,
 strong,
 header#header,
 button,
+.site-header nav,
 .institutions .suttle-line,
 .institutions--overview h1,
 .institutions--single h1.title,
 .institutions .visitor-infos,
-.institutions address,
+.institutions--single address,
 .institutions--single .program h2,
 .institutions h3,
 .journal--single h2.subtitle,
@@ -120,7 +121,9 @@ footer a,
 .program-list h1,
 header h1,
 header.site-header h1,
-.institutions--single .program-text {
+.food h3,
+.institutions--single .program-text,
+.institutions--overview .grid-view h2 {
   font-family: 'lyon-medium', times; }
 
 header .mn-date span {
@@ -150,7 +153,7 @@ header.site-header h1,
 .home .lang,
 .link-with-arrow {
   text-transform: uppercase;
-  letter-spacing: .04em;
+  letter-spacing: .025em;
   line-height: 1em !important; }
 
 figcaption,
@@ -179,9 +182,11 @@ figcaption,
 .program--overview .institution h1,
 .program--overview .institution span strong,
 .program .selected h1,
+.institutions--overview--grid-view h1,
 .institutions--overview--list-view h1,
-.institutions--overview--list-view .icons,
-.institutions--overview--list-view span strong,
+.institutions--overview .grid-view h2,
+.institutions--overview--grid-view .icons,
+.institutions--overview--grid-view span strong,
 .institutions--single .program h2,
 .visit h2,
 .home .info p.intro,
@@ -194,9 +199,11 @@ figcaption,
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
+    .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
-    .institutions--overview--list-view .icons,
-    .institutions--overview--list-view span strong,
+    .institutions--overview .grid-view h2,
+    .institutions--overview--grid-view .icons,
+    .institutions--overview--grid-view span strong,
     .institutions--single .program h2,
     .visit h2,
     .home .info p.intro,
@@ -208,16 +215,18 @@ figcaption,
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
+    .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
-    .institutions--overview--list-view .icons,
-    .institutions--overview--list-view span strong,
+    .institutions--overview .grid-view h2,
+    .institutions--overview--grid-view .icons,
+    .institutions--overview--grid-view span strong,
     .institutions--single .program h2,
     .visit h2,
     .home .info p.intro,
     .journal--overview .group h1,
     .journal--single h2.subtitle,
     .share-program h1 {
-      font-size: 2em; } }
+      font-size: 1.75em; } }
 
 .institutions--single h1.title,
 .institutions--single span strong,
@@ -279,7 +288,7 @@ header.site-header,
 header#header > div,
 footer#footer > section,
 .journal--overview,
-.institutions--overview--list-view,
+.institutions--overview--grid-view,
 .filter__selection--wrapper {
   margin: 15px 15px 16px;
   position: relative; }
@@ -288,7 +297,7 @@ footer#footer > section,
     header#header > div,
     footer#footer > section,
     .journal--overview,
-    .institutions--overview--list-view,
+    .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
@@ -296,7 +305,7 @@ footer#footer > section,
     header#header > div,
     footer#footer > section,
     .journal--overview,
-    .institutions--overview--list-view,
+    .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 20px 40px 22.5px; } }
 
@@ -321,6 +330,7 @@ header#header nav,
 .program--overview ul.program__list .institution,
 .program--single,
 .control-program,
+.institutions--overview .list-view,
 .institutions--single header,
 .institutions--single .institution-infos,
 .program .name {
@@ -334,6 +344,7 @@ header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
+    .institutions--overview .list-view,
     .institutions--single header,
     .institutions--single .institution-infos,
     .program .name {
@@ -348,20 +359,24 @@ header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
+    .institutions--overview .list-view,
     .institutions--single header,
     .institutions--single .institution-infos,
     .program .name {
       width: 1000px;
       margin: 0 auto; } }
 
-.program__list__event > div {
+.program__list__event > div,
+.program--overview .food {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
-    .program__list__event > div {
+    .program__list__event > div,
+    .program--overview .food {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
-    .program__list__event > div {
+    .program__list__event > div,
+    .program--overview .food {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -678,8 +693,7 @@ footer#footer {
 .program__list--complete__block {
   border-top: solid 2px;
   padding-top: 2em;
-  margin-top: 1.15em;
-  margin-bottom: 2em; }
+  margin-top: 1.15em; }
   .program__list--complete__block:first-of-type {
     border-top: none; }
 
@@ -688,6 +702,10 @@ footer#footer {
 
 .program__list--complete .institution h1 a:hover {
   text-decoration: underline; }
+
+.program__list--complete .food {
+  padding: 1em;
+  text-align: center; }
 
 .program__list--selection .institution {
   margin-bottom: 1em; }
@@ -739,15 +757,16 @@ footer#footer {
 .program__list__event .categories .themes, .program__list__event .categories .kind-of-event, .program__list__event .categories .languages {
   margin: 1em 0; }
 
-.program__list__event:last-child > div {
-  border-bottom: none; }
-
 .program--single {
   margin-bottom: 2em; }
   .program--single .institution {
     margin-bottom: 1em; }
 
 @media only screen and (min-width: 768px) {
+  .program__list--complete__block {
+    padding-top: 3em; }
+  .program__list--complete .food {
+    padding: 2em; }
   .program__list__event {
     transition: background .4s ease-out; }
     .program__list__event div.flex-container {
@@ -756,6 +775,8 @@ footer#footer {
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
+      .program__list__event div.flex-container h1 {
+        margin-bottom: 1em; }
       .program__list__event div.flex-container p {
         margin-bottom: 1.25em; }
       .program__list__event div.flex-container .time, .program__list__event div.flex-container .icons {
@@ -777,18 +798,27 @@ footer#footer {
   height: 800px;
   margin-bottom: 50px; }
 
-.institutions--overview--list-view > * {
+.institutions--overview--grid-view > * {
   margin-bottom: 60px; }
-  .institutions--overview--list-view > * figure {
+  .institutions--overview--grid-view > * figure {
     margin-bottom: 7.5px; }
-  .institutions--overview--list-view > * h1 {
+  .institutions--overview--grid-view > * h1 {
     margin-bottom: .25em; }
-  .institutions--overview--list-view > * .icons {
+  .institutions--overview--grid-view > * .icons {
     margin-bottom: 1em; }
-    .institutions--overview--list-view > * .icons span {
+    .institutions--overview--grid-view > * .icons span {
       margin-right: .25em; }
-  .institutions--overview--list-view > *:hover h1 {
+  .institutions--overview--grid-view > *:hover h1 {
     text-decoration: underline; }
+
+.institutions--overview--list-view li {
+  margin-bottom: 2em;
+  padding-top: .5em;
+  border-top: solid 2px; }
+  .institutions--overview--list-view li h1 {
+    margin-bottom: .5em; }
+    .institutions--overview--list-view li h1:hover {
+      text-decoration: underline; }
 
 .institutions--overview_child > div > div:hover h1 {
   text-decoration: underline; }
@@ -828,6 +858,14 @@ footer#footer {
       flex: 0 1 49%; } }
 
 @media screen and (min-width: 1024px) {
+  .institutions--overview--list-view li .info-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .institutions--overview--list-view li .info-bar .icons > * {
+      display: inline-block;
+      margin-left: .5em; }
   .institutions--single .program figure {
     margin: 50px auto;
     width: 80%; } }
@@ -1326,10 +1364,11 @@ header.site-header h1 {
 
 header.site-header nav {
   font-size: 1.25rem; }
-  header.site-header nav i {
+  header.site-header nav span {
     padding: .2em .4em .3em;
-    border: solid 1px; }
-    header.site-header nav i.inactive {
+    border: solid 1px;
+    cursor: pointer; }
+    header.site-header nav span:hover, header.site-header nav span.active {
       background: #1A0042;
       color: white; }
 
@@ -1344,9 +1383,7 @@ header.site-header nav {
         margin-left: .5em;
         margin-right: 0; }
         header.site-header nav span i {
-          margin-right: .25em; }
-        header.site-header nav span i:not(.inactive) {
-          cursor: pointer; } }
+          margin-right: .25em; } }
 
 .button {
   background: white;
@@ -1419,6 +1456,18 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+.fr {
+  color: #009fe3; }
+
+.en {
+  color: #e30613; }
+
+.it {
+  color: #009640; }
+
+.other {
+  color: #9d9d9d; }
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s; }

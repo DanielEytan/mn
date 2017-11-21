@@ -5,13 +5,15 @@
 			nav {
 				font-size: 1.25rem;
 
-				i {
-					&.inactive {
+				span {
+					&:hover, &.active {
 						background: $dark;
 						color: white;
 					}
 					padding: .2em .4em .3em;
 					border: solid 1px;
+					cursor: pointer;
+
 				}
 			}
 			@media screen and (min-width: $bp1) {
@@ -31,9 +33,6 @@
 						// margin-top: 1em;
 						i.inactive {
 							// color:grey;
-						}
-						i:not(.inactive) {
-							cursor: pointer;
 						}
 					}
 				

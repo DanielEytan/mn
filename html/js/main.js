@@ -16534,7 +16534,17 @@
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
-	    return _c('div', [(language.title == 'Deutsch') ? _c('span', [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', [_vm._v("⚄")]) : _vm._e()])
+	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', {
+	      staticClass: "en"
+	    }, [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', {
+	      staticClass: "fr"
+	    }, [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', {
+	      staticClass: "it"
+	    }, [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("⚄")]) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
@@ -16599,7 +16609,9 @@
 	        "checked-times": _vm.checkedTimes
 	      }
 	    })
-	  })), _vm._v(" "), _c('p', [_vm._v("Essen: " + _vm._s(_vm.entry.food))]), _c('br')])]) : _vm._e()
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "food"
+	  }, [_c('h3', [_vm._v("Essen und trinken:")]), _c('p', [_c('strong', [_vm._v(_vm._s(_vm.entry.food))])])])])]) : _vm._e()
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -22456,7 +22468,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -22474,47 +22486,101 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
-	  name: 'institutions',
-	  components: {
-	    googlemap: _GoogleMap2.default
-	  },
-	  data: function data() {
-	    return {
-	      listView: true,
-	      mapView: false,
-	      institutions: []
+		name: 'institutions',
+		components: {
+			googlemap: _GoogleMap2.default
+		},
+		data: function data() {
+			return {
+				listView: false,
+				mapView: false,
+				gridView: true,
+				institutions: []
 
-	    };
-	  },
-	  mounted: function mounted() {
-	    this.getEntries();
-	  },
+			};
+		},
+		mounted: function mounted() {
+			this.getEntries();
+		},
 
-	  methods: {
-	    toggleListView: function toggleListView() {
-	      this.listView = !this.listView;
-	      if (this.mapView = true) {
-	        this.mapView = false;
-	      };
-	    },
-	    toggleMapView: function toggleMapView() {
-	      this.mapView = !this.mapView;
-	      if (this.listView = true) {
-	        this.listView = false;
-	      };
-	    },
-	    getEntries: function getEntries() {
-	      var _this = this;
+		methods: {
+			toggleListView: function toggleListView() {
+				this.listView = !this.listView;
+				if (this.listView = true) {
+					this.listView = true;
+				};
+				if (this.mapView = true) {
+					this.mapView = false;
+				};
+				if (this.gridView = true) {
+					this.gridView = false;
+				};
+			},
+			toggleGridView: function toggleGridView() {
+				this.gridView = !this.gridView;
+				if (this.gridView = true) {
+					this.gridView = true;
+				};
+				if (this.mapView = true) {
+					this.mapView = false;
+				};
+				if (this.listView = true) {
+					this.listView = false;
+				};
+			},
+			toggleMapView: function toggleMapView() {
+				this.gridView = !this.gridView;
 
-	      var vm = this;
-	      axios.get('institution.json').then(function (response) {
-	        // var presell = this.presellLocations;
-	        // var presell = JSON.parse(string);
-	        _this.institutions = response.data.data;
-	      });
-	    }
-	  }
+				if (this.mapView = true) {
+					this.mapView = true;
+				};
+				if (this.listView = true) {
+					this.listView = false;
+				};
+				if (this.gridView = true) {
+					this.gridView = false;
+				};
+			},
+			getEntries: function getEntries() {
+				var _this = this;
+
+				var vm = this;
+				axios.get('institution.json').then(function (response) {
+					// var presell = this.presellLocations;
+					// var presell = JSON.parse(string);
+					_this.institutions = response.data.data;
+				});
+			}
+		}
 	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -22565,32 +22631,27 @@
 	  return _c('div', [_c('header', {
 	    staticClass: "site-header"
 	  }, [_c('h1', [_vm._v("INSTITUTIONEN")]), _vm._v(" "), _c('nav', [_c('span', {
-	    directives: [{
-	      name: "show",
-	      rawName: "v-show",
-	      value: (_vm.mapView),
-	      expression: "mapView"
-	    }]
-	  }, [_c('i', {
+	    class: {
+	      active: _vm.gridView
+	    },
+	    on: {
+	      "click": _vm.toggleGridView
+	    }
+	  }, [_c('i', [_vm._v("▦ Raster")])]), _vm._v(" "), _c('span', {
+	    class: {
+	      active: _vm.listView
+	    },
 	    on: {
 	      "click": _vm.toggleListView
 	    }
-	  }, [_vm._v("▦ Liste")]), _vm._v(" "), _c('i', {
-	    staticClass: "inactive"
-	  }, [_vm._v("📌 Karte")])]), _vm._v(" "), _c('span', {
-	    directives: [{
-	      name: "show",
-	      rawName: "v-show",
-	      value: (_vm.listView),
-	      expression: "listView"
-	    }]
-	  }, [_c('i', {
-	    staticClass: "inactive"
-	  }, [_vm._v("▦ Liste")]), _vm._v(" "), _c('i', {
+	  }, [_c('i', [_vm._v("☷ Liste")])]), _vm._v(" "), _c('span', {
+	    class: {
+	      active: _vm.mapView
+	    },
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_vm._v("📌 Karte")])])])]), _vm._v(" "), (_vm.mapView) ? _c('section', {
+	  }, [_c('i', [_vm._v("📌 Karte")])])])]), _vm._v(" "), (_vm.mapView) ? _c('section', {
 	    staticClass: "institution--overview--map-view map-view"
 	  }, [_c('googlemap', {
 	    attrs: {
@@ -22600,10 +22661,10 @@
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (_vm.listView),
-	      expression: "listView"
+	      value: (_vm.gridView),
+	      expression: "gridView"
 	    }],
-	    staticClass: "group of-three institutions--overview--list-view list-view"
+	    staticClass: "group of-three institutions--overview--grid-view grid-view"
 	  }, _vm._l((_vm.institutions), function(entry) {
 	    return _c('div', {
 	      staticClass: "institutions--overview_child"
@@ -22631,19 +22692,56 @@
 	          color: color.color
 	        })
 	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('h2', {
+	      staticClass: "program-title"
+	    }, [_vm._v(_vm._s(entry.programmTitle))]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿")]) : _vm._e()
 	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
 	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿*")]) : _vm._e()
-	    }), _vm._v(" "), (entry.wifi == 1) ? _c('span', [_vm._v("⌔")]) : _vm._e()], 2), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address) + " "), (entry.location) ? _c('span', [_vm._v(_vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('p', {
-	      staticClass: "journey",
-	      domProps: {
-	        "innerHTML": _vm._s(entry.journey)
+	    })], 2)], 2)])
+	  })), _vm._v(" "), _c('section', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.listView),
+	      expression: "listView"
+	    }],
+	    staticClass: "institutions--overview--list-view list-view"
+	  }, [_c('ul', _vm._l((_vm.institutions), function(entry) {
+	    return _c('li', {
+	      staticClass: "institutions--overview_child"
+	    }, [_vm._l((entry.shuttleLine), function(color) {
+	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
+	      staticClass: "suttle-line"
+	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      return _c('span', {
+	        staticClass: "suttle-line",
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_vm._v(_vm._s(color.title) + " ")])
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	      attrs: {
+	        "href": entry.url
 	      }
-	    }, [_vm._v(_vm._s(entry.journey))])], 2)])
-	  }))])
+	    }, [_vm._v("\n\t\t\t\t" + _vm._s(entry.title))])]), _vm._v(" "), _c('div', {
+	      staticClass: "info-bar"
+	    }, [_c('address', [_c('i', [_vm._v("📌")]), _vm._v(" " + _vm._s(entry.address)), (entry.location) ? _c('span', [_vm._v(", " + _vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('div', {
+	      staticClass: "icons"
+	    }, [(entry.advanceSale == 1) ? _c('div', [_vm._v("🎫 Vorverkauf")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
+	      return (value === 'wheelchair') ? _c('div', [_vm._v("♿ Rollstuhlgängig")]) : _vm._e()
+	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
+	      return (value === 'wheelchair') ? _c('div', [_vm._v("♿* Teilweise Rollstuhlgängig")]) : _vm._e()
+	    })], 2)])], 2)
+	  }))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

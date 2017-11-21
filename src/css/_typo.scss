@@ -64,14 +64,16 @@ time,
 strong,
 header#header,
 button,
+.site-header nav,
 
 // .institutions h1.title,
 
 .institutions .suttle-line,
 .institutions--overview h1,
+
 .institutions--single h1.title,
 .institutions .visitor-infos,
-.institutions address,
+.institutions--single address,
 .institutions--single .program h2,
 
 .institutions h3,
@@ -107,8 +109,10 @@ footer a,
 .program-list h1,
 header h1,
 header.site-header h1,
-
-.institutions--single .program-text {
+.food h3,
+.institutions--single .program-text,
+.institutions--overview .grid-view h2
+ {
 	font-family: 'lyon-medium', times;
 }
 
@@ -153,7 +157,7 @@ header.site-header h1,
 .link-with-arrow
   {
 	text-transform: uppercase;
-	letter-spacing: .04em;
+	letter-spacing: .025em;
 	line-height: 1em !important;
 }
 
@@ -189,9 +193,13 @@ figcaption,
 .program .selected h1,
 // .program li.program--event h1,
 
+.institutions--overview--grid-view h1,
 .institutions--overview--list-view h1,
-.institutions--overview--list-view .icons,
-.institutions--overview--list-view span strong,
+
+.institutions--overview .grid-view h2,
+
+.institutions--overview--grid-view .icons,
+.institutions--overview--grid-view span strong,
 
 .institutions--single .program h2,
 .visit h2,
@@ -206,7 +214,7 @@ figcaption,
 		font-size: 1.75em;
 	}
 	@media only screen and (min-width: $bp5) {
-		font-size: 2em;
+		font-size: 1.75em;
 	}
 }
 

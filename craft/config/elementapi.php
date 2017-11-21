@@ -170,7 +170,7 @@ return [
         ],
         'institution.json' => [
             'elementType' => ElementType::Entry,
-            'cache' => true,
+            // 'cache' => true,
             'criteria' => ['section' => 'program', 'type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
              $photos = [];
@@ -188,6 +188,7 @@ return [
                 'advanceSale' => $entry->advanceSale,
                 'wifi' => $entry->wifi,
                 'accessibility' => $entry->accessibility,
+                'programmTitle' => (string) $entry->programmTitle,
                 'photos' => $photos,
                 'shuttleLine' => array_map( function (CategoryModel $category) {
                     return [

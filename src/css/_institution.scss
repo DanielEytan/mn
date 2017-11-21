@@ -5,7 +5,7 @@
 			margin-bottom: 50px;
 		}
 	&--overview {
-		&--list-view {
+		&--grid-view {
 			>* {
 				margin-bottom: 60px;
 				figure {
@@ -31,6 +31,20 @@
 					}
 					h1 {
 						text-decoration: underline;
+					}
+				}
+			}
+		}
+		&--list-view {
+			li {
+				margin-bottom: 2em;
+				padding-top: .5em;
+				border-top: solid 2px;
+				h1 {
+					margin-bottom: .5em;
+					&:hover {
+						text-decoration: underline;
+						
 					}
 				}
 			}
@@ -93,7 +107,22 @@
 	}
 	@media screen and (min-width: $bp2) {
 		&--overview {
-			
+			&--list-view {
+				li {
+					.info-bar {
+						display: flex;
+						justify-content: space-between;
+						.icons >*{
+							display: inline-block;
+							margin-left: .5em;
+						}
+						
+						
+						
+						
+					}
+				}
+			}
 		}
 		&--single {
 			.program figure {
