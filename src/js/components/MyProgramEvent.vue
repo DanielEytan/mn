@@ -13,14 +13,14 @@
       <div v-html="programevent.description">{{ programevent.description }}</div>
      
       </div>
-      <div class="icons">
+          <div class="icons">
           <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Kinder & Familien'"><span >🎠</span></div>
           <div v-for="language in programevent.languages">
-          <span v-if="language.title == 'Deutsch'">⚀</span>
-          <span v-if="language.title == 'Englisch'">⚂</span>
-          <span v-if="language.title == 'Französisch'">⚁</span>
-          <span v-if="language.title == 'Italienisch'">⚃</span>
-          <span v-if="language.title == 'Spanisch'">⚄</span>
+          <span v-if="language.title == 'Deutsch'" class="de">⚀</span>
+          <span v-if="language.title == 'Englisch'" class="en">⚂</span>
+          <span v-if="language.title == 'Französisch'" class="fr">⚁</span>
+          <span v-if="language.title == 'Italienisch'" class="it">⚃</span>
+          <span v-if="language.title == 'Spanisch'" class="other">⚄</span>
           </div>
         </div>
 

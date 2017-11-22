@@ -1,4 +1,8 @@
 .program {
+	.food {
+				padding: 1em;
+				text-align: center;
+			}
 	&__list {
 		.suttle-line {
 					font-size: .8em;
@@ -28,10 +32,7 @@
 				}
 				
 			}
-			.food {
-				padding: 1em;
-				text-align: center;
-			}
+			
 			&__event {
 				
 			}
@@ -132,14 +133,15 @@
 		}
 	}
 	@media only screen and (min-width: $bp1) {
+		.food {
+					padding: 2em;
+				}
 		&__list {
 			&--complete {
 				&__block {
 					padding-top: 3em;
 				}
-				.food {
-					padding: 2em;
-				}
+				
 			}
 			&__event {
 				div.flex-container {

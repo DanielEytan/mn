@@ -202,6 +202,8 @@ figcaption,
 .institutions--overview--grid-view span strong,
 
 .institutions--single .program h2,
+.institutions--single  h1.title,
+
 .visit h2,
 .home .info p.intro,
 
@@ -210,8 +212,11 @@ figcaption,
 .share-program h1 {
 	font-size: 1.25em;
 	line-height: 1.2em;
-	@media only screen and (min-width: $bp2) {
-		font-size: 1.75em;
+	@media only screen and (min-width: 400px) {
+		font-size: 1.4em;
+	}
+	@media only screen and (min-width: $bp4) {
+		font-size: 1.6em;
 	}
 	@media only screen and (min-width: $bp5) {
 		font-size: 1.75em;
@@ -221,9 +226,8 @@ figcaption,
 // Font-Size XL
 // .program--overview .institution h2,
 
-.institutions--single  h1.title,
 .institutions--single  span strong,
-.institutions--single .program h1.program-title,
+
 .journal--single h1.title
 
  {
@@ -238,6 +242,7 @@ figcaption,
 }
 // Font-Size XXL
 .program__list .institution h2,
+.institutions--single .program h1.program-title,
 .nav-wrapper li a,
 header.site-header,
 .home .site-title {

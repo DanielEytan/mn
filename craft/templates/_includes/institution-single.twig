@@ -1,13 +1,25 @@
 	<article class="institutions institutions--single">
 		<header>
+			<div class="suttle-line">
+				{% set shuttleLine = entry.shuttleLine %}
+				{% if shuttleLine | length < 2 %}
+				{% for color in entry.shuttleLine %}
+				<span style="color: {{ color.color }}">{{ color.title }}</span>
+				{% endfor %}
+				{% else %}
+				{% for color in entry.shuttleLine %}
+				<span style="color: {{ color.color }}"><nobr>{{ color.title }} </nobr></span>
+				{% endfor %}
+				{% endif %}
+				</div>
 			<h1 class="title">{{ entry.title }}</h1>
 
 
 			{# {% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %} #}
 
 		</header>
-		<div class="institution-infos flex-container">
-			<div>
+		<div class="institution-infos">
+			<div class="text">
 				<div class="visitor-infos">
 					{% if entry.advanceSale %}<span><i>&#127915;</i> Ticketvorverkauf</span><br>{% endif %}
 					{% set accessibility = entry.accessibility.value %}
@@ -29,25 +41,15 @@
 					
 					
 				</div>
-				<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a>
+				<address><i>📌</i> <a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a>
 				</address>
-				<div class="suttle-line">
-				{% set shuttleLine = entry.shuttleLine %}
-				{% if shuttleLine | length < 2 %}
-				{% for color in entry.shuttleLine %}
-				<span style="color: {{ color.color }}">{{ color.title }}</span>
-				{% endfor %}
-				{% else %}
-				{% for color in entry.shuttleLine %}
-				<span style="color: {{ color.color }}"><nobr>{{ color.title }} </nobr></span>
-				{% endfor %}
-				{% endif %}
-				</div>
+				
 				<h3>Anfahrt:</h3>
-				<p>{{ entry.journey }}</p>
+				<p>{{ entry.journey }}</p><br>
+					<div class="link"><a href="/institutionen">← Zur Institutions-Übersicht</a></div>
 			</div>
 			{% for img in entry.imgInstitution %}
-			<figure>
+			<figure class="building">
 				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %}
@@ -56,7 +58,6 @@
 			<header>
 				<h1 class="program-title">{{ entry.programmTitle }}</h1>
 				<div class="program-text">{{ entry.programmText }}</div>
-				<p>Essen und trinken: {{ entry.food }}</p>
 
 				{% for img in entry.programImg %}
 				<figure>
@@ -72,6 +73,11 @@
 			
 			
 			<institutionprogram parent="{{entry.number}}"></institutionprogram>
+	       <div class="food">
+	       		<h3>Essen und trinken:</h3>
+	       		<p><strong>{{ entry.food }}</strong></p>
+	       	</div>
+	       
 		</section>
 	</article>
 

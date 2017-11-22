@@ -188,6 +188,7 @@ figcaption,
 .institutions--overview--grid-view .icons,
 .institutions--overview--grid-view span strong,
 .institutions--single .program h2,
+.institutions--single h1.title,
 .visit h2,
 .home .info p.intro,
 .journal--overview .group h1,
@@ -195,7 +196,7 @@ figcaption,
 .share-program h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 400px) {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
@@ -205,12 +206,30 @@ figcaption,
     .institutions--overview--grid-view .icons,
     .institutions--overview--grid-view span strong,
     .institutions--single .program h2,
+    .institutions--single h1.title,
     .visit h2,
     .home .info p.intro,
     .journal--overview .group h1,
     .journal--single h2.subtitle,
     .share-program h1 {
-      font-size: 1.75em; } }
+      font-size: 1.4em; } }
+  @media only screen and (min-width: 1500px) {
+    .program--overview .institution h1,
+    .program--overview .institution span strong,
+    .program .selected h1,
+    .institutions--overview--grid-view h1,
+    .institutions--overview--list-view h1,
+    .institutions--overview .grid-view h2,
+    .institutions--overview--grid-view .icons,
+    .institutions--overview--grid-view span strong,
+    .institutions--single .program h2,
+    .institutions--single h1.title,
+    .visit h2,
+    .home .info p.intro,
+    .journal--overview .group h1,
+    .journal--single h2.subtitle,
+    .share-program h1 {
+      font-size: 1.6em; } }
   @media only screen and (min-width: 1900px) {
     .program--overview .institution h1,
     .program--overview .institution span strong,
@@ -221,6 +240,7 @@ figcaption,
     .institutions--overview--grid-view .icons,
     .institutions--overview--grid-view span strong,
     .institutions--single .program h2,
+    .institutions--single h1.title,
     .visit h2,
     .home .info p.intro,
     .journal--overview .group h1,
@@ -228,26 +248,21 @@ figcaption,
     .share-program h1 {
       font-size: 1.75em; } }
 
-.institutions--single h1.title,
 .institutions--single span strong,
-.institutions--single .program h1.program-title,
 .journal--single h1.title {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
-    .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title,
     .journal--single h1.title {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
-    .institutions--single h1.title,
     .institutions--single span strong,
-    .institutions--single .program h1.program-title,
     .journal--single h1.title {
       font-size: 2.5em; } }
 
 .program__list .institution h2,
+.institutions--single .program h1.program-title,
 .nav-wrapper li a,
 header.site-header,
 .home .site-title {
@@ -255,18 +270,21 @@ header.site-header,
   line-height: 1.2em; }
   @media only screen and (min-width: 768px) {
     .program__list .institution h2,
+    .institutions--single .program h1.program-title,
     .nav-wrapper li a,
     header.site-header,
     .home .site-title {
       font-size: 2.5em; } }
   @media only screen and (min-width: 1024px) {
     .program__list .institution h2,
+    .institutions--single .program h1.program-title,
     .nav-wrapper li a,
     header.site-header,
     .home .site-title {
       font-size: 3em; } }
   @media only screen and (min-width: 1900px) {
     .program__list .institution h2,
+    .institutions--single .program h1.program-title,
     .nav-wrapper li a,
     header.site-header,
     .home .site-title {
@@ -330,7 +348,6 @@ header#header nav,
 .program--overview ul.program__list .institution,
 .program--single,
 .control-program,
-.institutions--overview .list-view,
 .institutions--single header,
 .institutions--single .institution-infos,
 .program .name {
@@ -344,7 +361,6 @@ header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
-    .institutions--overview .list-view,
     .institutions--single header,
     .institutions--single .institution-infos,
     .program .name {
@@ -359,22 +375,24 @@ header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
-    .institutions--overview .list-view,
     .institutions--single header,
     .institutions--single .institution-infos,
     .program .name {
       width: 1000px;
       margin: 0 auto; } }
 
+.institutions--overview .list-view a > div,
 .program__list__event > div,
 .program--overview .food {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
+    .institutions--overview .list-view a > div,
     .program__list__event > div,
     .program--overview .food {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
+    .institutions--overview .list-view a > div,
     .program__list__event > div,
     .program--overview .food {
       width: 1000px;
@@ -687,6 +705,10 @@ footer#footer {
   .journal figure {
     margin: 40px 50px 45px; } }
 
+.program .food {
+  padding: 1em;
+  text-align: center; }
+
 .program__list .suttle-line {
   font-size: .8em; }
 
@@ -702,10 +724,6 @@ footer#footer {
 
 .program__list--complete .institution h1 a:hover {
   text-decoration: underline; }
-
-.program__list--complete .food {
-  padding: 1em;
-  text-align: center; }
 
 .program__list--selection .institution {
   margin-bottom: 1em; }
@@ -763,10 +781,10 @@ footer#footer {
     margin-bottom: 1em; }
 
 @media only screen and (min-width: 768px) {
+  .program .food {
+    padding: 2em; }
   .program__list--complete__block {
     padding-top: 3em; }
-  .program__list--complete .food {
-    padding: 2em; }
   .program__list__event {
     transition: background .4s ease-out; }
     .program__list__event div.flex-container {
@@ -803,7 +821,7 @@ footer#footer {
   .institutions--overview--grid-view > * figure {
     margin-bottom: 7.5px; }
   .institutions--overview--grid-view > * h1 {
-    margin-bottom: .25em; }
+    margin-bottom: .5em; }
   .institutions--overview--grid-view > * .icons {
     margin-bottom: 1em; }
     .institutions--overview--grid-view > * .icons span {
@@ -811,53 +829,22 @@ footer#footer {
   .institutions--overview--grid-view > *:hover h1 {
     text-decoration: underline; }
 
-.institutions--overview--list-view li {
-  margin-bottom: 2em;
-  padding-top: .5em;
+.institutions--overview--list-view li a > div {
+  padding: .5em 0 1em;
   border-top: solid 2px; }
-  .institutions--overview--list-view li h1 {
-    margin-bottom: .5em; }
-    .institutions--overview--list-view li h1:hover {
-      text-decoration: underline; }
+
+.institutions--overview--list-view li h1 {
+  margin-bottom: .5em; }
+  .institutions--overview--list-view li h1:hover {
+    text-decoration: underline; }
+
+.institutions--overview--list-view li:nth-child(2n) {
+  background: #f0f0f0; }
 
 .institutions--overview_child > div > div:hover h1 {
   text-decoration: underline; }
 
-.institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address, .institutions--single .shuttle-line {
-  margin-bottom: 1em; }
-
-.institutions--single .visitor-infos i {
-  font-size: 1.1em;
-  width: 50px;
-  display: inline-block;
-  margin-bottom: .25em; }
-
-.institutions--single .program figure {
-  margin: 30px; }
-  .institutions--single .program figure img {
-    width: 100%; }
-
-.institutions--single .program {
-  margin-bottom: 2em; }
-  .institutions--single .program h1.program-title, .institutions--single .program h2 {
-    margin-bottom: .5em; }
-  .institutions--single .program .program-text, .institutions--single .program figure {
-    margin-bottom: 2em; }
-
-.institutions--single .institution-infos {
-  margin-bottom: 1em; }
-
 @media screen and (min-width: 768px) {
-  .institutions--single .flex-container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    .institutions--single .flex-container > * {
-      -ms-flex: 0 1 49%;
-      flex: 0 1 49%; } }
-
-@media screen and (min-width: 1024px) {
   .institutions--overview--list-view li .info-bar {
     display: -ms-flexbox;
     display: flex;
@@ -866,9 +853,15 @@ footer#footer {
     .institutions--overview--list-view li .info-bar .icons > * {
       display: inline-block;
       margin-left: .5em; }
-  .institutions--single .program figure {
-    margin: 50px auto;
-    width: 80%; } }
+  .institutions--overview--list-view li:nth-child(2n) {
+    background: white; }
+  .institutions--overview--list-view li:hover {
+    background: #f0f0f0;
+    transition: background .15s ease-out; } }
+
+@media screen and (min-width: 1024px) {
+  .institutions--overview--list-view li a > div {
+    padding: .75em 0 1.25em; } }
 
 .institutions--overview .map-view aside .institutions-list li {
   margin-bottom: 1em;
@@ -979,6 +972,59 @@ footer#footer {
       height: 30px; }
     .institutions--overview .map-view aside ul.institutions-list li strong {
       line-height: 1.2em; } }
+
+.institutions--single h1.title, .institutions--single .visitor-infos, .institutions--single address, .institutions--single .shuttle-line {
+  margin-bottom: 1em; }
+
+.institutions--single .institution-infos {
+  margin-bottom: 2em; }
+  .institutions--single .institution-infos .text {
+    margin-bottom: 1em; }
+    .institutions--single .institution-infos .text i {
+      font-size: 1.3em;
+      width: 50px;
+      display: inline-block;
+      margin-bottom: .25em; }
+  .institutions--single .institution-infos figure.building img {
+    height: 300px;
+    margin: 0 auto; }
+
+.institutions--single .program figure {
+  margin: 30px; }
+  .institutions--single .program figure img {
+    width: 100%; }
+
+.institutions--single .program {
+  border-top: solid 1px;
+  padding-top: 1em;
+  margin-bottom: 2em; }
+  .institutions--single .program h1.program-title, .institutions--single .program h2 {
+    margin-bottom: .5em; }
+  .institutions--single .program .program-text, .institutions--single .program figure {
+    margin-bottom: 2em; }
+
+.institutions--single .link {
+  text-decoration: underline; }
+
+@media screen and (min-width: 768px) {
+  .institutions--single .institution-infos {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .institutions--single .institution-infos > * {
+      -ms-flex: 0 1 49%;
+      flex: 0 1 49%; }
+    .institutions--single .institution-infos figure.building img {
+      margin: 0;
+      margin-left: auto; }
+  .institutions--single .program {
+    padding-top: 2em; } }
+
+@media screen and (min-width: 1024px) {
+  .institutions--single .program figure {
+    margin: 50px auto 75px;
+    width: 80%; } }
 
 .share-program {
   padding-bottom: 2em; }
@@ -1456,6 +1502,9 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+.de {
+  color: black; }
 
 .fr {
   color: #009fe3; }

@@ -17,6 +17,7 @@
 @import 'program';
 @import 'institution';
 @import 'institution-overview-map';
+@import 'institution-single';
 
 
 // components
@@ -47,7 +48,9 @@ html {
 figcaption {
 	
 }
-
+.de {
+	color:black;
+}
 .fr {
 	color: #009fe3;
 }

@@ -45,7 +45,7 @@
      <div class="icons">
           <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Kinder & Familien'"><span >🎠</span></div>
           <div v-for="language in programevent.languages">
-          <span v-if="language.title == 'Deutsch'" class="other">⚀</span>
+          <span v-if="language.title == 'Deutsch'" class="de">⚀</span>
           <span v-if="language.title == 'Englisch'" class="en">⚂</span>
           <span v-if="language.title == 'Französisch'" class="fr">⚁</span>
           <span v-if="language.title == 'Italienisch'" class="it">⚃</span>

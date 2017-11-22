@@ -16535,7 +16535,7 @@
 	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
-	      staticClass: "other"
+	      staticClass: "de"
 	    }, [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', {
 	      staticClass: "en"
 	    }, [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', {
@@ -17407,7 +17407,17 @@
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
-	    return _c('div', [(language.title == 'Deutsch') ? _c('span', [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', [_vm._v("⚄")]) : _vm._e()])
+	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
+	      staticClass: "de"
+	    }, [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', {
+	      staticClass: "en"
+	    }, [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', {
+	      staticClass: "fr"
+	    }, [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', {
+	      staticClass: "it"
+	    }, [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("⚄")]) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
@@ -22468,7 +22478,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -22622,6 +22632,13 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 222 */
@@ -22693,13 +22710,16 @@
 	        })
 	      }, [_vm._v(_vm._s(color.title) + " ")])
 	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('h2', {
-	      staticClass: "program-title"
-	    }, [_vm._v(_vm._s(entry.programmTitle))]), _vm._v(" "), _c('div', {
+	      staticClass: "program-title",
+	      attrs: {
+	        "id": "wordwrap"
+	      }
+	    }, [(entry.programmTitle === 'EXPERIMENTIERWERKSTATT') ? _c('span', [_vm._v("EXPERIMENTIER-WERKSTATT")]) : _c('span', [_vm._v(_vm._s(entry.programmTitle))])]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿")]) : _vm._e()
 	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
-	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿*")]) : _vm._e()
+	      return (value === 'partlyWheelchair') ? _c('span', [_vm._v("♿ *")]) : _vm._e()
 	    })], 2)], 2)])
 	  })), _vm._v(" "), _c('section', {
 	    directives: [{
@@ -22712,7 +22732,11 @@
 	  }, [_c('ul', _vm._l((_vm.institutions), function(entry) {
 	    return _c('li', {
 	      staticClass: "institutions--overview_child"
-	    }, [_vm._l((entry.shuttleLine), function(color) {
+	    }, [_c('a', {
+	      attrs: {
+	        "href": entry.url
+	      }
+	    }, [_c('div', [_vm._l((entry.shuttleLine), function(color) {
 	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
 	        staticClass: "suttle-line",
 	        style: ({
@@ -22728,19 +22752,17 @@
 	          color: color.color
 	        })
 	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
-	      attrs: {
-	        "href": entry.url
-	      }
-	    }, [_vm._v("\n\t\t\t\t" + _vm._s(entry.title))])]), _vm._v(" "), _c('div', {
+	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(entry.title))]), _vm._v(" "), _c('div', {
 	      staticClass: "info-bar"
 	    }, [_c('address', [_c('i', [_vm._v("📌")]), _vm._v(" " + _vm._s(entry.address)), (entry.location) ? _c('span', [_vm._v(", " + _vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('div', [_vm._v("🎫 Vorverkauf")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return (value === 'wheelchair') ? _c('div', [_vm._v("♿ Rollstuhlgängig")]) : _vm._e()
 	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
-	      return (value === 'wheelchair') ? _c('div', [_vm._v("♿* Teilweise Rollstuhlgängig")]) : _vm._e()
-	    })], 2)])], 2)
+	      return (value === 'partlyWheelchair') ? _c('div', [_vm._v("♿* Teilweise Rollstuhlgängig")]) : _vm._e()
+	    }), _vm._v(" "), _vm._l((entry.partlyWheelchair), function(value) {
+	      return _c('div', [_vm._v(" Party!!!")])
+	    })], 2)])], 2)])])
 	  }))])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true

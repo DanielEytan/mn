@@ -55,10 +55,10 @@ header#header nav,
 .program--single,
 
 .control-program,
-.institutions--overview .list-view,
 .institutions--single header,
 .institutions--single .institution-infos,
 .program .name
+
 {
 	margin: 15px;
 
@@ -72,7 +72,10 @@ header#header nav,
 		margin: 0 auto;
 	}
 }
+
+.institutions--overview .list-view a >div,
 .program__list__event >div,
+
 .program--overview .food
  {
 	margin: 0 15px;
