@@ -9,9 +9,10 @@
 
 	<section class="journal journal--single">
 			<article>
-				<header class="section-header">
-					<h1 class="title">{{ entry.title }}</h1>
+				<header class="site-header">
+					<h1>{{ entry.title }}</h1>
 				</header>
+
 				<h1 class="title"></h1>
 					{% for img in entry.cover %}
 						<figure>
@@ -35,7 +36,7 @@
 							{% endfor %}
 						{% case "program" %}
 						<div class="program">
-   							<ul class="program__list program__list--selection" >
+   							{# <ul class="program__list program__list--selection" >
 							{% for entry in block.entry %}
    							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
 								
@@ -64,12 +65,28 @@
 										</time>
 						            {% endfor %}
 						            {{ entry.description }}
-      									{# <saveprogram></saveprogram> #}
 
 								
 						         </li>
 							{% endfor %}
-							</ul>
+							</ul> #}
+
+							<ul class="program__list program__list--selection">
+							
+							{# {{ program }} #}
+
+							{# {% endfor %} #}
+							{# {% set programId = craft.field.getFieldByHandle() %} #}
+							{# {{ programId }} #}
+							{% for entry in block.entry %}
+							{% set program = entry.id %}
+							
+					              <journalprogram :id="{{program}}"></journalprogram>
+					              {# <journalprogram v-for="entry in program"></journalprogram> #}
+
+					        
+					         {% endfor %}
+					      </ul>
 						</div>
 					{% endswitch %}
 				{% endfor %}
