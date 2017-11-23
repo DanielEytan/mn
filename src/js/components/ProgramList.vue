@@ -117,7 +117,6 @@ module.exports = {
           var doc = document.documentElement;
           var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
-          console.log(top);
            if (top > 4000) {
             this.hideWhenScrolled = true;
             this.showWhenScrolled = true;

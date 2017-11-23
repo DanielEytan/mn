@@ -1,16 +1,16 @@
 <template>
  <div class="share-program">
    
-  <h1>Teile deine Auswahl</h1>
+  <h1>Teile dein Programm</h1>
   <div  >
    <div class="link">
-    <p>Du kannst deine Auswahl mit deinem Namen personalisieren und als Link verschicken.</p>
+    <p>Du kannst dein Programm mit deinem Namen personalisieren und als Link verschicken.</p>
     <!-- <p class="mb">Trage dafür deinen Namen ein.</p> -->
-    <input @change="getItems" v-model="name" placeholder="Namen"><br><br>
+    <input @change="getItems" v-model="name" placeholder="Name"><br><br>
     <div>
-    <p class="link-to-share"><a :href="url" class="directlink">{{ url }}</a>{{name}}</p>
+    <p class="link-to-share"><a :href="url" class="directlink"><nobr>{{ url }}</nobr></a>{{name}}</p>
 
-    <div v-on:click="getItems"><button  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</button></div>
+    <div class="share-button" v-on:click="getItems"><span  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</span></div>
     </div>
     <!-- <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br> -->
  </div>
@@ -21,7 +21,6 @@
 
  <div v-on:click="getItems"><button><a :href="mail"><i>ⓜ</i> Mail</a></button></div>
  <div v-on:click="getItems"><button><a :href="facebook + url"><i>ⓕ</i> Facebook</a></button></div>
-
  <div v-on:click="getItems"><button><a :href="twitter"><i>ⓣ</i> Twitter</a></button></div>
  </div>
 
@@ -99,7 +98,7 @@ methods: {
       }
    },
    onCopy: function (e) {
-      this.buttonText = "✔︎ Dein Link ist in der Zwischenablage gespeichert.";
+      this.buttonText = "✔︎ Link ist kopiert.";
       // this.saved = !this.saved;
    },
    onError: function (e) {
