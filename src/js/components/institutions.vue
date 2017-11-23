@@ -52,12 +52,12 @@
 								<span class="suttle-line"><strong>{{ entry.number }}</strong></span>
 								<span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
 							</div>
-							<h1>
-							{{ entry.title }}</h1>
+							<h1>{{ entry.title }}</h1>
+							
 							<div class="info-bar">
 								<address><i>📌</i> {{ entry.address }}<span v-if="entry.location">, {{ entry.location }}</span></address>
 								<div class="icons">
-									<div v-if="entry.advanceSale == 1">&#127915; Vorverkauf</div>
+									<div v-if="entry.advanceSale == 1">&#127915; Vorverkauf/Abendkasse</div>
 									<div v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855; Rollstuhlgängig</div>
 									<div v-for="value in entry.partlyWheelchair" v-if="value === 'partlyWheelchair'">&#9855;* Teilweise Rollstuhlgängig</div>
 									<div v-for="value in entry.partlyWheelchair"> Party!!!</div>

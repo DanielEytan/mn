@@ -14,6 +14,8 @@ import saveProgram from './components/SaveProgram.vue'
 import shareProgram from './components/ShareMyProgram.vue'
 import proposedProgram from './components/proposedProgram.vue'
 import institutionProgram from './components/institutionProgram.vue'
+import journalProgram from './components/journalProgram.vue'
+
 
 import savedLink from './components/SavedLink.vue'
 import counter from './components/Counter.vue'
@@ -49,6 +51,8 @@ var vueApp = new Vue({
         shareprogram: shareProgram,
         proposedprogram: proposedProgram,
         institutionprogram: institutionProgram,
+        journalprogram: journalProgram,
+
 
 
         savedlink: savedLink,

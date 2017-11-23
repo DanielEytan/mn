@@ -75,6 +75,7 @@ return [
                         'title' => $event->title,
                         'id' => $event->id,
                         'description' => (string) $event->description,
+                        'additionalLang' => (string) $event->additionalLang,
                         'time' => $timeBlocks,
                         'themes' => array_map( function (CategoryModel $category) {
                             return [
