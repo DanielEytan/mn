@@ -1,0 +1,31 @@
+{% extends "_layout" %}
+{% set title = "Besuch" %}
+{% set mt = "mt" %}
+
+{% block content %}
+
+<div class="tickets">
+	<header class="site-header">
+		<h1>Tickets</h1>
+	</header>
+	<div class="info-block">		
+		<section>
+
+			<div>
+				{{ entry.tickets }}
+			</div>
+			<div class="presell">
+				<div>
+					{{ entry.presell }}
+				</div>
+				<presell></presell>
+			</div>
+			<div>
+				{{ entry.boxOffice }}
+			</div>
+
+		</section>
+	</div>
+</div>
+
+{% endblock %}

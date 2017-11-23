@@ -55,8 +55,8 @@
 					<ul v-if="menuOpen">
 						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
 						<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
-						<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
-						<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
+						<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
+						<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
 
 						{# <li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li> #}
 					</ul>
