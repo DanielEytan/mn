@@ -4,9 +4,15 @@
 				text-align: center;
 			}
 	&__list {
-		.suttle-line {
-					font-size: .8em;
-				}
+		.institution {
+			h1:hover a {
+				text-decoration: underline;
+			}
+			.suttle-line {
+				font-size: .8em;
+			}
+		}
+		
 
 		&--complete {
 			&__block {
@@ -45,7 +51,7 @@
 		}
 		&--selection {
 			.institution {
-				margin-bottom: 1em;
+				// margin-bottom: 1em;
 			}
 		}
 		&__event {
@@ -64,14 +70,16 @@
 				// }
 				
 			}
-			h1 {
-				margin-bottom: .5em;
+			h1.event-title {
+				// margin-bottom: .5em;
 				// font-size: 1.05em;
 			}
 			p {
 				margin-bottom: 1em;
 			}
-
+			.additional-lang {
+				// color: $grey-dark;
+			}
 			.time {
 				margin-bottom: 1em;
 				>* {
@@ -154,7 +162,7 @@
 					// 	flex: 0 1 auto;
 					// }
 					h1 {
-						margin-bottom: 1em;
+						margin-bottom: .5em;
 					}
 					p {
 						margin-bottom: 1.25em;

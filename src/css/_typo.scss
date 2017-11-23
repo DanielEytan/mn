@@ -97,7 +97,10 @@ footer a,
 
 .share-program .mail a,
 .home .site-title h1,
-.link-with-arrow {
+.link-with-arrow,
+.info-block h2, 
+.info-block h3,
+.info-block b {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -154,7 +157,9 @@ header.site-header h1,
 .share-program h1,
 .home .site-title,
 .home .lang,
-.link-with-arrow
+.link-with-arrow,
+.info-block h2,
+.info-block h3
   {
 	text-transform: uppercase;
 	letter-spacing: .025em;
@@ -209,7 +214,8 @@ figcaption,
 
 .journal--overview .group h1,
 .journal--single h2.subtitle,
-.share-program h1 {
+.share-program h1,
+.info-block h2 {
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: 400px) {
@@ -255,6 +261,6 @@ header.site-header,
 		font-size: 3em;
 	} 
 	@media only screen and (min-width: $bp5) {
-		font-size: 3.25em;
+		font-size: 3.5em;
 	} 
 }

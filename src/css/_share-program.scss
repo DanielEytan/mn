@@ -1,3 +1,4 @@
+
 .share-program {
 	padding-bottom: 2em;
 	h1{
@@ -6,6 +7,7 @@
 	p {
 		// max-width: 600px;
 	}
+	
 	.mb {
 		margin-bottom: 1em;
 	}
@@ -19,23 +21,18 @@
 		margin-bottom: 2em;
 		p {
 			margin-bottom: 1em;
+		}
+		.link-to-share {
+			overflow-x: hidden;
+			padding-bottom: .25em;
+			font-size: .8em;
+			border: solid 1px;
+			// padding: 
 			&:hover {
-				text-decoration: underline;
-			}
+					text-decoration: underline;
+				}
 		}
 	}
-	@media only screen and (min-width: $bp1){
-
-		.flex-container {
-		display: flex;
-		align-items: center;
-		>* {
-			flex: 1 0 49%;
-			// text-align: center;
-		}
-	}
-	}
-
 	.share {
 		>div{
 			display: inline-block;
@@ -46,5 +43,26 @@
 			margin-bottom: 1em;
 		}
 	}
+	@media only screen and (min-width: $bp1){
+		.flex-container {
+			display: flex;
+			align-items: center;
+			>* {
+				flex: 1 0 49%;
+				// text-align: center;
+			}
+		}
+		.link {
+			>div {
+				display: flex;
+				>div.share-button {
+					flex: 1 0 auto;
+					padding: .3em .5em .45em;
+				}
+			}
+		}
+	}
+
+	
 
 }

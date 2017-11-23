@@ -114,7 +114,10 @@ footer a,
 .share-program .button button,
 .share-program .mail a,
 .home .site-title h1,
-.link-with-arrow {
+.link-with-arrow,
+.info-block h2,
+.info-block h3,
+.info-block b {
   font-family: 'main-eb', helvetica; }
 
 .program h1, .program .institution h2,
@@ -151,7 +154,9 @@ header.site-header h1,
 .share-program h1,
 .home .site-title,
 .home .lang,
-.link-with-arrow {
+.link-with-arrow,
+.info-block h2,
+.info-block h3 {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -193,7 +198,8 @@ figcaption,
 .home .info p.intro,
 .journal--overview .group h1,
 .journal--single h2.subtitle,
-.share-program h1 {
+.share-program h1,
+.info-block h2 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 400px) {
@@ -211,7 +217,8 @@ figcaption,
     .home .info p.intro,
     .journal--overview .group h1,
     .journal--single h2.subtitle,
-    .share-program h1 {
+    .share-program h1,
+    .info-block h2 {
       font-size: 1.4em; } }
   @media only screen and (min-width: 1500px) {
     .program--overview .institution h1,
@@ -228,7 +235,8 @@ figcaption,
     .home .info p.intro,
     .journal--overview .group h1,
     .journal--single h2.subtitle,
-    .share-program h1 {
+    .share-program h1,
+    .info-block h2 {
       font-size: 1.6em; } }
   @media only screen and (min-width: 1900px) {
     .program--overview .institution h1,
@@ -245,7 +253,8 @@ figcaption,
     .home .info p.intro,
     .journal--overview .group h1,
     .journal--single h2.subtitle,
-    .share-program h1 {
+    .share-program h1,
+    .info-block h2 {
       font-size: 1.75em; } }
 
 .institutions--single span strong,
@@ -288,7 +297,7 @@ header.site-header,
     .nav-wrapper li a,
     header.site-header,
     .home .site-title {
-      font-size: 3.25em; } }
+      font-size: 3.5em; } }
 
 @keyframes bc {
   0% {
@@ -350,7 +359,10 @@ header#header nav,
 .control-program,
 .institutions--single header,
 .institutions--single .institution-infos,
-.program .name {
+.program .name,
+.mobility,
+.tickets,
+.test {
   margin: 15px; }
   @media screen and (min-width: 1024px) {
     .text-block section > div,
@@ -363,7 +375,10 @@ header#header nav,
     .control-program,
     .institutions--single header,
     .institutions--single .institution-infos,
-    .program .name {
+    .program .name,
+    .mobility,
+    .tickets,
+    .test {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -377,7 +392,10 @@ header#header nav,
     .control-program,
     .institutions--single header,
     .institutions--single .institution-infos,
-    .program .name {
+    .program .name,
+    .mobility,
+    .tickets,
+    .test {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -709,7 +727,10 @@ footer#footer {
   padding: 1em;
   text-align: center; }
 
-.program__list .suttle-line {
+.program__list .institution h1:hover a {
+  text-decoration: underline; }
+
+.program__list .institution .suttle-line {
   font-size: .8em; }
 
 .program__list--complete__block {
@@ -725,9 +746,6 @@ footer#footer {
 .program__list--complete .institution h1 a:hover {
   text-decoration: underline; }
 
-.program__list--selection .institution {
-  margin-bottom: 1em; }
-
 .program__list__event:nth-child(2n) {
   background: #f0f0f0; }
 
@@ -737,9 +755,6 @@ footer#footer {
   padding: 15px 50px 20px 0;
   margin-bottom: 0;
   cursor: pointer; }
-
-.program__list__event h1 {
-  margin-bottom: .5em; }
 
 .program__list__event p {
   margin-bottom: 1em; }
@@ -794,7 +809,7 @@ footer#footer {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
       .program__list__event div.flex-container h1 {
-        margin-bottom: 1em; }
+        margin-bottom: .5em; }
       .program__list__event div.flex-container p {
         margin-bottom: 1.25em; }
       .program__list__event div.flex-container .time, .program__list__event div.flex-container .icons {
@@ -831,7 +846,8 @@ footer#footer {
 
 .institutions--overview--list-view li a > div {
   padding: .5em 0 1em;
-  border-top: solid 2px; }
+  border-top: solid 2px;
+  cursor: pointer; }
 
 .institutions--overview--list-view li h1 {
   margin-bottom: .5em; }
@@ -1041,8 +1057,18 @@ footer#footer {
     margin-bottom: 2em; }
     .share-program .link p {
       margin-bottom: 1em; }
-      .share-program .link p:hover {
+    .share-program .link .link-to-share {
+      overflow-x: hidden;
+      padding-bottom: .25em;
+      font-size: .8em;
+      border: solid 1px; }
+      .share-program .link .link-to-share:hover {
         text-decoration: underline; }
+  .share-program .share > div {
+    display: inline-block;
+    margin-right: .25em; }
+  .share-program .share p {
+    margin-bottom: 1em; }
   @media only screen and (min-width: 768px) {
     .share-program .flex-container {
       display: -ms-flexbox;
@@ -1051,12 +1077,14 @@ footer#footer {
       align-items: center; }
       .share-program .flex-container > * {
         -ms-flex: 1 0 49%;
-        flex: 1 0 49%; } }
-  .share-program .share > div {
-    display: inline-block;
-    margin-right: .25em; }
-  .share-program .share p {
-    margin-bottom: 1em; }
+        flex: 1 0 49%; }
+    .share-program .link > div {
+      display: -ms-flexbox;
+      display: flex; }
+      .share-program .link > div > div.share-button {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        padding: .3em .5em .45em; } }
 
 .program--overview .filter .filter__checklists--wrapper {
   color: white;
@@ -1528,6 +1556,13 @@ html {
   border-bottom: solid 1px; }
   .text-block section:last-of-type {
     border-bottom: none; }
+
+.info-block {
+  margin-bottom: 5em; }
+  .info-block h2, .info-block h3, .info-block p {
+    margin-bottom: 1em; }
+  .info-block .presell {
+    margin-bottom: 2em; }
 
 header.site-header {
   margin-bottom: .5em; }
