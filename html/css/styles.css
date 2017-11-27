@@ -641,26 +641,6 @@ footer#footer {
   position: relative;
   padding: 1px; }
 
-.home .cover {
-  height: 70vh;
-  overflow: hidden;
-  background: url(../bilder/keyvisual-2.jpg) no-repeat center center;
-  background-size: cover;
-  background-color: #646464;
-  background-blend-mode: multiply;
-  animation: bc 2s;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .home .cover .site-title {
-    color: whitesmoke;
-    text-align: center;
-    animation: st 2s;
-    padding-bottom: .25em; }
-
 .home .info .lang {
   margin-bottom: 2em; }
   .home .info .lang > * {

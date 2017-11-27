@@ -1,19 +1,19 @@
 {% extends "_layout" %}
 {% set title = "Home" %}
+{% set mt = "mt" %}
 
 
 {% block content %}
 
 {# <twitter></twitter> #}
+<header class="site-header">
+					 	<counter :days="daysLeft"></counter>
+	</header>
 <div class="home">
+	
 	<section class="cover">
 		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
-		<div class="site-title">
-					 	<counter :days="daysLeft"></counter>
-			
-		<h1>Museumsnacht Basel</h1>
-		<p>19. Januar 2018</p>
-		</div>
+		
 	</section>
 	<section class="info">
 		<div>

@@ -3,13 +3,12 @@
 {% set mt = "mt" %}
 
 {% block content %}
-
-<div class="tickets">
-	<header class="site-header">
+<header class="site-header">
 		<h1>Tickets</h1>
 	</header>
+<section class="tickets">
+	
 	<div class="info-block">		
-		<section>
 
 			<div>
 				{{ entry.tickets }}
@@ -30,8 +29,8 @@
 				{{ entry.boxOffice }}
 			</div>
 
-		</section>
+
 	</div>
-</div>
+</section>
 
 {% endblock %}

@@ -18143,7 +18143,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18154,8 +18154,6 @@
 
 	'use strict';
 
-	//
-	//
 	//
 	//
 	//
@@ -18178,9 +18176,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "counter"
-	  }, [_vm._v("\n   Noch " + _vm._s(_vm.days) + " Nächte bis zur Museumsnacht\n   ")])
+	  return _c('h1', [_vm._v("Noch " + _vm._s(_vm.days) + " Nächte bis zur Museumsnacht Basel")])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
