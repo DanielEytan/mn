@@ -20,6 +20,13 @@ footer#footer > section,
 }
 header#header > div {
 	margin: 10px 15px 11px;
+	@media screen and (min-width: $bp1) {
+		margin: 15px 30px;
+	}
+	@media screen and (min-width: $bp4) {
+		margin: 20px 40px 22.5px;
+
+	}
 	
 }
 .home section.info,

@@ -11,28 +11,17 @@ header#header.reduced {
   			background-repeat: no-repeat;
   		}
 	}
-	.centered .mn-date {
-				line-height: 0em;
-		span {
-			// display: none;
-			opacity: 0;
-			transform: translateY(-1.5em);
-			transition: opacity .15s, transform .25s;
-
-		}
-	}
 	.flex-container {
-		height: 30px;
+		height: 20px;
 	}
 }
 
 header#header {
 	width: 100%;
 	position: fixed;
-	// border-bottom: 1px solid;
 	box-shadow: 0px 0px 8px 4px rgba(0,0,0,.1);
 	background: white;
-	z-index: 10;
+	z-index: 12;
 	top: 0;
 
 	h1 {
@@ -42,11 +31,11 @@ header#header {
 		text-indent: -9999px;
 		display: block;
 		background: url(./../bilder/logo_schwarz.svg);
-  		// background-size: 50px 44px;
   		background-size: 30px 27px;
+
   		background-repeat: no-repeat;
   		height: 27px;
-  		transition: background .25s;
+  		// transition: background .25s;
   		&.active {
 			background: url(./../bilder/logo_weiss.svg);
   			background-size: 31px 27px;
@@ -62,11 +51,8 @@ header#header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 50px;
+		height: 40px;
 		transition: height .25s;
-		// >* {
-		// 	flex: 0 1 auto;
-		// }
 	}
 	#menu {
 		width: 232px;
@@ -110,14 +96,6 @@ header#header {
 			}
 		}
 	}
-		// #mymenu {
-		// 	background: $dark;
-		// 	padding: 30px;
-		// 	text-align: center;
-		// 	a {
-		// 		color: white;
-		// 	}
-		// }
 		.burger-toggle {
 			cursor: pointer;
 			letter-spacing: .05em;
@@ -185,12 +163,17 @@ header#header {
 		.mn-date {
 			display: none;
 		}
+		
 	}
 	@media screen and (min-width: $bp1) {
+
 		#menu {
 			.burger-toggle {
 				// right: 30px;
 			}
+		}
+		.flex-container {
+			height: 49px;
 		}
 	}
 	@media screen and (min-width: $bp2) {
@@ -206,7 +189,9 @@ header#header {
 		  			background-size: 130px 41px;					
 		  		}
 			}
-		
+		// .flex-container {
+		// 	height: 60px;
+		// }
 		
 	}
 	@media screen and (min-width: $bp3) {
@@ -224,33 +209,4 @@ header#header {
 			}
 		}
 	}
-}
-@keyframes first {
-	0% {
-		width: 100%;
-	}
-	30% {
-		width: 70%
-	}
-	40% {
-		width: 90%;
-	}
-	80% {
-		width: 80%;
-	}
-}
-@keyframes middle {
-	0% {
-		width: 100%;
-	}
-	40% {
-		width: 30%
-	}
-	60% {
-		width: 80%;
-	}
-	80% {
-		width: 50%;
-	}
-
 }

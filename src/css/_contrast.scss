@@ -1,5 +1,5 @@
 #vue-app, header#header {
-	transition: background .15s ease, color .15s ease;
+	// transition: background .15s ease, color .15s ease;
 }
 #vue-app.active {
 	background: $dark;
@@ -31,6 +31,12 @@
 		.saved-link a{			
 			color: red;
 		}
+	}
+	.de {
+		color:white;
+	}
+	.scroll-top-button {
+		background: $dark;
 	}
 	.selected-institution {
 		background: $dark !important;
