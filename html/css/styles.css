@@ -166,23 +166,20 @@ figcaption,
 .institutions--single .program-text,
 .journal .program-list.selected h1,
 .institutions--overview .map-view .suttle-line strong,
-.institutions--overview .map-view h1,
-.info-box {
+.institutions--overview .map-view h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1,
-    .info-box {
+    .institutions--overview .map-view h1 {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1,
-    .info-box {
+    .institutions--overview .map-view h1 {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -716,6 +713,10 @@ footer#footer {
     max-width: 275px;
     background: #f0f0f0;
     padding: 1em; }
+    .journal--overview .group .info-box > div i {
+      font-size: 3em;
+      margin-bottom: .5em;
+      display: inline-block; }
 
 @media only screen and (min-width: 768px) {
   .journal--overview .group {
@@ -724,30 +725,30 @@ footer#footer {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
     .journal--overview .group .post {
-      -ms-flex: 0 1 55%;
-      flex: 0 1 55%; }
+      -ms-flex: 0 1 75%;
+      flex: 0 1 75%; }
     .journal--overview .group .info-box {
+      padding: 2em 1em 1.5em;
       -ms-flex: 0 1 45%;
       flex: 0 1 45%; } }
 
 @media only screen and (min-width: 1024px) {
-  .journal--overview .group .post {
-    -ms-flex: 0 1 45%;
-    flex: 0 1 45%; }
   .journal--overview .group .info-box > div {
-    max-width: 300px; } }
+    max-width: 300px;
+    text-align: center;
+    padding: 2em; } }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1224px) {
+  .journal--overview .group .post:first-of-type {
+    -ms-flex: 0 1 55%;
+    flex: 0 1 55%; }
   .journal--overview .group .post {
-    -ms-flex: 0 1 40%;
-    flex: 0 1 40%; }
+    -ms-flex: 0 1 30%;
+    flex: 0 1 30%; }
   .journal--overview .group .info-box > div {
     max-width: 350px; } }
 
 @media only screen and (min-width: 1900px) {
-  .journal--overview .group .post {
-    -ms-flex: 0 1 30%;
-    flex: 0 1 30%; }
   .journal--overview .group .info-box {
     -ms-flex: 0 1 30%;
     flex: 0 1 30%; } }

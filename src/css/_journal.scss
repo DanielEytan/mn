@@ -7,6 +7,7 @@
 				margin-bottom: 3em;
 			}
 			.post {
+
 				p {
 					margin-bottom: 1em;
 				}
@@ -19,7 +20,13 @@
 				align-items: center;
 	  			justify-content: center;
 	  			> div {
+
 	  				// border-radius: .5em;
+	  				i {
+	  					font-size: 3em;
+	  					margin-bottom: .5em;
+	  					display: inline-block;
+	  				}
 					width: 80%;
 					max-width: 275px;
 					// border: solid 2px $yellow;
@@ -38,9 +45,10 @@
 			display: flex;
 			justify-content: space-around;
 			.post {
-				flex: 0 1 55%;
+				flex: 0 1 75%;
 			}
 			.info-box {
+				padding: 2em 1em 1.5em;
 				// width: 300px;
 				flex: 0 1 45%;
 				> div {
@@ -52,22 +60,27 @@
 	@media only screen and (min-width: $bp2) {
 		.group {
 
-			.post {
-				flex: 0 1 45%;
-				// max-width: 800px;
-			}
+			// .post {
+			// 	flex: 0 1 65%;
+			// 	// max-width: 800px;
+			// }
 			.info-box > div{
 				max-width: 300px;
+				text-align: center;
+				padding: 2em;
 				// width: 300px;
 				// flex: 0 1 350px;
 			}
 		}
 	}
-	@media only screen and (min-width: $bp4) {
+	@media only screen and (min-width: $bp3) {
 		.group {
 			
+			.post:first-of-type {
+				flex: 0 1 55%;
+			}
 			.post {
-				flex: 0 1 40%;
+				flex: 0 1 30%;
 			}
 			.info-box > div{
 				max-width: 350px;
@@ -80,7 +93,7 @@
 		.group {
 			
 			.post {
-				flex: 0 1 30%;
+				// flex: 0 1 30%;
 			}
 			.info-box {
 				flex: 0 1 30%;

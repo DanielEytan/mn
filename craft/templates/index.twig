@@ -16,16 +16,8 @@
 
 		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
 		
-	</section> #}
-	<section class="info">
-		<div>
-			<div class="lang">
-				<p><a href="/"><i class="fr">🇫🇷</i><br>Informations en francais</a></p>
-				<p><a href="/"><i class="en">🇬🇧</i><br>Informations in English</a></p>
-			</div>
-{# 			<p class="intro">Am Freitag, 19. Januar 2018 findet von 18.00 bis 2.00 Uhr die <nobr>18. Museumsnacht Basel</nobr> statt. Mit nur einem <a href="/besuch">Ticket</a> haben Sie die Möglichkeit <a href="/programm">xx Veranstaltungen</a>  in <a href="/institutionen">36 Museen und Gastinstitutionen </a> in drei Ländern zu besuchen.</p> #}
-		</div>
 	</section>
+
 <section class="journal journal--overview" >
 	{# <journaloverview></journaloverview>	 #}
 		<div class="group">
@@ -51,11 +43,11 @@
 				{% else %}
 					<div class="info-box">
 						<div>
-							{% for img in entry.cover %}
+							{# {% for img in entry.cover %}
 								<figure>
 									<img src="{{ img.url }}" alt="{{ img.title }}">
 								</figure>
-							{% endfor %}
+							{% endfor %} #}
 							<i>🎠</i>
 							{{ entry.text }}
 						</div>
@@ -67,6 +59,14 @@
 {# 		<div class="narrow link">
 			<a href="/journal">Alle Beiträge</a>
 		</div> #}
+	</section>
+		<section class="info">
+		<div>
+			<div class="lang">
+				<p><a href="/"><i class="fr">🇫🇷</i><br>Informations en francais</a></p>
+				<p><a href="/"><i class="en">🇬🇧</i><br>Informations in English</a></p>
+			</div>
+		</div>
 	</section>
 </div>
 
