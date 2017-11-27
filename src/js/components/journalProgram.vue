@@ -4,12 +4,16 @@
               <div >
 
                    <section class="institution">
-                     <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2">
-                          <span class="suttle-line" v-bind:style="{color: color.color}">{{ color.title }}</span>
-                      </div>
-                      <div v-if="entry.parent.shuttleLine.length > 1">
-                          <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
-                      </div>
+                     <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2" class="shuttle-line">
+                <div class="number"><i v-bind:style="{background: color.color}">{{ entry.parent.number }}</i></div> 
+                <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
+              </div>
+              <div v-if="entry.parent.shuttleLine.length > 1" class="shuttle-line several">
+                <div class="number"><i style="background: black">{{ entry.parent.number }}</i></div>
+                <div class="lines">
+                  <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+                </div>
+              </div>
                       <h1><a :href="entry.parent.url">{{ entry.parent.title }}</a></h1>
 
                      

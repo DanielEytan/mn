@@ -11,17 +11,16 @@
 			<article>
 				<header class="site-header">
 					<h1>{{ entry.title }}</h1>
-				</header>
-
-				<h1 class="title"></h1>
+				
 					{% for img in entry.cover %}
 						<figure>
 							<img src="{{ img.url }}" alt="{{ img.title }}">
 						</figure>
 					{% endfor %}
+					</header>
+
 				{% for block in entry.contentJournal %}
 					{% switch block.type %}
-				
 						{% case "subtitle" %}
 							<h2 class="subtitle">{{ block.subtitle }}</h2>
 						{% case "text" %}
@@ -29,11 +28,13 @@
 								{{ block.text }}
 							</div>
 						{% case "img" %}
-							{% for img in block.img %}
-								<figure>
-									<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-								</figure>
-							{% endfor %}
+							<div class="img">
+								{% for img in block.img %}
+									<figure>
+										<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+									</figure>
+								{% endfor %}
+							</div>
 						{% case "program" %}
 						<div class="program">
    							{# <ul class="program__list program__list--selection" >
@@ -72,6 +73,7 @@
 							</ul> #}
 
 							<ul class="program__list program__list--selection">
+
 							
 							{# {{ program }} #}
 
@@ -87,9 +89,9 @@
 					        
 					         {% endfor %}
 					      </ul>
-						</div>
 					{% endswitch %}
 				{% endfor %}
+				</div>
 				
 				
 					
