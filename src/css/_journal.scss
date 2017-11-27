@@ -44,8 +44,11 @@
 		.group {
 			display: flex;
 			justify-content: space-around;
+			.post:first-of-type {
+				flex: 0 1 80%;
+			}
 			.post {
-				flex: 0 1 75%;
+				flex: 0 1 48%;
 			}
 			.info-box {
 				padding: 2em 1em 1.5em;
@@ -64,6 +67,12 @@
 			// 	flex: 0 1 65%;
 			// 	// max-width: 800px;
 			// }
+			.post:first-of-type {
+				flex: 0 1 55%;
+			}
+			.post {
+				flex: 0 1 30%;
+			}
 			.info-box > div{
 				max-width: 300px;
 				text-align: center;

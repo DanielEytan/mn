@@ -724,15 +724,24 @@ footer#footer {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+    .journal--overview .group .post:first-of-type {
+      -ms-flex: 0 1 80%;
+      flex: 0 1 80%; }
     .journal--overview .group .post {
-      -ms-flex: 0 1 75%;
-      flex: 0 1 75%; }
+      -ms-flex: 0 1 48%;
+      flex: 0 1 48%; }
     .journal--overview .group .info-box {
       padding: 2em 1em 1.5em;
       -ms-flex: 0 1 45%;
       flex: 0 1 45%; } }
 
 @media only screen and (min-width: 1024px) {
+  .journal--overview .group .post:first-of-type {
+    -ms-flex: 0 1 55%;
+    flex: 0 1 55%; }
+  .journal--overview .group .post {
+    -ms-flex: 0 1 30%;
+    flex: 0 1 30%; }
   .journal--overview .group .info-box > div {
     max-width: 300px;
     text-align: center;
