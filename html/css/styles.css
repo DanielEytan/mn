@@ -43,10 +43,6 @@ table {
   border-spacing: 0; }
 
 @font-face {
-  font-family: 'lyon-regular';
-  src: url("../fonts/LyonDisplay-Regular.woff") format("woff"); }
-
-@font-face {
   font-family: 'lyon-medium';
   src: url("../fonts/LyonDisplay-Medium.woff") format("woff"); }
 
@@ -120,6 +116,7 @@ footer a,
 .info-block b {
   font-family: 'main-eb', helvetica; }
 
+header .mn-date span,
 .program h1, .program .institution h2,
 .program-list h1,
 header h1,
@@ -129,14 +126,9 @@ header.site-header h1,
 .institutions--overview .grid-view h2 {
   font-family: 'lyon-medium', times; }
 
-header .mn-date span {
-  font-family: 'lyon-regular'; }
-
 .program__list .institution h1,
-.shuttle-line,
 .filter header,
 .filter h2,
-.institutions .suttle-line,
 .institutions--overview h1,
 .institutions--single h1.title,
 .journal--single h1.title,
@@ -162,7 +154,8 @@ header.site-header h1,
   line-height: 1em !important; }
 
 figcaption,
-.suttle-line {
+.suttle-line,
+.address span {
   font-size: .8em; }
 
 .institutions--single .program-text,
@@ -312,7 +305,6 @@ header.site-header,
     color: whitesmoke; } }
 
 #container,
-header#header > div,
 footer#footer > section,
 .journal--overview,
 .institutions--overview--grid-view,
@@ -321,7 +313,6 @@ footer#footer > section,
   position: relative; }
   @media screen and (min-width: 768px) {
     #container,
-    header#header > div,
     footer#footer > section,
     .journal--overview,
     .institutions--overview--grid-view,
@@ -329,12 +320,14 @@ footer#footer > section,
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     #container,
-    header#header > div,
     footer#footer > section,
     .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 20px 40px 22.5px; } }
+
+header#header > div {
+  margin: 10px 15px 11px; }
 
 .home section.info,
 .visit section {
@@ -352,7 +345,8 @@ footer#footer > section,
 .text-block section > div,
 header.site-header,
 .home .info > div,
-.journal--single article,
+.journal--single article header,
+.journal--single article > *:not(.program),
 header#header nav,
 .program--overview ul.program__list .institution,
 .program--single,
@@ -368,7 +362,8 @@ header#header nav,
     .text-block section > div,
     header.site-header,
     .home .info > div,
-    .journal--single article,
+    .journal--single article header,
+    .journal--single article > *:not(.program),
     header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
@@ -385,7 +380,8 @@ header#header nav,
     .text-block section > div,
     header.site-header,
     .home .info > div,
-    .journal--single article,
+    .journal--single article header,
+    .journal--single article > *:not(.program),
     header#header nav,
     .program--overview ul.program__list .institution,
     .program--single,
@@ -710,8 +706,8 @@ footer#footer {
 .journal--single h1 {
   margin-bottom: 1em; }
 
-.journal--single h2 {
-  margin-bottom: 1em; }
+.journal--single h2, .journal--single .text {
+  margin-bottom: 1em !important; }
 
 .journal--single .text, .journal--single .program {
   margin-bottom: 2em; }
@@ -975,7 +971,9 @@ footer#footer {
         overflow-y: scroll;
         max-height: 100%;
         margin-right: -100px;
-        padding-right: 100px; } }
+        padding-right: 100px; }
+    .institutions--overview .map-view .selected-institution figure {
+      margin-bottom: .5em; } }
 
 @media screen and (min-width: 1024px) {
   .institutions--overview .map-view > div .selected-institution {
@@ -1002,7 +1000,7 @@ footer#footer {
       display: inline-block;
       margin-bottom: .25em; }
   .institutions--single .institution-infos figure.building img {
-    height: 300px;
+    max-height: 300px;
     margin: 0 auto; }
 
 .institutions--single .program figure {
@@ -1021,6 +1019,12 @@ footer#footer {
 
 .institutions--single .link {
   text-decoration: underline; }
+
+.institutions--single .address > * {
+  display: inline-block; }
+
+.institutions--single .address span {
+  color: grey; }
 
 @media screen and (min-width: 768px) {
   .institutions--single .institution-infos {
@@ -1404,10 +1408,8 @@ footer#footer {
     .presell .toggle-list.open .presell-toggle i {
       display: none; }
   .presell .presell-location {
-    height: 0;
     overflow: hidden;
-    transition: opacity 1s;
-    opacity: 0; }
+    transition: opacity 1s; }
     .presell .presell-location.open {
       height: auto;
       opacity: 1; }
@@ -1517,6 +1519,32 @@ button.reset-my-program:hover {
   padding: 2em; }
   .program .control-program .main-controls button:first-of-type {
     margin-right: 1em; }
+
+.shuttle-line {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: .25em; }
+  .shuttle-line .number {
+    -ms-flex: 0;
+    flex: 0;
+    margin-right: .35em; }
+    .shuttle-line .number i {
+      color: white;
+      border-radius: 1em;
+      width: 1.7em;
+      height: 1.7em;
+      display: inline-block;
+      text-align: center;
+      font-size: .8em;
+      padding: .025em 0 0; }
+  .shuttle-line .lines {
+    padding-top: .075em;
+    -ms-flex: 1 0 80%;
+    flex: 1 0 80%; }
+  .shuttle-line.several span:not(:last-of-type):after {
+    content: ", "; }
 
 #map {
   height: 400px;

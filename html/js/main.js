@@ -15878,7 +15878,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16090,6 +16090,11 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16551,13 +16556,17 @@
 	      staticClass: "de"
 	    }, [_vm._v("🇩🇪")]) : _vm._e(), _vm._v(" "), (language.title == 'English') ? _c('span', {
 	      staticClass: "en"
-	    }, [_vm._v("🇫🇷")]) : _vm._e(), _vm._v(" "), (language.title == 'Français') ? _c('span', {
+	    }, [_vm._v("🇬🇧")]) : _vm._e(), _vm._v(" "), (language.title == 'Français') ? _c('span', {
 	      staticClass: "fr"
-	    }, [_vm._v("🇬🇧")]) : _vm._e(), _vm._v(" "), (language.title == 'Italiano') ? _c('span', {
+	    }, [_vm._v("🇫🇷")]) : _vm._e(), _vm._v(" "), (language.title == 'Italiano') ? _c('span', {
 	      staticClass: "it"
 	    }, [_vm._v("🇮🇹")]) : _vm._e(), _vm._v(" "), (language.title == 'Español') ? _c('span', {
-	      staticClass: "sp"
-	    }, [_vm._v("🇪🇸")]) : _vm._e(), _vm._v(" "), (language.title == 'Magyar') ? _c('span', {}, [_vm._v("🇭🇺")]) : _vm._e(), _vm._v(" "), (language.title == 'Pусский') ? _c('span', {}, [_vm._v("🇷🇺")]) : _vm._e()])
+	      staticClass: "sp other"
+	    }, [_vm._v("🇪🇸")]) : _vm._e(), _vm._v(" "), (language.title == 'Magyar') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("🇭🇺")]) : _vm._e(), _vm._v(" "), (language.title == 'Pусский') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("🇷🇺")]) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
@@ -16588,25 +16597,43 @@
 	    staticClass: "program__list--complete__block program--block"
 	  }, [_c('div', [_c('section', {
 	    staticClass: "institution"
-	  }, [_c('h1', [_c('a', {
+	  }, [_vm._l((_vm.entry.shuttleLine), function(color) {
+	    return (_vm.entry.shuttleLine.length < 2) ? _c('div', {
+	      staticClass: "shuttle-line"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      style: ({
+	        background: color.color
+	      })
+	    }, [_vm._v(_vm._s(_vm.entry.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, [_c('span', {
+	      style: ({
+	        color: color.color
+	      })
+	    }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	  }), _vm._v(" "), (_vm.entry.shuttleLine.length > 1) ? _c('div', {
+	    staticClass: "shuttle-line several"
+	  }, [_c('div', {
+	    staticClass: "number"
+	  }, [_c('i', {
+	    staticStyle: {
+	      "background": "black"
+	    }
+	  }, [_vm._v(_vm._s(_vm.entry.number))])]), _vm._v(" "), _c('div', {
+	    staticClass: "lines"
+	  }, _vm._l((_vm.entry.shuttleLine), function(color) {
+	    return _c('span', {
+	      style: ({
+	        color: color.color
+	      })
+	    }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	  }))]) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
 	    attrs: {
 	      "href": _vm.entry.url
 	    }
-	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _vm._l((_vm.entry.shuttleLine), function(color) {
-	    return (_vm.entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line",
-	      style: ({
-	        color: color.color
-	      })
-	    }, [_vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	  }), _vm._v(" "), (_vm.entry.shuttleLine.length > 1) ? _c('div', _vm._l((_vm.entry.shuttleLine), function(color) {
-	    return _c('span', {
-	      staticClass: "suttle-line",
-	      style: ({
-	        color: color.color
-	      })
-	    }, [_vm._v(_vm._s(color.title) + " ")])
-	  })) : _vm._e(), _vm._v(" "), _c('br'), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
+	  }, [_vm._v(_vm._s(_vm.entry.title))])]), _vm._v(" "), _c('br'), _vm._v(" "), _c('h2', [_vm._v(_vm._s(_vm.entry.programmTitle))])], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list--complete__event-list"
 	  }, _vm._l((_vm.entry.events), function(programevent) {
 	    return _c('programevent', {
@@ -17746,7 +17773,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17767,6 +17794,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -17829,20 +17860,38 @@
 	    }, [_c('div', [_c('section', {
 	      staticClass: "institution"
 	    }, [_vm._l((entry.parent.shuttleLine), function(color) {
-	      return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
+	      return (entry.parent.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, [_c('span', {
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_vm._v(_vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', _vm._l((entry.parent.shuttleLine), function(color) {
+	      }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, _vm._l((entry.parent.shuttleLine), function(color) {
 	      return _c('span', {
-	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
 	      attrs: {
 	        "href": entry.parent.url
 	      }
@@ -18216,7 +18265,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18317,6 +18366,8 @@
 	    }
 	  }
 	}; //
+	//
+	//
 	//
 	//
 	//
@@ -18497,25 +18548,43 @@
 	      staticClass: "program__list__event"
 	    }, [_c('div', [_c('section', {
 	      staticClass: "institution"
-	    }, [_c('h1', [_c('a', {
+	    }, [_vm._l((entry.parent.shuttleLine), function(color) {
+	      return (entry.parent.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, [_c('span', {
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, _vm._l((entry.parent.shuttleLine), function(color) {
+	      return _c('span', {
+	        style: ({
+	          color: color.color
+	        })
+	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
 	      attrs: {
 	        "href": entry.parent.url
 	      }
-	    }, [_vm._v(_vm._s(entry.parent.title))])]), _vm._v(" "), _vm._l((entry.parent.shuttleLine), function(color) {
-	      return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
-	        style: ({
-	          color: color.color
-	        })
-	      }, [_vm._v(_vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', _vm._l((entry.parent.shuttleLine), function(color) {
-	      return _c('span', {
-	        staticClass: "suttle-line",
-	        style: ({
-	          color: color.color
-	        })
-	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })) : _vm._e()], 2), _vm._v(" "), _c('myprogramevent', {
+	    }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
 	      ref: "myprogramevent",
 	      refInFor: true,
 	      attrs: {
@@ -18531,7 +18600,7 @@
 	    on: {
 	      "click": _vm.resetMyProgram
 	    }
-	  }, [_vm._v("\n            Mein Programm zurücksetzen\n          ")])], 1), _vm._v(" "), _c('shareprogram', {
+	  }, [_vm._v("\n        Mein Programm zurücksetzen\n      ")])], 1), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }
@@ -20301,6 +20370,8 @@
 	//
 	//
 	//
+	//
+	//
 
 	exports.default = {
 	   name: 'googlemap',
@@ -20512,7 +20583,14 @@
 	         var inst = _this.inst;
 	         _this.markerCoordinates.forEach(function (coord) {
 	            var colors = coord.linecolor;
-	            var color = colors[0].color;
+
+	            console.log(colors);
+	            if (colors.length > 1) {
+	               var color = '#000000';
+	            } else {
+	               var color = colors[0].color;
+	            }
+
 	            var number = coord.number;
 	            var scale = 15;
 	            var position = new google.maps.LatLng(coord.latitude, coord.longitude);
@@ -20609,22 +20687,38 @@
 	        "src": entry.photos
 	      }
 	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
-	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
+	      return (entry.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, [_c('span', {
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line"
-	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, _vm._l((entry.shuttleLine), function(color) {
 	      return _c('span', {
-	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
@@ -20644,16 +20738,25 @@
 	          _vm.selctedInst()
 	        }
 	      }
-	    }, [_c('div', [_vm._l((entry.shuttleLine), function(color) {
-	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
+	    }, [_vm._l((entry.shuttleLine), function(color) {
+	      return (entry.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
 	        style: ({
 	          background: color.color
 	        })
-	      }, [_vm._v(" " + _vm._s(entry.number))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line multiple"
-	    }, [_vm._v(_vm._s(entry.number))])]) : _vm._e()], 2), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])])
+	      }, [_vm._v(_vm._s(entry.number))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.number))])])]) : _vm._e(), _vm._v(" "), _c('strong', [_vm._v(_vm._s(entry.title))])], 2)
 	  }))])]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "google-map",
 	    class: {
@@ -22518,7 +22621,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -22540,13 +22643,15 @@
 	//
 	//
 	//
+	//
+	//
 
 
 	module.exports = {
 	  name: 'presell',
 	  data: function data() {
 	    return {
-	      listOpen: false,
+	      listOpen: true,
 	      presellLocations: []
 	    };
 	  },
@@ -22588,16 +22693,13 @@
 	    }
 	  }, [_c('i', [_vm._v("+")]), _vm._v(" Zusätzliche Vorverkaufsstellen")])]), _vm._v(" "), _vm._l((_vm.presellLocations), function(block) {
 	    return _c('div', {
-	      staticClass: "presell-location",
-	      class: {
-	        open: _vm.listOpen
-	      }
+	      staticClass: "presell-location"
 	    }, _vm._l((block.list), function(entry) {
 	      return _c('div', [_c('div', {
 	        domProps: {
 	          "innerHTML": _vm._s(entry.listContent)
 	        }
-	      })])
+	      }, [_vm._v("\n          " + _vm._s(entry.listContent) + "    \n        ")])])
 	    }))
 	  })], 2)
 	},staticRenderFns: []}
@@ -22682,7 +22784,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -22843,6 +22945,11 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 227 */
@@ -22898,22 +23005,38 @@
 	        "src": entry.photos
 	      }
 	    })]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
-	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
+	      return (entry.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, [_c('span', {
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line"
-	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, _vm._l((entry.shuttleLine), function(color) {
 	      return _c('span', {
-	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('h2', {
+	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('h2', {
 	      staticClass: "program-title",
 	      attrs: {
 	        "id": "wordwrap"
@@ -22941,22 +23064,38 @@
 	        "href": entry.url
 	      }
 	    }, [_c('div', [_vm._l((entry.shuttleLine), function(color) {
-	      return (entry.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line",
+	      return (entry.shuttleLine.length < 2) ? _c('div', {
+	        staticClass: "shuttle-line"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        style: ({
+	          background: color.color
+	        })
+	      }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, [_c('span', {
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_c('strong', [_vm._v(_vm._s(entry.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	      staticClass: "suttle-line"
-	    }, [_c('strong', [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	      }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	    }), _vm._v(" "), (entry.shuttleLine.length > 1) ? _c('div', {
+	      staticClass: "shuttle-line several"
+	    }, [_c('div', {
+	      staticClass: "number"
+	    }, [_c('i', {
+	      staticStyle: {
+	        "background": "black"
+	      }
+	    }, [_vm._v(_vm._s(entry.number))])]), _vm._v(" "), _c('div', {
+	      staticClass: "lines"
+	    }, _vm._l((entry.shuttleLine), function(color) {
 	      return _c('span', {
-	        staticClass: "suttle-line",
 	        style: ({
 	          color: color.color
 	        })
-	      }, [_vm._v(_vm._s(color.title) + " ")])
-	    })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
+	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
 	      staticClass: "info-bar"
 	    }, [_c('address', [_c('i', [_vm._v("📌")]), _vm._v(" " + _vm._s(entry.address)), (entry.location) ? _c('span', [_vm._v(", " + _vm._s(entry.location))]) : _vm._e()]), _vm._v(" "), _c('div', {
 	      staticClass: "icons"

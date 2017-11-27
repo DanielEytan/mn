@@ -22,10 +22,10 @@
 			}
 		}
 		.presell-location {
-			height: 0;
+			// height: 0;
 			overflow: hidden;
 			transition: opacity 1s;
-			opacity: 0;
+			// opacity: 0;
 			&.open {
 				height: auto;
 				opacity: 1;

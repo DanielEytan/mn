@@ -1,8 +1,4 @@
 @font-face {
-  font-family: 'lyon-regular';
-  src: url('../fonts/LyonDisplay-Regular.woff') format('woff'), /* IE6-IE8 */
-}
-@font-face {
   font-family: 'lyon-medium';
   src: url('../fonts/LyonDisplay-Medium.woff') format('woff'), /* IE6-IE8 */
 }
@@ -104,10 +100,10 @@ footer a,
 	font-family: 'main-eb', helvetica;
 }
 
-// Font Main Book
 
 // Font Lyon Black
 
+header .mn-date span,
 .program h1, .program .institution h2,
 .program-list h1,
 header h1,
@@ -119,24 +115,15 @@ header.site-header h1,
 	font-family: 'lyon-medium', times;
 }
 
-// Font Lyon Regular
-
-header .mn-date span {
-	font-family: 'lyon-regular';
-}
-
-
 
 // Uppercase
 
 .program__list .institution h1,
-.shuttle-line,
 // .program .institution,
 
 .filter header,
 .filter h2,
 
-.institutions .suttle-line,
 .institutions--overview h1,
 
 .institutions--single h1.title,
@@ -167,7 +154,8 @@ header.site-header h1,
 }
 
 figcaption,
-.suttle-line {
+.suttle-line,
+.address span {
 	font-size: .8em;
 }
 

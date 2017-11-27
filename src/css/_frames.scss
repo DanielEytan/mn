@@ -1,7 +1,7 @@
 
 #container,
 
-header#header > div,
+
 footer#footer > section,
 .journal--overview,
 .institutions--overview--grid-view,
@@ -18,7 +18,10 @@ footer#footer > section,
 
 	}
 }
-
+header#header > div {
+	margin: 10px 15px 11px;
+	
+}
 .home section.info,
 // .journal,
 .visit section {
@@ -44,7 +47,9 @@ footer#footer > section,
 .text-block section >div,
 header.site-header,
 .home .info >div,
-.journal--single article,
+.journal--single article header,
+.journal--single article >*:not(.program),
+
 header#header nav,
 
 .program--overview ul.program__list .institution,
