@@ -234,6 +234,29 @@ return [
             ];
         },
     ],
+    'journal.json' => [
+        'elementType' => ElementType::Entry,
+        // 'cache' => true,
+            // 'paginate' => false,
+        'criteria' => [
+            'section' => 'journal',
+            // 'type' => 'institution'
+        ],
+        'transformer' => function(EntryModel $entry) {
+            $photos = [];
+            foreach ($entry->cover as $photo) {
+                $photos[] = $photo->url;
+            }
+            return [
+                'title' => $entry->title,
+                'url' => $entry->url,
+                // 'type' => $entryType->type,
+                'text' => (string) $entry->text,
+                'excerpt' => (string) $entry->excerpt,
+                'photos' => $photos
+            ];
+        },
+    ],
     'programevent.json' => [
         'elementType' => ElementType::Entry,
         'cache' => true,

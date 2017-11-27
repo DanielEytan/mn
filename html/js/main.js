@@ -145,11 +145,15 @@
 
 	var _vueScrollto2 = _interopRequireDefault(_vueScrollto);
 
+	var _journalOverview = __webpack_require__(238);
+
+	var _journalOverview2 = _interopRequireDefault(_journalOverview);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//require
 	window.axios = __webpack_require__(186);
-	window._ = __webpack_require__(238);
+	window._ = __webpack_require__(243);
 
 	//import
 
@@ -158,6 +162,10 @@
 	_vue2.default.use(_vueScrollto2.default);
 
 	_vue2.default.use(_vueRouter2.default);
+
+	// import VueMasonryPlugin from 'masonry.min.js';
+	// Vue.use(VueMasonryPlugin)
+
 
 	//vue main app instance
 	var vueApp = new _vue2.default({
@@ -174,6 +182,7 @@
 	    proposedprogram: _proposedProgram2.default,
 	    institutionprogram: _institutionProgram2.default,
 	    journalprogram: _journalProgram2.default,
+	    journaloverview: _journalOverview2.default,
 
 	    savedlink: _SavedLink2.default,
 	    counter: _Counter2.default,
@@ -24459,6 +24468,156 @@
 
 /***/ }),
 /* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(239)
+
+	var Component = __webpack_require__(11)(
+	  /* script */
+	  __webpack_require__(241),
+	  /* template */
+	  __webpack_require__(242),
+	  /* scopeId */
+	  "data-v-6840c7dc",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/www/sites/mn/src/js/components/journalOverview.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] journalOverview.vue: functional components are not supported with templates, they should use render functions.")}
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-6840c7dc", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-6840c7dc", Component.options)
+	  }
+	})()}
+
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(240);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(9)("50abd8a2", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6840c7dc\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./journalOverview.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6840c7dc\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./journalOverview.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+
+	module.exports = {
+	   name: 'jorunaloverview',
+	   // props: ['id'],
+	   data: function data() {
+	      return {
+	         journal: []
+	      };
+	   },
+	   mounted: function mounted() {
+	      this.getEntries();
+	   },
+
+	   methods: {
+	      getEntries: function getEntries() {
+	         var _this2 = this;
+
+	         var _this = this;
+	         axios.get('../journal.json').then(function (response) {
+	            _this2.journal = response.data.data;
+	         });
+	      }
+	   }
+	};
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    directives: [{
+	      name: "masonry",
+	      rawName: "v-masonry"
+	    }],
+	    attrs: {
+	      "transition-duration": "0.3s",
+	      "item-selector": ".item"
+	    }
+	  }, _vm._l((_vm.journal), function(entry) {
+	    return _c('div', {
+	      directives: [{
+	        name: "masonry-tile",
+	        rawName: "v-masonry-tile"
+	      }],
+	      staticClass: "item"
+	    }, [_vm._v("\n      " + _vm._s(entry.title) + "\n    ")])
+	  }))
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6840c7dc", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**

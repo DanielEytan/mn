@@ -1,34 +1,92 @@
-.journal {
-	&--overview {
+.journal--overview {
 		figure {
-			margin:25px 30px;
+			margin-bottom: .5em;
 		}
-	}
-	&--single {
-		figure {
-			margin: 0 0 25px;
+		.group {
+			>* {
+				margin-bottom: 3em;
+			}
+			.post {
+				p {
+					margin-bottom: 1em;
+				}
+				h1 {
+					margin-bottom: .25em;
+				}
+			}
+			.info-box {
+				display: flex;
+				align-items: center;
+	  			justify-content: center;
+	  			> div {
+	  				// border-radius: .5em;
+					width: 80%;
+					max-width: 275px;
+					// border: solid 2px $yellow;
+					background: $grey-bright;
+					// color: white;
+					// box-shadow: 0 0 20px $yellow;
+					padding: 1em;
+					// background: $grey-bright;
+	  			}
+			}
 		}
-		h1 {
-			margin-bottom: 1em;
-		}
-		h2, .text {
-			margin-bottom: 1em !important;
-		}
+		
 
-		.text, .program {
-			margin-bottom: 2em;
-		}
-		.program .selected {
-			li {
-				padding-bottom: 1em;
+	@media only screen and (min-width: $bp1) {
+		.group {
+			display: flex;
+			justify-content: space-around;
+			.post {
+				flex: 0 1 55%;
+			}
+			.info-box {
+				// width: 300px;
+				flex: 0 1 45%;
+				> div {
+					
+				}
 			}
 		}
 	}
+	@media only screen and (min-width: $bp2) {
+		.group {
 
-	@media only screen and (min-width: $bp4) {
-		figure {
-			margin: 40px 50px 45px;
+			.post {
+				flex: 0 1 45%;
+				// max-width: 800px;
+			}
+			.info-box > div{
+				max-width: 300px;
+				// width: 300px;
+				// flex: 0 1 350px;
+			}
 		}
+	}
+	@media only screen and (min-width: $bp4) {
+		.group {
+			
+			.post {
+				flex: 0 1 40%;
+			}
+			.info-box > div{
+				max-width: 350px;
 
+			}
+
+		}
+	}
+		@media only screen and (min-width: $bp5) {
+		.group {
+			
+			.post {
+				flex: 0 1 30%;
+			}
+			.info-box {
+				flex: 0 1 30%;
+
+			}
+
+		}
 	}
 }

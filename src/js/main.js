@@ -17,6 +17,7 @@ import institutionProgram from './components/institutionProgram.vue'
 import journalProgram from './components/journalProgram.vue'
 
 
+
 import savedLink from './components/SavedLink.vue'
 import counter from './components/Counter.vue'
 
@@ -36,6 +37,10 @@ Vue.use(VueScrollTo);
 
 Vue.use(VueRouter);
 
+// import VueMasonryPlugin from 'masonry.min.js';
+// Vue.use(VueMasonryPlugin)
+import journalOverview from './components/journalOverview.vue'
+
 
 //vue main app instance
 var vueApp = new Vue({
@@ -52,6 +57,8 @@ var vueApp = new Vue({
         proposedprogram: proposedProgram,
         institutionprogram: institutionProgram,
         journalprogram: journalProgram,
+        journaloverview: journalOverview,
+
 
 
 

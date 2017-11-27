@@ -1,40 +1,47 @@
 .home {
-	// .cover {
-	// 	height: 70vh;
-	// 	overflow: hidden;
-	// 	background:  url(../bilder/keyvisual-2.jpg) no-repeat center center;
-	// 	background-size: cover;
-	// 	background-color: rgba(100,100,100, 1);
- //  		background-blend-mode: multiply;
- //  		animation: bc 2s;
-	// 	display: flex;
-	// 	align-items: center;
- //  		justify-content: center;
- //  		.site-title {
- //  			color: rgba(245,245,245,1);
- //  			text-align: center;
- //  			animation: st 2s;
- //  			padding-bottom: .25em;
- //  		}
+	.cover {
+		height: 75vh;
+		overflow: hidden;
+		background:  url(../bilder/keyvisual-2.jpg) no-repeat center center;
+		background-size: cover;
+		// background-color: rgba(100,100,100, 1);
+  // 		background-blend-mode: multiply;
+  		animation: bc 2s;
+		display: flex;
+		align-items: center;
+  		justify-content: center;
+  		.site-title {
+  			color: rgba(245,245,245,1);
+  			text-align: center;
+  			animation: st 2s;
+  			padding-bottom: .25em;
+  		}
 
-	// }
+	}
 	.info {
 		.lang {
 			margin-bottom: 2em;
+			display: flex;
+				justify-content: space-around;
 			>* {
 				text-align: center;
-				margin-bottom: 1em;
+				margin: 1em 0 1.5em;
+				width: 135px;
+				i {
+					font-size: 2em;
+					margin-bottom: .5em;
+					display: inline-block;
+				}
 			}
 		}
 	}
 	@media only screen and (min-width: $bp1) {
 		.info {
 			.lang {
-				display: flex;
-			justify-content: space-around;
-			>* {
-				flex: 0 1 45%;
-			}
+				margin-bottom: 3em;
+				>* {
+					flex: 0 1 45%;
+				}
 			}
 		}
 	}

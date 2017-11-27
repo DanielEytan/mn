@@ -30,6 +30,7 @@
     "vue": "^2.5.3",
     "vue-clipboard2": "0.0.6",
     "vue-google-maps": "^0.1.21",
+    "vue-masonry": "^0.10.15",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.7.10",
     "vue-slider-component": "^2.4.1",

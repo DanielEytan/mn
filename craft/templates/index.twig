@@ -7,45 +7,66 @@
 
 {# <twitter></twitter> #}
 <header class="site-header">
-					 	<counter :days="daysLeft"></counter>
+	<counter :days="daysLeft"></counter>
 	</header>
 <div class="home">
 	
-	<section class="cover">
+{# 	<section class="cover">
+					 	<div class="site-title"><counter :days="daysLeft"></counter></div>
+
 		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
 		
-	</section>
+	</section> #}
 	<section class="info">
 		<div>
 			<div class="lang">
-				<p>Nuit Des Musées Bale<br><a href="/">Informations en francais</a></p>
-				<p>Night of the museums Basel<br><a href="/">Informations in English</a></p>
+				<p><a href="/"><i class="fr">🇫🇷</i><br>Informations en francais</a></p>
+				<p><a href="/"><i class="en">🇬🇧</i><br>Informations in English</a></p>
 			</div>
-			<p class="intro">Am Freitag, 19. Januar 2018 findet von 18.00 bis 2.00 Uhr die <nobr>18. Museumsnacht Basel</nobr> statt. Mit nur einem <a href="/besuch">Ticket</a> haben Sie die Möglichkeit <a href="/programm">xx Veranstaltungen</a>  in <a href="/institutionen">36 Museen und Gastinstitutionen </a> in drei Ländern zu besuchen.</p>
+{# 			<p class="intro">Am Freitag, 19. Januar 2018 findet von 18.00 bis 2.00 Uhr die <nobr>18. Museumsnacht Basel</nobr> statt. Mit nur einem <a href="/besuch">Ticket</a> haben Sie die Möglichkeit <a href="/programm">xx Veranstaltungen</a>  in <a href="/institutionen">36 Museen und Gastinstitutionen </a> in drei Ländern zu besuchen.</p> #}
 		</div>
-		
 	</section>
 <section class="journal journal--overview" >
-		<div class="group of-three">
-			{% for entry in craft.entries.section('journal').limit(6) %}
-				<div>
+	{# <journaloverview></journaloverview>	 #}
+		<div class="group">
+			{% for entry in craft.entries.section('journal').limit(9) %}
+				{% if entry.type == "journal" %}
+				
+				<div class="post">
 					<a href="{{ entry.url }}">
-						<h1>{{ entry.title }}</h1>
 
 						{% for img in entry.cover %}
 							<figure>
 								<img src="{{ img.url }}" alt="{{ img.title }}">
 							</figure>
 						{% endfor %}
+						<p class="post-date">Gepostet am {{ entry.postDate | date("d. F Y") }}</p>
+
+						<h1>{{ entry.title }}</h1>
+
 						{{ entry.excerpt }}
-						<br><span class="link-with-arrow">Mehr</span>
+						<span class="link-with-arrow">Mehr</span>
 					</a>
 				</div>
+				{% else %}
+					<div class="info-box">
+						<div>
+							{% for img in entry.cover %}
+								<figure>
+									<img src="{{ img.url }}" alt="{{ img.title }}">
+								</figure>
+							{% endfor %}
+							<i>🎠</i>
+							{{ entry.text }}
+						</div>
+					</div>
+				{% endif %}
+
 			{% endfor %}
 		</div>
-		<div class="narrow link">
+{# 		<div class="narrow link">
 			<a href="/journal">Alle Beiträge</a>
-		</div>
+		</div> #}
 	</section>
 </div>
 

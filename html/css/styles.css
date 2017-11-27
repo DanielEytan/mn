@@ -99,7 +99,6 @@ button,
 .visit h2,
 .presell-toggle,
 .home .info a,
-.journal--overview .group h1,
 .link a,
 footer h3,
 footer a,
@@ -113,9 +112,13 @@ footer a,
 .link-with-arrow,
 .info-block h2,
 .info-block h3,
-.info-block b {
+.info-block b,
+.journal .post-date,
+.journal .info-box em,
+.journal .info-box {
   font-family: 'main-eb', helvetica; }
 
+.journal--overview .group h1,
 header .mn-date span,
 .program h1, .program .institution h2,
 .program-list h1,
@@ -148,33 +151,38 @@ header.site-header h1,
 .home .lang,
 .link-with-arrow,
 .info-block h2,
-.info-block h3 {
+.info-block h3,
+.post-date {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
 
 figcaption,
 .suttle-line,
-.address span {
+.address span,
+.post-date {
   font-size: .8em; }
 
 .institutions--single .program-text,
 .journal .program-list.selected h1,
 .institutions--overview .map-view .suttle-line strong,
-.institutions--overview .map-view h1 {
+.institutions--overview .map-view h1,
+.info-box {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1 {
+    .institutions--overview .map-view h1,
+    .info-box {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1 {
+    .institutions--overview .map-view h1,
+    .info-box {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -189,7 +197,6 @@ figcaption,
 .institutions--single h1.title,
 .visit h2,
 .home .info p.intro,
-.journal--overview .group h1,
 .journal--single h2.subtitle,
 .share-program h1,
 .info-block h2 {
@@ -208,7 +215,6 @@ figcaption,
     .institutions--single h1.title,
     .visit h2,
     .home .info p.intro,
-    .journal--overview .group h1,
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2 {
@@ -226,7 +232,6 @@ figcaption,
     .institutions--single h1.title,
     .visit h2,
     .home .info p.intro,
-    .journal--overview .group h1,
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2 {
@@ -244,22 +249,24 @@ figcaption,
     .institutions--single h1.title,
     .visit h2,
     .home .info p.intro,
-    .journal--overview .group h1,
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2 {
       font-size: 1.75em; } }
 
 .institutions--single span strong,
+.journal--overview .group h1,
 .journal--single h1.title {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single span strong,
+    .journal--overview .group h1,
     .journal--single h1.title {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single span strong,
+    .journal--overview .group h1,
     .journal--single h1.title {
       font-size: 2.5em; } }
 
@@ -268,8 +275,15 @@ figcaption,
 .nav-wrapper li a,
 header.site-header,
 .home .site-title {
-  font-size: 1.75em;
+  font-size: 1.4em;
   line-height: 1.2em; }
+  @media only screen and (min-width: 374px) {
+    .program__list .institution h2,
+    .institutions--single .program h1.program-title,
+    .nav-wrapper li a,
+    header.site-header,
+    .home .site-title {
+      font-size: 1.75em; } }
   @media only screen and (min-width: 768px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
@@ -335,16 +349,13 @@ header#header > div {
     header#header > div {
       margin: 20px 40px 22.5px; } }
 
-.home section.info,
 .visit section {
   padding: 30px 15px 32.5px;
   position: relative; }
   @media screen and (min-width: 768px) {
-    .home section.info,
     .visit section {
       padding: 40px 30px 42.5px; } }
   @media screen and (min-width: 1500px) {
-    .home section.info,
     .visit section {
       padding: 60px 50px 65px; } }
 
@@ -641,43 +652,105 @@ footer#footer {
   position: relative;
   padding: 1px; }
 
+.home .cover {
+  height: 75vh;
+  overflow: hidden;
+  background: url(../bilder/keyvisual-2.jpg) no-repeat center center;
+  background-size: cover;
+  animation: bc 2s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .home .cover .site-title {
+    color: whitesmoke;
+    text-align: center;
+    animation: st 2s;
+    padding-bottom: .25em; }
+
 .home .info .lang {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
   .home .info .lang > * {
     text-align: center;
-    margin-bottom: 1em; }
+    margin: 1em 0 1.5em;
+    width: 135px; }
+    .home .info .lang > * i {
+      font-size: 2em;
+      margin-bottom: .5em;
+      display: inline-block; }
 
 @media only screen and (min-width: 768px) {
   .home .info .lang {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around; }
+    margin-bottom: 3em; }
     .home .info .lang > * {
       -ms-flex: 0 1 45%;
       flex: 0 1 45%; } }
 
 .journal--overview figure {
-  margin: 25px 30px; }
+  margin-bottom: .5em; }
 
-.journal--single figure {
-  margin: 0 0 25px; }
+.journal--overview .group > * {
+  margin-bottom: 3em; }
 
-.journal--single h1 {
+.journal--overview .group .post p {
   margin-bottom: 1em; }
 
-.journal--single h2, .journal--single .text {
-  margin-bottom: 1em !important; }
+.journal--overview .group .post h1 {
+  margin-bottom: .25em; }
 
-.journal--single .text, .journal--single .program {
-  margin-bottom: 2em; }
+.journal--overview .group .info-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .journal--overview .group .info-box > div {
+    width: 80%;
+    max-width: 275px;
+    background: #f0f0f0;
+    padding: 1em; }
 
-.journal--single .program .selected li {
-  padding-bottom: 1em; }
+@media only screen and (min-width: 768px) {
+  .journal--overview .group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+    .journal--overview .group .post {
+      -ms-flex: 0 1 55%;
+      flex: 0 1 55%; }
+    .journal--overview .group .info-box {
+      -ms-flex: 0 1 45%;
+      flex: 0 1 45%; } }
+
+@media only screen and (min-width: 1024px) {
+  .journal--overview .group .post {
+    -ms-flex: 0 1 45%;
+    flex: 0 1 45%; }
+  .journal--overview .group .info-box > div {
+    max-width: 300px; } }
 
 @media only screen and (min-width: 1500px) {
-  .journal figure {
-    margin: 40px 50px 45px; } }
+  .journal--overview .group .post {
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%; }
+  .journal--overview .group .info-box > div {
+    max-width: 350px; } }
+
+@media only screen and (min-width: 1900px) {
+  .journal--overview .group .post {
+    -ms-flex: 0 1 30%;
+    flex: 0 1 30%; }
+  .journal--overview .group .info-box {
+    -ms-flex: 0 1 30%;
+    flex: 0 1 30%; } }
 
 .program .food {
   padding: 1em;

@@ -36,65 +36,19 @@
 								{% endfor %}
 							</div>
 						{% case "program" %}
-						<div class="program">
-   							{# <ul class="program__list program__list--selection" >
-							{% for entry in block.entry %}
-   							{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
-								
-								<li class="program__list__event">
-				
-						          	 <section class="institution">
-									{% for linie in parent.shuttleLine %}
-										<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
-						               <a href="{{ parent.url }}">{{ parent.title }}</a><br></span>
-									{% endfor %}
-						               
+							<div class="program">
+   							
 
-						            </section>
-						            <h1 class="event-title">{{ entry.title }}</h1>
-						            {% for time in entry.time%}
-						            	<time>
-											{% switch time.type %}
-											{% case "setTimes" %}
-											{{ time.start | date("h:i") }} 
-											{% if time.duration | length %}(Dauer: {{ time.duration }}){% endif %}<br>
-											{% case "continuous" %}
-											{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} (Durchgehend)
-											{% case "iterating" %}									
-											{{ time.start | date("h:i") }} – {{ time.end | date("h:i") }} ({{ time.frequency }}{% if time.duration | length %}, Dauer: {{ time.duration }} {% endif %})
-											{% endswitch %}
-										</time>
-						            {% endfor %}
-						            {{ entry.description }}
-
-								
-						         </li>
-							{% endfor %}
-							</ul> #}
-
-							<ul class="program__list program__list--selection">
-
-							
-							{# {{ program }} #}
-
-							{# {% endfor %} #}
-							{# {% set programId = craft.field.getFieldByHandle() %} #}
-							{# {{ programId }} #}
-							{% for entry in block.entry %}
-							{% set program = entry.id %}
-							
-					              <journalprogram :id="{{program}}"></journalprogram>
+								<ul class="program__list program__list--selection">
+								{% for entry in block.entry %}
+								{% set program = entry.id %}
+					            	<journalprogram :id="{{program}}"></journalprogram>
 					              {# <journalprogram v-for="entry in program"></journalprogram> #}
-
-					        
-					         {% endfor %}
-					      </ul>
+						        {% endfor %}
+						      </ul>
+						  </div>
 					{% endswitch %}
-				{% endfor %}
-				</div>
-				
-				
-					
+				{% endfor %}				
 			</article>
 	</section>
 
