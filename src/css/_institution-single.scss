@@ -15,7 +15,7 @@
 				}
 			}
 			figure.building img {
-				height: 300px;
+				max-height: 300px;
 				margin: 0 auto;
 			}
 		}
@@ -39,6 +39,15 @@
 		}
 		.link {
 			text-decoration: underline;
+		}
+		
+		.address {
+			>* {
+				display: inline-block;
+			}
+			span {
+				color: grey;
+			}
 		}
 	@media screen and (min-width: $bp1) {
 	.institution-infos {

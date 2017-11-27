@@ -17,13 +17,15 @@
 					<figure>
 						<img v-bind:src="entry.photos">
 					</figure>
-
-					<div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-						<span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+					<div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2" class="shuttle-line">
+						<div class="number"><i v-bind:style="{background: color.color}">{{ entry.number }}</i></div> 
+						<div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
 					</div>
-					<div v-if="entry.shuttleLine.length > 1">
-						<span class="suttle-line"><strong>{{ entry.number }}</strong></span>
-						<span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
+					<div v-if="entry.shuttleLine.length > 1" class="shuttle-line several">
+						<div class="number"><i style="background: black">{{ entry.number }}</i></div>
+						<div class="lines">
+							<span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+						</div>
 					</div>
 					<h1>{{ entry.title }}</h1>
 					<h2 class="program-title" id="wordwrap"><span v-if="entry.programmTitle === 'EXPERIMENTIERWERKSTATT'">EXPERIMENTIER-WERKSTATT</span><span v-else>{{ entry.programmTitle }}</span></h2>
@@ -45,13 +47,16 @@
 				<li v-for="entry in institutions" class="institutions--overview_child">
 					<a v-bind:href="entry.url">
 						<div>
-							<div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-								<span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
+							<div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2" class="shuttle-line">
+							<div class="number"><i v-bind:style="{background: color.color}">{{ entry.number }}</i></div> 
+							<div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
+						</div>
+						<div v-if="entry.shuttleLine.length > 1" class="shuttle-line several">
+							<div class="number"><i style="background: black">{{ entry.number }}</i></div>
+							<div class="lines">
+								<span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
 							</div>
-							<div v-if="entry.shuttleLine.length > 1">
-								<span class="suttle-line"><strong>{{ entry.number }}</strong></span>
-								<span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
-							</div>
+						</div>
 							<h1>{{ entry.title }}</h1>
 							
 							<div class="info-bar">

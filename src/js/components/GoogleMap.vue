@@ -11,14 +11,17 @@
               <figure>
                 <img v-bind:src="entry.photos">
              </figure>
-
-             <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-                <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.number }}</strong> {{ color.title }}</span>
-             </div>
-             <div v-if="entry.shuttleLine.length > 1">
-                <span class="suttle-line"><strong>{{ entry.number }}</strong></span>
-                <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
-             </div>
+          <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2" class="shuttle-line">
+            <div class="number"><i v-bind:style="{background: color.color}">{{ entry.number }}</i></div> 
+            <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
+          </div>
+          <div v-if="entry.shuttleLine.length > 1" class="shuttle-line several">
+            <div class="number"><i style="background: black">{{ entry.number }}</i></div>
+            <div class="lines">
+              <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+            </div>
+          </div>
+           
              <h1>{{ entry.title }}</h1>
              <div class="icons">
                 <span v-if="entry.advanceSale == 1">&#127915;</span>
@@ -39,14 +42,13 @@
   <!-- <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br> -->
   <ul class="institutions-list">
    <li v-for="entry in institutionsData" v-on:click="inst = entry.number; selctedInst()">
-    <div>
-      <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-       <span class="suttle-line" v-bind:style="{background: color.color}"> {{ entry.number }}</span>
-    </div>
-    <div v-if="entry.shuttleLine.length > 1">
-       <span class="suttle-line multiple">{{ entry.number }}</span>
-    </div>
- </div>
+
+      <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2" class="shuttle-line">
+        <div class="number"><i v-bind:style="{background: color.color}">{{ entry.number }}</i></div> 
+      </div>
+      <div v-if="entry.shuttleLine.length > 1" class="shuttle-line several">
+        <div class="number"><i style="background: black">{{ entry.number }}</i></div>
+      </div>
 
  <strong>{{ entry.title }}</strong>
 </li>
@@ -333,8 +335,15 @@ createMap () {
  var _this = this;
  var inst = _this.inst;
  _this.markerCoordinates.forEach(function (coord) {
-  var colors = coord.linecolor;
-  var color = colors[0].color;
+    var colors = coord.linecolor;
+
+    console.log(colors);
+    if (colors.length > 1 ) {
+      var color = '#000000';
+    } else {
+      var color = colors[0].color;
+    }
+
   var number = coord.number;
   var scale = 15;
   const position = new google.maps.LatLng(coord.latitude, coord.longitude);

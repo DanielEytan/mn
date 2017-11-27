@@ -41,8 +41,8 @@
 					
 					
 				</div>
-				<address><i>📌</i> <a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a>
-				</address>
+				<div class="address">
+				<address><i>📌</i> <a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps</nobr></span></div>
 				
 				<h3>Anfahrt:</h3>
 				<p>{{ entry.journey }}</p><br>
