@@ -15,7 +15,7 @@
 		</header>
 		<ul>
 			{% for docs in craft.assets.source('docs') %}
-				<li><a href="{{ docs.getUrl}}"><strong>{{ docs.title }}</a></strong><br>Link: https://museumsnacht.ch/downloads/{{ docs.slug }} </li>
+				<li><a href="{{ docs.getUrl}}"><strong>{{ docs.title }}</a></strong><br>Link: https://museumsnacht.ch/dokumente/{{ docs.slug }} </li>
 			{% endfor %}
 		</ul>
 	</div>
