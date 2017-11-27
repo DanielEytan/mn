@@ -1,7 +1,7 @@
 <section class="program program--single">
-		<ul class="program-list selected" >
+		<ul class="program__list program__list--selection">
 			{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
-			<li>
+			<li class="program__list__event">
 				<section class="institution">
 					{% for linie in parent.shuttleLine %}
 					<span class="suttle-line" style="color: {{linie.color}}"> {{ parent.number }} {{ linie.title }}</span><br>
@@ -22,7 +22,8 @@
 				</time>
 				{% endfor %}
 				{{ entry.description }}
-				<br>
+				{% if entry.additionalLang | length %}{{ entry.additionalLang }}{% endif %}
+								<br>
 				<h2><strong>Art der Veranstaltung</strong></h2>
 				<ul>
 					{% for entry in entry.kindOfEvent %}

@@ -18179,10 +18179,8 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "centered"
-	  }, [_c('div', {
-	    staticClass: "mn-date"
-	  }, [_c('span', [_vm._v("Noch " + _vm._s(_vm.days) + " Nächte bis zur Museumsnacht "), _c('br')]), _vm._v("Freitag, 19. Januar 2018, 18–2 Uhr")])])
+	    staticClass: "counter"
+	  }, [_vm._v("\n   Noch " + _vm._s(_vm.days) + " Nächte bis zur Museumsnacht\n   ")])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
