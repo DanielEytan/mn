@@ -1,0 +1,22 @@
+{% extends "_layout" %}
+{% set title = "News" %}
+{% set mt = "mt" %}
+	{% block content %}
+
+
+	<div class="downloads test">
+{# 		{% set assets = craft.assets({
+		    relatedTo: docs,
+		    order:     "sortOrder",
+		    limit:     null
+		}) %} #}
+		<header class="site-header">
+			<h1>Downloads</h1>
+		</header>
+		<ul>
+			{% for docs in craft.assets.source('docs') %}
+				<li><a href="{{ docs.getUrl}}"><strong>{{ docs.title }}</a></strong><br>Link: https://museumsnacht.ch/downloads/{{ docs.slug }} </li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endblock %}

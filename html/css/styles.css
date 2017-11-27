@@ -328,6 +328,12 @@ footer#footer > section,
 
 header#header > div {
   margin: 10px 15px 11px; }
+  @media screen and (min-width: 768px) {
+    header#header > div {
+      margin: 15px 30px; } }
+  @media screen and (min-width: 1500px) {
+    header#header > div {
+      margin: 20px 40px 22.5px; } }
 
 .home section.info,
 .visit section {
@@ -507,23 +513,15 @@ header#header.reduced a.logo {
     background-size: 31px 27px;
     background-repeat: no-repeat; }
 
-header#header.reduced .centered .mn-date {
-  line-height: 0em; }
-  header#header.reduced .centered .mn-date span {
-    opacity: 0;
-    -ms-transform: translateY(-1.5em);
-    transform: translateY(-1.5em);
-    transition: opacity .15s, transform .25s; }
-
 header#header.reduced .flex-container {
-  height: 30px; }
+  height: 20px; }
 
 header#header {
   width: 100%;
   position: fixed;
   box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
   background: white;
-  z-index: 10;
+  z-index: 12;
   top: 0; }
   header#header h1 {
     margin-bottom: 0; }
@@ -533,8 +531,7 @@ header#header {
     background: url(./../bilder/logo_schwarz.svg);
     background-size: 30px 27px;
     background-repeat: no-repeat;
-    height: 27px;
-    transition: background .25s; }
+    height: 27px; }
     header#header a.logo.active {
       background: url(./../bilder/logo_weiss.svg);
       background-size: 31px 27px;
@@ -546,7 +543,7 @@ header#header {
     justify-content: space-between;
     -ms-flex-align: center;
     align-items: center;
-    height: 50px;
+    height: 40px;
     transition: height .25s; }
   header#header #menu {
     width: 232px;
@@ -614,6 +611,9 @@ header#header {
       font-size: 1.25em; }
       header#header .mn-date {
         display: none; } }
+  @media screen and (min-width: 768px) {
+    header#header .flex-container {
+      height: 49px; } }
   @media screen and (min-width: 1024px) {
     header#header #menu {
       width: 300px; }
@@ -633,26 +633,6 @@ header#header {
           opacity: 1;
           -ms-transform: translateY(0);
           transform: translateY(0); } }
-
-@keyframes first {
-  0% {
-    width: 100%; }
-  30% {
-    width: 70%; }
-  40% {
-    width: 90%; }
-  80% {
-    width: 80%; } }
-
-@keyframes middle {
-  0% {
-    width: 100%; }
-  40% {
-    width: 30%; }
-  60% {
-    width: 80%; }
-  80% {
-    width: 50%; } }
 
 footer#footer {
   border-top: 1px solid;
@@ -1320,9 +1300,6 @@ footer#footer {
       right: 0;
       top: 0; } }
 
-#vue-app, header#header {
-  transition: background .15s ease, color .15s ease; }
-
 #vue-app.active {
   background: #1A0042;
   color: white;
@@ -1345,6 +1322,10 @@ footer#footer {
       background: white; }
     #vue-app.active header#header .saved-link a {
       color: red; }
+  #vue-app.active .de {
+    color: white; }
+  #vue-app.active .scroll-top-button {
+    background: #1A0042; }
   #vue-app.active .selected-institution {
     background: #1A0042 !important; }
   #vue-app.active .program .control-program .main-controls {
@@ -1503,7 +1484,7 @@ button.reset-my-program:hover {
   height: 40px;
   padding-bottom: 9px;
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid black;
+  border: 1px solid;
   z-index: 20; }
   .scroll-top-button.show {
     bottom: 20px;
@@ -1558,6 +1539,9 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+.downloads ul li {
+  margin-bottom: 2em; }
 
 .de {
   color: black; }
