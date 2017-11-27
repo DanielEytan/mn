@@ -2,15 +2,20 @@
     <li class="program__list--complete__block program--block" v-if="showProgramEvents">
       <div>
         <section class="institution">
+          <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2" class="shuttle-line">
+            <div class="number"><i v-bind:style="{background: color.color}">{{ entry.number }}</i></div> 
+            <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
+          </div>
+          <div v-if="entry.shuttleLine.length > 1" class="shuttle-line several">
+            <div class="number"><i style="background: black">{{ entry.number }}</i></div>
+            <div class="lines">
+              <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+            </div>
+          </div>
+
           <h1><a :href="entry.url">{{ entry.title }}</a></h1>
 
-              <div v-for="color in entry.shuttleLine" v-if="entry.shuttleLine.length < 2">
-                <span class="suttle-line" v-bind:style="{color: color.color}"> {{ color.title }}</span>
-              </div>
-              <div v-if="entry.shuttleLine.length > 1">
-                      <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
-                  </div>
-
+            
 
           <br>
           <h2>{{ entry.programmTitle }}</h2>
