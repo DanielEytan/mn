@@ -18,7 +18,13 @@
 				<div>
 					{{ entry.presell }}
 				</div>
-				<presell></presell>
+				{# <presell></presell> #}
+				{% for block in entry.boxOfficeLocations %}
+				{# 	<div>
+						{{ block.list}}
+					</div> #}
+					
+				{% endfor %}
 			</div>
 			<div>
 				{{ entry.boxOffice }}
