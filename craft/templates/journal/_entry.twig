@@ -13,7 +13,7 @@
 					<h1>{{ entry.title }}</h1>
 				
 					{% for img in entry.cover %}
-						<figure>
+						<figure {% if img.height > img.width %}class="portrait"{% endif %}>
 							<img src="{{ img.url }}" alt="{{ img.title }}">
 						</figure>
 					{% endfor %}
@@ -30,7 +30,7 @@
 						{% case "img" %}
 							<div class="img">
 								{% for img in block.img %}
-									<figure>
+									<figure {% if img.height > img.width %}class="portrait"{% endif %}>
 										<img src="{{ img.getUrl }}" alt="{{ img.title }}">
 									</figure>
 								{% endfor %}

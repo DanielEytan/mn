@@ -11,21 +11,41 @@
 	<header class="site-header">
 		<h1 class="title">Journal</h1>
 	</header>
-	<section class="journal--overview_posts group of-three">
-	{% for entry in craft.entries.section('journal') %}
-		<div>
-			<a href="{{ entry.url }}">
-				<h1>{{ entry.title }}</h1>
-				{% for img in entry.cover %}
-				<figure>
-					<img src="{{ img.url }}" alt="{{ img.title }}">
-				</figure>
-				{% endfor %}
-				{{ entry.excerpt }}
-			</a>
+	<div class="group">
+			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
+				{% if entry.type == "journal" %}
+				<div class="post">
+					<a href="{{ entry.url }}">
+
+						{% for img in entry.cover %}
+							<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+								<img src="{{ img.url }}" alt="{{ img.title }}">
+							</figure>
+						{% endfor %}
+						<p class="post-date">Gepostet am {{ entry.postDate | date("d. F Y") }}</p>
+
+						<h1><span>{{ entry.title }}</span></h1>
+
+						{{ entry.excerpt }}
+						<span class="more">Mehr</span>
+					</a>
+				</div>
+				{% else %}
+					<div class="info-box">
+						<div>
+							{# {% for img in entry.cover %}
+								<figure>
+									<img src="{{ img.url }}" alt="{{ img.title }}">
+								</figure>
+							{% endfor %} #}
+							<i>🎠</i>
+							{{ entry.text }}
+						</div>
+					</div>
+				{% endif %}
+
+			{% endfor %}
 		</div>
-	{% endfor %}
-	</section>
 </div>
 
 {% endblock %}

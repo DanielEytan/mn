@@ -24,17 +24,14 @@
 	</section>
 
 <section class="journal journal--overview" >
-	{# <journaloverview></journaloverview>	 #}
 		<div class="group">
 			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
 				{% if entry.type == "journal" %}
-				
 				<div class="post">
 					<a href="{{ entry.url }}">
 
 						{% for img in entry.cover %}
-							<figure {% if img.height > img.width %}class="portrait"{% endif %}
-							>
+							<figure {% if img.height > img.width %}class="portrait"{% endif %}>
 								<img src="{{ img.url }}" alt="{{ img.title }}">
 							</figure>
 						{% endfor %}
