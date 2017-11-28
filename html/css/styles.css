@@ -622,6 +622,13 @@ header#header {
           opacity: 1;
           -ms-transform: translateY(0);
           transform: translateY(0); } }
+  @media screen and (min-width: 1500px) {
+    header#header .flex-container {
+      height: 50px; }
+    header#header a.logo {
+      background-size: 158px 50px;
+      width: 300px;
+      height: 50px; } }
 
 footer#footer {
   border-top: 1px solid;
@@ -763,6 +770,8 @@ footer#footer {
 
 .journal--single figure {
   margin: 0 0 25px; }
+  .journal--single figure.portrait {
+    max-width: 450px; }
 
 .journal--single h1 {
   margin-bottom: 1em; }
@@ -776,9 +785,10 @@ footer#footer {
 .journal--single .program .selected li {
   padding-bottom: 1em; }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1224px) {
   .journal--single figure {
-    margin: 40px 50px 45px; } }
+    margin: 40px auto 45px;
+    max-width: 800px; } }
 
 .program .food {
   padding: 1em;
@@ -1053,16 +1063,14 @@ footer#footer {
 
 .institutions--single .institution-infos {
   margin-bottom: 2em; }
-  .institutions--single .institution-infos .text {
-    margin-bottom: 1em; }
-    .institutions--single .institution-infos .text i {
-      font-size: 1.3em;
-      width: 50px;
-      display: inline-block;
+  .institutions--single .institution-infos i {
+    font-size: 1.3em;
+    width: 50px;
+    display: inline-block; }
+  .institutions--single .institution-infos ul {
+    margin-bottom: 1.75em; }
+    .institutions--single .institution-infos ul li {
       margin-bottom: .25em; }
-  .institutions--single .institution-infos figure.building img {
-    max-height: 300px;
-    margin: 0 auto; }
 
 .institutions--single .program figure {
   margin: 30px; }
