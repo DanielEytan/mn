@@ -19,40 +19,42 @@
 
 		</header>
 		<div class="institution-infos">
-			<div class="text">
 				<div class="visitor-infos">
-					{% if entry.advanceSale %}<span><i>&#127915;</i> Vorverkauf/Abendkasse</span><br>{% endif %}
+					<ul>
+					{% if entry.advanceSale %}<li><i>&#127915;</i> Vorverkauf/Abendkasse</li>{% endif %}
 					{% set accessibility = entry.accessibility.value %}
 					{% switch accessibility %}
 					
 					{% case "wheelchair" %}
-					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span><br>
+					<li><i>&#9855;</i> {{ entry.accessibility.label }}</li>
 
 					
 					{% case "partlyWheelchair" %}
-					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span><br>
+					<li><i>&#9855;*</i> {{ entry.accessibility.label }}</li>
 
 					
 					{% default %}
 
 					
 					{% endswitch %}
-					{% if entry.wifi %}<span><i>&#8980;</i> Wi-Fi</span>{% endif %}
-					
+					{% if entry.wifi %}<li><i>&#8980;</i> Wi-Fi</li>{% endif %}
+					</ul>
+					<div class="link"><a href="/museen">← Zur Institutions-Übersicht</a></div>
 					
 				</div>
+			<div class="text">
+
 				<div class="address">
-				<address><i>📌</i> <a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps</nobr></span></div>
+					<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">{{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps ↗</nobr></span></div>
 				
-				<h3>Anfahrt:</h3>
-				<p>{{ entry.journey }}</p><br>
-					<div class="link"><a href="/institutionen">← Zur Institutions-Übersicht</a></div>
+					<h3>Anfahrt:</h3>
+					<p>{{ entry.journey }}</p><br>
 			</div>
-			{% for img in entry.imgInstitution %}
+{# 			{% for img in entry.imgInstitution %}
 			<figure class="building">
 				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
-			{% endfor %}
+			{% endfor %} #}
 		</div>
 		<section class="program">
 			<header>

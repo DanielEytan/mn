@@ -4,20 +4,23 @@
 		}
 		.institution-infos {
 			margin-bottom: 2em;
-			.text {
-				margin-bottom: 1em;
-				i {
+			i {
 					font-size: 1.3em;
 					width: 50px;
 					display: inline-block;
-					margin-bottom: .25em;
 
 				}
+			ul {
+				margin-bottom: 1.75em;
+				li {
+					margin-bottom: .25em;
+				}
 			}
-			figure.building img {
-				max-height: 300px;
-				margin: 0 auto;
-			}
+				
+			// figure.building img {
+			// 	max-height: 300px;
+			// 	margin: 0 auto;
+			// }
 		}
 		
 		.program figure {
