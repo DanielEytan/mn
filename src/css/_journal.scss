@@ -7,12 +7,19 @@
 				margin-bottom: 3em;
 			}
 			.post {
-
+				figure {
+					&.portrait {
+						width: 75%;
+					}
+				}
 				p {
 					margin-bottom: 1em;
 				}
 				h1 {
 					margin-bottom: .25em;
+				}
+				&:hover .more {
+					text-decoration: underline;
 				}
 			}
 			.info-box {
@@ -45,7 +52,11 @@
 			display: flex;
 			justify-content: space-around;
 			.post:first-of-type {
-				flex: 0 1 80%;
+				flex: 0 1 70%;
+				h1 span {
+					font-size: 1.25em;
+					line-height: 1em;
+				}
 			}
 			.post {
 				flex: 0 1 48%;
@@ -69,9 +80,18 @@
 			// }
 			.post:first-of-type {
 				flex: 0 1 55%;
+				// margin-bottom: 4em;
 			}
+			.post:nth-child(2) {
+				
+				// align-self: flex-end;
+				// margin-bottom: 0;
+			}
+			
+
 			.post {
 				flex: 0 1 30%;
+				margin-bottom: 4em;
 			}
 			.info-box > div{
 				max-width: 300px;
@@ -88,8 +108,15 @@
 			.post:first-of-type {
 				flex: 0 1 55%;
 			}
+			// .post:nth-child(3), .post:nth-child(4) {
+			// 	flex: 0 1 25%;
+			// }
+			// .post:nth-child(5) {
+			// 	flex: 0 1 40%;
+			// 	// align-self: flex-start;
+			// }
 			.post {
-				flex: 0 1 30%;
+				flex: 0 1 27%;
 			}
 			.info-box > div{
 				max-width: 350px;
@@ -98,11 +125,11 @@
 
 		}
 	}
-		@media only screen and (min-width: $bp5) {
+		@media only screen and (min-width: $bp4) {
 		.group {
 			
-			.post {
-				// flex: 0 1 30%;
+			.post:first-of-type {
+				flex: 0 1 50%;
 			}
 			.info-box {
 				flex: 0 1 30%;

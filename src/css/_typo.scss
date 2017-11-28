@@ -48,7 +48,7 @@ body {
 
 
 // Font Main Extra-Bold
-
+.more,
 .program .institution *:not(h2),
 
 .filter header,
@@ -150,6 +150,7 @@ header.site-header h1,
 .home .site-title,
 .home .lang,
 .link-with-arrow,
+.more,
 .info-block h2,
 .info-block h3,
 .post-date 
@@ -246,7 +247,7 @@ figcaption,
 .program__list .institution h2,
 .institutions--single .program h1.program-title,
 .nav-wrapper li a,
-header.site-header,
+header.site-header h1,
 .home .site-title {
 		
 	font-size: 1.4em;

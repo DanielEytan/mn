@@ -6,7 +6,12 @@
 {% block content %}
 
 {# <twitter></twitter> #}
+{# <div class="lang">
+				<p><i class="fr">🇫🇷 </i> <a href="/">Informations en francais</a></p>
+				<p><i class="en">🇬🇧 </i> <a href="/">Informations in English</a></p>
+			</div> #}
 <header class="site-header">
+			
 	<counter :days="daysLeft"></counter>
 	</header>
 <div class="home">
@@ -21,23 +26,24 @@
 <section class="journal journal--overview" >
 	{# <journaloverview></journaloverview>	 #}
 		<div class="group">
-			{% for entry in craft.entries.section('journal').limit(9) %}
+			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
 				{% if entry.type == "journal" %}
 				
 				<div class="post">
 					<a href="{{ entry.url }}">
 
 						{% for img in entry.cover %}
-							<figure>
+							<figure {% if img.height > img.width %}class="portrait"{% endif %}
+							>
 								<img src="{{ img.url }}" alt="{{ img.title }}">
 							</figure>
 						{% endfor %}
 						<p class="post-date">Gepostet am {{ entry.postDate | date("d. F Y") }}</p>
 
-						<h1>{{ entry.title }}</h1>
+						<h1><span>{{ entry.title }}</span></h1>
 
 						{{ entry.excerpt }}
-						<span class="link-with-arrow">Mehr</span>
+						<span class="more">Mehr</span>
 					</a>
 				</div>
 				{% else %}
@@ -56,17 +62,26 @@
 
 			{% endfor %}
 		</div>
-{# 		<div class="narrow link">
+		<div class="button link">
 			<a href="/journal">Alle Beiträge</a>
-		</div> #}
+		</div>
 	</section>
 		<section class="info">
-		<div>
-			<div class="lang">
-				<p><a href="/"><i class="fr">🇫🇷</i><br>Informations en francais</a></p>
-				<p><a href="/"><i class="en">🇬🇧</i><br>Informations in English</a></p>
-			</div>
-		</div>
+		<article class="infoblock">
+
+		{% for entry in craft.entries.section('journal').type('infoblock').limit(9) %}
+						<div>
+							{# {% for img in entry.cover %}
+								<figure>
+									<img src="{{ img.url }}" alt="{{ img.title }}">
+								</figure>
+							{% endfor %} #}
+							<i>🎠</i>
+							{{ entry.text }}
+						</div>
+		{% endfor %}
+					</article>
+
 	</section>
 </div>
 
