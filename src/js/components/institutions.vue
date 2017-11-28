@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<header class="site-header">
-			<h1>INSTITUTIONEN</h1>
+			<h1>Museen</h1>
 			<nav>
 				<span v-on:click="toggleGridView" v-bind:class="{ active: gridView }"><i>▦ Raster</i></span>
 				<span v-on:click="toggleListView" v-bind:class="{ active: listView }"><i>☷ Liste</i></span>

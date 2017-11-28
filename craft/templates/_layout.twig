@@ -51,19 +51,34 @@
 				</div>
 			</div>
 			<transition name="fade">
-				<nav class="nav-wrapper narrow">
-					<ul v-if="menuOpen">
+				<nav class="nav-wrapper narrow" v-if="menuOpen">
+
+					<ul class="main-nav">
 						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
-						<li><a href="{{ url('institutionen') }}" {% if craft.request.firstSegment == 'institutionen' %}class="active"{% endif %}>Institutionen</a></li>
+						<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
 						<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
 						<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
 
 						{# <li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li> #}
 					</ul>
-					<div id="mymenu">
-						{# <savedlink></savedlink> #}
-						{# <span><a href="{{ url('mein-programm') }}" {% if craft.request.firstSegment == 'mein-programm' %}class="active"{% endif %}>Mein Programm</a></span> #}
+					<div>
+						<ul class="lang">
+							<li><nobr><a href="/"><i class="fr">🇫🇷</i> <span>Informations en francais</span></a></nobr></li>
+							<li><a href="/"><i class="en">🇬🇧</i> <span>Informations in English</span></a></li>
+							
+
+						</ul>
+						<ul class="social">
+							<li><a href="https://twitter.com/museenbasel"><i>ⓣ</i> <span>@museenbasel</span></a></li>
+							<li><a href="https://www.facebook.com/museenbasel/"><i>ⓕ</i> <span>@museenbasel</span></a></li>
+							<li><a href="https://www.instagram.com/museumsnachtbasel/"><i>i</i> <span>@museumsnachtbasel</span></a></li>
+						</ul>
 					</div>
+
+					{#<div id="mymenu">
+						 <savedlink></savedlink> #}
+						{# <span><a href="{{ url('mein-programm') }}" {% if craft.request.firstSegment == 'mein-programm' %}class="active"{% endif %}>Mein Programm</a></span> 
+					</div>#}
 				</nav>
 			</transition>
 		</div>
@@ -116,7 +131,7 @@
 		</div>
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
 			<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min.js"></script>
-			
+
 			<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
 			<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
 			<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>

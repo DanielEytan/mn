@@ -22963,7 +22963,7 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('header', {
 	    staticClass: "site-header"
-	  }, [_c('h1', [_vm._v("INSTITUTIONEN")]), _vm._v(" "), _c('nav', [_c('span', {
+	  }, [_c('h1', [_vm._v("Museen")]), _vm._v(" "), _c('nav', [_c('span', {
 	    class: {
 	      active: _vm.gridView
 	    },
