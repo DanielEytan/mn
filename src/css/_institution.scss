@@ -46,13 +46,14 @@
 				}
 				h1 {
 					margin-bottom: .5em;
-					&:hover {
-						text-decoration: underline;
-					}
+					
 				}
 				&:nth-child(2n) {
 					background: $grey-bright;
 				}
+				&:hover h1 {
+						text-decoration: underline;
+					}
 			}
 		}
 		&_child >div >div{
