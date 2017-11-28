@@ -62,6 +62,8 @@ header#header,
 button,
 .site-header nav,
 
+footer i,
+
 // .institutions h1.title,
 
 .institutions .suttle-line,
@@ -100,6 +102,7 @@ footer a,
 .info-block h2, 
 .info-block h3,
 .info-block b,
+footer h2,
 
 .journal .post-date,
 .journal .info-box em,
@@ -215,7 +218,8 @@ figcaption,
 
 .journal--single h2.subtitle,
 .share-program h1,
-.info-block h2 {
+.info-block h2,
+footer h2 {
 	font-size: 1.25em;
 	line-height: 1.2em;
 	@media only screen and (min-width: 400px) {

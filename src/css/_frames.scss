@@ -1,8 +1,6 @@
 
 #container,
 
-
-footer#footer > section,
 .journal--overview,
 .institutions--overview--grid-view,
 .filter__selection--wrapper
@@ -58,6 +56,7 @@ header.site-header,
 .journal--single article >*:not(.program),
 
 header#header nav,
+footer#footer nav,
 
 .program--overview ul.program__list .institution,
 
@@ -103,3 +102,22 @@ header#header nav,
 		margin: 0 auto;
 	}
 }
+
+// FRAME IN BETWEEN
+footer#footer .glossary,
+footer#footer section,
+ {
+	margin: 15px 15px 16px;
+	position: relative;
+	@media screen and (min-width: $bp1) {
+		margin: 15px 30px;
+	}
+	@media screen and (min-width: $bp4) {
+		width: 1400px;
+		margin: 0 auto;
+	}
+	// @media screen and (min-width: $bp5) {
+	// 	width: 1500px;
+	// }
+}
+

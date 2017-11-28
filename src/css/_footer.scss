@@ -1,7 +1,93 @@
 footer#footer {
-	border-top: 1px solid;
-	padding-top: 1em;
 	z-index: 11;
 	position: relative;
-	padding: 1px;
+	p {
+		margin-bottom: 1em;
+	}
+	> div{
+		background: $grey-bright;
+		padding: .75em 0 .5em;
+		.glossary  >*{
+				margin-bottom: 1em;
+			i {
+				font-size: 2em;
+			}
+		}
+	}
+
+	section {
+		padding: 1.5em 0;
+		border-top: 1px solid;
+		&:first-of-type {
+			border-top: none;
+		}
+	}
+	h2 {
+		margin-bottom: 1em;
+	}
+	.logos {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		li {
+			flex: 0 1 28%;
+			margin-right: 2%;
+			margin-bottom: 30px;
+			display: flex;
+			 align-items: center;
+  			justify-content: center;
+			>* {
+			
+			}
+		}
+		
+	}
+	@media only screen and (min-width: $bp1) {
+		.glossary {
+			display: flex;
+			flex-wrap: wrap;
+			>* {
+				flex: 0 1 32%;
+				margin-right: 2%;
+				margin-bottom: 2em;
+				// p {
+				// 	height: 120px;
+				// }
+				&:nth-child(3) {
+					margin-right: 0;
+				}			
+			}
+		}
+		.additional-program {
+			display: flex;
+			justify-content: space-between;
+			>* {
+				flex: 0 1 49%;
+				max-width: 800px;
+			}
+		}
+		.logos {
+			li {
+				flex: 0 1 20%;
+			}
+		}
+	}
+	@media only screen and (min-width: $bp1) {
+		.thanks .logos li {
+			flex: 0 1 10%;
+		}
+	}
+	@media only screen and (min-width: $bp4) {
+
+		.glossary >* {
+			flex: 0 1 18.4%;
+			&:nth-child(3) {
+				margin-right: 2%;
+			}
+			&:nth-child(5) {
+				margin-right: 0;
+			}
+		}
+		
+	}
 }

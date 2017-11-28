@@ -52,7 +52,6 @@
 			</div>
 			<transition name="fade">
 				<nav class="nav-wrapper narrow" v-if="menuOpen">
-
 					<ul class="main-nav">
 						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
 						<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
@@ -74,11 +73,6 @@
 							<li><a href="https://www.instagram.com/museumsnachtbasel/"><i>i</i> <span>@museumsnachtbasel</span></a></li>
 						</ul>
 					</div>
-
-					{#<div id="mymenu">
-						 <savedlink></savedlink> #}
-						{# <span><a href="{{ url('mein-programm') }}" {% if craft.request.firstSegment == 'mein-programm' %}class="active"{% endif %}>Mein Programm</a></span> 
-					</div>#}
 				</nav>
 			</transition>
 		</div>
@@ -94,6 +88,71 @@
 						{% endblock %}
 					</main>
 					<footer id="footer">
+						<div>
+
+						<div class="glossary info-block">
+								<div><p>Earlybird oder Nachtschwärmerin? Kunstwerke oder Technik und Wissenschaft? Mit Klick auf ♥ können die liebsten Programmangebote gespeichert werden.</p>  <i>♥</i></div>
+								<div><p>Unterwegs mit Kindern? Achten Sie auf Programmangebote mit folgendem Symbol:</p> <i>🎠</i></div>
+								<div><p>Schon gewusst? Alle Museen und Institutionen bieten von 18-2 Uhr durchgehend Essen und Getränke an.</p>  <i>🍽</i></div>
+								<div><p>Die Museumsnacht ist auch für Gäste mit besonderen Bedürfnissen ein Genuss: Rund 80% der Museen und Institutionen sind rollstuhlgängig. </p> <i>♿</i></div>
+								<div><p>Die Infostelle am Münsterplatz ist zentraler Treffpunkt für Tickets und Auskünfte. Von hier aus starten zudem sämtliche Shuttle-Busse.</p> <i>ℹ</i> </div>
+						</div>
+						</div>
+							<section class="additional-program info-block">
+								<div><h2>Weitertanzen?</h2><p> Das <a href="http://www.dasviertel.ch/de/programm_klub">Viertel ↗</a>, <a href="https://www.heimatbasel.ch/">Heimat ↗</a>  und <a href="http://balzklub.ch/">Balz Klub ↗</a> bieten nach der Museumsnacht (ab 2 Uhr) freien Eintritt beim Vorweisen des Museumsnacht-Tickets.</p></div>
+								<div><h2>Weiterlesen?</h2><p>Während der Museumsnacht hat das Basler <a href="https://www.edubs.ch/unterstuetzung/bibliothek/lesefoerderung/jugendbuecherschiff">Jugendbücherschiff ↗</a>  an der Schifflände bis 23.30 Uhr geöffnet.  </p></div>
+							</section>
+							<section>
+								<p>Die Museumsnacht ist eine Veranstaltung der museen basel und der Abteilung Kultur Basel-Stadt.</p>
+								<ul class="logos">
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</section>
+							<section class="sponsors">
+								<h2>UNSERE SPONSOREN – EIN STARKES TRIO</h2>
+								
+								<ul class="logos">
+								{% for logo in sponsores.logoBlock %}
+									<li>
+										<a href="{{ logo.sponsorLink }}">
+											<figure v-if="activeContrast">
+										{% for img in logo.logoBright %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+										{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+										{% for img in logo.logoDark %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+										{% endfor %}
+										</figure>
+										</a>
+									</li>
+								{% endfor %}
+								</ul>
+							</section>
+							<section class="thanks">
+								<h2>DANKE</h2>
+								<ul class="logos">
+								{% for logo in thanks.logoBlock %}
+									<li>
+										<a href="{{ logo.sponsorLink }}">
+											<figure v-if="activeContrast">
+										{% for img in logo.logoBright %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+										{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+										{% for img in logo.logoDark %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+										{% endfor %}
+										</figure>
+										</a>
+									</li>
+								{% endfor %}
+								</ul>
+							</section>
 						{# <div>
 						<div class="sponsors">
 							{{ sponsores.textForSponsors }}
@@ -116,15 +175,28 @@
 						</div> #}
 						<section class="nav">
 							<h3>Museumsnacht Basel 2018</h3>
-							<nav>
-								<ul>
+							<nav class="nav-wrapper narrow">
+								<ul class="main-nav">
 									<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
 									<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
-									<li><a href="{{ url('besuch') }}" {% if craft.request.firstSegment == 'besuch' %}class="active"{% endif %}>Ihr Besuch</a></li>
-									<li><a href="{{ url('mobil') }}" {% if craft.request.firstSegment == 'mobil' %}class="active"{% endif %}>Mobilität</a></li>
+									<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
+									<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
 
-									<li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li>
+									{# <li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li> #}
 								</ul>
+								<div>
+									<ul class="lang">
+										<li><nobr><a href="/"><i class="fr">🇫🇷</i> <span>Informations en francais</span></a></nobr></li>
+										<li><a href="/"><i class="en">🇬🇧</i> <span>Informations in English</span></a></li>
+										
+
+									</ul>
+									<ul class="social">
+										<li><a href="https://twitter.com/museenbasel"><i>ⓣ</i> <span>@museenbasel</span></a></li>
+										<li><a href="https://www.facebook.com/museenbasel/"><i>ⓕ</i> <span>@museenbasel</span></a></li>
+										<li><a href="https://www.instagram.com/museumsnachtbasel/"><i>i</i> <span>@museumsnachtbasel</span></a></li>
+									</ul>
+								</div>
 							</nav>
 						</section>
 					</footer>

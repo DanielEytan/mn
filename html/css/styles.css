@@ -88,6 +88,7 @@ strong,
 header#header,
 button,
 .site-header nav,
+footer i,
 .institutions .suttle-line,
 .institutions--overview h1,
 .institutions--single h1.title,
@@ -115,6 +116,7 @@ footer a,
 .info-block h2,
 .info-block h3,
 .info-block b,
+footer h2,
 .journal .post-date,
 .journal .info-box em,
 .journal .info-box {
@@ -199,7 +201,8 @@ figcaption,
 .home .info p.intro,
 .journal--single h2.subtitle,
 .share-program h1,
-.info-block h2 {
+.info-block h2,
+footer h2 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 400px) {
@@ -217,7 +220,8 @@ figcaption,
     .home .info p.intro,
     .journal--single h2.subtitle,
     .share-program h1,
-    .info-block h2 {
+    .info-block h2,
+    footer h2 {
       font-size: 1.4em; } }
   @media only screen and (min-width: 1500px) {
     .program--overview .institution h1,
@@ -234,7 +238,8 @@ figcaption,
     .home .info p.intro,
     .journal--single h2.subtitle,
     .share-program h1,
-    .info-block h2 {
+    .info-block h2,
+    footer h2 {
       font-size: 1.6em; } }
   @media only screen and (min-width: 1900px) {
     .program--overview .institution h1,
@@ -251,7 +256,8 @@ figcaption,
     .home .info p.intro,
     .journal--single h2.subtitle,
     .share-program h1,
-    .info-block h2 {
+    .info-block h2,
+    footer h2 {
       font-size: 1.75em; } }
 
 .institutions--single span strong,
@@ -319,7 +325,6 @@ header.site-header h1,
     color: whitesmoke; } }
 
 #container,
-footer#footer > section,
 .journal--overview,
 .institutions--overview--grid-view,
 .filter__selection--wrapper {
@@ -327,14 +332,12 @@ footer#footer > section,
   position: relative; }
   @media screen and (min-width: 768px) {
     #container,
-    footer#footer > section,
     .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     #container,
-    footer#footer > section,
     .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
@@ -365,6 +368,7 @@ header.site-header,
 .journal--single article header,
 .journal--single article > *:not(.program),
 header#header nav,
+footer#footer nav,
 .program--overview ul.program__list .institution,
 .program--single,
 .control-program,
@@ -382,6 +386,7 @@ header#header nav,
     .journal--single article header,
     .journal--single article > *:not(.program),
     header#header nav,
+    footer#footer nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
@@ -400,6 +405,7 @@ header#header nav,
     .journal--single article header,
     .journal--single article > *:not(.program),
     header#header nav,
+    footer#footer nav,
     .program--overview ul.program__list .institution,
     .program--single,
     .control-program,
@@ -427,6 +433,20 @@ header#header nav,
     .program__list__event > div,
     .program--overview .food {
       width: 1000px;
+      margin: 0 auto; } }
+
+footer#footer .glossary,
+footer#footer section {
+  margin: 15px 15px 16px;
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    footer#footer .glossary,
+    footer#footer section {
+      margin: 15px 30px; } }
+  @media screen and (min-width: 1500px) {
+    footer#footer .glossary,
+    footer#footer section {
+      width: 1400px;
       margin: 0 auto; } }
 
 @media only screen and (min-width: 768px) {
@@ -632,11 +652,79 @@ header#header {
       height: 50px; } }
 
 footer#footer {
-  border-top: 1px solid;
-  padding-top: 1em;
   z-index: 11;
-  position: relative;
-  padding: 1px; }
+  position: relative; }
+  footer#footer p {
+    margin-bottom: 1em; }
+  footer#footer > div {
+    background: #f0f0f0;
+    padding: .75em 0 .5em; }
+    footer#footer > div .glossary > * {
+      margin-bottom: 1em; }
+      footer#footer > div .glossary > * i {
+        font-size: 2em; }
+  footer#footer section {
+    padding: 1.5em 0;
+    border-top: 1px solid; }
+    footer#footer section:first-of-type {
+      border-top: none; }
+  footer#footer h2 {
+    margin-bottom: 1em; }
+  footer#footer .logos {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    footer#footer .logos li {
+      -ms-flex: 0 1 28%;
+      flex: 0 1 28%;
+      margin-right: 2%;
+      margin-bottom: 30px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+  @media only screen and (min-width: 768px) {
+    footer#footer .glossary {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      footer#footer .glossary > * {
+        -ms-flex: 0 1 32%;
+        flex: 0 1 32%;
+        margin-right: 2%;
+        margin-bottom: 2em; }
+        footer#footer .glossary > *:nth-child(3) {
+          margin-right: 0; }
+    footer#footer .additional-program {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      footer#footer .additional-program > * {
+        -ms-flex: 0 1 49%;
+        flex: 0 1 49%;
+        max-width: 800px; }
+    footer#footer .logos li {
+      -ms-flex: 0 1 20%;
+      flex: 0 1 20%; } }
+  @media only screen and (min-width: 768px) {
+    footer#footer .thanks .logos li {
+      -ms-flex: 0 1 10%;
+      flex: 0 1 10%; } }
+  @media only screen and (min-width: 1500px) {
+    footer#footer .glossary > * {
+      -ms-flex: 0 1 18.4%;
+      flex: 0 1 18.4%; }
+      footer#footer .glossary > *:nth-child(3) {
+        margin-right: 2%; }
+      footer#footer .glossary > *:nth-child(5) {
+        margin-right: 0; } }
 
 .home .cover {
   height: 75vh;
@@ -1067,7 +1155,7 @@ footer#footer {
   margin-bottom: 2em; }
   .institutions--single .institution-infos i {
     font-size: 1.3em;
-    width: 50px;
+    width: 35px;
     display: inline-block; }
   .institutions--single .institution-infos ul {
     margin-bottom: 1.75em; }
@@ -1618,58 +1706,58 @@ button.reset-my-program:hover {
   .shuttle-line.several span:not(:last-of-type):after {
     content: ", "; }
 
-header#header nav ul.main-nav {
+nav ul.main-nav {
   margin: 3em 0 2em; }
-  header#header nav ul.main-nav li {
+  nav ul.main-nav li {
     margin-bottom: 1em; }
-    header#header nav ul.main-nav li a {
+    nav ul.main-nav li a {
       border-bottom: solid 2px;
-      line-height: .8em;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      line-height: .8em !important; }
 
-header#header nav > div {
+nav > div {
   margin-bottom: .5em; }
-  header#header nav > div li {
+  nav > div li {
     margin-bottom: 1em; }
-    header#header nav > div li i {
+    nav > div li i {
       width: 30px;
       font-size: 1.2em;
       display: inline-block; }
-  header#header nav > div ul.lang {
+  nav > div ul.lang {
     margin-bottom: 2em; }
-  header#header nav > div ul.social li {
+  nav > div ul.social li {
     margin-right: 1em;
     display: inline-block; }
-    header#header nav > div ul.social li span {
+    nav > div ul.social li span {
       display: none; }
-    header#header nav > div ul.social li i {
+    nav > div ul.social li i {
       display: inline-block;
       font-size: 1.5em; }
 
-header#header nav.open div.nav-wrapper {
+nav.open div.nav-wrapper {
   height: auto; }
 
-header#header nav.open .burger-toggle .burger {
+nav.open .burger-toggle .burger {
   background: red; }
 
 @media screen and (min-width: 768px) {
-  header#header nav {
+  nav {
     margin-bottom: 3em;
     position: relative; }
-    header#header nav > div {
+    nav > div {
       position: absolute;
       top: 0;
       right: 0; }
-      header#header nav > div ul li {
+      nav > div ul li {
         margin-bottom: .5em; }
-      header#header nav > div ul.lang {
+      nav > div ul.lang {
         margin-bottom: 1.5em; }
-      header#header nav > div ul.social li {
+      nav > div ul.social li {
         display: block; }
-        header#header nav > div ul.social li span {
+        nav > div ul.social li span {
           display: inline-block; } }
 
-header#header nav .flex-container {
+nav .flex-container {
   height: 49px; }
 
 #map {
@@ -1729,5 +1817,6 @@ header.site-header h1 {
   margin-bottom: .75em; }
 
 .institutions--single address a,
-.info-block a {
+.info-block a,
+.additional-program a {
   text-decoration: underline; }
