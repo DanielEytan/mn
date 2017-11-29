@@ -4,13 +4,6 @@
 					<a class="logo" href="{{ siteUrl }}" v-bind:class="{ active: activeContrast }">
 						Logo MN Basel
 					</a>
-					{# <div class="logo" v-if="activeContrast == false">
-						<a href="{{ siteUrl }}">
-							<figure>
-								<img src="/bilder/logo_schwarz.svg" alt="Logo MN Basel">
-							</figure>
-						</a>
-					</div> #}
 					<div class="centered">
 						<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
 					</div>
@@ -24,10 +17,8 @@
 						<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
 							<span>MENU</span>
 							<div class="burger" >
-							{# <span></span>
-							<span></span>
-							<span></span> #}
-							<i>&#9776;</i>
+							<i v-if="menuOpen">☰</i>
+							<i v-else="menuOpen">⊠</i>
 
 						</div>
 					</div>

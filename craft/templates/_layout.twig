@@ -11,30 +11,23 @@
 	<link rel="home" href="{{ siteUrl }}" />
 	<link rel="stylesheet" href="{{ siteUrl }}/css/styles.css"/>
 </head>
-
 <body>
-
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
 		{% include "_includes/header" %}
-	<main id="content" role="main" {% if mt is defined %}class="mt"{% endif %}>
-					{# <Hello></Hello>
-						<categorylist></categorylist> #}
-						{# <map></map> #}
-						{% block content %}
-						<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-						<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-						{% endblock %}
-					</main>
-					{% include "_includes/footer" %}
-				</div>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
-				<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min.js"></script>
+		<main id="content" role="main" {% if mt is defined %}class="mt"{% endif %}>
 
-				<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
-				<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
-				<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
-				<script>
-				// document.getElementById("wordwrap").style.wordWrap = "break-word";
-				</script>
-			</body>
-			</html>
+			{% block content %}
+			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+			{% endblock %}
+		</main>
+		{% include "_includes/footer" %}
+	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
+	<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
+	<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
+	<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
+	<script>
+	</script>
+</body>
+</html>
