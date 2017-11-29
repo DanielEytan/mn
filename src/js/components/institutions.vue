@@ -3,9 +3,11 @@
 		<header class="site-header">
 			<h1>Museen</h1>
 			<nav>
-				<span v-on:click="toggleGridView" v-bind:class="{ active: gridView }"><i>▦ Raster</i></span>
-				<span v-on:click="toggleListView" v-bind:class="{ active: listView }"><i>☷ Liste</i></span>
-				<span v-on:click="toggleMapView" v-bind:class="{ active: mapView }"><i>📌 Karte</i></span>
+					<ul>
+					<li v-on:click="toggleGridView" v-bind:class="{ active: gridView }"><i>▦</i> <span>Raster</span></li>
+					<li v-on:click="toggleListView" v-bind:class="{ active: listView }"><i>☷ <span>Liste</span></i></li>
+					<li v-on:click="toggleMapView" v-bind:class="{ active: mapView }"><i>📌 <span>Karte</span></i></li>
+				</ul>
 			</nav>
 		</header>
 		<section class="institution--overview--map-view map-view" v-if="mapView">

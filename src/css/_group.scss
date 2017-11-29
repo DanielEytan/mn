@@ -23,13 +23,13 @@
 	flex-wrap: wrap;
 	 > * {
 		width: 100%;
-		margin-bottom: 30px;
+		// margin-bottom: 30px;
 
 	}
 	&.of-two {
 		> * {
 	 		flex: 0 1 100%;
-			margin-bottom: 60px;
+			// margin-bottom: 60px;
 			
 			@media only screen and (min-width: $bp1) {
 				flex: 0 1 49%;
@@ -54,7 +54,7 @@
 	&.of-three {
 		> * {
 			flex: 0 1 100%;
-			margin-bottom: 60px;
+			// margin-bottom: 60px;
 			
 			@media only screen and (min-width: $bp1) {
 				flex: 0 1 49%;

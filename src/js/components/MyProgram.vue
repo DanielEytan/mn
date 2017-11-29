@@ -1,11 +1,17 @@
 <template>
   <div class="program--entry">
 
-    <article>
+    <article v-if="programevents.length == 0">
+    Nichts gespeichert
+
+    </article>
+    <article v-else>
+
       <ul class="program__list program__list--selection">
         
         <!-- <div v-for="item in items"> -->
           <!-- {{ item }} -->
+
           <li class="program__list__event" v-for="entry in programevents">
             <div>
              <section class="institution">
@@ -27,7 +33,7 @@
       </ul>
       
 
-    </article><br><br>
+    </article>
     <div class="control-program">
       <div class="main-controls">
         <printbutton></printbutton>
@@ -96,6 +102,7 @@ module.exports = {
   var idListFromLocalStorage = [];
   idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
   this.items = idListFromLocalStorage;
+  console.log(idListFromLocalStorage);
 },
 getParameterByName: function (name, url) {
  if (!url) url = window.location.href;

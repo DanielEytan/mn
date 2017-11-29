@@ -478,12 +478,10 @@ footer#footer section {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .group > * {
-    width: 100%;
-    margin-bottom: 30px; }
+    width: 100%; }
   .group.of-two > * {
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin-bottom: 60px; }
+    flex: 0 1 100%; }
     @media only screen and (min-width: 768px) {
       .group.of-two > * {
         -ms-flex: 0 1 49%;
@@ -501,8 +499,7 @@ footer#footer section {
           margin-right: 0; } }
   .group.of-three > * {
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    margin-bottom: 60px; }
+    flex: 0 1 100%; }
     @media only screen and (min-width: 768px) {
       .group.of-three > * {
         -ms-flex: 0 1 49%;
@@ -597,6 +594,9 @@ header#header {
       margin-right: 1em; }
       header#header #menu > *:last-child {
         margin-right: 0; }
+    header#header #menu i {
+      width: 19px;
+      display: inline-block; }
   header#header .contrast-toggle {
     cursor: pointer; }
   header#header .burger-toggle {
@@ -668,9 +668,10 @@ header#header {
 footer#footer {
   z-index: 11;
   position: relative;
-  border-top: solid 3px;
+  padding-bottom: 5px;
   margin-top: 5em;
-  font-size: .85em; }
+  font-size: .85em;
+  background: #f0f0f0; }
   footer#footer h2, footer#footer p {
     margin-bottom: 1em; }
   footer#footer section {
@@ -1009,7 +1010,7 @@ footer#footer {
   margin-bottom: 50px; }
 
 .institutions--overview--grid-view > * {
-  margin-bottom: 60px; }
+  margin-bottom: 1em; }
   .institutions--overview--grid-view > * figure {
     margin-bottom: 7.5px; }
   .institutions--overview--grid-view > * h1 {
@@ -1406,15 +1407,16 @@ footer#footer {
     margin: 0 30px; } }
 
 .filter header > * div.selected {
-  background: #5a5a5a; }
+  background: #464646;
+  border: solid 1px #464646; }
 
 .filter header > * div.active,
 .filter__checklists--wrapper > div {
-  background: black; }
+  background: #1e1e1e; }
 
 @media only screen and (min-width: 1024px) {
   .filter header > * div.active {
-    border-bottom: 10px solid black !important; } }
+    border-bottom: 10px solid #1e1e1e !important; } }
 
 .filter__selection--wrapper .number {
   position: fixed;
@@ -1444,10 +1446,10 @@ footer#footer {
     background: none;
     width: 100%; }
   .filter__selection--wrapper .filter-tags--container .filter--tag > span {
-    background: #5a5a5a;
+    background: #464646;
     color: white; }
   .filter__selection--wrapper .filter-tags--container .filter--tag > div {
-    background: black;
+    background: #1e1e1e;
     color: white;
     margin-right: .5em;
     margin-bottom: .5em; }
@@ -1484,7 +1486,8 @@ footer#footer {
 
 .filter__selection--wrapper .removeAll--tag {
   margin-bottom: 2em;
-  border: 1px solid; }
+  border: 1px solid;
+  color: red; }
   .filter__selection--wrapper .removeAll--tag:hover {
     background: red;
     color: white;
@@ -1543,32 +1546,36 @@ footer#footer {
     .save-element div.save-heart.active {
       color: red; }
 
-header.site-header h1 {
-  margin-bottom: .5em; }
-
-header.site-header nav {
-  font-size: 1.25rem;
-  margin-bottom: 2em; }
-  header.site-header nav span {
-    padding: .2em .4em .3em;
-    border: solid 1px;
-    cursor: pointer; }
-    header.site-header nav span:hover, header.site-header nav span.active {
-      background: #1A0042;
-      color: white; }
-
-@media screen and (min-width: 768px) {
-  header.site-header {
-    position: relative; }
+header.site-header {
+  position: relative; }
+  header.site-header h1 {
+    margin-bottom: .5em; }
+  header.site-header nav {
+    font-size: 1.25rem;
+    margin-bottom: 2em;
+    position: absolute;
+    right: 0;
+    top: -.25em; }
+    header.site-header nav li {
+      padding: .2em .4em .3em;
+      border: solid 1px;
+      cursor: pointer;
+      display: inline-block;
+      margin-left: .5em;
+      width: 2em;
+      text-align: center; }
+      header.site-header nav li span {
+        display: none; }
+      header.site-header nav li:hover, header.site-header nav li.active {
+        background: #1A0042;
+        color: white; }
+  @media screen and (min-width: 500px) {
     header.site-header nav {
-      position: absolute;
-      right: 0;
-      bottom: -10px; }
-      header.site-header nav span {
-        margin-left: .5em;
-        margin-right: 0; }
-        header.site-header nav span i {
-          margin-right: .25em; } }
+      top: 0; }
+      header.site-header nav li {
+        width: auto; }
+        header.site-header nav li span {
+          display: inline-block; } }
 
 .button {
   background: white;
@@ -1753,7 +1760,7 @@ header#header nav .flex-container {
   #vue-app.active .filter__checklists--wrapper > div {
     background: white !important; }
   #vue-app.active .filter header > * div.selected {
-    background: #5a5a5a; }
+    background: #464646; }
   #vue-app.active .filter header > * div.active {
     background: white !important;
     color: #1A0042; }

@@ -1,76 +1,17 @@
 		.filter header >* div.selected {
 			background: $grey-dark;
+			border: solid 1px $grey-dark;
 		}
 		.filter header >* div.active,
 		.filter__checklists--wrapper >div {
-			background: black;
+			background: $grey-very-dark;
 		}
 
 		@media only screen and (min-width: $bp2) {
 			.filter header >* div.active {
-				border-bottom: 10px solid black !important;
+				border-bottom: 10px solid $grey-very-dark !important;
 			}
 		}
-		// @media only screen and (min-width: $bp2) {
-		// 	.filter header >*:nth-child(1) div.active {
-		// 		border-bottom: 10px solid #1a0042;
-		// 	}
-		// }
-
-
-		// // #1a0042 = rgba(26,0,66,1)
-		// .filter header >*:nth-child(1) div.active,
-		// .filter header >*:nth-child(1) div.selected,
-		// .filter--institutions,
-		// .inst > div{
-		// 	background: #1a0042;
-		// }
-
-		// @media only screen and (min-width: $bp2) {
-		// 	.filter header >*:nth-child(1) div.active {
-		// 		border-bottom: 10px solid #1a0042;
-		// 	}
-		// }
-
-		// .filter header >*:nth-child(2) div.active,
-		// .filter header >*:nth-child(2) div.selected,
-		// .filter--themes,
-		// .theme > div{
-		// 	background: #301954;
-		// }
-		// @media only screen and (min-width: $bp2) {
-
-		// 	.filter header >*:nth-child(2) div.active {
-		// 		border-bottom: 10px solid #301954;
-		// 	}
-		// }
-		// .filter header >*:nth-child(3) div.active,
-		// .filter header >*:nth-child(3) div.selected,
-		// .filter--kind-of-event,
-		// .kind > div{
-		// 	background: #473267;
-		// }
-		// @media only screen and (min-width: $bp2) {
-
-		// 	.filter header >*:nth-child(3) div.active {
-		// 		border-bottom: 10px solid #473267;
-		// 	}
-		// }
-		// .filter header >*:nth-child(4) div.active,
-		// .filter header >*:nth-child(4) div.selected,
-		// .filter--languages,
-		// .languages > div{
-		// 	background: #5e4c7a;
-		// }
-
-		// @media only screen and (min-width: $bp2) {
-
-		// 	.filter header >*:nth-child(4) div.active {
-		// 		border-bottom: 10px solid #5e4c7a;
-		// 	}
-		// }
-	
-
 .filter__selection--wrapper {
 	.number {
 		position: fixed;
@@ -113,7 +54,7 @@
 				// box-shadow: 0 0 4px rgba(26,0,66,.55);
 
 				// background: $dark;
-				background: black;
+				background: $grey-very-dark;
 				color:white;
 				margin-right: .5em;
 				margin-bottom: .5em;
@@ -179,6 +120,7 @@
 			// color: red;
 			margin-bottom: 2em;
 			border: 1px solid;
+			color: red;
 			&:hover {
 				background: red;
 				color: white;

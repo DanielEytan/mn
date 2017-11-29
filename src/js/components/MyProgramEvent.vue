@@ -15,7 +15,7 @@
      
       </div>
           <div class="icons">
-          <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Kinder & Familien'"><span >🎠</span></div>
+          <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Für Kinder & Familien'"><span >🎠</span></div>
           <div v-for="language in programevent.languages">
           <span v-if="language.title == 'Deutsch'" class="de">⚀</span>
           <span v-if="language.title == 'Englisch'" class="en">⚂</span>
@@ -27,7 +27,7 @@
 
       <ul class="categories">
         <li v-for="theme in programevent.themes"><span><nobr>{{ theme.title }}</nobr></span></li>
-        <li v-for="kindOfEvent in programevent.kindOfEvent"><span v-if="kindOfEvent.title != 'Kinder & Familien'"><nobr>{{ kindOfEvent.title }}</nobr></span></li>
+        <li v-for="kindOfEvent in programevent.kindOfEvent"><span v-if="kindOfEvent.title != 'Für Kinder & Familien'"><nobr>{{ kindOfEvent.title }}</nobr></span></li>
       </ul>
 
     <saveprogram ref="saveprogram" :programevent="programevent"></saveprogram>

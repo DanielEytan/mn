@@ -1,9 +1,11 @@
 footer#footer {
 	z-index: 11;
 	position: relative;
-	border-top: solid 3px;
+	padding-bottom: 5px;
+	// border-top: solid 3px;
 	margin-top: 5em;
 	font-size: .85em;
+	background: $grey-bright;
 	h2, p {
 		margin-bottom: 1em;
 	}

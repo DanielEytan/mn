@@ -79,6 +79,9 @@ module.exports = {
 
 <style lang="css" scoped>
 .vue-slider-component .vue-slider-tooltip  {
-  background: black;
+  /*background: black;*/
+  color: red;
+
 }
+
 </style>

@@ -14497,7 +14497,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.vue-slider-component .vue-slider-tooltip[data-v-243d86f3]  {\n  background: black;\n}\n", ""]);
+	exports.push([module.id, "\n.vue-slider-component .vue-slider-tooltip[data-v-243d86f3]  {\n  /*background: black;*/\n  color: red;\n}\n\n", ""]);
 
 	// exports
 
@@ -16559,7 +16559,7 @@
 	  }, [_vm._v(_vm._s(_vm.programevent.additionalLang))])]), _vm._v(" "), _c('div', {
 	    staticClass: "icons"
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
-	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
+	    return (kindOfEvent.title == 'Für Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
 	      staticClass: "de"
@@ -16581,7 +16581,7 @@
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
 	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
-	    return _c('li', [(kindOfEvent.title != 'Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
+	    return _c('li', [(kindOfEvent.title != 'Für Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
 	    attrs: {
@@ -17455,7 +17455,7 @@
 	  }, [_vm._v(_vm._s(_vm.programevent.description))])]), _vm._v(" "), _c('div', {
 	    staticClass: "icons"
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
-	    return (kindOfEvent.title == 'Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
+	    return (kindOfEvent.title == 'Für Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
 	      staticClass: "de"
@@ -17473,7 +17473,7 @@
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
 	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
-	    return _c('li', [(kindOfEvent.title != 'Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
+	    return _c('li', [(kindOfEvent.title != 'Für Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
 	    attrs: {
@@ -18270,7 +18270,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18349,6 +18349,7 @@
 	      var idListFromLocalStorage = [];
 	      idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
 	      this.items = idListFromLocalStorage;
+	      console.log(idListFromLocalStorage);
 	    },
 	    getParameterByName: function getParameterByName(name, url) {
 	      if (!url) url = window.location.href;
@@ -18371,6 +18372,12 @@
 	    }
 	  }
 	}; //
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -18546,7 +18553,7 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--entry"
-	  }, [_c('article', [_c('ul', {
+	  }, [(_vm.programevents.length == 0) ? _c('article', [_vm._v("\n  Nichts gespeichert\n\n  ")]) : _c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return _c('li', {
@@ -18596,7 +18603,7 @@
 	        "programevent": entry
 	      }
 	    })], 1)])
-	  }))]), _c('br'), _c('br'), _vm._v(" "), _c('div', {
+	  }))]), _vm._v(" "), _c('div', {
 	    staticClass: "control-program"
 	  }, [_c('div', {
 	    staticClass: "main-controls"
@@ -22789,7 +22796,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -22955,6 +22962,8 @@
 	//
 	//
 	//
+	//
+	//
 
 /***/ }),
 /* 227 */
@@ -22963,28 +22972,28 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('header', {
 	    staticClass: "site-header"
-	  }, [_c('h1', [_vm._v("Museen")]), _vm._v(" "), _c('nav', [_c('span', {
+	  }, [_c('h1', [_vm._v("Museen")]), _vm._v(" "), _c('nav', [_c('ul', [_c('li', {
 	    class: {
 	      active: _vm.gridView
 	    },
 	    on: {
 	      "click": _vm.toggleGridView
 	    }
-	  }, [_c('i', [_vm._v("▦ Raster")])]), _vm._v(" "), _c('span', {
+	  }, [_c('i', [_vm._v("▦")]), _vm._v(" "), _c('span', [_vm._v("Raster")])]), _vm._v(" "), _c('li', {
 	    class: {
 	      active: _vm.listView
 	    },
 	    on: {
 	      "click": _vm.toggleListView
 	    }
-	  }, [_c('i', [_vm._v("☷ Liste")])]), _vm._v(" "), _c('span', {
+	  }, [_vm._m(0)]), _vm._v(" "), _c('li', {
 	    class: {
 	      active: _vm.mapView
 	    },
 	    on: {
 	      "click": _vm.toggleMapView
 	    }
-	  }, [_c('i', [_vm._v("📌 Karte")])])])]), _vm._v(" "), (_vm.mapView) ? _c('section', {
+	  }, [_vm._m(1)])])])]), _vm._v(" "), (_vm.mapView) ? _c('section', {
 	    staticClass: "institution--overview--map-view map-view"
 	  }, [_c('googlemap', {
 	    attrs: {
@@ -23112,7 +23121,11 @@
 	      return _c('div', [_vm._v(" Party!!!")])
 	    })], 2)])], 2)])])
 	  }))])])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('i', [_vm._v("☷ "), _c('span', [_vm._v("Liste")])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('i', [_vm._v("📌 "), _c('span', [_vm._v("Karte")])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
