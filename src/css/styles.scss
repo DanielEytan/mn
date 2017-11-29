@@ -80,20 +80,27 @@ figcaption {
 }
 
 
-.text-block {
-	section {
-		border-bottom: solid 1px;
-		&:last-of-type {
-			border-bottom: none;
+
+.mobility, .tickets {
+	ul {
+		margin-bottom: 1.5em;
+		li {
+			margin-bottom: .25em;
+			list-style-type: initial;
+			margin-left: 1em;
 		}
+	}
+	h3 {
+		margin-bottom: .5em;
+	}
+	h2,p {
+		margin-bottom: 1em;
 	}
 }
 
 // .info-block {
 // 	margin-bottom: 5em;
-// 	h2,p {
-// 		margin-bottom: 1em;
-// 	}
+
 // 	.presell {
 // 		margin-bottom: 2em;
 // 	}
