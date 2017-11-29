@@ -12,8 +12,7 @@
 		<h1 class="title">Journal</h1>
 	</header>
 	<div class="group">
-			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
-				{% if entry.type == "journal" %}
+			{% for entry in craft.entries.section('journal').type('journal') %}
 				<div class="post">
 					<a href="{{ entry.url }}">
 
@@ -30,20 +29,7 @@
 						<span class="more">Mehr</span>
 					</a>
 				</div>
-				{% else %}
-					<div class="info-box">
-						<div>
-							{# {% for img in entry.cover %}
-								<figure>
-									<img src="{{ img.url }}" alt="{{ img.title }}">
-								</figure>
-							{% endfor %} #}
-							<i>🎠</i>
-							{{ entry.text }}
-						</div>
-					</div>
-				{% endif %}
-
+				
 			{% endfor %}
 		</div>
 </div>

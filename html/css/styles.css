@@ -380,6 +380,23 @@ header#header nav,
 .tickets,
 .test {
   margin: 15px; }
+  @media screen and (min-width: 768px) {
+    .text-block section > div,
+    header.site-header,
+    .home .info > div,
+    .journal--single article header,
+    .journal--single article > *:not(.program),
+    header#header nav,
+    .program--overview ul.program__list .institution,
+    .program--single,
+    .control-program,
+    .institutions--single header,
+    .institutions--single .institution-infos,
+    .program .name,
+    .mobility,
+    .tickets,
+    .test {
+      margin: 15px 30px; } }
   @media screen and (min-width: 1024px) {
     .text-block section > div,
     header.site-header,
@@ -818,7 +835,7 @@ footer#footer {
   margin-bottom: 3em; }
 
 .journal--overview .group .post figure.portrait {
-  width: 75%; }
+  width: 66%; }
 
 .journal--overview .group .post p {
   margin-bottom: 1em; }
@@ -829,23 +846,6 @@ footer#footer {
 .journal--overview .group .post:hover .more {
   text-decoration: underline; }
 
-.journal--overview .group .info-box {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .journal--overview .group .info-box > div {
-    width: 80%;
-    max-width: 275px;
-    background: #f0f0f0;
-    padding: 1em; }
-    .journal--overview .group .info-box > div i {
-      font-size: 3em;
-      margin-bottom: .5em;
-      display: inline-block; }
-
 @media only screen and (min-width: 768px) {
   .journal--overview .group {
     display: -ms-flexbox;
@@ -853,49 +853,31 @@ footer#footer {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
     .journal--overview .group .post:first-of-type {
-      -ms-flex: 0 1 70%;
-      flex: 0 1 70%; }
+      margin-right: 0;
+      -ms-flex: 0 1 80%;
+      flex: 0 1 80%; }
       .journal--overview .group .post:first-of-type h1 span {
         font-size: 1.25em;
         line-height: 1em; }
     .journal--overview .group .post {
       -ms-flex: 0 1 48%;
-      flex: 0 1 48%; }
-    .journal--overview .group .info-box {
-      padding: 2em 1em 1.5em;
-      -ms-flex: 0 1 45%;
-      flex: 0 1 45%; } }
+      flex: 0 1 48%; } }
 
 @media only screen and (min-width: 1024px) {
   .journal--overview .group .post:first-of-type {
-    -ms-flex: 0 1 55%;
-    flex: 0 1 55%; }
+    -ms-flex: 0 1 65%;
+    flex: 0 1 65%; }
   .journal--overview .group .post {
-    -ms-flex: 0 1 30%;
-    flex: 0 1 30%;
+    -ms-flex: 0 1 31%;
+    flex: 0 1 31%;
     margin-bottom: 4em; }
-  .journal--overview .group .info-box > div {
-    max-width: 300px;
-    text-align: center;
-    padding: 2em; } }
-
-@media only screen and (min-width: 1224px) {
-  .journal--overview .group .post:first-of-type {
-    -ms-flex: 0 1 55%;
-    flex: 0 1 55%; }
-  .journal--overview .group .post {
-    -ms-flex: 0 1 27%;
-    flex: 0 1 27%; }
-  .journal--overview .group .info-box > div {
-    max-width: 350px; } }
+    .journal--overview .group .post:nth-child(3n+3), .journal--overview .group .post:nth-child(3n+4) {
+      margin-right: 3%; } }
 
 @media only screen and (min-width: 1500px) {
   .journal--overview .group .post:first-of-type {
-    -ms-flex: 0 1 50%;
-    flex: 0 1 50%; }
-  .journal--overview .group .info-box {
-    -ms-flex: 0 1 30%;
-    flex: 0 1 30%; } }
+    -ms-flex: 0 1 40%;
+    flex: 0 1 40%; } }
 
 .journal--single figure {
   margin: 0 0 25px; }
@@ -916,8 +898,7 @@ footer#footer {
 
 @media only screen and (min-width: 1224px) {
   .journal--single figure {
-    margin: 40px auto 45px;
-    max-width: 800px; } }
+    margin: 40px auto 45px; } }
 
 .program .food {
   padding: 1em;

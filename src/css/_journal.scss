@@ -9,7 +9,7 @@
 			.post {
 				figure {
 					&.portrait {
-						width: 75%;
+						width: 66%;
 					}
 				}
 				p {
@@ -22,28 +22,7 @@
 					text-decoration: underline;
 				}
 			}
-			.info-box {
-				display: flex;
-				align-items: center;
-	  			justify-content: center;
-	  			> div {
-
-	  				// border-radius: .5em;
-	  				i {
-	  					font-size: 3em;
-	  					margin-bottom: .5em;
-	  					display: inline-block;
-	  				}
-					width: 80%;
-					max-width: 275px;
-					// border: solid 2px $yellow;
-					background: $grey-bright;
-					// color: white;
-					// box-shadow: 0 0 20px $yellow;
-					padding: 1em;
-					// background: $grey-bright;
-	  			}
-			}
+			
 		}
 		
 
@@ -52,23 +31,19 @@
 			display: flex;
 			justify-content: space-around;
 			.post:first-of-type {
-				flex: 0 1 70%;
+				margin-right: 0;
+				flex: 0 1 80%;
 				h1 span {
 					font-size: 1.25em;
 					line-height: 1em;
 				}
 			}
+			
 			.post {
+				// background: red;
 				flex: 0 1 48%;
 			}
-			.info-box {
-				padding: 2em 1em 1.5em;
-				// width: 300px;
-				flex: 0 1 45%;
-				> div {
-					
-				}
-			}
+
 		}
 	}
 	@media only screen and (min-width: $bp2) {
@@ -79,7 +54,7 @@
 			// 	// max-width: 800px;
 			// }
 			.post:first-of-type {
-				flex: 0 1 55%;
+				flex: 0 1 65%;
 				// margin-bottom: 4em;
 			}
 			.post:nth-child(2) {
@@ -90,23 +65,22 @@
 			
 
 			.post {
-				flex: 0 1 30%;
+				flex: 0 1 31%;
 				margin-bottom: 4em;
+				
+				&:nth-child(3n+3),&:nth-child(3n+4) {
+					margin-right: 3%;
+				}
+			
 			}
-			.info-box > div{
-				max-width: 300px;
-				text-align: center;
-				padding: 2em;
-				// width: 300px;
-				// flex: 0 1 350px;
-			}
+
 		}
 	}
 	@media only screen and (min-width: $bp3) {
 		.group {
 			
 			.post:first-of-type {
-				flex: 0 1 55%;
+				// flex: 0 1 55%;
 			}
 			// .post:nth-child(3), .post:nth-child(4) {
 			// 	flex: 0 1 25%;
@@ -116,12 +90,9 @@
 			// 	// align-self: flex-start;
 			// }
 			.post {
-				flex: 0 1 27%;
+				// flex: 0 1 28%;
 			}
-			.info-box > div{
-				max-width: 350px;
 
-			}
 
 		}
 	}
@@ -129,11 +100,7 @@
 		.group {
 			
 			.post:first-of-type {
-				flex: 0 1 50%;
-			}
-			.info-box {
-				flex: 0 1 30%;
-
+				flex: 0 1 40%;
 			}
 
 		}

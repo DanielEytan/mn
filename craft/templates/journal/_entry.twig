@@ -7,49 +7,52 @@
 
 {# <twitter></twitter> #}
 
-	<section class="journal journal--single">
-			<article>
-				<header class="site-header">
-					<h1>{{ entry.title }}</h1>
-				
-					{% for img in entry.cover %}
-						<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-							<img src="{{ img.url }}" alt="{{ img.title }}">
-						</figure>
-					{% endfor %}
-					</header>
+<section class="journal journal--single">
+	<article>
+		<header class="site-header">
+			<h1>{{ entry.title }}</h1>
 
-				{% for block in entry.contentJournal %}
-					{% switch block.type %}
-						{% case "subtitle" %}
-							<h2 class="subtitle">{{ block.subtitle }}</h2>
-						{% case "text" %}
-							<div class="text">
-								{{ block.text }}
-							</div>
-						{% case "img" %}
-							<div class="img">
-								{% for img in block.img %}
-									<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-										<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-									</figure>
-								{% endfor %}
-							</div>
-						{% case "program" %}
-							<div class="program">
-   							
+			{% for img in entry.cover %}
+			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+				<img src="{{ img.url }}" alt="{{ img.title }}">
+				{% if img.caption %}
+				<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+			</figure>
+			{% endfor %}
+		</header>
 
-								<ul class="program__list program__list--selection">
-								{% for entry in block.entry %}
-								{% set program = entry.id %}
-					            	<journalprogram :id="{{program}}"></journalprogram>
-					              {# <journalprogram v-for="entry in program"></journalprogram> #}
-						        {% endfor %}
-						      </ul>
-						  </div>
-					{% endswitch %}
-				{% endfor %}				
-			</article>
-	</section>
+		{% for block in entry.contentJournal %}
+		{% switch block.type %}
+		{% case "subtitle" %}
+		<h2 class="subtitle">{{ block.subtitle }}</h2>
+		{% case "text" %}
+		<div class="text">
+			{{ block.text }}
+		</div>
+		{% case "img" %}
+		<div class="img">
+			{% for img in block.img %}
+			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+				{% if img.caption %}
+					<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+			</figure>
+			{% endfor %}
+		</div>
+		{% case "program" %}
+		<div class="program">
+			<ul class="program__list program__list--selection">
+				{% for entry in block.entry %}
+				{% set program = entry.id %}
+				<journalprogram :id="{{program}}"></journalprogram>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endswitch %}
+		{% endfor %}				
+	</article>
+</section>
 
 {% endblock %}
