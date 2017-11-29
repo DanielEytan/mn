@@ -5,7 +5,7 @@
         
       <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
         <div>
-          <button v-on:click="inst = 0; zoomOut()">← Zur Liste</button>
+          <button v-on:click="inst = 0; zoomOut()">← Zur Übersicht</button>
           <div>
             <a v-bind:href="entry.url">
               <figure>

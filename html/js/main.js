@@ -20729,7 +20729,7 @@
 	          _vm.zoomOut()
 	        }
 	      }
-	    }, [_vm._v("← Zur Liste")]), _vm._v(" "), _c('div', [_c('a', {
+	    }, [_vm._v("← Zur Übersicht")]), _vm._v(" "), _c('div', [_c('a', {
 	      attrs: {
 	        "href": entry.url
 	      }
