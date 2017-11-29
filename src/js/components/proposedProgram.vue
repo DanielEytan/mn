@@ -1,32 +1,31 @@
 <template>
    <div class="program--entry">
-      <div v-if="name" class="name">
-         <h1>Dieses Program wurde von {{ name }} zusammengestellt.</h1><br><br>
+      <div  class="name">
+         <p v-if="name"><strong>Dieses Program wurde von {{ name }} zusammengestellt.</strong></p>
+         <p>Sie können diese Zusammenstellung mit einem Klick auf die Herzen für Ihr Programm übernehmen.</p>
       </div>
       <ul class="program__list program__list--selection">
-        <div class="add-to-my-program" v-on:click="addToMyProgram">
-          Alle in "Mein Programm" aufnehmen!
-        </div>
+        
          <div v-for="id in ids">
          <li class="program__list__event" v-for="entry in programevents" v-if="entry.id == id">
              <!-- <div v-for="color in entry.parent.shuttleLine" class="institution">
                   <span class="suttle-line" v-bind:style="{color: color.color}"> {{ entry.parent.number }} {{ color.title }}</span><br>
                   <a v-bind:href="entry.parent.url">{{ entry.parent.title }}</a><br>
                </div> -->
+               <div>
                 <section class="institution">
-                  <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2">
-                      <span class="suttle-line" v-bind:style="{color: color.color}"> <strong>{{ entry.parent.number }}</strong> {{ color.title }}</span>
-                  </div>
-                  <div v-if="entry.parent.shuttleLine.length > 1">
-                      <span class="suttle-line"><strong>{{ entry.parent.number}}</strong></span>
-                      <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}" class="suttle-line">{{ color.title }} </span> 
-                  </div>
-                  <h1><a :href="entry.url">{{ entry.parent.title }}</a></h1>
-                  <!-- <h2>{{ entry.parent.programmTitle }}</h2> -->
-                <!-- <p>{{ entry.address }}<br> – {{ entry.journey }}</p><br> -->
-                <!-- <p>Essen: {{ entry.food }}</p><br> -->
-
-                </section>
+               <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2" class="shuttle-line">
+                <div class="number"><i v-bind:style="{background: color.color}">{{ entry.parent.number }}</i></div> 
+                <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
+              </div>
+              <div v-if="entry.parent.shuttleLine.length > 1" class="shuttle-line several">
+                <div class="number"><i style="background: black">{{ entry.parent.number }}</i></div>
+                <div class="lines">
+                  <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+                </div>
+              </div>
+              <h1><a :href="entry.parent.url">{{ entry.parent.title }}</a></h1>
+            </section>
 <!--                <h1>{{ entry.title }}</h1>
                <div v-for="time in entry.time">
                   <time v-if="time.type === 'setTimes'"> {{ time.start.date | formatDate }} <span v-if="time.duration == true">(Dauer: {{ time.duration }})</span><br></time>
@@ -35,9 +34,16 @@
                </div>
                <div v-html="entry.description">{{ entry.description }}</div> -->
                 <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
+                </div>
          </li>
          </div>
-      </ul><br>
+      </ul>
+      <div class="adapt-program">
+      <button class="add-to-my-program" v-on:click="addToMyProgram">
+          <i v-bind:class="{ active: adaptProgram }">❤</i> Gesamtes Programm übernehmen
+        </button>
+        <p v-show="adaptProgram"><a href="https://museumsnacht.ch/programm/mein-programm">Mein Programm</a></p>
+        </div>
    </div>
 </template>
 
@@ -55,6 +61,7 @@ module.exports = {
          ids: '',
          programevents: [],
          name: '',
+         adaptProgram: false,
 
       }
    },
@@ -101,6 +108,7 @@ module.exports = {
         myprogramevent_child_components.forEach(function(o) {
           o.saveProgram(false);
         });
+        this.adaptProgram = true;
       }
    },
 }

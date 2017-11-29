@@ -29,6 +29,8 @@ body {
 }
 
 // Link Border Bottom
+.program .adapt-program p,
+.program--saved .empty,
 .visit {
 	a {
 		border-bottom: solid 1px;
@@ -50,6 +52,7 @@ body {
 // Font Main Extra-Bold
 .more,
 .program .institution *:not(h2),
+.share-button,
 
 .filter header,
 
@@ -121,7 +124,9 @@ header h1,
 header.site-header h1,
 .food h3,
 .institutions--single .program-text,
-.institutions--overview .grid-view h2
+.institutions--overview .grid-view h2,
+.program--saved .empty p:first-of-type,
+
  {
 	font-family: 'lyon-medium', times;
 }
@@ -132,7 +137,7 @@ header.site-header h1,
 .program__list .institution h1,
 // .program .institution,
 
-.filter header,
+// .filter header,
 .filter h2,
 
 .institutions--overview h1,
@@ -182,7 +187,8 @@ figcaption,
 .journal .program-list.selected h1,
 .institutions--overview .map-view .suttle-line strong,
 
-.institutions--overview .map-view h1
+.institutions--overview .map-view h1,
+.program__list--selection li h1.event-title
 // .info-box 
 {
 	font-size: 1.25em;
@@ -201,6 +207,8 @@ figcaption,
 
 .program--overview .institution span strong,
 .program .selected h1,
+.program--saved .empty p:first-of-type,
+
 // .program li.program--event h1,
 
 .institutions--overview--grid-view h1,

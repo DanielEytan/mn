@@ -45,31 +45,20 @@
 
         <div class="filter-tags--container">
           <div class="filter--tag inst" v-for="(filter,index) in checkedInstitutions">
-            <span v-if="index == 0">I</span>
-            <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
+            <div v-if="index == 0" class="block"><span>I</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag theme" v-for="(filter,index) in checkedThemes">
-            <span v-if="index == 0">T</span>
-
-            <!-- <div class="space-element" v-if="index == 0"></div> -->
-
-            <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
+            <div v-if="index == 0" class="block"><span>T</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag kind" v-for="(filter,index) in checkedEvents">
-            <span v-if="index == 0">V</span>
-            <!-- <div class="space-element" v-if="index == 0"></div> -->
-
-            <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
+            <div v-if="index == 0" class="block"><span>V</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
           <div class="filter--tag languages" v-for="(filter,index) in checkedLanguages">
-            <span v-if="index == 0">S</span>
-            <!-- <div class="space-element" v-if="index == 0"></div> -->
-
-            <div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
+            <div v-if="index == 0" class="block"><span>S</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <span v-on:click="removeFromFilters(filter)">&#9447;</span></div>
           </div>
         </div>
-        <div class="removeAll--tag" v-if="checkedFilters.length > 0" v-on:click="removeFromFilters('',true)">
-          <span>Alle Filter zurücksetzen</span> <span>&#9447;</span>
+        <div class="remove-all" v-if="checkedFilters.length > 0" v-on:click="removeFromFilters('',true)">
+          <button class="red">Alle Filter zurücksetzen <i>&#9447;</i></button>
         </div>
       </div>
     </div>

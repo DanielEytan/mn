@@ -14656,7 +14656,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14683,17 +14683,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -16697,7 +16686,9 @@
 	  }, [_vm._l((_vm.checkedInstitutions), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag inst"
-	    }, [(index == 0) ? _c('span', [_vm._v("I")]) : _vm._e(), _vm._v(" "), _c('div', {
+	    }, [(index == 0) ? _c('div', {
+	      staticClass: "block"
+	    }, [_c('span', [_vm._v("I")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16709,7 +16700,9 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedThemes), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag theme"
-	    }, [(index == 0) ? _c('span', [_vm._v("T")]) : _vm._e(), _vm._v(" "), _c('div', {
+	    }, [(index == 0) ? _c('div', {
+	      staticClass: "block"
+	    }, [_c('span', [_vm._v("T")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16721,7 +16714,9 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedEvents), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag kind"
-	    }, [(index == 0) ? _c('span', [_vm._v("V")]) : _vm._e(), _vm._v(" "), _c('div', {
+	    }, [(index == 0) ? _c('div', {
+	      staticClass: "block"
+	    }, [_c('span', [_vm._v("V")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16733,7 +16728,9 @@
 	  }), _vm._v(" "), _vm._l((_vm.checkedLanguages), function(filter, index) {
 	    return _c('div', {
 	      staticClass: "filter--tag languages"
-	    }, [(index == 0) ? _c('span', [_vm._v("S")]) : _vm._e(), _vm._v(" "), _c('div', {
+	    }, [(index == 0) ? _c('div', {
+	      staticClass: "block"
+	    }, [_c('span', [_vm._v("S")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
 	      on: {
@@ -16743,13 +16740,13 @@
 	      }
 	    }, [_vm._v("ⓧ")])])])
 	  })], 2), _vm._v(" "), (_vm.checkedFilters.length > 0) ? _c('div', {
-	    staticClass: "removeAll--tag",
+	    staticClass: "remove-all",
 	    on: {
 	      "click": function($event) {
 	        _vm.removeFromFilters('', true)
 	      }
 	    }
-	  }, [_c('span', [_vm._v("Alle Filter zurücksetzen")]), _vm._v(" "), _c('span', [_vm._v("ⓧ")])]) : _vm._e()])]), _vm._v(" "), _c('ul', {
+	  }, [_vm._m(0)]) : _vm._e()])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--complete"
 	  }, _vm._l((_vm.program), function(entry) {
 	    return _c('programentry', {
@@ -16769,7 +16766,11 @@
 	      }
 	    })
 	  }))])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('button', {
+	    staticClass: "red"
+	  }, [_vm._v("Alle Filter zurücksetzen "), _c('i', [_vm._v("ⓧ")])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
@@ -16851,7 +16852,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16868,9 +16869,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
 	//
 	//
 	//
@@ -16983,7 +16981,7 @@
 	  return _c('div', {
 	    staticClass: "share-program"
 	  }, [_c('h1', [_vm._v("Teile dein Programm")]), _vm._v(" "), _c('div', [_c('div', {
-	    staticClass: "link"
+	    staticClass: "share-link"
 	  }, [_c('p', [_vm._v("Du kannst dein Programm mit deinem Namen personalisieren und als Link verschicken.")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
@@ -17004,14 +17002,11 @@
 	        _vm.name = $event.target.value
 	      }
 	    }
-	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', [_c('p', {
-	    staticClass: "link-to-share"
-	  }, [_c('a', {
-	    staticClass: "directlink",
+	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', [_c('div', [_c('a', {
 	    attrs: {
 	      "href": _vm.url
 	    }
-	  }, [_c('nobr', [_vm._v(_vm._s(_vm.url))])], 1), _vm._v(_vm._s(_vm.name))]), _vm._v(" "), _c('div', {
+	  }, [_c('nobr', [_vm._v(_vm._s(_vm.url))])], 1)]), _vm._v(" "), _c('div', {
 	    staticClass: "share-button",
 	    on: {
 	      "click": _vm.getItems
@@ -17038,7 +17033,7 @@
 	    }]
 	  }, [_vm._v(_vm._s(_vm.buttonText))])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "share"
-	  }, [_c('h1', [_vm._v("Auf Social-Media teilen")]), _vm._v(" "), _c('p', [_vm._v("Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.")]), _vm._v(" "), _c('div', {
+	  }, [_c('h1', [_vm._v("Auf Social-Media teilen")]), _vm._v(" "), _c('div', {
 	    on: {
 	      "click": _vm.getItems
 	    }
@@ -17172,7 +17167,8 @@
 	         url: '',
 	         ids: '',
 	         programevents: [],
-	         name: ''
+	         name: '',
+	         adaptProgram: false
 
 	      };
 	   },
@@ -17221,9 +17217,16 @@
 	         myprogramevent_child_components.forEach(function (o) {
 	            o.saveProgram(false);
 	         });
+	         this.adaptProgram = true;
 	      }
 	   }
 	}; //
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -17340,7 +17343,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17389,9 +17392,6 @@
 	  }
 
 	}; //
-	//
-	//
-	//
 	//
 	//
 	//
@@ -17496,40 +17496,51 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--entry"
-	  }, [(_vm.name) ? _c('div', {
-	    staticClass: "name"
-	  }, [_c('h1', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")]), _c('br'), _c('br')]) : _vm._e(), _vm._v(" "), _c('ul', {
-	    staticClass: "program__list program__list--selection"
 	  }, [_c('div', {
-	    staticClass: "add-to-my-program",
-	    on: {
-	      "click": _vm.addToMyProgram
-	    }
-	  }, [_vm._v("\n          Alle in \"Mein Programm\" aufnehmen!\n        ")]), _vm._v(" "), _vm._l((_vm.ids), function(id) {
+	    staticClass: "name"
+	  }, [(_vm.name) ? _c('p', [_c('strong', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")])]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v("Sie können diese Zusammenstellung mit einem Klick auf die Herzen für Ihr Programm übernehmen.")])]), _vm._v(" "), _c('ul', {
+	    staticClass: "program__list program__list--selection"
+	  }, _vm._l((_vm.ids), function(id) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
 	      return (entry.id == id) ? _c('li', {
 	        staticClass: "program__list__event"
-	      }, [_c('section', {
+	      }, [_c('div', [_c('section', {
 	        staticClass: "institution"
 	      }, [_vm._l((entry.parent.shuttleLine), function(color) {
-	        return (entry.parent.shuttleLine.length < 2) ? _c('div', [_c('span', {
-	          staticClass: "suttle-line",
+	        return (entry.parent.shuttleLine.length < 2) ? _c('div', {
+	          staticClass: "shuttle-line"
+	        }, [_c('div', {
+	          staticClass: "number"
+	        }, [_c('i', {
+	          style: ({
+	            background: color.color
+	          })
+	        }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	          staticClass: "lines"
+	        }, [_c('span', {
 	          style: ({
 	            color: color.color
 	          })
-	        }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))]), _vm._v(" " + _vm._s(color.title))])]) : _vm._e()
-	      }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', [_c('span', {
-	        staticClass: "suttle-line"
-	      }, [_c('strong', [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _vm._l((entry.shuttleLine), function(color) {
+	        }, [_vm._v("  " + _vm._s(color.title))])])]) : _vm._e()
+	      }), _vm._v(" "), (entry.parent.shuttleLine.length > 1) ? _c('div', {
+	        staticClass: "shuttle-line several"
+	      }, [_c('div', {
+	        staticClass: "number"
+	      }, [_c('i', {
+	        staticStyle: {
+	          "background": "black"
+	        }
+	      }, [_vm._v(_vm._s(entry.parent.number))])]), _vm._v(" "), _c('div', {
+	        staticClass: "lines"
+	      }, _vm._l((entry.parent.shuttleLine), function(color) {
 	        return _c('span', {
-	          staticClass: "suttle-line",
 	          style: ({
 	            color: color.color
 	          })
-	        }, [_vm._v(_vm._s(color.title) + " ")])
-	      })], 2) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
+	        }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
+	      }))]) : _vm._e(), _vm._v(" "), _c('h1', [_c('a', {
 	        attrs: {
-	          "href": entry.url
+	          "href": entry.parent.url
 	        }
 	      }, [_vm._v(_vm._s(entry.parent.title))])])], 2), _vm._v(" "), _c('myprogramevent', {
 	        ref: "myprogramevent",
@@ -17537,9 +17548,31 @@
 	        attrs: {
 	          "programevent": entry
 	        }
-	      })], 1) : _vm._e()
+	      })], 1)]) : _vm._e()
 	    }))
-	  })], 2), _c('br')])
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "adapt-program"
+	  }, [_c('button', {
+	    staticClass: "add-to-my-program",
+	    on: {
+	      "click": _vm.addToMyProgram
+	    }
+	  }, [_c('i', {
+	    class: {
+	      active: _vm.adaptProgram
+	    }
+	  }, [_vm._v("❤")]), _vm._v(" Gesamtes Programm übernehmen\n        ")]), _vm._v(" "), _c('p', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.adaptProgram),
+	      expression: "adaptProgram"
+	    }]
+	  }, [_c('a', {
+	    attrs: {
+	      "href": "https://museumsnacht.ch/programm/mein-programm"
+	    }
+	  }, [_vm._v("Mein Programm")])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -18270,7 +18303,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18372,6 +18405,8 @@
 	    }
 	  }
 	}; //
+	//
+	//
 	//
 	//
 	//
@@ -18536,7 +18571,7 @@
 	    on: {
 	      "click": _vm.print
 	    }
-	  }, [_vm._v("Drucken")])])
+	  }, [_c('i', [_vm._v("⎙ ")]), _vm._v(" Drucken")])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -18553,7 +18588,9 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--entry"
-	  }, [(_vm.programevents.length == 0) ? _c('article', [_vm._v("\n  Nichts gespeichert\n\n  ")]) : _c('article', [_c('ul', {
+	  }, [(_vm.programevents.length == 0) ? _c('div', {
+	    staticClass: "empty"
+	  }, [_c('p', [_vm._v("Dein persönliches Programm ist leer.")]), _vm._v(" "), _vm._m(0)]) : _c('div', [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return _c('li', {
@@ -18608,16 +18645,26 @@
 	  }, [_c('div', {
 	    staticClass: "main-controls"
 	  }, [_c('printbutton'), _vm._v(" "), _c('button', {
-	    staticClass: "reset-my-program",
+	    staticClass: "reset-my-program red",
 	    on: {
 	      "click": _vm.resetMyProgram
 	    }
-	  }, [_vm._v("\n        Mein Programm zurücksetzen\n      ")])], 1), _vm._v(" "), _c('shareprogram', {
+	  }, [_vm._v("\n        Mein Programm zurücksetzen "), _c('i', [_vm._v("ⓧ")])])], 1), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }
-	  })], 1)])
-	},staticRenderFns: []}
+	  })], 1)])])
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('p', [_vm._v("Speichere deine Favoriten unter "), _c('a', {
+	    attrs: {
+	      "href": "/programm"
+	    }
+	  }, [_vm._v("Programm")]), _vm._v(" oder "), _c('a', {
+	    attrs: {
+	      "href": "/museen"
+	    }
+	  }, [_vm._v("Museen")]), _vm._v(" mit Klick auf "), _c('span', [_vm._v("♥")]), _vm._v(".")])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

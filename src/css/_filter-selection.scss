@@ -38,23 +38,26 @@
 	}
 	.filter-tags--container {
 		margin-bottom: .75em;
-		.space-element {
-			margin-top: .25em;
-			display: block;
-			background: none;
-			width: 100%;
-		}
 
+		// >*:first-child {
+		// 						margin-left: -.75em;
+		// 					}
+		
 		.filter--tag {
-			> span {
-				background: $grey-dark;
-				color: white;
-			}
-			>div {
+			// background: red;
+		
+			> div {
+				&.block {
+					background: $grey-dark;
+					color: white;
+					// margin-left: .75em;
+
+				}
+				
 				// box-shadow: 0 0 4px rgba(26,0,66,.55);
 
-				// background: $dark;
 				background: $grey-very-dark;
+				// background: $grey-very-dark;
 				color:white;
 				margin-right: .5em;
 				margin-bottom: .5em;
@@ -90,9 +93,9 @@
 		{
 			background: black;
 		}
-	.filter--tag >div {
-		background: black;
-	}
+	// .filter--tag >div {
+	// 	background: black;
+	// }
 	.filter--tag >span {
 			padding: .2em .8em .5em;
 
@@ -100,7 +103,7 @@
 	.filter--tag, .filter--tag > * {
 			display: inline-block;
 	}
-	.filter--tag>*, .removeAll--tag {
+	.filter--tag>* {
 			// padding: .3em .8em .65em;
 			padding: .15em .8em .45em;
 			border-radius: .5em;
@@ -116,17 +119,9 @@
 			}
 			
 		}
-		.removeAll--tag {
-			// color: red;
+		.remove-all {
 			margin-bottom: 2em;
-			border: 1px solid;
 			color: red;
-			&:hover {
-				background: red;
-				color: white;
-				cursor: pointer;
-			}
-
 		}
 	@media only screen and (min-width: $bp1) {
 		.filter-tags--container {
@@ -149,7 +144,7 @@
 			// margin-bottom: 1em;
 			
 		}
-		.removeAll--tag {
+		.remove-all {
 				position: absolute;
 				right: 0;
 				top:0;

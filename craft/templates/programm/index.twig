@@ -26,22 +26,22 @@
 					<header>
 						<div>
 							<div v-on:click="toggleInstitution" v-bind:class="{ active: openInstitution, selected: checkedInstitutions.length > 0  }">
-								<span v-if="checkedInstitutions.length > 0">(${checkedInstitutions.length})</span> Institutionen <span class="arrow">${ openInstitution ? '▲' : '▼'}</span>
+								<span v-if="checkedInstitutions.length > 0">(${checkedInstitutions.length})</span> Institutionen <i class="arrow">${ openInstitution ? '▲' : '▼'}</i>
 							</div>
 						</div>
 						<div>
 							<div v-on:click="toggleThemes" v-bind:class="{ active: openThemes, selected: checkedThemes.length > 0 }">
-								<span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span> Themen und Sparten<span class="arrow">${ openThemes ? '▲' : '▼'}</span>
+								<span v-if="checkedThemes.length > 0">(${checkedThemes.length})</span> Themen<i class="arrow">${ openThemes ? '▲' : '▼'}</i>
 							</div>
 						</div>
 						<div>
 							<div v-on:click="toggleKinds" v-bind:class="{ active: openKinds, selected: checkedEvents.length > 0  }">
-								<span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungsarten <span class="arrow">${ openKinds ? '▲' : '▼'}</span>
+								<span v-if="checkedEvents.length > 0">(${checkedEvents.length})</span> Veranstaltungsarten <i class="arrow">${ openKinds ? '▲' : '▼'}</i>
 							</div>
 						</div>
 						<div>
 							<div v-on:click="toggleLang" v-bind:class="{ active: openLang, selected: checkedLanguages.length > 0  }">
-								<span v-if="checkedLanguages.length > 0">(${checkedLanguages.length})</span> Sprachen <span class="arrow">${ openLang ? '▲' : '▼'}</span>
+								<span v-if="checkedLanguages.length > 0">(${checkedLanguages.length})</span> Sprachen <i class="arrow">${ openLang ? '▲' : '▼'}</i>
 							</div>
 						</div>
 					</header>

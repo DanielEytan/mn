@@ -67,6 +67,8 @@ body {
     body {
       font-size: 1.3em; } }
 
+.program .adapt-program p a,
+.program--saved .empty a,
 .visit a {
   border-bottom: solid 1px;
   font-family: 'main-eb', helvetica; }
@@ -80,6 +82,7 @@ body {
 
 .more,
 .program .institution *:not(h2),
+.share-button,
 .filter header,
 .filter__selection--wrapper,
 .filter,
@@ -130,11 +133,11 @@ header h1,
 header.site-header h1,
 .food h3,
 .institutions--single .program-text,
-.institutions--overview .grid-view h2 {
+.institutions--overview .grid-view h2,
+.program--saved .empty p:first-of-type {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
-.filter header,
 .filter h2,
 .institutions--overview h1,
 .institutions--single h1.title,
@@ -173,25 +176,29 @@ figcaption,
 .institutions--single .program-text,
 .journal .program-list.selected h1,
 .institutions--overview .map-view .suttle-line strong,
-.institutions--overview .map-view h1 {
+.institutions--overview .map-view h1,
+.program__list--selection li h1.event-title {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1 {
+    .institutions--overview .map-view h1,
+    .program__list--selection li h1.event-title {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
-    .institutions--overview .map-view h1 {
+    .institutions--overview .map-view h1,
+    .program__list--selection li h1.event-title {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
 .program--overview .institution span strong,
 .program .selected h1,
+.program--saved .empty p:first-of-type,
 .institutions--overview--grid-view h1,
 .institutions--overview--list-view h1,
 .institutions--overview .grid-view h2,
@@ -211,6 +218,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
+    .program--saved .empty p:first-of-type,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -229,6 +237,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
+    .program--saved .empty p:first-of-type,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -247,6 +256,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
+    .program--saved .empty p:first-of-type,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -436,18 +446,24 @@ header#header nav,
 
 .institutions--overview .list-view a > div,
 .program__list__event > div,
-.program--overview .food {
+.program--saved .empty,
+.program--overview .food,
+.program .adapt-program {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
     .institutions--overview .list-view a > div,
     .program__list__event > div,
-    .program--overview .food {
+    .program--saved .empty,
+    .program--overview .food,
+    .program .adapt-program {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
     .institutions--overview .list-view a > div,
     .program__list__event > div,
-    .program--overview .food {
+    .program--saved .empty,
+    .program--overview .food,
+    .program .adapt-program {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -901,6 +917,30 @@ footer#footer {
   .journal--single figure {
     margin: 40px auto 45px; } }
 
+.program--saved header {
+  margin-bottom: 3em; }
+
+.program--saved .empty {
+  text-align: center; }
+  .program--saved .empty p {
+    margin-bottom: 1em; }
+    .program--saved .empty p span {
+      color: red; }
+
+.program .name {
+  margin-bottom: 3em; }
+
+.program .adapt-program {
+  margin-top: 2em; }
+  .program .adapt-program i {
+    color: #d2d2d2; }
+    .program .adapt-program i.active {
+      color: red; }
+  .program .adapt-program button {
+    margin-right: 1em; }
+  .program .adapt-program > * {
+    display: inline-block; }
+
 .program .food {
   padding: 1em;
   text-align: center; }
@@ -1238,16 +1278,32 @@ footer#footer {
     border: none;
     border-bottom: solid 1px;
     width: 150px; }
-  .share-program .link {
+  .share-program .share-link {
+    max-width: 100%;
     margin-bottom: 2em; }
-    .share-program .link p {
+    .share-program .share-link > div {
+      display: -ms-flexbox;
+      display: flex; }
+      .share-program .share-link > div > * {
+        overflow: hidden;
+        padding: 10px 12px 12px;
+        border: 1px solid black;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        max-width: 50%; }
+        .share-program .share-link > div > *:first-of-type {
+          background: #f0f0f0; }
+      .share-program .share-link > div .share-button {
+        cursor: pointer; }
+        .share-program .share-link > div .share-button:hover {
+          background: black;
+          color: white; }
+    .share-program .share-link p {
       margin-bottom: 1em; }
-    .share-program .link .link-to-share {
+    .share-program .share-link .link-to-share {
       overflow-x: hidden;
-      padding-bottom: .25em;
-      font-size: .8em;
-      border: solid 1px; }
-      .share-program .link .link-to-share:hover {
+      font-size: .8em; }
+      .share-program .share-link .link-to-share:hover {
         text-decoration: underline; }
   .share-program .share > div {
     display: inline-block;
@@ -1262,14 +1318,7 @@ footer#footer {
       align-items: center; }
       .share-program .flex-container > * {
         -ms-flex: 1 0 49%;
-        flex: 1 0 49%; }
-    .share-program .link > div {
-      display: -ms-flexbox;
-      display: flex; }
-      .share-program .link > div > div.share-button {
-        -ms-flex: 1 0 auto;
-        flex: 1 0 auto;
-        padding: .3em .5em .45em; } }
+        flex: 1 0 49%; } }
 
 .program--overview .filter .filter__checklists--wrapper {
   color: white;
@@ -1277,14 +1326,14 @@ footer#footer {
 
 .program--overview .filter header {
   color: black;
-  font-size: .8em; }
+  font-size: .9em; }
   .program--overview .filter header > * {
     display: block; }
     .program--overview .filter header > *:last-child div {
       border-bottom: solid 1px; }
     .program--overview .filter header > * div {
       border-top: solid 1px;
-      padding: 1em .7em 1.1em;
+      padding: .25em .6em .4em;
       position: relative; }
       .program--overview .filter header > * div .arrow {
         position: absolute;
@@ -1293,18 +1342,21 @@ footer#footer {
         color: white; }
 
 .program--overview .filter .filter--list--wrapper ul {
+  max-width: 1400px;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0 auto; }
   .program--overview .filter .filter--list--wrapper ul li div {
     box-sizing: border-box;
-    padding: .4em .8em .65em;
+    padding: .25em .6em .4em;
+    border-radius: .5em;
     border: solid 1px;
     margin-bottom: 1em;
     font-size: .8em; }
     .program--overview .filter .filter--list--wrapper ul li div.checked {
       box-sizing: border-box;
       background-color: white;
-      color: #1A0042; }
+      color: #464646; }
 
 .program--overview .filter .filter--list--wrapper.active {
   padding: 1em .7em 1.1em; }
@@ -1327,7 +1379,7 @@ footer#footer {
     color: black;
     padding: .3em; }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   .program--overview .filter header {
     display: -ms-flexbox;
     display: flex;
@@ -1361,8 +1413,6 @@ footer#footer {
         margin-right: 1%; }
         .program--overview .filter__checklists .filter--list--wrapper div ul li:nth-child(2n) {
           margin-right: 0; }
-        .program--overview .filter__checklists .filter--list--wrapper div ul li div {
-          padding: .45em .7em .5em; }
     .program--overview .filter__checklists .filter--list--wrapper.active {
       padding: 1em 30px 1.1em; } }
 
@@ -1375,8 +1425,7 @@ footer#footer {
       -ms-flex: 0 1 24%;
       flex: 0 1 24%; }
       .program--overview .filter__checklists header > * div {
-        border: solid #1A0042 1px;
-        padding: .45em .7em .5em; }
+        border: solid #1A0042 1px; }
   .program--overview .filter__checklists .filter--list--wrapper div ul {
     display: -ms-flexbox;
     display: flex;
@@ -1402,9 +1451,7 @@ footer#footer {
     margin: 0 40px;
     width: auto; }
   .program--overview .filter__checklists .filter--list--wrapper.active {
-    padding: 50px 0; }
-  .program--overview .filter__checklists .filter--list--wrapper ul {
-    margin: 0 30px; } }
+    padding: 50px 0; } }
 
 .filter header > * div.selected {
   background: #464646;
@@ -1440,19 +1487,14 @@ footer#footer {
 
 .filter__selection--wrapper .filter-tags--container {
   margin-bottom: .75em; }
-  .filter__selection--wrapper .filter-tags--container .space-element {
-    margin-top: .25em;
-    display: block;
-    background: none;
-    width: 100%; }
-  .filter__selection--wrapper .filter-tags--container .filter--tag > span {
-    background: #464646;
-    color: white; }
   .filter__selection--wrapper .filter-tags--container .filter--tag > div {
     background: #1e1e1e;
     color: white;
     margin-right: .5em;
     margin-bottom: .5em; }
+    .filter__selection--wrapper .filter-tags--container .filter--tag > div.block {
+      background: #464646;
+      color: white; }
     .filter__selection--wrapper .filter-tags--container .filter--tag > div.kind:last-of-type:before {
       content: "t"; }
 
@@ -1464,41 +1506,33 @@ footer#footer {
 .filter__selection--wrapper header .selected {
   background: black; }
 
-.filter__selection--wrapper .filter--tag > div {
-  background: black; }
-
 .filter__selection--wrapper .filter--tag > span {
   padding: .2em .8em .5em; }
 
 .filter__selection--wrapper .filter--tag, .filter__selection--wrapper .filter--tag > * {
   display: inline-block; }
 
-.filter__selection--wrapper .filter--tag > *, .filter__selection--wrapper .removeAll--tag {
+.filter__selection--wrapper .filter--tag > * {
   padding: .15em .8em .45em;
   border-radius: .5em;
   font-size: .8em; }
-  .filter__selection--wrapper .filter--tag > * > *, .filter__selection--wrapper .removeAll--tag > * {
+  .filter__selection--wrapper .filter--tag > * > * {
     vertical-align: middle; }
-  .filter__selection--wrapper .filter--tag > * i, .filter__selection--wrapper .removeAll--tag i {
+  .filter__selection--wrapper .filter--tag > * i {
     font-size: 1.5em;
     line-height: 0em;
     margin-right: .25em; }
 
-.filter__selection--wrapper .removeAll--tag {
+.filter__selection--wrapper .remove-all {
   margin-bottom: 2em;
-  border: 1px solid;
   color: red; }
-  .filter__selection--wrapper .removeAll--tag:hover {
-    background: red;
-    color: white;
-    cursor: pointer; }
 
 @media only screen and (min-width: 1024px) {
   .filter__selection--wrapper {
     position: relative; }
     .filter__selection--wrapper .filter-tags--container {
       padding-right: 250px; }
-    .filter__selection--wrapper .removeAll--tag {
+    .filter__selection--wrapper .remove-all {
       position: absolute;
       right: 0;
       top: 0; } }
@@ -1578,15 +1612,12 @@ header.site-header {
           display: inline-block; } }
 
 .button {
-  background: white;
-  border: solid 1px;
-  padding: .5em;
-  z-index: 10;
   margin-bottom: .5em;
   display: inline-block;
   margin-right: .25em; }
 
 button {
+  z-index: 10;
   cursor: pointer;
   font-size: 1em;
   background: white;
@@ -1598,8 +1629,11 @@ button {
     button:hover a {
       color: white; }
 
-button.reset-my-program:hover {
-  background: red; }
+button.red {
+  color: red; }
+  button.red:hover {
+    color: white;
+    background: red; }
 
 .scroll-top-button {
   cursor: pointer;
@@ -1626,13 +1660,11 @@ button.reset-my-program:hover {
     opacity: 1; }
 
 .program .control-program .main-controls {
-  margin-bottom: 5em;
-  background: #f0f0f0;
+  margin: 2em 0 3em;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 2em; }
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
   .program .control-program .main-controls button:first-of-type {
     margin-right: 1em; }
 

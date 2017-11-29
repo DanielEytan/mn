@@ -8,11 +8,8 @@
         </div>
       </div>
      <div class="text">
-
       <h1 class="event-title">{{ programevent.title }}</h1>
       <div v-html="programevent.description">{{ programevent.description }}</div>
-      
-     
       </div>
           <div class="icons">
           <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Für Kinder & Familien'"><span >🎠</span></div>

@@ -1,6 +1,6 @@
 <template>
   <div class="print-button">
-    <button v-on:click="print">Drucken</button>
+    <button v-on:click="print"><i>⎙ </i> Drucken</button>
   </div>
 </template>
 

@@ -1,11 +1,12 @@
 <template>
   <div class="program--entry">
 
-    <article v-if="programevents.length == 0">
-    Nichts gespeichert
-
-    </article>
-    <article v-else>
+    <div v-if="programevents.length == 0" class="empty">
+    <p>Dein persönliches Programm ist leer.</p>
+    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit Klick auf <span>♥</span>.</p>
+    </div>
+    <div v-else>
+    <article>
 
       <ul class="program__list program__list--selection">
         
@@ -37,12 +38,13 @@
     <div class="control-program">
       <div class="main-controls">
         <printbutton></printbutton>
-        <button class="reset-my-program" v-on:click="resetMyProgram">
-          Mein Programm zurücksetzen
+        <button class="reset-my-program red" v-on:click="resetMyProgram">
+          Mein Programm zurücksetzen <i>ⓧ</i>
         </button>
       </div>
 
       <shareprogram :programevent="programevents"></shareprogram>   
+    </div>
     </div>
   </div>
 </template>
@@ -122,6 +124,8 @@ resetMyProgram: function() {
   myprogramevent_child_components.forEach(function(o) {
     o.removeFromList();
   });
+  
+
 }
 }
 }

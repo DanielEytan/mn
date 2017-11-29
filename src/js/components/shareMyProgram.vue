@@ -3,21 +3,18 @@
    
   <h1>Teile dein Programm</h1>
   <div  >
-   <div class="link">
+   <div class="share-link">
     <p>Du kannst dein Programm mit deinem Namen personalisieren und als Link verschicken.</p>
     <!-- <p class="mb">Trage dafür deinen Namen ein.</p> -->
     <input @change="getItems" v-model="name" placeholder="Name"><br><br>
     <div>
-    <p class="link-to-share"><a :href="url" class="directlink"><nobr>{{ url }}</nobr></a>{{name}}</p>
-
-    <div class="share-button" v-on:click="getItems"><span  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</span></div>
-    </div>
+      <div><a :href="url"><nobr>{{ url }}</nobr></a></div>
+      <div class="share-button" v-on:click="getItems"><span  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</span></div>
+      </div>
     <!-- <p>Der Link zu deiner Auswahl kannst du über <nobr>[Strg] + [v]</nobr> respektive <nobr>[Command] + [v]</nobr> am gewünschten Ort einfügen.</p><br> -->
  </div>
  <div class="share">
   <h1>Auf Social-Media teilen</h1>
-
-  <p>Du kannst deine Auswahl auch als per Mail verschicken oder auf deinen Social Media Channels teilen.</p>
 
  <div v-on:click="getItems"><button><a :href="mail"><i>ⓜ</i> Mail</a></button></div>
  <div v-on:click="getItems"><button><a :href="facebook + url"><i>ⓕ</i> Facebook</a></button></div>
