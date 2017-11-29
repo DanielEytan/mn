@@ -1,18 +1,17 @@
-nav {
-	// &.nav-wrapper {
-	// 	height: 0;
-	// 	overflow: hidden;
-	// }
+header#header nav {
 	ul.main-nav {
 		margin: 3em 0 2em;
 		li {
 			margin-bottom: 1em;
 
 			a {
-				border-bottom: solid 2px;
+				// border-bottom: solid .13em;
 				text-transform: uppercase;
-			line-height: .8em !important;
+				line-height: .8em !important;
+				&:hover {
+				border-bottom: solid .13em;
 
+				}
 			}
 		}
 	}

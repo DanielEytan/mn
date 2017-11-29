@@ -1,0 +1,172 @@
+<footer id="footer">
+						<section>
+							<h3>Die Museumsnacht ist eine Veranstaltung der museen basel und der Abteilung Kultur Basel-Stadt.</h3>
+							<ul class="logos">
+								{% for logo in organizer.logoBlock %}
+								<li>
+									<a href="{{ logo.sponsorLink }}">
+										<figure v-if="activeContrast">
+											{% for img in logo.logoBright %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+											{% for img in logo.logoDark %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</section>
+
+						<section class="glossary info-block">
+							<article>
+								<div><i>♥</i><p>Earlybird oder Nachtschwärmerin? Kunstwerke oder Technik und Wissenschaft? Mit Klick auf ♥ können die liebsten Programmangebote gespeichert werden.</p> </div>
+								<div> <i>🎠</i><p>Unterwegs mit Kindern? Achten Sie auf Programmangebote mit folgendem Symbol:</p></div>
+								<div><i>🍽</i><p>Schon gewusst? Alle Museen und Institutionen bieten von 18-2 Uhr durchgehend Essen und Getränke an.</p></div>
+								<div><i>♿</i><p>Die Museumsnacht ist auch für Gäste mit besonderen Bedürfnissen ein Genuss: Rund 80% der Museen und Institutionen sind rollstuhlgängig. </p> </div>
+								{# <div><i>ℹ</i> <p>Die Infostelle am Münsterplatz ist zentraler Treffpunkt für Tickets und Auskünfte. Von hier aus starten zudem sämtliche Shuttle-Busse.</p> </div> #}
+						{# </div> #}
+						</article>
+						<article class="additional-program info-block">
+							<div><h2>Weitertanzen?</h2><p> Das <a href="http://www.dasviertel.ch/de/programm_klub">Viertel ↗</a>, <a href="https://www.heimatbasel.ch/">Heimat ↗</a>  und <a href="http://balzklub.ch/">Balz Klub ↗</a> bieten nach der Museumsnacht (ab 2 Uhr) freien Eintritt beim Vorweisen des Museumsnacht-Tickets.</p></div>
+							<div><h2>Weiterlesen?</h2><p>Während der Museumsnacht hat das Basler <a href="https://www.edubs.ch/unterstuetzung/bibliothek/lesefoerderung/jugendbuecherschiff">Jugendbücherschiff ↗</a>  an der Schifflände bis 23.30 Uhr geöffnet.  </p></div>
+						</article>
+						</section>
+						<section class="nav-contact">
+								{# <h3>Museumsnacht Basel 2018</h3> #}
+								<div class="nav">
+								<h2>MENU</h2>
+								<nav>
+									<div>
+
+									<ul class="main-nav">
+										<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
+										<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
+										<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
+										<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
+
+										{# <li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li> #}
+									</ul>
+									<ul class="sec-nav">
+											<li><a href="/">Journal</a></li>
+											<li><a href="/">Medien</a></li>
+											<li><a href="/">Impressum</a></li>
+										</ul>
+									</div>
+
+										<ul class="lang">
+											<li><nobr><a href="/"><i class="fr">🇫🇷</i> <span>Informations en francais</span></a></nobr></li>
+											<li><a href="/"><i class="en">🇬🇧</i> <span>Informations in English</span></a></li>
+											
+
+										</ul>
+										
+								</nav>
+								</div>
+								<div class="contact">
+									<h2>Kontakt</h2>
+
+									<div class="flex-container">
+										<div><h3>Abteilung Kultur Basel-Stadt<br>Museumsnacht Basel</h3><br>
+											<p>+41 61 267 84 01<br><a href="mailto:info@museumsnacht.ch">info@museumsnacht.ch </a></p>
+										</div>
+										<ul class="social">
+											<li><a href="https://twitter.com/museenbasel"><i>ⓣ</i> <span>@museenbasel</span></a></li>
+											<li><a href="https://www.facebook.com/museenbasel/"><i>ⓕ</i> <span>@museenbasel</span></a></li>
+											<li><a href="https://www.instagram.com/museumsnachtbasel/"><i>i</i> <span>@museumsnachtbasel</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+						<section class="sponsors">
+							<h2>UNSERE SPONSOREN – EIN STARKES TRIO</h2>
+
+							<ul class="logos">
+								{% for logo in sponsores.logoBlock %}
+								<li>
+									<a href="{{ logo.sponsorLink }}">
+										<figure v-if="activeContrast">
+											{% for img in logo.logoBright %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+											{% for img in logo.logoDark %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</section>
+						<section class="media-partner">
+							<h2>UNSERE MEDIENPARTNER</h2>
+
+							<ul class="logos">
+								{% for logo in mediaPartner.logoBlock %}
+								<li>
+									<a href="{{ logo.sponsorLink }}">
+										<figure v-if="activeContrast">
+											{% for img in logo.logoBright %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+											{% for img in logo.logoDark %}
+											<img src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+							<p><strong>Vom 12.-20. Januar 2017 nimmt Radio Basilisk die Museumsnacht in den «Fokus»: zuhören, mehr erfahren und Tickets gewinnen</strong></p>
+						</section>
+						<section class="thanks">
+							<h2>DANKE</h2>
+							<ul class="logos">
+								{% for logo in thanks.logoBlock %}
+								<li>
+									<a href="{{ logo.sponsorLink }}">
+										<figure v-if="activeContrast">
+											{% for img in logo.logoBright %}
+											<img {% if img.width < img.height %}class="portrait"{% endif %} src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+										<figure v-else="activeContrast">
+											{% for img in logo.logoDark %}
+											<img {% if img.width < img.height %}class="portrait"{% endif %} src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
+											{% endfor %}
+										</figure>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</section>
+						{# <div>
+						<div class="sponsors">
+							{{ sponsores.textForSponsors }}
+							<div class="flex-container">
+								{% for sponsor in sponsores.sponsorBlocks %}
+									<div>
+										<a href="{{ sponsor.sponsorLink }}">
+											<h1>{{ sponsor.sponsorName }}</h1>
+							    		{% if sponsor.logo | length %}
+								    		{% for img in logo.sponsor %}
+								    	    <figure>
+								    	    	<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+								    	    </figure>
+								    		{% endfor %}
+								    	{% endif %}
+								    </a>
+
+								</div>
+							{% endfor %}
+						</div> #}
+						
+					</footer>

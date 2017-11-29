@@ -159,7 +159,8 @@ header.site-header h1,
 .more,
 .info-block h2,
 .info-block h3,
-.post-date 
+.post-date ,
+footer h2
   {
 	text-transform: uppercase;
 	letter-spacing: .025em;
@@ -253,7 +254,7 @@ footer h2 {
 // Font-Size XXL
 .program__list .institution h2,
 .institutions--single .program h1.program-title,
-.nav-wrapper ul.main-nav li a,
+header#header nav ul.main-nav li a,
 header.site-header h1,
 .home .site-title {
 		

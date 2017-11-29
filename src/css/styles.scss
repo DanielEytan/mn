@@ -26,7 +26,6 @@
 @import 'share-program';
 @import 'filter';
 @import 'filter-selection';
-@import 'contrast';
 @import 'presell';
 @import 'save-element';
 @import 'section-nav';
@@ -35,6 +34,7 @@
 @import 'control-program';
 @import 'shuttle-line';
 @import 'nav';
+@import 'contrast';
 
 // temporary
 
@@ -89,21 +89,21 @@ figcaption {
 	}
 }
 
-.info-block {
-	margin-bottom: 5em;
-	h2,p {
-		margin-bottom: 1em;
-	}
-	.presell {
-		margin-bottom: 2em;
-	}
-	h3 {
-		margin-bottom: .5em;
-	}
-	ul {
-		margin-bottom: 1.5em;
-	}
-}
+// .info-block {
+// 	margin-bottom: 5em;
+// 	h2,p {
+// 		margin-bottom: 1em;
+// 	}
+// 	.presell {
+// 		margin-bottom: 2em;
+// 	}
+// 	h3 {
+// 		margin-bottom: .5em;
+// 	}
+// 	ul {
+// 		margin-bottom: 1.5em;
+// 	}
+// }
 
 header.site-header h1{
 	margin-bottom: .75em;

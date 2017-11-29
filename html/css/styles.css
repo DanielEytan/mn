@@ -157,7 +157,8 @@ header.site-header h1,
 .more,
 .info-block h2,
 .info-block h3,
-.post-date {
+.post-date,
+footer h2 {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -278,7 +279,7 @@ footer h2 {
 
 .program__list .institution h2,
 .institutions--single .program h1.program-title,
-.nav-wrapper ul.main-nav li a,
+header#header nav ul.main-nav li a,
 header.site-header h1,
 .home .site-title {
   font-size: 1.4em;
@@ -286,28 +287,28 @@ header.site-header h1,
   @media only screen and (min-width: 374px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
-    .nav-wrapper ul.main-nav li a,
+    header#header nav ul.main-nav li a,
     header.site-header h1,
     .home .site-title {
       font-size: 1.75em; } }
   @media only screen and (min-width: 768px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
-    .nav-wrapper ul.main-nav li a,
+    header#header nav ul.main-nav li a,
     header.site-header h1,
     .home .site-title {
       font-size: 2.5em; } }
   @media only screen and (min-width: 1024px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
-    .nav-wrapper ul.main-nav li a,
+    header#header nav ul.main-nav li a,
     header.site-header h1,
     .home .site-title {
       font-size: 3em; } }
   @media only screen and (min-width: 1900px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
-    .nav-wrapper ul.main-nav li a,
+    header#header nav ul.main-nav li a,
     header.site-header h1,
     .home .site-title {
       font-size: 3.5em; } }
@@ -585,8 +586,6 @@ header#header {
     letter-spacing: .05em; }
     header#header .burger-toggle > * {
       display: inline-block; }
-      header#header .burger-toggle > *:first-child {
-        margin-right: .5em; }
     header#header .burger-toggle .burger span {
       display: block;
       height: 2px;
@@ -651,26 +650,27 @@ header#header {
 footer#footer {
   z-index: 11;
   position: relative;
-  border-top: solid 2px;
+  border-top: solid 5px;
   margin-top: 5em;
-  font-size: .9em;
-  padding: 1px; }
-  footer#footer p {
+  font-size: .85em; }
+  footer#footer h2, footer#footer p {
     margin-bottom: 1em; }
-  footer#footer .glossary > * {
+  footer#footer section {
+    padding-top: 1em;
+    border-top: 1px solid;
     margin-bottom: 2em; }
-    footer#footer .glossary > * i {
+    footer#footer section:first-of-type {
+      border-top: none; }
+      footer#footer section:first-of-type h3 {
+        text-align: center; }
+    footer#footer section.glossary div {
+      margin-bottom: 2em; }
+    footer#footer section.glossary i {
       font-size: 3em;
       display: inline-block;
       margin-bottom: .5em; }
-  footer#footer section {
-    padding: 1.5em 0;
-    border-top: 1px solid; }
-    footer#footer section:first-of-type, footer#footer section.additional-program {
-      border-top: none; }
-  footer#footer h2 {
-    margin-bottom: 1em; }
   footer#footer .logos {
+    margin-top: 2em;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -690,92 +690,78 @@ footer#footer {
       justify-content: center; }
       footer#footer .logos li figure img {
         max-height: 60px; }
+  footer#footer .thanks .logos li {
+    -ms-flex: 0 1 18%;
+    flex: 0 1 18%; }
+  footer#footer .media-partner .logos {
+    margin-bottom: 1em; }
+  footer#footer .media-partner p {
+    text-align: center; }
   footer#footer nav {
     margin-bottom: 3em; }
+    footer#footer nav li {
+      margin-bottom: .5em; }
     footer#footer nav ul.main-nav {
-      font-size: .75em; }
+      font-size: 2em; }
   footer#footer ul.social li i {
     display: inline-block;
-    width: 30px;
+    width: 20px;
     font-size: 1.2em; }
-  @media only screen and (min-width: 500) {
-    footer#footer .glossary {
+  @media only screen and (max-width: 768px) {
+    footer#footer .glossary i {
+      text-align: center; } }
+  @media only screen and (min-width: 600px) {
+    footer#footer .glossary article, footer#footer nav, footer#footer .contact .flex-container {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-      footer#footer .glossary > * {
-        -ms-flex: 0 1 48%;
-        flex: 0 1 48%;
-        margin-right: 2%; }
-        footer#footer .glossary > *:nth-child(3) {
-          margin-right: 0; } }
-  @media only screen and (max-width: 768px) {
-    footer#footer .glossary i {
-      text-align: center; } }
-  @media only screen and (min-width: 768px) {
-    footer#footer .glossary {
-      padding-top: 2em;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      footer#footer .glossary > * {
-        -ms-flex: 0 1 45%;
-        flex: 0 1 45%; }
-    footer#footer .additional-program {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      footer#footer .additional-program > * {
-        -ms-flex: 0 1 45%;
-        flex: 0 1 45%; }
+      footer#footer .glossary article > *, footer#footer nav > *, footer#footer .contact .flex-container > * {
+        -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
+        padding-right: 1em; }
+    footer#footer nav ul.main-nav {
+      margin-bottom: 1em; }
+    footer#footer nav li {
+      margin-bottom: .5em; }
     footer#footer .logos li {
       -ms-flex: 0 1 20%;
       flex: 0 1 20%; }
-    footer#footer nav {
-      margin-bottom: 1em; }
-      footer#footer nav ul.main-nav {
-        margin-top: 1em; }
-        footer#footer nav ul.main-nav li {
-          display: inline-block;
-          margin-right: 1em; }
-      footer#footer nav ul.sec-nav li {
-        margin-bottom: 0; }
-      footer#footer nav div {
-        position: relative;
-        display: -ms-flexbox;
-        display: flex; }
-        footer#footer nav div ul {
-          -ms-flex: 0 1 40%;
-          flex: 0 1 40%; }
-    footer#footer .contact .flex-container {
-      display: -ms-flexbox;
-      display: flex; }
-      footer#footer .contact .flex-container > * {
-        -ms-flex: 0 1 40%;
-        flex: 0 1 40%; } }
+    footer#footer .thanks .logos li {
+      -ms-flex: 0 1 13%;
+      flex: 0 1 13%; } }
   @media only screen and (min-width: 768px) {
+    footer#footer .glossary {
+      padding-top: 2em; }
     footer#footer .thanks .logos li {
       -ms-flex: 0 1 10%;
       flex: 0 1 10%; } }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1100px) {
+    footer#footer .logos li {
+      -ms-flex: 0 1 15%;
+      flex: 0 1 15%; }
     footer#footer .thanks .logos li {
       -ms-flex: 0 1 8%;
       flex: 0 1 8%; }
-    footer#footer .logos li {
-      -ms-flex: 0 1 15%;
-      flex: 0 1 15%; } }
+    footer#footer .nav-contact, footer#footer nav, footer#footer .contact .flex-container {
+      display: -ms-flexbox;
+      display: flex; }
+      footer#footer .nav-contact > *, footer#footer nav > *, footer#footer .contact .flex-container > * {
+        -ms-flex: 0 1 50%;
+        flex: 0 1 50%; }
+    footer#footer .glossary article:first-of-type > * {
+      -ms-flex: 0 1 25%;
+      flex: 0 1 25%; }
+    footer#footer nav {
+      margin-bottom: 0; }
+      footer#footer nav ul.main-nav li {
+        margin-bottom: .5em; }
+      footer#footer nav li {
+        margin-bottom: .25em; } }
   @media only screen and (min-width: 1500px) {
     footer#footer .additional-program > * {
       -ms-flex: 0 1 49%;
       flex: 0 1 49%; }
-    footer#footer nav div ul, footer#footer .contact .flex-container > * {
-      -ms-flex: 0 1 25%;
-      flex: 0 1 25%; }
     footer#footer .glossary > * {
       -ms-flex: 0 1 23%;
       flex: 0 1 23%; }
@@ -1120,7 +1106,7 @@ footer#footer {
     .institutions--overview .map-view .selected-institution {
       position: fixed;
       bottom: 0;
-      z-index: 9;
+      z-index: 20;
       background: white;
       width: 100%;
       height: 150px;
@@ -1535,79 +1521,6 @@ footer#footer {
       right: 0;
       top: 0; } }
 
-#vue-app.active {
-  background: #1A0042;
-  color: white;
-  padding: 1px; }
-  #vue-app.active a {
-    color: white; }
-  #vue-app.active button {
-    background: #1A0042;
-    border: 1px solid white;
-    color: white; }
-    #vue-app.active button:hover {
-      background: white;
-      color: #1A0042; }
-      #vue-app.active button:hover a {
-        color: #1A0042; }
-  #vue-app.active header#header {
-    background: #1A0042 !important;
-    box-shadow: 0px 0px 8px 4px black; }
-    #vue-app.active header#header .burger-toggle .burger span {
-      background: white; }
-    #vue-app.active header#header .saved-link a {
-      color: red; }
-  #vue-app.active .de {
-    color: white; }
-  #vue-app.active .scroll-top-button {
-    background: #1A0042; }
-  #vue-app.active .selected-institution {
-    background: #1A0042 !important; }
-  #vue-app.active .program .control-program .main-controls {
-    background: #210055; }
-  #vue-app.active .program--overview .filter header {
-    border: #1A0042;
-    color: white; }
-  #vue-app.active .program__list__event:nth-child(2n) {
-    background: #210055; }
-  #vue-app.active .label--wrapper {
-    color: #1A0042; }
-  #vue-app.active .filter__selection--wrapper .filter-tags--container .filter--tag > div {
-    background: white;
-    color: #1A0042; }
-  #vue-app.active .filter__checklists--wrapper > div {
-    background: white !important; }
-  #vue-app.active .filter header > * div.selected {
-    background: #5a5a5a; }
-  #vue-app.active .filter header > * div.active {
-    background: white !important;
-    color: #1A0042; }
-  #vue-app.active .filter__checklists--wrapper {
-    color: #1A0042; }
-  #vue-app.active .label--wrapper.checked {
-    background: #1A0042;
-    color: white; }
-  #vue-app.active .program .share-program .button button {
-    background: #1A0042;
-    border: solid white 1px;
-    color: white; }
-    #vue-app.active .program .share-program .button button:hover {
-      color: #1A0042;
-      background: white; }
-      #vue-app.active .program .share-program .button button:hover a {
-        color: #1A0042; }
-  @media only screen and (min-width: 768px) {
-    #vue-app.active .program--overview .filter__checklists header > * div {
-      border: solid white 1px !important; }
-      #vue-app.active .program--overview .filter__checklists header > * div.active {
-        border-bottom: 10px white solid !important; }
-    #vue-app.active .program__list__event:nth-child(2n) {
-      background: #1A0042; }
-    #vue-app.active .program__list__event:hover {
-      background: #210055; } }
-  #vue-app.active #save-toggle > div:hover {
-    color: #1A0042 !important; }
-
 .presell {
   margin-bottom: 2em; }
   .presell .toggle-list .presell-toggle {
@@ -1655,7 +1568,8 @@ header.site-header h1 {
   margin-bottom: .5em; }
 
 header.site-header nav {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  margin-bottom: 2em; }
   header.site-header nav span {
     padding: .2em .4em .3em;
     border: solid 1px;
@@ -1762,59 +1676,133 @@ button.reset-my-program:hover {
   .shuttle-line.several span:not(:last-of-type):after {
     content: ", "; }
 
-nav ul.main-nav {
+header#header nav ul.main-nav {
   margin: 3em 0 2em; }
-  nav ul.main-nav li {
+  header#header nav ul.main-nav li {
     margin-bottom: 1em; }
-    nav ul.main-nav li a {
-      border-bottom: solid 2px;
+    header#header nav ul.main-nav li a {
       text-transform: uppercase;
       line-height: .8em !important; }
+      header#header nav ul.main-nav li a:hover {
+        border-bottom: solid .13em; }
 
-nav > div {
+header#header nav > div {
   margin-bottom: .5em; }
-  nav > div li {
+  header#header nav > div li {
     margin-bottom: 1em; }
-    nav > div li i {
+    header#header nav > div li i {
       width: 30px;
       font-size: 1.2em;
       display: inline-block; }
-  nav > div ul.lang {
+  header#header nav > div ul.lang {
     margin-bottom: 2em; }
-  nav > div ul.social li {
+  header#header nav > div ul.social li {
     margin-right: 1em;
     display: inline-block; }
-    nav > div ul.social li span {
+    header#header nav > div ul.social li span {
       display: none; }
-    nav > div ul.social li i {
+    header#header nav > div ul.social li i {
       display: inline-block;
       font-size: 1.5em; }
 
-nav.open div.nav-wrapper {
+header#header nav.open div.nav-wrapper {
   height: auto; }
 
-nav.open .burger-toggle .burger {
+header#header nav.open .burger-toggle .burger {
   background: red; }
 
 @media screen and (min-width: 768px) {
-  nav {
+  header#header nav {
     margin-bottom: 3em;
     position: relative; }
-    nav > div {
+    header#header nav > div {
       position: absolute;
       top: 0;
       right: 0; }
-      nav > div ul li {
+      header#header nav > div ul li {
         margin-bottom: .5em; }
-      nav > div ul.lang {
+      header#header nav > div ul.lang {
         margin-bottom: 1.5em; }
-      nav > div ul.social li {
+      header#header nav > div ul.social li {
         display: block; }
-        nav > div ul.social li span {
+        header#header nav > div ul.social li span {
           display: inline-block; } }
 
-nav .flex-container {
+header#header nav .flex-container {
   height: 49px; }
+
+#vue-app.active {
+  background: #1A0042;
+  color: white;
+  padding: 1px; }
+  #vue-app.active a {
+    color: white; }
+  #vue-app.active button {
+    background: #1A0042;
+    border: 1px solid white;
+    color: white; }
+    #vue-app.active button:hover {
+      background: white;
+      color: #1A0042; }
+      #vue-app.active button:hover a {
+        color: #1A0042; }
+  #vue-app.active header#header {
+    background: #1A0042 !important;
+    box-shadow: 0px 0px 8px 4px black; }
+    #vue-app.active header#header .burger-toggle .burger span {
+      background: white; }
+    #vue-app.active header#header .saved-link a {
+      color: red; }
+  #vue-app.active .de {
+    color: white; }
+  #vue-app.active .scroll-top-button {
+    background: #1A0042; }
+  #vue-app.active .selected-institution {
+    background: #1A0042 !important; }
+  #vue-app.active .program .control-program .main-controls {
+    background: #210055; }
+  #vue-app.active .program--overview .filter header {
+    border: #1A0042;
+    color: white; }
+  #vue-app.active .program__list__event:nth-child(2n), #vue-app.active .institutions--overview--list-view li:nth-child(2n) {
+    background: #210055; }
+  #vue-app.active .label--wrapper {
+    color: #1A0042; }
+  #vue-app.active .filter__selection--wrapper .filter-tags--container .filter--tag > div {
+    background: white;
+    color: #1A0042; }
+  #vue-app.active .filter__checklists--wrapper > div {
+    background: white !important; }
+  #vue-app.active .filter header > * div.selected {
+    background: #5a5a5a; }
+  #vue-app.active .filter header > * div.active {
+    background: white !important;
+    color: #1A0042; }
+  #vue-app.active .filter__checklists--wrapper {
+    color: #1A0042; }
+  #vue-app.active .label--wrapper.checked {
+    background: #1A0042;
+    color: white; }
+  #vue-app.active .program .share-program .button button {
+    background: #1A0042;
+    border: solid white 1px;
+    color: white; }
+    #vue-app.active .program .share-program .button button:hover {
+      color: #1A0042;
+      background: white; }
+      #vue-app.active .program .share-program .button button:hover a {
+        color: #1A0042; }
+  @media only screen and (min-width: 768px) {
+    #vue-app.active .program--overview .filter__checklists header > * div {
+      border: solid white 1px !important; }
+      #vue-app.active .program--overview .filter__checklists header > * div.active {
+        border-bottom: 10px white solid !important; }
+    #vue-app.active .program__list__event:nth-child(2n), #vue-app.active .institutions--overview--list-view li:nth-child(2n) {
+      background: #1A0042; }
+    #vue-app.active .program__list__event:hover, #vue-app.active .institutions--overview--list-view li:hover {
+      background: #210055; } }
+  #vue-app.active #save-toggle > div:hover {
+    color: #1A0042 !important; }
 
 #map {
   height: 400px;
@@ -1857,17 +1845,6 @@ html {
   border-bottom: solid 1px; }
   .text-block section:last-of-type {
     border-bottom: none; }
-
-.info-block {
-  margin-bottom: 5em; }
-  .info-block h2, .info-block p {
-    margin-bottom: 1em; }
-  .info-block .presell {
-    margin-bottom: 2em; }
-  .info-block h3 {
-    margin-bottom: .5em; }
-  .info-block ul {
-    margin-bottom: 1.5em; }
 
 header.site-header h1 {
   margin-bottom: .75em; }

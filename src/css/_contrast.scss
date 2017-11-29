@@ -53,7 +53,7 @@
 		 	// &.active, &.selected {background:white;color:$dark;}
 		} 
 	}
-	.program__list__event{
+	.program__list__event, .institutions--overview--list-view li {
 		&:nth-child(2n) {
 			background:#210055;
 			// background:#1d004b;
@@ -102,6 +102,9 @@
 				}
 			}
 	}
+	.shuttle-line .number i {
+		// background: white !important;
+	}
 	@media only screen and (min-width: $bp1) {
 		.program--overview .filter__checklists header > * div {
 				border: solid white 1px !important;
@@ -109,7 +112,7 @@
 							border-bottom: 10px white solid !important;
 						}
 					}
-					.program__list__event{
+		.program__list__event, .institutions--overview--list-view li{
 		&:nth-child(2n) {
 			// background:#210055;
 			background:$dark;
