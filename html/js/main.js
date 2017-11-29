@@ -18590,7 +18590,7 @@
 	    staticClass: "program--entry"
 	  }, [(_vm.programevents.length == 0) ? _c('div', {
 	    staticClass: "empty"
-	  }, [_c('p', [_vm._v("Dein persönliches Programm ist leer.")]), _vm._v(" "), _vm._m(0)]) : _c('div', [_c('article', [_c('ul', {
+	  }, [_c('p', [_vm._v("Dein perönliches Programm ist leer.")]), _vm._v(" "), _vm._m(0)]) : _c('div', [_c('article', [_c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return _c('li', {
@@ -20424,13 +20424,6 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
 	   name: 'googlemap',
@@ -20444,7 +20437,7 @@
 	         markers: [],
 	         institutionsData: [],
 	         inst: "0",
-	         institutInfo: false,
+	         institutInfo: true,
 	         mapTop: false,
 	         center: new google.maps.LatLng(47.55959860000001, 7.588576099999955)
 	      };
@@ -20729,15 +20722,14 @@
 	  }), _vm._v(" "), _vm._l((_vm.institutionsData), function(entry) {
 	    return (entry.number == _vm.inst) ? _c('aside', {
 	      staticClass: "institutions--overview_child"
-	    }, [_c('div', [_c('div', {
-	      staticClass: "back",
+	    }, [_c('div', [_c('button', {
 	      on: {
 	        "click": function($event) {
 	          _vm.inst = 0;
 	          _vm.zoomOut()
 	        }
 	      }
-	    }, [_vm._v("← Zurück zur Übersicht")]), _vm._v(" "), _c('div', [_c('a', {
+	    }, [_vm._v("← Zur Liste")]), _vm._v(" "), _c('div', [_c('a', {
 	      attrs: {
 	        "href": entry.url
 	      }
@@ -20777,16 +20769,12 @@
 	          color: color.color
 	        })
 	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
-	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _vm._v(" "), _c('div', {
-	      staticClass: "icons"
-	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
-	      return _c('span', [(value === 'wheelchair') ? _c('i', [_vm._v("♿")]) : _vm._e(), _vm._v(" "), (value === 'partlyWheelchair') ? _c('i', [_vm._v("♿*")]) : _vm._e()])
-	    })], 2), _c('br'), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
+	    }))]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
 	      staticClass: "journey",
 	      domProps: {
 	        "innerHTML": _vm._s(entry.journey)
 	      }
-	    }, [_vm._v(_vm._s(entry.journey))]), _c('br'), _vm._v(" "), _c('p', [_vm._v("Zur Instituts-Unterseite →")]), _c('br')], 2)])])]) : _vm._e()
+	    }, [_vm._v(_vm._s(entry.journey))]), _c('br'), _vm._v(" "), _vm._m(0, true), _c('br')], 2)])])]) : _vm._e()
 	  }), _vm._v(" "), (_vm.inst == 0) ? _c('aside', [_c('div', [_c('ul', {
 	    staticClass: "institutions-list"
 	  }, _vm._l((_vm.institutionsData), function(entry) {
@@ -20825,7 +20813,11 @@
 	      "id": "multiMap"
 	    }
 	  })])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('p', {
+	    staticClass: "more"
+	  }, [_vm._v("Mehr "), _c('i', [_vm._v("→")])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

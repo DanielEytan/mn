@@ -1,5 +1,6 @@
 	<article class="institutions institutions--single">
 		<header>
+			
 			<div class="suttle-line">
 				{% set shuttleLine = entry.shuttleLine %}
 				{% if shuttleLine | length < 2 %}
@@ -39,8 +40,10 @@
 					{% endswitch %}
 					{% if entry.wifi %}<li><i>&#8980;</i> Wi-Fi</li>{% endif %}
 					</ul>
-					<div class="link"><a href="/museen">← Zur Institutions-Übersicht</a></div>
 					
+					<button>
+						<a href="/museen">← Zu allen Museen</a>
+					</button>
 				</div>
 			<div class="text">
 
@@ -55,7 +58,14 @@
 				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %} #}
+
 		</div>
+	{# 	<div class="overview-link">
+			<button>
+				<a href="/museen">← Zur Übersicht</a>
+			</button>
+		</div> #}
+
 		<section class="program">
 			<header>
 				<h1 class="program-title">{{ entry.programmTitle }}</h1>

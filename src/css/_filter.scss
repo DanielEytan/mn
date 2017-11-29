@@ -32,7 +32,7 @@
 	.filter--list--wrapper {
 
 		ul {
-			max-width: 1400px;
+			max-width: 1200px;
 			height: 0;
 			overflow: hidden;
 			margin: 0 auto;
@@ -41,7 +41,7 @@
 				// padding: .4em .8em .65em;
 				padding: .25em .6em .4em;
 				border-radius: .5em;
-				
+				display: inline-block;
 				border: solid 1px;
 				margin-bottom: 1em;
 				font-size: .8em;
@@ -120,19 +120,18 @@
 				div {
 
 					ul {
-						display: flex;
-						flex-wrap: wrap;
+						// display: flex;
+						// flex-wrap: wrap;
 						// justify-content: space-between;
 						li {
-							flex: 0 1 49%;
+							display: inline-block;
+							// flex: 0 1 49%;
 							margin-right: 1%;
 
-							&:nth-child(2n) {
-								margin-right: 0;
-							}
-							div {
-								// padding: .45em .7em .5em;
-							}
+							// &:nth-child(2n) {
+							// 	margin-right: 0;
+							// }
+							
 						}	
 
 					}
@@ -177,12 +176,13 @@
 				ul {
 					display: flex;
 					justify-content: center;
+					flex-wrap: wrap;
 				}
 				ul li {
 					// flex: 0 1 23.5%;
 					flex: none;
-					display: inline-block;
-					float: left;
+					// display: inline-block;
+					// float: left;
 					width: auto;
 					&:nth-child(2n) {
 						margin-right: 1%;

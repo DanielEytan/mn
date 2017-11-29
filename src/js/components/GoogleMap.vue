@@ -2,10 +2,10 @@
   <div>
     <div class="selected-institution" v-bind:class="{ closed: institutInfo }">
         <div class="dismiss" v-on:click="toggleInstitutInfo"></div>
-      
+        
       <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
         <div>
-          <div class="back" v-on:click="inst = 0; zoomOut()">← Zurück zur Übersicht</div>
+          <button v-on:click="inst = 0; zoomOut()">← Zur Liste</button>
           <div>
             <a v-bind:href="entry.url">
               <figure>
@@ -22,17 +22,10 @@
             </div>
           </div>
            
-             <h1>{{ entry.title }}</h1>
-             <div class="icons">
-                <span v-if="entry.advanceSale == 1">&#127915;</span>
-                <span v-for="value in entry.accessibility">
-                  <i v-if="value === 'wheelchair'">&#9855;</i>
-                  <i v-if="value === 'partlyWheelchair'">&#9855;*</i>
-               </span>
-            </div><br>
+            
             <p>{{ entry.address }}</p>
             <p class="journey" v-html="entry.journey">{{ entry.journey }}</p><br>
-            <p>Zur Instituts-Unterseite &rarr;</p><br>
+            <p class="more">Mehr <i>&rarr;</i></p><br>
          </a>
       </div>
    </div>
@@ -76,7 +69,7 @@ export default {
      markers: [],
      institutionsData: [],
      inst: "0",
-     institutInfo: false,
+     institutInfo: true,
      mapTop: false,
      center: new google.maps.LatLng(47.55959860000001,7.588576099999955),
   }

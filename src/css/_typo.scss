@@ -29,13 +29,21 @@ body {
 }
 
 // Link Border Bottom
+
 .program .adapt-program p,
 .program--saved .empty,
-.visit {
+.visit,
+footer#footer .contact p {
 	a {
-		border-bottom: solid 1px;
+		// border-bottom: solid 1px;
+		text-decoration: underline;
 		font-family: 'main-eb', helvetica;
 	}
+}
+.selected-institution aside a .more {
+	text-decoration: underline;
+	font-family: 'main-eb', helvetica;
+	display: inline-block;
 }
 
 // Margins
