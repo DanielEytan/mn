@@ -7,6 +7,7 @@
 // 	border-radius: 1em;
 // }
 
+
 .home {
 	.cover {
 		height: 75vh;
@@ -27,7 +28,12 @@
   		}
 
 	}
-
+	.lang {
+		margin-bottom: 1em;
+		p {
+			margin-bottom: .5em;
+		}
+	}
 	.info {
 		background: black;
 		color: white;
@@ -35,17 +41,18 @@
 		a {
 			color: white;
 		}
-
-		
 	}
+
 	@media only screen and (min-width: $bp1) {
-		.info {
-			.lang {
-				margin-bottom: 3em;
+		.lang {
+				// margin-bottom: 3em;
+				display: flex;
 				>* {
-					flex: 0 1 45%;
+					flex: 0 1 50%;
 				}
 			}
+		.info {
+
 			.infoblock {
 			display: flex;
 			justify-content: space-around;

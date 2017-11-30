@@ -62,10 +62,10 @@ body {
   -moz-osx-font-smoothing: grayscale; }
   @media only screen and (min-width: 1024px) {
     body {
-      font-size: 1.2em; } }
+      font-size: 1.25em; } }
   @media only screen and (min-width: 1224px) {
     body {
-      font-size: 1.3em; } }
+      font-size: 1.35em; } }
 
 .program .adapt-program p a,
 .program--saved .empty a,
@@ -560,8 +560,11 @@ a {
 main {
   margin-top: 50px; }
   main.mt {
-    margin-top: 110px; }
-  @media screen and (min-width: 1224px) {
+    margin-top: 90px; }
+  @media screen and (min-width: 768px) {
+    main.mt {
+      margin-top: 110px; } }
+  @media screen and (min-width: 1500px) {
     main {
       margin-top: 70px; }
       main.mt {
@@ -827,6 +830,11 @@ footer#footer {
     animation: st 2s;
     padding-bottom: .25em; }
 
+.home .lang {
+  margin-bottom: 1em; }
+  .home .lang p {
+    margin-bottom: .5em; }
+
 .home .info {
   background: black;
   color: white;
@@ -835,11 +843,12 @@ footer#footer {
     color: white; }
 
 @media only screen and (min-width: 768px) {
-  .home .info .lang {
-    margin-bottom: 3em; }
-    .home .info .lang > * {
-      -ms-flex: 0 1 45%;
-      flex: 0 1 45%; }
+  .home .lang {
+    display: -ms-flexbox;
+    display: flex; }
+    .home .lang > * {
+      -ms-flex: 0 1 50%;
+      flex: 0 1 50%; }
   .home .info .infoblock {
     display: -ms-flexbox;
     display: flex;
@@ -968,7 +977,8 @@ footer#footer {
   .program__list__event p {
     margin-bottom: 1em; }
   .program__list__event .time {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    margin-top: -.15em; }
     .program__list__event .time > * {
       margin-right: .25em;
       display: inline-block; }
@@ -1038,7 +1048,7 @@ footer#footer {
   .institutions--overview--grid-view > * figure {
     margin-bottom: 7.5px; }
   .institutions--overview--grid-view > * h1 {
-    margin-bottom: .5em; }
+    margin-bottom: .3em; }
   .institutions--overview--grid-view > * .icons {
     margin-bottom: 1em; }
     .institutions--overview--grid-view > * .icons span {

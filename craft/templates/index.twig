@@ -6,14 +6,8 @@
 {% block content %}
 
 {# <twitter></twitter> #}
-{# <div class="lang">
-				<p><i class="fr">🇫🇷 </i> <a href="/">Informations en francais</a></p>
-				<p><i class="en">🇬🇧 </i> <a href="/">Informations in English</a></p>
-			</div> #}
-<header class="site-header">
-			
-	<counter :days="daysLeft"></counter>
-	</header>
+
+
 <div class="home">
 	
 {# 	<section class="cover">
@@ -21,7 +15,14 @@
 
 		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
 		
-	</section>
+	{# </section> #}
+	<header class="site-header">
+			<div class="lang">
+				<p><i class="fr">🇫🇷 </i> <a href="/">Informations en francais</a></p>
+				<p><i class="en">🇬🇧 </i> <a href="/">Informations in English</a></p>
+			</div>
+	<counter :days="daysLeft"></counter>
+	</header>
 
 <section class="journal journal--overview" >
 		<div class="group">
