@@ -1,8 +1,12 @@
 .institutions--overview {
 	.map-view {
 		aside {
+			padding-bottom: 1em;
 			.institutions-list {
 				li {
+					h1 {
+						margin-bottom: .5em;
+					}
 					margin-bottom: 1em;
 					.suttle-line {
 						font-size: .8em;

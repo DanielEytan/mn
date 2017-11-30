@@ -37,7 +37,7 @@
     </article>
     <div class="control-program">
       <div class="main-controls">
-        <printbutton></printbutton>
+        <!-- <printbutton></printbutton> -->
         <button class="reset-my-program red" v-on:click="resetMyProgram">
           Mein Programm zurücksetzen <i>ⓧ</i>
         </button>
@@ -54,7 +54,6 @@ import ProgramEvent from './ProgramEvent.vue'
 import SaveProgram from './SaveProgram.vue'
 import shareProgram from './ShareMyProgram.vue'
 import MyProgramEvent from './MyProgramEvent.vue'
-import printButton from './printButton.vue'
 
 
 
@@ -66,7 +65,6 @@ module.exports = {
     programevent: ProgramEvent,
     saveprogram: SaveProgram,
     shareprogram: shareProgram,
-    printbutton: printButton
   },
   data: function () {
     return {

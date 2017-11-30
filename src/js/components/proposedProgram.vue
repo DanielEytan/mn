@@ -1,8 +1,11 @@
 <template>
    <div class="program--entry">
+    <header class="site-header">
+      <h1 class="narrow">PROGRAMM von: {{ name }}</h1>
+    </header>
       <div  class="name">
          <p v-if="name"><strong>Dieses Program wurde von {{ name }} zusammengestellt.</strong></p>
-         <p>Sie können diese Zusammenstellung mit einem Klick auf die Herzen für Ihr Programm übernehmen.</p>
+         <p>Mit Klick auf ♥ kannst du einzelne Angebote in dein Programm integrieren.</p>
       </div>
       <ul class="program__list program__list--selection">
         
@@ -40,9 +43,9 @@
       </ul>
       <div class="adapt-program">
       <button class="add-to-my-program" v-on:click="addToMyProgram">
-          <i v-bind:class="{ active: adaptProgram }">❤</i> Gesamtes Programm übernehmen
+          <i v-bind:class="{ active: adaptProgram }">❤</i> Alle auswählen und in mein Programm integrieren
         </button>
-        <p v-show="adaptProgram"><a href="https://museumsnacht.ch/programm/mein-programm">Mein Programm</a></p>
+        <p v-show="adaptProgram"><a href="https://museumsnacht.ch/programm/mein-programm">zu meinem Programm</a></p>
         </div>
    </div>
 </template>

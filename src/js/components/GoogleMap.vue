@@ -5,7 +5,7 @@
         
       <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
         <div>
-          <button v-on:click="inst = 0; zoomOut()">← Zur Übersicht</button>
+          <button v-on:click="inst = 0; zoomOut()">← zur Übersicht</button>
           <div>
             <a v-bind:href="entry.url">
               <figure>
@@ -21,6 +21,7 @@
               <span v-for="color in entry.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
             </div>
           </div>
+          <h1>{{ entry.title }}</h1><br>
            
             
             <p>{{ entry.address }}</p>

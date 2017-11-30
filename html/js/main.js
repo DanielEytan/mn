@@ -16852,7 +16852,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16867,111 +16867,119 @@
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
+	var _printButton = __webpack_require__(149);
+
+	var _printButton2 = _interopRequireDefault(_printButton);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-
 	module.exports = {
-	   name: 'shareprogram',
-	   props: ['programevent'],
+	  name: 'shareprogram',
+	  props: ['programevent'],
+	  components: {
+	    printbutton: _printButton2.default
 
-	   data: function data() {
-	      return {
-	         mail: '',
-	         url: '',
-	         savedItems: [],
-	         name: '',
-	         message: 'Copy These Text',
-	         buttonText: 'Link kopieren',
-	         // saved: false,
-	         facebook: '',
-	         // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
-	         twitter: '',
-	         google: ''
+	  },
 
-	      };
-	   },
-	   ready: function ready() {
-	      foo();
-	   },
-	   mounted: function mounted() {
-	      this.getItems();
-	   },
+	  data: function data() {
+	    return {
+	      mail: '',
+	      url: '',
+	      savedItems: [],
+	      name: '',
+	      message: 'Copy These Text',
+	      buttonText: 'Link kopieren',
+	      // saved: false,
+	      facebook: '',
+	      // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
+	      twitter: '',
+	      google: ''
 
-	   methods: {
-	      getItems: function getItems(get) {
-	         var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
-	         this.savedItems = idListFromLocalStorage;
-	         var savedList = (0, _stringify2.default)(idListFromLocalStorage);
-	         var savedListAsString = idListFromLocalStorage.join('+');
-	         var savedListAsStringForSM = idListFromLocalStorage.join('%2B');
+	    };
+	  },
+	  ready: function ready() {
+	    foo();
+	  },
+	  mounted: function mounted() {
+	    this.getItems();
+	  },
 
-	         var name = this.name;
-	         var url = "http://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
-	         var urlSm = "http://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM + "&name=" + name;
+	  methods: {
+	    getItems: function getItems(get) {
+	      var idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
+	      this.savedItems = idListFromLocalStorage;
+	      var savedList = (0, _stringify2.default)(idListFromLocalStorage);
+	      var savedListAsString = idListFromLocalStorage.join('+');
+	      var savedListAsStringForSM = idListFromLocalStorage.join('%2B');
 
-	         this.url = url;
-	         var myProgram = this.programevent;
-	         var titles = [];
-	         var IDs = [];
-	         var length = myProgram.length;
-	         for (var i = 0; i < length; i++) {
-	            var item = myProgram[i];
-	            var itemId = item.id;
-	            var hit = savedList.indexOf(itemId);
-	            if (hit > -1) {
-	               var result = item.title + " im " + item.parent.title + "%0D%0A";
-	               var resultIds = item.id;
-	               titles.push(result);
-	            }
-	         }
-	         if (get) {
-	            this.mail = 'mailto:' + '?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
-	            this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm;
-	            this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm;
-	            this.google = 'https://plus.google.com/share?url=' + urlSm;
-	         }
-	         if (get) {}
-	      },
-	      onCopy: function onCopy(e) {
-	         this.buttonText = "✔︎ Link ist kopiert.";
-	         // this.saved = !this.saved;
-	      },
-	      onError: function onError(e) {
-	         this.buttonText = "Deine Auswahl konnte leider nicht in der Zwischenablage gespeichert werden";
+	      var name = this.name;
+	      var url = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
+	      var urlSm = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM + "&name=" + name;
+
+	      this.url = url;
+	      var myProgram = this.programevent;
+	      var titles = [];
+	      var IDs = [];
+	      var length = myProgram.length;
+	      for (var i = 0; i < length; i++) {
+	        var item = myProgram[i];
+	        var itemId = item.id;
+	        var hit = savedList.indexOf(itemId);
+	        if (hit > -1) {
+	          var result = item.title + " im " + item.parent.title + "%0D%0A";
+	          var resultIds = item.id;
+	          titles.push(result);
+	        }
 	      }
+	      if (get) {
+	        this.mail = 'mailto:' + '?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
+	        this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm;
+	        this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm;
+	        this.google = 'https://plus.google.com/share?url=' + urlSm;
+	      }
+	      if (get) {}
+	    },
+	    onCopy: function onCopy(e) {
+	      this.buttonText = "✔︎ Link ist kopiert.";
+	      // this.saved = !this.saved;
+	    },
+	    onError: function onError(e) {
+	      this.buttonText = "Deine Auswahl konnte leider nicht in der Zwischenablage gespeichert werden";
+	    }
 
-	   }
-	};
+	  }
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 114 */
@@ -16980,9 +16988,9 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "share-program"
-	  }, [_c('h1', [_vm._v("Teile dein Programm")]), _vm._v(" "), _c('div', [_c('div', {
+	  }, [_c('div', [_c('div', {
 	    staticClass: "share-link"
-	  }, [_c('p', [_vm._v("Du kannst dein Programm mit deinem Namen personalisieren und als Link verschicken.")]), _vm._v(" "), _c('input', {
+	  }, [_c('p', [_vm._v("Personalisiere dein Programm bevor du es teilst.")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -17002,7 +17010,35 @@
 	        _vm.name = $event.target.value
 	      }
 	    }
-	  }), _c('br'), _c('br'), _vm._v(" "), _c('div', [_c('div', [_c('a', {
+	  }), _c('br'), _c('br')]), _vm._v(" "), _c('div', {
+	    staticClass: "share"
+	  }, [_c('printbutton'), _vm._v(" "), _c('div', {
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('button', [_c('a', {
+	    attrs: {
+	      "href": _vm.mail
+	    }
+	  }, [_c('i', [_vm._v("ⓜ")]), _vm._v(" Mail")])])]), _vm._v(" "), _c('div', {
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('button', [_c('a', {
+	    attrs: {
+	      "href": _vm.facebook + _vm.url
+	    }
+	  }, [_c('i', [_vm._v("ⓕ")]), _vm._v(" Facebook")])])]), _vm._v(" "), _c('div', {
+	    on: {
+	      "click": _vm.getItems
+	    }
+	  }, [_c('button', [_c('a', {
+	    attrs: {
+	      "href": _vm.twitter
+	    }
+	  }, [_c('i', [_vm._v("ⓣ")]), _vm._v(" Twitter")])])])], 1), _c('br'), _vm._v(" "), _c('div', {
+	    staticClass: "share-link"
+	  }, [_c('div', [_c('div', [_c('a', {
 	    attrs: {
 	      "href": _vm.url
 	    }
@@ -17031,33 +17067,7 @@
 	      expression: "onError",
 	      arg: "error"
 	    }]
-	  }, [_vm._v(_vm._s(_vm.buttonText))])])])]), _vm._v(" "), _c('div', {
-	    staticClass: "share"
-	  }, [_c('h1', [_vm._v("Auf Social-Media teilen")]), _vm._v(" "), _c('div', {
-	    on: {
-	      "click": _vm.getItems
-	    }
-	  }, [_c('button', [_c('a', {
-	    attrs: {
-	      "href": _vm.mail
-	    }
-	  }, [_c('i', [_vm._v("ⓜ")]), _vm._v(" Mail")])])]), _vm._v(" "), _c('div', {
-	    on: {
-	      "click": _vm.getItems
-	    }
-	  }, [_c('button', [_c('a', {
-	    attrs: {
-	      "href": _vm.facebook + _vm.url
-	    }
-	  }, [_c('i', [_vm._v("ⓕ")]), _vm._v(" Facebook")])])]), _vm._v(" "), _c('div', {
-	    on: {
-	      "click": _vm.getItems
-	    }
-	  }, [_c('button', [_c('a', {
-	    attrs: {
-	      "href": _vm.twitter
-	    }
-	  }, [_c('i', [_vm._v("ⓣ")]), _vm._v(" Twitter")])])])])])])
+	  }, [_vm._v(_vm._s(_vm.buttonText))])])])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17221,6 +17231,9 @@
 	      }
 	   }
 	}; //
+	//
+	//
+	//
 	//
 	//
 	//
@@ -17496,9 +17509,13 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "program--entry"
-	  }, [_c('div', {
+	  }, [_c('header', {
+	    staticClass: "site-header"
+	  }, [_c('h1', {
+	    staticClass: "narrow"
+	  }, [_vm._v("PROGRAMM von: " + _vm._s(_vm.name))])]), _vm._v(" "), _c('div', {
 	    staticClass: "name"
-	  }, [(_vm.name) ? _c('p', [_c('strong', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")])]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v("Sie können diese Zusammenstellung mit einem Klick auf die Herzen für Ihr Programm übernehmen.")])]), _vm._v(" "), _c('ul', {
+	  }, [(_vm.name) ? _c('p', [_c('strong', [_vm._v("Dieses Program wurde von " + _vm._s(_vm.name) + " zusammengestellt.")])]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v("Mit Klick auf ♥ kannst du einzelne Angebote in dein Programm integrieren.")])]), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.ids), function(id) {
 	    return _c('div', _vm._l((_vm.programevents), function(entry) {
@@ -17561,7 +17578,7 @@
 	    class: {
 	      active: _vm.adaptProgram
 	    }
-	  }, [_vm._v("❤")]), _vm._v(" Gesamtes Programm übernehmen\n        ")]), _vm._v(" "), _c('p', {
+	  }, [_vm._v("❤")]), _vm._v(" Alle auswählen und in mein Programm integrieren\n        ")]), _vm._v(" "), _c('p', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -17572,7 +17589,7 @@
 	    attrs: {
 	      "href": "https://museumsnacht.ch/programm/mein-programm"
 	    }
-	  }, [_vm._v("Mein Programm")])])])])
+	  }, [_vm._v("zu meinem Programm")])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -18303,7 +18320,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -18330,11 +18347,59 @@
 
 	var _MyProgramEvent2 = _interopRequireDefault(_MyProgramEvent);
 
-	var _printButton = __webpack_require__(149);
-
-	var _printButton2 = _interopRequireDefault(_printButton);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'myprogram',
@@ -18343,8 +18408,7 @@
 	    myprogramevent: _MyProgramEvent2.default,
 	    programevent: _ProgramEvent2.default,
 	    saveprogram: _SaveProgram2.default,
-	    shareprogram: _ShareMyProgram2.default,
-	    printbutton: _printButton2.default
+	    shareprogram: _ShareMyProgram2.default
 	  },
 	  data: function data() {
 	    return {
@@ -18404,57 +18468,7 @@
 	      });
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 149 */
@@ -18644,12 +18658,12 @@
 	    staticClass: "control-program"
 	  }, [_c('div', {
 	    staticClass: "main-controls"
-	  }, [_c('printbutton'), _vm._v(" "), _c('button', {
+	  }, [_c('button', {
 	    staticClass: "reset-my-program red",
 	    on: {
 	      "click": _vm.resetMyProgram
 	    }
-	  }, [_vm._v("\n        Mein Programm zurücksetzen "), _c('i', [_vm._v("ⓧ")])])], 1), _vm._v(" "), _c('shareprogram', {
+	  }, [_vm._v("\n        Mein Programm zurücksetzen "), _c('i', [_vm._v("ⓧ")])])]), _vm._v(" "), _c('shareprogram', {
 	    attrs: {
 	      "programevent": _vm.programevents
 	    }
@@ -20424,6 +20438,7 @@
 	//
 	//
 	//
+	//
 
 	exports.default = {
 	   name: 'googlemap',
@@ -20729,7 +20744,7 @@
 	          _vm.zoomOut()
 	        }
 	      }
-	    }, [_vm._v("← Zur Übersicht")]), _vm._v(" "), _c('div', [_c('a', {
+	    }, [_vm._v("← zur Übersicht")]), _vm._v(" "), _c('div', [_c('a', {
 	      attrs: {
 	        "href": entry.url
 	      }
@@ -20769,7 +20784,7 @@
 	          color: color.color
 	        })
 	      }, [_c('nobr', [_vm._v(_vm._s(color.title))])], 1)
-	    }))]) : _vm._e(), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
+	    }))]) : _vm._e(), _vm._v(" "), _c('h1', [_vm._v(_vm._s(entry.title))]), _c('br'), _vm._v(" "), _c('p', [_vm._v(_vm._s(entry.address))]), _vm._v(" "), _c('p', {
 	      staticClass: "journey",
 	      domProps: {
 	        "innerHTML": _vm._s(entry.journey)

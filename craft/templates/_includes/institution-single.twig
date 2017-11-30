@@ -1,7 +1,24 @@
 	<article class="institutions institutions--single">
 		<header>
+			<button>
+						<a href="/museen">← zu allen Museen</a>
+					</button>
 			
-			<div class="suttle-line">
+			<h1 class="title">{{ entry.title }}</h1>
+
+
+			{# {% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %} #}
+
+		</header>
+		<div class="institution-infos">
+				
+			<div class="text">
+
+				<div class="address">
+					<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">📌 {{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps ↗</nobr></span></div>
+				
+					<h3>Anfahrt:</h3>
+					<div class="suttle-line">
 				{% set shuttleLine = entry.shuttleLine %}
 				{% if shuttleLine | length < 2 %}
 				{% for color in entry.shuttleLine %}
@@ -13,14 +30,9 @@
 				{% endfor %}
 				{% endif %}
 				</div>
-			<h1 class="title">{{ entry.title }}</h1>
-
-
-			{# {% for color in entry.shuttleLine %}<span class="shuttle-line" style="color: {{ color.color }}"><strong>{{ entry.number }}</strong> {{ color.title }}</span>{% endfor %} #}
-
-		</header>
-		<div class="institution-infos">
-				<div class="visitor-infos">
+					<p>{{ entry.journey }}</p><br>
+			</div>
+			<div class="visitor-infos">
 					<ul>
 					{% if entry.advanceSale %}<li><i>&#127915;</i> Vorverkauf/Abendkasse</li>{% endif %}
 					{% set accessibility = entry.accessibility.value %}
@@ -41,18 +53,8 @@
 					{% if entry.wifi %}<li><i>&#8980;</i> Wi-Fi</li>{% endif %}
 					</ul>
 					
-					<button>
-						<a href="/museen">← Zu allen Museen</a>
-					</button>
+					
 				</div>
-			<div class="text">
-
-				<div class="address">
-					<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">📌 {{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps ↗</nobr></span></div>
-				
-					<h3>Anfahrt:</h3>
-					<p>{{ entry.journey }}</p><br>
-			</div>
 {# 			{% for img in entry.imgInstitution %}
 			<figure class="building">
 				<img src="{{ img.getUrl }}" style="max-width: {{ img.width }}" alt="Bild vom Institut">
