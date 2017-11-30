@@ -70,7 +70,8 @@ body {
 .program .adapt-program p a,
 .program--saved .empty a,
 .visit a,
-footer#footer .contact p a {
+footer#footer .contact p a,
+.program .site-header p a {
   text-decoration: underline;
   font-family: 'main-eb', helvetica; }
 
@@ -929,6 +930,12 @@ footer#footer {
 
 .program {
   margin-bottom: 3em; }
+  .program header {
+    margin-bottom: 1em; }
+    .program header p {
+      max-width: 800px; }
+      .program header p.intro i {
+        color: red; }
   .program--saved header {
     margin-bottom: 3em; }
   .program--saved .empty {
