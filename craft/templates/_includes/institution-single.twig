@@ -1,8 +1,10 @@
 	<article class="institutions institutions--single">
 		<header>
+			<a href="/museen">
 			<button>
-						<a href="/museen">← zu allen Museen</a>
-					</button>
+				← zu allen Museen
+			</button>
+			</a>
 			
 			<h1 class="title">{{ entry.title }}</h1>
 
@@ -15,7 +17,7 @@
 			<div class="text">
 
 				<div class="address">
-					<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">📌 {{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %}</a></address> <span><nobr> Google Maps ↗</nobr></span></div>
+					<address><a target="_blank" href="https://maps.google.com/?q={{ entry.map.address }}">📌 {{ entry.address }}{% if entry.location %}, {{ entry.location }}{% endif %} ↗</a></address></div>
 				
 					<h3>Anfahrt:</h3>
 					<div class="suttle-line">

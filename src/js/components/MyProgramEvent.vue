@@ -23,8 +23,7 @@
         </div>
 
       <ul class="categories">
-        <li v-for="theme in programevent.themes"><span><nobr>{{ theme.title }}</nobr></span></li>
-        <li v-for="kindOfEvent in programevent.kindOfEvent"><span v-if="kindOfEvent.title != 'Für Kinder & Familien'"><nobr>{{ kindOfEvent.title }}</nobr></span></li>
+        <li v-for="theme in programevent.themes"><span><nobr>{{ theme.title }}</nobr></span></li><li v-for="kindOfEvent in programevent.kindOfEvent"><span v-if="kindOfEvent.title != 'Für Kinder & Familien'"><nobr>{{ kindOfEvent.title }}</nobr></span></li>
       </ul>
 
     <saveprogram ref="saveprogram" :programevent="programevent"></saveprogram>

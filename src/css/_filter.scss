@@ -8,6 +8,7 @@
 		color: black;
 		font-size: .9em;
 		>* {
+			cursor: pointer;
 			display: block;
 			&:last-child div{
 				border-bottom: solid 1px;
@@ -36,6 +37,12 @@
 			height: 0;
 			overflow: hidden;
 			margin: 0 auto;
+			li {
+				// cursor: pointer;
+				label {
+					cursor: pointer;
+				}
+			}
 			li div {
 				box-sizing: border-box;
 				// padding: .4em .8em .65em;

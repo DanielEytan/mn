@@ -127,7 +127,6 @@ footer a,
 .info-block h3,
 .info-block b,
 footer h2,
-.journal .post-date,
 .journal .info-box em,
 .journal .info-box {
   font-family: 'main-eb', helvetica; }
@@ -167,7 +166,6 @@ header.site-header h1,
 .more,
 .info-block h2,
 .info-block h3,
-.post-date,
 footer h2,
 ul.main-nav li {
   text-transform: uppercase;
@@ -178,7 +176,8 @@ figcaption,
 .suttle-line,
 .address span,
 .post-date {
-  font-size: .8em; }
+  font-size: .8em;
+  line-height: 1.2em; }
 
 .institutions--single .program-text,
 .journal .program-list.selected h1,
@@ -549,12 +548,14 @@ footer#footer section {
 
 @media print {
   /* All your print styles go here */
-  #footer, #header, .burger-toggle, .control-program, .share-program, .program--saved .header p {
+  body {
+    font-size: .8em; }
+  #footer, #header, .burger-toggle, .control-program, .share-program, .program--saved .header p, .save-element {
     display: none !important; }
   body:before {
     content: "Museumsnacht Basel 2017"; }
   body:after {
-    content: "Die Museumsnacht ist eine Veranstaltung der museen basel und der Abteilung Kultur Basel-Stadt."; }
+    content: "Die Museumsnacht ist eine Veranstaltung der museen basel und der Abteilung Kultur Basel-Stadt. Am 19. Januar 2018 bieten 36 Museen und Kulturinstitutionen von 18-2 Uhr ein reichhaltiges Programm: www.museumsnacht.ch"; }
   .mt {
     margin-top: 50px !important; } }
 
@@ -1308,7 +1309,13 @@ footer#footer {
         flex: 0 0 auto;
         max-width: 50%; }
         .share-program .share-link > div > *:first-of-type {
-          background: #f0f0f0; }
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          background: #f0f0f0;
+          border-right: none; }
+        .share-program .share-link > div > *:nth-child(2) {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px; }
       .share-program .share-link > div .share-button {
         cursor: pointer; }
         .share-program .share-link > div .share-button:hover {
@@ -1344,6 +1351,7 @@ footer#footer {
   color: black;
   font-size: .9em; }
   .program--overview .filter header > * {
+    cursor: pointer;
     display: block; }
     .program--overview .filter header > *:last-child div {
       border-bottom: solid 1px; }
@@ -1362,6 +1370,8 @@ footer#footer {
   height: 0;
   overflow: hidden;
   margin: 0 auto; }
+  .program--overview .filter .filter--list--wrapper ul li label {
+    cursor: pointer; }
   .program--overview .filter .filter--list--wrapper ul li div {
     box-sizing: border-box;
     padding: .25em .6em .4em;
@@ -1503,6 +1513,8 @@ footer#footer {
     .filter__selection--wrapper .filter-tags--container .filter--tag > div.block {
       background: #464646;
       color: white; }
+    .filter__selection--wrapper .filter-tags--container .filter--tag > div i {
+      cursor: pointer; }
     .filter__selection--wrapper .filter-tags--container .filter--tag > div.kind:last-of-type:before {
       content: "t"; }
 
@@ -1640,7 +1652,8 @@ button {
   font-size: 1em;
   background: white;
   padding: .3em .5em .45em;
-  border: solid 1px; }
+  border: solid 1px;
+  border-radius: 4px; }
   button:hover {
     color: white;
     background: black; }
@@ -1695,7 +1708,8 @@ button.red {
   .shuttle-line .number {
     -ms-flex: 0;
     flex: 0;
-    margin-right: .35em; }
+    margin-right: .35em;
+    line-height: 1.2em; }
     .shuttle-line .number i {
       color: white;
       border-radius: 1em;
@@ -1730,8 +1744,6 @@ header#header nav > div {
       width: 30px;
       font-size: 1.2em;
       display: inline-block; }
-  header#header nav > div ul.lang {
-    margin-bottom: 2em; }
   header#header nav > div ul.social li {
     margin-right: 1em;
     display: inline-block; }
@@ -1747,6 +1759,10 @@ header#header nav.open div.nav-wrapper {
 header#header nav.open .burger-toggle .burger {
   background: red; }
 
+@media screen and (max-width: 768px) {
+  header#header nav > div.sec-nav ul li {
+    font-size: .8em; } }
+
 @media screen and (min-width: 768px) {
   header#header nav {
     margin-bottom: 3em;
@@ -1757,7 +1773,7 @@ header#header nav.open .burger-toggle .burger {
       right: 0; }
       header#header nav > div ul li {
         margin-bottom: .5em; }
-      header#header nav > div ul.lang {
+      header#header nav > div ul.lang, header#header nav > div ul.social {
         margin-bottom: 1.5em; }
       header#header nav > div ul.social li {
         display: block; }
@@ -1797,8 +1813,13 @@ header#header nav .flex-container {
     background: #1A0042; }
   #vue-app.active .selected-institution {
     background: #1A0042 !important; }
-  #vue-app.active .program .control-program .main-controls {
-    background: #210055; }
+  #vue-app.active .program .control-program .share-link > div > div {
+    border: solid 1px white; }
+    #vue-app.active .program .control-program .share-link > div > div:nth-child(1) {
+      background: #210055; }
+    #vue-app.active .program .control-program .share-link > div > div:nth-child(2):hover {
+      background: white;
+      color: #1A0042; }
   #vue-app.active .program--overview .filter header {
     border: #1A0042;
     color: white; }

@@ -113,7 +113,7 @@ footer a,
 .info-block b,
 footer h2,
 
-.journal .post-date,
+// .journal .post-date,
 .journal .info-box em,
 .journal .info-box  {
 	font-family: 'main-eb', helvetica;
@@ -170,7 +170,7 @@ header.site-header h1,
 .more,
 .info-block h2,
 .info-block h3,
-.post-date ,
+// .post-date ,
 footer h2,
 ul.main-nav li
   {
@@ -184,6 +184,8 @@ figcaption,
 .address span,
 .post-date {
 	font-size: .8em;
+	line-height: 1.2em;
+
 }
 
 // Font Size M

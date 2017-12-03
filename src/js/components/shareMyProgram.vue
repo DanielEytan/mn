@@ -4,7 +4,7 @@
   <!-- <h1>Teile dein Programm</h1> -->
   <div>
    <div class="share-link">
-    <p>Personalisiere dein Programm bevor du es teilst.</p>
+    <p>Personalisiere dein Programm, bevor du es teilst.</p>
     <input @change="getItems" v-model="name" placeholder="Name"><br><br>
 
 

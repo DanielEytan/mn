@@ -16201,7 +16201,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16220,7 +16220,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
 	//
 	//
 	//
@@ -16574,7 +16573,7 @@
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
-	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	  }), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return _c('li', [(kindOfEvent.title != 'Für Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
@@ -16695,7 +16694,7 @@
 	      staticClass: "block"
 	    }, [_c('span', [_vm._v("I")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
-	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('i', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
@@ -16709,7 +16708,7 @@
 	      staticClass: "block"
 	    }, [_c('span', [_vm._v("T")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
-	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('i', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
@@ -16723,7 +16722,7 @@
 	      staticClass: "block"
 	    }, [_c('span', [_vm._v("V")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
-	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('i', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
@@ -16737,7 +16736,7 @@
 	      staticClass: "block"
 	    }, [_c('span', [_vm._v("S")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
-	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('span', {
+	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('i', {
 	      on: {
 	        "click": function($event) {
 	          _vm.removeFromFilters(filter)
@@ -17121,7 +17120,7 @@
 	    staticClass: "share-program"
 	  }, [_c('div', [_c('div', {
 	    staticClass: "share-link"
-	  }, [_c('p', [_vm._v("Personalisiere dein Programm bevor du es teilst.")]), _vm._v(" "), _c('input', {
+	  }, [_c('p', [_vm._v("Personalisiere dein Programm, bevor du es teilst.")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -17281,7 +17280,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.add-to-my-program[data-v-2932b100] {\n  cursor: pointer;\n  padding: 10px;\n  border: 1px solid black;\n  display: inline-block;\n  margin-bottom: 30px;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*  .add-to-my-program {\n    cursor: pointer;\n    padding: 10px;\n    border: 1px solid black;\n    display: inline-block;\n    margin-bottom: 30px;\n  }*/\n", ""]);
 
 	// exports
 
@@ -17489,7 +17488,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17569,7 +17568,6 @@
 	//
 	//
 	//
-	//
 
 /***/ }),
 /* 128 */
@@ -17618,7 +17616,7 @@
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
 	    return _c('li', [_c('span', [_c('nobr', [_vm._v(_vm._s(theme.title))])], 1)])
-	  }), _vm._v(" "), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
+	  }), _vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return _c('li', [(kindOfEvent.title != 'Für Kinder & Familien') ? _c('span', [_c('nobr', [_vm._v(_vm._s(kindOfEvent.title))])], 1) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('saveprogram', {
 	    ref: "saveprogram",
@@ -17709,7 +17707,7 @@
 	    class: {
 	      active: _vm.adaptProgram
 	    }
-	  }, [_vm._v("❤")]), _vm._v(" Alle auswählen und in mein Programm integrieren\n        ")]), _vm._v(" "), _c('p', {
+	  }, [_vm._v("❤")]), _vm._v(" Alle auswählen und in Mein Programm integrieren\n        ")]), _vm._v(" "), _c('p', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -17720,7 +17718,7 @@
 	    attrs: {
 	      "href": "https://museumsnacht.ch/programm/mein-programm"
 	    }
-	  }, [_vm._v("zu meinem Programm")])])])])
+	  }, [_vm._v("zu Mein Programm wechseln")])])])])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

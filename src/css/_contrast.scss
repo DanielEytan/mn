@@ -45,8 +45,15 @@
 		background: $dark !important;
 
 	}
-	.program .control-program .main-controls {
-		background: #210055;
+	.program .control-program .share-link >div >div {
+		border: solid 1px white;
+		&:nth-child(1) {
+			background: #210055;
+		}
+		&:nth-child(2):hover {
+			background: white;
+			color: $dark;
+		}
 	}
 	.program--overview .filter header {
 		border: $dark;

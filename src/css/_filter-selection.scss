@@ -55,12 +55,15 @@
 				}
 				
 				// box-shadow: 0 0 4px rgba(26,0,66,.55);
-
 				background: $grey-very-dark;
 				// background: $grey-very-dark;
 				color:white;
 				margin-right: .5em;
 				margin-bottom: .5em;
+				i {
+				cursor: pointer;
+					
+				}
 				&.kind {
 
 				}

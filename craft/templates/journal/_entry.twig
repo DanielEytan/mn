@@ -10,8 +10,10 @@
 <section class="journal journal--single">
 	<article>
 		<header class="site-header">
-			<h1>{{ entry.title }}</h1>
+						<p class="post-date">Veröffentlicht am {{ entry.postDate | date("d. F Y") }}</p><br>
 
+			<h1>{{ entry.title }}</h1>
+			
 			{% for img in entry.cover %}
 			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
 				<img src="{{ img.url }}" alt="{{ img.title }}">

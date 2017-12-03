@@ -45,9 +45,9 @@
       </ul>
       <div class="adapt-program">
       <button class="add-to-my-program" v-on:click="addToMyProgram">
-          <i v-bind:class="{ active: adaptProgram }">❤</i> Alle auswählen und in mein Programm integrieren
+          <i v-bind:class="{ active: adaptProgram }">❤</i> Alle auswählen und in Mein Programm integrieren
         </button>
-        <p v-show="adaptProgram"><a href="https://museumsnacht.ch/programm/mein-programm">zu meinem Programm</a></p>
+        <p v-show="adaptProgram"><a href="https://museumsnacht.ch/programm/mein-programm">zu Mein Programm wechseln</a></p>
         </div>
    </div>
 </template>
@@ -121,11 +121,11 @@ module.exports = {
 </script>
 
 <style lang="css" scoped>
-  .add-to-my-program {
+/*  .add-to-my-program {
     cursor: pointer;
     padding: 10px;
     border: 1px solid black;
     display: inline-block;
     margin-bottom: 30px;
-  }
+  }*/
 </style>
