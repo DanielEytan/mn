@@ -35,8 +35,8 @@
 					<div class="icons">
 						<span v-if="entry.advanceSale == 1">&#127915;</span>
 						<span v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855;</span>
-						<span v-for="value in entry.partlyWheelchair" v-if="value === 'partlyWheelchair'">&#9855; *</span>
-						<!-- <span v-if="entry.wifi == 1">&#8980;</span> -->
+						<span v-for="value in entry.accessibility" v-if="value === 'partlyWheelchair'">&#9855; *</span>
+						<span v-if="entry.wifi == 1">&#8980;</span>
 
 					</div>
 
@@ -65,9 +65,9 @@
 								<address><i>📌</i> {{ entry.address }}<span v-if="entry.location">, {{ entry.location }}</span></address>
 								<div class="icons">
 									<div v-if="entry.advanceSale == 1">&#127915; Vorverkauf/Abendkasse</div>
-									<div v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855; Rollstuhlgängig</div>
-									<div v-for="value in entry.partlyWheelchair" v-if="value === 'partlyWheelchair'">&#9855;* Teilweise Rollstuhlgängig</div>
-									<div v-for="value in entry.partlyWheelchair"> Party!!!</div>
+									<div v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855; rollstuhlgängig</div>
+									<div v-for="value in entry.accessibility" v-if="value === 'partlyWheelchair'">&#9855;* teilweise rollstuhlgängig</div>
+									<div v-if="entry.wifi == 1"> &#8980;  Wi-Fi</div>
 
 								</div>
 							</div>
