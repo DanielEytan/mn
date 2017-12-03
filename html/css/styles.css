@@ -62,10 +62,10 @@ body {
   -moz-osx-font-smoothing: grayscale; }
   @media only screen and (min-width: 1024px) {
     body {
-      font-size: 1.25em; } }
-  @media only screen and (min-width: 1224px) {
+      font-size: 1.15em; } }
+  @media only screen and (min-width: 1500px) {
     body {
-      font-size: 1.3em; } }
+      font-size: 1.2em; } }
 
 .program .adapt-program p a,
 .program--saved .empty a,
@@ -141,7 +141,7 @@ header.site-header h1,
 .food h3,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
-.program--saved .empty p:first-of-type {
+.program--saved .empty p:nth-child(2) {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
@@ -205,7 +205,7 @@ figcaption,
 .program--overview .institution h1,
 .program--overview .institution span strong,
 .program .selected h1,
-.program--saved .empty p:first-of-type,
+.program--saved .empty p:nth-child(2),
 .institutions--overview--grid-view h1,
 .institutions--overview--list-view h1,
 .institutions--overview .grid-view h2,
@@ -225,7 +225,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:first-of-type,
+    .program--saved .empty p:nth-child(2),
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -244,7 +244,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:first-of-type,
+    .program--saved .empty p:nth-child(2),
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -263,7 +263,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:first-of-type,
+    .program--saved .empty p:nth-child(2),
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -396,7 +396,8 @@ header#header nav,
 .mobility,
 .tickets,
 .test,
-.overview-link {
+.overview-link,
+.program--saved .intro {
   margin: 15px; }
   @media screen and (min-width: 768px) {
     .text-block section > div,
@@ -414,7 +415,8 @@ header#header nav,
     .mobility,
     .tickets,
     .test,
-    .overview-link {
+    .overview-link,
+    .program--saved .intro {
       margin: 15px 30px; } }
   @media screen and (min-width: 1024px) {
     .text-block section > div,
@@ -432,7 +434,8 @@ header#header nav,
     .mobility,
     .tickets,
     .test,
-    .overview-link {
+    .overview-link,
+    .program--saved .intro {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -451,7 +454,8 @@ header#header nav,
     .mobility,
     .tickets,
     .test,
-    .overview-link {
+    .overview-link,
+    .program--saved .intro {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -543,6 +547,17 @@ footer#footer section {
         .group.of-three > *:nth-child(3n) {
           margin-right: 0; } }
 
+@media print {
+  /* All your print styles go here */
+  #footer, #header, .burger-toggle, .control-program, .share-program, .program--saved .header p {
+    display: none !important; }
+  body:before {
+    content: "Museumsnacht Basel 2017"; }
+  body:after {
+    content: "Die Museumsnacht ist eine Veranstaltung der museen basel und der Abteilung Kultur Basel-Stadt."; }
+  .mt {
+    margin-top: 50px !important; } }
+
 html, body {
   height: 100%;
   position: relative; }
@@ -570,9 +585,6 @@ main {
       margin-top: 70px; }
       main.mt {
         margin-top: 150px; } }
-
-section header .narrow {
-  margin-bottom: 50px; }
 
 header#header.reduced a.logo {
   background: url(./../bilder/logo_schwarz.svg);
@@ -930,17 +942,19 @@ footer#footer {
 
 .program {
   margin-bottom: 3em; }
-  .program header {
+  .program header.site-header {
+    margin-bottom: 0; }
+    .program header.site-header h1 {
+      margin-bottom: .25em; }
+  .program .intro p {
+    max-width: 800px;
     margin-bottom: 1em; }
-    .program header p {
-      max-width: 800px; }
-      .program header p.intro i {
-        color: red; }
-  .program--saved header {
-    margin-bottom: 3em; }
+    .program .intro p i {
+      color: red; }
   .program--saved .empty {
-    text-align: center; }
+    padding: 2em 0; }
     .program--saved .empty p {
+      max-width: 800px;
       margin-bottom: 1em; }
       .program--saved .empty p span {
         color: red; }
@@ -965,10 +979,11 @@ footer#footer {
     font-size: .8em; }
   .program__list--complete__block {
     border-top: solid 2px;
-    padding-top: 2em;
+    padding-top: 1em;
     margin-top: 1.15em; }
     .program__list--complete__block:first-of-type {
-      border-top: none; }
+      border-top: none;
+      padding-top: 1em; }
   .program__list--complete .institution h2 {
     margin-bottom: .5em; }
   .program__list--complete .institution h1 a:hover {
@@ -1018,7 +1033,8 @@ footer#footer {
     .program .food {
       padding: 2em; }
     .program__list--complete__block {
-      padding-top: 3em; }
+      padding-top: 2em;
+      margin-top: 0; }
     .program__list__event {
       transition: background .4s ease-out; }
       .program__list__event div.flex-container {
@@ -1400,14 +1416,13 @@ footer#footer {
   .program--overview .filter .filter__checklists--wrapper {
     margin-bottom: 1em; }
   .program--overview .filter__time {
-    padding: 0 30px; }
-  .program--overview .filter__checklists {
-    margin-top: 2em; }
-    .program--overview .filter__checklists .filter--list--wrapper div ul li {
-      display: inline-block;
-      margin-right: 1%; }
-    .program--overview .filter__checklists .filter--list--wrapper.active {
-      padding: 1em 30px 1.1em; } }
+    padding: 0 30px;
+    margin-bottom: 2em; }
+  .program--overview .filter__checklists .filter--list--wrapper div ul li {
+    display: inline-block;
+    margin-right: 1%; }
+  .program--overview .filter__checklists .filter--list--wrapper.active {
+    padding: 1em 30px 1.1em; } }
 
 @media only screen and (min-width: 1024px) {
   .program--overview .filter__checklists .title, .program--overview .filter__checklists header {
@@ -1436,7 +1451,7 @@ footer#footer {
       margin-bottom: .75em; }
   .program--overview .filter__time {
     padding: 0;
-    margin: 0 auto 1em;
+    margin: 0 auto 2em;
     width: 900px; } }
 
 @media only screen and (min-width: 1224px) {

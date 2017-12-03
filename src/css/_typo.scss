@@ -18,10 +18,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@media only screen and (min-width: $bp2) {
-		font-size: 1.25em;
+		font-size: 1.15em;
 	}
-	@media only screen and (min-width: $bp3) {
-		font-size: 1.3em;
+	@media only screen and (min-width: $bp4) {
+		font-size: 1.2em;
 	}
 }
 
@@ -131,7 +131,7 @@ header.site-header h1,
 .food h3,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
-.program--saved .empty p:first-of-type,
+.program--saved .empty p:nth-child(2),
 
  {
 	font-family: 'lyon-medium', times;
@@ -213,7 +213,7 @@ figcaption,
 
 .program--overview .institution span strong,
 .program .selected h1,
-.program--saved .empty p:first-of-type,
+.program--saved .empty p:nth-child(2),
 
 // .program li.program--event h1,
 

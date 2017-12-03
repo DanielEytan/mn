@@ -1,21 +1,29 @@
 .program {
 	margin-bottom: 3em;
-	header {
-		margin-bottom: 1em;
-		p {
+	header.site-header {
+		margin-bottom: 0;
+		h1 {
+			margin-bottom: .25em;
+		}
+
+		
+		}
+		.intro p {
+
 			max-width: 800px;
-			&.intro i {
+			margin-bottom: 1em;
+			i {
 				color: $red;
 			}
 		}
-		}
 	&--saved {
-		header {
-			margin-bottom: 3em;
-		}
+	
 		.empty {
-			text-align: center;
+			// text-align: center;
+			padding: 2em 0;
 			p {
+			max-width: 800px;
+				
 				margin-bottom: 1em;
 				span {
 					color: $red;
@@ -46,6 +54,7 @@
 				padding: 1em;
 				text-align: center;
 			}
+
 	&__list {
 		.institution {
 			h1:hover a {
@@ -61,11 +70,12 @@
 
 			&__block {
 				border-top: solid 2px;
-				padding-top: 2em;
+				padding-top: 1em;
 				margin-top: 1.15em;
 				// margin-bottom: 2em;
 				&:first-of-type {
 					border-top: none;
+					padding-top: 1em;
 				}
 				
 			}
@@ -192,7 +202,8 @@
 		&__list {
 			&--complete {
 				&__block {
-					padding-top: 3em;
+					padding-top: 2em;
+					margin-top: 0;
 				}
 				
 			}
