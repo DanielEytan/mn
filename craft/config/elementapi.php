@@ -338,5 +338,33 @@ return [
             ];
         },
     ],
+    'tickets.json' => [
+        'elementType' => ElementType::Entry,
+        // 'cache' => true,
+        'elementsPerPage' => 999,
+        'paginate' => false,
+        'limit' => 999,
+        'criteria' => ['section' => 'tickets', 'locale' => 'en'],
+        'transformer' => function(EntryModel $entry) {
+
+            return [
+                'tickets' => (string) $entry->tickets,
+            ];
+        }
+    ],
+    'mobility.json' => [
+        'elementType' => ElementType::Entry,
+        // 'cache' => true,
+        'elementsPerPage' => 999,
+        'paginate' => false,
+        'limit' => 999,
+        'criteria' => ['section' => 'mobility', 'locale' => 'en'],
+        'transformer' => function(EntryModel $entry) {
+
+            return [
+                'mobility' => (string) $entry->mobility,
+            ];
+        }
+    ]
 ]
 ];
