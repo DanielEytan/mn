@@ -1,7 +1,9 @@
 <template>
    <div class="program--entry">
     <header class="site-header">
-      <h1 class="narrow">PROGRAMM von: {{ name }}</h1>
+      <h1 v-if="name">PROGRAMM von: {{ name }}</h1>
+      <h1 v-else>Empfangenes Programm</h1>
+
     </header>
       <div  class="name">
          <p v-if="name"><strong>Dieses Program wurde von {{ name }} zusammengestellt.</strong></p>

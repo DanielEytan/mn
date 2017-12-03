@@ -2,12 +2,13 @@
   <div class="program--entry">
 
     <div v-if="programevents.length == 0" class="empty">
-    <p>Dein perönliches Programm ist leer.</p>
-    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit Klick auf <span>♥</span>.</p>
+    <p>Dein persönliches Programm ist leer.</p>
+    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span>♥</span></nobr>.</p>
     </div>
     <div v-else>
     <article>
-
+    <div class="intro"><p>Hier sind deine ausgewählten Programmangebote gespeichert. Du kannst die Liste mit deinem Namen personalisieren, sie anschliessend ausdrucken, per Mail versenden oder mit Freunden auf Facebook und Twitter teilen.</p>
+      </div>
       <ul class="program__list program__list--selection">
         
         <!-- <div v-for="item in items"> -->

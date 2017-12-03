@@ -6,24 +6,24 @@
    <div class="share-link">
     <p>Personalisiere dein Programm bevor du es teilst.</p>
     <input @change="getItems" v-model="name" placeholder="Name"><br><br>
-   
+
 
   </div>
   <div class="share">
     <!-- <h1>Auf Social-Media teilen</h1> -->
-        <printbutton></printbutton>
-  
+    <printbutton></printbutton>
+
     <div v-on:click="getItems"><button><a :href="mail"><i>ⓜ</i> Mail</a></button></div>
-    <div v-on:click="getItems"><button><a :href="facebook + url"><i>ⓕ</i> Facebook</a></button></div>
+    <div v-on:click="getItems"><button><a :href="facebook"><i>ⓕ</i> Facebook</a></button></div>
     <div v-on:click="getItems"><button><a :href="twitter"><i>ⓣ</i> Twitter</a></button></div>
   </div><br>
-   <div class="share-link">
+  <div class="share-link">
 
- <div>
-      <div><a :href="url"><nobr>{{ url }}</nobr></a></div>
-      <div class="share-button" v-on:click="getItems"><span  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</span></div>
-    </div>
+   <div>
+    <div><a :href="url"><nobr>{{ url }}</nobr></a></div>
+    <div class="share-button" v-on:click="getItems"><span  v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">{{ buttonText }}</span></div>
   </div>
+</div>
 
 
 </div>
@@ -38,18 +38,18 @@ module.exports = {
  name: 'shareprogram',
  props: ['programevent'],
  components: {
-    printbutton: printButton
-   
-  },
+  printbutton: printButton
 
- data: function () {
-   return {
-     mail: '',
-     url: '',
-     savedItems: [],
-     name: '',
-     message: 'Copy These Text',
-     buttonText: 'Link kopieren',
+},
+
+data: function () {
+ return {
+   mail: '',
+   url: '',
+   savedItems: [],
+   name: '',
+   message: 'Copy These Text',
+   buttonText: 'Link kopieren',
      // saved: false,
      facebook: '',
      // twitter: 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ',
@@ -76,7 +76,7 @@ methods: {
 
   var name = this.name;
   var url = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
-  var urlSm = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM + "&name=" + name;
+  var urlSm = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM;
 
   this.url = url;
   var myProgram = this.programevent;
@@ -94,13 +94,12 @@ methods: {
   }
 }
 if (get) {
- this.mail = 'mailto:'+'?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
- this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm;
- this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm;
- this.google = 'https://plus.google.com/share?url=' + urlSm;
-}
-if (get) {
-
+ // this.mail = 'mailto:'+'?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
+ this.mail = 'mailto:'+'?subject=Meine Museumsnacht Basel&body=Hier findest du meine ausgewählten Programmangebote für die Museumsnacht Basel am 21. Juni 2018: ' + urlSm + '%26name=' + this.name;
+ var foo = "&name="
+ this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm + '%26name=' + this.name;
+ this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm + '%26name=' + this.name;
+ // this.google = 'https://plus.google.com/share?url=' + urlSm;
 }
 },
 onCopy: function (e) {

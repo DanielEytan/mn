@@ -28,6 +28,7 @@ import twitter from './components/twitter.vue'
 import contrast from './components/contrast.vue'
 import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
+import en from './components/en.vue'
 
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard);
@@ -58,6 +59,7 @@ var vueApp = new Vue({
         institutionprogram: institutionProgram,
         journalprogram: journalProgram,
         journaloverview: journalOverview,
+        en: en,
 
 
 
