@@ -23,7 +23,7 @@
 			</div>
 		</section>
 	{% endfor %}
-	{% for entry in craft.entries.section('mobility') %}
+	{% for entry in craft.entries.section('mobility').locale('en') %}
 		<section class="mobility" v-show="langMobility">
 			<div class="info-block">
 					<div>
@@ -40,6 +40,7 @@
 <li class="program__list__event">
       <div>
       	{% set parent = craft.entries.ancestorOf(entry).level(1).first() %}
+      	{% set shuttle = craft.categories.group('shuttleLine') %}
         <section class="institution">
         	{% for color in parent.shuttleLine %}
         		{% if parent.shuttleLine | length < 2 %}
@@ -70,26 +71,19 @@
 			        	{% switch time.type %}
 			        	
 			        		{% case "setTimes" %}
-			        		<time> 
-			        			{{ time.start.date }} 
-			        			{% if time.duration | length %}<span><br>(Dauer: {{ time.duration }})</span>{% endif %}
-			        		</time> 
-			        	
+			        		<time>{{ time.start|date("H:i")}}{% if time.duration | length %}<span><br>(Dauer: {{ time.duration }})</span>{% endif %}</time>
 			        		{% case "continuous" %}
 							<time> 
-			        			{{ time.start.date }} – {{ time.end.date }}
+			        			{{ time.start|date("H:i") }} – {{ time.end|date("H:i") }}
 			        		</time> 
 			        		{% case "iterating" %}
 							<time> 
-			        			{{ time.start.date }} – {{ time.end.date }} <br> 
+			        			{{ time.start|date("H:i") }} – {{ time.end|date("H:i") }} <br> 
 			        			({{ time.frequency }}{% if time.duration | length %}, Dauer: {{ time.duration }}{% endif %})
-			        		</time> 			        		
-			        	
+			        		</time> 			        					        	
 			        	{% endswitch %}
-			
 			        </div>
 			      	{% endfor %}
-
 			      </div>
 			    <div class="text">
 
