@@ -4,6 +4,16 @@
 					<a class="logo" href="{{ siteUrl }}" v-bind:class="{ active: activeContrast }">
 						Logo MN Basel
 					</a>
+					{% if lang is defined %}
+						<div>
+						{% if lang == "en" %}
+							<a href="/">BACK TO THE MAIN PAGE IN GERMAN</a>
+						{% elseif lang == "fr" %}
+							<a href="/" style="color:red">BACK TO THE MAIN PAGE IN GERMAN (fr)</a>
+							
+						{% endif %}
+						</div>
+					{% else %}
 					<div class="centered">
 						<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
 					</div>
@@ -22,6 +32,7 @@
 
 						</div>
 					</div>
+					{% endif %}
 				</div>
 			</div>
 			<transition name="fade">

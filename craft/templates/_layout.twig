@@ -21,7 +21,15 @@
 			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 			{% endblock %}
 		</main>
-		{% include "_includes/footer" %}
+		{% if lang is defined %}
+			{% if lang == "en" %}
+				{% include "_includes/footer-en" %}
+			{% elseif lang == "fr" %}
+				{% include "_includes/footer-fr" %}
+			{% endif %}
+		{% else %}
+			{% include "_includes/footer" %}
+		{% endif %}
 	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG1n1fhLxcWGqlj1AUOBxinlfFn1idc4U" ></script>
 	<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>

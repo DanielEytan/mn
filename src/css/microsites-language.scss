@@ -18,7 +18,7 @@
 				padding: .5em;
 				color: rgb(120,120,120);
 				cursor: pointer;
-				&.active {
+				&.active, &:hover {
 					color: black;
 					border-bottom: solid 2px;
 				}

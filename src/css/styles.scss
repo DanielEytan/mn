@@ -113,11 +113,12 @@ figcaption {
 .program .site-header p,
 .institutions--overview--list-view h1  {
 a {
-		box-shadow: inset 0 -4px 0 rgb(220,220,220);
-		border-bottom: solid 3px rgb(220,220,220);
+		box-shadow: inset 0 -4px 0 rgb(230,230,230);
+		border-bottom: solid 3px rgb(230,230,230);
 		text-decoration: none !important;
+		transition: background .35s;
 		&:hover {
-			background: rgb(220,220,220);
+			background: rgb(230,230,230);
 		}
 	}
 }
@@ -127,6 +128,7 @@ footer#footer .contact p,
 		box-shadow: inset 0 -4px 0 white;
 		border-bottom: solid 3px white;
 		text-decoration: none !important;
+		transition: background .35s;
 		&:hover {
 			background: white;
 		}

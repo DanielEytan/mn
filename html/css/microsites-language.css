@@ -13,7 +13,7 @@
     padding: .5em;
     color: #787878;
     cursor: pointer; }
-    .microsites-language .microsite-nav ul li.active {
+    .microsites-language .microsite-nav ul li.active, .microsites-language .microsite-nav ul li:hover {
       color: black;
       border-bottom: solid 2px; }
 
