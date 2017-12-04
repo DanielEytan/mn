@@ -8,17 +8,23 @@
 						<div>
 						{% if lang == "en" %}
 							<a href="/">BACK TO THE MAIN PAGE IN GERMAN</a>
-						{% elseif lang == "fr" %}
+						{% else %}
 							<a href="/" style="color:red">BACK TO THE MAIN PAGE IN GERMAN (fr)</a>
-							
 						{% endif %}
 						</div>
+					<div id="menu" style="display:none">
+						<div class="burger-toggle" v-bind:class="{ open: menuOpen }" v-on:click="toggle">
+							<span>MENU</span>
+							<div class="burger" >
+							<i v-if="menuOpen">⊠</i>
+							<i v-else="menuOpen">☰</i>
+						</div>
+					</div>
 					{% else %}
 					<div class="centered">
 						<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
 					</div>
 					<div id="menu" >
-						{# <contrast></contrast> #}
 						<div class="contrast-toggle" v-on:click="toggleContrast">
 							&#61506;
 						</div>
@@ -29,7 +35,6 @@
 							<div class="burger" >
 							<i v-if="menuOpen">⊠</i>
 							<i v-else="menuOpen">☰</i>
-
 						</div>
 					</div>
 					{% endif %}
@@ -42,15 +47,11 @@
 						<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
 						<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
 						<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
-
-						{# <li><a href="{{ url('socialstream') }}" {% if craft.request.firstSegment == 'socialstream' %}class="active"{% endif %}>#mnbasel</a></li> #}
 					</ul>
 					<div class="sec-nav">
 						<ul class="lang">
 							<li><nobr><a href="/fr"><i class="fr">🇫🇷</i> <span>Informations en français</span></a></nobr></li>
 							<li><a href="/en"><i class="en">🇬🇧</i> <span>Information in English</span></a></li>
-							
-
 						</ul>
 						<ul class="social">
 							<li><a href="https://twitter.com/museenbasel"><i>ⓣ</i> <span>@museenbasel</span></a></li>

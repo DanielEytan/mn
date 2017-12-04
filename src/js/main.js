@@ -61,9 +61,6 @@ var vueApp = new Vue({
         journaloverview: journalOverview,
         en: en,
 
-
-
-
         savedlink: savedLink,
         counter: counter,
 
@@ -94,7 +91,7 @@ var vueApp = new Vue({
         daysLeft: "81",
         langTickets: true,
         langMobility: false,
-        langProgram: false,
+        langProgram: false
 
     },
      beforeMount(){
@@ -110,13 +107,11 @@ var vueApp = new Vue({
             this.langTickets = true;
             this.langMobility = false;
             this.langProgram = false;
-
         },
          mobilityToggle: function() {
             this.langMobility = true;
             this.langTickets = false;
             this.langProgram = false;
-
         },
         programToggle: function() {
             this.langMobility = false;
