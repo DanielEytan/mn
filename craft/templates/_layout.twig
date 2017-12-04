@@ -13,7 +13,11 @@
 </head>
 <body>
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
+		<div class="loader" v-if="loader">
+			<figure></figure>
+		</div>
 		{% include "_includes/header" %}
+
 		<main id="content" role="main" {% if mt is defined %}class="mt"{% endif %}>
 
 			{% block content %}

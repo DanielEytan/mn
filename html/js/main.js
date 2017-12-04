@@ -219,7 +219,8 @@
 	    daysLeft: "81",
 	    langTickets: true,
 	    langMobility: false,
-	    langProgram: false
+	    langProgram: false,
+	    loader: true
 
 	  },
 	  beforeMount: function beforeMount() {
@@ -228,9 +229,13 @@
 	  },
 	  mounted: function mounted() {
 	    window.addEventListener("scroll", this.menuScroll);
+	    this.ifReady();
 	  },
 
 	  methods: {
+	    ifReady: function ifReady() {
+	      this.loader = false;
+	    },
 	    ticketToggle: function ticketToggle() {
 	      this.langTickets = true;
 	      this.langMobility = false;

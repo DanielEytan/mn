@@ -165,7 +165,8 @@ header.site-header h1,
 footer h2,
 ul.main-nav li,
 nav.microsite-nav li,
-.microsites-language .intro h2 {
+.microsites-language .intro h2,
+.link-to-main a {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -1843,6 +1844,9 @@ header#header nav .flex-container {
       color: red; }
   #vue-app.active footer#footer {
     background: #210055; }
+  #vue-app.active .microsite-nav ul li.active, #vue-app.active .microsite-nav ul li:hover {
+    color: white;
+    border-bottom: solid 2px; }
   #vue-app.active .de {
     color: white; }
   #vue-app.active .scroll-top-button {
@@ -1898,6 +1902,36 @@ header#header nav .flex-container {
       background: #210055; } }
   #vue-app.active #save-toggle > div:hover {
     color: #1A0042 !important; }
+
+.loader {
+  background: #1A0042;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .loader figure {
+    background-image: url(./../bilder/logo_weiss.svg);
+    background-blend-mode: multiply;
+    background-size: 10vw;
+    background-repeat: no-repeat;
+    display: block;
+    width: 10vw;
+    height: 10vw;
+    animation: loader 1s infinite; }
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 #map {
   height: 400px;

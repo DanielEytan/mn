@@ -35,6 +35,13 @@
 	footer#footer {
 		background:#210055;
 	}
+	.microsite-nav ul li {
+		
+		&.active, &:hover {
+			color: white;
+			border-bottom: solid 2px;
+		}
+	}
 	.de {
 		color:white;
 	}

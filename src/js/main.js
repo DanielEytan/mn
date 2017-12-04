@@ -91,7 +91,8 @@ var vueApp = new Vue({
         daysLeft: "81",
         langTickets: true,
         langMobility: false,
-        langProgram: false
+        langProgram: false,
+        loader: true,
 
     },
      beforeMount(){
@@ -101,8 +102,13 @@ var vueApp = new Vue({
     },
     mounted(){
       window.addEventListener("scroll", this.menuScroll);
+      this.ifReady();
+     
     },
     methods: {
+      ifReady: function() {
+        this.loader = false;
+      },
       ticketToggle: function() {
             this.langTickets = true;
             this.langMobility = false;
@@ -250,8 +256,9 @@ var vueApp = new Vue({
           if(this.checkedLanguages.indexOf(filter) > -1) {
             this.checkedLanguages.splice(this.checkedLanguages.indexOf(filter),1);
           }
-        }
+        },
     },
+
     
 });
 
