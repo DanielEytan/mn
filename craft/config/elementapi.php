@@ -30,7 +30,11 @@ return [
             'elementsPerPage' => 999,
             'paginate' => false,
             'limit' => 999,
-            'criteria' => ['section' => 'program','type' =>'institution'],
+            'criteria' => [
+                'section' => 'program',
+                'type' =>'institution', 
+                'with' => ['events', 'events.time', 'events.themes', 'events.kindOfEvent', 'events.languages' ],
+            ],
             'transformer' => function(EntryModel $entry) {
 
                 //get descendants
@@ -171,7 +175,7 @@ return [
         ],
         'institution.json' => [
             'elementType' => ElementType::Entry,
-            // 'cache' => true,
+            'cache' => true,
             'criteria' => ['section' => 'program', 'type' =>'institution'],
             'transformer' => function(EntryModel $entry) {
              $photos = [];
