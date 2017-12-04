@@ -102,27 +102,35 @@ figcaption {
 	}
 }
 
-.mobility, 
-.tickets,
-.home .lang,
-.program .adapt-program p,
-.program .empty,
-.visit,
+.mobility a, 
+.tickets a,
+.home .lang a,
+.program .adapt-program p a,
+.program .empty a,
+.visit a,
 .institutions--single address a,
 .info-block a,
-.program .site-header p,
-.institutions--overview--list-view h1  {
-a {
+.program .site-header p a,
+.institutions--overview--list-view h1 a,
+.journal .post .more
+{
 		box-shadow: inset 0 -4px 0 rgb(230,230,230);
 		border-bottom: solid 3px rgb(230,230,230);
 		text-decoration: none !important;
 		transition: background .35s;
 		&:hover {
 			background: rgb(230,230,230);
-		}
-	}
+		}	
 }
-footer#footer .contact p,
+
+
+
+.journal .post:hover .more {
+	background: rgb(230,230,230);
+}
+
+// footer#footer .contact, 
+footer#footer .nav-contact,
 .additional-program {
 	a {
 		box-shadow: inset 0 -4px 0 white;
@@ -134,19 +142,51 @@ footer#footer .contact p,
 		}
 	}
 }
-// .info-block {
-// 	margin-bottom: 5em;
 
-// 	.presell {
-// 		margin-bottom: 2em;
-// 	}
-// 	h3 {
-// 		margin-bottom: .5em;
-// 	}
-// 	ul {
-// 		margin-bottom: 1.5em;
-// 	}
-// }
+#vue-app.active {
+	.mobility a, 
+	.tickets a,
+	.home .lang a,
+	.program .adapt-program p a,
+	.program .empty a,
+	.visit a,
+	.institutions--single address a,
+	.info-block a,
+	.program .site-header p a,
+	.institutions--overview--list-view h1 a,
+	.journal .post .more
+	{
+			box-shadow: inset 0 -4px 0 $notsodark;
+			border-bottom: solid 3px $notsodark;
+			// text-decoration: none !important;
+			// transition: background .35s;
+			&:hover {
+				background: $notsodark;
+			}	
+	}
+
+
+
+	.journal .post:hover .more {
+		background: $notsodark;
+	}
+
+	// footer#footer .contact, 
+	footer#footer .nav-contact,
+	.additional-program {
+		a {
+			box-shadow: inset 0 -4px 0 $notsodark;
+			border-bottom: solid 3px $notsodark;
+			text-decoration: none !important;
+			transition: background .35s;
+			&:hover {
+				background: $notsodark;
+			}
+		}
+	}
+}
+
+
 
 header.site-header h1{
 	margin-bottom: .75em;

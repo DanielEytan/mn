@@ -895,8 +895,6 @@ footer#footer {
     margin-bottom: 1em; }
   .journal--overview .group .post h1 {
     margin-bottom: .25em; }
-  .journal--overview .group .post:hover .more {
-    text-decoration: underline; }
   @media only screen and (min-width: 768px) {
     .journal--overview .group {
       display: -ms-flexbox;
@@ -1334,7 +1332,7 @@ footer#footer {
     width: 150px; }
   .share-program .share-link {
     max-width: 100%;
-    margin-bottom: 2em; }
+    margin-bottom: 1em; }
     .share-program .share-link > div {
       display: -ms-flexbox;
       display: flex; }
@@ -1690,7 +1688,8 @@ button {
   background: white;
   padding: .3em .5em .45em;
   border: solid 1px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  transition: background .35s, color .35s; }
   button:hover {
     color: white;
     background: black; }
@@ -1956,10 +1955,11 @@ html {
 .program .adapt-program p a,
 .program .empty a,
 .visit a,
-.institutions--single address a a,
-.info-block a a,
+.institutions--single address a,
+.info-block a,
 .program .site-header p a,
-.institutions--overview--list-view h1 a {
+.institutions--overview--list-view h1 a,
+.journal .post .more {
   box-shadow: inset 0 -4px 0 #e6e6e6;
   border-bottom: solid 3px #e6e6e6;
   text-decoration: none !important;
@@ -1970,21 +1970,64 @@ html {
   .program .adapt-program p a:hover,
   .program .empty a:hover,
   .visit a:hover,
-  .institutions--single address a a:hover,
-  .info-block a a:hover,
+  .institutions--single address a:hover,
+  .info-block a:hover,
   .program .site-header p a:hover,
-  .institutions--overview--list-view h1 a:hover {
+  .institutions--overview--list-view h1 a:hover,
+  .journal .post .more:hover {
     background: #e6e6e6; }
 
-footer#footer .contact p a,
+.journal .post:hover .more {
+  background: #e6e6e6; }
+
+footer#footer .nav-contact a,
 .additional-program a {
   box-shadow: inset 0 -4px 0 white;
   border-bottom: solid 3px white;
   text-decoration: none !important;
   transition: background .35s; }
-  footer#footer .contact p a:hover,
+  footer#footer .nav-contact a:hover,
   .additional-program a:hover {
     background: white; }
+
+#vue-app.active .mobility a,
+#vue-app.active .tickets a,
+#vue-app.active .home .lang a,
+#vue-app.active .program .adapt-program p a,
+#vue-app.active .program .empty a,
+#vue-app.active .visit a,
+#vue-app.active .institutions--single address a,
+#vue-app.active .info-block a,
+#vue-app.active .program .site-header p a,
+#vue-app.active .institutions--overview--list-view h1 a,
+#vue-app.active .journal .post .more {
+  box-shadow: inset 0 -4px 0 #473267;
+  border-bottom: solid 3px #473267; }
+  #vue-app.active .mobility a:hover,
+  #vue-app.active .tickets a:hover,
+  #vue-app.active .home .lang a:hover,
+  #vue-app.active .program .adapt-program p a:hover,
+  #vue-app.active .program .empty a:hover,
+  #vue-app.active .visit a:hover,
+  #vue-app.active .institutions--single address a:hover,
+  #vue-app.active .info-block a:hover,
+  #vue-app.active .program .site-header p a:hover,
+  #vue-app.active .institutions--overview--list-view h1 a:hover,
+  #vue-app.active .journal .post .more:hover {
+    background: #473267; }
+
+#vue-app.active .journal .post:hover .more {
+  background: #473267; }
+
+#vue-app.active footer#footer .nav-contact a,
+#vue-app.active .additional-program a {
+  box-shadow: inset 0 -4px 0 #473267;
+  border-bottom: solid 3px #473267;
+  text-decoration: none !important;
+  transition: background .35s; }
+  #vue-app.active footer#footer .nav-contact a:hover,
+  #vue-app.active .additional-program a:hover {
+    background: #473267; }
 
 header.site-header h1 {
   margin-bottom: .75em; }

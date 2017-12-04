@@ -17121,7 +17121,7 @@
 	    staticClass: "share-program"
 	  }, [_c('div', [_c('div', {
 	    staticClass: "share-link"
-	  }, [_c('p', [_vm._v("Personalisiere dein Programm, bevor du es teilst.")]), _vm._v(" "), _c('input', {
+	  }, [_vm._m(0), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -17199,7 +17199,9 @@
 	      arg: "error"
 	    }]
 	  }, [_vm._v(_vm._s(_vm.buttonText))])])])])])])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('p', [_c('strong', [_vm._v("Personalisiere dein Programm, bevor du es teilst.")])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
