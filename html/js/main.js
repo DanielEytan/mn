@@ -17488,7 +17488,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17568,6 +17568,9 @@
 	//
 	//
 	//
+	//
+	//
+	//
 
 /***/ }),
 /* 128 */
@@ -17596,22 +17599,31 @@
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.programevent.description)
 	    }
-	  }, [_vm._v(_vm._s(_vm.programevent.description))])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.programevent.description))]), _vm._v(" "), _c('div', {
+	    staticClass: "additional-lang",
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.programevent.additionalLang)
+	    }
+	  }, [_vm._v(_vm._s(_vm.programevent.additionalLang))])]), _vm._v(" "), _c('div', {
 	    staticClass: "icons"
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return (kindOfEvent.title == 'Für Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()
 	  }), _vm._v(" "), _vm._l((_vm.programevent.languages), function(language) {
 	    return _c('div', [(language.title == 'Deutsch') ? _c('span', {
 	      staticClass: "de"
-	    }, [_vm._v("⚀")]) : _vm._e(), _vm._v(" "), (language.title == 'Englisch') ? _c('span', {
+	    }, [_vm._v("🇩🇪")]) : _vm._e(), _vm._v(" "), (language.title == 'English') ? _c('span', {
 	      staticClass: "en"
-	    }, [_vm._v("⚂")]) : _vm._e(), _vm._v(" "), (language.title == 'Französisch') ? _c('span', {
+	    }, [_vm._v("🇬🇧")]) : _vm._e(), _vm._v(" "), (language.title == 'Français') ? _c('span', {
 	      staticClass: "fr"
-	    }, [_vm._v("⚁")]) : _vm._e(), _vm._v(" "), (language.title == 'Italienisch') ? _c('span', {
+	    }, [_vm._v("🇫🇷")]) : _vm._e(), _vm._v(" "), (language.title == 'Italiano') ? _c('span', {
 	      staticClass: "it"
-	    }, [_vm._v("⚃")]) : _vm._e(), _vm._v(" "), (language.title == 'Spanisch') ? _c('span', {
+	    }, [_vm._v("🇮🇹")]) : _vm._e(), _vm._v(" "), (language.title == 'Español') ? _c('span', {
+	      staticClass: "sp other"
+	    }, [_vm._v("🇪🇸")]) : _vm._e(), _vm._v(" "), (language.title == 'Magyar') ? _c('span', {
 	      staticClass: "other"
-	    }, [_vm._v("⚄")]) : _vm._e()])
+	    }, [_vm._v("🇭🇺")]) : _vm._e(), _vm._v(" "), (language.title == 'Pусский') ? _c('span', {
+	      staticClass: "other"
+	    }, [_vm._v("🇷🇺")]) : _vm._e()])
 	  })], 2), _vm._v(" "), _c('ul', {
 	    staticClass: "categories"
 	  }, [_vm._l((_vm.programevent.themes), function(theme) {
