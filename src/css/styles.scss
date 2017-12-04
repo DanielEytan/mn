@@ -20,6 +20,7 @@
 @import 'institution';
 @import 'institution-overview-map';
 @import 'institution-single';
+@import 'microsites-language';
 
 
 // components
@@ -83,14 +84,7 @@ figcaption {
 
 
 .mobility, .tickets {
-	a {
-		box-shadow: inset 0 -4px 0 rgb(220,220,220);
-		border-bottom: solid 3px rgb(220,220,220);
-		text-decoration: none !important;
-		&:hover {
-			background: rgb(220,220,220);
-		}
-	}
+	
 	margin-bottom: 3em;
 	ul {
 		margin-bottom: 1.5em;
@@ -108,6 +102,36 @@ figcaption {
 	}
 }
 
+.mobility, 
+.tickets,
+.home .lang,
+.program .adapt-program p,
+.program .empty,
+.visit,
+.institutions--single address a,
+.info-block a,
+.program .site-header p,
+.institutions--overview--list-view h1  {
+a {
+		box-shadow: inset 0 -4px 0 rgb(220,220,220);
+		border-bottom: solid 3px rgb(220,220,220);
+		text-decoration: none !important;
+		&:hover {
+			background: rgb(220,220,220);
+		}
+	}
+}
+footer#footer .contact p,
+.additional-program {
+	a {
+		box-shadow: inset 0 -4px 0 white;
+		border-bottom: solid 3px white;
+		text-decoration: none !important;
+		&:hover {
+			background: white;
+		}
+	}
+}
 // .info-block {
 // 	margin-bottom: 5em;
 
@@ -126,11 +150,6 @@ header.site-header h1{
 	margin-bottom: .75em;
 }
 
-.institutions--single address a,
-.info-block a,
-.additional-program a {
-	text-decoration: underline;
-}
 
 
 // .link-with-arrow::after {

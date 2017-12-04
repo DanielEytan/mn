@@ -67,14 +67,6 @@ body {
     body {
       font-size: 1.2em; } }
 
-.program .adapt-program p a,
-.program .empty a,
-.visit a,
-footer#footer .contact p a,
-.program .site-header p a {
-  text-decoration: underline;
-  font-family: 'main-eb', helvetica; }
-
 .selected-institution aside a .more {
   text-decoration: underline;
   font-family: 'main-eb', helvetica;
@@ -127,8 +119,11 @@ footer a,
 .info-block h3,
 .info-block b,
 footer h2,
+.home .lang,
 .journal .info-box em,
-.journal .info-box {
+.journal .info-box,
+nav.microsite-nav li,
+.microsites-language .intro h2 {
   font-family: 'main-eb', helvetica; }
 
 .journal--overview .group h1,
@@ -140,7 +135,8 @@ header.site-header h1,
 .food h3,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
-.program .empty p {
+.program .empty p,
+.microsites-language header h2 {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
@@ -167,7 +163,9 @@ header.site-header h1,
 .info-block h2,
 .info-block h3,
 footer h2,
-ul.main-nav li {
+ul.main-nav li,
+nav.microsite-nav li,
+.microsites-language .intro h2 {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -183,7 +181,8 @@ figcaption,
 .journal .program-list.selected h1,
 .institutions--overview .map-view .suttle-line strong,
 .institutions--overview .map-view h1,
-.program__list--selection li h1.event-title {
+.program__list--selection li h1.event-title,
+nav.microsite-nav li {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -191,14 +190,16 @@ figcaption,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
     .institutions--overview .map-view h1,
-    .program__list--selection li h1.event-title {
+    .program__list--selection li h1.event-title,
+    nav.microsite-nav li {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
     .journal .program-list.selected h1,
     .institutions--overview .map-view .suttle-line strong,
     .institutions--overview .map-view h1,
-    .program__list--selection li h1.event-title {
+    .program__list--selection li h1.event-title,
+    nav.microsite-nav li {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -217,6 +218,7 @@ figcaption,
 .journal--single h2.subtitle,
 .share-program h1,
 .info-block h2,
+.microsites-language header h2,
 footer h2 {
   font-size: 1.25em;
   line-height: 1.2em; }
@@ -237,6 +239,7 @@ footer h2 {
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2,
+    .microsites-language header h2,
     footer h2 {
       font-size: 1.4em; } }
   @media only screen and (min-width: 1500px) {
@@ -256,6 +259,7 @@ footer h2 {
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2,
+    .microsites-language header h2,
     footer h2 {
       font-size: 1.6em; } }
   @media only screen and (min-width: 1900px) {
@@ -275,23 +279,27 @@ footer h2 {
     .journal--single h2.subtitle,
     .share-program h1,
     .info-block h2,
+    .microsites-language header h2,
     footer h2 {
       font-size: 1.75em; } }
 
 .institutions--single span strong,
 .journal--overview .group h1,
-.journal--single h1.title {
+.journal--single h1.title,
+.microsites-language header h2 {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single span strong,
     .journal--overview .group h1,
-    .journal--single h1.title {
+    .journal--single h1.title,
+    .microsites-language header h2 {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single span strong,
     .journal--overview .group h1,
-    .journal--single h1.title {
+    .journal--single h1.title,
+    .microsites-language header h2 {
       font-size: 2.5em; } }
 
 .program__list .institution h2,
@@ -953,6 +961,7 @@ footer#footer {
     .program .intro p i {
       color: red; }
   .program .empty {
+    text-align: center;
     padding: 2em 0; }
     .program .empty h2 {
       margin-bottom: 1em; }
@@ -1246,7 +1255,6 @@ footer#footer {
     width: 100%; }
 
 .institutions--single .program {
-  padding-top: 1em;
   margin-bottom: 2em; }
   .institutions--single .program h1.program-title, .institutions--single .program h2 {
     margin-bottom: .5em; }
@@ -1276,14 +1284,44 @@ footer#footer {
       flex: 0 1 49%; }
     .institutions--single .institution-infos figure.building img {
       margin: 0;
-      margin-left: auto; }
-  .institutions--single .program {
-    padding-top: 2em; } }
+      margin-left: auto; } }
 
 @media screen and (min-width: 1024px) {
   .institutions--single .program figure {
     margin: 50px auto 75px;
     width: 80%; } }
+
+.microsites-language header h2, .microsites-language header p {
+  margin-bottom: 1em; }
+
+.microsites-language .intro h2 {
+  margin-bottom: 1em; }
+
+.microsites-language > section {
+  padding-top: 2em; }
+
+.microsites-language .microsite-nav {
+  margin-top: 2em; }
+  .microsites-language .microsite-nav ul li {
+    padding: .5em;
+    color: #787878;
+    cursor: pointer; }
+    .microsites-language .microsite-nav ul li.active {
+      color: black;
+      border-bottom: solid 2px; }
+
+@media screen and (min-width: 600px) {
+  .microsites-language .microsite-nav {
+    border-bottom: solid 1px; }
+    .microsites-language .microsite-nav ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; }
+      .microsites-language .microsite-nav ul li {
+        padding: .5em 0; } }
 
 .share-program {
   padding-bottom: 2em; }
@@ -1903,12 +1941,6 @@ html {
 
 .mobility, .tickets {
   margin-bottom: 3em; }
-  .mobility a, .tickets a {
-    box-shadow: inset 0 -4px 0 gainsboro;
-    border-bottom: solid 3px gainsboro;
-    text-decoration: none !important; }
-    .mobility a:hover, .tickets a:hover {
-      background: gainsboro; }
   .mobility ul, .tickets ul {
     margin-bottom: 1.5em; }
     .mobility ul li, .tickets ul li {
@@ -1920,10 +1952,39 @@ html {
   .mobility h2, .mobility p, .tickets h2, .tickets p {
     margin-bottom: 1em; }
 
+.mobility a,
+.tickets a,
+.home .lang a,
+.program .adapt-program p a,
+.program .empty a,
+.visit a,
+.institutions--single address a a,
+.info-block a a,
+.program .site-header p a,
+.institutions--overview--list-view h1 a {
+  box-shadow: inset 0 -4px 0 gainsboro;
+  border-bottom: solid 3px gainsboro;
+  text-decoration: none !important; }
+  .mobility a:hover,
+  .tickets a:hover,
+  .home .lang a:hover,
+  .program .adapt-program p a:hover,
+  .program .empty a:hover,
+  .visit a:hover,
+  .institutions--single address a a:hover,
+  .info-block a a:hover,
+  .program .site-header p a:hover,
+  .institutions--overview--list-view h1 a:hover {
+    background: gainsboro; }
+
+footer#footer .contact p a,
+.additional-program a {
+  box-shadow: inset 0 -4px 0 white;
+  border-bottom: solid 3px white;
+  text-decoration: none !important; }
+  footer#footer .contact p a:hover,
+  .additional-program a:hover {
+    background: white; }
+
 header.site-header h1 {
   margin-bottom: .75em; }
-
-.institutions--single address a,
-.info-block a,
-.additional-program a {
-  text-decoration: underline; }

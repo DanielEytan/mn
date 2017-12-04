@@ -35,7 +35,7 @@
 					<div class="icons">
 						<span v-if="entry.advanceSale == 1">&#127915;</span>
 						<span v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855;</span>
-						<span v-for="value in entry.accessibility" v-if="value === 'partlyWheelchair'">&#9855; *</span>
+						<span v-for="value in entry.accessibility" v-if="value === 'partlyWheelchair'">&#9855;*</span>
 						<span v-if="entry.wifi == 1">&#8980;</span>
 
 					</div>

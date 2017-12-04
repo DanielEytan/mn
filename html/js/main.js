@@ -217,9 +217,9 @@
 	    eventsAPITitle: "events",
 	    languagesAPITitle: "languages",
 	    daysLeft: "81",
-	    langTickets: "false",
-	    langMobility: "false",
-	    langProgram: "true"
+	    langTickets: true,
+	    langMobility: false,
+	    langProgram: false
 
 	  },
 	  beforeMount: function beforeMount() {
@@ -234,22 +234,17 @@
 	    ticketToggle: function ticketToggle() {
 	      this.langTickets = true;
 	      this.langMobility = false;
-
-	      // if (this.langMobility = true) {
-	      //   this.langMobility = false;              
-	      // };
+	      this.langProgram = false;
 	    },
 	    mobilityToggle: function mobilityToggle() {
 	      this.langMobility = true;
 	      this.langTickets = false;
-
-	      // if (this.langMobility = true ) {
-	      //   this.langMobility = true;
-
-	      // };
-	      // if (this.langTickets = true) {
-	      //     this.langTickets = !this.langTickets;              
-	      //   };
+	      this.langProgram = false;
+	    },
+	    programToggle: function programToggle() {
+	      this.langMobility = false;
+	      this.langTickets = false;
+	      this.langProgram = true;
 	    },
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
@@ -23140,7 +23135,7 @@
 	    }, [(entry.advanceSale == 1) ? _c('span', [_vm._v("🎫")]) : _vm._e(), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return (value === 'wheelchair') ? _c('span', [_vm._v("♿")]) : _vm._e()
 	    }), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
-	      return (value === 'partlyWheelchair') ? _c('span', [_vm._v("♿ *")]) : _vm._e()
+	      return (value === 'partlyWheelchair') ? _c('span', [_vm._v("♿*")]) : _vm._e()
 	    }), _vm._v(" "), (entry.wifi == 1) ? _c('span', [_vm._v("⌔")]) : _vm._e()], 2)], 2)])
 	  })), _vm._v(" "), _c('section', {
 	    directives: [{

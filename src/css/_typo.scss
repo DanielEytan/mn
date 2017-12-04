@@ -27,18 +27,18 @@ body {
 
 // Link Border Bottom
 
-.program .adapt-program p,
-.program .empty,
-.visit,
-footer#footer .contact p,
-.program .site-header p {
-	a {
-		// border-bottom: solid 1px;
-		text-decoration: underline;
-		
-		font-family: 'main-eb', helvetica;
-	}
-}
+// .program .adapt-program p,
+// .program .empty,
+// .visit,
+// footer#footer .contact p,
+// .program .site-header p {
+// 	a {
+// 		// border-bottom: solid 1px;
+// 		text-decoration: underline;
+
+// 		font-family: 'main-eb', helvetica;
+// 	}
+// }
 .selected-institution aside a .more {
 	text-decoration: underline;
 	font-family: 'main-eb', helvetica;
@@ -113,10 +113,14 @@ footer a,
 .info-block h3,
 .info-block b,
 footer h2,
+.home .lang,
 
 // .journal .post-date,
 .journal .info-box em,
-.journal .info-box  {
+.journal .info-box,
+nav.microsite-nav li,
+.microsites-language .intro h2
+  {
 	font-family: 'main-eb', helvetica;
 }
 
@@ -133,6 +137,7 @@ header.site-header h1,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
 .program .empty p,
+.microsites-language header h2
 
  {
 	font-family: 'lyon-medium', times;
@@ -173,7 +178,10 @@ header.site-header h1,
 .info-block h3,
 // .post-date ,
 footer h2,
-ul.main-nav li
+ul.main-nav li,
+nav.microsite-nav li,
+.microsites-language .intro h2
+
   {
 	text-transform: uppercase;
 	letter-spacing: .025em;
@@ -197,7 +205,9 @@ figcaption,
 .institutions--overview .map-view .suttle-line strong,
 
 .institutions--overview .map-view h1,
-.program__list--selection li h1.event-title
+.program__list--selection li h1.event-title,
+nav.microsite-nav li
+
 // .info-box 
 {
 	font-size: 1.25em;
@@ -238,6 +248,9 @@ figcaption,
 .journal--single h2.subtitle,
 .share-program h1,
 .info-block h2,
+.microsites-language header h2,
+
+
 footer h2 {
 	font-size: 1.25em;
 	line-height: 1.2em;
@@ -257,7 +270,9 @@ footer h2 {
 
 .institutions--single  span strong,
 .journal--overview .group h1,
-.journal--single h1.title
+.journal--single h1.title,
+.microsites-language header h2,
+
 
  {
 	font-size: 1.5em;

@@ -92,9 +92,9 @@ var vueApp = new Vue({
         eventsAPITitle: "events",
         languagesAPITitle: "languages",
         daysLeft: "81",
-        langTickets: "false",
-        langMobility: "false",
-        langProgram: "true"
+        langTickets: true,
+        langMobility: false,
+        langProgram: false,
 
     },
      beforeMount(){
@@ -108,23 +108,20 @@ var vueApp = new Vue({
     methods: {
       ticketToggle: function() {
             this.langTickets = true;
-              this.langMobility = false;              
+            this.langMobility = false;
+            this.langProgram = false;
 
-            // if (this.langMobility = true) {
-            //   this.langMobility = false;              
-            // };
         },
          mobilityToggle: function() {
             this.langMobility = true;
-              this.langTickets = false;              
+            this.langTickets = false;
+            this.langProgram = false;
 
-          // if (this.langMobility = true ) {
-          //   this.langMobility = true;
-
-          // };
-          // if (this.langTickets = true) {
-          //     this.langTickets = !this.langTickets;              
-          //   };
+        },
+        programToggle: function() {
+            this.langMobility = false;
+            this.langTickets = false;
+            this.langProgram = true;
         },
         toggle: function() {
             this.menuOpen = !this.menuOpen;
