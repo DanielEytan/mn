@@ -216,16 +216,41 @@
 	    themesAPITitle: "themes",
 	    eventsAPITitle: "events",
 	    languagesAPITitle: "languages",
-	    daysLeft: "81"
+	    daysLeft: "81",
+	    langTickets: "false",
+	    langMobility: "false",
+	    langProgram: "true"
+
 	  },
 	  beforeMount: function beforeMount() {
 	    this.stateContrast(), this.time();
+	    // this.ticketToggle()
 	  },
 	  mounted: function mounted() {
 	    window.addEventListener("scroll", this.menuScroll);
 	  },
 
 	  methods: {
+	    ticketToggle: function ticketToggle() {
+	      this.langTickets = true;
+	      this.langMobility = false;
+
+	      // if (this.langMobility = true) {
+	      //   this.langMobility = false;              
+	      // };
+	    },
+	    mobilityToggle: function mobilityToggle() {
+	      this.langMobility = true;
+	      this.langTickets = false;
+
+	      // if (this.langMobility = true ) {
+	      //   this.langMobility = true;
+
+	      // };
+	      // if (this.langTickets = true) {
+	      //     this.langTickets = !this.langTickets;              
+	      //   };
+	    },
 	    toggle: function toggle() {
 	      this.menuOpen = !this.menuOpen;
 	    },
@@ -14661,7 +14686,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -14688,6 +14713,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -16201,7 +16230,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16220,33 +16249,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -16769,11 +16771,15 @@
 	        "update-event-number-of-entry": _vm.updateEventNumberOfEntry
 	      }
 	    })
-	  }))])
+	  })), _vm._v(" "), (_vm.calcNumberOfEvents() === 0) ? _c('div', {
+	    staticClass: "empty"
+	  }, [_vm._m(1)]) : _vm._e()])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('button', {
 	    staticClass: "red"
 	  }, [_vm._v("Alle Filter zurücksetzen "), _c('i', [_vm._v("ⓧ")])])
+	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('p', [_vm._v("Diese Filterkombination ergibt keine Ergebnisse."), _c('br'), _vm._v("Passe deine Auswahl an.")])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -17488,7 +17494,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -17571,6 +17577,7 @@
 	//
 	//
 	//
+	//
 
 /***/ }),
 /* 128 */
@@ -17604,7 +17611,7 @@
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.programevent.additionalLang)
 	    }
-	  }, [_vm._v(_vm._s(_vm.programevent.additionalLang))])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.programevent.additionalLang) + "\n    ")])]), _vm._v(" "), _c('div', {
 	    staticClass: "icons"
 	  }, [_vm._l((_vm.programevent.kindOfEvent), function(kindOfEvent) {
 	    return (kindOfEvent.title == 'Für Kinder & Familien') ? _c('div', [_c('span', [_vm._v("🎠")])]) : _vm._e()

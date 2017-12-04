@@ -68,7 +68,7 @@ body {
       font-size: 1.2em; } }
 
 .program .adapt-program p a,
-.program--saved .empty a,
+.program .empty a,
 .visit a,
 footer#footer .contact p a,
 .program .site-header p a {
@@ -140,7 +140,7 @@ header.site-header h1,
 .food h3,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
-.program--saved .empty p:nth-child(2) {
+.program .empty p {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
@@ -204,7 +204,7 @@ figcaption,
 .program--overview .institution h1,
 .program--overview .institution span strong,
 .program .selected h1,
-.program--saved .empty p:nth-child(2),
+.program .empty p,
 .institutions--overview--grid-view h1,
 .institutions--overview--list-view h1,
 .institutions--overview .grid-view h2,
@@ -224,7 +224,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:nth-child(2),
+    .program .empty p,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -243,7 +243,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:nth-child(2),
+    .program .empty p,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -262,7 +262,7 @@ footer h2 {
     .program--overview .institution h1,
     .program--overview .institution span strong,
     .program .selected h1,
-    .program--saved .empty p:nth-child(2),
+    .program .empty p,
     .institutions--overview--grid-view h1,
     .institutions--overview--list-view h1,
     .institutions--overview .grid-view h2,
@@ -460,14 +460,14 @@ header#header nav,
 
 .institutions--overview .list-view a > div,
 .program__list__event > div,
-.program--saved .empty,
+.program .empty,
 .program--overview .food,
 .program .adapt-program {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
     .institutions--overview .list-view a > div,
     .program__list__event > div,
-    .program--saved .empty,
+    .program .empty,
     .program--overview .food,
     .program .adapt-program {
       width: 900px;
@@ -475,7 +475,7 @@ header#header nav,
   @media screen and (min-width: 1224px) {
     .institutions--overview .list-view a > div,
     .program__list__event > div,
-    .program--saved .empty,
+    .program .empty,
     .program--overview .food,
     .program .adapt-program {
       width: 1000px;
@@ -952,12 +952,13 @@ footer#footer {
     margin-bottom: 1em; }
     .program .intro p i {
       color: red; }
-  .program--saved .empty {
+  .program .empty {
     padding: 2em 0; }
-    .program--saved .empty p {
-      max-width: 800px;
+    .program .empty h2 {
       margin-bottom: 1em; }
-      .program--saved .empty p span {
+    .program .empty p {
+      margin-bottom: .5em; }
+      .program .empty p span {
         color: red; }
   .program .name {
     margin-bottom: 3em; }
@@ -1685,7 +1686,7 @@ button.red {
   padding-bottom: 9px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid;
-  z-index: 20; }
+  z-index: 21; }
   .scroll-top-button.show {
     bottom: 20px;
     opacity: 1; }

@@ -16,33 +16,6 @@
       <div class="additional-lang" v-html="programevent.additionalLang">{{ programevent.additionalLang }}</div>
      
       </div>
-<!--       <div  class="cat-wrapper">
-      <div v-if="programevent.themes.length">
-        <div class="themes">
-          <h3>Themen und Sparten:</h3>
-          <ul>
-            <li v-for="theme in programevent.themes">{{ theme.title }}</li>
-          </ul>
-        </div>
-      </div>
-      <div v-if="programevent.kindOfEvent.length">
-        <div class="kindOfEvent">
-          <h3>Veranstaltungsarten:</h3>
-          <ul>
-            <li v-for="kindOfEvent in programevent.kindOfEvent">{{ kindOfEvent.title }}</li>
-          </ul>
-        </div>
-      </div>
-      <div v-if="programevent.languages.length">
-        <div class="languages">
-          <h3>Sprachen:</h3>
-          <ul>
-            <li v-for="language in programevent.languages">{{ language.title }}</li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-
      <div class="icons">
           <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Für Kinder & Familien'"><span >🎠</span></div>
           <div v-for="language in programevent.languages">

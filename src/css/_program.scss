@@ -18,20 +18,23 @@
 		}
 	&--saved {
 	
-		.empty {
+		
+
+	}
+	.empty {
 			// text-align: center;
 			padding: 2em 0;
-			p {
-			max-width: 800px;
-				
+			h2 {
 				margin-bottom: 1em;
+			}
+			p {
+				
+				margin-bottom: .5em;
 				span {
 					color: $red;
 				}
 			}
 		}
-
-	}
 	.name {
 			margin-bottom: 3em;
 		}

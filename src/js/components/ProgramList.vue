@@ -66,6 +66,10 @@
       <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry">
       </programentry>
     </ul>
+    <div v-if="calcNumberOfEvents() === 0" class="empty">
+      <p>Diese Filterkombination ergibt keine Ergebnisse.<br>Passe deine Auswahl an.</p>
+    </div>
+
 
   </div>
 </template>

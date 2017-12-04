@@ -28,7 +28,7 @@ body {
 // Link Border Bottom
 
 .program .adapt-program p,
-.program--saved .empty,
+.program .empty,
 .visit,
 footer#footer .contact p,
 .program .site-header p {
@@ -131,7 +131,7 @@ header.site-header h1,
 .food h3,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
-.program--saved .empty p:nth-child(2),
+.program .empty p,
 
  {
 	font-family: 'lyon-medium', times;
@@ -215,7 +215,7 @@ figcaption,
 
 .program--overview .institution span strong,
 .program .selected h1,
-.program--saved .empty p:nth-child(2),
+.program .empty p,
 
 // .program li.program--event h1,
 

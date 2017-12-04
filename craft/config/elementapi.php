@@ -302,6 +302,7 @@ return [
                 'url' => $entry->url,
                 'id' => $entry->id,
                 'description' => (string) $entry->description,
+                'additionalLang' => (string) $entry->additionalLang,
                 'level' => $entry->level,
                 'time' => $timeBlocks,
                 'themes' => array_map( function (CategoryModel $category) {

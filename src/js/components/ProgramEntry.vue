@@ -25,7 +25,7 @@
         </section>
         <!-- <div v-html="entry.programmText"></div> -->
 
-        <ul class="program__list--complete__event-list" >
+        <ul class="program__list--complete__event-list">
           <programevent v-for="programevent in entry.events" :key="programevent.id" :programevent="programevent" :programevent-is-visible="programevent.isVisible" :institution="entry.title" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes"></programevent>
         </ul>
        <div class="food"><h3>Essen und trinken:</h3><p><strong>{{ entry.food }}</strong></p></div>
