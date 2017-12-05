@@ -124,7 +124,8 @@ footer h2,
 .journal .info-box em,
 .journal .info-box,
 nav.microsite-nav li,
-.microsites-language .intro h2 {
+.microsites-language .intro h2,
+.journal--single .nextPrev h1 {
   font-family: 'main-eb', helvetica; }
 
 .journal--overview .group h1,
@@ -137,7 +138,8 @@ header.site-header h1,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
 .program .empty p,
-.microsites-language header h2 {
+.microsites-language header h2,
+.journal--single article .lead-text p {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
@@ -221,6 +223,7 @@ nav.microsite-nav li {
 .share-program h1,
 .info-block h2,
 .microsites-language header h2,
+.journal--single article .lead-text,
 footer h2 {
   font-size: 1.25em;
   line-height: 1.2em; }
@@ -242,6 +245,7 @@ footer h2 {
     .share-program h1,
     .info-block h2,
     .microsites-language header h2,
+    .journal--single article .lead-text,
     footer h2 {
       font-size: 1.4em; } }
   @media only screen and (min-width: 1500px) {
@@ -262,6 +266,7 @@ footer h2 {
     .share-program h1,
     .info-block h2,
     .microsites-language header h2,
+    .journal--single article .lead-text,
     footer h2 {
       font-size: 1.6em; } }
   @media only screen and (min-width: 1900px) {
@@ -282,6 +287,7 @@ footer h2 {
     .share-program h1,
     .info-block h2,
     .microsites-language header h2,
+    .journal--single article .lead-text,
     footer h2 {
       font-size: 1.75em; } }
 
@@ -308,14 +314,16 @@ footer h2 {
 .institutions--single .program h1.program-title,
 header#header nav ul.main-nav li a,
 header.site-header h1,
+.journal header.journal-header h1,
 .home .site-title {
   font-size: 1.4em;
-  line-height: 1.2em; }
+  line-height: 1.1em; }
   @media only screen and (min-width: 374px) {
     .program__list .institution h2,
     .institutions--single .program h1.program-title,
     header#header nav ul.main-nav li a,
     header.site-header h1,
+    .journal header.journal-header h1,
     .home .site-title {
       font-size: 1.75em; } }
   @media only screen and (min-width: 768px) {
@@ -323,6 +331,7 @@ header.site-header h1,
     .institutions--single .program h1.program-title,
     header#header nav ul.main-nav li a,
     header.site-header h1,
+    .journal header.journal-header h1,
     .home .site-title {
       font-size: 2.5em; } }
   @media only screen and (min-width: 1024px) {
@@ -330,6 +339,7 @@ header.site-header h1,
     .institutions--single .program h1.program-title,
     header#header nav ul.main-nav li a,
     header.site-header h1,
+    .journal header.journal-header h1,
     .home .site-title {
       font-size: 3em; } }
   @media only screen and (min-width: 1900px) {
@@ -337,6 +347,7 @@ header.site-header h1,
     .institutions--single .program h1.program-title,
     header#header nav ul.main-nav li a,
     header.site-header h1,
+    .journal header.journal-header h1,
     .home .site-title {
       font-size: 3.5em; } }
 
@@ -492,16 +503,19 @@ header#header nav,
       margin: 0 auto; } }
 
 footer#footer .glossary,
-footer#footer section {
+footer#footer section,
+.journal .nextPrev {
   margin: 15px 15px 16px;
   position: relative; }
   @media screen and (min-width: 768px) {
     footer#footer .glossary,
-    footer#footer section {
+    footer#footer section,
+    .journal .nextPrev {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     footer#footer .glossary,
-    footer#footer section {
+    footer#footer section,
+    .journal .nextPrev {
       width: 1400px;
       margin: 0 auto; } }
 
@@ -947,18 +961,40 @@ footer#footer {
     margin: 0 0 25px; }
     .journal--single figure.portrait {
       max-width: 450px; }
-  .journal--single h1 {
-    margin-bottom: 1em; }
+  .journal--single h1, .journal--single p {
+    margin-bottom: 1em;
+    max-width: 750px; }
   .journal--single h2, .journal--single .text {
     margin-bottom: 1em !important; }
-  .journal--single .text, .journal--single .program {
+  .journal--single .text-block p:last-of-type, .journal--single .program {
     margin-bottom: 2em; }
   .journal--single .program .selected li {
     padding-bottom: 1em; }
+  .journal--single .nextPrev {
+    border-top: solid 1px;
+    padding-top: 1em;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .journal--single .nextPrev > * {
+      -ms-flex: 0 1 45%;
+      flex: 0 1 45%; }
+      .journal--single .nextPrev > * .next {
+        text-align: right; }
+        .journal--single .nextPrev > * .next figure {
+          margin-left: auto; }
+      .journal--single .nextPrev > * figure {
+        margin: 0 0 1em;
+        max-width: 200px; }
 
 @media only screen and (min-width: 1224px) {
+  .journal--single header h1 {
+    margin-bottom: .75em; }
+  .journal--single header p.post-date {
+    margin-bottom: 1.5em; }
   .journal--single figure {
-    margin: 40px auto 45px; } }
+    margin: 0 auto 45px; } }
 
 .program {
   margin-bottom: 3em; }

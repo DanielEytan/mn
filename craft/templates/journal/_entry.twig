@@ -8,53 +8,93 @@
 {# <twitter></twitter> #}
 
 <section class="journal journal--single">
-	<article>
-		<header class="site-header">
-						<p class="post-date">Veröffentlicht am {{ entry.postDate | date("d. F Y") }}</p><br>
+{# 	{% paginate craft.entries.section('journal').limit(1) as pageInfo, pageEntries %}
+{% for entry in pageEntries %} #}
+<article>
+	<header class="journal-header">
+		<p class="post-date">Veröffentlicht am {{ entry.postDate | date("d. F Y") }}</p>
 
-			<h1>{{ entry.title }}</h1>
+		<h1>{{ entry.title }}</h1>
+
+		{% for img in entry.cover %}
+		<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+			<img src="{{ img.url }}" alt="{{ img.title }}">
+			{% if img.caption %}
+			<figcaption>{{ img.caption }}</figcaption>
+			{% endif %}
+		</figure>
+		{% endfor %}
+		<div class="lead-text">
+			{{ entry.leadText }}
+		</div>
+	</header>
+
+	{% for block in entry.contentJournal %}
+	{% switch block.type %}
+	{% case "subtitle" %}
+	<h2 class="subtitle">{{ block.subtitle }}</h2>
+	{% case "text" %}
+	<div class="text text-block">
+		{{ block.text }}
+	</div>
+	{% case "img" %}
+	<div class="img">
+		{% for img in block.img %}
+		<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+			<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+			{% if img.caption %}
+			<figcaption>{{ img.caption }}</figcaption>
+			{% endif %}
+		</figure>
+		{% endfor %}
+	</div>
+	{% case "program" %}
+	<div class="program">
+		<ul class="program__list program__list--selection">
+			{% for entry in block.entry %}
+			{% set program = entry.id %}
+			<journalprogram :id="{{program}}"></journalprogram>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endswitch %}
+	{% endfor %}				
+</article>
+<div class="nextPrev">
+	{% set params = {section: 'journal', order: 'postDate', limit: null} %}
+	{% set entryPrev = entry.getPrev(params) %}
+	{% set entryNext = entry.getNext(params) %}
+	{% if entryPrev %}
+	<a href="{{entryPrev.url}}">
+		<div class="prev" >
+			<h1>← {{ entryPrev.title }}</h1>
 			
-			{% for img in entry.cover %}
-			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-				<img src="{{ img.url }}" alt="{{ img.title }}">
-				{% if img.caption %}
-				<figcaption>{{ img.caption }}</figcaption>
-				{% endif %}
-			</figure>
+			{% for img in entryPrev.cover %}
+				<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+					<img src="{{ img.url }}" alt="">
+				</figure>
 			{% endfor %}
-		</header>
+		</div>
+	</a>
+	{% endif %}
+	{% if entryNext %}
+	<a href="{{entryNext.url}}">
+		<div class="next" >
+			<h1>{{ entryNext.title }} →</h1>
 
-		{% for block in entry.contentJournal %}
-		{% switch block.type %}
-		{% case "subtitle" %}
-		<h2 class="subtitle">{{ block.subtitle }}</h2>
-		{% case "text" %}
-		<div class="text">
-			{{ block.text }}
-		</div>
-		{% case "img" %}
-		<div class="img">
-			{% for img in block.img %}
-			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-				{% if img.caption %}
-					<figcaption>{{ img.caption }}</figcaption>
-				{% endif %}
-			</figure>
+			{% for img in entryNext.cover %}
+				<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+					<img src="{{ img.url }}" alt="">
+				</figure>
 			{% endfor %}
 		</div>
-		{% case "program" %}
-		<div class="program">
-			<ul class="program__list program__list--selection">
-				{% for entry in block.entry %}
-				{% set program = entry.id %}
-				<journalprogram :id="{{program}}"></journalprogram>
-				{% endfor %}
-			</ul>
-		</div>
-		{% endswitch %}
-		{% endfor %}				
-	</article>
+	</a>
+	{% endif %}
+
+</div>
+{# {% endfor %} #}
+
+
 </section>
 
 {% endblock %}

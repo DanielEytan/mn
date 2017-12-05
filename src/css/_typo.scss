@@ -120,7 +120,8 @@ footer h2,
 .journal .info-box em,
 .journal .info-box,
 nav.microsite-nav li,
-.microsites-language .intro h2
+.microsites-language .intro h2,
+.journal--single .nextPrev h1
   {
 	font-family: 'main-eb', helvetica;
 }
@@ -138,7 +139,9 @@ header.site-header h1,
 .institutions--single .program-text,
 .institutions--overview .grid-view h2,
 .program .empty p,
-.microsites-language header h2
+.microsites-language header h2,
+.journal--single article .lead-text p
+
 
  {
 	font-family: 'lyon-medium', times;
@@ -251,6 +254,8 @@ nav.microsite-nav li
 .share-program h1,
 .info-block h2,
 .microsites-language header h2,
+.journal--single article .lead-text,
+
 
 
 footer h2 {
@@ -291,10 +296,11 @@ footer h2 {
 .institutions--single .program h1.program-title,
 header#header nav ul.main-nav li a,
 header.site-header h1,
+.journal header.journal-header h1,
 .home .site-title {
 		
 	font-size: 1.4em;
-	line-height: 1.2em;
+	line-height: 1.1em;
 
 	@media only screen and (min-width: 374px) {
 		font-size: 1.75em;
