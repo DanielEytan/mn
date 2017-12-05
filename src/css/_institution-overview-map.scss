@@ -1,13 +1,21 @@
 .institutions--overview {
 	.map-view {
 		aside {
-			padding-bottom: 1em;
+			&.institutions--overview_child {
+				p {
+					margin-bottom: .25em;
+				}
+			}
+			.get-list-toggle {
+				display: none;
+			}
 			.institutions-list {
 				li {
 					cursor: pointer;
 					h1 {
 						margin-bottom: .5em;
 					}
+
 					margin-bottom: 1em;
 					.suttle-line {
 						font-size: .8em;
@@ -32,49 +40,67 @@
 		height: 400px;
 	}
 	@media screen and (max-width: $bp1) {
-
+		.dismiss i, .get-list-toggle i {
+			font-size: 2em;	
+		}
 			.map-view {
 				height: 100%;
 				aside {
-					position: relative;
+					.get-list-toggle {
+						display: block;
+					}
 				}
 				.selected-institution {
 					button {
 						display: none;
 					}
+					// display: none;
 					position: fixed;
 					bottom: 0;
 					z-index: 20;
 					background: white;
 					width: 100%;
-					height: 150px;
+					// top:60px;
 					overflow: scroll;
 					right: 0;
 					left: 0;
 					padding: 5px 60px 10px 15px;
 					border-top: solid 1px;
-					&.closed {
-						height: 50px;
-						.dismiss{
-							bottom: 15px;
-
-							&:before {
-							content: "▲";
+					.mobile-toggle {
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						height: 2em;
+						&:before {
+						content: "Liste öffnen ";
 						}
-							
+						&:after {
+							content: "▼";
 						}
 					}
-					.dismiss {
-						position: fixed;
-						bottom: 110px;
-						right: 10px;
-						width: 30px;
-						height: 30px;
-						font-size:2em;
-						&:before {
-							content: "▼";
-
+					&.closed {
+						height: 50px;
+						.get-list-toggle {
+							bottom: 15px;
+						
 						}
+
+					}
+					i {
+						// font-size: 2em;
+					}
+					&.show-list {
+						top: 0;
+						padding-top: 2em;
+						
+					}
+					.dismiss {
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						// width: 100%;
+						height: 30px;
+						
 					}
 					figure {
 						display: none;
@@ -110,7 +136,7 @@
 					display: flex;
 
 					.selected-institution {
-						// width: 25%;
+
 						margin-right: 30px;
 						flex: 0 1 calc(50% - 30px);
 
@@ -120,6 +146,7 @@
 						button {
 							margin-bottom: .5em;
 						}
+						
 					}
 
 				}
@@ -140,6 +167,7 @@
 					figure {
 						margin-bottom: .5em;
 					}
+
 				}
 				
 			}
