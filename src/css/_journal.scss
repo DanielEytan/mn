@@ -27,7 +27,7 @@
 	@media only screen and (min-width: $bp1) {
 		.group {
 			display: flex;
-			justify-content: space-around;
+			justify-content: flex-start;
 			.post:first-of-type {
 				margin-right: 0;
 				flex: 0 1 80%;
@@ -40,6 +40,9 @@
 			.post {
 				// background: red;
 				flex: 0 1 48%;
+				&:nth-child(2n+2) {
+					margin-right: 2%;
+				}
 			}
 
 		}
@@ -53,7 +56,11 @@
 			// }
 			.post:first-of-type {
 				flex: 0 1 65%;
+				margin-right: 4%;
 				// margin-bottom: 4em;
+			}
+			.post:nth-child(2n+2) {
+				margin-right: 0;
 			}
 			.post:nth-child(2) {
 				
@@ -98,7 +105,8 @@
 		.group {
 			
 			.post:first-of-type {
-				flex: 0 1 40%;
+				flex: 0 1 50%;
+				margin: 0 auto 4em;
 			}
 
 		}
