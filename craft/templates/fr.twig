@@ -42,7 +42,7 @@
 			<div class="intro">{{ entry.micrositesEventsIntro }}</div>			
 		{% endfor %}
 	    <ul class="program__list program__list--selection">
-	    	{% set category = craft.categories.slug('englisch') %}
+	    	{% set category = craft.categories.slug('französisch') %}
 	{% for entry in craft.entries.section('program').relatedTo(category) %}
 
 	<li class="program__list__event">
