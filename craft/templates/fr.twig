@@ -14,9 +14,9 @@
 	</header>
 	<nav class="microsite-nav">
 		<ul>
-			<li v-on:click="ticketToggle" v-bind:class="{ active : langTickets }">Tickets</li>
-			<li v-on:click="mobilityToggle" v-bind:class="{ active : langMobility }">Mobility</li>
-			<li v-on:click="programToggle" v-bind:class="{ active : langProgram }">English-language events</li>
+			<li v-on:click="ticketToggle" v-bind:class="{ active : langTickets }">Billets</li>
+			<li v-on:click="mobilityToggle" v-bind:class="{ active : langMobility }">Mobilité</li>
+			<li v-on:click="programToggle" v-bind:class="{ active : langProgram }">Offres de programmes francophones</li>
 		</ul>
 	</nav>
 	{% for entry in craft.entries.section('tickets').locale('fr') %}

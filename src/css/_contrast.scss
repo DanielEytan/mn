@@ -33,7 +33,10 @@
 		}
 	}
 	footer#footer {
-		background:#210055;
+		background:$grey-dark/1.8;
+		>div:nth-child(2) {
+			background: $grey-very-dark;
+		}
 	}
 	.microsite-nav ul li {
 		

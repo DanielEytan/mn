@@ -107,6 +107,7 @@ footer i,
 .link a,
 footer h3,
 footer a,
+footer h4,
 .visit h3,
 .selected .institution,
 .program .share-program h1,
@@ -162,7 +163,7 @@ header.site-header h1,
 .more,
 .info-block h2,
 .info-block h3,
-footer h2,
+footer h2, footer h3,
 ul.main-nav li,
 nav.microsite-nav li,
 .microsites-language .intro h2,
@@ -720,9 +721,11 @@ header#header {
 footer#footer {
   z-index: 11;
   position: relative;
-  padding-bottom: 5px;
   font-size: .85em;
   background: #f0f0f0; }
+  footer#footer > div:nth-child(2) {
+    background: #dadada;
+    padding-bottom: 5px; }
   footer#footer h2, footer#footer p {
     margin-bottom: 1em; }
   footer#footer section {
@@ -731,6 +734,8 @@ footer#footer {
     margin-bottom: 2em; }
     footer#footer section:first-of-type {
       border-top: none; }
+      footer#footer section:first-of-type h4 {
+        text-align: center; }
     footer#footer section.glossary div {
       margin-bottom: 2em; }
     footer#footer section.glossary i {
@@ -1843,7 +1848,9 @@ header#header nav .flex-container {
     #vue-app.active header#header .saved-link a {
       color: red; }
   #vue-app.active footer#footer {
-    background: #210055; }
+    background: #272727; }
+    #vue-app.active footer#footer > div:nth-child(2) {
+      background: #1e1e1e; }
   #vue-app.active .microsite-nav ul li.active, #vue-app.active .microsite-nav ul li:hover {
     color: white;
     border-bottom: solid 2px; }
