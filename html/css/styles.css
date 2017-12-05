@@ -926,12 +926,15 @@ footer#footer {
       margin-right: 4%; }
     .journal--overview .group .post:nth-child(2n+2) {
       margin-right: 0; }
-    .journal--overview .group .post {
+    .journal--overview .group .post:nth-child(2) {
       -ms-flex: 0 1 31%;
-      flex: 0 1 31%;
-      margin-bottom: 4em; }
-      .journal--overview .group .post:nth-child(3n+3), .journal--overview .group .post:nth-child(3n+4) {
-        margin-right: 3%; } }
+      flex: 0 1 31%; }
+    .journal--overview .group .post:nth-child(3) {
+      margin-right: 4%; } }
+  @media only screen and (min-width: 1224px) {
+    .journal--overview .group .post:nth-child(3), .journal--overview .group .post:nth-child(4) {
+      -ms-flex: 0 1 40%;
+      flex: 0 1 40%; } }
   @media only screen and (min-width: 1500px) {
     .journal--overview .group .post:first-of-type {
       -ms-flex: 0 1 50%;
