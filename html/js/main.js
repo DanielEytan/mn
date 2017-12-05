@@ -16694,7 +16694,7 @@
 	      staticClass: "filter--tag inst"
 	    }, [(index == 0) ? _c('div', {
 	      staticClass: "block"
-	    }, [_c('span', [_vm._v("I")])]) : _vm._e(), _c('div', {
+	    }, [_c('span', [_vm._v("M")])]) : _vm._e(), _c('div', {
 	      class: 'index-' + index
 	    }, [_c('span', [_vm._v(_vm._s(filter))]), _vm._v(" "), _c('i', {
 	      on: {
@@ -18638,7 +18638,7 @@
 	    attrs: {
 	      "href": "/museen"
 	    }
-	  }, [_vm._v("Museen")]), _vm._v(" mit "), _c('nobr', [_vm._v("Klick auf "), _c('span', [_vm._v("♥")])]), _vm._v(".")], 1)]) : _c('div', [_c('article', [_vm._m(0), _vm._v(" "), _c('ul', {
+	  }, [_vm._v("Museen")]), _vm._v(" mit "), _c('nobr', [_vm._v("Klick auf "), _c('span', [_vm._v(" ♥")])]), _vm._v(".")], 1)]) : _c('div', [_c('article', [_vm._m(0), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return _c('li', {
@@ -23199,7 +23199,7 @@
 	      return (value === 'wheelchair') ? _c('div', [_vm._v("♿ rollstuhlgängig")]) : _vm._e()
 	    }), _vm._v(" "), _vm._l((entry.accessibility), function(value) {
 	      return (value === 'partlyWheelchair') ? _c('div', [_vm._v("♿* teilweise rollstuhlgängig")]) : _vm._e()
-	    }), _vm._v(" "), (entry.wifi == 1) ? _c('div', [_vm._v(" ⌔  Wi-Fi")]) : _vm._e()], 2)])], 2)])])
+	    }), _vm._v(" "), (entry.wifi == 1) ? _c('div', [_vm._v(" ⌔  Wi-Fi verfügbar")]) : _vm._e()], 2)])], 2)])])
 	  }))])])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('i', [_vm._v("☷ "), _c('span', [_vm._v("Liste")])])

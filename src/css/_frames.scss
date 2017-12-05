@@ -74,7 +74,8 @@ header#header nav,
 .test,
 .overview-link,
 
-.program--saved .intro
+.program--saved .intro,
+.lost
 
 {
 	margin: 15px;
@@ -96,7 +97,8 @@ header#header nav,
 .program__list__event >div,
 .program .empty,
 .program--overview .food,
-.program .adapt-program
+.program .adapt-program,
+.journal .share
  {
 	margin: 0 15px;
 	@media screen and (min-width: $bp2) {
@@ -112,7 +114,7 @@ header#header nav,
 // FRAME IN BETWEEN
 footer#footer .glossary,
 footer#footer section,
-.journal .nextPrev
+.journal .next-prev
  {
 	margin: 15px 15px 16px;
 	position: relative;

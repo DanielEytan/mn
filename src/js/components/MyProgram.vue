@@ -3,7 +3,7 @@
 
     <div v-if="programevents.length == 0" class="empty">
     <p>Dein persönliches Programm ist leer.</p>
-    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span>♥</span></nobr>.</p>
+    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span> ♥</span></nobr>.</p>
     </div>
     <div v-else>
     <article>

@@ -1,4 +1,7 @@
-.microsites-language header h2, .microsites-language header p {
+.microsites-language header h2 {
+  margin-bottom: .5em; }
+
+.microsites-language header p {
   margin-bottom: 1em; }
 
 .microsites-language .intro h2 {

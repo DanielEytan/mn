@@ -56,8 +56,9 @@ html {
 		margin-bottom: 2em;
 	}
 }
-figcaption {
-	
+.lost {
+	margin-bottom: 2em;
+	text-align: center;
 }
 .de {
 	color:black;
@@ -115,7 +116,11 @@ figcaption {
 .institutions--overview--list-view h1 a,
 .journal .post .more,
 .microsites-language section header a,
-.microsites-language .intro a
+.microsites-language .intro a,
+	.next-prev h1,
+	.journal--single article .text-block a
+	// .institutions--overview--list-view h1
+
 
 {
 		box-shadow: inset 0 -4px 0 rgb(230,230,230);
@@ -128,6 +133,18 @@ figcaption {
 		}	
 }
 
+	// .institutions--overview--list-view li {
+	// 	&:hover {
+	// 		h1 {
+	// 			background: white;
+	// 			box-shadow: inset 0 -4px 0 white;
+	// 	border-bottom: solid 3px white;
+	// 		}
+	// 	}
+	// 	h1 {
+	// 		display: inline-block;
+	// 	}
+	// }
 
 
 .journal .post:hover .more {
@@ -160,7 +177,8 @@ footer#footer .nav-contact,
 	.info-block a,
 	.program .site-header p a,
 	.institutions--overview--list-view h1 a,
-	.journal .post .more
+	.journal .post .more,
+	.next-prev h1
 	{
 			box-shadow: inset 0 -4px 0 $notsodark;
 			border-bottom: solid 3px $notsodark;

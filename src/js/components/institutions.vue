@@ -67,7 +67,7 @@
 									<div v-if="entry.advanceSale == 1">&#127915; Vorverkauf/Abendkasse</div>
 									<div v-for="value in entry.accessibility" v-if="value === 'wheelchair'">&#9855; rollstuhlgängig</div>
 									<div v-for="value in entry.accessibility" v-if="value === 'partlyWheelchair'">&#9855;* teilweise rollstuhlgängig</div>
-									<div v-if="entry.wifi == 1"> &#8980;  Wi-Fi</div>
+									<div v-if="entry.wifi == 1"> &#8980;  Wi-Fi verfügbar</div>
 
 								</div>
 							</div>

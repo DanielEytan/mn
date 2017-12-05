@@ -45,7 +45,7 @@
 
         <div class="filter-tags--container">
           <div class="filter--tag inst" v-for="(filter,index) in checkedInstitutions">
-            <div v-if="index == 0" class="block"><span>I</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <i v-on:click="removeFromFilters(filter)">&#9447;</i></div>
+            <div v-if="index == 0" class="block"><span>M</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <i v-on:click="removeFromFilters(filter)">&#9447;</i></div>
           </div>
           <div class="filter--tag theme" v-for="(filter,index) in checkedThemes">
             <div v-if="index == 0" class="block"><span>T</span></div><div v-bind:class="'index-' + index"><span>{{filter}}</span> <i v-on:click="removeFromFilters(filter)">&#9447;</i></div>

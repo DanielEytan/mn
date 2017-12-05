@@ -125,7 +125,7 @@ footer h2,
 .journal .info-box,
 nav.microsite-nav li,
 .microsites-language .intro h2,
-.journal--single .nextPrev h1 {
+.journal--single .next-prev span {
   font-family: 'main-eb', helvetica; }
 
 .journal--overview .group h1,
@@ -139,7 +139,8 @@ header.site-header h1,
 .institutions--overview .grid-view h2,
 .program .empty p,
 .microsites-language header h2,
-.journal--single article .lead-text p {
+.journal--single article .lead-text p,
+.journal--single .next-prev h1 {
   font-family: 'lyon-medium', times; }
 
 .program__list .institution h1,
@@ -186,7 +187,8 @@ figcaption,
 .institutions--overview .map-view .suttle-line strong,
 .institutions--overview .map-view h1,
 .program__list--selection li h1.event-title,
-nav.microsite-nav li {
+nav.microsite-nav li,
+.journal--single .next-prev h1 {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -195,7 +197,8 @@ nav.microsite-nav li {
     .institutions--overview .map-view .suttle-line strong,
     .institutions--overview .map-view h1,
     .program__list--selection li h1.event-title,
-    nav.microsite-nav li {
+    nav.microsite-nav li,
+    .journal--single .next-prev h1 {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
@@ -203,7 +206,8 @@ nav.microsite-nav li {
     .institutions--overview .map-view .suttle-line strong,
     .institutions--overview .map-view h1,
     .program__list--selection li h1.event-title,
-    nav.microsite-nav li {
+    nav.microsite-nav li,
+    .journal--single .next-prev h1 {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -298,20 +302,20 @@ footer h2 {
 .institutions--single span strong,
 .journal--overview .group h1,
 .journal--single h1.title,
-.microsites-language header h2 {
+.microsites-language header h2:first-of-type {
   font-size: 1.5em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
     .institutions--single span strong,
     .journal--overview .group h1,
     .journal--single h1.title,
-    .microsites-language header h2 {
+    .microsites-language header h2:first-of-type {
       font-size: 2em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single span strong,
     .journal--overview .group h1,
     .journal--single h1.title,
-    .microsites-language header h2 {
+    .microsites-language header h2:first-of-type {
       font-size: 2.5em; } }
 
 .program__list .institution h2,
@@ -421,7 +425,8 @@ header#header nav,
 .tickets,
 .test,
 .overview-link,
-.program--saved .intro {
+.program--saved .intro,
+.lost {
   margin: 15px; }
   @media screen and (min-width: 768px) {
     .text-block section > div,
@@ -440,7 +445,8 @@ header#header nav,
     .tickets,
     .test,
     .overview-link,
-    .program--saved .intro {
+    .program--saved .intro,
+    .lost {
       margin: 15px 30px; } }
   @media screen and (min-width: 1024px) {
     .text-block section > div,
@@ -459,7 +465,8 @@ header#header nav,
     .tickets,
     .test,
     .overview-link,
-    .program--saved .intro {
+    .program--saved .intro,
+    .lost {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -479,7 +486,8 @@ header#header nav,
     .tickets,
     .test,
     .overview-link,
-    .program--saved .intro {
+    .program--saved .intro,
+    .lost {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -487,14 +495,16 @@ header#header nav,
 .program__list__event > div,
 .program .empty,
 .program--overview .food,
-.program .adapt-program {
+.program .adapt-program,
+.journal .share {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
     .institutions--overview .list-view a > div,
     .program__list__event > div,
     .program .empty,
     .program--overview .food,
-    .program .adapt-program {
+    .program .adapt-program,
+    .journal .share {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -502,24 +512,25 @@ header#header nav,
     .program__list__event > div,
     .program .empty,
     .program--overview .food,
-    .program .adapt-program {
+    .program .adapt-program,
+    .journal .share {
       width: 1000px;
       margin: 0 auto; } }
 
 footer#footer .glossary,
 footer#footer section,
-.journal .nextPrev {
+.journal .next-prev {
   margin: 15px 15px 16px;
   position: relative; }
   @media screen and (min-width: 768px) {
     footer#footer .glossary,
     footer#footer section,
-    .journal .nextPrev {
+    .journal .next-prev {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     footer#footer .glossary,
     footer#footer section,
-    .journal .nextPrev {
+    .journal .next-prev {
       width: 1400px;
       margin: 0 auto; } }
 
@@ -974,23 +985,27 @@ footer#footer {
     margin-bottom: 2em; }
   .journal--single .program .selected li {
     padding-bottom: 1em; }
-  .journal--single .nextPrev {
-    border-top: solid 1px;
-    padding-top: 1em;
+  .journal--single .next-prev {
+    margin-top: 3em; }
+    .journal--single .next-prev span {
+      margin-bottom: .5em;
+      display: block; }
+    .journal--single .next-prev h1 {
+      display: inline; }
+    .journal--single .next-prev .next {
+      text-align: right; }
+    .journal--single .next-prev .prev {
+      margin-bottom: 1em; }
+
+@media only screen and (min-width: 768px) {
+  .journal .next-prev {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    .journal--single .nextPrev > * {
+    .journal .next-prev > * {
       -ms-flex: 0 1 45%;
-      flex: 0 1 45%; }
-      .journal--single .nextPrev > * .next {
-        text-align: right; }
-        .journal--single .nextPrev > * .next figure {
-          margin-left: auto; }
-      .journal--single .nextPrev > * figure {
-        margin: 0 0 1em;
-        max-width: 200px; }
+      flex: 0 1 45%; } }
 
 @media only screen and (min-width: 1224px) {
   .journal--single header h1 {
@@ -1179,6 +1194,7 @@ footer#footer {
 .institutions--overview .map-view aside {
   padding-bottom: 1em; }
   .institutions--overview .map-view aside .institutions-list li {
+    cursor: pointer;
     margin-bottom: 1em;
     display: -ms-flexbox;
     display: flex; }
@@ -1342,7 +1358,10 @@ footer#footer {
     margin: 50px auto 75px;
     width: 80%; } }
 
-.microsites-language header h2, .microsites-language header p {
+.microsites-language header h2 {
+  margin-bottom: .5em; }
+
+.microsites-language header p {
   margin-bottom: 1em; }
 
 .microsites-language .intro h2 {
@@ -2005,6 +2024,10 @@ html {
 .downloads ul li {
   margin-bottom: 2em; }
 
+.lost {
+  margin-bottom: 2em;
+  text-align: center; }
+
 .de {
   color: black; }
 
@@ -2051,7 +2074,9 @@ html {
 .institutions--overview--list-view h1 a,
 .journal .post .more,
 .microsites-language section header a,
-.microsites-language .intro a {
+.microsites-language .intro a,
+.next-prev h1,
+.journal--single article .text-block a {
   box-shadow: inset 0 -4px 0 #e6e6e6;
   border-bottom: solid 3px #e6e6e6;
   text-decoration: none !important;
@@ -2069,7 +2094,9 @@ html {
   .institutions--overview--list-view h1 a:hover,
   .journal .post .more:hover,
   .microsites-language section header a:hover,
-  .microsites-language .intro a:hover {
+  .microsites-language .intro a:hover,
+  .next-prev h1:hover,
+  .journal--single article .text-block a:hover {
     background: #e6e6e6; }
 
 .journal .post:hover .more {
@@ -2096,7 +2123,8 @@ footer#footer .nav-contact a,
 #vue-app.active .info-block a,
 #vue-app.active .program .site-header p a,
 #vue-app.active .institutions--overview--list-view h1 a,
-#vue-app.active .journal .post .more {
+#vue-app.active .journal .post .more,
+#vue-app.active .next-prev h1 {
   box-shadow: inset 0 -4px 0 #473267;
   border-bottom: solid 3px #473267; }
   #vue-app.active .mobility a:hover,
@@ -2109,7 +2137,8 @@ footer#footer .nav-contact a,
   #vue-app.active .info-block a:hover,
   #vue-app.active .program .site-header p a:hover,
   #vue-app.active .institutions--overview--list-view h1 a:hover,
-  #vue-app.active .journal .post .more:hover {
+  #vue-app.active .journal .post .more:hover,
+  #vue-app.active .next-prev h1:hover {
     background: #473267; }
 
 #vue-app.active .journal .post:hover .more {

@@ -26,34 +26,38 @@
 				padding-bottom: 1em;
 			}
 		}
-		.nextPrev {
-			border-top: solid 1px;
-			padding-top: 1em;
-			display: flex;
-			justify-content: space-between;
+		.next-prev {
+			margin-top: 3em;
 			
+			span {
+				margin-bottom: .5em;
+				display: block;
+			}
+			h1 {
+				display: inline;
+			}
+			.next {
+				text-align: right;
+			 
+			}
+			.prev {
+				margin-bottom: 1em;
 				
-				>* {
-					flex: 0 1 45%;
-					.next {
-						text-align: right;
-						figure {
-							margin-left: auto;
-						}
-					} 
-					figure {
-					margin: 0 0 1em;
-					max-width: 200px;
-
-				// width: 150px;
-
-
-					}
-				}
+				
 
 		}
+			}
 	}
-
+	@media only screen and (min-width: $bp1) {
+		.next-prev {
+			display: flex;
+			justify-content: space-between;
+			>* {
+					flex: 0 1 45%;
+					
+				}
+		}
+	}
 	@media only screen and (min-width: $bp3) {
 		&--single {
 			header {

@@ -121,7 +121,7 @@ footer h2,
 .journal .info-box,
 nav.microsite-nav li,
 .microsites-language .intro h2,
-.journal--single .nextPrev h1
+.journal--single .next-prev span
   {
 	font-family: 'main-eb', helvetica;
 }
@@ -140,7 +140,8 @@ header.site-header h1,
 .institutions--overview .grid-view h2,
 .program .empty p,
 .microsites-language header h2,
-.journal--single article .lead-text p
+.journal--single article .lead-text p,
+.journal--single .next-prev h1
 
 
  {
@@ -211,7 +212,9 @@ figcaption,
 
 .institutions--overview .map-view h1,
 .program__list--selection li h1.event-title,
-nav.microsite-nav li
+nav.microsite-nav li,
+.journal--single .next-prev h1
+
 
 // .info-box 
 {
@@ -255,7 +258,7 @@ nav.microsite-nav li
 .info-block h2,
 .microsites-language header h2,
 .journal--single article .lead-text,
-.microsites-language .intro h2,	
+.microsites-language .intro h2,
 
 
 
@@ -279,7 +282,7 @@ footer h2 {
 .institutions--single  span strong,
 .journal--overview .group h1,
 .journal--single h1.title,
-.microsites-language header h2,
+.microsites-language header h2:first-of-type,
 
 
  {
