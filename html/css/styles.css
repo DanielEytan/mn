@@ -1864,8 +1864,8 @@ button.red {
   flex-wrap: wrap;
   margin-bottom: .25em; }
   .shuttle-line .number {
-    -ms-flex: 0;
-    flex: 0;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
     margin-right: .35em;
     line-height: 1.2em; }
     .shuttle-line .number i {
