@@ -96,8 +96,10 @@ footer#footer {
   			display: flex;
   			flex-wrap: wrap;
   			>* {
-  				flex: 0 1 50%;
-  				padding-right: 1em;
+  				flex: 0 1 49%;
+  				&:nth-child(1), &:nth-child(3) {
+  					margin-right: 2%;
+  				}
   			}
   		}
   		nav {
@@ -149,7 +151,12 @@ footer#footer {
 		}
 		.glossary article:first-of-type {
 			>* {
-				flex: 0 1 25%;
+				flex: 0 1 24%;
+				>* {
+					&:nth-child(2) {
+						margin-right: 2%;
+					}
+				}
 			}
 		}
 		nav {
