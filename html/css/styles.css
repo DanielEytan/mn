@@ -1542,7 +1542,8 @@ footer#footer {
         text-decoration: underline; }
   .share-program .share > div {
     display: inline-block;
-    margin-right: .25em; }
+    margin-right: .25em;
+    margin-bottom: .5em; }
   .share-program .share p {
     margin-bottom: 1em; }
   @media only screen and (min-width: 768px) {
@@ -1808,11 +1809,12 @@ footer#footer {
     color: #d2d2d2;
     transition: color .25s, text-shadow -25s;
     cursor: pointer; }
-    .save-element div.save-heart:hover, .program__list__event.active .save-element div, .program__list__event__info--wrapper.active .save-element div {
+  @media only screen and (min-width: 768px) {
+    .save-element .save-element div.save-heart:hover, .save-element .program__list__event.active .save-element div, .save-element .program__list__event__info--wrapper.active .save-element div {
       color: #f0f0f0;
       text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red; }
-    .save-element div.save-heart.active {
-      color: red; }
+    .save-element .save-element div.save-heart.active {
+      color: red; } }
 
 header.site-header {
   position: relative; }
@@ -2018,8 +2020,6 @@ header#header nav .flex-container {
     box-shadow: 0px 0px 8px 4px black; }
     #vue-app.active header#header .burger-toggle .burger span {
       background: white; }
-    #vue-app.active header#header .saved-link a {
-      color: red; }
   #vue-app.active footer#footer {
     background: #272727; }
     #vue-app.active footer#footer > div:nth-child(2) {

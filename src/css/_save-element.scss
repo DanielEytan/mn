@@ -8,19 +8,25 @@
 			color: rgb(210,210,210);
 			transition: color .25s, text-shadow -25s;
 			cursor: pointer;
-			&:hover {
-					color: $grey-bright;
-				// text-shadow:0px 0px 2px rgb(255, 0, 0);
-					text-shadow: -1px 0 $red,0 1px $red,1px 0 $red,0 -1px $red;
-					// color: rgba(255, 0, 0, 1);
+			
+		}
+		@media only screen and (min-width: $bp1) {
+			.save-element {
+				div.save-heart {
+					&:hover {
+						color: $grey-bright;
+						text-shadow: -1px 0 $red,0 1px $red,1px 0 $red,0 -1px $red;
 
+					}
+					&.active {
+						color: $red;
+					}
 				}
-				&.active {
-					color: $red;
-				}
+			}
+			.program__list__event.active .save-element div,.program__list__event__info--wrapper.active .save-element div {
+				@extend .save-heart:hover;
 			}
 		}
 
-  .program__list__event.active .save-element div,.program__list__event__info--wrapper.active .save-element div {
-		@extend .save-heart:hover;
-  }
+	}
+
