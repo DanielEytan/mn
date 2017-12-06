@@ -962,7 +962,9 @@ footer#footer {
   @media only screen and (min-width: 1224px) {
     .journal--overview .group .post:nth-child(3), .journal--overview .group .post:nth-child(4) {
       -ms-flex: 0 1 40%;
-      flex: 0 1 40%; } }
+      flex: 0 1 40%; }
+    .journal--overview .group .post:nth-child(3), .journal--overview .group .post:nth-child(4) {
+      margin: 0 5%; } }
   @media only screen and (min-width: 1500px) {
     .journal--overview .group .post:first-of-type {
       -ms-flex: 0 1 50%;
