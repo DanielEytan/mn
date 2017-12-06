@@ -133,11 +133,11 @@
 	</section>
 	<section class="thanks">
 		<h3>Vielen Dank</h3>
-		<ul class="logos">
+		<ul class="logos ">
 			{% for logo in thanks.logoBlock %}
-			<li>
+			<li {% if logo.bigger %}class="bigger"{% endif %}>
 				<a href="{{ logo.sponsorLink }}">
-					<figure v-if="activeContrast">
+					<figure v-if="activeContrast" >
 						{% for img in logo.logoBright %}
 						<img {% if img.width < img.height %}class="portrait"{% endif %} src="{{ img.getUrl }}" alt="{{ logo.sponsorName }}">
 						{% endfor %}
