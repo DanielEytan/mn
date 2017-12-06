@@ -1,6 +1,7 @@
 header#header nav {
+
 	ul.main-nav {
-		margin: 3em 0 2em;
+		margin: 1em 0 2em;
 		li {
 			margin-bottom: 1em;
 
@@ -61,7 +62,7 @@ header#header nav {
 		}
 
 }
-	@media screen and (min-width: $bp1) {
+	@media screen and (min-width: 568px) {
 
 		margin-bottom: 3em;
 		position: relative;

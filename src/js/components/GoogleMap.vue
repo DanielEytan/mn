@@ -384,7 +384,7 @@ createMap () {
    var map = this.map;
    _this.inst = number;
    _this.mapTop = true;
-  _this.foo = "selected";
+    _this.foo = "selected";
 
 
    map.setZoom(18);
