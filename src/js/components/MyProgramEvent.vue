@@ -16,13 +16,13 @@
   <div class="icons">
     <div v-for="kindOfEvent in programevent.kindOfEvent" v-if="kindOfEvent.title == 'Für Kinder & Familien'"><span >🎠</span></div>
     <div v-for="language in programevent.languages">
-     <span v-if="language.title == 'Deutsch'" class="de">🇩🇪</span>
-     <span v-if="language.title == 'English'" class="en">🇬🇧</span>
-     <span v-if="language.title == 'Français'" class="fr">🇫🇷</span>
-     <span v-if="language.title == 'Italiano'" class="it">🇮🇹</span>
-     <span v-if="language.title == 'Español'" class="sp other">🇪🇸</span>
-     <span v-if="language.title == 'Magyar'" class="other">🇭🇺</span>
-     <span v-if="language.title == 'Pусский'" class="other">🇷🇺</span>
+     <span v-if="language.title == 'Deutsch'" class="de">🅳</span>
+     <span v-if="language.title == 'English'" class="en">🅴</span>
+     <span v-if="language.title == 'Français'" class="fr">🅵</span>
+     <span v-if="language.title == 'Italiano'" class="it">🅸</span>
+     <span v-if="language.title == 'Español'" class="sp other">🆂</span>
+     <span v-if="language.title == 'Magyar'" class="other">🅷</span>
+     <span v-if="language.title == 'Pусский'" class="other">🆁</span>
    </div>
  </div>
 
