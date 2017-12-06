@@ -51,9 +51,38 @@ html {
   box-sizing: inherit;
 }
 
-.downloads {
-	ul li {
+.media {
+	header.site-header {
 		margin-bottom: 2em;
+		h1 {
+			margin-bottom: .25em;
+		}
+	}
+	section {
+		margin-bottom: 2em;
+	}
+	h2 {
+		margin-bottom: .5em;
+	}
+	ul li {
+		margin-bottom: .5em;
+	}
+	.images {
+		.image {
+			margin-bottom: 20px;
+		}
+		@media only screen and (min-width: $bp1) {
+		.flex-container {
+			display: flex;
+			flex-wrap: wrap;
+			// justify-content: space-between;
+			>* {
+				margin-bottom: 20px;
+				flex: 0 1 32%;
+				margin-right: 1%;
+			}
+		}
+		}
 	}
 }
 .lost {
@@ -118,7 +147,8 @@ html {
 .microsites-language section header a,
 .microsites-language .intro a,
 	.next-prev h1,
-	.journal--single article .text-block a
+	.journal--single article .text-block a,
+	.media a
 	// .institutions--overview--list-view h1
 
 

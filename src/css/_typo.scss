@@ -121,7 +121,9 @@ footer h2,
 .journal .info-box,
 nav.microsite-nav li,
 .microsites-language .intro h2,
-.journal--single .next-prev span
+.journal--single .next-prev span,
+.media h2
+
   {
 	font-family: 'main-eb', helvetica;
 }
@@ -186,7 +188,8 @@ footer h2, footer h3,
 ul.main-nav li,
 nav.microsite-nav li,
 .microsites-language .intro h2,
-.link-to-main a
+.link-to-main a,
+.media h2
 
   {
 	text-transform: uppercase;
@@ -260,7 +263,7 @@ nav.microsite-nav li,
 .microsites-language header h2,
 .journal--single article .lead-text,
 .microsites-language .intro h2,
-
+.media h2,
 
 
 footer h2 {
