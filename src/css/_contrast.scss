@@ -143,12 +143,13 @@
 			background:$dark;
 		}
 		&:hover {
+			
 			background: #210055;
 		}
 	}
 	}
-	#save-toggle > div:hover {
-		color: $dark !important;
-	}
+	// #save-toggle > div:hover {
+	// 	color: $dark !important;
+	// }
 
 }

@@ -1809,12 +1809,18 @@ footer#footer {
     color: #d2d2d2;
     transition: color .25s, text-shadow -25s;
     cursor: pointer; }
-  @media only screen and (min-width: 768px) {
-    .save-element .save-element div.save-heart:hover, .save-element .program__list__event.active .save-element div, .save-element .program__list__event__info--wrapper.active .save-element div {
+    .save-element div.save-heart.active {
+      color: red !important; }
+
+@media only screen and (min-width: 768px) {
+  .save-element div.save-heart:hover {
+    color: #f0f0f0;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red; }
+  .program__list__event.active, .program__list__event__info--wrapper.active {
+    cursor: pointer; }
+    .program__list__event.active:hover .save-heart, .program__list__event__info--wrapper.active:hover .save-heart {
       color: #f0f0f0;
-      text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red; }
-    .save-element .save-element div.save-heart.active {
-      color: red; } }
+      text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red; } }
 
 header.site-header {
   position: relative; }
@@ -2083,8 +2089,6 @@ header#header nav .flex-container {
       background: #1A0042; }
     #vue-app.active .program__list__event:hover, #vue-app.active .institutions--overview--list-view li:hover {
       background: #210055; } }
-  #vue-app.active #save-toggle > div:hover {
-    color: #1A0042 !important; }
 
 .loader {
   background: #1A0042;
