@@ -370,20 +370,17 @@ header.site-header h1,
   100% {
     color: whitesmoke; } }
 
-#container,
 .journal--overview,
 .institutions--overview--grid-view,
 .filter__selection--wrapper {
   margin: 15px 15px 16px;
   position: relative; }
   @media screen and (min-width: 768px) {
-    #container,
     .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
-    #container,
     .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
@@ -612,17 +609,17 @@ a {
   color: black;
   text-decoration: none; }
 
-main {
+#container {
   margin-top: 50px; }
-  main.mt {
+  #container.mt {
     margin-top: 90px; }
   @media screen and (min-width: 768px) {
-    main.mt {
+    #container.mt {
       margin-top: 110px; } }
   @media screen and (min-width: 1500px) {
-    main {
+    #container {
       margin-top: 70px; }
-      main.mt {
+      #container.mt {
         margin-top: 150px; } }
 
 header#header.reduced a.logo {
