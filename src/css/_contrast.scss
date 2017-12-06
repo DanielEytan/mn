@@ -53,8 +53,13 @@
 	}
 	.selected-institution {
 		background: $dark !important;
-
+		.dismiss {
+			background: $dark;
+		box-shadow: 0px 0px 8px 4px rgba(0,0,0,1);
+			
+		}
 	}
+
 	.program .control-program .share-link >div >div {
 		border: solid 1px white;
 		&:nth-child(1) {

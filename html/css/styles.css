@@ -1250,7 +1250,7 @@ footer#footer {
       background: black; }
 
 .institutions--overview .google-map {
-  height: 70vh; }
+  height: 60vh; }
 
 @media screen and (max-width: 768px) {
   .institutions--overview .dismiss i, .institutions--overview .get-list-toggle i {
@@ -2033,6 +2033,9 @@ header#header nav .flex-container {
     background: #1A0042; }
   #vue-app.active .selected-institution {
     background: #1A0042 !important; }
+    #vue-app.active .selected-institution .dismiss {
+      background: #1A0042;
+      box-shadow: 0px 0px 8px 4px black; }
   #vue-app.active .program .control-program .share-link > div > div {
     border: solid 1px white; }
     #vue-app.active .program .control-program .share-link > div > div:nth-child(1) {
