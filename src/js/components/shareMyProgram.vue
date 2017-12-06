@@ -95,9 +95,9 @@ methods: {
 }
 if (get) {
  // this.mail = 'mailto:'+'?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
- this.mail = 'mailto:'+'?subject=Meine Museumsnacht Basel&body=Hier findest du meine ausgewählten Programmangebote für die Museumsnacht Basel am 21. Juni 2018: ' + urlSm + '%26name=' + this.name;
+ this.mail = 'mailto:'+'?subject=Meine Museumsnacht Basel&body=Hier findest du meine ausgewählten Programmangebote für die Museumsnacht Basel am 19. Juni 2018: ' + urlSm + '%26name=' + this.name;
  var foo = "&name="
- this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 21. Januar 2018: ' + urlSm + '%26name=' + this.name;
+ this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 19. Januar 2018: ' + urlSm + '%26name=' + this.name;
  this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm + '%26name=' + this.name;
  // this.google = 'https://plus.google.com/share?url=' + urlSm;
 }
