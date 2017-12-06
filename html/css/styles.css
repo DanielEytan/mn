@@ -1223,12 +1223,6 @@ footer#footer {
   .institutions--overview--list-view li a > div {
     padding: .75em 0 1.25em; } }
 
-.institutions--overview .map-view aside > div {
-  overflow-y: scroll;
-  max-height: 100%;
-  margin-right: -50px;
-  padding-right: 50px; }
-
 .institutions--overview .map-view aside.institutions--overview_child p {
   margin-bottom: .25em; }
 
@@ -1290,7 +1284,7 @@ footer#footer {
           position: absolute;
           right: 0; }
       .institutions--overview .map-view .selected-institution.closed {
-        top: calc(100vh - 40px); }
+        top: calc(100vh - 60px); }
         .institutions--overview .map-view .selected-institution.closed ul.institutions-list {
           opacity: 0; }
       .institutions--overview .map-view .selected-institution.show-list {

@@ -1,12 +1,7 @@
 .institutions--overview {
 	.map-view {
 		aside {
-			>div {
-						overflow-y: scroll;
-						max-height: 100%;
-						 margin-right: -50px;
-	    				padding-right: 50px;
-					}
+
 			&.institutions--overview_child {
 				p {
 					margin-bottom: .25em;
@@ -88,7 +83,7 @@
 					}
 					&.closed {
 						// height: 500px;
-						top: calc(100vh - 40px;);
+						top: calc(100vh - 60px;);
 						// bottom: 40px;
 						ul.institutions-list {
 							opacity: 0;
