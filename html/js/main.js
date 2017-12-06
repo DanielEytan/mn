@@ -20638,17 +20638,6 @@
 	  },
 
 	  methods: {
-	    // toggleState() {
-	    //   if (this.foo == "closed") {
-	    //     this.foo = "show-list";
-	    //       console.log("closed");
-
-	    //   }
-	    //   if (this.foo == "show-list") {
-	    //     this.foo = "closed";
-	    //       console.log("show-list");
-	    //   }
-	    // },
 	    openList: function openList() {
 	      this.foo = "show-list";
 	    },
@@ -20859,14 +20848,14 @@
 	        _vm.openList()
 	      }
 	    }
-	  }, [_vm._v("Museum auswählen "), _c('i', [_vm._v("▲")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
+	  }, [_c('strong', [_vm._v("Auflistung Museen ")]), _vm._v(" "), _c('i', [_vm._v("▲")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
 	    staticClass: "dismiss",
 	    on: {
 	      "click": function($event) {
 	        _vm.closeList()
 	      }
 	    }
-	  }, [_vm._v("Liste schliessen "), _c('i', [_vm._v("▼")])]) : _vm._e(), _vm._v(" "), _c('div', [_c('ul', {
+	  }, [_c('strong', [_vm._v("Liste schliessen")]), _vm._v(" "), _c('i', [_vm._v("▼")])]) : _vm._e(), _vm._v(" "), _c('div', [_c('ul', {
 	    staticClass: "institutions-list"
 	  }, _vm._l((_vm.institutionsData), function(entry) {
 	    return _c('li', {

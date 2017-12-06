@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1222,7 +1221,8 @@ footer#footer {
 
 @media screen and (max-width: 768px) {
   .institutions--overview .dismiss i, .institutions--overview .get-list-toggle i {
-    font-size: 2em; }
+    font-size: 2em;
+    line-height: .5em; }
   .institutions--overview .map-view {
     height: 100%; }
     .institutions--overview .map-view aside .get-list-toggle {
@@ -1233,34 +1233,43 @@ footer#footer {
       z-index: 20;
       background: white;
       width: 100%;
-      overflow: scroll;
       right: 0;
       left: 0;
-      padding: 5px 60px 10px 15px;
+      padding: 5px 15px 10px 15px;
       border-top: solid 1px; }
       .institutions--overview .map-view .selected-institution button {
         display: none; }
-      .institutions--overview .map-view .selected-institution .mobile-toggle {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        height: 2em; }
-        .institutions--overview .map-view .selected-institution .mobile-toggle:before {
-          content: "Liste öffnen "; }
-        .institutions--overview .map-view .selected-institution .mobile-toggle:after {
-          content: "▼"; }
+      .institutions--overview .map-view .selected-institution aside {
+        position: relative; }
+      .institutions--overview .map-view .selected-institution .get-list-toggle {
+        position: relative; }
+        .institutions--overview .map-view .selected-institution .get-list-toggle i {
+          position: absolute;
+          right: 0; }
       .institutions--overview .map-view .selected-institution.closed {
-        height: 50px; }
-        .institutions--overview .map-view .selected-institution.closed .get-list-toggle {
-          bottom: 15px; }
+        height: 40px; }
       .institutions--overview .map-view .selected-institution.show-list {
+        overflow: scroll;
         top: 0;
-        padding-top: 2em; }
+        padding-top: 2.5em; }
+        .institutions--overview .map-view .selected-institution.show-list .dismiss {
+          box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
+          position: fixed;
+          background: white;
+          padding: 10px 15px;
+          left: 0; }
+          .institutions--overview .map-view .selected-institution.show-list .dismiss i {
+            text-align: right;
+            position: absolute;
+            right: 15px; }
+      .institutions--overview .map-view .selected-institution.selected {
+        padding-top: .5em; }
+        .institutions--overview .map-view .selected-institution.selected .dismiss {
+          position: absolute;
+          top: 2px; }
       .institutions--overview .map-view .selected-institution .dismiss {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        height: 30px; }
+        top: 0;
+        right: 0; }
       .institutions--overview .map-view .selected-institution figure {
         display: none; }
       .institutions--overview .map-view .selected-institution .icons, .institutions--overview .map-view .selected-institution .journey {
@@ -1289,6 +1298,8 @@ footer#footer {
           display: none; }
         .institutions--overview .map-view > div .selected-institution button {
           margin-bottom: .5em; }
+        .institutions--overview .map-view > div .selected-institution p.more {
+          margin-bottom: 1em; }
     .institutions--overview .map-view aside {
       padding-left: 30px;
       height: 600px;

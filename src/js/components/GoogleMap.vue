@@ -35,8 +35,8 @@
         </div>
       </aside>
       <aside v-if="inst == 0">
-        <div class="get-list-toggle" v-show="foo == 'closed'" v-on:click="openList()">Museum auswählen <i>▲</i></div>
-        <div class="dismiss" v-if="foo == 'show-list'" v-on:click="closeList()">Liste schliessen <i>▼</i></div>
+        <div class="get-list-toggle" v-show="foo == 'closed'" v-on:click="openList()"><strong>Auflistung Museen </strong> <i>▲</i></div>
+        <div class="dismiss" v-if="foo == 'show-list'" v-on:click="closeList()"><strong>Liste schliessen</strong> <i>▼</i></div>
         <div>
 
           <!-- <p>Klicken Sie auf einen der Marker auf der Karte oder wählen Sie eine Institution aus der Liste aus.</p><br><br> -->
@@ -288,17 +288,7 @@ export default {
 },
 
 methods: {
-  // toggleState() {
-  //   if (this.foo == "closed") {
-  //     this.foo = "show-list";
-  //       console.log("closed");
 
-  //   }
-  //   if (this.foo == "show-list") {
-  //     this.foo = "closed";
-  //       console.log("show-list");
-  //   }
-  // },
   openList () {
     this.foo = "show-list";
   },
