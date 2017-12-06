@@ -156,11 +156,11 @@
 				}
 				>div {
 					display: flex;
-
+					justify-content: space-between;
 					.selected-institution {
 
-						margin-right: 30px;
-						flex: 0 1 calc(50% - 30px);
+						// margin-right: 30px;
+						flex: 0 1 50%;
 
 						.dismiss {
 							display: none;
@@ -182,8 +182,8 @@
 					>div {
 						overflow-y: scroll;
 						max-height: 100%;
-						 margin-right: -100px;
-	    				padding-right: 100px;
+						 // margin-right: -20px;
+	    				padding-right: 20px;
 					}
 					
 				}
@@ -201,7 +201,7 @@
 		.map-view  {
 			>div {
 				.selected-institution {
-					flex: 0 1 calc(30% - 30px);
+					flex: 0 1 30%;
 
 				}
 			}
