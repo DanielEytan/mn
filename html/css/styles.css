@@ -1250,7 +1250,7 @@ footer#footer {
       background: black; }
 
 .institutions--overview .google-map {
-  height: 80vh; }
+  height: 70vh; }
 
 @media screen and (max-width: 768px) {
   .institutions--overview .dismiss i, .institutions--overview .get-list-toggle i {
@@ -1261,7 +1261,6 @@ footer#footer {
     .institutions--overview .map-view aside .get-list-toggle {
       display: block; }
     .institutions--overview .map-view .selected-institution {
-      transition: top .25s;
       position: fixed;
       bottom: 0;
       z-index: 20;
