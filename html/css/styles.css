@@ -1228,6 +1228,7 @@ footer#footer {
     .institutions--overview .map-view aside .get-list-toggle {
       display: block; }
     .institutions--overview .map-view .selected-institution {
+      transition: top .25s;
       position: fixed;
       bottom: 0;
       z-index: 20;
@@ -1239,6 +1240,9 @@ footer#footer {
       border-top: solid 1px; }
       .institutions--overview .map-view .selected-institution button {
         display: none; }
+      .institutions--overview .map-view .selected-institution ul.institutions-list {
+        opacity: 1;
+        transition: opacity .15s; }
       .institutions--overview .map-view .selected-institution aside {
         position: relative; }
       .institutions--overview .map-view .selected-institution .get-list-toggle {
@@ -1247,7 +1251,10 @@ footer#footer {
           position: absolute;
           right: 0; }
       .institutions--overview .map-view .selected-institution.closed {
-        height: 40px; }
+        height: 40px;
+        top: calc(100vh - 40px); }
+        .institutions--overview .map-view .selected-institution.closed ul.institutions-list {
+          opacity: 0; }
       .institutions--overview .map-view .selected-institution.show-list {
         overflow: scroll;
         top: 0;
@@ -1258,7 +1265,8 @@ footer#footer {
           background: white;
           padding: 70px 15px 10px;
           left: 0;
-          z-index: 150; }
+          z-index: 150;
+          top: 0; }
           .institutions--overview .map-view .selected-institution.show-list .dismiss i {
             text-align: right;
             position: absolute;
