@@ -7,6 +7,10 @@
 .microsites-language .intro h2 {
   margin-bottom: 1em; }
 
+.microsites-language em {
+  vertical-align: .3em;
+  line-height: 0; }
+
 .microsites-language > section {
   padding-top: 2em; }
 
