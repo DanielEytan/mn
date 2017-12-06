@@ -103,6 +103,7 @@ footer i,
 .presell-toggle,
 .home .info a,
 .info-block a,
+.mn-date,
 .link a,
 footer h3,
 footer a,
@@ -187,7 +188,8 @@ figcaption,
 .institutions--overview .map-view h1,
 .program__list--selection li h1.event-title,
 nav.microsite-nav li,
-.journal--single .next-prev h1 {
+.journal--single .next-prev h1,
+.microsites-language header p {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -197,7 +199,8 @@ nav.microsite-nav li,
     .institutions--overview .map-view h1,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
-    .journal--single .next-prev h1 {
+    .journal--single .next-prev h1,
+    .microsites-language header p {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
@@ -206,7 +209,8 @@ nav.microsite-nav li,
     .institutions--overview .map-view h1,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
-    .journal--single .next-prev h1 {
+    .journal--single .next-prev h1,
+    .microsites-language header p {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -898,9 +902,9 @@ footer#footer {
     padding-bottom: .25em; }
 
 .home .lang {
-  margin-bottom: 1em; }
+  margin-bottom: 1.5em; }
   .home .lang p {
-    margin-bottom: .5em; }
+    margin-bottom: 1em; }
 
 .home .info {
   background: black;
@@ -909,7 +913,13 @@ footer#footer {
   .home .info a {
     color: white; }
 
+.home .site-header .mn-date {
+  display: block;
+  margin-bottom: 1em; }
+
 @media only screen and (min-width: 768px) {
+  .home .site-header .mn-date {
+    display: none; }
   .home .lang {
     display: -ms-flexbox;
     display: flex; }
@@ -1232,7 +1242,7 @@ footer#footer {
       background: black; }
 
 .institutions--overview .google-map {
-  height: 400px; }
+  height: 80vh; }
 
 @media screen and (max-width: 768px) {
   .institutions--overview .dismiss i, .institutions--overview .get-list-toggle i {

@@ -20867,7 +20867,7 @@
 	        _vm.openList()
 	      }
 	    }
-	  }, [_c('strong', [_vm._v("Auflistung Museen ")]), _vm._v(" "), _c('i', [_vm._v("▲")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
+	  }, [_c('strong', [_vm._v("Liste Museen ")]), _vm._v(" "), _c('i', [_vm._v("▲")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
 	    staticClass: "dismiss",
 	    on: {
 	      "click": function($event) {

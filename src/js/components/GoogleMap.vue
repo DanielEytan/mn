@@ -35,7 +35,7 @@
         </div>
       </aside>
       <aside v-if="inst == 0">
-        <div class="get-list-toggle" v-show="foo == 'closed'" v-on:click="openList()"><strong>Auflistung Museen </strong> <i>▲</i></div>
+        <div class="get-list-toggle" v-show="foo == 'closed'" v-on:click="openList()"><strong>Liste Museen </strong> <i>▲</i></div>
         <div class="dismiss" v-if="foo == 'show-list'" v-on:click="closeList()"><strong>Liste schliessen</strong> <i>▼</i></div>
         <div>
 
