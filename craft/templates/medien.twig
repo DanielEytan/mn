@@ -26,7 +26,7 @@
 				<ul>
 
 			{% for docs in craft.assets.source('docs').kind('pdf') %}
-					<li><a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }}</strong></a> ({{ docs.kind }} {{ docs.size | filesize }})</li>
+					<li><a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }}</strong></a> ({{ docs.kind }} – {{ docs.size | filesize }})</li>
 			
 			{% endfor %}
 				</ul>
@@ -39,7 +39,7 @@
 					<figure>
 						<img src="{{docs.getUrl}}" alt="{{docs.title}}">
 					</figure>
-					<a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }} </strong></a> ({{ docs.kind }} {{ docs.size | filesize }})
+					<a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }} </strong></a> ({{ docs.kind }} – {{ docs.size | filesize }})
 				</div>
 				{% endfor %}
 			</div>
