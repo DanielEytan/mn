@@ -2,102 +2,84 @@
 {% set title = entry.title %}
 {% set mt = "mt" %}
 
-
 {% block content %}
-
-{# <twitter></twitter> #}
-
 <section class="journal journal--single">
-{# 	{% paginate craft.entries.section('journal').limit(1) as pageInfo, pageEntries %}
-{% for entry in pageEntries %} #}
-<article>
-	<header class="journal-header">
-
-		<p class="post-date">Veröffentlicht am {{ entry.postDate | date("d. F Y") }}</p>
-
-		<h1>{{ entry.title }}</h1>
-
-		{% for img in entry.cover %}
-		<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-			<img src="{{ img.url }}" alt="{{ img.title }}">
-			{% if img.caption %}
-			<figcaption>{{ img.caption }}</figcaption>
-			{% endif %}
-		</figure>
-		{% endfor %}
-		<div class="lead-text">
-			{{ entry.leadText }}
-		</div>
-	</header>
-
-	{% for block in entry.contentJournal %}
-	{% switch block.type %}
-	{% case "subtitle" %}
-	<h2 class="subtitle">{{ block.subtitle }}</h2>
-	{% case "text" %}
-	<div class="text text-block">
-		{{ block.text }}
-	</div>
-	{% case "img" %}
-	<div class="img">
-		{% for img in block.img %}
-		<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-			<img src="{{ img.getUrl }}" alt="{{ img.title }}">
-			{% if img.caption %}
-			<figcaption>{{ img.caption }}</figcaption>
-			{% endif %}
-		</figure>
-		{% endfor %}
-	</div>
-	{% case "program" %}
-	<div class="program">
-		<ul class="program__list program__list--selection">
-			{% for entry in block.entry %}
-			{% set program = entry.id %}
-			<journalprogram :id="{{program}}"></journalprogram>
+	<article>
+		<header class="journal-header">
+			<p class="post-date">Veröffentlicht am {{ entry.postDate | date("d. F Y") }}</p>
+			<h1>{{ entry.title }}</h1>
+			{% for img in entry.cover %}
+			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+				<img src="{{ img.url }}" alt="{{ img.title }}">
+				{% if img.caption %}
+				<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+			</figure>
 			{% endfor %}
-		</ul>
+			<div class="lead-text">
+				{{ entry.leadText }}
+			</div>
+		</header>
+		{% for block in entry.contentJournal %}
+		{% switch block.type %}
+		{% case "subtitle" %}
+		<h2 class="subtitle">{{ block.subtitle }}</h2>
+		{% case "text" %}
+		<div class="text text-block">
+			{{ block.text }}
+		</div>
+		{% case "img" %}
+		<div class="img">
+			{% for img in block.img %}
+			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
+				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+				{% if img.caption %}
+				<figcaption>{{ img.caption }}</figcaption>
+				{% endif %}
+			</figure>
+			{% endfor %}
+		</div>
+		{% case "program" %}
+		<div class="program">
+			<ul class="program__list program__list--selection">
+				{% for entry in block.entry %}
+				{% set program = entry.id %}
+				<journalprogram :id="{{program}}"></journalprogram>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endswitch %}
+		{% endfor %}				
+	</article>
+	<div class="share">
+		<button>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//new.museumsnacht.ch/journal/{{ entry.slug }}"><i>ⓕ</i> Facebook</a>
+		</button>
+		<button>
+			<a href="https://twitter.com/home?status=http%3A{{ entry.url }}"><i>ⓣ</i> Twitter</a>
+		</button>	
 	</div>
-	{% endswitch %}
-	{% endfor %}				
-</article>
-<div class="share">
-	<button>
-		<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//new.museumsnacht.ch/journal/{{ entry.slug }}"><i>ⓕ</i> Facebook</a>
-	</button>
-	<button>
-		<a href="https://twitter.com/home?status=http%3A{{ entry.url }}"><i>ⓣ</i> Twitter</a>
-	</button>	
-</div>
-<div class="next-prev">
-	{% set params = {section: 'journal', order: 'postDate', limit: null} %}
-	{% set entryPrev = entry.getPrev(params) %}
-	{% set entryNext = entry.getNext(params) %}
+	<div class="next-prev">
+		{% set params = {section: 'journal', order: 'postDate', limit: null} %}
+		{% set entryPrev = entry.getPrev(params) %}
+		{% set entryNext = entry.getNext(params) %}
 		<div class="prev" >
 
-	{% if entryPrev %}
-	<a href="{{entryPrev.url}}">
-			<span>← zum vorherigen Artikel:</span>
-			<h1>{{ entryPrev.title }}</h1>
-	</a>
-
-	{% endif %}
+			{% if entryPrev %}
+			<a href="{{entryPrev.url}}">
+				<span>← zum vorherigen Artikel:</span>
+				<h1>{{ entryPrev.title }}</h1>
+			</a>
+			{% endif %}
 		</div>
 		<div class="next">
-
-	{% if entryNext %}
-	<a href="{{entryNext.url}}">
-			<span>zum nächsten Artikel:  →</span>
-			<h1>{{ entryNext.title }}</h1>
-	</a>
-	{% endif %}
+			{% if entryNext %}
+			<a href="{{entryNext.url}}">
+				<span>zum nächsten Artikel:  →</span>
+				<h1>{{ entryNext.title }}</h1>
+			</a>
+			{% endif %}
 		</div>
-		
-
-</div>
-{# {% endfor %} #}
-
-
+	</div>
 </section>
-
 {% endblock %}

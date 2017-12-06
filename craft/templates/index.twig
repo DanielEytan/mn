@@ -2,7 +2,6 @@
 {# {% set title = "Home" %} #}
 {% set mt = "mt" %}
 
-
 {% block content %}
 <div class="home">
 	<header class="site-header">
@@ -18,16 +17,13 @@
 			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
 				<div class="post">
 					<a href="{{ entry.url }}">
-
 						{% for img in entry.cover %}
 							<figure {% if img.height > img.width %}class="portrait"{% endif %}>
 								<img src="{{ img.url }}" alt="{{ img.title }}">
 							</figure>
 						{% endfor %}
 						<p class="post-date">Veröffentlicht am  {{ entry.postDate | date("d. F Y") }}</p>
-
 						<h1><span>{{ entry.title }}</span></h1>
-
 						{{ entry.excerpt }}
 						<span class="more">Mehr</span>
 					</a>

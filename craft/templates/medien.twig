@@ -24,14 +24,12 @@
 			
 		<section class="docs">
 			<h2>Dokumente</h2>
-		
 				<ul>
-
-			{# {% for docs in entry.media.kind('pdf') %} #}
-			{% for doc in entry.media %}
-				{% if doc.type == "docs" %}
-				
-					<li><a href="{{ doc.getUrl}}" download><strong><i>⇓</i> {{ doc.title }}</strong></a> ({{ doc.kind }} – {{ doc.size | filesize }})</li>
+			{% for block in entry.media %}
+				{% if block.type == "docs" %}
+					{% for doc in block.dokument %}
+					<li><a href="{{ doc.getUrl}}" download><strong><i>⇓</i> {{ block.titel }}</strong></a> ({{ doc.size | filesize }})</li>
+					{% endfor %}
 				{% endif %}
 			{% endfor %}
 				</ul>
@@ -39,19 +37,37 @@
 	<section class="images">
 			<h2>Bilder</h2>
 			<div class="flex-container">
-				{% for img in entry.media %}
-				{% if img.kind == "image" %}
-
-				<div class="image">
-					<figure>
-						<img src="{{img.getUrl}}" alt="{{img.title}}">
-					</figure>
-					<a href="{{ img.getUrl}}" download><strong><i>⇓</i> {{ img.title }} </strong></a> ({{ img.kind }} – {{ img.size | filesize }})
-				</div>
+				{% for block in entry.media %}
+				{% if block.type == "img" %}
+					<div class="image">
+						{% for img in block.img %}
+						<figure>
+							<img src="{{img.getUrl}}" alt="{{img.title}}">
+						</figure>
+						<a href="{{ img.getUrl}}" download><strong><i>⇓</i> {{ block.titel }} </strong></a> ({{ img.size | filesize }})
+						{% endfor %}
+					</div>
 				{% endif %}
 				{% endfor %}
 			</div>
 	</section>
-		{# {% endfor %} #}
+	<section class="images">
+			<h2>Videos</h2>
+			<div>
+				<ul>
+				{% for block in entry.media %}
+				{% if block.type == "video" %}
+					{# <strong><i>⇓</i> {{ block.title }}</strong> #}
+
+					{% for video in block.video %}
+
+					<li><a href="{{ video.getUrl}}"><strong><i>⇓</i> Trailer herunterladen</strong></a> </li>
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+
+			</ul>
+			</div>
+	</section>
 
 	{% endblock %}

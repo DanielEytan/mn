@@ -21,6 +21,7 @@
 @import 'institution-overview-map';
 @import 'institution-single';
 @import 'microsites-language';
+@import 'media';
 
 
 // components
@@ -51,40 +52,7 @@ html {
   box-sizing: inherit;
 }
 
-.media {
-	header.site-header {
-		margin-bottom: 2em;
-		h1 {
-			margin-bottom: .25em;
-		}
-	}
-	section {
-		margin-bottom: 2em;
-	}
-	h2 {
-		margin-bottom: .5em;
-	}
-	ul li {
-		margin-bottom: .5em;
-	}
-	.images {
-		.image {
-			margin-bottom: 20px;
-		}
-		@media only screen and (min-width: $bp1) {
-		.flex-container {
-			display: flex;
-			flex-wrap: wrap;
-			// justify-content: space-between;
-			>* {
-				margin-bottom: 20px;
-				flex: 0 1 32%;
-				margin-right: 1%;
-			}
-		}
-		}
-	}
-}
+
 .imprint {
 	p {
 		margin-bottom: 1.5em !important;

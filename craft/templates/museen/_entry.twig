@@ -16,16 +16,9 @@
 					{% case "wheelchair" %}
 					<span><i>&#9855;</i> {{ entry.accessibility.label }}</span>
 
-					
 					{% case "partlyWheelchair" %}
-					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>
-
-					
-					{% default %}
-
-					
+					<span><i>&#9855;*</i> {{ entry.accessibility.label }}</span>	
 					{% endswitch %}
-					
 				</div>
 				<address>{{ entry.address }}</address>
 				<h3>Anfahrt:<</h3>
@@ -36,9 +29,6 @@
 				<img src="{{ img.getUrl }}"  style="max-width: {{ img.width }}" alt="Bild vom Institut">
 			</figure>
 			{% endfor %}
-			{# <div class="map-container">
-				<googlemap name="googleMap"></googlemap>
-			</div> #}
 		</div>
 		<section class="program">
 			<h1 class="program-title">{{ entry.programmTitle }}</h1>
