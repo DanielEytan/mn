@@ -1510,6 +1510,8 @@ footer#footer {
   height: 0;
   overflow: hidden;
   margin: 0 auto; }
+  .program--overview .filter .filter--list--wrapper ul li:nth-child(3) {
+    display: none; }
   .program--overview .filter .filter--list--wrapper ul li label {
     cursor: pointer; }
   .program--overview .filter .filter--list--wrapper ul li div {

@@ -39,6 +39,9 @@
 			margin: 0 auto;
 			li {
 				// cursor: pointer;
+				&:nth-child(3) {
+					display: none;
+				}
 				label {
 					cursor: pointer;
 				}
