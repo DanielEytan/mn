@@ -4,29 +4,15 @@
 
 
 {% block content %}
-
-{# <twitter></twitter> #}
-
-
 <div class="home">
-	
-{# 	<section class="cover">
-					 	<div class="site-title"><counter :days="daysLeft"></counter></div>
-
-		{# <img src="/bilder/keyvisual.jpg" alt=""> #}
-		
-	{# </section> #}
 	<header class="site-header">
+		<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
 			<div class="lang">
 				<p><i class="fr">🅵 </i> <a href="/fr">Informations pratiques en français</a></p>
 				<p><i class="en">🅴 </i> <a href="/en">Visitor information in English</a></p>
 			</div>
-		<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
-			
 		<counter :days="daysLeft"></counter>
-
 	</header>
-
 <section class="journal journal--overview" >
 		<div class="group">
 			{% for entry in craft.entries.section('journal').type('journal').limit(5) %}
@@ -47,14 +33,7 @@
 					</a>
 				</div>
 			{% endfor %}
-			
 		</div>
-{# 		<div class="link">
-			<button>
-				<a href="/journal">Alle Beiträge</a>
-			</button>
-		</div> #}
 	</section>
 </div>
-
 {% endblock %}

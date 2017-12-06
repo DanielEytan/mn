@@ -3,7 +3,7 @@
 {% set mt = "mt" %}
 	{% block content %}
 
-
+	
 	<div class="media test">
 {# 		{% set assets = craft.assets({
 		    relatedTo: docs,
@@ -12,7 +12,7 @@
 		}) %} #}
 		<header class="site-header">
 			<h1>Medien</h1>
-			<h2>Kontakt für Medien</h2>
+			<h2>Kontakt für Medien / Contact média</h2>
 			<p>
   Eva Keller, Leitung Fachbereich Museen und Kulturmarketing<br>
   Abteilung Kultur Basel-Stadt<br>
@@ -20,28 +20,38 @@
   +41 78 766 08 21<br>
   <a href="mailto:eva.keller@bs.ch">eva.keller@bs.ch</a></p>
 		</header>
+		{# {% set docs = craft.entries.section('media').find() %} #}
+			
 		<section class="docs">
 			<h2>Dokumente</h2>
 		
 				<ul>
 
-			{% for docs in craft.assets.source('docs').kind('pdf') %}
-					<li><a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }}</strong></a> ({{ docs.kind }} – {{ docs.size | filesize }})</li>
-			
+			{# {% for docs in entry.media.kind('pdf') %} #}
+			{% for doc in entry.media %}
+				{% if doc.type == "docs" %}
+				
+					<li><a href="{{ doc.getUrl}}" download><strong><i>⇓</i> {{ doc.title }}</strong></a> ({{ doc.kind }} – {{ doc.size | filesize }})</li>
+				{% endif %}
 			{% endfor %}
 				</ul>
 </section>
 	<section class="images">
 			<h2>Bilder</h2>
 			<div class="flex-container">
-				{% for docs in craft.assets.source('docs').kind('image') %}
+				{% for img in entry.media %}
+				{% if img.kind == "image" %}
+
 				<div class="image">
 					<figure>
-						<img src="{{docs.getUrl}}" alt="{{docs.title}}">
+						<img src="{{img.getUrl}}" alt="{{img.title}}">
 					</figure>
-					<a href="{{ docs.getUrl}}" download><strong><i>⇓</i> {{ docs.title }} </strong></a> ({{ docs.kind }} – {{ docs.size | filesize }})
+					<a href="{{ img.getUrl}}" download><strong><i>⇓</i> {{ img.title }} </strong></a> ({{ img.kind }} – {{ img.size | filesize }})
 				</div>
+				{% endif %}
 				{% endfor %}
 			</div>
 	</section>
+		{# {% endfor %} #}
+
 	{% endblock %}

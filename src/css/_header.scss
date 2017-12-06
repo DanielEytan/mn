@@ -134,11 +134,14 @@ header#header.reduced {
 		}
 	}
 	@media screen and (max-width: $bp1) {
+		.link-to-main {
+			// font-size: .65em;
+		}
 		font-size: 1.25em;
 		.saved-link span {
 			// display: none;
 		}		
-		.mn-date {
+		.mn-date, .link-to-main span {
 			display: none;
 		}
 		
