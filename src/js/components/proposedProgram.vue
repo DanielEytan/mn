@@ -85,16 +85,35 @@ module.exports = {
         })
       },
       getUrl: function () {
-         var urlParams = new URLSearchParams(window.location.search);
-         var ids = urlParams.get('ids');
+         // var urlParams = new URLSearchParams(window.location.search);
+         // var ids = urlParams.get('ids');
+         // var ids = ids.split(" ");
+         // console.log(ids);
+         // this.ids = ids;
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+        var ids = getUrlParameter('ids');
          var ids = ids.split(" ");
          console.log(ids);
          this.ids = ids;
+        
       },
       getName: function () {
-         var urlParams = new URLSearchParams(window.location.search);
-         var name = urlParams.get('name');
-         this.name = name;
+         // var urlParams = new URLSearchParams(window.location.search);
+         // var name = urlParams.get('name');
+         // this.name = name;
+         function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+        var name = getUrlParameter('name');;
+        this.name = name;
       },
       splitIds: function () {
 

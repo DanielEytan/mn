@@ -17288,7 +17288,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*  .add-to-my-program {\n    cursor: pointer;\n    padding: 10px;\n    border: 1px solid black;\n    display: inline-block;\n    margin-bottom: 30px;\n  }*/\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*  .add-to-my-program {\n    cursor: pointer;\n    padding: 10px;\n    border: 1px solid black;\n    display: inline-block;\n    margin-bottom: 30px;\n  }*/\n", ""]);
 
 	// exports
 
@@ -17337,15 +17337,33 @@
 	         });
 	      },
 	      getUrl: function getUrl() {
-	         var urlParams = new URLSearchParams(window.location.search);
-	         var ids = urlParams.get('ids');
+	         // var urlParams = new URLSearchParams(window.location.search);
+	         // var ids = urlParams.get('ids');
+	         // var ids = ids.split(" ");
+	         // console.log(ids);
+	         // this.ids = ids;
+	         function getUrlParameter(name) {
+	            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+	            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+	            var results = regex.exec(location.search);
+	            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	         };
+	         var ids = getUrlParameter('ids');
 	         var ids = ids.split(" ");
 	         console.log(ids);
 	         this.ids = ids;
 	      },
 	      getName: function getName() {
-	         var urlParams = new URLSearchParams(window.location.search);
-	         var name = urlParams.get('name');
+	         // var urlParams = new URLSearchParams(window.location.search);
+	         // var name = urlParams.get('name');
+	         // this.name = name;
+	         function getUrlParameter(name) {
+	            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+	            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+	            var results = regex.exec(location.search);
+	            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	         };
+	         var name = getUrlParameter('name');;
 	         this.name = name;
 	      },
 	      splitIds: function splitIds() {
