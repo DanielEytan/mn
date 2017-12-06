@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <div class="selected-institution" v-bind:class="{ closed: institutInfo }"> -->
-    <div class="selected-institution" v-bind:class="foo" >
+    <div class="selected-institution" v-bind:class="foo">
 
       <!-- <div class="dismiss" v-on:click="toggleInstitutInfo"></div> -->
       <!-- <div class="mobile-toggle" v-on:click="toggleState()"></div> -->
@@ -384,6 +384,8 @@ createMap () {
    var map = this.map;
    _this.inst = number;
    _this.mapTop = true;
+  _this.foo = "selected";
+
 
    map.setZoom(18);
    map.setCenter(marker.getPosition());
