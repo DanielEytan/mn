@@ -308,7 +308,7 @@
 	      var now = (0, _momentMin2.default)().format('HH');
 	      if (contrastState == null) {
 	        this.activeContrast = false;
-	        if (now > 17 || now <= 9) {
+	        if (now > 17 || now <= 7) {
 	          this.activeContrast = true;
 	          // console.log('its bright out');
 	        }
@@ -14789,6 +14789,8 @@
 	//
 	//
 	//
+	//
+	//
 
 	module.exports = {
 	  name: 'programlist',
@@ -16773,13 +16775,11 @@
 	    })
 	  })), _vm._v(" "), (_vm.calcNumberOfEvents() === 0) ? _c('div', {
 	    staticClass: "empty"
-	  }, [_vm._m(1)]) : _vm._e()])
+	  }, [(_vm.checkedFilters.length > 0) ? _c('p', [_vm._v("Diese Filterkombination ergibt keine Ergebnisse."), _c('br'), _vm._v("Passe deine Auswahl an.")]) : _c('p', [_vm._v("Es werden 201 Veranstaltungen geladen.")])]) : _vm._e()])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('button', {
 	    staticClass: "red"
 	  }, [_vm._v("Alle Filter zurücksetzen "), _c('i', [_vm._v("ⓧ")])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('p', [_vm._v("Diese Filterkombination ergibt keine Ergebnisse."), _c('br'), _vm._v("Passe deine Auswahl an.")])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -16862,7 +16862,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -16923,8 +16923,8 @@
 	      var savedListAsStringForSM = idListFromLocalStorage.join('%2B');
 
 	      var name = this.name;
-	      var url = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
-	      var urlSm = "https://mnacht.centaurus.uberspace.de/programm/vorschlag?ids=" + savedListAsStringForSM;
+	      var url = "https://museumsnacht.ch/programm/vorschlag?ids=" + savedListAsString + "&name=" + name;
+	      var urlSm = "https://museumsnacht.ch/programm/vorschlag?ids=" + savedListAsStringForSM;
 
 	      this.url = url;
 	      var myProgram = this.programevent;
@@ -16943,11 +16943,12 @@
 	      }
 	      if (get) {
 	        // this.mail = 'mailto:'+'?subject=Mein Programm für die Museumsnacht Basel&body=Das ist mein Programm für die Museumsnacht Basel am 21. Juni 2018: %0D%0A' + titles + '%0D%0A Link zur Auswahl: ' + url;
-	        this.mail = 'mailto:' + '?subject=Meine Museumsnacht Basel&body=Hier findest du meine ausgewählten Programmangebote für die Museumsnacht Basel am 19. Juni 2018: ' + urlSm + '%26name=' + this.name;
+	        this.mail = 'mailto:' + '?subject=Museumsnacht Basel - Mein Programm&body=Hier findest du meine ausgewählten Programmangebote für die Museumsnacht Basel am 19. Januar 2018: ' + urlSm + '%26name=' + this.name;
 	        var foo = "&name=";
-	        this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 19. Januar 2018: ' + urlSm + '%26name=' + this.name;
+	        // this.twitter = 'https://twitter.com/home?status=Mein Programm für die Museumsnacht Basel am 19. Januar 2018: ' + urlSm + '%26name=' + this.name;
+	        this.twitter = 'https://twitter.com/intent/tweet?text=Mein Programm für die Museumsnacht Basel am 19. Januar 2018: ' + urlSm + '%26name=' + this.name;
+
 	        this.facebook = 'https://www.facebook.com/sharer/sharer.php?u=' + urlSm + '%26name=' + this.name;
-	        // this.google = 'https://plus.google.com/share?url=' + urlSm;
 	      }
 	    },
 	    onCopy: function onCopy(e) {
@@ -18568,7 +18569,6 @@
 	//
 	//
 	//
-	//
 
 	module.exports = {
 	  name: 'myprogram',
@@ -18635,6 +18635,7 @@
 	      myprogramevent_child_components.forEach(function (o) {
 	        o.removeFromList();
 	      });
+	      location.reload();
 	    }
 	  }
 	};
@@ -18656,7 +18657,7 @@
 	    attrs: {
 	      "href": "/museen"
 	    }
-	  }, [_vm._v("Museen")]), _vm._v(" mit "), _c('nobr', [_vm._v("Klick auf "), _c('span', [_vm._v(" ♥")])]), _vm._v(".")], 1)]) : _c('div', [_c('article', [_vm._m(0), _vm._v(" "), _c('ul', {
+	  }, [_vm._v("Museen")]), _vm._v(" mit "), _c('nobr', [_vm._v("Klick auf "), _c('span', [_vm._v(" ♥")])]), _vm._v(".")], 1)]) : _c('div', [_c('article', [_vm._m(0), _vm._v(" "), _c('ul', {
 	    staticClass: "program__list program__list--selection"
 	  }, _vm._l((_vm.programevents), function(entry) {
 	    return _c('li', {

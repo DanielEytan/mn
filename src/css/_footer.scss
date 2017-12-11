@@ -1,4 +1,8 @@
 footer#footer {
+	&.microsite-footer {
+		background: white;
+		border-top: solid 2px black;
+	}
 	z-index: 11;
 	position: relative;
 	// border-top: solid 3px;

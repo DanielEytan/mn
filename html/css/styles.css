@@ -595,7 +595,7 @@ footer#footer section,
   /* All your print styles go here */
   body {
     font-size: .8em; }
-  #footer, #header, .burger-toggle, .control-program, .share-program, .program--saved .header p, .save-element {
+  #footer, #header, .burger-toggle, .control-program, .share-program, .program--saved .header p, .save-element, .intro {
     display: none !important; }
   body:before {
     content: "Museumsnacht Basel 2017"; }
@@ -642,7 +642,8 @@ header#header.reduced a.logo {
   header#header.reduced a.logo.active {
     background: url(./../bilder/logo_weiss.svg);
     background-size: 31px 27px;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    height: 27px; }
 
 header#header.reduced .flex-container {
   height: 20px; }
@@ -722,7 +723,9 @@ header#header {
       header#header a.logo.active {
         background: url(./../bilder/MN18_LOGO_16-weiss.svg);
         background-repeat: no-repeat;
-        background-size: 90px 44px; } }
+        background-size: 90px 44px;
+        width: 140px;
+        height: 44px; } }
   @media screen and (max-width: 768px) {
     header#header {
       font-size: 1.25em; }
@@ -753,7 +756,11 @@ header#header {
     header#header a.logo {
       background-size: 158px 50px;
       width: 300px;
-      height: 50px; } }
+      height: 50px; }
+      header#header a.logo.active {
+        background-size: 158px 50px;
+        width: 300px;
+        height: 50px; } }
 
 footer#footer {
   z-index: 11;
@@ -761,6 +768,9 @@ footer#footer {
   padding-bottom: 1px;
   font-size: .85em;
   background: #f0f0f0; }
+  footer#footer.microsite-footer {
+    background: white;
+    border-top: solid 2px black; }
   footer#footer > div:nth-child(2) {
     background: white;
     padding-bottom: 5px; }
@@ -1469,8 +1479,6 @@ footer#footer {
 
 .media header.site-header {
   margin-bottom: 2em; }
-  .media header.site-header h1 {
-    margin-bottom: .25em; }
 
 .media section {
   margin-bottom: 2em; }
@@ -1825,7 +1833,7 @@ footer#footer {
 header.site-header {
   position: relative; }
   header.site-header h1 {
-    margin-bottom: .5em; }
+    margin-bottom: .75em; }
   header.site-header nav {
     font-size: 1.25rem;
     margin-bottom: 2em;
@@ -2120,6 +2128,9 @@ header#header nav .flex-container {
   to {
     transform: rotate(360deg); } }
 
+figure figcaption {
+  margin-top: .5em; }
+
 #map {
   height: 400px;
   margin-bottom: 50px; }
@@ -2235,8 +2246,6 @@ footer#footer .nav-contact a,
   .additional-program a:hover {
     background: white; }
 
-#vue-app.active .mobility a,
-#vue-app.active .tickets a,
 #vue-app.active .home .lang a,
 #vue-app.active .program .adapt-program p a,
 #vue-app.active .program .empty a,
@@ -2246,11 +2255,11 @@ footer#footer .nav-contact a,
 #vue-app.active .program .site-header p a,
 #vue-app.active .institutions--overview--list-view h1 a,
 #vue-app.active .journal .post .more,
-#vue-app.active .next-prev h1 {
+#vue-app.active .journal--single p a,
+#vue-app.active .next-prev h1,
+#vue-app.active .lost a {
   box-shadow: inset 0 -4px 0 #473267;
   border-bottom: solid 3px #473267; }
-  #vue-app.active .mobility a:hover,
-  #vue-app.active .tickets a:hover,
   #vue-app.active .home .lang a:hover,
   #vue-app.active .program .adapt-program p a:hover,
   #vue-app.active .program .empty a:hover,
@@ -2260,7 +2269,9 @@ footer#footer .nav-contact a,
   #vue-app.active .program .site-header p a:hover,
   #vue-app.active .institutions--overview--list-view h1 a:hover,
   #vue-app.active .journal .post .more:hover,
-  #vue-app.active .next-prev h1:hover {
+  #vue-app.active .journal--single p a:hover,
+  #vue-app.active .next-prev h1:hover,
+  #vue-app.active .lost a:hover {
     background: #473267; }
 
 #vue-app.active .journal .post:hover .more {
@@ -2275,6 +2286,3 @@ footer#footer .nav-contact a,
   #vue-app.active footer#footer .nav-contact a:hover,
   #vue-app.active .additional-program a:hover {
     background: #473267; }
-
-header.site-header h1 {
-  margin-bottom: .75em; }

@@ -39,6 +39,7 @@
 @import 'nav';
 @import 'contrast';
 @import 'loader';
+@import 'figure';
 
 // temporary
 
@@ -52,6 +53,7 @@ html {
   box-sizing: inherit;
 }
 
+// [v-cloak] { display:none; }
 
 .imprint {
 	p {
@@ -178,8 +180,6 @@ footer#footer .nav-contact,
 }
 
 #vue-app.active {
-	.mobility a, 
-	.tickets a,
 	.home .lang a,
 	.program .adapt-program p a,
 	.program .empty a,
@@ -189,7 +189,10 @@ footer#footer .nav-contact,
 	.program .site-header p a,
 	.institutions--overview--list-view h1 a,
 	.journal .post .more,
-	.next-prev h1
+	.journal--single p a, 
+	.next-prev h1,
+	.lost a
+	
 	{
 			box-shadow: inset 0 -4px 0 $notsodark;
 			border-bottom: solid 3px $notsodark;
@@ -223,9 +226,7 @@ footer#footer .nav-contact,
 
 
 
-header.site-header h1{
-	margin-bottom: .75em;
-}
+
 
 
 

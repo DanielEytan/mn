@@ -66,8 +66,10 @@
       <programentry v-for="entry in program" ref="program" :key="entry.id" :entry="entry" :checked-institutions="checkedInstitutions" :checked-themes="checkedThemes" :checked-events="checkedEvents" :checked-languages="checkedLanguages" :checked-times="checkedTimes" v-on:update-event-number-of-entry="updateEventNumberOfEntry">
       </programentry>
     </ul>
-    <div v-if="calcNumberOfEvents() === 0" class="empty">
-      <p>Diese Filterkombination ergibt keine Ergebnisse.<br>Passe deine Auswahl an.</p>
+    <div v-if="calcNumberOfEvents() === 0 " class="empty" v-cloak>
+
+      <p v-if="checkedFilters.length > 0">Diese Filterkombination ergibt keine Ergebnisse.<br>Passe deine Auswahl an.</p>
+      <p v-else>Es werden 201 Veranstaltungen geladen.</p>
     </div>
 
 
@@ -117,8 +119,6 @@ module.exports = {
             this.hideWhenScrolled = false;
             this.showWhenScrolled = false;
           }
-            
-
     },
     removeFromFilters: function (filter, removeAll) {
       if(!removeAll) {

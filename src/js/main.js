@@ -183,7 +183,7 @@ var vueApp = new Vue({
            var now = moment().format('HH');
             if( contrastState == null ) {
               this.activeContrast = false;
-              if( now > 17 || now <= 9) {
+              if( now > 17 || now <= 7) {
                 this.activeContrast = true;
                 // console.log('its bright out');
               }

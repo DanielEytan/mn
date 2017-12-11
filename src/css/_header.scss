@@ -9,6 +9,8 @@ header#header.reduced {
   			background: url(./../bilder/logo_weiss.svg);
   			background-size: 31px 27px;
   			background-repeat: no-repeat;
+  		height: 27px;
+  			
   		}
   	}
   	.flex-container {
@@ -130,6 +132,8 @@ header#header.reduced {
 				background: url(./../bilder/MN18_LOGO_16-weiss.svg);
 				background-repeat: no-repeat;
 				background-size: 90px 44px;
+				width: 140px;
+				height: 44px;
 			}
 		}
 	}
@@ -189,6 +193,11 @@ header#header.reduced {
 			background-size: 158px 50px;
 			width: 300px;
 			height: 50px;
+			&.active {
+				background-size: 158px 50px;
+				width: 300px;
+				height: 50px;
+			}
 		}
 	}
 }

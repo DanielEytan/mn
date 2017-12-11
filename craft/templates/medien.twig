@@ -4,9 +4,9 @@
 {% block content %}
 
 
-<div class="media test">
+<div class="media info-block test">
 	<header class="site-header">
-		<h1>Medien</h1>
+		<h1>Medien / média</h1>
 		<h2>Kontakt für Medien / Contact média</h2>
 		<p>
 			Eva Keller, Leitung Fachbereich Museen und Kulturmarketing<br>
@@ -16,7 +16,7 @@
 			<a href="mailto:eva.keller@bs.ch">eva.keller@bs.ch</a></p>
 		</header>
 		<section class="docs">
-			<h2>Dokumente</h2>
+			<h2>Dokumente / documents</h2>
 			<ul>
 				{% for block in entry.media %}
 				{% if block.type == "docs" %}
@@ -28,7 +28,7 @@
 			</ul>
 		</section>
 		<section class="images">
-			<h2>Bilder</h2>
+			<h2>Bilder / photos</h2>
 			<div class="flex-container">
 				{% for block in entry.media %}
 				{% if block.type == "img" %}
@@ -45,7 +45,7 @@
 			</div>
 		</section>
 		<section class="images">
-			<h2>Videos</h2>
+			<h2>Videos / vidéos</h2>
 			<div>
 				<ul>
 					{% for block in entry.media %}

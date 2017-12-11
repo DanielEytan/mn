@@ -3,7 +3,7 @@
 
     <div v-if="programevents.length == 0" class="empty">
     <p>Dein persönliches Programm ist leer.</p>
-    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span> ♥</span></nobr>.</p>
+    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span>&nbsp;♥</span></nobr>.</p>
     </div>
     <div v-else>
     <article>
@@ -38,7 +38,6 @@
     </article>
     <div class="control-program">
       <div class="main-controls">
-        <!-- <printbutton></printbutton> -->
         <button class="reset-my-program red" v-on:click="resetMyProgram">
           Mein Programm zurücksetzen <i>ⓧ</i>
         </button>
@@ -123,6 +122,7 @@ resetMyProgram: function() {
   myprogramevent_child_components.forEach(function(o) {
     o.removeFromList();
   });
+  location.reload();
   
 
 }

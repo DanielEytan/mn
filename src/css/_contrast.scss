@@ -23,8 +23,6 @@
 	header#header {
 		background: $dark !important;
 		box-shadow: 0px 0px 8px 4px rgba(0,0,0,1);
-		// border-bottom: solid 1px;
-
 		.burger-toggle .burger span {
 			background: white;
 		}
@@ -55,8 +53,7 @@
 		background: $dark !important;
 		.dismiss {
 			background: $dark;
-		box-shadow: 0px 0px 8px 4px rgba(0,0,0,1);
-
+			box-shadow: 0px 0px 8px 4px rgba(0,0,0,1);
 		}
 	}
 
@@ -148,8 +145,4 @@
 		}
 	}
 	}
-	// #save-toggle > div:hover {
-	// 	color: $dark !important;
-	// }
-
 }
