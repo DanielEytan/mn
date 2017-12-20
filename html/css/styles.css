@@ -380,18 +380,15 @@ header.site-header h1,
   100% {
     color: whitesmoke; } }
 
-.journal--overview,
 .institutions--overview--grid-view,
 .filter__selection--wrapper {
   margin: 15px 15px 16px;
   position: relative; }
   @media screen and (min-width: 768px) {
-    .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
-    .journal--overview,
     .institutions--overview--grid-view,
     .filter__selection--wrapper {
       margin: 20px 40px 22.5px; } }
@@ -525,17 +522,20 @@ header#header nav,
 
 footer#footer .glossary,
 footer#footer section,
+.journal--overview,
 .journal .next-prev {
   margin: 15px 15px 16px;
   position: relative; }
   @media screen and (min-width: 768px) {
     footer#footer .glossary,
     footer#footer section,
+    .journal--overview,
     .journal .next-prev {
       margin: 15px 30px; } }
   @media screen and (min-width: 1500px) {
     footer#footer .glossary,
     footer#footer section,
+    .journal--overview,
     .journal .next-prev {
       width: 1400px;
       margin: 0 auto; } }
@@ -989,28 +989,16 @@ footer#footer {
         .journal--overview .group .post:nth-child(2n+2) {
           margin-right: 2%; } }
   @media only screen and (min-width: 1024px) {
-    .journal--overview .group .post:first-of-type {
-      -ms-flex: 0 1 65%;
-      flex: 0 1 65%;
-      margin-right: 4%; }
     .journal--overview .group .post:nth-child(2n+2) {
       margin-right: 0; }
-    .journal--overview .group .post:nth-child(2) {
-      -ms-flex: 0 1 31%;
-      flex: 0 1 31%; }
-    .journal--overview .group .post:nth-child(3) {
-      margin-right: 4%; } }
-  @media only screen and (min-width: 1224px) {
-    .journal--overview .group .post:nth-child(3), .journal--overview .group .post:nth-child(4) {
-      -ms-flex: 0 1 40%;
-      flex: 0 1 40%; }
-    .journal--overview .group .post:nth-child(3), .journal--overview .group .post:nth-child(4) {
-      margin: 0 5%; } }
-  @media only screen and (min-width: 1500px) {
-    .journal--overview .group .post:first-of-type {
-      -ms-flex: 0 1 50%;
-      flex: 0 1 50%;
-      margin: 0 auto 4em; } }
+    .journal--overview .group .post {
+      -ms-flex: 0 1 35%;
+      flex: 0 1 35%; }
+      .journal--overview .group .post:nth-child(2n + 1) {
+        margin-right: 5%; }
+      .journal--overview .group .post:nth-child(4n+1), .journal--overview .group .post:nth-child(4n+4) {
+        -ms-flex: 0 1 60%;
+        flex: 0 1 60%; } }
 
 .journal--single {
   margin-bottom: 3em; }
@@ -1568,6 +1556,9 @@ footer#footer {
   color: white;
   margin-bottom: .5em; }
 
+.program--overview .filter .filter--institutions .filter--list--wrapper ul li:nth-child(3) {
+  display: none; }
+
 .program--overview .filter header {
   color: black;
   font-size: .9em; }
@@ -1591,8 +1582,6 @@ footer#footer {
   height: 0;
   overflow: hidden;
   margin: 0 auto; }
-  .program--overview .filter .filter--list--wrapper ul li:nth-child(3) {
-    display: none; }
   .program--overview .filter .filter--list--wrapper ul li label {
     cursor: pointer; }
   .program--overview .filter .filter--list--wrapper ul li div {
@@ -1921,14 +1910,16 @@ button.red {
     bottom: 20px;
     opacity: 1; }
 
-.program .control-program .main-controls {
-  margin: 2em 0 3em;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-  .program .control-program .main-controls button:first-of-type {
-    margin-right: 1em; }
+.program .control-program {
+  margin-top: 2em; }
+  .program .control-program .main-controls {
+    margin: 2em 0 3em;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .program .control-program .main-controls button:first-of-type {
+      margin-right: 1em; }
 
 .shuttle-line {
   display: -ms-flexbox;
@@ -2247,6 +2238,7 @@ footer#footer .nav-contact a,
     background: white; }
 
 #vue-app.active .home .lang a,
+#vue-app.active .microsites-language .intro a,
 #vue-app.active .program .adapt-program p a,
 #vue-app.active .program .empty a,
 #vue-app.active .visit a,
@@ -2261,6 +2253,7 @@ footer#footer .nav-contact a,
   box-shadow: inset 0 -4px 0 #473267;
   border-bottom: solid 3px #473267; }
   #vue-app.active .home .lang a:hover,
+  #vue-app.active .microsites-language .intro a:hover,
   #vue-app.active .program .adapt-program p a:hover,
   #vue-app.active .program .empty a:hover,
   #vue-app.active .visit a:hover,

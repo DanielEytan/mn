@@ -37,11 +37,11 @@
 
     </article>
     <div class="control-program">
-      <div class="main-controls">
+      <!-- <div class="main-controls">
         <button class="reset-my-program red" v-on:click="resetMyProgram">
           Mein Programm zurücksetzen <i>ⓧ</i>
         </button>
-      </div>
+      </div> -->
 
       <shareprogram :programevent="programevents"></shareprogram>   
     </div>

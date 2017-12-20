@@ -3,6 +3,10 @@
 		color: white;
 		margin-bottom: .5em;
 	}
+	.filter--institutions .filter--list--wrapper ul li:nth-child(3) {
+					display: none;
+
+	}
 	header {
 
 		color: black;
@@ -33,15 +37,14 @@
 	.filter--list--wrapper {
 
 		ul {
+	
 			max-width: 1200px;
 			height: 0;
 			overflow: hidden;
 			margin: 0 auto;
 			li {
 				// cursor: pointer;
-				&:nth-child(3) {
-					display: none;
-				}
+	
 				label {
 					cursor: pointer;
 				}
