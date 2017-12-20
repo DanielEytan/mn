@@ -98,7 +98,6 @@ module.exports = {
         };
         var ids = getUrlParameter('ids');
          var ids = ids.split(" ");
-         console.log(ids);
          this.ids = ids;
         
       },
@@ -123,7 +122,6 @@ module.exports = {
          for (var i = 0; i < length; i++) {
             var item = program[i]
             var itemId = item.id;
-            console.log(itemId);
          }
       },
       addToMyProgram: function () {

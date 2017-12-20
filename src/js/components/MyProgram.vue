@@ -1,52 +1,44 @@
 <template>
   <div class="program--entry">
-
     <div v-if="programevents.length == 0" class="empty">
-    <p>Dein persönliches Programm ist leer.</p>
-    <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span>&nbsp;♥</span></nobr>.</p>
+      <p>Dein persönliches Programm ist leer.</p>
+      <p>Speichere deine Favoriten unter <a href="/programm">Programm</a> oder <a href="/museen">Museen</a> mit <nobr>Klick auf <span>&nbsp;♥</span></nobr>.</p>
     </div>
     <div v-else>
-    <article>
-    <div class="intro"><p>Hier sind deine ausgewählten Programmangebote gespeichert. Du kannst die Liste mit deinem Namen personalisieren, sie anschliessend ausdrucken, per Mail versenden oder mit Freunden auf Facebook und Twitter teilen.</p>
-      </div>
-      <ul class="program__list program__list--selection">
-        
-        <!-- <div v-for="item in items"> -->
-          <!-- {{ item }} -->
-
-          <li class="program__list__event" v-for="entry in programevents">
-            <div>
-             <section class="institution">
-               <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2" class="shuttle-line">
-                <div class="number"><i v-bind:style="{background: color.color}">{{ entry.parent.number }}</i></div> 
-                <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
-              </div>
-              <div v-if="entry.parent.shuttleLine.length > 1" class="shuttle-line several">
-                <div class="number"><i style="background: black">{{ entry.parent.number }}</i></div>
-                <div class="lines">
-                  <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+      <article>
+        <div class="intro"><p>Hier sind deine ausgewählten Programmangebote gespeichert. Du kannst die Liste mit deinem Namen personalisieren, sie anschliessend ausdrucken, per Mail versenden oder mit Freunden auf Facebook und Twitter teilen.</p>
+        </div>
+        <ul class="program__list program__list--selection">
+            <li class="program__list__event" v-for="entry in programevents">
+              <div>
+               <section class="institution">
+                 <div v-for="color in entry.parent.shuttleLine" v-if="entry.parent.shuttleLine.length < 2" class="shuttle-line">
+                  <div class="number"><i v-bind:style="{background: color.color}">{{ entry.parent.number }}</i></div> 
+                  <div class="lines"><span v-bind:style="{color: color.color}">  {{ color.title }}</span></div>
                 </div>
-              </div>
-              <h1><a :href="entry.parent.url">{{ entry.parent.title }}</a></h1>
-            </section>
-            <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
-          </div>
-        </li>
-      </ul>
-      
-
-    </article>
-    <div class="control-program">
+                <div v-if="entry.parent.shuttleLine.length > 1" class="shuttle-line several">
+                  <div class="number"><i style="background: black">{{ entry.parent.number }}</i></div>
+                  <div class="lines">
+                    <span v-for="color in entry.parent.shuttleLine" v-bind:style="{color: color.color}"><nobr>{{ color.title }}</nobr></span>
+                  </div>
+                </div>
+                <h1><a :href="entry.parent.url">{{ entry.parent.title }}</a></h1>
+              </section>
+              <myprogramevent ref="myprogramevent" :programevent="entry"></myprogramevent>
+            </div>
+          </li>
+        </ul>
+      </article>
+      <div class="control-program">
       <!-- <div class="main-controls">
         <button class="reset-my-program red" v-on:click="resetMyProgram">
           Mein Programm zurücksetzen <i>ⓧ</i>
         </button>
       </div> -->
-
       <shareprogram :programevent="programevents"></shareprogram>   
     </div>
-    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -102,7 +94,6 @@ module.exports = {
   var idListFromLocalStorage = [];
   idListFromLocalStorage = JSON.parse(localStorage.getItem('programId'));
   this.items = idListFromLocalStorage;
-  console.log(idListFromLocalStorage);
 },
 getParameterByName: function (name, url) {
  if (!url) url = window.location.href;
@@ -123,13 +114,9 @@ resetMyProgram: function() {
     o.removeFromList();
   });
   location.reload();
-  
-
 }
 }
 }
-
 </script>
-
 <style lang="css" scoped>
 </style>
