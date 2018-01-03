@@ -16,8 +16,6 @@ import proposedProgram from './components/proposedProgram.vue'
 import institutionProgram from './components/institutionProgram.vue'
 import journalProgram from './components/journalProgram.vue'
 
-
-
 import savedLink from './components/SavedLink.vue'
 import counter from './components/Counter.vue'
 
@@ -29,6 +27,7 @@ import contrast from './components/contrast.vue'
 import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
 import en from './components/en.vue'
+import stream from './components/SocialStream.vue'
 
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard);
@@ -60,7 +59,7 @@ var vueApp = new Vue({
         journalprogram: journalProgram,
         journaloverview: journalOverview,
         en: en,
-
+        socialstream: stream,
         savedlink: savedLink,
         counter: counter,
 

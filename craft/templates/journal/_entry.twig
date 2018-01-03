@@ -61,7 +61,7 @@
 		</button>	
 	</div>
 	<div class="next-prev">
-		{% set params = {section: 'journal', order: 'postDate', limit: null} %}
+		{% set params = {section: 'journal', limit: null} %}
 		{% set entryPrev = entry.getPrev(params) %}
 		{% set entryNext = entry.getNext(params) %}
 		<div class="prev" >
