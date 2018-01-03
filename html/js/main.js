@@ -145,15 +145,15 @@
 
 	var _SocialStream2 = _interopRequireDefault(_SocialStream);
 
-	var _vueClipboard = __webpack_require__(220);
+	var _vueClipboard = __webpack_require__(219);
 
 	var _vueClipboard2 = _interopRequireDefault(_vueClipboard);
 
-	var _vueScrollto = __webpack_require__(229);
+	var _vueScrollto = __webpack_require__(228);
 
 	var _vueScrollto2 = _interopRequireDefault(_vueScrollto);
 
-	var _journalOverview = __webpack_require__(230);
+	var _journalOverview = __webpack_require__(229);
 
 	var _journalOverview2 = _interopRequireDefault(_journalOverview);
 
@@ -161,7 +161,7 @@
 
 	//require
 	window.axios = __webpack_require__(164);
-	window._ = __webpack_require__(235);
+	window._ = __webpack_require__(234);
 
 	//import
 
@@ -23829,7 +23829,7 @@
 	  /* script */
 	  __webpack_require__(217),
 	  /* template */
-	  __webpack_require__(219),
+	  __webpack_require__(218),
 	  /* scopeId */
 	  "data-v-675ce3ca",
 	  /* cssModules */
@@ -23890,7 +23890,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -23907,12 +23907,27 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	module.exports = {
 	  name: 'socialstream',
 	  data: function data() {
 	    return {
-	      instagram: []
+	      instagram: [],
+	      facebook: []
 	    };
 	  },
 	  mounted: function mounted() {
@@ -23923,22 +23938,45 @@
 	    getEntries: function getEntries() {
 	      var _this = this;
 
-	      axios.get('https://api.instagram.com/v1/tags/search?q=mnbasel&access_token=37839051.b3f3b18.06fdb246384d410f9aba55d4d193468d').then(function (response) {
+	      axios.get('https://api.instagram.com/v1/tags/basel/media/recent?access_token=37839051.b3f3b18.06fdb246384d410f9aba55d4d193468d').then(function (response) {
 	        _this.instagram = response.data.data;
+	      });
+	    },
+	    getFacebookEntries: function getFacebookEntries() {
+	      var _this2 = this;
+
+	      // var hash = 'https://graph.facebook.com/search?q=%23selfie&type=post&access_token=520886231601529|3CU-b-_kB8215hjE60TCCp_t7MI';
+	      var profile = 'https://graph.facebook.com/v2.11/385482891506278/feed?access_tkoen=520886231601529|3CU-b-_kB8215hjE60TCCp_t7MI';
+	      axios.get(profile).then(function (response) {
+	        _this2.facebook = response.data.data;
 	      });
 	    }
 	  }
 	};
 
 /***/ }),
-/* 218 */,
-/* 219 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "social-stream"
-	  }, [_vm._v("\n  " + _vm._s(_vm.instagram) + "\n")])
+	  }, _vm._l((_vm.instagram), function(entry) {
+	    return _c('div', [(entry.type == 'image') ? _c('figure', [_c('img', {
+	      attrs: {
+	        "src": entry.images.standard_resolution.url
+	      }
+	    })]) : _c('video', {
+	      attrs: {
+	        "autoplay": "",
+	        "src": entry.videos.standard_resolution.url
+	      }
+	    }, [_vm._v("\n      Sorry, your browser doesn't support embedded videos\n    ")]), _vm._v(" "), _c('div', {
+	      staticClass: "user"
+	    }, [_c('h1', [_vm._v(_vm._s(entry.user.username))])]), _vm._v(" "), _c('div', {
+	      staticClass: "caption"
+	    }, [_vm._v("\n      " + _vm._s(entry.caption.text) + "\n    ")]), _c('br')])
+	  }))
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -23949,10 +23987,10 @@
 	}
 
 /***/ }),
-/* 220 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Clipboard = __webpack_require__(221)
+	var Clipboard = __webpack_require__(220)
 
 	var VueClipboard = {
 	  install: function (Vue) {
@@ -24012,12 +24050,12 @@
 
 
 /***/ }),
-/* 221 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
 	    if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(222), __webpack_require__(224), __webpack_require__(225)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(221), __webpack_require__(223), __webpack_require__(224)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof exports !== "undefined") {
 	        factory(module, require('./clipboard-action'), require('tiny-emitter'), require('good-listener'));
 	    } else {
@@ -24224,12 +24262,12 @@
 	});
 
 /***/ }),
-/* 222 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
 	    if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(223)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(222)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof exports !== "undefined") {
 	        factory(module, require('select'));
 	    } else {
@@ -24458,7 +24496,7 @@
 	});
 
 /***/ }),
-/* 223 */
+/* 222 */
 /***/ (function(module, exports) {
 
 	function select(element) {
@@ -24507,7 +24545,7 @@
 
 
 /***/ }),
-/* 224 */
+/* 223 */
 /***/ (function(module, exports) {
 
 	function E () {
@@ -24579,11 +24617,11 @@
 
 
 /***/ }),
-/* 225 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var is = __webpack_require__(226);
-	var delegate = __webpack_require__(227);
+	var is = __webpack_require__(225);
+	var delegate = __webpack_require__(226);
 
 	/**
 	 * Validates all params and calls the right
@@ -24680,7 +24718,7 @@
 
 
 /***/ }),
-/* 226 */
+/* 225 */
 /***/ (function(module, exports) {
 
 	/**
@@ -24735,10 +24773,10 @@
 
 
 /***/ }),
-/* 227 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var closest = __webpack_require__(228);
+	var closest = __webpack_require__(227);
 
 	/**
 	 * Delegates event to a selector.
@@ -24819,7 +24857,7 @@
 
 
 /***/ }),
-/* 228 */
+/* 227 */
 /***/ (function(module, exports) {
 
 	var DOCUMENT_NODE_TYPE = 9;
@@ -24858,7 +24896,7 @@
 
 
 /***/ }),
-/* 229 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	(function (global, factory) {
@@ -25334,18 +25372,18 @@
 
 
 /***/ }),
-/* 230 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(231)
+	__webpack_require__(230)
 
 	var Component = __webpack_require__(13)(
 	  /* script */
-	  __webpack_require__(233),
+	  __webpack_require__(232),
 	  /* template */
-	  __webpack_require__(234),
+	  __webpack_require__(233),
 	  /* scopeId */
 	  "data-v-6840c7dc",
 	  /* cssModules */
@@ -25372,13 +25410,13 @@
 
 
 /***/ }),
-/* 231 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(232);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -25398,7 +25436,7 @@
 	}
 
 /***/ }),
-/* 232 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)(undefined);
@@ -25412,7 +25450,7 @@
 
 
 /***/ }),
-/* 233 */
+/* 232 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25452,7 +25490,7 @@
 	};
 
 /***/ }),
-/* 234 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -25484,7 +25522,7 @@
 	}
 
 /***/ }),
-/* 235 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
