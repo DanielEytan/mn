@@ -1547,7 +1547,7 @@ footer#footer {
     height: 20px;
     display: block; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-instagram {
-    background: url(../bilder/icons/instagram.png);
+    background: url(../bilder/icons/insta.png);
     background-size: 20px;
     width: 20px;
     height: 20px;
@@ -2128,7 +2128,7 @@ header#header nav .flex-container {
     background: url(../bilder/icons/facebook_weiss.png);
     background-size: 20px; }
   #vue-app.active #curator-feed .crt-feed .crt-post-header .crt-icon-instagram {
-    background: url(../bilder/icons/instagram_weiss.png);
+    background: url(../bilder/icons/insta_weiss.png);
     background-size: 20px; }
   #vue-app.active .microsite-nav ul li.active, #vue-app.active .microsite-nav ul li:hover {
     color: white;
