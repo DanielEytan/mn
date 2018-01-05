@@ -55,5 +55,31 @@
 	<script type="text/javascript" src="{{ siteUrl }}/js/lodash.min.js"></script>
 	<script type="text/javascript" src="{{ siteUrl }}/js/vue.js"></script>
 	<script type="text/javascript" src="{{ siteUrl }}/js/main.js"></script>
+// 	<script type="text/javascript">
+// // curator-feed
+// (function(){
+//     var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+//     i.src = "https://cdn.curator.io/published/e96ed293-63d1-4b02-90f3-9d2dd9c0.js";
+//     e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+// })();
+// </script>
+<script type="text/javascript" src="//cdn.curator.io/3.0/js/curator.js"></script>
+<script type="text/javascript">
+	// While you're testing
+    // Curator.debug = true;
+
+
+    // Change FEED_ID to your unique FEED_ID
+    var widget = new Curator.Widgets.Waterfall({
+        container:'#curator-feed',
+        feedId:'e96ed293-63d1-4b02-90f3-9d2dd9c0',
+        filter: {
+	        showNetworks: true,         // show Networks filter bar
+	        networksLabel: 'Networks:',  // Networks filter bar label
+	        showSources: true,          // show Sources filter bar
+	        sourcesLabel: 'Sources:',    // Sources filter bar label
+    }
+    });
+</script>
 </body>
 </html>

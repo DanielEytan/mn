@@ -123,7 +123,12 @@ nav.microsite-nav li,
 .microsites-language .intro h2,
 .journal--single .next-prev span,
 .media h2,
-.social-stream h1
+.social-stream h1,
+.stream .crt-post-footer a,
+.stream .crt-load-more a,
+.stream .crt-post-read-more a,
+.stream .crt-post-header
+
 
   {
 	font-family: 'main-eb', helvetica;
@@ -145,6 +150,8 @@ header.site-header h1,
 .microsites-language header h2,
 .journal--single article .lead-text p,
 .journal--single .next-prev h1
+
+
 
 
  {
@@ -191,7 +198,11 @@ nav.microsite-nav li,
 .microsites-language .intro h2,
 .link-to-main a,
 .media h2,
-.social-stream h1
+.social-stream h1,
+.stream .crt-load-more a,
+.stream .crt-post-header
+
+
 
 
   {
@@ -220,7 +231,8 @@ figcaption,
 .program__list--selection li h1.event-title,
 nav.microsite-nav li,
 .journal--single .next-prev h1,
-.microsites-language header p
+.microsites-language header p,
+.stream .crt-post-header
 
 
 // .info-box 
