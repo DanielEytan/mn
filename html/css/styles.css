@@ -1546,7 +1546,7 @@ footer#footer {
     width: 20px;
     height: 20px;
     display: block; }
-  #curator-feed .crt-feed .crt-post-header .crt-icon-instagram:before {
+  #curator-feed .crt-feed .crt-post-header .crt-icon-instagram {
     background: url(../bilder/icons/instagram.png);
     background-size: 20px;
     width: 20px;
@@ -2100,13 +2100,16 @@ header#header nav .flex-container {
   padding: 1px; }
   #vue-app.active a {
     color: white; }
+  #vue-app.active .stream .crt-load-more a,
   #vue-app.active button {
     background: #1A0042;
     border: 1px solid white;
     color: white; }
+    #vue-app.active .stream .crt-load-more a:hover,
     #vue-app.active button:hover {
       background: white;
       color: #1A0042; }
+      #vue-app.active .stream .crt-load-more a:hover a,
       #vue-app.active button:hover a {
         color: #1A0042; }
   #vue-app.active header#header {
@@ -2118,6 +2121,15 @@ header#header nav .flex-container {
     background: #272727; }
     #vue-app.active footer#footer > div:nth-child(2) {
       background: #1e1e1e; }
+  #vue-app.active #curator-feed .crt-feed .crt-post-header .crt-icon-twitter {
+    background: url(../bilder/icons/twitter_weiss.png);
+    background-size: 20px; }
+  #vue-app.active #curator-feed .crt-feed .crt-post-header .crt-icon-facebook {
+    background: url(../bilder/icons/facebook_weiss.png);
+    background-size: 20px; }
+  #vue-app.active #curator-feed .crt-feed .crt-post-header .crt-icon-instagram {
+    background: url(../bilder/icons/instagram_weiss.png);
+    background-size: 20px; }
   #vue-app.active .microsite-nav ul li.active, #vue-app.active .microsite-nav ul li:hover {
     color: white;
     border-bottom: solid 2px; }

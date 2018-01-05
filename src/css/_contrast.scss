@@ -8,6 +8,7 @@
 	a {
 		color: white;
 	}
+.stream .crt-load-more a,
 	button {
 		background: $dark;
 		border: 1px solid white;
@@ -34,6 +35,23 @@
 		background:$grey-dark/1.8;
 		>div:nth-child(2) {
 			background: $grey-very-dark;
+		}
+	}
+	#curator-feed .crt-feed .crt-post-header {
+		.crt-icon-twitter {
+			background: url(../bilder/icons/twitter_weiss.png);
+			background-size: 20px;
+
+		}
+		.crt-icon-facebook {
+			background: url(../bilder/icons/facebook_weiss.png);
+			background-size: 20px;
+
+		}
+		.crt-icon-instagram {
+			background: url(../bilder/icons/instagram_weiss.png);
+			background-size: 20px;
+
 		}
 	}
 	.microsite-nav ul li {

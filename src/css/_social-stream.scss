@@ -24,10 +24,11 @@
 .crt-popup-wrapper {
 	display: none !important;
 }
+
 #curator-feed {
 	.crt-load-more {
-			margin-bottom: 2em;
-		}
+		margin-bottom: 2em;
+	}
 	.crt-feed {
 
 		>* {
@@ -89,48 +90,48 @@
 				display: block;
 				&:before {
 				// font-family: 'main-eb', helvetica;
-					content: "";
-				}
-			}
-			.crt-icon-facebook {
-				background: url(../bilder/icons/facebook.png);
-				background-size: 20px;
-				width: 20px;
-				height: 20px;
-				display: block;
-			}
-			.crt-icon-instagram:before {
-				background: url(../bilder/icons/instagram.png);
-				background-size: 20px;
-				width: 20px;
-				height: 20px;
-				display: block;
+				content: "";
 			}
 		}
-		.crt-post-read-more {
+		.crt-icon-facebook {
+			background: url(../bilder/icons/facebook.png);
+			background-size: 20px;
+			width: 20px;
+			height: 20px;
+			display: block;
+		}
+		.crt-icon-instagram {
+			background: url(../bilder/icons/instagram.png);
+			background-size: 20px;
+			width: 20px;
+			height: 20px;
+			display: block;
+		}
+	}
+	.crt-post-read-more {
+		display: none;
+	}
+	.crt-post-footer {
+		font-size: .9em;
+		img {
+			margin-bottom: .5em;
+			width: 50px;
+			border-radius: 50%;
 			display: none;
 		}
-		.crt-post-footer {
-			font-size: .9em;
-			img {
-				margin-bottom: .5em;
-				width: 50px;
-				border-radius: 50%;
-				display: none;
-			}
-			.crt-post-username {
-				display: block !important;
-			}
+		.crt-post-username {
+			display: block !important;
 		}
-		
+	}
 
-		@media only screen and (min-width: 600px) {
 
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			>* {
-				padding-right: 1.5%;
+	@media only screen and (min-width: 600px) {
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		>* {
+			padding-right: 1.5%;
 				// flex: 0 1 49%;
 				padding-bottom: 20px !important;
 			}
