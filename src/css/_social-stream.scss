@@ -24,6 +24,38 @@
 .crt-popup-wrapper {
 	display: none !important;
 }	
+.crt-popup-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left:0;
+	bottom:0;
+	z-index: 1000;
+		background: white;
+	
+	.crt-popup-wrapper-c {
+		width: 100%;
+		display: flex;
+		align-items: center;
+  		justify-content: center;
+  		.crt-popup-container {
+			width: 50%;
+			position: relative;
+			background: red;
+ 		}
+ 		.crt-popup-left {
+ 			width: 50%;
+ 			position: absolute;
+ 			left: 0;
+ 		}
+ 		.crt-popup-right {
+ 			width: 50%;
+ 			position: absolute;
+ 			right: 0;
+ 		}
+	}
+
+}
 // 	.crt-popup-underlay {
 // position: fixed;
 // 	z-index: 100;

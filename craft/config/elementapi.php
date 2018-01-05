@@ -238,6 +238,7 @@ return [
             ];
         },
     ],
+
     'journal.json' => [
         'elementType' => ElementType::Entry,
         // 'cache' => true,

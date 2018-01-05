@@ -130,7 +130,8 @@ nav.microsite-nav li,
 .social-stream h1,
 .stream .crt-load-more a,
 .stream .crt-post-read-more a,
-.stream .crt-post-header {
+.stream .crt-post-header,
+.downloads h1.block-title {
   font-family: 'main-eb', helvetica; }
 
 .journal--overview .group h1,
@@ -178,7 +179,8 @@ nav.microsite-nav li,
 .link-to-main a,
 .media h2,
 .social-stream h1,
-.stream .crt-load-more a {
+.stream .crt-load-more a,
+.downloads h1.block-title {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -197,7 +199,8 @@ figcaption,
 .program__list--selection li h1.event-title,
 nav.microsite-nav li,
 .journal--single .next-prev h1,
-.microsites-language header p {
+.microsites-language header p,
+.downloads h1.block-title {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -208,7 +211,8 @@ nav.microsite-nav li,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
-    .microsites-language header p {
+    .microsites-language header p,
+    .downloads h1.block-title {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
@@ -218,7 +222,8 @@ nav.microsite-nav li,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
-    .microsites-language header p {
+    .microsites-language header p,
+    .downloads h1.block-title {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -1504,6 +1509,35 @@ footer#footer {
 .crt-popup-wrapper {
   display: none !important; }
 
+.crt-popup-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: white; }
+  .crt-popup-wrapper .crt-popup-wrapper-c {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .crt-popup-wrapper .crt-popup-wrapper-c .crt-popup-container {
+      width: 50%;
+      position: relative;
+      background: red; }
+    .crt-popup-wrapper .crt-popup-wrapper-c .crt-popup-left {
+      width: 50%;
+      position: absolute;
+      left: 0; }
+    .crt-popup-wrapper .crt-popup-wrapper-c .crt-popup-right {
+      width: 50%;
+      position: absolute;
+      right: 0; }
+
 #curator-feed .crt-load-more {
   margin-bottom: 2em; }
 
@@ -1585,6 +1619,19 @@ footer#footer {
     #curator-feed .crt-feed > * {
       padding-right: 1.5%;
       padding-bottom: 20px !important; } }
+
+.downloads .docs h1.block-title {
+  margin-bottom: 1em; }
+
+.downloads .docs ul {
+  margin-bottom: 3em; }
+
+.downloads .docs li.image {
+  margin-bottom: 2em; }
+
+.downloads .docs figure {
+  max-width: 400px;
+  margin-bottom: .5em; }
 
 .share-program {
   padding-bottom: 2em; }
