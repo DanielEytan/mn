@@ -1506,6 +1506,9 @@ footer#footer {
       flex: 0 1 32%;
       margin-right: 1%; } }
 
+.crt-popup-wrapper {
+  display: none; }
+
 #curator-feed .crt-load-more {
   margin-bottom: 2em; }
 
