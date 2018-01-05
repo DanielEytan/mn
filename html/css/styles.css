@@ -1523,6 +1523,8 @@ footer#footer {
 
 #curator-feed .crt-feed .crt-post-header {
   margin-bottom: .5em; }
+  #curator-feed .crt-feed .crt-post-header .crt-post-fullname {
+    display: none; }
   #curator-feed .crt-feed .crt-post-header .crt-social-icon {
     font-size: .8em; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-twitter:before {
