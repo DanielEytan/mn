@@ -1537,9 +1537,9 @@ footer#footer {
     #curator-feed .crt-feed .crt-post-header .crt-icon-twitter:before {
       content: ""; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-facebook:before {
-    content: "Facebook"; }
+    content: ""; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-instagram:before {
-    content: "Instagram"; }
+    content: ""; }
 
 #curator-feed .crt-feed .crt-post-footer img {
   margin-bottom: .5em;
