@@ -23,11 +23,46 @@
 // }
 .crt-popup-wrapper {
 	display: none !important;
-}
+}	
+// 	.crt-popup-underlay {
+// position: fixed;
+// 	z-index: 100;
+// 	display: flex;
+// 	align-items: center;
+//   justify-content: center;
+// 	top: 0;
+// 	right: 0;
+// 	left:0;
+// 	bottom:0;
+// 	background: rgba(50,50,50,.5);
+// 	}
+// 	.crt-popup-wrapper-c {
+// 		background: white;
+// 		width: 800px;
+// 		padding: 2em;
+// 		position: relative;
+// 		img {
+// 			width: 100px;
+// 		}
+// 	}
+// 	.crt-close.crt-icon-cancel {
+// 		// background: black;
+// 		width: 30px;
+// 		height: 30px;
+// 		display: block;
+// 		font-size: 3em;
+// 		position: fixed;
+// 		right: 0;
+// 		&:before {
+// 			content: "×";
+// 		}
+// 	}
+// }
 
 #curator-feed {
 	.crt-load-more {
 		margin-bottom: 2em;
+		// display: none;
 	}
 	.crt-feed {
 
@@ -37,6 +72,7 @@
 
 		}
 		.crt-post {
+			background: $grey-bright;
 			margin-bottom: 2em;
 			&-content {
 				margin-bottom: 1em;
@@ -46,9 +82,9 @@
 		.crt-post-c {
 			// background: red;
 			position: relative;
-			border-bottom: solid 1px;
-			padding-bottom: 2em;
-			font-size: .9em;
+			// border-bottom: solid 1px;
+			padding-bottom: 1em;
+			font-size: .85em;
 			.crt-post-footer {
 				// order: 1;
 				// width: 100%;
@@ -64,6 +100,10 @@
 			// }
 
 		}
+		.crt-post-content-text {
+			padding: 0 .75em;
+
+		}
 		.crt-image-c {
 			padding-bottom: 0 !important;
 			margin-bottom: .5em;
@@ -71,6 +111,8 @@
 		.crt-post-header {
 			margin-bottom: .5em;
 			position: relative;
+			padding: .25em .75em 0;
+			
 			.crt-post-fullname {
 				// display: none;
 				// padding-left: 1.5em;
@@ -78,7 +120,7 @@
 			.crt-social-icon {
 				// font-size: .8em;
 				position: absolute;
-				right: 0;
+				right: .75em;
 
 				// font-size: .75em;
 			}
@@ -112,15 +154,23 @@
 		display: none;
 	}
 	.crt-post-footer {
+			padding: 0 .75em;
+
 		font-size: .9em;
+		position: relative;
 		img {
+			position: absolute;
 			margin-bottom: .5em;
 			width: 50px;
 			border-radius: 50%;
-			display: none;
+			// display: none;
 		}
 		.crt-post-username {
 			display: block !important;
+			margin-left: 70px;
+		}
+		.crt-date {
+			margin-left: 70px;
 		}
 	}
 

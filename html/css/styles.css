@@ -178,8 +178,7 @@ nav.microsite-nav li,
 .link-to-main a,
 .media h2,
 .social-stream h1,
-.stream .crt-load-more a,
-.stream .crt-post-header {
+.stream .crt-load-more a {
   text-transform: uppercase;
   letter-spacing: .025em;
   line-height: 1em !important; }
@@ -1512,15 +1511,18 @@ footer#footer {
   float: none !important; }
 
 #curator-feed .crt-feed .crt-post {
+  background: #f0f0f0;
   margin-bottom: 2em; }
   #curator-feed .crt-feed .crt-post-content {
     margin-bottom: 1em; }
 
 #curator-feed .crt-feed .crt-post-c {
   position: relative;
-  border-bottom: solid 1px;
-  padding-bottom: 2em;
-  font-size: .9em; }
+  padding-bottom: 1em;
+  font-size: .85em; }
+
+#curator-feed .crt-feed .crt-post-content-text {
+  padding: 0 .75em; }
 
 #curator-feed .crt-feed .crt-image-c {
   padding-bottom: 0 !important;
@@ -1528,10 +1530,11 @@ footer#footer {
 
 #curator-feed .crt-feed .crt-post-header {
   margin-bottom: .5em;
-  position: relative; }
+  position: relative;
+  padding: .25em .75em 0; }
   #curator-feed .crt-feed .crt-post-header .crt-social-icon {
     position: absolute;
-    right: 0; }
+    right: .75em; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-twitter {
     background: url(../bilder/icons/twitter.png);
     background-size: 20px;
@@ -1557,14 +1560,19 @@ footer#footer {
   display: none; }
 
 #curator-feed .crt-feed .crt-post-footer {
-  font-size: .9em; }
+  padding: 0 .75em;
+  font-size: .9em;
+  position: relative; }
   #curator-feed .crt-feed .crt-post-footer img {
+    position: absolute;
     margin-bottom: .5em;
     width: 50px;
-    border-radius: 50%;
-    display: none; }
+    border-radius: 50%; }
   #curator-feed .crt-feed .crt-post-footer .crt-post-username {
-    display: block !important; }
+    display: block !important;
+    margin-left: 70px; }
+  #curator-feed .crt-feed .crt-post-footer .crt-date {
+    margin-left: 70px; }
 
 @media only screen and (min-width: 600px) {
   #curator-feed .crt-feed {
@@ -2121,6 +2129,8 @@ header#header nav .flex-container {
     background: #272727; }
     #vue-app.active footer#footer > div:nth-child(2) {
       background: #1e1e1e; }
+  #vue-app.active #curator-feed .crt-feed .crt-post {
+    background: #473267; }
   #vue-app.active #curator-feed .crt-feed .crt-post-header .crt-icon-twitter {
     background: url(../bilder/icons/twitter_weiss.png);
     background-size: 20px; }
