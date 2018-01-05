@@ -36,7 +36,7 @@
 
 		}
 		.crt-post {
-			margin-bottom: 3em;
+			margin-bottom: 5em;
 			&-content {
 				margin-bottom: 1em;
 			}
@@ -44,6 +44,21 @@
 		}
 		.crt-post-c {
 			// background: red;
+			position: relative;
+			.crt-post-footer {
+				// order: 1;
+				// width: 100%;
+
+			}
+			.crt-post-content {
+				// order: 2;
+				// width: 100%;
+			}
+			// >* {
+			// 	flex-grow: 2;
+
+			// }
+
 		}
 		.crt-image-c {
 			padding-bottom: 0 !important;
@@ -52,7 +67,7 @@
 		.crt-post-header {
 			margin-bottom: .5em;
 			.crt-post-fullname {
-				display: none;
+				// display: none;
 			}
 			.crt-social-icon {
 				font-size: .8em;
@@ -60,10 +75,14 @@
 				// font-size: .75em;
 			}
 			.crt-icon-twitter {
+				background: url(../bilder/twitter.png);
+				background-size: 20px;
+				width: 20px;
+				height: 20px;
+				display: block;
 				&:before {
 				// font-family: 'main-eb', helvetica;
-
-					content: "Twitter";
+					content: "";
 				}
 			}
 			.crt-icon-facebook:before {
@@ -79,6 +98,7 @@
 				margin-bottom: .5em;
 				width: 50px;
 				border-radius: 50%;
+				display: none;
 			}
 			.crt-post-username {
 				display: block !important;

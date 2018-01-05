@@ -199,8 +199,7 @@ figcaption,
 .program__list--selection li h1.event-title,
 nav.microsite-nav li,
 .journal--single .next-prev h1,
-.microsites-language header p,
-.stream .crt-post-header .crt-post-fullname {
+.microsites-language header p {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -211,8 +210,7 @@ nav.microsite-nav li,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
-    .microsites-language header p,
-    .stream .crt-post-header .crt-post-fullname {
+    .microsites-language header p {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
@@ -222,8 +220,7 @@ nav.microsite-nav li,
     .program__list--selection li h1.event-title,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
-    .microsites-language header p,
-    .stream .crt-post-header .crt-post-fullname {
+    .microsites-language header p {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -1516,9 +1513,12 @@ footer#footer {
   float: none !important; }
 
 #curator-feed .crt-feed .crt-post {
-  margin-bottom: 3em; }
+  margin-bottom: 5em; }
   #curator-feed .crt-feed .crt-post-content {
     margin-bottom: 1em; }
+
+#curator-feed .crt-feed .crt-post-c {
+  position: relative; }
 
 #curator-feed .crt-feed .crt-image-c {
   padding-bottom: 0 !important;
@@ -1526,12 +1526,16 @@ footer#footer {
 
 #curator-feed .crt-feed .crt-post-header {
   margin-bottom: .5em; }
-  #curator-feed .crt-feed .crt-post-header .crt-post-fullname {
-    display: none; }
   #curator-feed .crt-feed .crt-post-header .crt-social-icon {
     font-size: .8em; }
-  #curator-feed .crt-feed .crt-post-header .crt-icon-twitter:before {
-    content: "Twitter"; }
+  #curator-feed .crt-feed .crt-post-header .crt-icon-twitter {
+    background: url(../bilder/twitter.png);
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: block; }
+    #curator-feed .crt-feed .crt-post-header .crt-icon-twitter:before {
+      content: ""; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-facebook:before {
     content: "Facebook"; }
   #curator-feed .crt-feed .crt-post-header .crt-icon-instagram:before {
@@ -1540,7 +1544,8 @@ footer#footer {
 #curator-feed .crt-feed .crt-post-footer img {
   margin-bottom: .5em;
   width: 50px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  display: none; }
 
 #curator-feed .crt-feed .crt-post-footer .crt-post-username {
   display: block !important; }
