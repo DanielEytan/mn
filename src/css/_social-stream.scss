@@ -49,6 +49,24 @@
 		}
 		.crt-post-header {
 			margin-bottom: .5em;
+			.crt-social-icon {
+				font-size: .8em;
+
+				// font-size: .75em;
+			}
+			.crt-icon-twitter {
+				&:before {
+				// font-family: 'main-eb', helvetica;
+
+					content: "Twitter";
+				}
+			}
+			.crt-icon-facebook:before {
+				content: "Facebook";
+			}
+			.crt-icon-instagram:before {
+				content: "Instagram";
+			}
 		}
 		
 		.crt-post-footer {

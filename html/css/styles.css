@@ -200,7 +200,7 @@ figcaption,
 nav.microsite-nav li,
 .journal--single .next-prev h1,
 .microsites-language header p,
-.stream .crt-post-header {
+.stream .crt-post-header .crt-post-fullname {
   font-size: 1.25em;
   line-height: 1.2em; }
   @media only screen and (min-width: 1024px) {
@@ -212,7 +212,7 @@ nav.microsite-nav li,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
     .microsites-language header p,
-    .stream .crt-post-header {
+    .stream .crt-post-header .crt-post-fullname {
       font-size: 1.25em; } }
   @media only screen and (min-width: 1900px) {
     .institutions--single .program-text,
@@ -223,7 +223,7 @@ nav.microsite-nav li,
     nav.microsite-nav li,
     .journal--single .next-prev h1,
     .microsites-language header p,
-    .stream .crt-post-header {
+    .stream .crt-post-header .crt-post-fullname {
       font-size: 1.35em; } }
 
 .program--overview .institution h1,
@@ -1523,6 +1523,14 @@ footer#footer {
 
 #curator-feed .crt-feed .crt-post-header {
   margin-bottom: .5em; }
+  #curator-feed .crt-feed .crt-post-header .crt-social-icon {
+    font-size: .8em; }
+  #curator-feed .crt-feed .crt-post-header .crt-icon-twitter:before {
+    content: "Twitter"; }
+  #curator-feed .crt-feed .crt-post-header .crt-icon-facebook:before {
+    content: "Facebook"; }
+  #curator-feed .crt-feed .crt-post-header .crt-icon-instagram:before {
+    content: "Instagram"; }
 
 #curator-feed .crt-feed .crt-post-footer img {
   margin-bottom: .5em;
