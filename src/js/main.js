@@ -28,6 +28,8 @@ import presell from './components/presell.vue'
 import institutions from './components/institutions.vue'
 import en from './components/en.vue'
 import stream from './components/SocialStream.vue'
+import downloads from './components/downloads.vue'
+
 
 import VueClipboard from 'vue-clipboard2'
 Vue.use(VueClipboard);
@@ -69,6 +71,7 @@ var vueApp = new Vue({
         contrast: contrast,
         presell: presell,
         institutions: institutions,
+        downloads: downloads,
     },
     data: {
         menuOpen: false,

@@ -18,6 +18,8 @@
 				<li><a href="{{ docs.getUrl}}"><strong>{{ docs.title }}</a></strong><br>Link: https://museumsnacht.ch/dokumente/{{ docs.slug }} </li>
 			{% endfor %}
 		</ul> #}
+		{% if craft.request.getParam('password') == '#mnbasel' %}
+
 		<div class="docs">
 			{% for entry in entry.downloads %}
 			<div>
@@ -47,6 +49,17 @@
 
 			</div>
 			{% endfor %}
+			{# <downloads></downloads> #}
 		</div>
+		{% else %}
+		<div class="login">
+			    <h2>Passwort anfragen unter <a href="mailto:eva.heller@museumsnacht.ch">eva.heller@museumsnacht.ch</a></h2>
+			    <form action="{{ craft.request.getUrl() }}" method="POST" accept-charset="utf-8" class="form-inline">
+			        {{ getCsrfInput() }}
+			        <input type="password" name="password" value="">
+			        <button type="submit">Login</button>
+			    </form>
+		    </div>
+		{% endif %}
 	</div>
 	{% endblock %}

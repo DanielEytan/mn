@@ -1633,6 +1633,14 @@ footer#footer {
   max-width: 400px;
   margin-bottom: .5em; }
 
+.downloads .login {
+  margin-bottom: 2em; }
+  .downloads .login h2 {
+    margin-bottom: 1em; }
+  .downloads .login form input {
+    padding: .3em .5em .45em;
+    font-size: 1em; }
+
 .share-program {
   padding-bottom: 2em; }
   .share-program h1 {

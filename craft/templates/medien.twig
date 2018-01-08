@@ -58,4 +58,16 @@
 				</ul>
 			</div>
 		</section>
+		<section class="images">
+			<h2>Text / Texte</h2>
+			<div>
+				<ul>
+					{% for block in entry.media %}
+					{% if block.type == "text" %}
+					{{ block.text }}
+					{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
 		{% endblock %}

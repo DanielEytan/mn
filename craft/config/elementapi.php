@@ -238,7 +238,41 @@ return [
             ];
         },
     ],
-
+    'downloads.json' => [
+        'elementType' => ElementType::Entry,
+        // 'cache' => true,
+            // 'paginate' => false,
+        'criteria' => [
+            'section' => 'downloads',
+            // 'type' => 'institution'
+        ],
+        'transformer' => function(EntryModel $entry) {
+                // Create an array of all the "Body" Matrix field's blocks
+                $downloadBlock = [];
+                foreach ($entry->downloads as $block) {
+                    switch ($block->type->handle) {
+                        case 'block':
+                        $docs = [];
+                        foreach ($block->docs as $doc) {
+                            $docs[] = [
+                                'url' => $doc->url,
+                                'type' => $doc->type,
+                            ];
+                        }
+                        $downloadBlock[] = [
+                            'title' => $block->blockTitle,    
+                            'docs' => $docs,
+                            // 'type' => $docstype, 
+                        ];
+                        break;
+                    }
+                }
+                return [
+                    'block' => $downloadBlock
+                ];
+            
+        },
+    ],
     'journal.json' => [
         'elementType' => ElementType::Entry,
         // 'cache' => true,
