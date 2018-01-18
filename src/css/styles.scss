@@ -106,8 +106,9 @@ html {
 		font-family: main-book;
 	}
 	&.hashtag {
-		header.site-header h1 {
-			margin-bottom: .25em !important;
+		 h1 {
+			margin-bottom:.25em !important;
+			padding-top: .25em;
 		}
 		margin-bottom: 1em;
 	}

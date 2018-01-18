@@ -510,8 +510,7 @@ header#header nav,
 .program .empty,
 .program--overview .food,
 .program .adapt-program,
-.journal .share,
-.hashtag {
+.journal .share {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
     .institutions--overview .list-view a > div,
@@ -519,8 +518,7 @@ header#header nav,
     .program .empty,
     .program--overview .food,
     .program .adapt-program,
-    .journal .share,
-    .hashtag {
+    .journal .share {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -529,8 +527,7 @@ header#header nav,
     .program .empty,
     .program--overview .food,
     .program .adapt-program,
-    .journal .share,
-    .hashtag {
+    .journal .share {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -2359,8 +2356,9 @@ html {
     font-family: main-book; }
   .event-block.hashtag {
     margin-bottom: 1em; }
-    .event-block.hashtag header.site-header h1 {
-      margin-bottom: .25em !important; }
+    .event-block.hashtag h1 {
+      margin-bottom: .25em !important;
+      padding-top: .25em; }
 
 .info-block {
   margin-bottom: 3em; }
