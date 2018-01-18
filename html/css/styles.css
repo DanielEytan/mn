@@ -2354,6 +2354,9 @@ html {
   font-family: lyon-medium; }
   .event-block span {
     font-family: main-book; }
+  .event-block p {
+    font-size: 1.1em;
+    line-height: 1.2em; }
   .event-block.hashtag {
     margin-bottom: 1em; }
     .event-block.hashtag h1 {
