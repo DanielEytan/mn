@@ -86,14 +86,19 @@
 						// padding-bottom: 44px;
 						position: relative;
 						height: 60px;
-						top: calc(100vh - 60px;);
+						overflow: hidden;
+						// top: calc(100vh - 60px;);
 						// bottom: 40px;
 						ul.institutions-list {
 							opacity: 0;
 						}
 
 						.get-list-toggle {
-							// bottom: 15px;
+							padding-top: .5em;
+							i {
+								width: 19px;
+								font-size: 1.5em;
+							}
 						}
 
 					}
@@ -175,21 +180,6 @@
 				top: auto;
 				.get-list-toggle {
 						padding-top: .5em;
-
-					// strong {
-					// 	width: 100%;
-					// 	display: block;
-					// 	padding-top: .25em;
-					// 	&:before {
-					// 		content: "☰ ";
-					// 	}
-					// }
-					
-				// 	 i {
-				// 	height: 0;
-				// 	overflow: hidden;
-				
-				// }
 				}
 			}
 		}

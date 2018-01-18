@@ -1301,9 +1301,14 @@ footer#footer {
       .institutions--overview .map-view .selected-institution.closed {
         position: relative;
         height: 60px;
-        top: calc(100vh - 60px); }
+        overflow: hidden; }
         .institutions--overview .map-view .selected-institution.closed ul.institutions-list {
           opacity: 0; }
+        .institutions--overview .map-view .selected-institution.closed .get-list-toggle {
+          padding-top: .5em; }
+          .institutions--overview .map-view .selected-institution.closed .get-list-toggle i {
+            width: 19px;
+            font-size: 1.5em; }
       .institutions--overview .map-view .selected-institution.show-list {
         overflow: scroll;
         top: 0;
@@ -2312,9 +2317,6 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit; }
-
-body.pb {
-  padding-bottom: 44px; }
 
 .imprint p {
   margin-bottom: 1.5em !important; }
