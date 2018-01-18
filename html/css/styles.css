@@ -1299,6 +1299,8 @@ footer#footer {
           position: absolute;
           right: 0; }
       .institutions--overview .map-view .selected-institution.closed {
+        position: relative;
+        height: 60px;
         top: calc(100vh - 60px); }
         .institutions--overview .map-view .selected-institution.closed ul.institutions-list {
           opacity: 0; }
@@ -1337,6 +1339,13 @@ footer#footer {
         margin-top: 2px; }
   .institutions--overview .institutions-list {
     margin-top: 1em; } }
+
+@media only screen and (max-width: 500px) {
+  .institutions--overview .map-view .selected-institution.closed {
+    position: relative;
+    top: auto; }
+    .institutions--overview .map-view .selected-institution.closed .get-list-toggle {
+      padding-top: .5em; } }
 
 @media only screen and (min-width: 768px) {
   .institutions--overview .map-view {

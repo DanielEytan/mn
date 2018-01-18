@@ -83,6 +83,9 @@
 					}
 					&.closed {
 						// height: 500px;
+						// padding-bottom: 44px;
+						position: relative;
+						height: 60px;
 						top: calc(100vh - 60px;);
 						// bottom: 40px;
 						ul.institutions-list {
@@ -91,7 +94,6 @@
 
 						.get-list-toggle {
 							// bottom: 15px;
-						
 						}
 
 					}
@@ -150,6 +152,48 @@
 						// height: 100%;
 					}
 		}
+	@media only screen and (max-width: 500px) {
+
+		.map-view {
+			// >div {
+			// 	display: flex;
+			// 	>* {
+			// 		width: 100%;
+			// 		flex: 1 0 100%;
+			// 		position: relative;
+			// 		&:nth-child(1) {
+			// 			order: 2;
+			// 		}
+			// 		&:nth-child(2) {
+			// 			order: 1;
+			// 		}
+			// 	}
+			// }
+
+			.selected-institution.closed {
+				position: relative;
+				top: auto;
+				.get-list-toggle {
+						padding-top: .5em;
+
+					// strong {
+					// 	width: 100%;
+					// 	display: block;
+					// 	padding-top: .25em;
+					// 	&:before {
+					// 		content: "☰ ";
+					// 	}
+					// }
+					
+				// 	 i {
+				// 	height: 0;
+				// 	overflow: hidden;
+				
+				// }
+				}
+			}
+		}
+	}
 		
 	@media only screen and (min-width: $bp1) {
 		.map-view {

@@ -21127,14 +21127,14 @@
 	        _vm.openList()
 	      }
 	    }
-	  }, [_c('strong', [_vm._v("Liste Museen ")]), _vm._v(" "), _c('i', [_vm._v("▲")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
+	  }, [_c('strong', [_vm._v("Liste Museen ")]), _vm._v(" "), _c('i', [_vm._v("☰")])]), _vm._v(" "), (_vm.foo == 'show-list') ? _c('div', {
 	    staticClass: "dismiss",
 	    on: {
 	      "click": function($event) {
 	        _vm.closeList()
 	      }
 	    }
-	  }, [_c('strong', [_vm._v("Liste schliessen")]), _vm._v(" "), _c('i', [_vm._v("▼")])]) : _vm._e(), _vm._v(" "), _c('div', [_c('ul', {
+	  }, [_c('strong', [_vm._v("Liste schliessen")]), _vm._v(" "), _c('i', [_vm._v("ⓧ")])]) : _vm._e(), _vm._v(" "), _c('div', [_c('ul', {
 	    staticClass: "institutions-list"
 	  }, _vm._l((_vm.institutionsData), function(entry) {
 	    return _c('li', {
