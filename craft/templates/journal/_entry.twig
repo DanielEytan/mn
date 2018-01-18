@@ -1,6 +1,11 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
 {% set mt = "mt" %}
+{% set cover = {
+				   mode: 'fit',
+				   width: 1000,
+				   quality: 75
+				} %}
 
 {% block content %}
 <section class="journal journal--single">
@@ -10,7 +15,9 @@
 			<h1>{{ entry.title }}</h1>
 			{% for img in entry.cover %}
 			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-				<img src="{{ img.url }}" alt="{{ img.title }}">
+				
+								
+				<img src="{{ img.url(cover) }}" alt="{{ img.title }}">
 				{% if img.caption %}
 				<figcaption>{{ img.caption }}</figcaption>
 				{% endif %}
@@ -32,7 +39,7 @@
 		<div class="img">
 			{% for img in block.img %}
 			<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-				<img src="{{ img.getUrl }}" alt="{{ img.title }}">
+				<img src="{{ img.getUrl(cover) }}" alt="{{ img.title }}">
 				{% if img.caption %}
 				<figcaption>{{ img.caption }}</figcaption>
 				{% endif %}

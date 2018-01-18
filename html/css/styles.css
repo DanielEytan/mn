@@ -510,7 +510,8 @@ header#header nav,
 .program .empty,
 .program--overview .food,
 .program .adapt-program,
-.journal .share {
+.journal .share,
+.hashtag {
   margin: 0 15px; }
   @media screen and (min-width: 1024px) {
     .institutions--overview .list-view a > div,
@@ -518,7 +519,8 @@ header#header nav,
     .program .empty,
     .program--overview .food,
     .program .adapt-program,
-    .journal .share {
+    .journal .share,
+    .hashtag {
       width: 900px;
       margin: 0 auto; } }
   @media screen and (min-width: 1224px) {
@@ -527,7 +529,8 @@ header#header nav,
     .program .empty,
     .program--overview .food,
     .program .adapt-program,
-    .journal .share {
+    .journal .share,
+    .hashtag {
       width: 1000px;
       margin: 0 auto; } }
 
@@ -2301,6 +2304,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+body.pb {
+  padding-bottom: 44px; }
+
 .imprint p {
   margin-bottom: 1.5em !important; }
 
@@ -2335,6 +2341,16 @@ html {
 .fade-enter, .fade-leave-to {
   opacity: 0; }
 
+.event-block {
+  margin-bottom: 3em;
+  font-family: lyon-medium; }
+  .event-block span {
+    font-family: main-book; }
+  .event-block.hashtag {
+    margin-bottom: 1em; }
+    .event-block.hashtag header.site-header h1 {
+      margin-bottom: .25em !important; }
+
 .info-block {
   margin-bottom: 3em; }
   .info-block ul {
@@ -2364,7 +2380,9 @@ html {
 .next-prev h1,
 .journal--single article .text-block a,
 .media a,
-.lost a {
+.lost a,
+.downloads p a,
+.event-block a {
   box-shadow: inset 0 -4px 0 #e6e6e6;
   border-bottom: solid 3px #e6e6e6;
   text-decoration: none !important;
@@ -2386,7 +2404,9 @@ html {
   .next-prev h1:hover,
   .journal--single article .text-block a:hover,
   .media a:hover,
-  .lost a:hover {
+  .lost a:hover,
+  .downloads p a:hover,
+  .event-block a:hover {
     background: #e6e6e6; }
 
 .journal .post:hover .more {
@@ -2415,7 +2435,8 @@ footer#footer .nav-contact a,
 #vue-app.active .journal .post .more,
 #vue-app.active .journal--single p a,
 #vue-app.active .next-prev h1,
-#vue-app.active .lost a {
+#vue-app.active .lost a,
+#vue-app.active .event-block a {
   box-shadow: inset 0 -4px 0 #473267;
   border-bottom: solid 3px #473267; }
   #vue-app.active .home .lang a:hover,
@@ -2430,7 +2451,8 @@ footer#footer .nav-contact a,
   #vue-app.active .journal .post .more:hover,
   #vue-app.active .journal--single p a:hover,
   #vue-app.active .next-prev h1:hover,
-  #vue-app.active .lost a:hover {
+  #vue-app.active .lost a:hover,
+  #vue-app.active .event-block a:hover {
     background: #473267; }
 
 #vue-app.active .journal .post:hover .more {

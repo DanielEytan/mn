@@ -6,20 +6,47 @@
 <div class="home">
 	<header class="site-header">
 		<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
-			<div class="lang">
-				<p><i class="fr">🅵 </i> <a href="/fr">Informations pratiques en français</a></p>
-				<p><i class="en">🅴 </i> <a href="/en">Visitor information in English</a></p>
+		<div class="lang">
+			<p><i class="fr">🅵 </i> <a href="/fr">Informations pratiques en français</a></p>
+			<p><i class="en">🅴 </i> <a href="/en">Visitor information in English</a></p>
+		</div>
+	    {# <h1>Noch <counter :days="daysLeft"></counter> Nacht bis zur Museumsnacht Basel</h1> #}
+    	{# <h1>Noch eine Nacht bis zur Museumsnacht Basel</h1> #}
+		<div class="event-block">
+			<h1>HEUTE IST MUSEUMSNACHT!</h1>
+			<p>Stelle aus rund <a href="https://museumsnacht.ch/programm">200 Programmangeboten</a> in <a href="https://museumsnacht.ch/museen">36 Museen</a> dein persönliches Programm zusammen!<br> Brauchst du noch ein <a href="https://museumsnacht.ch/tickets">Ticket?</a> Die Abendkassen in den mit <span>🎫</span> markierten Museen haben bis 1 Uhr geöffnet.<br>
+				Wie kommst du nach Basel, von Museum zu Museum und spätnachts wieder nach Hause? Mit dem Museumsnacht-Ticket bist du die ganze Nacht <a href="https://museumsnacht.ch/mobilitaet">mobil!</a></p><br>
+
+				<p>Übrigens: Auf <a href="https://twitter.com/museenbasel">@museenbasel</a> gibt es Programmempfehlungen im Viertelstundentakt.
+				</p>
 			</div>
-		<counter :days="daysLeft"></counter>
-	</header>
-<section class="journal journal--overview" >
+		</header>
+		<div class="stream">
+			<div class="event-block hashtag"><p>
+				<header class="site-header">
+					<h1>#mnbasel</h1>
+				</header>
+				<p>Teile deine besten Momente mit uns! #mnbasel #lovebasel</p>
+			</div>
+			<div id="curator-feed"></div>
+
+		</div>
+
+
+
+{# <section class="journal journal--overview" >
 		<div class="group">
 			{% for entry in craft.entries.section('journal').type('journal') %}
 				<div class="post">
 					<a href="{{ entry.url }}">
 						{% for img in entry.cover %}
 							<figure {% if img.height > img.width %}class="portrait"{% endif %}>
-								<img src="{{ img.url }}" alt="{{ img.title }}">
+							{% set fit = {
+							    mode: 'fit',
+							    width: 850,
+							    quality: 75							
+							} %}
+								<img src="{{ img.url(fit) }}" alt="{{ img.title }}">
 							</figure>
 						{% endfor %}
 						<p class="post-date">Veröffentlicht am  {{ entry.postDate | date("d. F Y") }}</p>
@@ -30,6 +57,6 @@
 				</div>
 			{% endfor %}
 		</div>
-	</section>
+	</section> #}
 </div>
 {% endblock %}

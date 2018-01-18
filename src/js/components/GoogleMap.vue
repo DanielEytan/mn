@@ -6,7 +6,7 @@
       <!-- <div class="dismiss" v-on:click="toggleInstitutInfo"></div> -->
       <!-- <div class="mobile-toggle" v-on:click="toggleState()"></div> -->
       <aside class="institutions--overview_child" v-for="entry in institutionsData" v-if="entry.number == inst">
-        <div class="dismiss"  v-if="foo == 'selected'" v-on:click="inst = 0; closeList()"><i>ⓧ</i></div>
+        <div class="dismiss"  v-if="foo == 'selected'" v-on:click="inst = 0; closeList(); zoomOut()"><i>ⓧ</i></div>
         <div>
           <button v-on:click="inst = 0; zoomOut()">← zur Übersicht</button>
           <div>

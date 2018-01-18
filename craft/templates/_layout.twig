@@ -24,7 +24,7 @@
   gtag('config', 'UA-6545038-2');
 </script>
 </head>
-<body>
+<body {% if paddingBottom is defined %}class="pb"{% endif %}>
 	<div id="vue-app" v-bind:class="{ active: activeContrast }">
 		<div class="loader" v-if="loader">
 			<figure></figure>

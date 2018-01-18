@@ -275,7 +275,7 @@
 	      }
 	    },
 	    time: function time() {
-	      var eventdate = (0, _momentMin2.default)("2018-01-19");
+	      var eventdate = (0, _momentMin2.default)("2018-01-20");
 	      var todaysdate = (0, _momentMin2.default)();
 	      var counter = eventdate.diff(todaysdate, 'days');
 	      this.daysLeft = counter;
@@ -21057,7 +21057,8 @@
 	      on: {
 	        "click": function($event) {
 	          _vm.inst = 0;
-	          _vm.closeList()
+	          _vm.closeList();
+	          _vm.zoomOut()
 	        }
 	      }
 	    }, [_c('i', [_vm._v("ⓧ")])]) : _vm._e(), _vm._v(" "), _c('div', [_c('button', {

@@ -11,7 +11,7 @@
 		    limit:     null
 		}) %} #}
 		<header class="site-header">
-			<h1>Downloads</h1>
+			<h1>Interner Bereich</h1>
 		</header>
 		{# <ul>
 			{% for docs in craft.assets.source('docs') %}
@@ -53,7 +53,8 @@
 		</div>
 		{% else %}
 		<div class="login">
-			    <h2>Passwort anfragen unter <a href="mailto:eva.heller@museumsnacht.ch">eva.heller@museumsnacht.ch</a></h2>
+			<p>Steht nur teilnehmenden Museen und Gastinstitutionen zur Verfügung.</p>
+			    <p>Brauchen Sie ein Login? Melden Sie sich bei <a href="mailto:eva.heller@museumsnacht.ch">eva.heller@museumsnacht.ch</a></p><br>
 			    <form action="{{ craft.request.getUrl() }}" method="POST" accept-charset="utf-8" class="form-inline">
 			        {{ getCsrfInput() }}
 			        <input type="password" name="password" value="">
