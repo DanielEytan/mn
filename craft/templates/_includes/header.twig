@@ -22,7 +22,7 @@
 					</div>
 					{% else %}
 					<div class="centered">
-						<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
+						<div class="mn-date">Freitag, 18. Januar 2019 | 18–2 Uhr</div>
 					</div>
 					<div id="menu" >
 						<div class="contrast-toggle" v-on:click="toggleContrast">
@@ -48,6 +48,8 @@
 						<li><a href="{{ url('tickets') }}" {% if craft.request.firstSegment == 'tickets' %}class="active"{% endif %}>Tickets</a></li>
 						<li><a href="{{ url('mobilitaet') }}" {% if craft.request.firstSegment == 'mobilitaet' %}class="active"{% endif %}>Mobilität</a></li>
 						<li><a href="{{ url('mnbasel') }}" {% if craft.request.firstSegment == 'mnbasel' %}class="active"{% endif %}>#mnbasel</a></li>
+						{# <li><a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'journal' %}class="active"{% endif %}>Journal</a></li> #}
+
 
 					</ul>
 					<div class="sec-nav">

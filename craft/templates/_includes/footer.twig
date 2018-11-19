@@ -5,12 +5,18 @@
 			<div><i>♥</i><p>Früh unterwegs oder erst zur Geisterstunde? Workshops, Führungen oder lieber Performances? Stell dir mit Klick auf ♥ dein persönliches Programm zusammen.</p></div>
 			<div> <i>🎠</i><p>Unterwegs mit Kindern? Passende Angebote für Familien lassen sich einfach herausfiltern und sind entsprechend markiert.</p></div>
 			<div><i>🍽</i><p>Schon gewusst? Alle Museen und Institutionen bieten von 18-2 Uhr durchgehend Essen und Getränke an.</p></div>
-			<div><i>♿</i><p>Rund 80% der Museen und Institutionen sind rollstuhlgängig.</p> </div>
+			<div><i>♿</i><p>Rund 90% der Museen und Institutionen sind rollstuhlgängig.</p> </div>
 			
 		</article>
 		<article class="additional-program info-block">
-			<div><h2>Weitertanzen?</h2><p>Die Clubs <a href="https://www.heimatbasel.ch/">Heimat ↗</a> (Party-Rockers - The Charts Party Vol. 1 / Karaoke Special) und <a href="http://balzklub.ch/">Balz Klub ↗</a> (LIGHT IT UP DJ Chronic & Mike Kay) bieten nach der Museumsnacht (ab 2 Uhr) freien Eintritt beim Vorweisen des Museumsnacht-Tickets.</p></div>
-			<div><h2>Weiterlesen?</h2><p>Während der Museumsnacht hat das Basler <a href="https://www.edubs.ch/unterstuetzung/bibliothek/lesefoerderung/jugendbuecherschiff">Jugendbücherschiff ↗</a>  an der Schifflände bis 23.30 Uhr geöffnet.</p></div>
+			<div><h2>Weitertanzen?</h2>
+				{# <p>Die Clubs <a href="https://www.heimatbasel.ch/">Heimat ↗</a> (Party-Rockers - The Charts Party Vol. 1 / Karaoke Special) und <a href="http://balzklub.ch/">Balz Klub ↗</a> (LIGHT IT UP DJ Chronic & Mike Kay) bieten nach der Museumsnacht (ab 2 Uhr) freien Eintritt beim Vorweisen des Museumsnacht-Tickets.</p> #}
+				<p>Freier Eintritt mit dem Museumsnacht-Ticket ab 2 Uhr: <a href="http://balzklub.ch/">Balz</a> (Mash-up, Hip-Hop, Electronic), <a href="https://rhyschaenzli.ch/de/des-arts">Des Arts</a> (Hip-Hop, Old School, Black Music), <a href="https://www.hmb.ch/">Historisches Museum - Barfüsserkirche</a> (House, Electro) & <a href="https://www.heimatbasel.ch/">Heimat</a> (Reggae, Dancehall).</p>
+			</div>
+			{# <div><h2>Weiterlesen?</h2><p>Während der Museumsnacht hat das Basler <a href="https://www.edubs.ch/unterstuetzung/bibliothek/lesefoerderung/jugendbuecherschiff">Jugendbücherschiff ↗</a>  an der Schifflände bis 23.30 Uhr geöffnet.</p></div> #}
+			<div>
+				
+			</div>
 		</article>
 	</section>
 	<section class="nav-contact">
@@ -18,7 +24,6 @@
 			<h2>MENU</h2>
 			<nav>
 				<div>
-
 					<ul class="main-nav">
 						<li><a href="{{ url('programm') }}" {% if craft.request.firstSegment == 'programm' %}class="active"{% endif %}>Programm</a></li>
 						<li><a href="{{ url('museen') }}" {% if craft.request.firstSegment == 'museen' %}class="active"{% endif %}>Museen</a></li>
@@ -40,15 +45,15 @@
 						<li><a href="/impressum">Impressum</a></li>
 					</ul>
 					<ul class="sec-nav">
-						<li><a href="https://museumsnacht.ch//dokumente/Programmheft-Museumsnacht-2018.pdf" download><i>⇓</i> Download Programmheft</a></li>
-						<li><a href="https://museumsnacht.ch//dokumente/Shuttle-Plan-der-Museumsnacht-2018.pdf" download><i>⇓</i> Download Shuttle-Plan</a></li>
+						<li><a target="_blank" href="https://museumsnacht.ch/dokumente/MN19_Programmheft.pdf" download><i>⇓</i> Download Programmheft</a></li>
+						<li><a target="_blank" href="https://museumsnacht.ch//dokumente/MN19_ShuttlePlan.pdf" download><i>⇓</i> Download Shuttle-Plan</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
 		<div class="contact">
 			<h2>Infostelle</h2>
-			<p>Die Infostelle am <a href="https://goo.gl/maps/LsJkeNu7N8q">Münsterplatz 15 ↗</a> ist am Freitag, 19. Januar 2018 zentraler Treffpunkt für Tickets und Auskünfte. Von hier aus starten zudem sämtliche Shuttle-Busse.</p>
+			<p>Die Infostelle am <a href="https://goo.gl/maps/LsJkeNu7N8q">Münsterplatz 15 ↗</a> ist am Freitag, 18. Januar 2019 zentraler Treffpunkt für Tickets und Auskünfte. Von hier aus starten zudem sämtliche Shuttle-Busse.</p>
 			<br>
 			<h2>Kontakt</h2>
 
@@ -89,7 +94,7 @@
 		</ul>
 	</section>
 	<section class="sponsors">
-		<h3>UNSERE SPONSOREN – EIN STARKES TRIO</h3>
+		<h3>UNSERE SPONSOREN – EIN STARKES TEAM</h3>
 
 		<ul class="logos">
 			{% for logo in sponsores.logoBlock %}
@@ -131,7 +136,7 @@
 			</li>
 			{% endfor %}
 		</ul>
-		<p><strong>Vom 12.-20. Januar 2018 nimmt Radio Basilisk die Museumsnacht in den «Fokus»: zuhören, mehr erfahren und Tickets gewinnen.</strong></p>
+		<p><strong>Vom 14.-18. Januar berichtet Radio Basilisk täglich über die Museumsnacht Basel: zuhören, mehr erfahren und Tickets gewinnen.</strong></p>
 	</section>
 	<section class="thanks">
 		<h3>Vielen Dank</h3>

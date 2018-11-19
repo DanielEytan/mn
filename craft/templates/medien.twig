@@ -15,7 +15,7 @@
 			+41 78 766 08 21<br>
 			<a href="mailto:eva.keller@bs.ch">eva.keller@bs.ch</a></p>
 		</header>
-		<section class="docs">
+		{# <section class="docs">
 			<h2>Dokumente / documents</h2>
 			<ul>
 				{% for block in entry.media %}
@@ -26,6 +26,18 @@
 				{% endif %}
 				{% endfor %}
 			</ul>
+		</section> #}
+		<section class="images">
+			<h2>Medienmitteilungen / Communiqués de presse</h2>
+			<div>
+				<ul>
+					{% for block in entry.media %}
+					{% if block.type == "text" %}
+					{{ block.text }}
+					{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
 		</section>
 		<section class="images">
 			<h2>Bilder / photos</h2>
@@ -44,7 +56,7 @@
 				{% endfor %}
 			</div>
 		</section>
-		<section class="images">
+		{# <section class="images">
 			<h2>Videos / vidéos</h2>
 			<div>
 				<ul>
@@ -57,17 +69,6 @@
 					{% endfor %}
 				</ul>
 			</div>
-		</section>
-		<section class="images">
-			<h2>Text / Texte</h2>
-			<div>
-				<ul>
-					{% for block in entry.media %}
-					{% if block.type == "text" %}
-					{{ block.text }}
-					{% endif %}
-					{% endfor %}
-				</ul>
-			</div>
-		</section>
+		</section> #}
+		
 		{% endblock %}

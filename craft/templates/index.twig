@@ -5,32 +5,36 @@
 {% block content %}
 <div class="home">
 	<header class="site-header">
-		<div class="mn-date">Freitag, 19. Januar 2018 | 18–2 Uhr</div>
-		<div class="lang">
+		<div class="mn-date">Freitag, 18. Januar 2019 | 18–2 Uhr</div>
+	
+	    <counter :days="daysLeft"></counter>
+    	{# <h1>Noch eine Nacht bis zur Museumsnacht Basel</h1> #}
+			{# <h1>So toll war die <nobr>Museumsnacht 2018.</nobr> <br>Vielen Dank!</h1> #}
+
+		 <div class="event-block">
+			{# <p>Stelle aus rund <a href="https://museumsnacht.ch/programm"><nobr>200 Programmangeboten</nobr></a> in <a href="https://museumsnacht.ch/museen"><nobr>36 Museen</nobr></a> dein persönliches Programm zusammen! Programmempfehlungen gibt es <a href="https://museumsnacht.ch/journal">hier.</a> Brauchst du noch ein <a href="https://museumsnacht.ch/tickets">Ticket?</a> Und: Mit dem Museumsnacht-Ticket bist du die ganze Nacht <a href="https://museumsnacht.ch/mobilitaet">mobil!</a></p><br> #}
+			<p>Stelle aus rund <a href="https://museumsnacht.ch/programm"><nobr>200 Programmangeboten</nobr></a> in <a href="https://museumsnacht.ch/museen"><nobr>36 Museen</nobr></a> dein persönliches Programm zusammen! Programmempfehlungen findest du <a href="https://museumsnacht.ch/journal">hier</a>. Bestelle dir jetzt dein <a href="https://museumsnacht.ch/tickets">Ticket</a>, mit dem du die ganze Nacht <a href="https://museumsnacht.ch/mobilitaet">mobil</a> bist.</p><br>
+
+
+			{# <p>Übrigens: Auf <a href="https://twitter.com/museenbasel">@museenbasel</a> gibt es Programmempfehlungen im Viertelstundentakt.</p>  #}
+				<div class="lang">
 			<p><i class="fr">🅵 </i> <a href="/fr">Informations pratiques en français</a></p>
 			<p><i class="en">🅴 </i> <a href="/en">Visitor information in English</a></p>
 		</div>
-	    {# <h1>Noch <counter :days="daysLeft"></counter> Nacht bis zur Museumsnacht Basel</h1> #}
-    	{# <h1>Noch eine Nacht bis zur Museumsnacht Basel</h1> #}
-		<div class="event-block">
-			<h1>HEUTE IST MUSEUMSNACHT!</h1>
-			<p>Stelle aus rund <a href="https://museumsnacht.ch/programm"><nobr>200 Programmangeboten</nobr></a> in <a href="https://museumsnacht.ch/museen"><nobr>36 Museen</nobr></a> dein persönliches Programm zusammen! Programmempfehlungen gibt es <a href="https://museumsnacht.ch/journal">hier.</a> Brauchst du noch ein <a href="https://museumsnacht.ch/tickets">Ticket?</a> Und: Mit dem Museumsnacht-Ticket bist du die ganze Nacht <a href="https://museumsnacht.ch/mobilitaet">mobil!</a></p><br>
-
-			<p>Übrigens: Auf <a href="https://twitter.com/museenbasel">@museenbasel</a> gibt es Programmempfehlungen im Viertelstundentakt.</p>
 		</div>
-		<div class="event-block hashtag">
+	{# 	<div class="event-block hashtag">
 			<h1>#mnbasel</h1>
 			<p>Teile deine besten Momente mit uns! #mnbasel #lovebasel</p>
-		</div>
+		</div> #}
 	</header>
-	<div class="stream">
+{# 	<div class="stream">
 		
 		<div id="curator-feed"></div>
-	</div>
+	</div> #}
 
 
 
-{# <section class="journal journal--overview" >
+<section class="journal journal--overview" >
 		<div class="group">
 			{% for entry in craft.entries.section('journal').type('journal') %}
 				<div class="post">
@@ -53,6 +57,6 @@
 				</div>
 			{% endfor %}
 		</div>
-	</section> #}
+	</section>
 </div>
 {% endblock %}
