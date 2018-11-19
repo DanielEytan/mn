@@ -143,7 +143,7 @@ var vueApp = new Vue({
 
         },
         time: function() {
-            var eventdate = moment("2018-01-20");
+            var eventdate = moment("2019-01-19");
             var todaysdate = moment();
             var counter = eventdate.diff(todaysdate, 'days');
             this.daysLeft = counter;

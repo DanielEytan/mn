@@ -347,7 +347,7 @@ createMap () {
   var colors = coord.linecolor;
 
   // console.log(colors);
-  if (colors.length > 1 ) {
+  if (colors.length > 2 ) {
     var color = '#000000';
   } else {
     var color = colors[0].color;

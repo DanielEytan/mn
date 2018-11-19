@@ -275,7 +275,7 @@
 	      }
 	    },
 	    time: function time() {
-	      var eventdate = (0, _momentMin2.default)("2018-01-20");
+	      var eventdate = (0, _momentMin2.default)("2019-01-19");
 	      var todaysdate = (0, _momentMin2.default)();
 	      var counter = eventdate.diff(todaysdate, 'days');
 	      this.daysLeft = counter;
